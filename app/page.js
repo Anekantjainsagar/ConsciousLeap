@@ -1,4 +1,3 @@
-import Navbar from "./Components/Utils/Navbar";
 import BootstrapCarousel from "./Components/Carousel";
 import Line1 from "./Components/Lines/Line1";
 import WhyConsciousLeap from "./Components/WhyConsciousLeap";
@@ -9,13 +8,11 @@ import HowItWorks from "./Components/HowItWorks";
 import CertifiedTherapist from "./Components/CerifiedTherapist";
 import Testimonials from "./Components/Testimonials";
 import MindfulTherapist from "./Components/MindfulTherapist";
-import Footer from "./Components/Utils/Footer";
 import RegisterBlock from "./Components/RegisterBlock";
 
 const page = () => {
   return (
     <div>
-      <Navbar />
       <BootstrapCarousel />
       <Line1 />
       <WhyConsciousLeap />
@@ -32,8 +29,6 @@ const page = () => {
       <MindfulTherapist />
       <Line2 />
       <RegisterBlock />
-      <Line1 />
-      <Footer />
     </div>
   );
 };

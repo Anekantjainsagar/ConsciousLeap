@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import image from "@/app/Assets/logo.png";
+import image from "../../Assets/logo.png";
 
 import {
   AiOutlineDown,
@@ -11,6 +11,7 @@ import {
 } from "react-icons/ai";
 
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 let nav = [
   {
@@ -63,11 +64,11 @@ let nav = [
     items: [
       {
         name: "Our Mindful Therapists",
-        route: "",
+        route: "/sellers",
       },
       {
         name: "Areas of Expertise",
-        route: "",
+        route: "/expertise-area",
       },
       {
         name: "Questionnaire",
@@ -145,20 +146,40 @@ let nav = [
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
+  let history = useRouter();
 
   return (
     <div>
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-10">
         {/* TopBar */}
-        <div className="flex justify-end items-center border-b py-1 pr-4 font-light text-sm text-lightGrey">
-          <div className="px-3 cursor-pointer border-r gradientHover">
+        <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
+          <div
+            onClick={(e) => {
+              history.push("/users/login");
+            }}
+            className="px-3 cursor-pointer border-r gradientHover"
+          >
             Login
           </div>
-          <div className="px-3 cursor-pointer gradientHover">Registration</div>
+          <div
+            onClick={(e) => {
+              history.push("/users/register");
+            }}
+            className="px-3 cursor-pointer gradientHover"
+          >
+            Registration
+          </div>
         </div>
         {/* Navbar Desktop*/}
         <div className="py-2 px-3 hidden md:flex justify-between items-center">
-          <Image src={image} alt="Logo" className="w-[25vw]" />
+          <Image
+            src={image}
+            alt="Logo"
+            className="w-[25vw] cursor-pointer"
+            onClick={(e) => {
+              history.push("/");
+            }}
+          />
           <div className="flex items-center w-1/2 justify-between text-lg font-light">
             <Navi />
           </div>
@@ -179,7 +200,14 @@ const Navbar = () => {
         </div>
         {/* Navbar Mobile */}
         <div className="py-2 px-3 w-[100vw] md:hidden flex justify-between items-center">
-          <Image src={image} alt="Logo" className="w-[60vw]" />
+          <Image
+            src={image}
+            alt="Logo"
+            className="w-[60vw]"
+            onClick={(e) => {
+              history.push("/");
+            }}
+          />
           <IoReorderThreeOutline
             size={35}
             onClick={(e) => {
@@ -209,7 +237,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`md:my-[7vw] ${!showNav ? "my-[24vw]" : "my-[72vw]"}`}
+        className={`md:my-[8vw] ${!showNav ? "my-[24vw]" : "my-[72vw]"}`}
       ></div>
     </div>
   );
@@ -223,6 +251,7 @@ const Navi = () => {
 
 const NavItems = ({ e }) => {
   const [hover, setHover] = useState(false);
+  const history = useRouter();
   const handleMouseEnter = () => {
     setHover(true);
   };
@@ -270,6 +299,10 @@ const NavItems = ({ e }) => {
             <p
               className="mb-2.5 text-darkGrey blueHover cursor-pointer"
               key={i}
+              onClick={(e) => {
+                // console.log(e)
+                history.push(data.route);
+              }}
             >
               {data?.name}
             </p>

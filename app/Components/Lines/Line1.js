@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import line from "@/app/Assets/Lines/Lines-01.png";
+import line from "../../Assets/Lines/Lines-01.png";
 import Image from "next/image";
 
 const Line1 = () => {
