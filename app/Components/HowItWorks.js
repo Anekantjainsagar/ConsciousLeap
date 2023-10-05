@@ -2,9 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
-import img1 from "@/app/Assets/HowItWorks/step1.jpg";
-import img2 from "@/app/Assets/HowItWorks/step2.jpg";
-import img3 from "@/app/Assets/HowItWorks/step3.jpg";
+import img1 from "../Assets/HowItWorks/step1.jpg";
+import img2 from "../Assets/HowItWorks/step2.jpg";
+import img3 from "../Assets/HowItWorks/step3.jpg";
 
 const HowItWorks = () => {
   let howItWorksHead = useRef();

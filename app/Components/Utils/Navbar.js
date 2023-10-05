@@ -64,7 +64,7 @@ let nav = [
     items: [
       {
         name: "Our Mindful Therapists",
-        route: "/sellers",
+        route: "/therapists",
       },
       {
         name: "Areas of Expertise",
@@ -72,11 +72,11 @@ let nav = [
       },
       {
         name: "Questionnaire",
-        route: "",
+        route: "/questionnaire",
       },
       {
         name: "Register as a Therapist",
-        route: "",
+        route: "/therapists/register",
       },
     ],
   },
@@ -155,7 +155,7 @@ const Navbar = () => {
         <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
           <div
             onClick={(e) => {
-              history.push("/users/login");
+              history.push("/user/login");
             }}
             className="px-3 cursor-pointer border-r gradientHover"
           >
@@ -163,7 +163,7 @@ const Navbar = () => {
           </div>
           <div
             onClick={(e) => {
-              history.push("/users/register");
+              history.push("/user/register");
             }}
             className="px-3 cursor-pointer gradientHover"
           >
@@ -216,7 +216,7 @@ const Navbar = () => {
             className="border rounded-md px-0.5"
           />
         </div>
-        <div className={`${showNav ? "block mt-2" : "hidden"}`}>
+        <div className={`${showNav ? "block my-2" : "hidden"}`}>
           <div className="flex flex-col text-lg font-light">
             <Navi />
           </div>
@@ -237,7 +237,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`md:my-[8vw] ${!showNav ? "my-[24vw]" : "my-[72vw]"}`}
+        className={`md:my-[8vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
       ></div>
     </div>
   );

@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-import image1 from "@/app/Assets/Communication/zoom.png";
-import image2 from "@/app/Assets/Communication/microsoftTeams.png";
-import image3 from "@/app/Assets/Communication/googleMeet.png";
-import image4 from "@/app/Assets/Communication/Meeting.png";
+import image1 from "../Assets/Communication/zoom.png";
+import image2 from "../Assets/Communication/microsoftTeams.png";
+import image3 from "../Assets/Communication/googleMeet.png";
+import image4 from "../Assets/Communication/Meeting.png";
 
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
@@ -43,7 +43,7 @@ const CommunicationChannels = () => {
         Communication Channels
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-8 w-[98vw] items-center">
-        {[image1, image2, image3, image4].map((e,i) => {
+        {[image1, image2, image3, image4].map((e, i) => {
           return (
             <div key={i} className="flex justify-center items-center">
               <Image

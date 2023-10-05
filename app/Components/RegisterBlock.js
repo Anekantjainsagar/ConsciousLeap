@@ -34,7 +34,7 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
-          className="mb-3 text-3xl font-light text-center gradientHover cursor-pointer"
+          className="mb-3 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Join consciousleap
         </h1>
@@ -46,7 +46,7 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
-          className="mb-3 mt-16 text-3xl font-light text-center gradientHover cursor-pointer"
+          className="mb-3 mt-16 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Become a Volunteer
         </h1>
@@ -59,7 +59,7 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
-          className="mb-3 mt-16 text-3xl font-light text-center gradientHover cursor-pointer"
+          className="mb-3 mt-16 text-3xl font-light mx-auto text-center w-fit gradientHover cursor-pointer"
         >
           Partner with consciousleap
         </h1>
@@ -73,7 +73,7 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
-          className="mb-4 text-3xl font-light text-center gradientHover cursor-pointer"
+          className="mb-4 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Register as a Therapist
         </h1>

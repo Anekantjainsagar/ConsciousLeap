@@ -1,24 +1,26 @@
 "use client";
-import color1Bw from "@/app/Assets/Drawer/1ColorBw.jpg";
-import color1 from "@/app/Assets/Drawer/1Color.jpg";
-import color2Bw from "@/app/Assets/Drawer/2ColorBw.jpg";
-import color2 from "@/app/Assets/Drawer/2Color.jpg";
-import color3Bw from "@/app/Assets/Drawer/3ColorBw.jpg";
-import color3 from "@/app/Assets/Drawer/3Color.jpg";
-import color4Bw from "@/app/Assets/Drawer/4ColorBw.jpg";
-import color4 from "@/app/Assets/Drawer/4Color.jpg";
-import color5Bw from "@/app/Assets/Drawer/5ColorBw.jpg";
-import color5 from "@/app/Assets/Drawer/5Color.jpg";
-import color6Bw from "@/app/Assets/Drawer/6ColorBw.jpg";
-import color6 from "@/app/Assets/Drawer/6Color.jpg";
-import color7Bw from "@/app/Assets/Drawer/7ColorBw.jpg";
-import color7 from "@/app/Assets/Drawer/7Color.jpg";
-import color8Bw from "@/app/Assets/Drawer/8ColorBw.jpg";
-import color8 from "@/app/Assets/Drawer/8Color.jpg";
+import color1Bw from "../Assets/Drawer/1ColorBw.jpg";
+import color1 from "../Assets/Drawer/1Color.jpg";
+import color2Bw from "../Assets/Drawer/2ColorBw.jpg";
+import color2 from "../Assets/Drawer/2Color.jpg";
+import color3Bw from "../Assets/Drawer/3ColorBw.jpg";
+import color3 from "../Assets/Drawer/3Color.jpg";
+import color4Bw from "../Assets/Drawer/4ColorBw.jpg";
+import color4 from "../Assets/Drawer/4Color.jpg";
+import color5Bw from "../Assets/Drawer/5ColorBw.jpg";
+import color5 from "../Assets/Drawer/5Color.jpg";
+import color6Bw from "../Assets/Drawer/6ColorBw.jpg";
+import color6 from "../Assets/Drawer/6Color.jpg";
+import color7Bw from "../Assets/Drawer/7ColorBw.jpg";
+import color7 from "../Assets/Drawer/7Color.jpg";
+import color8Bw from "../Assets/Drawer/8ColorBw.jpg";
+import color8 from "../Assets/Drawer/8Color.jpg";
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
+
+import globe from "../Assets/globe round.png";
 
 const Drawer = () => {
   let drawerRef = useRef();
@@ -80,10 +82,15 @@ const Drawer = () => {
   }, []);
 
   return (
-    <div className="px-[4vw]">
+    <div className="px-[4vw] relative">
+      <Image
+        src={globe}
+        alt="Globe"
+        className="w-7/12 left-1/2 -translate-x-1/2 absolute top-0 -z-10"
+      />
       <h1
         ref={drawerRef}
-        className="mb-12 md:mb-16 text-3xl font-light gradientHover cursor-pointer text-center"
+        className="mb-12 md:mb-16 pt-10 text-3xl font-light gradientHover cursor-pointer text-center"
       >
         #WorldMentalHealth
       </h1>

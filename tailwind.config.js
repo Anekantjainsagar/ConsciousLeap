@@ -23,6 +23,9 @@ module.exports = {
       screens: {
         mobile: "540px",
       },
+      backgroundImage: {
+        globe: "url('/app/Assets/globe.png')",
+      },
     },
   },
   plugins: [],

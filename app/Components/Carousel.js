@@ -1,9 +1,9 @@
 "use client";
-import img1 from "@/app/Assets/carousel/Homeofoneness.jpg";
-import img2 from "@/app/Assets/carousel/OurMission.jpg";
-import img3 from "@/app/Assets/carousel/OurMotto.jpg";
-import img4 from "@/app/Assets/carousel/OurValues.jpg";
-import img5 from "@/app/Assets/carousel/OurVision.jpg";
+import img1 from "../Assets/carousel/Homeofoneness.jpg";
+import img2 from "../Assets/carousel/OurMission.jpg";
+import img3 from "../Assets/carousel/OurMotto.jpg";
+import img4 from "../Assets/carousel/OurValues.jpg";
+import img5 from "../Assets/carousel/OurVision.jpg";
 
 import Image from "next/image";
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import image from "@/app/Assets/youtube.jpeg";
+import image from "../Assets/youtube.jpeg";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
