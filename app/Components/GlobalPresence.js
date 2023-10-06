@@ -45,39 +45,39 @@ const GlobalPresence = () => {
       <div className="relative">
         <Image src={image} alt={image.src} className="mt-3 w-[100vw]" />
         {/* India */}
-        <div className="absolute flex flex-col items-center justify-center top-[52%] left-[69%] hover:scale-75 transition-all">
+        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] hover:scale-75 transition-all">
           <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
             INDIA
           </p>
           <Image
             src={logoPng}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-8/12 mt-0 md:mt-2"
+            className="cursor-pointer w-5/12 md:w-4/12 mt-0 md:mt-2"
           />
         </div>
         {/* Dubai */}
-        <div className="absolute flex flex-col items-center justify-center top-[49%] left-[50%] md:left-[60%] hover:scale-75 transition-all">
+        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%] hover:scale-75 transition-all">
           <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
             DUBAI
           </p>
           <Image
             src={logoPng}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-8/12 md:my-1"
+            className="cursor-pointer w-5/12 md:w-4/12 md:my-1"
           />
           <p className="text-semibold text-xs text-center text-websiteBlue">
             #COMINGSOON
           </p>
         </div>
         {/* ESTONIA */}
-        <div className="absolute flex flex-col items-center justify-center top-[29%] left-[50%] hover:scale-75 transition-all">
+        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] hover:scale-75 transition-all">
           <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
             ESTONIA
           </p>
           <Image
             src={logoPng}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-8/12 mt-0 md:mt-2"
+            className="cursor-pointer w-5/12 md:w-4/12 mt-0 md:mt-2"
           />
         </div>
       </div>

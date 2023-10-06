@@ -12,6 +12,8 @@ import img3 from "../Assets/mindfulTherapist/image-003.jpg";
 import img4 from "../Assets/mindfulTherapist/image-004.jpg";
 import img5 from "../Assets/mindfulTherapist/image-005.jpg";
 
+import mobile from "../Assets/mindfulTherapist/mobile.png";
+
 const MindfulTherapist = () => {
   let testimonialsHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -38,10 +40,10 @@ const MindfulTherapist = () => {
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-center flex-col">
+    <div className="w-full flex items-center justify-center flex-col mt-[20vw] md:mt-[10vw]">
       <h1
         ref={testimonialsHeading}
-        className="mb-2 text-3xl font-light gradientHover cursor-pointer"
+        className="mb-6 md:mb-8 text-3xl font-light gradientHover cursor-pointer"
       >
         Our Mindful Therapists
       </h1>
@@ -59,19 +61,28 @@ export function BootstrapCarousel() {
   };
 
   return (
-    <div className="custom-carousel-container">
+    <div className="custom-carousel-container relative">
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 h-full">
+        <Image
+          src={mobile}
+          alt="Mobile image"
+          className="h-full md:h-[99.9%] mx-auto"
+        />
+      </div>
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
-        className="flex justify-center items-center"
+        className="w-[98vw] flex items-center"
       >
-        {/* <Image src={img1} alt="Image" /> */}
         {bootstrap.map((item, i) => (
-          <Carousel.Item key={i} interval={1000}>
-            <Image src={item} alt="Slide" />
+          <Carousel.Item key={i} interval={2000}>
+            <Image
+              src={item}
+              alt="Slide"
+              className="w-[50vw] md:w-[14vw] mx-auto"
+            />
           </Carousel.Item>
         ))}
-        {/* <Image src={img1} alt="Image" /> */}
       </Carousel>
     </div>
   );

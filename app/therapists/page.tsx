@@ -11,7 +11,7 @@ import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import image from "../Assets/sagrika.jpeg";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Therapists = () => {
   let sellerHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const [showGrid, setShowGrid] = useState(true);
@@ -267,4 +267,4 @@ const ListBlock = () => {
   );
 };
 
-export default page;
+export default Therapists;

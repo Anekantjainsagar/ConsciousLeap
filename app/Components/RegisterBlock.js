@@ -34,6 +34,7 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
+          id="joinconsciousleap"
           className="mb-3 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Join consciousleap

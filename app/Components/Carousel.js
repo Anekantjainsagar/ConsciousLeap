@@ -20,7 +20,7 @@ export default function BootstrapCarousel() {
   };
 
   return (
-    <div className="custom-carousel-container">
+    <div className="custom-carousel-container" id="homeofoneness">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         {bootstrap.map((item, i) => (
           <Carousel.Item key={i} interval={1000}>

@@ -5,7 +5,7 @@ import img3 from "../Assets/questionnaire/ic3.png";
 import img4 from "../Assets/questionnaire/ic4.png";
 import Image from "next/image";
 
-const page = () => {
+const Questionnaire = () => {
   let questionnaire = [
     {
       image: img1,
@@ -83,4 +83,4 @@ const Block = ({ data }) => {
   );
 };
 
-export default page;
+export default Questionnaire;

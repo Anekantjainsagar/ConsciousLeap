@@ -53,6 +53,7 @@ const HowItWorks = () => {
     <div className="w-full flex items-center justify-center flex-col">
       <h1
         ref={howItWorksHead}
+        id="howdoesitwork?"
         className="mb-2 text-3xl font-light gradientHover cursor-pointer"
       >
         How Does It Work?

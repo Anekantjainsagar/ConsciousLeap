@@ -60,7 +60,7 @@ export function BootstrapCarousel() {
     },
     {
       image: img2,
-      text: "Implementing consciousleap into our corporate wellness program has had a tremendous impact on our employees' mental well-being. The platform's personalized assessments and confidential counseling services, created a safe and supportive environment for team.",
+      text: "Implementing consciousleap into our corporate wellness program has had a tremendous impact on our employees' mental well-being. ",
     },
     {
       image: img3,

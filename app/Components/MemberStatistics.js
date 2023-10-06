@@ -52,6 +52,7 @@ const MemberStatistics = () => {
   return (
     <div className="w-full flex items-center justify-center flex-col">
       <h1
+        id="memberstatistics"
         ref={memberStatiticsHeading}
         className="mb-2 text-3xl font-light gradientHover cursor-pointer"
       >
@@ -74,7 +75,7 @@ const MemberStatistics = () => {
             }}
           />
         </div>
-        <div className="z-10 absolute left-1/2 top-16 md:top-28 w-[75%] md:w-[60%] flex justify-between items-center -translate-x-1/2">
+        <div className="absolute z-10 left-1/2 top-16 md:top-28 w-[75%] md:w-[60%] flex justify-between items-center -translate-x-1/2">
           <Image
             src={!visible2 ? img2 : img21}
             alt="Image 1"

@@ -8,7 +8,7 @@ import { BsCameraVideo } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
 import { IoCallOutline } from "react-icons/io5";
 
-const page = () => {
+const OneTherapist = () => {
   const history = useRouter();
 
   let topData = [
@@ -144,4 +144,4 @@ const Table = ({ data }) => {
   );
 };
 
-export default page;
+export default OneTherapist;

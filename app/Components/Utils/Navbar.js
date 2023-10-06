@@ -11,7 +11,7 @@ import {
 } from "react-icons/ai";
 
 import { IoReorderThreeOutline } from "react-icons/io5";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 let nav = [
   {
@@ -19,43 +19,43 @@ let nav = [
     items: [
       {
         name: "Home of oneness",
-        route: "",
+        route: "/",
       },
       {
         name: "Why consciousleap?",
-        route: "",
+        route: "/",
       },
       {
         name: "Communication Channels",
-        route: "",
+        route: "/",
       },
       {
         name: "How Does It Work?",
-        route: "",
+        route: "/",
       },
       {
         name: "Our Internationally Certified Therapists",
-        route: "",
+        route: "/",
       },
       {
         name: "Member Testimonials",
-        route: "",
+        route: "/",
       },
       {
         name: "Member Statistics",
-        route: "",
+        route: "/",
       },
       {
         name: "Collaborations and Initiatives",
-        route: "",
+        route: "/",
       },
       {
         name: "Consciousleap Blog",
-        route: "",
+        route: "/",
       },
       {
         name: "Join Consciousleap",
-        route: "",
+        route: "/",
       },
     ],
   },
@@ -150,7 +150,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="fixed top-0 left-0 w-[100vw] bg-white z-10">
+      <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
         {/* TopBar */}
         <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
           <div
@@ -252,6 +252,7 @@ const Navi = () => {
 const NavItems = ({ e }) => {
   const [hover, setHover] = useState(false);
   const history = useRouter();
+  const pathname = usePathname();
   const handleMouseEnter = () => {
     setHover(true);
   };
@@ -289,7 +290,7 @@ const NavItems = ({ e }) => {
         onClick={(e) => {
           setHover(!hover);
         }}
-        className={`absolute z-30 ${
+        className={`absolute ${
           !hover ? "hidden" : "block"
         } bg-white text-xs w-fit px-3 rounded-md top-8 md:top-7 shadow-lg shadow-darkGrey break-keep`}
       >
@@ -300,8 +301,20 @@ const NavItems = ({ e }) => {
               className="mb-2.5 text-darkGrey blueHover cursor-pointer"
               key={i}
               onClick={(e) => {
-                // console.log(e)
-                history.push(data.route);
+                const element = document.getElementById(
+                  data?.name?.replaceAll(" ", "")?.toLowerCase()
+                );
+                if (data?.route) {
+                  if (pathname != data?.route) {
+                    history.push(data.route);
+                  }
+                }
+                if (element) {
+                  element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }
               }}
             >
               {data?.name}

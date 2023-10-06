@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Captcha from "../../Components/Authorized/Captcha";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const UserRegister = () => {
   const captchaRef = useRef(null);
   const history = useRouter();
 
@@ -61,4 +61,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default UserRegister;

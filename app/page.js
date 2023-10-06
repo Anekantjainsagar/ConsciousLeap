@@ -12,8 +12,9 @@ import RegisterBlock from "./Components/RegisterBlock";
 import GlobalPresence from "./Components/GlobalPresence";
 import ClientTestimonials from "./Components/ClientTestimonials";
 import MemberStatistics from "./Components/MemberStatistics";
+import ConsciousLeapBlog from "./Components/ConsciousLeapBlog";
 
-const page = () => {
+const Home = () => {
   return (
     <div>
       <BootstrapCarousel />
@@ -37,9 +38,11 @@ const page = () => {
       <Line2 />
       <ClientTestimonials />
       <Line2 />
+      <ConsciousLeapBlog />
+      <Line2 />
       <RegisterBlock />
     </div>
   );
 };
 
-export default page;
+export default Home;

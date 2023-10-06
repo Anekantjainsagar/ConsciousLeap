@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import image from "../../Assets/sagrika.jpeg";
 
-const page = () => {
+const TherapistReview = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
@@ -56,4 +56,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default TherapistReview;

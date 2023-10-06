@@ -38,6 +38,7 @@ const CommunicationChannels = () => {
     <div className="w-full flex items-center justify-center flex-col">
       <h1
         ref={ref}
+        id="communicationchannels"
         className="mb-12 md:w-full w-8/12 text-center text-3xl font-light gradientHover cursor-pointer"
       >
         Communication Channels

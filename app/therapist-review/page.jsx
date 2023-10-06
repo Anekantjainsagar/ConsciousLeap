@@ -4,7 +4,7 @@ import image from "../Assets/sagrika.jpeg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const TherapistReview = () => {
   return (
     <div className="py-[4vw]">
       <h1 className="text-3xl text-center font-light gradientHover cursor-pointer">
@@ -42,4 +42,4 @@ const Therapist = () => {
   );
 };
 
-export default page;
+export default TherapistReview;

@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import LeftBar from "../Components/LeftBar";
 import RightBar from "../Components/LeftBar copy";
 
-const page = () => {
+const DashboardEdit = () => {
   const history = useRouter();
 
   return (
@@ -83,4 +83,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DashboardEdit;

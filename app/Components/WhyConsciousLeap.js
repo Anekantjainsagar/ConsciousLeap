@@ -34,6 +34,7 @@ const WhyConsciousLeap = () => {
   return (
     <div className="w-full flex items-center justify-center flex-col">
       <h1
+        id="whyconsciousleap?"
         ref={ref}
         className="mb-10 md:mb-16 text-3xl font-light gradientHover cursor-pointer"
       >

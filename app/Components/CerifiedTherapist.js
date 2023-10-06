@@ -36,6 +36,7 @@ const CertifiedTherapist = () => {
   return (
     <div className="w-full flex items-center justify-center flex-col">
       <h1
+        id="ourinternationallycertifiedtherapists"
         ref={therapistHeading}
         className="mb-12 text-3xl text-center font-light gradientHover cursor-pointer"
       >

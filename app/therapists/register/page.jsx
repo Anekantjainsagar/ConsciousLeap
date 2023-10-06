@@ -15,7 +15,7 @@ import img10 from "../../Assets/registerTherapist/join10.png";
 import img11 from "../../Assets/registerTherapist/join11.png";
 import img12 from "../../Assets/registerTherapist/join12.png";
 
-const page = () => {
+const RegisterTherapist = () => {
   let registerData = [
     { image: img1, title: "Unbinding", desc: "Free to work elsewhere." },
     { image: img2, title: "Virtual", desc: "Work from anywhere." },
@@ -140,4 +140,4 @@ const FlipCard = ({ data }) => {
   );
 };
 
-export default page;
+export default RegisterTherapist;
