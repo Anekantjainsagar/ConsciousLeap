@@ -11,7 +11,7 @@ import blog5 from "../Assets/Blogs/5.jpg";
 import blog6 from "../Assets/Blogs/6.jpg";
 import Line2 from "./Lines/Line2";
 
-const ConsciousLeapBlog = () => {
+const ConsciousleapBlog = () => {
   let blogsHeading = useRef();
   let collabrationHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -80,7 +80,7 @@ const ConsciousLeapBlog = () => {
           ref={blogsHeading}
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >
-          Consciousleap Blogs
+          consciousleap Blogs
         </h1>
         <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
           We practice what we preach, and our blogs reflect our mindful journey
@@ -123,4 +123,4 @@ const ImageBlock = ({ image }) => {
   );
 };
 
-export default ConsciousLeapBlog;
+export default ConsciousleapBlog;

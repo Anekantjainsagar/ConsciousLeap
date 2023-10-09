@@ -18,9 +18,9 @@ const TherapistReview = () => {
           "On a scale of 1 to 5, how would you rate the therapist's ability to create a positive and supportive environment during your sessions?",
           "How knowledgeable and informed did you find the therapist to be about your specific concerns or issues? Please rate their level of expertise on a scale of 1 to 5.",
           "Did the therapist's calm demeanor and presence contribute to your overall comfort and ability to open up during the sessions? Please share your thoughts on their ability to create a calming atmosphere, using a scale of 1 to 5.",
-        ].map((e) => {
+        ].map((e, i) => {
           return (
-            <div key={e} className="mb-4 font-light">
+            <div key={i} className="mb-4 font-light">
               <p className="text-darkGrey">{e}</p>
               <select
                 name="rating"

@@ -41,7 +41,7 @@ const UserLogin = () => {
             }}
             className="text-websiteBlue mt-[5vw] md:mt-[2vw] text-sm cursor-pointer"
           >
-            New to Consciousleap?
+            New to consciousleap?
           </p>
         </div>
       </div>

@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import image from "../Assets/youtube.jpeg";
-import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
+// import "~video-react/dist/video-react.css";
+// import { Player } from "video-react";
 
-const WhyConsciousLeap = () => {
+const Whyconsciousleap = () => {
   let ref = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +29,15 @@ const WhyConsciousLeap = () => {
         }
       );
     }
+    const video = document.createElement("video");
+    video.autoplay = true;
+    video.muted = true;
+    const source = document.createElement("source");
+    source.src = "/Why-consciousleap.mp4";
+    if (!video.innerHTML.includes("Why-consciousleap")) {
+      video.appendChild(source);
+      document.getElementById("video-container").appendChild(video);
+    }
   }, []);
 
   return (
@@ -38,15 +47,10 @@ const WhyConsciousLeap = () => {
         ref={ref}
         className="mb-10 md:mb-16 text-3xl font-light gradientHover cursor-pointer"
       >
-        Why ConsciousLeap?
+        Why consciousleap?
       </h1>
-      <Image
-        src={image}
-        alt={image.src}
-        className="mx-auto md:w-fit rounded-lg w-10/12 shadow-xl shadow-lightGrey"
-      />
+      <div id="video-container" className="px-5"></div>
     </div>
   );
 };
-
-export default WhyConsciousLeap;
+export default Whyconsciousleap;

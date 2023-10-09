@@ -39,7 +39,7 @@ const GlobalPresence = () => {
         Our Global Presence
       </h1>
       <p className="text-darkGrey md:w-full w-[90%] text-center">
-        Consciousleap is based in Estonia, Europe, and Mumbai, India, and is
+        consciousleap is based in Estonia, Europe, and Mumbai, India, and is
         #ComingSoon in Dubai, UAE.
       </p>
       <div className="relative">

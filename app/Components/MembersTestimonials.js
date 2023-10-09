@@ -60,7 +60,7 @@ export function BootstrapCarousel() {
   let bootstrap = [
     {
       image: img1,
-      text: "Consciousleap has been a game changer for my mental health journey",
+      text: "consciousleap has been a game changer for my mental health journey",
     },
     {
       image: img2,
@@ -68,7 +68,7 @@ export function BootstrapCarousel() {
     },
     {
       image: img3,
-      text: "Consciousleap created a safe space where I could discuss my concerns and receive guidance",
+      text: "consciousleap created a safe space where I could discuss my concerns and receive guidance",
     },
   ];
   const [index, setIndex] = useState(0);

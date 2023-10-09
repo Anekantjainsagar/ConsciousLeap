@@ -56,7 +56,7 @@ export function BootstrapCarousel() {
   let bootstrap = [
     {
       image: img1,
-      text: "As a busy professional, finding time for self-care can be a challenge. Consciousleap has made it easier for me to prioritize my mental well-being.",
+      text: "As a busy professional, finding time for self-care can be a challenge. consciousleap has made it easier for me to prioritize my mental well-being.",
     },
     {
       image: img2,
@@ -76,8 +76,8 @@ export function BootstrapCarousel() {
   return (
     <div className="custom-carousel-container">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        {bootstrap.map((item) => (
-          <Carousel.Item key={item} interval={1000}>
+        {bootstrap.map((item, i) => (
+          <Carousel.Item key={i} interval={1000}>
             <div className="rounded-full w-fit mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
               <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
                 <Image

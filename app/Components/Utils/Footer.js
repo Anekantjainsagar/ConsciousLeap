@@ -20,7 +20,7 @@ import Line1 from "../Lines/Line1";
 const Footer = () => {
   let nav = [
     {
-      name: "Consciousleap",
+      name: "consciousleap",
       items: [
         {
           name: "Home of oneness",
@@ -55,11 +55,11 @@ const Footer = () => {
           route: "",
         },
         {
-          name: "Consciousleap Blog",
+          name: "consciousleap Blog",
           route: "",
         },
         {
-          name: "Join Consciousleap",
+          name: "Join consciousleap",
           route: "",
         },
       ],
@@ -86,7 +86,7 @@ const Footer = () => {
       ],
     },
     {
-      name: "Consciousleap for Business",
+      name: "consciousleap for Business",
       items: [
         {
           name: "Why consciousleap for Business?",
@@ -107,10 +107,10 @@ const Footer = () => {
       ],
     },
     {
-      name: "Conscious Store",
+      name: "conscious Store",
       items: [
         {
-          name: "Consciousleap Vendibles",
+          name: "consciousleap Vendibles",
           route: "",
         },
         {
@@ -118,31 +118,31 @@ const Footer = () => {
           route: "",
         },
         {
-          name: "Conscious Being",
+          name: "conscious Being",
           route: "",
         },
         {
-          name: "Conscious Edibles",
+          name: "conscious Edibles",
           route: "",
         },
         {
-          name: "Conscious Healing",
+          name: "conscious Healing",
           route: "",
         },
         {
-          name: "Conscious Kids",
+          name: "conscious Kids",
           route: "",
         },
         {
-          name: "Conscious Living",
+          name: "conscious Living",
           route: "",
         },
         {
-          name: "Conscious Teens",
+          name: "conscious Teens",
           route: "",
         },
         {
-          name: "Conscious Travel",
+          name: "conscious Travel",
           route: "",
         },
       ],
@@ -212,7 +212,7 @@ const Footer = () => {
                 },
                 {
                   image: facebook,
-                  link: "https://www.facebook.com/people/Consciousleapco/100093011598223/?mibextid=ZbWKwL",
+                  link: "https://www.facebook.com/people/consciousleapco/100093011598223/?mibextid=ZbWKwL",
                 },
                 { image: twitter, link: "https://twitter.com/consciousleapco" },
                 {

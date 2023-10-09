@@ -1,6 +1,6 @@
 import BootstrapCarousel from "./Components/Carousel";
 import Line1 from "./Components/Lines/Line1";
-import WhyConsciousLeap from "./Components/WhyConsciousLeap";
+import Whyconsciousleap from "./Components/Whyconsciousleap";
 import Line2 from "./Components/Lines/Line2";
 import Drawer from "./Components/Drawer";
 import CommunicationChannels from "./Components/CommunicationChannels";
@@ -12,14 +12,15 @@ import RegisterBlock from "./Components/RegisterBlock";
 import GlobalPresence from "./Components/GlobalPresence";
 import ClientTestimonials from "./Components/ClientTestimonials";
 import MemberStatistics from "./Components/MemberStatistics";
-import ConsciousLeapBlog from "./Components/ConsciousLeapBlog";
+import ConsciousleapBlog from "./Components/ConsciousLeapBlog";
+import ConsciousStore from "./Components/ConsciousStore";
 
 const Home = () => {
   return (
     <div>
       <BootstrapCarousel />
       <Line1 />
-      <WhyConsciousLeap />
+      <Whyconsciousleap />
       <Line2 />
       <Drawer />
       <Line2 />
@@ -38,7 +39,8 @@ const Home = () => {
       <Line2 />
       <ClientTestimonials />
       <Line2 />
-      <ConsciousLeapBlog />
+      <ConsciousStore />
+      <ConsciousleapBlog />
       <Line2 />
       <RegisterBlock />
     </div>

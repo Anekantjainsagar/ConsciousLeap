@@ -15,7 +15,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 let nav = [
   {
-    name: "Consciousleap",
+    name: "consciousleap",
     items: [
       {
         name: "Home of oneness",
@@ -50,11 +50,11 @@ let nav = [
         route: "/",
       },
       {
-        name: "Consciousleap Blog",
+        name: "consciousleap Blog",
         route: "/",
       },
       {
-        name: "Join Consciousleap",
+        name: "Join consciousleap",
         route: "/",
       },
     ],
@@ -81,7 +81,7 @@ let nav = [
     ],
   },
   {
-    name: "Consciousleap for Business",
+    name: "consciousleap for Business",
     items: [
       {
         name: "Why consciousleap for Business?",
@@ -102,10 +102,10 @@ let nav = [
     ],
   },
   {
-    name: "Conscious Store",
+    name: "conscious Store",
     items: [
       {
-        name: "Consciousleap Vendibles",
+        name: "consciousleap Vendibles",
         route: "",
       },
       {
@@ -113,31 +113,31 @@ let nav = [
         route: "",
       },
       {
-        name: "Conscious Being",
+        name: "conscious Being",
         route: "",
       },
       {
-        name: "Conscious Edibles",
+        name: "conscious Edibles",
         route: "",
       },
       {
-        name: "Conscious Healing",
+        name: "conscious Healing",
         route: "",
       },
       {
-        name: "Conscious Kids",
+        name: "conscious Kids",
         route: "",
       },
       {
-        name: "Conscious Living",
+        name: "conscious Living",
         route: "",
       },
       {
-        name: "Conscious Teens",
+        name: "conscious Teens",
         route: "",
       },
       {
-        name: "Conscious Travel",
+        name: "conscious Travel",
         route: "",
       },
     ],
@@ -263,7 +263,7 @@ const NavItems = ({ e }) => {
 
   return (
     <div
-      className="relative md:ml-0 ml-5"
+      className="relative md:ml-0 ml-5 z-50"
       onMouseEnter={handleMouseEnter}
       onMouseOut={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -292,7 +292,7 @@ const NavItems = ({ e }) => {
         }}
         className={`absolute ${
           !hover ? "hidden" : "block"
-        } bg-white text-xs w-fit px-3 rounded-md top-8 md:top-7 shadow-lg shadow-darkGrey break-keep`}
+        } bg-white text-xs w-fit px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey break-keep`}
       >
         <div className="mt-2 bg-transparent"></div>
         {e?.items.map((data, i) => {
