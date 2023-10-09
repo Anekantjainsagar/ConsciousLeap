@@ -56,8 +56,10 @@ const Therapists = () => {
               : "md:hidden block fixed top-[21vw] w-[60vw] right-0 bg-white h-full"
           }`}
         >
-          <div className="w-full flex justify-end">
-            <AiOutlineClose size={25} className="block" />
+          <div className="w-full flex justify-end mt-[2vw] pr-[2vw]">
+            <AiOutlineClose size={22} className="block" onClick={(e)=>{
+              setShowFilters(false)
+            }} />
           </div>
           <div
             onClick={(e) => {
@@ -186,7 +188,7 @@ const Therapists = () => {
             <div className="flex items-center md:mb-0 mb-4 w-full">
               <AiOutlineFilter
                 size={30}
-                className="mr-5"
+                className="mr-5 block md:hidden"
                 onClick={(e) => {
                   setShowFilters(!showFilters);
                 }}

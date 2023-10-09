@@ -34,7 +34,9 @@ const Whyconsciousleap = () => {
     video.muted = true;
     const source = document.createElement("source");
     source.src = "/Why-consciousleap.mp4";
-    if (!video.innerHTML.includes("Why-consciousleap")) {
+    let videoElement = document.getElementById("video-container")
+    console.log(videoElement.innerText)
+    if (!videoElement.innerHTML.includes("Why-consciousleap")) {
       video.appendChild(source);
       document.getElementById("video-container").appendChild(video);
     }
@@ -49,7 +51,7 @@ const Whyconsciousleap = () => {
       >
         Why consciousleap?
       </h1>
-      <div id="video-container" className="px-5"></div>
+      <div id="video-container" className="px-4 rounded-md md:px-5"></div>
     </div>
   );
 };
