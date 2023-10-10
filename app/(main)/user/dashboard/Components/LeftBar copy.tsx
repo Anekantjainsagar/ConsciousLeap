@@ -11,16 +11,19 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 const RightBar = () => {
-  const [dateState, setDateState] = useState(new Date());
-  const changeDate = (e) => {
-    setDateState(e);
-  };
+  const [dateState, setDate] = useState(new Date());
+
   return (
     <div className="w-3/12">
       <div className="rounded-lg w-full h-fit bg-gradient-to-r mb-4 from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full w-full rounded-lg p-[1vw] items-center justify-center bg-white flex flex-col">
           <h1 className="text-websiteBlue text-xl mb-2">Calender</h1>
-          <Calendar value={dateState} onChange={changeDate} />
+          <Calendar
+            value={dateState}
+            onChange={(e: any) => {
+              setDate(e);
+            }}
+          />
         </div>
       </div>
       <Image src={myJournel} alt="Image" />

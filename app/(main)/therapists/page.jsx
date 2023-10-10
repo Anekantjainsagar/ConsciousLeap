@@ -18,7 +18,7 @@ const Therapists = () => {
   gsap.registerPlugin(ScrollTrigger);
   const [showGrid, setShowGrid] = useState(true);
   const [showFilters, setShowFilters] = useState(true);
-  const [showLanguages, setShowLanguages] = useState(false);
+  const [showLanguages, setShowLanguage] = useState(false);
   const [showExpertise, setShowExpertise] = useState(false);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Therapists = () => {
         Our Mindful Therapists
       </h1>
       <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-4 md:mt-3 mb-16 md:mb-10">
-        "Our Mindful Therapists" are the founding pillars of consciousleap.
+        `Our Mindful Therapists` are the founding pillars of consciousleap.
       </p>
       <div className="mt-[3vw] px-[4vw] md:px-[6vw] w-full flex">
         <div
@@ -57,12 +57,14 @@ const Therapists = () => {
           }`}
         >
           <div className="w-full flex justify-end mt-[2vw] pr-[2vw]">
-            <AiOutlineClose size={22} className="block" onClick={(e)=>{
-              setShowFilters(false)
-            }} />
+            <AiOutlineClose
+              size={22}
+              className="block"
+              onClick={() => setShowFilters(false)}
+            />
           </div>
           <div
-            onClick={(e) => {
+            onClick={() => {
               setShowExpertise(!showExpertise);
             }}
             className="border-b-2 cursor-pointer flex justify-between items-center px-3 py-2.5 font-semibold"
@@ -91,8 +93,8 @@ const Therapists = () => {
             })}
           </div>
           <div
-            onClick={(e) => {
-              setShowLanguages(!showLanguages);
+            onClick={() => {
+              setShowLanguage(!showLanguages);
             }}
             className="border-b-2 cursor-pointer flex justify-between items-center px-3 py-2.5 font-semibold"
           >
@@ -118,7 +120,7 @@ const Therapists = () => {
         </div>
         <div className="md:block hidden w-2/12 mr-1">
           <div
-            onClick={(e) => {
+            onClick={() => {
               setShowFilters(!showFilters);
             }}
             className="border-b-2 cursor-pointer flex justify-between items-center px-3 py-2.5 font-semibold"
@@ -128,7 +130,7 @@ const Therapists = () => {
           </div>
           <div className={`${showFilters ? "hidden" : "block"}`}>
             <div
-              onClick={(e) => {
+              onClick={() => {
                 setShowExpertise(!showExpertise);
               }}
               className="border-b-2 cursor-pointer flex justify-between items-center px-3 py-2.5 font-semibold"
@@ -157,8 +159,8 @@ const Therapists = () => {
               })}
             </div>
             <div
-              onClick={(e) => {
-                setShowLanguages(!showLanguages);
+              onClick={() => {
+                setShowLanguage(!showLanguages);
               }}
               className="border-b-2 cursor-pointer flex justify-between items-center px-3 py-2.5 font-semibold"
             >
@@ -189,7 +191,7 @@ const Therapists = () => {
               <AiOutlineFilter
                 size={30}
                 className="mr-5 block md:hidden"
-                onClick={(e) => {
+                onClick={() => {
                   setShowFilters(!showFilters);
                 }}
               />
@@ -224,14 +226,14 @@ const Therapists = () => {
               <BsFillGrid3X3GapFill
                 className="text-websiteBlue border p-2 cursor-pointer"
                 size={35}
-                onClick={(e) => {
+                onClick={() => {
                   setShowGrid(true);
                 }}
               />
               <AiOutlineUnorderedList
                 className="text-websiteBlue border p-2 cursor-pointer"
                 size={35}
-                onClick={(e) => {
+                onClick={() => {
                   setShowGrid(false);
                 }}
               />
@@ -293,7 +295,7 @@ const GridBlock = () => {
               })}
             </div>
             <button
-              onClick={(e) => {
+              onClick={() => {
                 history.push("/therapists/sagrika");
               }}
               className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
@@ -329,7 +331,7 @@ const GridBlock = () => {
               );
             })}
             <button
-              onClick={(e) => {
+              onClick={() => {
                 history.push("/therapists/sagrika");
               }}
               className="bg-websiteBlue text-sm px-7 py-1 mt-2 rounded-md text-white font-semibold"
@@ -379,7 +381,7 @@ const ListBlock = () => {
               })}
             </div>
             <button
-              onClick={(e) => {
+              onClick={() => {
                 history.push("/therapists/sagrika");
               }}
               className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
@@ -419,7 +421,7 @@ const ListBlock = () => {
               })}
             </div>
             <button
-              onClick={(e) => {
+              onClick={() => {
                 history.push("/therapists/sagrika");
               }}
               className="bg-websiteBlue px-12 py-1.5 rounded-lg text-white font-semibold"

@@ -63,7 +63,7 @@ const RegisterTherapist = () => {
         })}
       </div>
       <h1 className="text-4xl md:text-5xl text-websiteBlue font-medium text-center pt-[10vw] mb-4">
-        Let's heal the world together
+        Let`s heal the world together
       </h1>
       <p className="font-light md:w-full w-11/12 mx-auto text-center pb-8">
         To take the first step towards joining us, fill out the form below,

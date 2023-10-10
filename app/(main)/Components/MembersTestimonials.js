@@ -48,7 +48,7 @@ const MembersTestimonials = () => {
         Member Testimonials
       </h1>
       <p className="mb-[16vw] md:mb-[4vw] text-center font-light tracking-wide">
-        Here's what our members say about their experiences with Therapy at
+        Here`s what our members say about their experiences with Therapy at
         consciousleap.
       </p>
       <BootstrapCarousel />

@@ -28,6 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     "app/therapists/[name]/page.jsx"
-, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx"  ],
+, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx", "app/(main)/therapists/page.jsx"  ],
   "exclude": ["node_modules"]
 }
