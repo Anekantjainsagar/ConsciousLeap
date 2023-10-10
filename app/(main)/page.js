@@ -1,6 +1,6 @@
 import BootstrapCarousel from "./Components/Carousel";
 import Line1 from "./Components/Lines/Line1";
-import Whyconsciousleap from "./Components/Whyconsciousleap";
+import Whyconsciousleap from "./Components/WhyConsciousLeap";
 import Line2 from "./Components/Lines/Line2";
 import Drawer from "./Components/Drawer";
 import CommunicationChannels from "./Components/CommunicationChannels";
