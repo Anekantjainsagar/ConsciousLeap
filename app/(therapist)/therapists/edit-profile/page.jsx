@@ -9,9 +9,11 @@ import logo from "@/(main)/Assets/logo.png";
 
 import sagrika from "@/(main)/Assets/sagrika.jpeg";
 
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
+import { Textarea } from "@material-tailwind/react";
+import Link from "next/link";
 
 const EditProfile = () => {
   const [showLeftBar, setShowLeftBar] = useState(true);
@@ -66,9 +68,11 @@ const EditProfile = () => {
         <div className="px-[1.5vw] py-[3vw]">
           <h1 className="text-lg">
             Therapists settings{" "}
-            <span className="text-base text-gray-500 hover:underline transition-all cursor-pointer">
-              (Visit Profile)
-            </span>
+            <Link href="/therapists/sagrika" target="_blank">
+              <span className="text-base text-gray-500 hover:underline transition-all cursor-pointer">
+                (Visit Profile)
+              </span>
+            </Link>
           </h1>
           <div className="px-3">
             <div
@@ -124,14 +128,174 @@ const EditProfile = () => {
               />
             </div>
             <div
-              className="grid pt-5 items-center"
+              className="grid pt-5 items-start"
               style={{ gridTemplateColumns: "15% 85%" }}
             >
               <p className="font-light text-[14px]">Expertise *</p>
-              <input
-                type="text"
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
-              />
+              <div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                    Add New
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grid pt-5 items-start"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">Qualifications *</p>
+              <div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                    Add New
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grid pt-5 items-start"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">Speaks *</p>
+              <div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="pl-4">
+                    <AiOutlineClose
+                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                      size={35}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center w-full mb-4">
+                  <input
+                    type="text"
+                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                  />
+                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                    Add New
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="grid pt-5 items-start"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">About Therapist*</p>
+              <textarea
+                className="border outline-none text-gray-600 rounded-md px-4 py-2"
+                rows={3}
+                cols={3}
+              ></textarea>
             </div>
           </div>
         </div>

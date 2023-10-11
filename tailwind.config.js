@@ -22,6 +22,7 @@ module.exports = withMT({
         websiteBlue: "#4e66ad",
         pinkishRed: "#f58e88",
         oceanGreen: "#7dcfcd",
+        lightRed: "#fde4e9",
       },
       screens: {
         mobile: "540px",
@@ -31,5 +32,5 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 });

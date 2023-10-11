@@ -292,13 +292,13 @@ const NavItems = ({ e }) => {
         }}
         className={`absolute ${
           !hover ? "hidden" : "block"
-        } bg-white text-xs w-fit px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey break-keep`}
+        } bg-white text-xs w-[13vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
       >
         <div className="mt-2 bg-transparent"></div>
         {e?.items.map((data, i) => {
           return (
             <p
-              className="mb-2.5 text-darkGrey blueHover cursor-pointer"
+              className="mb-[13px] text-darkGrey blueHover cursor-pointer"
               key={i}
               onClick={(e) => {
                 const element = document.getElementById(
@@ -317,7 +317,8 @@ const NavItems = ({ e }) => {
                 }
               }}
             >
-              {data?.name}
+              {data?.name.slice(0, 25) +
+                (data?.name?.length > 25 ? "...." : "")}
             </p>
           );
         })}

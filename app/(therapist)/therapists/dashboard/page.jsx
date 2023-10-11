@@ -221,7 +221,7 @@ const TaskBlock = ({ data }) => {
         <Image src={data?.image} alt="Sun rise" className="w-[3vw]" />
         <p className="text-websiteBlue text-lg">{data?.text}</p>
         <div className="text-oceanGreen">
-          <Checkbox color="teal" defaultChecked />
+          <input type="checkbox" className="checkbox checkbox-accent" />
         </div>
       </div>
     </div>

@@ -63,50 +63,59 @@ const RegisterTherapist = () => {
         })}
       </div>
       <h1 className="text-4xl md:text-5xl text-websiteBlue font-medium text-center pt-[10vw] mb-4">
-        Let`s heal the world together
+        Let&#39;s heal the world together
       </h1>
       <p className="font-light md:w-full w-11/12 mx-auto text-center pb-8">
         To take the first step towards joining us, fill out the form below,
         providing us with the necessary details to get to know you better
       </p>
-      <div className="rounded-lg w-[90vw] md:w-[30vw] mx-auto h-fit bg-gradient-to-tr mt-[2vw] from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-lg w-[90vw] md:w-[30vw] text-sm mx-auto h-fit bg-gradient-to-tr mt-[2vw] from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full w-full py-2 md:py-4 px-[3vw] md:px-[1vw] rounded-lg justify-center bg-white flex flex-col">
           <h1 className="text-websiteBlue font-medium pb-2 border-b">
             Personal Information
           </h1>
+          <p className="mt-4 text-websiteBlue font-light">Your Name *</p>
           <input
             type="text"
             placeholder="Name"
-            className="border px-4 rounded-sm py-1.5 outline-none mt-4"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
+          <p className="mt-4 text-websiteBlue font-light">Your Email *</p>
           <input
             type="text"
             placeholder="Email"
-            className="border px-4 rounded-sm py-1.5 outline-none mt-4"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
+          <p className="mt-4 text-websiteBlue font-light">Your Password *</p>
           <input
             type="password"
             placeholder="Password"
-            className="border px-4 rounded-sm py-1.5 outline-none mt-4"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           <h1 className="text-websiteBlue font-medium mt-8 pb-2 border-b">
             Basic Information
           </h1>
+          <p className="mt-4 text-websiteBlue font-light">
+            Therapist Display Name *
+          </p>
           <input
             type="text"
             placeholder="Therapist Display Name"
-            className="border px-4 rounded-sm py-1.5 outline-none mt-4"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
+          <p className="mt-4 text-websiteBlue font-light">
+            Short Description of Profile *
+          </p>
           <input
             type="text"
             placeholder="Short Description of Profile"
-            className="border px-4 rounded-sm py-1.5 outline-none mt-4"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           <h1 className="text-websiteBlue font-medium mt-8 pb-2 border-b">
             Upload your resume
           </h1>
           <input
-            class="mt-5 relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-websiteBlue transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-websiteBlue file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-websiteBlue focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-websiteBlue dark:file:text-neutral-100 dark:focus:border-primary"
+            class="mt-5 relative m-0 block w-full text-sm min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-websiteBlue transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-websiteBlue file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-websiteBlue focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-websiteBlue dark:file:text-neutral-100 dark:focus:border-primary"
             type="file"
           />
           <button className="bg-websiteBlue px-8 py-2 text-white mt-5 rounded-md w-fit mx-auto">
