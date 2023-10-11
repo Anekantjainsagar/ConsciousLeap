@@ -55,7 +55,7 @@ const Dashboard = () => {
         />
         <div className="flex flex-col items-center">
           <p className="mt-1 text-lg">Sagrika Rastogi</p>
-          <p className="text-sm text-gray-700">
+          <p className="text-sm text-gray-700 break-words w-[13vw] text-center">
             vandita.sharma@consciousleap.co
           </p>
         </div>
@@ -221,7 +221,10 @@ const TaskBlock = ({ data }) => {
         <Image src={data?.image} alt="Sun rise" className="w-[3vw]" />
         <p className="text-websiteBlue text-lg">{data?.text}</p>
         <div className="text-oceanGreen">
-          <input type="checkbox" className="checkbox checkbox-accent" />
+          <input
+            type="checkbox"
+            class="bg-red-100 border-red-300 text-red-500 focus:ring-red-200"
+          />
         </div>
       </div>
     </div>
