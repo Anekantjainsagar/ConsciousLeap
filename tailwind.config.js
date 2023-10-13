@@ -23,6 +23,8 @@ module.exports = withMT({
         pinkishRed: "#f58e88",
         oceanGreen: "#7dcfcd",
         lightRed: "#fde4e9",
+        newBlue: "#3c5cd5",
+        newPurple: "#50487f",
       },
       screens: {
         mobile: "540px",
