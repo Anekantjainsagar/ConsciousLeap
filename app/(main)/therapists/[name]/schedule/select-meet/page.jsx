@@ -16,9 +16,10 @@ const SelectMeet = () => {
         {[
           { time: "40 mins", image: fortyMin, rs: 850 },
           { time: "60 mins", image: sixtyMin, rs: 1250 },
-        ].map((e) => {
+        ].map((e, i) => {
           return (
             <div
+              key={i}
               onClick={(e) => {
                 router.push("/therapists/sagrika/schedule/select-date");
               }}

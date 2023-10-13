@@ -62,14 +62,15 @@ const SelectDate = () => {
                 name: "Night",
                 time: ["08:30 pm"],
               },
-            ].map((e) => {
+            ].map((e, i) => {
               return (
-                <div className="mb-5">
+                <div className="mb-5" key={i}>
                   <p>{e?.name}</p>
                   <div className="flex flex-wrap mt-1">
                     {e?.time?.map((time) => {
                       return (
                         <div
+                          key={time}
                           onClick={(e) => {
                             router.push(
                               "/therapists/sagrika/schedule/enter-details"

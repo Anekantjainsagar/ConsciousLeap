@@ -45,7 +45,6 @@ const CommunicationChannels = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-8 w-[98vw] items-center">
         {[image1, image2, image3, image4].map((e, i) => {
-          console.log(e?.src)
           return (
             <div key={i} className="flex justify-center items-center">
               <Image
