@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { BiWorld } from "react-icons/bi";
 import Image from "next/image";
@@ -7,10 +7,13 @@ import image from "@/(main)/Assets/sagrika.jpeg";
 import Link from "next/link";
 import { AiOutlineLogout, AiOutlineUser } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import Context from "@/Context/Context";
+import { deleteCookie } from "cookies-next";
 
 const Navbar = ({ showLeftBar, setShowLeftBar }) => {
   const [showNav, setShowNav] = React.useState(false);
   const router = useRouter();
+  const { therapists } = useContext(Context);
 
   return (
     <di>
@@ -42,7 +45,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
             className="w-[3vw] rounded-full mr-3"
           />
           <div>
-            <p>Sagrika Rastogi</p>
+            <p>{therapists?.therapist?.name}</p>
             <p className="-mt-0.5 text-sm text-gray-400">Therapist</p>
           </div>
         </div>
@@ -64,6 +67,8 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
         <div
           onClick={(e) => {
             router.push("/");
+            therapists.setIsTherapistLogin(false);
+            deleteCookie("therapist_token");
           }}
           className="px-3 py-1 cursor-pointer flex items-center hover:bg-blue-gray-600 hover:text-white transition-all rounded-lg"
         >

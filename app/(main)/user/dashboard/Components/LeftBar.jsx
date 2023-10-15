@@ -1,20 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import image from "../../../Assets/dashboard-user-image.jpeg";
 import ideas from "../../../Assets/ideas.jpg";
 import books from "../../../Assets/book.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Context from "@/Context/Context";
 
 const LeftBar = () => {
   const history = useRouter();
+  let { login } = useContext(Context);
+
   return (
     <div className="w-3/12 rounded-md bg-white py-6">
       <div className="flex flex-col items-center text-lightGrey font-light">
         <Image src={image} alt="User image" className="w-5/12" />
-        <p className="mt-1">Name: Anekant Jain</p>
-        <p>+917692045606</p>
-        <div className="rounded-full w-[85%] mt-7 cursor-pointer mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+        <p className="mt-1.5 mb-0">Name: {login?.name}</p>
+        <p className="mt-0.5">{login?.phone}</p>
+        <div className="rounded-full w-[85%] mt-6 cursor-pointer mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
           <div
             onClick={(e) => {
               history.push("/user/dashboard/edit");

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import therapistReview from "../../Assets/therapist-review.png";
 import scheduleAppointment from "../../Assets/schedule-a-session.png";
@@ -17,9 +17,18 @@ import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/navigation";
 import LeftBar from "./Components/LeftBar";
 import RightBar from "./Components/LeftBar copy";
+import { getCookie } from "cookies-next";
+import Context from "@/Context/Context";
 
 const Dashboard = () => {
   const history = useRouter();
+  let { login, isLogin } = useContext(Context);
+
+  useEffect(() => {
+    if (!isLogin) {
+      history.push("/user/login");
+    }
+  }, []);
 
   return (
     <>
@@ -29,39 +38,34 @@ const Dashboard = () => {
           {" "}
           <div className="relative mb-6">
             <Image src={bg} alt="Background" />
-            <div className="flex px-[4vw] justify-between items-center h-full absolute top-0 left-0">
+            <div className="flex px-[2vw] justify-between items-center h-full absolute top-0 left-0">
               <h1 className="text-2xl text-white font-light">
-                Hi Kunal Muthreja, Welcome to <br /> #oneness
+                Hi {login?.name}, Welcome to #oneness
               </h1>
-              <Image
-                src={logoPng}
-                alt="Logo png"
-                className="w-3/12 block ml-5"
-              />
+              <Image src={logoPng} alt="Logo png" className="w-[20%]" />
             </div>
           </div>
           <div className="flex justify-between items-center">
-            <Image
-              className="bg-white p-5 rounded-3xl w-[30%] cursor-pointer"
-              src={therapistReview}
-              alt="Schedule appointment"
-              onClick={(e) => {
-                history.push("/therapist-review");
-              }}
-            />
-            <Image
-              className="bg-white p-5 rounded-3xl w-[30%] cursor-pointer"
-              src={scheduleAppointment}
-              alt="Schedule appointment"
-            />
-            <Image
-              className="bg-white p-5 rounded-3xl w-[30%] cursor-pointer"
-              src={findNewTherapist}
-              alt="Schedule appointment"
-              onClick={(e) => {
-                history.push("/therapists");
-              }}
-            />
+            {[
+              { image: therapistReview, route: "/therapist-review" },
+              { image: scheduleAppointment, route: "" },
+              { image: findNewTherapist, route: "/therapists" },
+            ].map((e, i) => {
+              return (
+                <div
+                  className="cursor-pointer bg-white w-[32%] p-[2.5vw] h-[8vw] flex justify-center items-center rounded-3xl"
+                  key={i}
+                >
+                  <Image
+                    src={e?.image}
+                    alt={e?.image?.src}
+                    onClick={(event) => {
+                      history.push(e?.route);
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
           <div className="bg-white rounded-3xl mt-6 p-4">
             <h1 className="text-websiteBlue font-light text-center">

@@ -35,7 +35,6 @@ const Whyconsciousleap = () => {
     const source = document.createElement("source");
     source.src = "/Why-consciousleap.mp4";
     let videoElement = document.getElementById("video-container")
-    console.log(videoElement.innerText)
     if (!videoElement.innerHTML.includes("Why-consciousleap")) {
       video.appendChild(source);
       document.getElementById("video-container").appendChild(video);

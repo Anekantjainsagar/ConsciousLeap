@@ -1,32 +1,43 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
 import Captcha from "../../Components/Authorized/Captcha";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
+import Context from "@/Context/Context";
+import { getCookie } from "cookies-next";
 
 const UserRegister = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    password: "",
-  });
+  const { user, setUser } = useContext(Context);
   const [termsPolicies, setTermsPolicies] = useState(false);
   const captchaRef = useRef(null);
   const history = useRouter();
   const router = useRouter();
+
+  useEffect(() => {
+    let token = getCookie("token");
+    if (token) {
+      history.push("/user/dashboard");
+    }
+  }, []);
 
   const onSignUp = (e) => {
     e.preventDefault();
     if (termsPolicies) {
       if (!(!user?.name || !user?.email || !user?.password || !user?.phone)) {
         axios
-          .post(`${BASE_URL}/login/signup`, user)
+          .post(`${BASE_URL}/login/otp-verification`, user)
           .then((response) => {
-            console.log(response);
-            router.push("/user/register/otp-verification");
+            if (response.status == 200) {
+              toast.success(response.data.data);
+              setUser({ ...user, original: response.data.otp });
+              setTimeout(() => {
+                router.push("/user/register/otp-verification");
+              }, 600);
+            } else {
+              toast.error(response.data.data);
+            }
           })
           .catch((err) => {
             console.log(err);

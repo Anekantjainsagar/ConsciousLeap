@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import image from "../../Assets/register.png";
 import Image from "next/image";
 
@@ -15,7 +16,24 @@ import img10 from "../../Assets/registerTherapist/join10.png";
 import img11 from "../../Assets/registerTherapist/join11.png";
 import img12 from "../../Assets/registerTherapist/join12.png";
 
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
 const RegisterTherapist = () => {
+  const [getOtp, setGetOtp] = useState(false);
+  let router = useRouter();
+  const [user, setUser] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    displayName: "",
+    desc: "",
+    original: "",
+    otp: "",
+  });
   let registerData = [
     { image: img1, title: "Unbinding", desc: "Free to work elsewhere." },
     { image: img2, title: "Virtual", desc: "Work from anywhere." },
@@ -35,8 +53,80 @@ const RegisterTherapist = () => {
     { image: img12, title: "International", desc: "Heal the world." },
   ];
 
+  const onGetOtp = () => {
+    console.log(user);
+    if (
+      !(
+        !user?.name ||
+        !user?.email ||
+        !user?.password ||
+        !user?.phone ||
+        !user?.displayName ||
+        !user?.desc
+      )
+    ) {
+      axios
+        .post(`${BASE_URL}/therapist/otp-verification`, user)
+        .then((response) => {
+          if (response.status == 200) {
+            toast.success(response.data.data);
+            setUser({ ...user, original: response.data.otp });
+            setGetOtp(true);
+          } else {
+            toast.error(response.data.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.message);
+        });
+    } else {
+      toast.error("Please fill all the details");
+    }
+  };
+
+  const onRegister = () => {
+    if (user?.otp) {
+      if (user?.otp == user?.original) {
+        axios
+          .post(`${BASE_URL}/therapist/signup`, user)
+          .then((response) => {
+            console.log(response);
+            if (response.status == 200) {
+              toast.success("Registered successfully");
+              setTimeout(() => {
+                router.push("/therapists/dashboard");
+                let token = response.data.token;
+                setCookie("therapist_token", token);
+                setLogin(response.data);
+                setUser({
+                  name: "",
+                  phone: "",
+                  email: "",
+                  password: "",
+                  displayName: "",
+                  desc: "",
+                  original: "",
+                  otp: "",
+                });
+                setGetOtp(false);
+              }, 500);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      } else {
+        toast.error("OTP is incorrect");
+      }
+    } else {
+      toast.error("Please enter the OTP");
+    }
+  };
+
   return (
     <div className="overflow-x-hidden">
+      <Toaster />
       <h1 className="text-4xl md:text-5xl text-websiteBlue font-medium text-center pt-[4vw] mb-2 md:mb-5">
         Register as a Therapist
       </h1>
@@ -77,18 +167,40 @@ const RegisterTherapist = () => {
           <p className="mt-4 text-websiteBlue font-light">Your Name *</p>
           <input
             type="text"
+            value={user?.name}
+            onChange={(e) => {
+              setUser({ ...user, name: e.target.value });
+            }}
             placeholder="Name"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           <p className="mt-4 text-websiteBlue font-light">Your Email *</p>
           <input
             type="text"
+            value={user?.email}
+            onChange={(e) => {
+              setUser({ ...user, email: e.target.value });
+            }}
             placeholder="Email"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
+          />
+          <p className="mt-4 text-websiteBlue font-light">Your Phone *</p>
+          <input
+            type="text"
+            value={user?.phone}
+            onChange={(e) => {
+              setUser({ ...user, phone: e.target.value });
+            }}
+            placeholder="Phone"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           <p className="mt-4 text-websiteBlue font-light">Your Password *</p>
           <input
             type="password"
+            value={user?.password}
+            onChange={(e) => {
+              setUser({ ...user, password: e.target.value });
+            }}
             placeholder="Password"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
@@ -100,6 +212,10 @@ const RegisterTherapist = () => {
           </p>
           <input
             type="text"
+            value={user?.displayName}
+            onChange={(e) => {
+              setUser({ ...user, displayName: e.target.value });
+            }}
             placeholder="Therapist Display Name"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
@@ -108,18 +224,39 @@ const RegisterTherapist = () => {
           </p>
           <input
             type="text"
+            value={user?.desc}
+            onChange={(e) => {
+              setUser({ ...user, desc: e.target.value });
+            }}
             placeholder="Short Description of Profile"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
-          <h1 className="text-websiteBlue font-medium mt-8 pb-2 border-b">
+          <h1 className="text-websiteBlue font-medium mt-6 border-b">
             Upload your resume
           </h1>
           <input
-            class="mt-5 relative m-0 block w-full text-sm min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-websiteBlue transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-websiteBlue file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-websiteBlue focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-websiteBlue dark:file:text-neutral-100 dark:focus:border-primary"
+            class="mt-2 relative m-0 block w-full text-sm min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-websiteBlue transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-websiteBlue file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-websiteBlue focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-websiteBlue dark:file:text-neutral-100 dark:focus:border-primary"
             type="file"
           />
-          <button className="bg-websiteBlue px-8 py-2 text-white mt-5 rounded-md w-fit mx-auto">
-            Register
+          {getOtp ? (
+            <>
+              <p className="mt-4 text-websiteBlue font-light">OTP *</p>
+              <input
+                type="text"
+                value={user?.otp}
+                onChange={(e) => {
+                  setUser({ ...user, otp: e.target.value });
+                }}
+                placeholder="Enter OTP"
+                className="border px-4 rounded-sm py-1.5 outline-none mt-2"
+              />
+            </>
+          ) : null}
+          <button
+            onClick={!getOtp ? onGetOtp : onRegister}
+            className="bg-websiteBlue px-8 py-2 text-white mt-5 rounded-md w-fit mx-auto"
+          >
+            {getOtp ? "Register" : "Get Otp"}
           </button>
         </div>
       </div>

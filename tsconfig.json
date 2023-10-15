@@ -28,6 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     "app/therapists/[name]/page.jsx"
-, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx", "app/(main)/therapists/page.jsx"  ],
+, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx", "app/(main)/therapists/page.jsx", "app/(main)/user/dashboard/Components/LeftBar.jsx", "app/(main)/user/dashboard/Components/LeftBar copy.jsx"  ],
   "exclude": ["node_modules"]
 }

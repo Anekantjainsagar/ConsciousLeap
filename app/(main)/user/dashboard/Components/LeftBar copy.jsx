@@ -20,7 +20,7 @@ const RightBar = () => {
           <h1 className="text-websiteBlue text-xl mb-2">Calender</h1>
           <Calendar
             value={dateState}
-            onChange={(e: any) => {
+            onChange={(e) => {
               setDate(e);
             }}
           />

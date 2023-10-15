@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import image from "../../Assets/logo.png";
 
 import {
@@ -12,6 +12,8 @@ import {
 
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
+import Context from "@/Context/Context";
+import { deleteCookie,setCookie } from "cookies-next";
 
 let nav = [
   {
@@ -147,28 +149,53 @@ let nav = [
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   let history = useRouter();
+  const { isLogin, setIsLogin } = useContext(Context);
 
   return (
     <div>
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
         {/* TopBar */}
         <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
-          <div
-            onClick={(e) => {
-              history.push("/user/login");
-            }}
-            className="px-3 cursor-pointer border-r gradientHover"
-          >
-            Login
-          </div>
-          <div
-            onClick={(e) => {
-              history.push("/user/register");
-            }}
-            className="px-3 cursor-pointer gradientHover"
-          >
-            Registration
-          </div>
+          {isLogin ? (
+            <>
+              <div
+                onClick={(e) => {
+                  history.push("/user/dashboard");
+                }}
+                className="px-3 cursor-pointer border-r gradientHover"
+              >
+                Member Dashboard
+              </div>
+              <div
+                onClick={(e) => {
+                  setIsLogin(false);
+                  deleteCookie("token");
+                }}
+                className="px-3 cursor-pointer gradientHover"
+              >
+                Logout
+              </div>
+            </>
+          ) : (
+            <>
+              <div
+                onClick={(e) => {
+                  history.push("/user/login");
+                }}
+                className="px-3 cursor-pointer border-r gradientHover"
+              >
+                Login
+              </div>
+              <div
+                onClick={(e) => {
+                  history.push("/user/register");
+                }}
+                className="px-3 cursor-pointer gradientHover"
+              >
+                Registration
+              </div>
+            </>
+          )}
         </div>
         {/* Navbar Desktop*/}
         <div className="py-2 px-3 hidden md:flex justify-between items-center">

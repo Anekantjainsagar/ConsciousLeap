@@ -1,14 +1,66 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import Captcha from "../../Components/Authorized/Captcha";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import { BASE_URL } from "@/Utils/urls";
+import { setCookie } from "cookies-next";
+import Context from "@/Context/Context";
 
 const UserLogin = () => {
   const captchaRef = useRef(null);
+  let { isLogin } = useContext(Context);
   const history = useRouter();
+  const router = useRouter();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  useEffect(() => {
+    if (isLogin) {
+      history.push("/user/dashboard");
+    }
+  }, []);
+
+  const onLogin = () => {
+    if (!(!user?.email || !user?.password)) {
+      axios
+        .post(`${BASE_URL}/login/signin`, user)
+        .then((response) => {
+          if (response.status == 200) {
+            toast.success("Login successfully");
+            setTimeout(() => {
+              let token = response.data.jwtToken;
+              if (response.data.user == "Therapist") {
+                router.push("/therapists/dashboard");
+                setCookie("therapist_token", token);
+              } else if (response.data.user == "User") {
+                router.push("/");
+                setCookie("token", token);
+              }
+              setUser({
+                email: "",
+                password: "",
+              });
+            }, 500);
+          } else {
+            toast.error(response.data.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.message);
+        });
+    } else {
+      toast.error("Please fill all the details");
+    }
+  };
 
   return (
     <div className="py-10">
+      <Toaster />
       <div className="rounded-xl w-[90vw] md:w-[30vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="flex flex-col py-[3vw] px-[4vw] md:px-[1.5vw] md:py-[1.5vw] h-full w-full rounded-xl items-center justify-center bg-white">
           <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
@@ -16,23 +68,40 @@ const UserLogin = () => {
           </h1>
           <input
             type="text"
+            value={user?.email}
+            onChange={(e) => {
+              setUser({ ...user, email: e.target.value });
+            }}
             className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
           <input
             type="password"
+            value={user?.password}
+            onChange={(e) => {
+              setUser({ ...user, password: e.target.value });
+            }}
             className="w-full border px-3 py-1.5 outline-none rounded-md"
             placeholder="Password"
           />
           <div className="flex justify-between w-full items-center p-2 text-websiteBlue text-sm opacity-50">
             <div className="flex items-center">
-              <input type="checkbox" className="mr-1" />
-              <p>Remember Me</p>
+              <input
+                type="checkbox"
+                className="mr-1 cursor-pointer"
+                id="remember"
+              />
+              <label htmlFor="remember" className="cursor-pointer">
+                Remember Me
+              </label>
             </div>
             <p>Forgot Password?</p>
           </div>
           <Captcha captchaRef={captchaRef} />
-          <button className="bg-websiteBlue text-white px-7 font-semibold py-1.5 rounded-lg">
+          <button
+            onClick={onLogin}
+            className="bg-websiteBlue text-white px-7 font-semibold py-1.5 rounded-lg"
+          >
             Login
           </button>
           <p

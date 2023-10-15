@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 
 import Navbar from "../../Components/Utils/Navbar";
@@ -12,12 +12,39 @@ import sagrika from "@/(main)/Assets/sagrika.jpeg";
 import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
-import { Textarea } from "@material-tailwind/react";
 import Link from "next/link";
+import Context from "@/Context/Context";
 
 const EditProfile = () => {
   const [showLeftBar, setShowLeftBar] = useState(true);
   const router = useRouter();
+  const { therapists } = useContext(Context);
+  const [therapist, setTherapist] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    desc: "",
+    experience: "",
+    expertise: [],
+    qualifications: [],
+    speaks: [],
+    about: "",
+  });
+
+  useEffect(() => {
+    const { therapist } = therapists;
+    setTherapist({
+      name: therapist?.name,
+      phone: therapist?.phone,
+      email: therapist?.email,
+      desc: therapist?.desc,
+      experience: therapist?.experience,
+      expertise: therapist?.expertise,
+      qualifications: therapist?.qualifications,
+      speaks: therapist?.speaks,
+      about: therapist?.about,
+    });
+  }, []);
 
   return (
     <div className="flex ">
@@ -33,9 +60,9 @@ const EditProfile = () => {
           className="w-10/12 rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-lg">Sagrika Rastogi</p>
-          <p className="text-sm text-gray-700">
-            vandita.sharma@consciousleap.co
+          <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
+          <p className="text-sm text-gray-700 break-words w-[13vw] text-center">
+            {therapists?.therapist?.email}
           </p>
         </div>
         <div>
@@ -82,6 +109,10 @@ const EditProfile = () => {
               <p className="font-light text-[14px]">Therapist Name *</p>
               <input
                 type="text"
+                value={therapist?.name}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, name: e.target.value });
+                }}
                 className="border outline-none text-gray-600 rounded-md px-4 py-1"
               />
             </div>
@@ -104,6 +135,10 @@ const EditProfile = () => {
               <p className="font-light text-[14px]">Therapist Phone</p>
               <input
                 type="text"
+                value={therapist?.phone}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, phone: e.target.value });
+                }}
                 className="border outline-none text-gray-600 rounded-md px-4 py-1"
               />
             </div>
@@ -114,6 +149,10 @@ const EditProfile = () => {
               <p className="font-light text-[14px]">Short Description *</p>
               <input
                 type="text"
+                value={therapist?.desc}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, desc: e.target.value });
+                }}
                 className="border outline-none text-gray-600 rounded-md px-4 py-1"
               />
             </div>
@@ -124,6 +163,10 @@ const EditProfile = () => {
               <p className="font-light text-[14px]">Experience *</p>
               <input
                 type="text"
+                value={therapist?.experience}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, experience: e.target.value });
+                }}
                 className="border outline-none text-gray-600 rounded-md px-4 py-1"
               />
             </div>
@@ -133,30 +176,6 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Expertise *</p>
               <div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
                 <div className="flex items-center w-full mb-4">
                   <input
                     type="text"
@@ -203,30 +222,6 @@ const EditProfile = () => {
                     type="text"
                     className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
                   />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
                   <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
                     Add New
                   </div>
@@ -239,30 +234,6 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Speaks *</p>
               <div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
                 <div className="flex items-center w-full mb-4">
                   <input
                     type="text"
@@ -295,6 +266,10 @@ const EditProfile = () => {
                 className="border outline-none text-gray-600 rounded-md px-4 py-2"
                 rows={3}
                 cols={3}
+                value={therapist?.about}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, about: e.target.value });
+                }}
               ></textarea>
             </div>
           </div>

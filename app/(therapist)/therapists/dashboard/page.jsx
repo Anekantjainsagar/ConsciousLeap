@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 
 import Navbar from "../../Components/Utils/Navbar";
@@ -34,11 +34,20 @@ import sagrika from "@/(main)/Assets/sagrika.jpeg";
 import { AiOutlineHome } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
+import Context from "@/Context/Context";
+import { getCookie } from "cookies-next";
 
 const Dashboard = () => {
   const [dateState, setDate] = useState(new Date());
   const [showLeftBar, setShowLeftBar] = useState(true);
   const router = useRouter();
+  const { therapists } = useContext(Context);
+
+  useEffect(() => {
+    if (getCookie("therapist_token")?.length <= 1) {
+      router.push("/user/login");
+    }
+  }, []);
 
   return (
     <div className="flex ">
@@ -54,9 +63,9 @@ const Dashboard = () => {
           className="w-10/12 rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-lg">Sagrika Rastogi</p>
+          <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
           <p className="text-sm text-gray-700 break-words w-[13vw] text-center">
-            vandita.sharma@consciousleap.co
+            {therapists?.therapist?.email}
           </p>
         </div>
         <div>
@@ -96,7 +105,7 @@ const Dashboard = () => {
               />
               <div className="absolute top-0 left-0 w-full flex justify-between items-center h-full px-[4vw] text-white">
                 <p className="text-2xl font-light">
-                  Hello Vandita Sharma , Welcome to Wellbeing!
+                  Hello {therapists?.therapist?.name}, Welcome to Wellbeing!
                 </p>
                 <Image src={logoPng} alt="Circle" />
               </div>
