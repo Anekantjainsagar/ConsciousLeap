@@ -14,11 +14,18 @@ import { CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Context from "@/Context/Context";
+import axios from "axios";
+import { getCookie } from "cookies-next";
+import toast, { Toaster } from "react-hot-toast";
+import { BASE_URL } from "@/Utils/urls";
 
 const EditProfile = () => {
   const [showLeftBar, setShowLeftBar] = useState(true);
   const router = useRouter();
   const { therapists } = useContext(Context);
+  const [experties, setExperties] = useState();
+  const [speaks, setSpeaks] = useState("");
+  const [qualifications, setQualifications] = useState("");
   const [therapist, setTherapist] = useState({
     name: "",
     phone: "",
@@ -46,8 +53,27 @@ const EditProfile = () => {
     });
   }, []);
 
+  const onUpdate = () => {
+    axios
+      .post(`${BASE_URL}/therapist/update-therapist`, {
+        ...therapist,
+        token: getCookie("therapist_token"),
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.status == 200) {
+          toast.success("Details updated successfully");
+          therapists.getTherapist();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="flex ">
+      <Toaster />
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 hidden"
@@ -108,6 +134,7 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Therapist Name *</p>
               <input
+                placeholder="Name"
                 type="text"
                 value={therapist?.name}
                 onChange={(e) => {
@@ -136,6 +163,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 value={therapist?.phone}
+                placeholder="Phone"
                 onChange={(e) => {
                   setTherapist({ ...therapist, phone: e.target.value });
                 }}
@@ -150,6 +178,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 value={therapist?.desc}
+                placeholder="Short description"
                 onChange={(e) => {
                   setTherapist({ ...therapist, desc: e.target.value });
                 }}
@@ -164,6 +193,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 value={therapist?.experience}
+                placeholder="Experience"
                 onChange={(e) => {
                   setTherapist({ ...therapist, experience: e.target.value });
                 }}
@@ -176,24 +206,61 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Expertise *</p>
               <div>
+                {therapist?.expertise?.map((e, i) => {
+                  return (
+                    <div className="flex items-center w-full mb-4" key={i}>
+                      <input
+                        type="text"
+                        value={e}
+                        onChange={(val) => {
+                          let updatedExpertise = therapist.expertise;
+                          let index = updatedExpertise.indexOf(e);
+                          updatedExpertise[index] = val.target.value;
+                          setTherapist({
+                            ...therapist,
+                            expertise: updatedExpertise,
+                          });
+                        }}
+                        className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                      />
+                      <div className="pl-4">
+                        <AiOutlineClose
+                          className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                          size={35}
+                          onClick={(event) => {
+                            let updatedExpertise = therapist?.expertise;
+                            let pos = updatedExpertise.indexOf(e);
+                            updatedExpertise.splice(pos, 1);
+                            setTherapist({
+                              ...therapist,
+                              expertise: updatedExpertise,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
                 <div className="flex items-center w-full mb-4">
                   <input
                     type="text"
+                    value={experties}
+                    placeholder="Experties"
+                    onChange={(e) => {
+                      setExperties(e.target.value);
+                    }}
                     className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
                   />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                  <div
+                    onClick={(event) => {
+                      setTherapist({
+                        ...therapist,
+                        expertise: [...therapist.expertise, experties],
+                      });
+                      setExperties("");
+                    }}
+                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                  >
                     Add New
                   </div>
                 </div>
@@ -205,24 +272,64 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Qualifications *</p>
               <div>
+                {therapist?.qualifications?.map((e, i) => {
+                  return (
+                    <div className="flex items-center w-full mb-4" key={i}>
+                      <input
+                        type="text"
+                        value={e}
+                        onChange={(val) => {
+                          let arr = therapist.qualifications;
+                          let index = arr.indexOf(e);
+                          arr[index] = val.target.value;
+                          setTherapist({
+                            ...therapist,
+                            qualifications: arr,
+                          });
+                        }}
+                        className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                      />
+                      <div className="pl-4">
+                        <AiOutlineClose
+                          className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                          size={35}
+                          onClick={(event) => {
+                            let arr = therapist?.qualifications;
+                            let pos = arr.indexOf(e);
+                            arr.splice(pos, 1);
+                            setTherapist({
+                              ...therapist,
+                              qualifications: arr,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
                 <div className="flex items-center w-full mb-4">
                   <input
                     type="text"
+                    placeholder="Qualication"
+                    value={qualifications}
+                    onChange={(e) => {
+                      setQualifications(e.target.value);
+                    }}
                     className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
                   />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                  <div
+                    onClick={(event) => {
+                      setTherapist({
+                        ...therapist,
+                        qualifications: [
+                          ...therapist.qualifications,
+                          qualifications,
+                        ],
+                      });
+                      setQualifications("");
+                    }}
+                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                  >
                     Add New
                   </div>
                 </div>
@@ -234,24 +341,61 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">Speaks *</p>
               <div>
+                {therapist?.speaks?.map((e, i) => {
+                  return (
+                    <div className="flex items-center w-full mb-4" key={i}>
+                      <input
+                        type="text"
+                        value={e}
+                        onChange={(val) => {
+                          let arr = therapist.speaks;
+                          let index = arr.indexOf(e);
+                          arr[index] = val.target.value;
+                          setTherapist({
+                            ...therapist,
+                            speaks: arr,
+                          });
+                        }}
+                        className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
+                      />
+                      <div className="pl-4">
+                        <AiOutlineClose
+                          className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
+                          size={35}
+                          onClick={(event) => {
+                            let arr = therapist?.speaks;
+                            let pos = arr.indexOf(e);
+                            arr.splice(pos, 1);
+                            setTherapist({
+                              ...therapist,
+                              speaks: arr,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
                 <div className="flex items-center w-full mb-4">
                   <input
                     type="text"
+                    value={speaks}
+                    placeholder="Speaks"
+                    onChange={(e) => {
+                      setSpeaks(e.target.value);
+                    }}
                     className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
                   />
-                  <div className="pl-4">
-                    <AiOutlineClose
-                      className="bg-lightRed p-2 rounded-full text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer"
-                      size={35}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
-                    className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
-                  <div className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer ">
+                  <div
+                    onClick={(event) => {
+                      setTherapist({
+                        ...therapist,
+                        speaks: [...therapist.speaks, speaks],
+                      });
+                      setSpeaks("");
+                    }}
+                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                  >
                     Add New
                   </div>
                 </div>
@@ -267,12 +411,19 @@ const EditProfile = () => {
                 rows={3}
                 cols={3}
                 value={therapist?.about}
+                placeholder="About"
                 onChange={(e) => {
                   setTherapist({ ...therapist, about: e.target.value });
                 }}
               ></textarea>
             </div>
           </div>
+          <button
+            onClick={onUpdate}
+            className="ml-4 w-[9vw] flex justify-center items-center py-1 float-right my-4 bg-green-500 text-white rounded-lg cursor-pointer "
+          >
+            Update Details
+          </button>
         </div>
         <Footer />
       </div>

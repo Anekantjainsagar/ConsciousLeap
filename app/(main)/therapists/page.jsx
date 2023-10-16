@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 import {
@@ -12,6 +12,7 @@ import {
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import image from "../Assets/sagrika.jpeg";
 import { useRouter } from "next/navigation";
+import Context from "@/Context/Context";
 
 const Therapists = () => {
   let sellerHeading = useRef();
@@ -20,6 +21,8 @@ const Therapists = () => {
   const [showFilters, setShowFilters] = useState(true);
   const [showLanguages, setShowLanguage] = useState(false);
   const [showExpertise, setShowExpertise] = useState(false);
+
+  const { therapistFilter } = useContext(Context);
 
   useEffect(() => {
     let timeline = gsap.timeline();
@@ -41,11 +44,11 @@ const Therapists = () => {
     <div className="w-full flex pt-6 items-center justify-center flex-col">
       <h1
         ref={sellerHeading}
-        className="text-3xl text-center font-light gradientHover cursor-pointer"
+        className="text-[27px] text-center font-light gradientHover cursor-pointer"
       >
         Our Mindful Therapists
       </h1>
-      <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-4 md:mt-3 mb-16 md:mb-10">
+      <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-0 md:mt-3 mb-12 md:mb-10">
         `Our Mindful Therapists` are the founding pillars of consciousleap.
       </p>
       <div className="mt-[3vw] px-[4vw] md:px-[6vw] w-full flex">
@@ -60,7 +63,9 @@ const Therapists = () => {
             <AiOutlineClose
               size={22}
               className="block"
-              onClick={() => setShowFilters(false)}
+              onClick={(e) => {
+                setShowFilters(!showFilters);
+              }}
             />
           </div>
           <div
@@ -73,11 +78,7 @@ const Therapists = () => {
             {showExpertise ? <AiOutlineDown /> : <AiOutlineUp />}
           </div>
           <div className={`${showExpertise ? "hidden" : "block"}`}>
-            {[
-              "Adolescent and Young Adult counselling",
-              "Anxiety",
-              "Behavior modification",
-            ].map((e, i) => {
+            {therapistFilter?.areaOfExpertise?.map((e, i) => {
               return (
                 <div
                   key={i}
@@ -102,7 +103,7 @@ const Therapists = () => {
             {showLanguages ? <AiOutlineDown /> : <AiOutlineUp />}
           </div>
           <div className={`${showLanguages ? "hidden" : "block"}`}>
-            {["hindi", "english"].map((e, i) => {
+            {therapistFilter?.speaksFilter?.map((e, i) => {
               return (
                 <div
                   key={i}
@@ -139,11 +140,7 @@ const Therapists = () => {
               {showExpertise ? <AiOutlineDown /> : <AiOutlineUp />}
             </div>
             <div className={`${showExpertise ? "hidden" : "block"}`}>
-              {[
-                "Adolescent and Young Adult counselling",
-                "Anxiety",
-                "Behavior modification",
-              ].map((e, i) => {
+              {therapistFilter?.areaOfExpertise?.map((e, i) => {
                 return (
                   <div
                     key={i}
@@ -168,7 +165,7 @@ const Therapists = () => {
               {showLanguages ? <AiOutlineDown /> : <AiOutlineUp />}
             </div>
             <div className={`${showLanguages ? "hidden" : "block"}`}>
-              {["hindi", "english"].map((e, i) => {
+              {therapistFilter?.speaksFilter?.map((e, i) => {
                 return (
                   <div
                     key={i}

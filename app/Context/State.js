@@ -21,6 +21,26 @@ const B2BState = (props) => {
   });
   const [isTherapistLogin, setIsTherapistLogin] = useState(false);
   const [therapist, setTherapist] = useState();
+  const [areaOfExpertise, setAreaOfExpertise] = useState();
+  const [speaksFilter, setSpeaksFilter] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/therapist/get-area-of-expertise`)
+      .then((res) => {
+        setAreaOfExpertise(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/therapist/get-speaks`)
+      .then((res) => {
+        setSpeaksFilter(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   useEffect(() => {
     if (getCookie("token")?.length > 1) {
@@ -38,7 +58,7 @@ const B2BState = (props) => {
         token: getCookie("token"),
       })
       .then((res) => {
-        setLogin(res.data);
+        setLogin(res?.data);
       })
       .catch((err) => {
         console.log(err);
@@ -74,9 +94,23 @@ const B2BState = (props) => {
     setIsTherapistLogin,
   };
 
+  let therapistFilter = {
+    areaOfExpertise,
+    speaksFilter,
+  };
+
   return (
     <Context.Provider
-      value={{ login, user, setUser, isLogin, setIsLogin, getUser, therapists }}
+      value={{
+        login,
+        user,
+        setUser,
+        isLogin,
+        setIsLogin,
+        getUser,
+        therapists,
+        therapistFilter,
+      }}
     >
       {props.children}
     </Context.Provider>
