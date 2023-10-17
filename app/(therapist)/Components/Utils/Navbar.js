@@ -40,9 +40,15 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
           }}
         >
           <Image
-            src={image}
+            src={
+              therapists?.therapist?.photo?.length > 1
+                ? therapists?.therapist?.photo
+                : image
+            }
             alt="Image"
-            className="w-[3vw] rounded-full mr-3"
+            width={1000}
+            height={1000}
+            className="w-[3vw] h-[3vw] object-cover object-center rounded-full mr-3"
           />
           <div>
             <p>{therapists?.therapist?.name}</p>

@@ -1,15 +1,19 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import image from "../../Assets/sagrika.jpeg";
 
 import { BsCameraVideo } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
 import { IoCallOutline } from "react-icons/io5";
+import Context from "@/Context/Context";
 
-const OneTherapist = () => {
+const OneTherapist = ({ params }) => {
   const history = useRouter();
+  let id = params.name;
+  const [user, setUser] = useState();
+  const { therapistFilter } = useContext(Context);
 
   let topData = [
     {
@@ -31,20 +35,31 @@ const OneTherapist = () => {
     },
   ];
 
+  useEffect(() => {
+    const therapist = therapistFilter?.therapistsData?.find(
+      (e) => e?._id == id
+    );
+    setUser(therapist);
+  }, [therapistFilter?.therapistsData]);
+
   return (
     <div className="flex py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
       <div className="flex flex-col w-3/12 mr-[2vw]">
         <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
           <div className="flex items-start py-[3vw] px-[4vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
-            <Image src={image} alt="User profile" className="rounded-full" />
+            <Image
+              src={user?.photo}
+              alt="User profile"
+              width={1000}
+              height={1000}
+              className="w-full h-[19vw] object-cover object-center rounded-full"
+            />
           </div>
         </div>
         <h1 className="text-websiteBlue text-xl text-center mt-4">
-          Sagrikaa Rastogi
+          {user?.name}
         </h1>
-        <p className="text-center text-sm text-darkGrey">
-          Counselling Psychologist, M.A
-        </p>
+        <p className="text-center text-sm text-darkGrey">{user?.desc}</p>
         <div className="flex justify-center items-center mt-5">
           <BsCameraVideo
             className="text-websiteBlue border-websiteBlue p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
@@ -68,26 +83,26 @@ const OneTherapist = () => {
           Schedule Session
         </button>
       </div>
-      <div className="w-9/12 flex flex-col items-center">
+      <div className="w-9/12 flex flex-col">
         <div className="grid grid-cols-3 gap-5 w-full">
-          {topData.map((e, i) => {
-            return <Table data={e} key={i} />;
-          })}
+          <div>
+            {<Table data={{ name: "Experience", items: [user?.experience] }} />}
+          </div>
+          <div>
+            {
+              <Table
+                data={{ name: "Qualifications", items: user?.qualifications }}
+              />
+            }
+          </div>
+          <div>{<Table data={{ name: "Speaks", items: user?.speaks }} />}</div>
         </div>
         <div>
           <h1 className="text-websiteBlue text-2xl font-light mt-[5vh]">
             Expertise
           </h1>
           <div className="grid grid-cols-3 gap-5 mt-4">
-            {[
-              "Anxiety",
-              "Emotional distress",
-              "Stress",
-              "Productivity concerns",
-              "Relationship issues",
-              "Workplace Conflicts",
-              "Self Esteem & confidence related concerns",
-            ].map((e, i) => {
+            {user?.expertise?.map((e, i) => {
               return (
                 <div
                   key={i}
@@ -105,14 +120,7 @@ const OneTherapist = () => {
           <h1 className="text-websiteBlue text-2xl mt-[5vh] font-light">
             About the Therapist
           </h1>
-          <p className="text-darkGrey text-sm tracking-wider">
-            A Counseling Psychologist with experience in facilitating
-            adolescents and young adults for self growth, anxiety, personality
-            disorders, relationship concerns in addition to other mental health
-            related concerns. My therapeutic approach is built around the
-            premise of empathy and support. My aim is to understand you, your
-            emotions and the cause of the chaos you feel you are in.
-          </p>
+          <p className="text-darkGrey text-sm tracking-wider">{user?.about}</p>
         </div>
       </div>
     </div>
@@ -131,7 +139,7 @@ const Table = ({ data }) => {
           </div>
         </div>
         <div className="py-3">
-          {data?.items.map((e) => {
+          {data?.items?.map((e) => {
             return (
               <li className="font-light" key={e}>
                 {e}

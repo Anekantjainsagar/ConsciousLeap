@@ -23,6 +23,33 @@ const B2BState = (props) => {
   const [therapist, setTherapist] = useState();
   const [areaOfExpertise, setAreaOfExpertise] = useState();
   const [speaksFilter, setSpeaksFilter] = useState();
+  const [therapistFilters, setTherapistFilters] = useState({
+    search: "",
+    expertise: [],
+    speaks: [],
+  });
+  const [therapistsData, setTherapistsData] = useState([]);
+
+  const getTherapistsData = () => {
+    axios
+      .get(
+        `${BASE_URL}/therapist/get-all-therapists?search=${
+          therapistFilters?.search
+        }&speaks=${JSON.stringify(
+          therapistFilters?.speaks
+        )}&expertise=${JSON.stringify(therapistFilters?.expertise)}`
+      )
+      .then((response) => {
+        setTherapistsData(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getTherapistsData();
+  }, [therapistFilters]);
 
   useEffect(() => {
     axios
@@ -97,6 +124,9 @@ const B2BState = (props) => {
   let therapistFilter = {
     areaOfExpertise,
     speaksFilter,
+    therapistFilters,
+    setTherapistFilters,
+    therapistsData,
   };
 
   return (

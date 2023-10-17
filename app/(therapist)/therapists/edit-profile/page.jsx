@@ -36,6 +36,7 @@ const EditProfile = () => {
     qualifications: [],
     speaks: [],
     about: "",
+    photo: "",
   });
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const EditProfile = () => {
       qualifications: therapist?.qualifications,
       speaks: therapist?.speaks,
       about: therapist?.about,
+      photo: therapist?.photo,
     });
   }, []);
 
@@ -81,9 +83,11 @@ const EditProfile = () => {
       >
         <Image src={logo} alt="Logo" />
         <Image
-          src={sagrika}
+          src={therapist?.photo}
           alt="Image"
-          className="w-10/12 rounded-full mt-[4vw]"
+          width={1000}
+          height={1000}
+          className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
           <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
@@ -121,7 +125,10 @@ const EditProfile = () => {
         <div className="px-[1.5vw] py-[3vw]">
           <h1 className="text-lg">
             Therapists settings{" "}
-            <Link href="/therapists/sagrika" target="_blank">
+            <Link
+              href={`/therapists/${therapists?.therapist?._id}`}
+              target="_blank"
+            >
               <span className="text-base text-gray-500 hover:underline transition-all cursor-pointer">
                 (Visit Profile)
               </span>
@@ -153,6 +160,27 @@ const EditProfile = () => {
               <input
                 className="block w-full text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                 type="file"
+                onChange={(e) => {
+                  const formData = new FormData();
+                  formData.append("file", e.target.files[0]);
+                  formData.append("upload_preset", "upload_photo");
+                  formData.append("cloud_name", "dfk09gblw");
+
+                  console.log(formData);
+
+                  fetch(
+                    "https://api.Cloudinary.com/v1_1/dfk09gblw/image/upload",
+                    {
+                      method: "POST",
+                      body: formData,
+                    }
+                  )
+                    .then((res) => res.json())
+                    .then((res) => {
+                      setTherapist({ ...therapist, photo: res.url });
+                    })
+                    .catch((err) => {});
+                }}
               />
             </div>
             <div

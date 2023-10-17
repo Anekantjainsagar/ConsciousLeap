@@ -86,9 +86,38 @@ const Therapists = () => {
                 >
                   <input
                     type="checkbox"
-                    className="mr-1.5 mt-1.5 cursor-pointer"
+                    id={e}
+                    checked={therapistFilter?.therapistFilters?.expertise?.includes(
+                      e
+                    )}
+                    onChange={(event) => {
+                      if (
+                        therapistFilter?.therapistFilters?.expertise?.includes(
+                          e
+                        )
+                      ) {
+                        // Exist karta h
+                        let arr = therapistFilter?.therapistFilters?.expertise;
+                        arr.splice(arr.indexOf(e), 1);
+                        therapistFilter?.setTherapistFilters({
+                          ...therapistFilter?.therapistFilters,
+                          expertise: arr,
+                        });
+                      } else {
+                        therapistFilter?.setTherapistFilters({
+                          ...therapistFilter?.therapistFilters,
+                          expertise: [
+                            ...therapistFilter?.therapistFilters?.expertise,
+                            e,
+                          ],
+                        });
+                      }
+                    }}
+                    className="mr-1.5 mt-1 cursor-pointer block"
                   />
-                  <p>{e}</p>
+                  <label htmlFor={e} className="cursor-pointer">
+                    {e}
+                  </label>
                 </div>
               );
             })}
@@ -111,14 +140,42 @@ const Therapists = () => {
                 >
                   <input
                     type="checkbox"
-                    className="mr-1.5 mt-1.5 cursor-pointer"
+                    id={e}
+                    checked={therapistFilter?.therapistFilters?.speaks?.includes(
+                      e
+                    )}
+                    onChange={(event) => {
+                      if (
+                        therapistFilter?.therapistFilters?.speaks?.includes(e)
+                      ) {
+                        // Exist karta h
+                        let arr = therapistFilter?.therapistFilters?.speaks;
+                        arr.splice(arr.indexOf(e), 1);
+                        therapistFilter?.setTherapistFilters({
+                          ...therapistFilter?.therapistFilters,
+                          speaks: arr,
+                        });
+                      } else {
+                        therapistFilter?.setTherapistFilters({
+                          ...therapistFilter?.therapistFilters,
+                          speaks: [
+                            ...therapistFilter?.therapistFilters?.speaks,
+                            e,
+                          ],
+                        });
+                      }
+                    }}
+                    className="mr-1.5 mt-1 cursor-pointer block"
                   />
-                  <p>{e}</p>
+                  <label htmlFor={e} className="cursor-pointer">
+                    {e}
+                  </label>
                 </div>
               );
             })}
           </div>
         </div>
+        {/* Leftbar showing in the desktop */}
         <div className="md:block hidden w-2/12 mr-1">
           <div
             onClick={() => {
@@ -148,9 +205,39 @@ const Therapists = () => {
                   >
                     <input
                       type="checkbox"
-                      className="mr-1.5 mt-1.5 cursor-pointer"
+                      id={e}
+                      checked={therapistFilter?.therapistFilters?.expertise?.includes(
+                        e
+                      )}
+                      onChange={(event) => {
+                        if (
+                          therapistFilter?.therapistFilters?.expertise?.includes(
+                            e
+                          )
+                        ) {
+                          // Exist karta h
+                          let arr =
+                            therapistFilter?.therapistFilters?.expertise;
+                          arr.splice(arr.indexOf(e), 1);
+                          therapistFilter?.setTherapistFilters({
+                            ...therapistFilter?.therapistFilters,
+                            expertise: arr,
+                          });
+                        } else {
+                          therapistFilter?.setTherapistFilters({
+                            ...therapistFilter?.therapistFilters,
+                            expertise: [
+                              ...therapistFilter?.therapistFilters?.expertise,
+                              e,
+                            ],
+                          });
+                        }
+                      }}
+                      className="mr-1.5 mt-1 cursor-pointer block"
                     />
-                    <p>{e}</p>
+                    <label htmlFor={e} className="cursor-pointer">
+                      {e}
+                    </label>
                   </div>
                 );
               })}
@@ -173,15 +260,43 @@ const Therapists = () => {
                   >
                     <input
                       type="checkbox"
-                      className="mr-1.5 mt-1.5 cursor-pointer"
+                      id={e}
+                      checked={therapistFilter?.therapistFilters?.speaks?.includes(
+                        e
+                      )}
+                      onChange={(event) => {
+                        if (
+                          therapistFilter?.therapistFilters?.speaks?.includes(e)
+                        ) {
+                          // Exist karta h
+                          let arr = therapistFilter?.therapistFilters?.speaks;
+                          arr.splice(arr.indexOf(e), 1);
+                          therapistFilter?.setTherapistFilters({
+                            ...therapistFilter?.therapistFilters,
+                            speaks: arr,
+                          });
+                        } else {
+                          therapistFilter?.setTherapistFilters({
+                            ...therapistFilter?.therapistFilters,
+                            speaks: [
+                              ...therapistFilter?.therapistFilters?.speaks,
+                              e,
+                            ],
+                          });
+                        }
+                      }}
+                      className="mr-1.5 mt-1 cursor-pointer block"
                     />
-                    <p>{e}</p>
+                    <label htmlFor={e} className="cursor-pointer">
+                      {e}
+                    </label>
                   </div>
                 );
               })}
             </div>
           </div>
         </div>
+        {/* Displaying the data in right section with that navbar */}
         <div className="w-full md:w-10/12 ml-0 md:ml-3">
           <div className="flex md:flex-row flex-col px-2 items-center">
             <div className="flex items-center md:mb-0 mb-4 w-full">
@@ -215,6 +330,13 @@ const Therapists = () => {
               </select>
             </div>
             <input
+              value={therapistFilter?.therapistFilters?.search}
+              onChange={(e) => {
+                therapistFilter?.setTherapistFilters({
+                  ...therapistFilter?.therapistFilters,
+                  search: e.target.value,
+                });
+              }}
               type="text"
               placeholder="Search"
               className="w-full md:w-[16vw] rounded-sm text-darkGrey text-sm border px-4 ml-0 md:ml-4 py-2 outline-none"
@@ -241,14 +363,13 @@ const Therapists = () => {
               showGrid ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1"
             } mt-5 gap-x-4 gap-y-6 md:px-0 px-[4vw]`}
           >
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
-            {showGrid ? <GridBlock /> : <ListBlock />}
+            {therapistFilter?.therapistsData?.map((e, i) => {
+              return showGrid ? (
+                <GridBlock data={e} key={i} />
+              ) : (
+                <ListBlock data={e} key={i} />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -256,34 +377,36 @@ const Therapists = () => {
   );
 };
 
-const GridBlock = () => {
+const GridBlock = ({ data }) => {
   const history = useRouter();
+
   return (
     <div>
       <div className="md:hidden block rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex flex-col justify-center items-start py-[4vw] px-[1vw] h-full w-full rounded-xl bg-white">
           <div className="rounded-full mx-auto w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image src={image} alt="Photo of girl" className="rounded-full" />
+              <Image
+                src={data?.photo}
+                width={1000}
+                height={1000}
+                alt="Photo of girl"
+                className="w-full h-[35vw] object-cover object-center rounded-full"
+              />
             </div>
           </div>
           <div className="w-full flex flex-col justify-between items-center">
             <div>
               <h1 className="text-xl text-websiteBlue text-center">
-                Sagrikaa Rastogi
+                {data?.name}
               </h1>
-              <p className="text-darkGrey text-sm mt-2 text-center">
-                Counselling Psychologist, M.A
-              </p>
+              <p className="text-darkGrey text-sm text-center">{data?.desc}</p>
             </div>
             <div>
-              <h1 className="mt-5 text-base text-websiteBlue">Expertise</h1>
-              {[
-                "Anxiety",
-                "Emotional distress",
-                "Stress",
-                "Productivity concerns",
-              ].map((e) => {
+              <h1 className="mt-2 text-center text-base text-websiteBlue">
+                Expertise
+              </h1>
+              {data?.expertise?.map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}
@@ -293,7 +416,7 @@ const GridBlock = () => {
             </div>
             <button
               onClick={() => {
-                history.push("/therapists/sagrika");
+                history.push(`/therapists/${data?._id}`);
               }}
               className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
             >
@@ -306,21 +429,20 @@ const GridBlock = () => {
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image src={image} alt="Photo of girl" className="rounded-full" />
+              <Image
+                src={data?.photo}
+                width={1000}
+                height={1000}
+                alt="Photo of girl"
+                className="w-full h-[8vw] object-cover object-center rounded-full"
+              />
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <h1 className="text-xl text-websiteBlue">Sagrikaa Rastogi</h1>
-            <p className="text-darkGrey text-sm mt-1">
-              Counselling Psychologist, M.A
-            </p>
+            <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
+            <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-            {[
-              "Anxiety",
-              "Emotional distress",
-              "Stress",
-              "Productivity concerns",
-            ].map((e) => {
+            {data?.expertise?.map((e) => {
               return (
                 <li key={e} className="text-sm text-darkGrey">
                   {e}
@@ -329,7 +451,7 @@ const GridBlock = () => {
             })}
             <button
               onClick={() => {
-                history.push("/therapists/sagrika");
+                history.push(`/therapists/${data?._id}`);
               }}
               className="bg-websiteBlue text-sm px-7 py-1 mt-2 rounded-md text-white font-semibold"
             >
@@ -342,7 +464,7 @@ const GridBlock = () => {
   );
 };
 
-const ListBlock = () => {
+const ListBlock = ({ data }) => {
   const history = useRouter();
   return (
     <div>
@@ -350,26 +472,27 @@ const ListBlock = () => {
         <div className="flex flex-col justify-center items-start py-[4vw] px-[1vw] h-full w-full rounded-xl bg-white">
           <div className="rounded-full mx-auto w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image src={image} alt="Photo of girl" className="rounded-full" />
+              <Image
+                src={data?.photo}
+                width={1000}
+                height={1000}
+                alt="Photo of girl"
+                className="w-full h-[10vw] object-cover object-center rounded-full"
+              />
             </div>
           </div>
           <div className="w-full flex flex-col justify-between items-center">
             <div>
               <h1 className="text-xl text-websiteBlue text-center">
-                Sagrikaa Rastogi
+                {data?.name}
               </h1>
               <p className="text-darkGrey text-sm mt-2 text-center">
-                Counselling Psychologist, M.A
+                {data?.desc}
               </p>
             </div>
             <div>
               <h1 className="mt-5 text-base text-websiteBlue">Expertise</h1>
-              {[
-                "Anxiety",
-                "Emotional distress",
-                "Stress",
-                "Productivity concerns",
-              ].map((e) => {
+              {data?.expertise?.map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}
@@ -379,7 +502,7 @@ const ListBlock = () => {
             </div>
             <button
               onClick={() => {
-                history.push("/therapists/sagrika");
+                history.push(`/therapists/${data?._id}`);
               }}
               className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
             >
@@ -392,24 +515,23 @@ const ListBlock = () => {
         <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image src={image} alt="Photo of girl" className="rounded-full" />
+              <Image
+                src={data?.photo}
+                width={1000}
+                height={1000}
+                alt="Photo of girl"
+                className="w-full h-[10vw] object-cover object-center rounded-full"
+              />
             </div>
           </div>
           <div className="w-9/12 flex justify-between items-center">
             <div>
-              <h1 className="text-xl text-websiteBlue">Sagrikaa Rastogi</h1>
-              <p className="text-darkGrey text-sm mt-1">
-                Counselling Psychologist, M.A
-              </p>
+              <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
+              <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             </div>
             <div>
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-              {[
-                "Anxiety",
-                "Emotional distress",
-                "Stress",
-                "Productivity concerns",
-              ].map((e) => {
+              {data?.expertise?.map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}
@@ -419,7 +541,7 @@ const ListBlock = () => {
             </div>
             <button
               onClick={() => {
-                history.push("/therapists/sagrika");
+                history.push(`/therapists/${data?._id}`);
               }}
               className="bg-websiteBlue px-12 py-1.5 rounded-lg text-white font-semibold"
             >

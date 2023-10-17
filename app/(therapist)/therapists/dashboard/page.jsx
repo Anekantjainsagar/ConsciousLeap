@@ -58,9 +58,11 @@ const Dashboard = () => {
       >
         <Image src={logo} alt="Logo" />
         <Image
-          src={sagrika}
+          src={therapists?.therapist?.photo}
           alt="Image"
-          className="w-10/12 rounded-full mt-[4vw]"
+          width={1000}
+          height={1000}
+          className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
           <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
