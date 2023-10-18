@@ -1,0 +1,23 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(main)/page": "app/(main)/page.js",
+  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js",
+  "/(main)/therapist-review/page": "app/(main)/therapist-review/page.js",
+  "/(main)/therapists/page": "app/(main)/therapists/page.js",
+  "/(main)/expertise-area/page": "app/(main)/expertise-area/page.js",
+  "/(main)/therapist-review/[name]/page": "app/(main)/therapist-review/[name]/page.js",
+  "/(main)/Assets/New folder/icon1-24w5hk.png/route": "app/(main)/Assets/New folder/icon1-24w5hk.png/route.js",
+  "/(main)/therapists/[name]/page": "app/(main)/therapists/[name]/page.js",
+  "/(main)/therapists/register/page": "app/(main)/therapists/register/page.js",
+  "/(main)/user/login/page": "app/(main)/user/login/page.js",
+  "/(therapist)/therapists/dashboard/page": "app/(therapist)/therapists/dashboard/page.js",
+  "/(main)/user/dashboard/page": "app/(main)/user/dashboard/page.js",
+  "/(therapist)/therapists/edit-profile/page": "app/(therapist)/therapists/edit-profile/page.js",
+  "/(main)/user/register/page": "app/(main)/user/register/page.js",
+  "/(main)/user/dashboard/edit/page": "app/(main)/user/dashboard/edit/page.js",
+  "/(main)/user/register/otp-verification/page": "app/(main)/user/register/otp-verification/page.js",
+  "/(main)/therapists/[name]/schedule/select-meet/page": "app/(main)/therapists/[name]/schedule/select-meet/page.js",
+  "/(main)/therapists/[name]/schedule/select-date/page": "app/(main)/therapists/[name]/schedule/select-date/page.js",
+  "/(main)/therapists/[name]/schedule/enter-details/page": "app/(main)/therapists/[name]/schedule/enter-details/page.js"
+}
