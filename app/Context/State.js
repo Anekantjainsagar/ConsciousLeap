@@ -29,6 +29,11 @@ const B2BState = (props) => {
     speaks: [],
   });
   const [therapistsData, setTherapistsData] = useState([]);
+  const [questionnaire, setQuestionnaire] = useState({
+    age: "",
+    problem: "",
+    answers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  });
 
   const getTherapistsData = () => {
     axios
@@ -75,7 +80,6 @@ const B2BState = (props) => {
     }
     if (getCookie("therapist_token")?.length > 1) {
       setIsTherapistLogin(true);
-      console.log(getCookie("therapist_token"));
     }
   });
 
@@ -140,6 +144,8 @@ const B2BState = (props) => {
         getUser,
         therapists,
         therapistFilter,
+        questionnaire,
+        setQuestionnaire,
       }}
     >
       {props.children}

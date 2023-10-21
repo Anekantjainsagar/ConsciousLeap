@@ -1,4 +1,4 @@
-// File: D:\Work\consciousleap\ConsciousLeap\app\(main)\questionnaire\page.tsx
+// File: D:\Work\consciousleap\ConsciousLeap\app\(main)\questionnaire\page.jsx
 import * as entry from '../../../../../app/(main)/questionnaire/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

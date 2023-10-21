@@ -13,7 +13,7 @@ import {
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { deleteCookie,setCookie } from "cookies-next";
+import { deleteCookie, setCookie } from "cookies-next";
 
 let nav = [
   {
@@ -170,6 +170,7 @@ const Navbar = () => {
                 onClick={(e) => {
                   setIsLogin(false);
                   deleteCookie("token");
+                  history.push("/");
                 }}
                 className="px-3 cursor-pointer gradientHover"
               >
