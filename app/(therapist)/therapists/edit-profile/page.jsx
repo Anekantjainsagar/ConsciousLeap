@@ -23,7 +23,7 @@ const EditProfile = () => {
   const [showLeftBar, setShowLeftBar] = useState(true);
   const router = useRouter();
   const { therapists } = useContext(Context);
-  const [experties, setExperties] = useState();
+  const [experties, setExperties] = useState("Select expertise");
   const [speaks, setSpeaks] = useState("");
   const [qualifications, setQualifications] = useState("");
   const [therapist, setTherapist] = useState({
@@ -270,22 +270,59 @@ const EditProfile = () => {
                   );
                 })}
                 <div className="flex items-center w-full mb-4">
-                  <input
-                    type="text"
+                  <select
+                    name=""
+                    id=""
                     value={experties}
                     placeholder="Experties"
                     onChange={(e) => {
                       setExperties(e.target.value);
                     }}
                     className="border outline-none text-gray-600 w-full rounded-md px-4 py-1"
-                  />
+                  >
+                    {[
+                      "Select expertise",
+                      "Anxiety",
+                      "Behaviour modifications",
+                      "Career ",
+                      "Child and Adolescent Counseling",
+                      "Deaddiction counseling",
+                      "Emotional distress",
+                      "Grief Management and Counseling",
+                      "Learning and developmental concerns",
+                      "Mindfulness based therapy",
+                      "Mood related concerns",
+                      "Parent and family Counseling",
+                      "Productivity and motivation related concerns",
+                      "Psychometric testing",
+                      "Queer affirmative counseling",
+                      "Relationship conflicts",
+                      "Self worth and confidence related concerns",
+                      "Suicide prevention",
+                      "Other Clinical disorders",
+                    ].map((e) => {
+                      return (
+                        <option value={e} key={e}>
+                          {e}
+                        </option>
+                      );
+                    })}
+                  </select>
                   <div
                     onClick={(event) => {
-                      setTherapist({
-                        ...therapist,
-                        expertise: [...therapist.expertise, experties],
-                      });
-                      setExperties("");
+                      if (experties != "Select expertise") {
+                        if (therapist?.expertise.includes(experties)) {
+                          toast.error("Experty already exists");
+                        } else {
+                          setTherapist({
+                            ...therapist,
+                            expertise: [...therapist.expertise, experties],
+                          });
+                        }
+                        setExperties("Select expertise");
+                      } else {
+                        toast.error("Please select a value");
+                      }
                     }}
                     className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
                   >

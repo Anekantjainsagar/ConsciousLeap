@@ -11,12 +11,12 @@ const EnterDetails = () => {
 
   return (
     <div>
-      <Title />
+      {/* <Title />
       <div className="flex items-center justify-between w-[58vw] mx-auto py-5 border-b">
         <AiOutlineArrowLeft
           size={22}
           className="cursor-pointer"
-          onClick={(e) => {
+          onClick={() => {
             router.push("/therapists/sagrika/schedule/select-date");
           }}
         />
@@ -57,7 +57,16 @@ const EnterDetails = () => {
             Schedule Appointment
           </button>
         </div>
-      </div>
+      </div> */}
+      <iframe
+        width="100%"
+        height="750px"
+        src="https://consciousleap.zohobookings.in/portal-embed#/customer/202932000000035016"
+        frameborder="0"
+        allowfullscreen=""
+      >
+        {" "}
+      </iframe>
     </div>
   );
 };

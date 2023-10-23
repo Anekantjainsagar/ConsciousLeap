@@ -11,7 +11,7 @@ const SelectDate = () => {
 
   return (
     <div>
-      <Title />
+      {/* <Title />
       <div className="flex items-center justify-between w-[58vw] mx-auto py-5 border-b">
         <AiOutlineArrowLeft
           size={22}
@@ -88,7 +88,7 @@ const SelectDate = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

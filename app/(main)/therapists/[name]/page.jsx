@@ -76,7 +76,7 @@ const OneTherapist = ({ params }) => {
         </div>
         <button
           onClick={(e) => {
-            history.push("/therapists/sagrika/schedule/select-meet");
+            history.push(`/therapists/${id}/schedule`);
           }}
           className="bg-websiteBlue px-9 text-sm mt-7 py-2 rounded-lg text-white mx-auto block"
         >

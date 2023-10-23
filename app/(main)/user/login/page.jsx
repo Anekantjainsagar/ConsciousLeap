@@ -31,20 +31,19 @@ const UserLogin = () => {
         .then((response) => {
           if (response.status == 200) {
             toast.success("Login successfully");
-            setTimeout(() => {
-              let token = response.data.jwtToken;
-              if (response.data.user == "Therapist") {
-                router.push("/therapists/dashboard");
-                setCookie("therapist_token", token);
-              } else if (response.data.user == "User") {
-                router.push("/");
-                setCookie("token", token);
-              }
-              setUser({
-                email: "",
-                password: "",
-              });
-            }, 500);
+            let token = response.data.jwtToken;
+            if (response.data.user == "Therapist") {
+              router.push("/therapists/dashboard");
+              setCookie("therapist_token", token);
+              console.log(response.data.user);
+            } else if (response.data.user == "User") {
+              router.push("/");
+              setCookie("token", token);
+            }
+            setUser({
+              email: "",
+              password: "",
+            });
           } else {
             toast.error(response.data.data);
           }
