@@ -37,6 +37,7 @@ const EditProfile = () => {
     speaks: [],
     about: "",
     photo: "",
+    meeting_url: "",
   });
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const EditProfile = () => {
       speaks: therapist?.speaks,
       about: therapist?.about,
       photo: therapist?.photo,
+      meeting_url: therapist?.meeting_url,
     });
   }, []);
 
@@ -481,6 +483,21 @@ const EditProfile = () => {
                   setTherapist({ ...therapist, about: e.target.value });
                 }}
               ></textarea>
+            </div>
+            <div
+              className="grid py-5 items-center"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">Therapist Meeting Url </p>
+              <input
+                placeholder="Meeting url"
+                type="text"
+                value={therapist?.meeting_url}
+                onChange={(e) => {
+                  setTherapist({ ...therapist, meeting_url: e.target.value });
+                }}
+                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+              />
             </div>
           </div>
           <button

@@ -15,26 +15,6 @@ const OneTherapist = ({ params }) => {
   const [user, setUser] = useState();
   const { therapistFilter } = useContext(Context);
 
-  let topData = [
-    {
-      name: "Experience",
-      items: ["2-5 Year"],
-    },
-    {
-      name: "Qualifications",
-      items: [
-        "M.A Counselling Psychology",
-        "APA Member",
-        "Certified NLP practitioner",
-        "Certified Relationship Coach",
-      ],
-    },
-    {
-      name: "Speaks",
-      items: ["Hindi", "English"],
-    },
-  ];
-
   useEffect(() => {
     const therapist = therapistFilter?.therapistsData?.find(
       (e) => e?._id == id

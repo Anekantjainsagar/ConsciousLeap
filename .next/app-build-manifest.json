@@ -21,6 +21,37 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/therapists/page.js"
+    ],
+    "/(main)/user/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/user/login/page.js"
+    ],
+    "/(main)/therapists/[name]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/therapists/[name]/page.js"
+    ],
+    "/(main)/therapists/[name]/schedule/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/therapists/[name]/schedule/page.js"
+    ],
+    "/(therapist)/therapists/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(therapist)/therapists/dashboard/page.css",
+      "static/chunks/app/(therapist)/therapists/dashboard/page.js"
+    ],
+    "/(therapist)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(therapist)/layout.js"
+    ],
+    "/(therapist)/therapists/edit-profile/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(therapist)/therapists/edit-profile/page.js"
     ]
   }
 }
