@@ -65,12 +65,7 @@ const MindfulTherapist = () => {
 };
 
 export function BootstrapCarousel() {
-  let bootstrap = [img1, img2, img3, img4, img5];
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  let bootstrap = [img1, img2, img4, img5, img1, img2, img4, img5];
 
   return (
     <div className="custom-carousel-container relative">
@@ -82,9 +77,8 @@ export function BootstrapCarousel() {
         />
       </div>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={5}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-        pagination={{ clickable: true }}
         loop={true}
         autoplay={{
           interval: 3000,

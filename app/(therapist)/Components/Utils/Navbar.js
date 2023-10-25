@@ -63,7 +63,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
       >
         <div
           onClick={(e) => {
-            router.push("/therapists/dashboard");
+            router.push("/therapy/dashboard");
           }}
           className="px-3 py-1 flex items-center cursor-pointer hover:bg-blue-gray-600 hover:text-white transition-all rounded-lg"
         >

@@ -95,7 +95,7 @@ const RegisterTherapist = () => {
             if (response.status == 200) {
               toast.success("Registered successfully");
               setTimeout(() => {
-                router.push("/therapists/dashboard");
+                router.push("/therapy/dashboard");
                 let token = response.data.token;
                 setCookie("therapist_token", token);
                 setLogin(response.data);

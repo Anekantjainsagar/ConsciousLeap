@@ -18,11 +18,11 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
 
 export default function BootstrapCarousel() {
   let data = [img1, img2, img3, img4, img5];
@@ -32,11 +32,13 @@ export default function BootstrapCarousel() {
       slidesPerView={1}
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       pagination={{ clickable: true }}
+      navigation
       loop={true}
       autoplay={{
         interval: 1000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       }}
+      cssMode={true}
     >
       {data?.map((item, i) => (
         <SwiperSlide key={i}>

@@ -5,9 +5,11 @@ import gsap, { Power2, ScrollTrigger } from "gsap/all";
 import img1 from "../Assets/HowItWorks/step1.jpg";
 import img2 from "../Assets/HowItWorks/step2.jpg";
 import img3 from "../Assets/HowItWorks/step3.jpg";
+import { useRouter } from "next/navigation";
 
 const HowItWorks = () => {
   let howItWorksHead = useRef();
+  const history = useRouter();
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -31,24 +33,6 @@ const HowItWorks = () => {
     );
   }, []);
 
-  let works = [
-    {
-      name: "Step 1",
-      para: "Take a short and simple Questionnaire",
-      image: img1,
-    },
-    {
-      name: "Step 2",
-      para: "We will match you to a Therapist",
-      image: img2,
-    },
-    {
-      name: "Step 3",
-      para: "Or choose from a range of Therapists",
-      image: img3,
-    },
-  ];
-
   return (
     <div className="w-full flex items-center justify-center flex-col">
       <h1
@@ -63,21 +47,55 @@ const HowItWorks = () => {
         thought to keep it simple, impactful, and flexible all at once.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-y-0 gap-y-8 w-full px-[10vw] pt-[2.5vw]">
-        {works.map((e, i) => {
-          return (
-            <div key={i} className="flex flex-col items-center justify-center">
-              <h1 className="cursor-pointer gradientHover text-3xl">
-                {e?.name}
-              </h1>
-              <p className="md:text-base text-sm mb-2">{e?.para}</p>
-              <Image
-                src={e?.image}
-                alt={e?.image.src}
-                className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
-              />
-            </div>
-          );
-        })}
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="cursor-pointer gradientHover text-3xl">Step 1</h1>
+          <p className="md:text-base text-sm mb-2">
+            Take a short and simple
+            <span
+              className="text-websiteBlue ml-1 cursor-pointer"
+              onClick={(e) => {
+                history.push("/questionnaire");
+              }}
+            >
+              Questionnaire
+            </span>
+          </p>
+          <Image
+            src={img1}
+            alt={img1.src}
+            className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
+          />
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="cursor-pointer gradientHover text-3xl">Step 2</h1>
+          <p className="md:text-base text-sm mb-2">
+            We will match you to a Therapist
+          </p>
+          <Image
+            src={img2}
+            alt={img2.src}
+            className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
+          />
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="cursor-pointer gradientHover text-3xl">Step 3</h1>
+          <p className="md:text-base text-sm mb-2">
+            Or choose from a range of{" "}
+            <span
+              className="text-websiteBlue ml-1 cursor-pointer"
+              onClick={(e) => {
+                history.push("/therapy");
+              }}
+            >
+              Therapists
+            </span>
+          </p>
+          <Image
+            src={img3}
+            alt={img3.src}
+            className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
+          />
+        </div>
       </div>
     </div>
   );

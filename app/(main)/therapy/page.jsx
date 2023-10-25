@@ -381,7 +381,12 @@ const GridBlock = ({ data }) => {
   const history = useRouter();
 
   return (
-    <div>
+    <div
+      className="cursor-pointer"
+      onClick={(e) => {
+        history.push(`/therapy/${data?._id}`);
+      }}
+    >
       <div className="md:hidden block rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex flex-col justify-center items-start py-[4vw] px-[1vw] h-full w-full rounded-xl bg-white">
           <div className="rounded-full mx-auto w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
@@ -415,12 +420,13 @@ const GridBlock = ({ data }) => {
               })}
             </div>
             <button
-              onClick={() => {
-                history.push(`/therapists/${data?._id}`);
+              onClick={(e) => {
+                e.stopPropagation();
+                history.push(`/therapy/${data?._id}/schedule`);
               }}
-              className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
+              className="bg-websiteBlue px-5 py-1.5 mt-5 rounded-lg text-white font-semibold text-sm"
             >
-              Detailed Profile
+              Schedule Session
             </button>
           </div>
         </div>
@@ -450,12 +456,13 @@ const GridBlock = ({ data }) => {
               );
             })}
             <button
-              onClick={() => {
-                history.push(`/therapists/${data?._id}`);
+              onClick={(e) => {
+                e.stopPropagation();
+                history.push(`/therapy/${data?._id}/schedule`);
               }}
-              className="bg-websiteBlue text-sm px-7 py-1 mt-2 rounded-md text-white font-semibold"
+              className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white font-semibold"
             >
-              Detailed Profile
+              Schedule Session
             </button>
           </div>
         </div>
@@ -502,7 +509,7 @@ const ListBlock = ({ data }) => {
             </div>
             <button
               onClick={() => {
-                history.push(`/therapists/${data?._id}`);
+                history.push(`/therapy/${data?._id}`);
               }}
               className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
             >
@@ -541,7 +548,7 @@ const ListBlock = ({ data }) => {
             </div>
             <button
               onClick={() => {
-                history.push(`/therapists/${data?._id}`);
+                history.push(`/therapy/${data?._id}`);
               }}
               className="bg-websiteBlue px-12 py-1.5 rounded-lg text-white font-semibold"
             >

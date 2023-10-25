@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/therapists/[name]/page.jsx"
-, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx", "app/(main)/therapists/page.jsx", "app/(main)/user/dashboard/Components/LeftBar.jsx", "app/(main)/user/dashboard/Components/LeftBar copy.jsx", "app/(main)/questionnaire/questions/ask-age/page.jsx", "app/(main)/questionnaire/page.jsx", "app/(main)/therapist-review/[name]/page.jsx"  ],
+    "app/therapy/[name]/page.jsx"
+, "app/user/dashboard/page.jsx", "app/user/dashboard/edit/page.jsx", "app/(main)/therapy/page.jsx", "app/(main)/user/dashboard/Components/LeftBar.jsx", "app/(main)/user/dashboard/Components/LeftBar copy.jsx", "app/(main)/questionnaire/questions/ask-age/page.jsx", "app/(main)/questionnaire/page.jsx", "app/(main)/therapist-review/[name]/page.jsx"  ],
   "exclude": ["node_modules"]
 }

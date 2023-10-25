@@ -66,7 +66,7 @@ let nav = [
     items: [
       {
         name: "Our Mindful Therapists",
-        route: "/therapists",
+        route: "/therapy",
       },
       {
         name: "Areas of Expertise",
@@ -78,7 +78,7 @@ let nav = [
       },
       {
         name: "Register as a Therapist",
-        route: "/therapists/register",
+        route: "/therapy/register",
       },
     ],
   },

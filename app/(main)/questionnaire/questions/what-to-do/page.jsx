@@ -31,7 +31,7 @@ const Block = ({ data }) => {
         if (data.includes("Questionnaire")) {
           history.push("/questionnaire/questions/1");
         } else {
-          history.push("/therapists");
+          history.push("/therapy");
         }
       }}
       className="rounded-xl mb-4 md:mb-5 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"

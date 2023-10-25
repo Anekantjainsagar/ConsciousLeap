@@ -11,13 +11,13 @@ import books from "../../../(main)/Assets/book.png";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-import img1 from "../../../(main)/Assets/therapists/my_client.png";
-import img2 from "../../../(main)/Assets/therapists/my_earning.png";
-import img3 from "../../../(main)/Assets/therapists/therapist_notes.png";
+import img1 from "../../../(main)/Assets/therapy/my_client.png";
+import img2 from "../../../(main)/Assets/therapy/my_earning.png";
+import img3 from "../../../(main)/Assets/therapy/therapist_notes.png";
 
-import sunrise from "@/(main)/Assets/therapists/positive_vibes.png";
-import calmness from "@/(main)/Assets/therapists/calmness.png";
-import knowledge from "@/(main)/Assets/therapists/knowledge.png";
+import sunrise from "@/(main)/Assets/therapy/positive_vibes.png";
+import calmness from "@/(main)/Assets/therapy/calmness.png";
+import knowledge from "@/(main)/Assets/therapy/knowledge.png";
 
 import logoPng from "@/(main)/Assets/logoPng.png";
 
@@ -71,7 +71,7 @@ const Dashboard = () => {
         <div>
           <div
             onClick={(e) => {
-              router.push("/therapists/dashboard");
+              router.push("/therapy/dashboard");
             }}
             className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
@@ -82,7 +82,7 @@ const Dashboard = () => {
           </div>
           <div
             onClick={(e) => {
-              router.push("/therapists/edit-profile");
+              router.push("/therapy/edit-profile");
             }}
             className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >

@@ -100,7 +100,7 @@ const EditProfile = () => {
         <div>
           <div
             onClick={(e) => {
-              router.push("/therapists/dashboard");
+              router.push("/therapy/dashboard");
             }}
             className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
@@ -111,7 +111,7 @@ const EditProfile = () => {
           </div>
           <div
             onClick={(e) => {
-              router.push("/therapists/edit-profile");
+              router.push("/therapy/edit-profile");
             }}
             className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
@@ -128,7 +128,7 @@ const EditProfile = () => {
           <h1 className="text-lg">
             Therapists settings{" "}
             <Link
-              href={`/therapists/${therapists?.therapist?._id}`}
+              href={`/therapy/${therapists?.therapist?._id}`}
               target="_blank"
             >
               <span className="text-base text-gray-500 hover:underline transition-all cursor-pointer">

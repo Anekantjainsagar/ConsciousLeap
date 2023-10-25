@@ -48,7 +48,7 @@ const Dashboard = () => {
             {[
               { image: therapistReview, route: "/therapist-review" },
               { image: scheduleAppointment, route: "" },
-              { image: findNewTherapist, route: "/therapists" },
+              { image: findNewTherapist, route: "/therapy" },
             ].map((e, i) => {
               return (
                 <div

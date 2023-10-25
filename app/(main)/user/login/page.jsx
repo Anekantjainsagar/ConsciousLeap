@@ -33,7 +33,7 @@ const UserLogin = () => {
             toast.success("Login successfully");
             let token = response.data.jwtToken;
             if (response.data.user == "Therapist") {
-              router.push("/therapists/dashboard");
+              router.push("/therapy/dashboard");
               setCookie("therapist_token", token);
               console.log(response.data.user);
             } else if (response.data.user == "User") {

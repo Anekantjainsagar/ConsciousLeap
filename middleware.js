@@ -6,9 +6,9 @@ export async function middleware(request) {
 
   if (
     request.cookies.get("token")?.value == undefined &&
-    request.nextUrl.pathname != "/therapists" &&
-    request.nextUrl.pathname != "/therapists/dashboard" &&
-    request.nextUrl.pathname != "/therapists/edit-profile"
+    request.nextUrl.pathname != "/therapy" &&
+    request.nextUrl.pathname != "/therapy/dashboard" &&
+    request.nextUrl.pathname != "/therapy/edit-profile"
   ) {
     return NextResponse.redirect(new URL("/user/login", request.url));
   }
@@ -17,7 +17,7 @@ export async function middleware(request) {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    "/therapists/:path*",
+    "/therapy/:path*",
     "/questionnaire/:path*",
     "/user/dashboard",
     "/therapist-review/:path*",
