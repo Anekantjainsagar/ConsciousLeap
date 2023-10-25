@@ -11,13 +11,14 @@ import books from "../../../(main)/Assets/book.png";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-import img1 from "../../../(main)/Assets/therapy/my_client.png";
-import img2 from "../../../(main)/Assets/therapy/my_earning.png";
-import img3 from "../../../(main)/Assets/therapy/therapist_notes.png";
+// import img1 from "../../../(main)/Assets/therapy/my_client.png";
+import img1 from "@/(main)/Assets/Therapy/my_client.png";
+import img2 from "@/(main)/Assets/Therapy/my_earning.png";
+import img3 from "@/(main)/Assets/Therapy/therapist_notes.png";
 
-import sunrise from "@/(main)/Assets/therapy/positive_vibes.png";
-import calmness from "@/(main)/Assets/therapy/calmness.png";
-import knowledge from "@/(main)/Assets/therapy/knowledge.png";
+import sunrise from "@/(main)/Assets/Therapy/positive_vibes.png";
+import calmness from "@/(main)/Assets/Therapy/calmness.png";
+import knowledge from "@/(main)/Assets/Therapy/knowledge.png";
 
 import logoPng from "@/(main)/Assets/logoPng.png";
 
