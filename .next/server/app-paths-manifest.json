@@ -1,6 +1,11 @@
 {
-  "/not-found": "app/not-found.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/(main)/page": "app/(main)/page.js",
-  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js"
+  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js",
+  "/(main)/therapy/page": "app/(main)/therapy/page.js",
+  "/(main)/therapy/[name]/page": "app/(main)/therapy/[name]/page.js",
+  "/(main)/user/login/page": "app/(main)/user/login/page.js",
+  "/(therapist)/therapy/dashboard/page": "app/(therapist)/therapy/dashboard/page.js",
+  "/(therapist)/therapy/edit-profile/page": "app/(therapist)/therapy/edit-profile/page.js",
+  "/(main)/therapy/[name]/schedule/page": "app/(main)/therapy/[name]/schedule/page.js"
 }
