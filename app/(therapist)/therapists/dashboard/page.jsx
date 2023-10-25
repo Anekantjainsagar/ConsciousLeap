@@ -27,8 +27,6 @@ import takingBreak from "@/(main)/Assets/Therapy/taking_break.png";
 
 import logo from "@/(main)/Assets/logo.png";
 
-import { Checkbox } from "@material-tailwind/react";
-
 import sagrika from "@/(main)/Assets/sagrika.jpeg";
 
 import { AiOutlineHome } from "react-icons/ai";
@@ -234,7 +232,7 @@ const TaskBlock = ({ data }) => {
         <div className="text-oceanGreen">
           <input
             type="checkbox"
-            class="bg-red-100 border-red-300 text-red-500 focus:ring-red-200"
+            className="bg-red-100 border-red-300 text-red-500 focus:ring-red-200"
           />
         </div>
       </div>

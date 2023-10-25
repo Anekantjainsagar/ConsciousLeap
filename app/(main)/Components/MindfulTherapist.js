@@ -3,9 +3,21 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import img1 from "../Assets/mindfulTherapist/image-001.jpg";
 import img2 from "../Assets/mindfulTherapist/image-002.jpg";
 import img3 from "../Assets/mindfulTherapist/image-003.jpg";
@@ -69,21 +81,27 @@ export function BootstrapCarousel() {
           className="h-full md:h-[99.9%] mx-auto"
         />
       </div>
-      <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
+      <Swiper
+        slidesPerView={3}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        pagination={{ clickable: true }}
+        loop={true}
+        autoplay={{
+          interval: 3000,
+          disableOnInteraction: false,
+        }}
         className="w-[98vw] flex items-center"
       >
-        {bootstrap.map((item, i) => (
-          <Carousel.Item key={i} interval={2000}>
+        {bootstrap?.map((item, i) => (
+          <SwiperSlide key={i}>
             <Image
               src={item}
               alt="Slide"
               className="w-[50vw] md:w-[14vw] mx-auto"
             />
-          </Carousel.Item>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </div>
   );
 }

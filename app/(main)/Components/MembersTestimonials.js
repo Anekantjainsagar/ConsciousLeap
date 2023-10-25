@@ -7,8 +7,21 @@ import img1 from "../Assets/client1.jpg";
 import img2 from "../Assets/client2.jpg";
 import img3 from "../Assets/client3.jpg";
 
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import bg from "../Assets/members-bg.png";
 import memberFront from "../Assets/member-circle.png";
@@ -78,17 +91,23 @@ export function BootstrapCarousel() {
   };
 
   return (
-    <div className="custom-carousel-container relative">
+    <div className="relative">
       <div className="absolute -z-10 w-[75vw] md:block hidden left-1/2 -translate-x-1/2">
         <Image src={bg} alt="Background" />
       </div>
-      <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
+      <Swiper
+        slidesPerView={1}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        pagination={{ clickable: true }}
+        loop={true}
+        autoplay={{
+          interval: 3000,
+          disableOnInteraction: false,
+        }}
         className="w-[98vw]"
       >
-        {bootstrap.map((item, i) => (
-          <Carousel.Item key={i} interval={3000} className="w-full relative">
+        {bootstrap?.map((item, i) => (
+          <SwiperSlide key={i}>
             <Image
               src={memberFront}
               alt="Members front image"
@@ -102,9 +121,9 @@ export function BootstrapCarousel() {
             <p className="pb-3 w-11/12 mx-auto md:w-full font-light text-center mt-[4vw] text-darkGrey">
               {item?.text}.
             </p>
-          </Carousel.Item>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </div>
   );
 }

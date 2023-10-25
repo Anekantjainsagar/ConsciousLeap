@@ -17,7 +17,6 @@ import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/navigation";
 import LeftBar from "./Components/LeftBar";
 import RightBar from "./Components/LeftBar copy";
-import { getCookie } from "cookies-next";
 import Context from "@/Context/Context";
 
 const Dashboard = () => {

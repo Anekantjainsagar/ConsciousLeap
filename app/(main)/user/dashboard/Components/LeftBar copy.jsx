@@ -9,9 +9,11 @@ import thoughtTrack from "../../../Assets/modes/thought-tracker.png";
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { useRouter } from "next/navigation";
 
 const RightBar = () => {
   const [dateState, setDate] = useState(new Date());
+  const history = useRouter();
 
   return (
     <div className="w-3/12">
@@ -27,9 +29,30 @@ const RightBar = () => {
         </div>
       </div>
       <Image src={myJournel} alt="Image" />
-      <Image src={thoughtTrack} alt="Image" className="mt-4" />
-      <Image src={thingsLike} alt="Image" className="mt-4" />
-      <Image src={thingsGreatful} alt="Image" className="mt-4" />
+      <Image
+        src={thoughtTrack}
+        alt="Image"
+        className="mt-4 cursor-pointer"
+        onClick={(e) => {
+          history.push("/user/thoughts-tracker");
+        }}
+      />
+      <Image
+        src={thingsLike}
+        alt="Image"
+        className="mt-4 cursor-pointer"
+        onClick={(e) => {
+          history.push("/user/things-myself");
+        }}
+      />
+      <Image
+        src={thingsGreatful}
+        alt="Image"
+        className="mt-4 cursor-pointer"
+        onClick={(e) => {
+          history.push("/user/gratitude");
+        }}
+      />
     </div>
   );
 };

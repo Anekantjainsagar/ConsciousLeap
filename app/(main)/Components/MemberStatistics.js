@@ -3,8 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import img1 from "../Assets/Statistics/img1.png";
 import img2 from "../Assets/Statistics/img2.png";
 import img3 from "../Assets/Statistics/img3.png";

@@ -2,7 +2,10 @@ import "./globals.css";
 import { Comfortaa } from "next/font/google";
 import State from "@/Context/State";
 
-const inter = Comfortaa({ subsets: ["latin"] });
+const inter = Comfortaa({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "consciousleap",

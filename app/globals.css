@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global reset to remove default margins and paddings */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @import "rsuite/dist/rsuite.css";
 
 

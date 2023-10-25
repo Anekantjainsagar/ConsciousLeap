@@ -3,8 +3,21 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import img1 from "../Assets/client1.jpg";
 import img2 from "../Assets/client2.jpg";
@@ -53,7 +66,7 @@ const ClientTestimonials = () => {
 };
 
 export function BootstrapCarousel() {
-  let bootstrap = [
+  let data = [
     {
       image: img1,
       text: "As a busy professional, finding time for self-care can be a challenge. consciousleap has made it easier for me to prioritize my mental well-being.",
@@ -67,33 +80,36 @@ export function BootstrapCarousel() {
       text: "Using consciousleap has been life-changing for me. It's convenient, user-friendly, and provides access to a wide range of resources. I feel supported and empowered to take control of my mental well-being.",
     },
   ];
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
 
   return (
-    <div className="custom-carousel-container">
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        {bootstrap.map((item, i) => (
-          <Carousel.Item key={i} interval={1000}>
-            <div className="rounded-full w-fit mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-              <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-                <Image
-                  src={item.image}
-                  alt="Photo of girl"
-                  className="rounded-full cursor-pointer hover:scale-[97%] transition-all"
-                />
-              </div>
+    <Swiper
+      slidesPerView={1}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      pagination={{ clickable: true }}
+      className="w-full"
+      loop={true}
+      autoplay={{
+        interval: 3000,
+        disableOnInteraction: false,
+      }}
+    >
+      {data?.map((item, i) => (
+        <SwiperSlide key={i}>
+          <div className="rounded-full w-fit mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
+              <Image
+                src={item.image}
+                alt="Photo of girl"
+                className="rounded-full cursor-pointer hover:scale-[97%] transition-all"
+              />
             </div>
-            <p className="w-8/12 font-light mx-auto text-center mb-4 text-lg tracking-wider text-darkGrey mt-3">
-              {item?.text}
-            </p>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </div>
+          </div>
+          <p className="w-8/12 font-light mx-auto text-center mb-4 text-lg tracking-wider text-darkGrey mt-3">
+            {item?.text}
+          </p>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 

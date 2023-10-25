@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import img1 from "../Assets/carousel/Homeofoneness.jpg";
 import img2 from "../Assets/carousel/OurMission.jpg";
 import img3 from "../Assets/carousel/OurMotto.jpg";
@@ -7,27 +8,41 @@ import img5 from "../Assets/carousel/OurVision.jpg";
 
 import Image from "next/image";
 
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function BootstrapCarousel() {
-  let bootstrap = [img1, img2, img3, img4, img5];
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  let data = [img1, img2, img3, img4, img5];
 
   return (
-    <div className="custom-carousel-container" id="homeofoneness">
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        {bootstrap.map((item, i) => (
-          <Carousel.Item key={i} interval={1000}>
-            <Image src={item} alt="Slide" />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </div>
+    <Swiper
+      slidesPerView={1}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      pagination={{ clickable: true }}
+      loop={true}
+      autoplay={{
+        interval: 1000,
+        disableOnInteraction: false,
+      }}
+    >
+      {data?.map((item, i) => (
+        <SwiperSlide key={i}>
+          <Image src={item} alt="Slide" />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
