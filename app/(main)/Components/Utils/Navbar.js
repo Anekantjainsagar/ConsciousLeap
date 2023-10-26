@@ -244,7 +244,7 @@ const Navbar = () => {
             className="border rounded-md px-0.5"
           />
         </div>
-        <div className={`${showNav ? "block my-2" : "hidden"}`}>
+        <div className={`${showNav ? "md:hidden block my-2" : "hidden"}`}>
           <div className="flex flex-col text-lg font-light">
             <Navi showNav={showNav} setShowNav={setShowNav} />
           </div>

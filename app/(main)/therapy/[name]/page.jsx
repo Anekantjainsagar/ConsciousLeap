@@ -25,7 +25,7 @@ const OneTherapist = ({ params }) => {
   return (
     <div className="flex md:flex-row flex-col py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
       <div className="flex flex-col w-full md:w-3/12 mr-[2vw]">
-        <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue md:h-full h-[45vh] via-pinkishRed to-oceanGreen p-[1px]">
+        <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue md:h-fit h-[45vh] via-pinkishRed to-oceanGreen p-[1px]">
           <div className="flex items-start py-[1vw] px-[1vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
             <Image
               src={user?.photo}
