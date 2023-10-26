@@ -22,7 +22,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const RegisterTherapist = () => {
-  const [getOtp, setGetOtp] = useState(false);
+  const [getOtp, setGetOtp] = useState(true);
   let router = useRouter();
   const [user, setUser] = useState({
     name: "",

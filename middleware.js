@@ -8,6 +8,7 @@ export async function middleware(request) {
     request.cookies.get("token")?.value == undefined &&
     request.nextUrl.pathname != "/therapy" &&
     request.nextUrl.pathname != "/therapy/dashboard" &&
+    request.nextUrl.pathname != "/therapy/register" &&
     request.nextUrl.pathname != "/therapy/edit-profile"
   ) {
     return NextResponse.redirect(new URL("/user/login", request.url));

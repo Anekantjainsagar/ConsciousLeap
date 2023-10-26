@@ -17,46 +17,41 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(main)/therapy/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/page.js"
-    ],
     "/(main)/user/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/user/login/page.js"
     ],
-    "/(main)/questionnaire/page": [
+    "/(main)/therapy/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/page.js"
+      "static/chunks/app/(main)/therapy/register/page.js"
     ],
-    "/(main)/questionnaire/questions/ask-age/page": [
+    "/(therapist)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/ask-age/page.js"
+      "static/chunks/app/(therapist)/layout.js"
     ],
-    "/(main)/questionnaire/questions/problem/page": [
+    "/(therapist)/therapy/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/problem/page.js"
+      "static/css/app/(therapist)/therapy/dashboard/page.css",
+      "static/chunks/app/(therapist)/therapy/dashboard/page.js"
     ],
-    "/(main)/questionnaire/questions/what-to-do/page": [
+    "/(therapist)/therapy/edit-profile/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/what-to-do/page.js"
+      "static/chunks/app/(therapist)/therapy/edit-profile/page.js"
     ],
-    "/(main)/questionnaire/questions/[id]/page": [
+    "/(main)/therapy/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/[id]/page.js"
+      "static/chunks/app/(main)/therapy/page.js"
     ],
-    "/(main)/user/dashboard/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(main)/user/dashboard/page.css",
-      "static/chunks/app/(main)/user/dashboard/page.js"
+      "static/chunks/app/not-found.js"
     ]
   }
 }
