@@ -23,24 +23,24 @@ const OneTherapist = ({ params }) => {
   }, [therapistFilter?.therapistsData]);
 
   return (
-    <div className="flex py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
-      <div className="flex flex-col w-3/12 mr-[2vw]">
-        <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-          <div className="flex items-start py-[3vw] px-[4vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
+    <div className="flex md:flex-row flex-col py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
+      <div className="flex flex-col w-full md:w-3/12 mr-[2vw]">
+        <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue md:h-full h-[45vh] via-pinkishRed to-oceanGreen p-[1px]">
+          <div className="flex items-start py-[1vw] px-[1vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
             <Image
               src={user?.photo}
               alt="User profile"
               width={1000}
               height={1000}
-              className="w-full h-[19vw] object-cover object-center rounded-full"
+              className="w-full md:h-[19vw] object-cover object-center rounded-full"
             />
           </div>
         </div>
-        <h1 className="text-websiteBlue text-xl text-center mt-4">
+        <h1 className="text-websiteBlue text-xl text-center mt-2 md:mt-4">
           {user?.name}
         </h1>
         <p className="text-center text-sm text-darkGrey">{user?.desc}</p>
-        <div className="flex justify-center items-center mt-5">
+        <div className="flex justify-center items-center mt-2 md:mt-5">
           <BsCameraVideo
             className="text-websiteBlue border-websiteBlue p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
             size={40}
@@ -58,13 +58,13 @@ const OneTherapist = ({ params }) => {
           onClick={(e) => {
             history.push(`/therapy/${id}/schedule`);
           }}
-          className="bg-websiteBlue px-9 text-sm mt-7 py-2 rounded-lg text-white mx-auto block"
+          className="bg-websiteBlue px-9 text-sm mt-2 md:mt-7 py-2 rounded-lg text-white mx-auto block"
         >
           Schedule Session
         </button>
       </div>
-      <div className="w-9/12 flex flex-col">
-        <div className="grid grid-cols-3 gap-5 w-full">
+      <div className="w-full md:w-9/12 flex flex-col">
+        <div className="grid grid-cols-1 md:mt-0 mt-5 md:grid-cols-3 gap-5 w-full">
           <div>
             {<Table data={{ name: "Experience", items: [user?.experience] }} />}
           </div>
@@ -81,7 +81,7 @@ const OneTherapist = ({ params }) => {
           <h1 className="text-websiteBlue text-2xl font-light mt-[5vh]">
             Expertise
           </h1>
-          <div className="grid grid-cols-3 gap-5 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
             {user?.expertise?.map((e, i) => {
               return (
                 <div
@@ -96,11 +96,13 @@ const OneTherapist = ({ params }) => {
             })}
           </div>
         </div>
-        <div>
+        <div className="">
           <h1 className="text-websiteBlue text-2xl mt-[5vh] font-light">
             About the Therapist
           </h1>
-          <p className="text-darkGrey text-sm tracking-wider">{user?.about}</p>
+          <p className="text-darkGrey text-sm tracking-wider break-words mt-1">
+            {user?.about}
+          </p>
         </div>
       </div>
     </div>

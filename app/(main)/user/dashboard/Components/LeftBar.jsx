@@ -12,7 +12,7 @@ const LeftBar = () => {
   let { login } = useContext(Context);
 
   return (
-    <div className="w-3/12 rounded-md bg-white py-6">
+    <div className="w-[95%] mx-auto md:w-3/12 rounded-md bg-white py-8 md:mb-0 mb-4 md:mt-0 mt-3 md:py-6">
       <div className="flex flex-col items-center text-lightGrey font-light">
         <Image src={image} alt="User image" className="w-5/12" />
         <p className="mt-1.5 mb-0">Name: {login?.name}</p>

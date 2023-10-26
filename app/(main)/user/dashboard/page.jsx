@@ -31,20 +31,20 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="bg-[#eee] px-[5vw] flex justify-between items-start py-[2vw]">
+      <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[2vw]">
         <LeftBar />
-        <div className="w-6/12 px-[2vw]">
+        <div className="md:w-6/12 px-[2vw]">
           {" "}
-          <div className="relative mb-6">
+          <div className="relative mb-4 md:mb-6">
             <Image src={bg} alt="Background" />
-            <div className="flex px-[2vw] justify-between items-center h-full absolute top-0 left-0">
-              <h1 className="text-2xl text-white font-light">
+            <div className="flex px-[3vw] md:px-[2vw] justify-between items-center h-full absolute top-0 left-0">
+              <h1 className="text-base md:text-2xl text-white font-light">
                 Hi {login?.name}, Welcome to #oneness
               </h1>
               <Image src={logoPng} alt="Logo png" className="w-[20%]" />
             </div>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex md:flex-row flex-col justify-between items-center">
             {[
               { image: therapistReview, route: "/therapist-review" },
               { image: scheduleAppointment, route: "" },
@@ -52,7 +52,7 @@ const Dashboard = () => {
             ].map((e, i) => {
               return (
                 <div
-                  className="cursor-pointer bg-white w-[32%] p-[2.5vw] h-[8vw] flex justify-center items-center rounded-3xl"
+                  className="cursor-pointer bg-white w-full md:w-[32%] p-[3vw] md:p-[2.5vw] h-fit md:mb-0 mb-4 md:h-[8vw] flex justify-center items-center rounded-3xl"
                   key={i}
                 >
                   <Image
@@ -66,11 +66,11 @@ const Dashboard = () => {
               );
             })}
           </div>
-          <div className="bg-white rounded-3xl mt-6 p-4">
-            <h1 className="text-websiteBlue font-light text-center">
+          <div className="bg-white rounded-3xl mt-1 md:mt-6 p-4">
+            <h1 className="text-websiteBlue font-light md:text-base text-lg text-center">
               Feeling Check
             </h1>
-            <div className="grid grid-cols-4 gap-5 mt-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
               {[rain, sunshine, cloudy, lighteing].map((e) => {
                 return (
                   <Image

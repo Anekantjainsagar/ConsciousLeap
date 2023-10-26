@@ -209,7 +209,7 @@ const Navbar = () => {
             }}
           />
           <div className="flex items-center w-1/2 justify-between text-lg font-light">
-            <Navi />
+            <Navi showNav={showNav} setShowNav={setShowNav} />
           </div>
           <div className="flex items-center">
             <AiOutlineUser
@@ -246,7 +246,7 @@ const Navbar = () => {
         </div>
         <div className={`${showNav ? "block my-2" : "hidden"}`}>
           <div className="flex flex-col text-lg font-light">
-            <Navi />
+            <Navi showNav={showNav} setShowNav={setShowNav} />
           </div>
           <div className="ml-4 flex items-center">
             <AiOutlineUser
@@ -271,13 +271,15 @@ const Navbar = () => {
   );
 };
 
-const Navi = () => {
+const Navi = ({ showNav, setShowNav }) => {
   return nav.map((e) => {
-    return <NavItems e={e} key={e?.name} />;
+    return (
+      <NavItems e={e} key={e?.name} showNav={showNav} setShowNav={setShowNav} />
+    );
   });
 };
 
-const NavItems = ({ e }) => {
+const NavItems = ({ e, showNav, setShowNav }) => {
   const [hover, setHover] = useState(false);
   const history = useRouter();
   const pathname = usePathname();
@@ -291,7 +293,7 @@ const NavItems = ({ e }) => {
 
   return (
     <div
-      className="relative md:ml-0 ml-5 z-50"
+      className="relative md:ml-0 ml-5"
       onMouseEnter={handleMouseEnter}
       onMouseOut={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -300,7 +302,7 @@ const NavItems = ({ e }) => {
       }}
     >
       <p
-        className="blueHover cursor-pointer flex items-center md:mb-0 mb-1.5"
+        className="blueHover cursor-pointer flex z-40 items-center md:mb-0 mb-1.5"
         onMouseEnter={handleMouseEnter}
         onMouseOut={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -320,15 +322,17 @@ const NavItems = ({ e }) => {
         }}
         className={`absolute ${
           !hover ? "hidden" : "block"
-        } bg-white text-xs w-[13vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
+        } bg-white text-xs w-[55vw] md:w-[13vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
       >
         <div className="mt-2 bg-transparent"></div>
         {e?.items.map((data, i) => {
           return (
             <p
-              className="mb-[13px] text-darkGrey blueHover cursor-pointer"
+              className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50"
               key={i}
               onClick={(e) => {
+                setHover(!hover);
+                setShowNav(!showNav);
                 const element = document.getElementById(
                   data?.name?.replaceAll(" ", "")?.toLowerCase()
                 );

@@ -26,7 +26,7 @@ const DashboardEdit = () => {
       phone: login?.phone,
       email: login?.email,
     });
-  }, []);
+  }, [login]);
 
   const onUpdate = () => {
     let token = getCookie("token");
@@ -48,10 +48,10 @@ const DashboardEdit = () => {
 
   return (
     <>
-      <div className="bg-[#eee] px-[5vw] flex justify-between items-start py-[2vw]">
+      <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[2vw]">
         <LeftBar />
         <Toaster />
-        <div className="w-6/12 px-[2vw]">
+        <div className="md:w-6/12 px-[2vw]">
           <h1 className="text-darkGrey tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
             Manage Profile
           </h1>
@@ -94,7 +94,13 @@ const DashboardEdit = () => {
                   <div
                     key={i}
                     className="items-center grid mb-2"
-                    style={{ gridTemplateColumns: "20% 80%" }}
+                    style={
+                      typeof window != "undefined"
+                        ? window.innerWidth < 550
+                          ? { gridTemplateColumns: "30% 70%" }
+                          : { gridTemplateColumns: "20% 80%" }
+                        : {}
+                    }
                   >
                     <p className="font-light text-darkGrey text-sm">
                       {e.title}

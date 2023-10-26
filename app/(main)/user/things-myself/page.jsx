@@ -49,25 +49,27 @@ const ThingsMyself = () => {
   };
 
   return (
-    <div className="my-[9vw] mx-[5vw] border border-gray-400 flex justify-between">
+    <div className="my-[9vw] mx-[5vw] border border-gray-400 flex flex-col md:flex-row justify-between">
       <Toaster />
-      <div className="w-3/12 flex flex-col items-center justify-center">
-        <p className="mb-2 text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
+      <div className="md:w-3/12 md:py-0 py-3 flex flex-col items-center justify-center">
+        <p className="mb-1 md:mb-2 text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
           Self Love
         </p>
-        <p className="text-4xl border-t pt-1 border-black font-semibold text-black">
+        <p className="text-2xl md:text-4xl border-t pt-1 border-black font-semibold text-black">
           Journel
         </p>
       </div>
-      <div className="w-9/12 bg-gradient-to-r h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[5vh] pt-[3vw]">
+      <div className="md:w-9/12 bg-gradient-to-r md:h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] pt-[3vw]">
           <Image
             src={pen}
             alt={"Alt"}
             className="w-[25vw] absolute top-5 right-5"
           />
           <div className="w-[50%] ml-[3vw]">
-            <h1 className="text-websiteBlue text-4xl mb-3">Self-care List</h1>
+            <h1 className="text-websiteBlue text-2xl md:text-4xl mb-3">
+              Self-care List
+            </h1>
             <textarea
               name=""
               value={thoughts?.selfCare}
@@ -76,14 +78,20 @@ const ThingsMyself = () => {
               }}
               className="border rounded-md outline-none border-gray-800 block p-3 text-xl"
               id=""
-              cols="30"
+              cols={
+                typeof window != "undefined"
+                  ? window.innerWidth < 500
+                    ? "23"
+                    : "30"
+                  : "0"
+              }
               rows="6"
               placeholder="Write here.,."
             ></textarea>
           </div>
-          <div className="flex w-[100%] justify-between mt-[4vw] items-center">
-            <div className="w-[50%] px-[3.5vw]">
-              <h1 className="text-websiteBlue text-2xl mb-3">
+          <div className="flex w-[100%] md:flex-row flex-col justify-between mt-[4vw] items-center">
+            <div className="md:w-[50%] w-[98%] px-[3.5vw]">
+              <h1 className="text-websiteBlue text-xl md:text-2xl mb-3">
                 Things I like about myself
               </h1>
               <textarea
@@ -94,13 +102,19 @@ const ThingsMyself = () => {
                 }}
                 className="border rounded-md outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols="30"
+                cols={
+                  typeof window != "undefined"
+                    ? window.innerWidth < 500
+                      ? "22"
+                      : "30"
+                    : "0"
+                }
                 rows="6"
                 placeholder="Write here.,."
               ></textarea>
             </div>
-            <div className="w-[50%] pr-[3.5vw]">
-              <h1 className="text-websiteBlue text-2xl mb-3">
+            <div className="md:w-[50%] w-[98%] md:pr-[3.5vw]">
+              <h1 className="text-websiteBlue text-xl md:mt-0 mt-3 md:text-2xl mb-3">
                 Things I want to tell my past self
               </h1>
               <textarea
@@ -111,7 +125,13 @@ const ThingsMyself = () => {
                 }}
                 className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols="30"
+                cols={
+                  typeof window != "undefined"
+                    ? window.innerWidth < 500
+                      ? "22"
+                      : "30"
+                    : "0"
+                }
                 rows="6"
                 placeholder="Write here.,."
               ></textarea>

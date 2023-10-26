@@ -47,7 +47,7 @@ const HowItWorks = () => {
         thought to keep it simple, impactful, and flexible all at once.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-y-0 gap-y-8 w-full px-[10vw] pt-[2.5vw]">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center md:mt-0 mt-5">
           <h1 className="cursor-pointer gradientHover text-3xl">Step 1</h1>
           <p className="md:text-base text-sm mb-2">
             Take a short and simple

@@ -38,22 +38,22 @@ const ThoughtTracker = () => {
   };
 
   return (
-    <div className="my-[9vw] mx-[5vw] border border-gray-400 flex justify-between">
+    <div className="my-[9vw] mx-[5vw] border border-gray-200 md:rounded-none rounded-md md:border-gray-400 flex md:flex-row flex-col justify-between">
       <Toaster />
-      <div className="w-3/12 flex flex-col items-center justify-center">
-        <p className="mb-2 text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
+      <div className="md:w-3/12 md:py-0 py-5 flex flex-col items-center justify-center">
+        <p className="mb-1 md:mb-2 text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
           Thought
         </p>
-        <p className="text-4xl border-t pt-1 border-black font-semibold text-black">
+        <p className="text-2xl md:text-4xl border-t pt-1 border-black font-semibold text-black">
           Tracker
         </p>
       </div>
-      <div className="w-9/12 bg-gradient-to-r h-[150vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[5vh] pt-[6vw]">
+      <div className="md:w-9/12 bg-gradient-to-r h-[100vh] md:h-[150vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] pt-[6vw]">
           <Image
             src={pen}
             alt={"Alt"}
-            className="w-[30vw] absolute top-0 right-0"
+            className="w-[50vw] md:w-[30vw] absolute top-0 right-0"
           />
           <textarea
             name=""
@@ -64,7 +64,13 @@ const ThoughtTracker = () => {
             className="border rounded-md w-[92%] outline-none border-gray-800 block mx-auto p-3 text-xl"
             id=""
             cols="30"
-            rows="27"
+            rows={
+              typeof window != "undefined"
+                ? window.innerWidth < 500
+                  ? "16"
+                  : "27"
+                : "0"
+            }
             placeholder="Write here.,."
           ></textarea>
           <button

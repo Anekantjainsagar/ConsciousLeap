@@ -1,9 +1,9 @@
 {
   "/not-found": "app/not-found.js",
   "/(main)/page": "app/(main)/page.js",
-  "/(main)/therapy/page": "app/(main)/therapy/page.js",
-  "/(main)/therapy/register/page": "app/(main)/therapy/register/page.js",
-  "/(therapist)/therapy/dashboard/page": "app/(therapist)/therapy/dashboard/page.js",
-  "/(main)/user/login/page": "app/(main)/user/login/page.js",
-  "/(therapist)/therapy/edit-profile/page": "app/(therapist)/therapy/edit-profile/page.js"
+  "/(main)/user/dashboard/page": "app/(main)/user/dashboard/page.js",
+  "/(main)/user/thoughts-tracker/page": "app/(main)/user/thoughts-tracker/page.js",
+  "/(main)/user/things-myself/page": "app/(main)/user/things-myself/page.js",
+  "/(main)/user/gratitude/page": "app/(main)/user/gratitude/page.js",
+  "/(main)/user/dashboard/edit/page": "app/(main)/user/dashboard/edit/page.js"
 }
