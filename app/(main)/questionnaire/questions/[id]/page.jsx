@@ -496,7 +496,6 @@ const Block = ({ data, page }) => {
         setQuestionnaire({ ...questionnaire, answers: [...answersUpdated] });
         console.log(data?.name, data?.value, answersUpdated);
         if (page == 13) {
-          console.log(questionnaire);
           axios
             .post(`${BASE_URL}/login/update-questionnaire`, {
               ...questionnaire,
@@ -513,7 +512,7 @@ const Block = ({ data, page }) => {
         }
         history.push(`/questionnaire/questions/${page + 1}`);
       }}
-      className="rounded-xl mb-4 md:mb-5 mx-auto w-[35vw] h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+      className="rounded-xl mb-4 md:mb-5 mx-auto w-[35vw] h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[4px] cursor-pointer transition-all"
     >
       <div className="h-full w-full rounded-xl text-lg text-center bg-white px-2 md:px-10 py-1.5 cursor-pointer">
         {data?.name}

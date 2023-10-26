@@ -1,3 +1,7 @@
 {
-  "/(therapist)/therapy/dashboard/page": "app/(therapist)/therapy/dashboard/page.js"
+  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js",
+  "/(main)/user/dashboard/page": "app/(main)/user/dashboard/page.js",
+  "/(main)/questionnaire/questions/ask-age/page": "app/(main)/questionnaire/questions/ask-age/page.js",
+  "/(main)/questionnaire/questions/problem/page": "app/(main)/questionnaire/questions/problem/page.js",
+  "/(main)/questionnaire/questions/[id]/page": "app/(main)/questionnaire/questions/[id]/page.js"
 }

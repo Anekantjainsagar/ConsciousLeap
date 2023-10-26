@@ -1,10 +1,15 @@
 {
   "pages": {
-    "/(therapist)/therapy/dashboard/page": [
+    "/(main)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(therapist)/therapy/dashboard/page.css",
-      "static/chunks/app/(therapist)/therapy/dashboard/page.js"
+      "static/css/app/(main)/page.css",
+      "static/chunks/app/(main)/page.js"
+    ],
+    "/(main)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -12,10 +17,46 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(therapist)/layout": [
+    "/(main)/therapy/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(therapist)/layout.js"
+      "static/chunks/app/(main)/therapy/page.js"
+    ],
+    "/(main)/user/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/user/login/page.js"
+    ],
+    "/(main)/questionnaire/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/questionnaire/page.js"
+    ],
+    "/(main)/questionnaire/questions/ask-age/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/questionnaire/questions/ask-age/page.js"
+    ],
+    "/(main)/questionnaire/questions/problem/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/questionnaire/questions/problem/page.js"
+    ],
+    "/(main)/questionnaire/questions/what-to-do/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/questionnaire/questions/what-to-do/page.js"
+    ],
+    "/(main)/questionnaire/questions/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/questionnaire/questions/[id]/page.js"
+    ],
+    "/(main)/user/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(main)/user/dashboard/page.css",
+      "static/chunks/app/(main)/user/dashboard/page.js"
     ]
   }
 }
