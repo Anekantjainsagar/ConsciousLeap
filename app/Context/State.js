@@ -34,6 +34,7 @@ const B2BState = (props) => {
     problem: "",
     answers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   });
+  const [fourtyMinMeet, setFourtyMinMeet] = useState(true);
 
   const getTherapistsData = () => {
     axios
@@ -146,6 +147,8 @@ const B2BState = (props) => {
         therapistFilter,
         questionnaire,
         setQuestionnaire,
+        fourtyMinMeet,
+        setFourtyMinMeet,
       }}
     >
       {props.children}

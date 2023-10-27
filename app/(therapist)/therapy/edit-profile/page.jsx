@@ -37,7 +37,14 @@ const EditProfile = () => {
     speaks: [],
     about: "",
     photo: "",
-    meeting_url: "",
+    meeting_url: {
+      url: "",
+      price: "",
+    },
+    full_meeting_url: {
+      url: "",
+      price: "",
+    },
   });
 
   useEffect(() => {
@@ -53,9 +60,16 @@ const EditProfile = () => {
       speaks: therapist?.speaks,
       about: therapist?.about,
       photo: therapist?.photo,
-      meeting_url: therapist?.meeting_url,
+      meeting_url: {
+        url: therapist?.meeting_url?.url,
+        price: therapist?.meeting_url?.price,
+      },
+      full_meeting_url: {
+        url: therapist?.full_meeting_url?.url,
+        price: therapist?.full_meeting_url?.price,
+      },
     });
-  }, []);
+  }, [therapists?.therapist]);
 
   const onUpdate = () => {
     axios
@@ -488,13 +502,90 @@ const EditProfile = () => {
               className="grid py-5 items-center"
               style={{ gridTemplateColumns: "15% 85%" }}
             >
-              <p className="font-light text-[14px]">Therapist Meeting Url </p>
+              <p className="font-light text-[14px]">
+                Therapist Meeting Price (40 mins){" "}
+              </p>
+              <input
+                placeholder="Meeting Price"
+                type="text"
+                value={therapist?.meeting_url?.price}
+                onChange={(e) => {
+                  setTherapist({
+                    ...therapist,
+                    meeting_url: {  
+                      ...therapist?.meeting_url,
+                      price: e.target.value,
+                    },
+                  });
+                }}
+                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+              />
+            </div>
+            <div
+              className="grid py-5 items-center"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">
+                Therapist Meeting Url (40 mins){" "}
+              </p>
               <input
                 placeholder="Meeting url"
                 type="text"
-                value={therapist?.meeting_url}
+                value={therapist?.meeting_url?.url}
                 onChange={(e) => {
-                  setTherapist({ ...therapist, meeting_url: e.target.value });
+                  setTherapist({
+                    ...therapist,
+                    meeting_url: {
+                      ...therapist?.meeting_url,
+                      url: e.target.value,
+                    },
+                  });
+                }}
+                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+              />
+            </div>
+            <div
+              className="grid py-5 items-center"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">
+                Therapist Meeting Price (60 mins){" "}
+              </p>
+              <input
+                placeholder="Meeting Price"
+                type="text"
+                value={therapist?.full_meeting_url?.price}
+                onChange={(e) => {
+                  setTherapist({
+                    ...therapist,
+                    full_meeting_url: {
+                      ...therapist?.full_meeting_url,
+                      price: e.target.value,
+                    },
+                  });
+                }}
+                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+              />
+            </div>
+            <div
+              className="grid py-5 items-center"
+              style={{ gridTemplateColumns: "15% 85%" }}
+            >
+              <p className="font-light text-[14px]">
+                Therapist Meeting Url (60 mins){" "}
+              </p>
+              <input
+                placeholder="Meeting url"
+                type="text"
+                value={therapist?.full_meeting_url?.url}
+                onChange={(e) => {
+                  setTherapist({
+                    ...therapist,
+                    full_meeting_url: {
+                      ...therapist?.full_meeting_url,
+                      url: e.target.value,
+                    },
+                  });
                 }}
                 className="border outline-none text-gray-600 rounded-md px-4 py-1"
               />
