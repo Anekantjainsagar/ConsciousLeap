@@ -1,7 +1,7 @@
 {
-  "/(main)/therapy/page": "app/(main)/therapy/page.js",
-  "/(therapist)/therapy/edit-profile/page": "app/(therapist)/therapy/edit-profile/page.js",
-  "/(main)/therapy/[name]/page": "app/(main)/therapy/[name]/page.js",
-  "/(main)/therapy/[name]/schedule/page": "app/(main)/therapy/[name]/schedule/page.js",
-  "/(main)/therapy/[name]/schedule/appoint/page": "app/(main)/therapy/[name]/schedule/appoint/page.js"
+  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js",
+  "/(main)/questionnaire/questions/ask-age/page": "app/(main)/questionnaire/questions/ask-age/page.js",
+  "/(main)/questionnaire/questions/what-to-do/page": "app/(main)/questionnaire/questions/what-to-do/page.js",
+  "/(main)/questionnaire/questions/[id]/page": "app/(main)/questionnaire/questions/[id]/page.js",
+  "/(main)/questionnaire/questions/problem/page": "app/(main)/questionnaire/questions/problem/page.js"
 }

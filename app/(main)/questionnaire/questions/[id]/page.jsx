@@ -467,10 +467,10 @@ const EachQuestion = ({ params }) => {
   return (
     <div className="w-full h-[66vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-extrabold underline text-black mb-1">
+        <h1 className="text-3xl font-extrabold underline text-[#2e4fc9] mb-1">
           Life Assessment Questionnaire
         </h1>
-        <h1 className="text-[27px] font-extrabold text-black mb-8">
+        <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
           {tempData?.question}
         </h1>
         <div className="grid grid-cols-2 gap-x-10">

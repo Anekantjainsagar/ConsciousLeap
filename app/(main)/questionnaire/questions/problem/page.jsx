@@ -7,7 +7,7 @@ const Problem = () => {
   return (
     <div className="w-full h-[60vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-[27px] font-extrabold text-black mb-8">
+        <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
           What are the significant concerns you are facing?
         </h1>
         <div className="grid grid-cols-2 gap-x-10">

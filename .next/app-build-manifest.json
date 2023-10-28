@@ -17,46 +17,30 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(main)/user/login/page": [
+    "/(main)/questionnaire/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/user/login/page.js"
+      "static/chunks/app/(main)/questionnaire/page.js"
     ],
-    "/(therapist)/layout": [
+    "/(main)/questionnaire/questions/ask-age/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(therapist)/layout.js"
+      "static/chunks/app/(main)/questionnaire/questions/ask-age/page.js"
     ],
-    "/(therapist)/therapy/dashboard/page": [
+    "/(main)/questionnaire/questions/problem/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(therapist)/therapy/dashboard/page.css",
-      "static/chunks/app/(therapist)/therapy/dashboard/page.js"
+      "static/chunks/app/(main)/questionnaire/questions/problem/page.js"
     ],
-    "/(main)/therapy/page": [
+    "/(main)/questionnaire/questions/what-to-do/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/page.js"
+      "static/chunks/app/(main)/questionnaire/questions/what-to-do/page.js"
     ],
-    "/(therapist)/therapy/edit-profile/page": [
+    "/(main)/questionnaire/questions/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(therapist)/therapy/edit-profile/page.js"
-    ],
-    "/(main)/therapy/[name]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/[name]/page.js"
-    ],
-    "/(main)/therapy/[name]/schedule/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/[name]/schedule/page.js"
-    ],
-    "/(main)/therapy/[name]/schedule/appoint/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/[name]/schedule/appoint/page.js"
+      "static/chunks/app/(main)/questionnaire/questions/[id]/page.js"
     ]
   }
 }

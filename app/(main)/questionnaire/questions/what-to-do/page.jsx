@@ -7,7 +7,7 @@ const WhatToDo = () => {
   return (
     <div className="w-full h-[60vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-[27px] font-extrabold text-black mb-8">
+        <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
           I am not sure what i am going through
         </h1>
         <div>
