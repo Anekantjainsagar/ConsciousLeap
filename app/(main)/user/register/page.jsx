@@ -34,15 +34,15 @@ const UserRegister = () => {
               toast.success(response.data.data);
               emailjs
                 .send(
-                  "service_jdcafm3",
-                  "template_76co9rr",
+                  "service_m3apnyp",
+                  "template_7ewn8wa",
                   {
                     email: user?.email,
                     otp: response.data.otp,
                     name: "Anekant",
                     from_name: "Consciousleap",
                   },
-                  "ud6oI9829OBeCMz6O"
+                  "v7Az1Fd2eRsK6eP9z"
                 )
                 .then(
                   function (response) {
