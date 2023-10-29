@@ -48,7 +48,7 @@ export default function BootstrapCarousel() {
       </SwiperSlide>
       <SwiperSlide className="relative">
         <h1 className="absolute font-bold text-[10px] md:text-2xl top-[15%] md:top-[34%] left-[13%] md:left-[20%]">
-          "Home of oneness'
+          &ldquo;Home of oneness&ldquo;
         </h1>
         <p className="absolute top-[43%] left-[13%] md:left-[18%] text-[6px] md:text-lg w-[26%] md:w-[20%] z-20">
           <span className="font-bold">consciousleap</span> was founded keeping
