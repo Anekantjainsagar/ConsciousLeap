@@ -1,7 +1,4 @@
 {
-  "/(main)/questionnaire/page": "app/(main)/questionnaire/page.js",
-  "/(main)/questionnaire/questions/ask-age/page": "app/(main)/questionnaire/questions/ask-age/page.js",
-  "/(main)/questionnaire/questions/what-to-do/page": "app/(main)/questionnaire/questions/what-to-do/page.js",
-  "/(main)/questionnaire/questions/[id]/page": "app/(main)/questionnaire/questions/[id]/page.js",
-  "/(main)/questionnaire/questions/problem/page": "app/(main)/questionnaire/questions/problem/page.js"
+  "/not-found": "app/not-found.js",
+  "/(main)/page": "app/(main)/page.js"
 }

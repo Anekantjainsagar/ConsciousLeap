@@ -17,30 +17,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(main)/questionnaire/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/page.js"
-    ],
-    "/(main)/questionnaire/questions/ask-age/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/ask-age/page.js"
-    ],
-    "/(main)/questionnaire/questions/problem/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/problem/page.js"
-    ],
-    "/(main)/questionnaire/questions/what-to-do/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/what-to-do/page.js"
-    ],
-    "/(main)/questionnaire/questions/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/[id]/page.js"
+      "static/chunks/app/not-found.js"
     ]
   }
 }

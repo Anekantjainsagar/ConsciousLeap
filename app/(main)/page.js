@@ -1,4 +1,4 @@
-import BootstrapCarousel from "./Components/Carousel";
+import BootstrapCarousel from "./Components/BootstrapCarousel";
 import Line1 from "./Components/Lines/Line1";
 import Whyconsciousleap from "./Components/WhyConsciousLeap";
 import Line2 from "./Components/Lines/Line2";
