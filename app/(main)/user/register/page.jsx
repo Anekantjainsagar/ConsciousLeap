@@ -7,6 +7,7 @@ import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
 import Context from "@/Context/Context";
 import { getCookie } from "cookies-next";
+import emailjs from "@emailjs/browser";
 
 const UserRegister = () => {
   const { user, setUser } = useContext(Context);
@@ -31,6 +32,26 @@ const UserRegister = () => {
           .then((response) => {
             if (response.status == 200) {
               toast.success(response.data.data);
+              emailjs
+                .send(
+                  "service_jdcafm3",
+                  "template_76co9rr",
+                  {
+                    email: user?.email,
+                    otp: response.data.otp,
+                    name: "Anekant",
+                    from_name: "Consciousleap",
+                  },
+                  "ud6oI9829OBeCMz6O"
+                )
+                .then(
+                  function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                  },
+                  function (error) {
+                    console.log("FAILED...", error);
+                  }
+                );
               setUser({ ...user, original: response.data.otp });
               setTimeout(() => {
                 router.push("/user/register/otp-verification");
