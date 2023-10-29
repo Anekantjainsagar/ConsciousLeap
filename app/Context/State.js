@@ -82,7 +82,7 @@ const B2BState = (props) => {
     if (getCookie("therapist_token")?.length > 1) {
       setIsTherapistLogin(true);
     }
-  });
+  }, [pathname]);
 
   const getUser = () => {
     axios
