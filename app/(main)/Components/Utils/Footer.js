@@ -16,8 +16,11 @@ import appStore from "../../Assets/icons/appStore.png";
 import logo from "../../Assets/logo.png";
 import certified from "../../Assets/logoCertified.png";
 import Line1 from "../Lines/Line1";
+import { usePathname, useRouter } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const history = useRouter();
   let nav = [
     {
       name: "consciousleap",
@@ -69,19 +72,19 @@ const Footer = () => {
       items: [
         {
           name: "Our Mindful Therapists",
-          route: "",
+          route: "/therapy",
         },
         {
           name: "Areas of Expertise",
-          route: "",
+          route: "/expertise-area",
         },
         {
           name: "Questionnaire",
-          route: "",
+          route: "/questionnaire",
         },
         {
           name: "Register as a Therapist",
-          route: "",
+          route: "/therapy/register",
         },
       ],
     },
@@ -167,6 +170,22 @@ const Footer = () => {
                   return (
                     <p
                       key={i}
+                      onClick={(e) => {
+                        const element = document.getElementById(
+                          data?.name?.replaceAll(" ", "")?.toLowerCase()
+                        );
+                        if (data?.route) {
+                          if (pathname != data?.route) {
+                            history.push(data.route);
+                          }
+                        }
+                        if (element) {
+                          element.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                          });
+                        }
+                      }}
                       className="text-[13.5px] mb-1 font-light cursor-pointer hover:text-websiteBlue"
                     >
                       {data?.name}

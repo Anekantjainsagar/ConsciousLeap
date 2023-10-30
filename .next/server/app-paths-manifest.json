@@ -1,4 +1,8 @@
 {
   "/(main)/page": "app/(main)/page.js",
-  "/(main)/join-us/page": "app/(main)/join-us/page.js"
+  "/(main)/join-us/page": "app/(main)/join-us/page.js",
+  "/(main)/therapy/page": "app/(main)/therapy/page.js",
+  "/(main)/privacy/refund/page": "app/(main)/privacy/refund/page.js",
+  "/(main)/privacy/policies/page": "app/(main)/privacy/policies/page.js",
+  "/(main)/therapy/[name]/page": "app/(main)/therapy/[name]/page.js"
 }

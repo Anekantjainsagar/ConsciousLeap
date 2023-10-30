@@ -35,6 +35,7 @@ export default function BootstrapCarousel() {
         disableOnInteraction: true,
       }}
       cssMode={true}
+      id="homeofoneness"
     >
       <SwiperSlide className="relative">
         <h1 className="absolute font-bold text-[10px] md:text-2xl top-[8%] md:top-[27%] left-[23%] md:left-[25.5%]">

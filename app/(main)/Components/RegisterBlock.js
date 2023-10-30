@@ -2,9 +2,11 @@
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
 import Line2 from "./Lines/Line2";
+import { useRouter } from "next/navigation";
 
 const RegisterBlock = () => {
   let registerTherapy = useRef();
+  const history = useRouter();
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +36,9 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
+          onClick={(e) => {
+            history.push("/join-us");
+          }}
           id="joinconsciousleap"
           className="mb-3 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
@@ -47,6 +52,9 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
+          onClick={(e) => {
+            history.push("/join-us");
+          }}
           className="mb-3 mt-16 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Become a Volunteer
@@ -60,6 +68,9 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
+          onClick={(e) => {
+            history.push("/join-us");
+          }}
           className="mb-3 mt-16 text-3xl font-light mx-auto text-center w-fit gradientHover cursor-pointer"
         >
           Partner with consciousleap
@@ -74,6 +85,9 @@ const RegisterBlock = () => {
       <div>
         <h1
           ref={registerTherapy}
+          onClick={(e) => {
+            history.push("/therapy/register");
+          }}
           className="mb-4 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Register as a Therapist

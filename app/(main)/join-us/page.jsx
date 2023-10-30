@@ -6,7 +6,27 @@ import volunteer from "../Assets/joinus/volunteer.png";
 import partners from "../Assets/joinus/partners.png";
 import Line2 from "../Components/Lines/Line2";
 
+import img2 from "../Assets/registerTherapist/join2.png";
+import img4 from "../Assets/registerTherapist/join4.png";
+import img6 from "../Assets/registerTherapist/join6.png";
+import img10 from "../Assets/registerTherapist/join10.png";
+import img11 from "../Assets/registerTherapist/join11.png";
+import img12 from "../Assets/registerTherapist/join12.png";
+
 const JoinConsciousleap = () => {
+  let registerData = [
+    { image: img2, title: "Virtual", desc: "Work from anywhere." },
+    {
+      image: img4,
+      title: "Promising",
+      desc: "Career opportunities at consciousleap.",
+    },
+    { image: img6, title: "Incentivized", desc: "Performance Bonus." },
+    { image: img10, title: "Recognition", desc: "Get awarded." },
+    { image: img11, title: "Supportive", desc: "Mindful work-family." },
+    { image: img12, title: "International", desc: "Heal the world." },
+  ];
+
   return (
     <div className="pt-[3vw]">
       <h1 className="text-websiteBlue font-extrabold text-5xl text-center">
@@ -26,7 +46,11 @@ const JoinConsciousleap = () => {
         of advantages to foster a collaborative and innovative environment where
         growth, creativity, and success thrive.
       </p>
-      <div></div>
+      <div className="grid grid-cols-1 md:grid-cols-6 mt-7 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
+        {registerData.map((e, i) => {
+          return <FlipCard data={e} key={i} />;
+        })}
+      </div>
       <Line2 />
       <h1 className="text-websiteBlue font-extrabold text-5xl text-center">
         Become a Volunteer
@@ -63,7 +87,7 @@ const JoinConsciousleap = () => {
         <h1 className="text-3xl text-websiteBlue font-bold">
           Calling all Conscious Heroes: Here’s what we’re looking for
         </h1>
-        <p className="text-lg mt-3 mb-4">
+        <div className="text-lg mt-3 mb-4">
           <li>
             Locally produced goods that are free from plastic, organic, or
             chemical-free.
@@ -89,14 +113,14 @@ const JoinConsciousleap = () => {
             Women-run or women-founded or employ at least 20% of women in its
             workforce.
           </li>
-        </p>
+        </div>
         <h1 className="text-3xl text-websiteBlue font-bold">
           Join our Conscious Community: Here’s how you can sell with
           consciousleap
         </h1>
         <p className="text-lg mt-5 mb-3">Our onboarding process is as below:</p>
         <div className="text-lg">
-          <p className="mt-3 font-medium">
+          <p className="mt-6 font-medium">
             {" "}
             1. <span className="text-websiteBlue">Conscious Partnering</span> -
             To begin your conscious journey with us, kindly complete our
@@ -104,7 +128,7 @@ const JoinConsciousleap = () => {
             Community. It’s a brief form to gather essential information about
             you, your product, your brand, or your idea.semibold
           </p>
-          <p className="mt-3 font-medium">
+          <p className="mt-6 font-medium">
             {" "}
             2. <span className="text-websiteBlue">Conscious Unveiling</span> -
             Upon submitting the Conscious Partner Application Form, we will
@@ -112,6 +136,104 @@ const JoinConsciousleap = () => {
             comprehensively understand your motives, principles, production
             methods, packaging practices, and product catalog.
           </p>
+          <p className="mt-6 font-medium">
+            {" "}
+            3. <span className="text-websiteBlue"> Conscious Curation</span> -
+            Upon mindfully reviewing your product details, we will shortlist and
+            compile a list of products that align well with our audience,
+            curation standards, motto, mission, vision, and values.
+          </p>
+          <p className="mt-6 font-medium">
+            {" "}
+            4. <span className="text-websiteBlue">Conscious Compliance</span> -
+            To ensure conscious compliance, we may request samples of each SKU
+            before onboarding you. Please dispatch the demo samples in their
+            original packaging, as you would provide them to your customers.
+            It's important to note that these samples may undergo rigorous
+            testing and will not be returned to you, regardless of whether or
+            not the product is accepted onto our platform. Additionally, you can
+            include any certifications or product quality/ component
+            certifications that you possess to substantiate the authenticity of
+            your claims. This information will greatly assist us in making a
+            conscious decision.
+          </p>
+          <p className="mt-6 font-medium">
+            {" "}
+            5. <span className="text-websiteBlue">Conscious Testing</span> -
+            Prior to featuring any products on our Conscious Store, we make it a
+            point to mindfully test each and everyone of them. Our primary
+            objective is to provide our customers with only the finest options
+            available. This dedication drives us to conduct thorough testing,
+            ensuring that our team evaluates everything before it is made
+            available to our valued customers.
+          </p>
+          <p className="mt-6 font-medium">
+            {" "}
+            6. <span className="text-websiteBlue">Conscious Onboarding </span> -
+            Upon approving your product, we will request some essential business
+            information from you to verify your KYC (Know Your Customer) details
+            and complete your registration as a conscious seller with us.
+          </p>
+          <p className="mt-6 font-medium">
+            If you’re curious and want to know more about our product selection
+            process please fill out the short form below and we will revert back
+            to you.
+          </p>
+        </div>
+      </div>
+      <div className="w-1/2 mt-[5vw] mx-auto flex flex-col items-center">
+        <h1 className="font-bold text-3xl mb-4 text-websiteBlue">
+          We'd love to hear from you
+        </h1>
+        <input
+          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+          type="text"
+          placeholder="Name"
+        />
+        <input
+          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+          type="text"
+          placeholder="Company Name"
+        />
+        <input
+          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+          type="email"
+          placeholder="Work Email"
+        />
+        <input
+          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+          type="text"
+          placeholder="Contact"
+        />
+        <input
+          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+          type="text"
+          placeholder="Message"
+        />
+        <button className="bg-websiteBlue text-white py-2 w-1/2 rounded-md font-semibold">
+          Submit
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const FlipCard = ({ data }) => {
+  return (
+    <div className="rounded-lg w-full h-fit bg-gradient-to-tr from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="h-full w-full rounded-lg items-center justify-center bg-white flex flex-col">
+        <div className="flip-card-special">
+          <div className="flip-card-inner-special">
+            <div className="flip-card-front-special rounded-lg flex justify-center items-center">
+              <Image src={data?.image} alt={img2.src} className="md:w-6/12" />
+            </div>
+            <div className="flip-card-back-special px-5 flex rounded-lg flex-col justify-center items-center">
+              <h1 className="text-websiteBlue text-2xl font-medium">
+                {data?.title}
+              </h1>
+              <p className="text-darkGrey text-xl font-light">{data?.desc}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
