@@ -19,8 +19,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import img1 from "../Assets/mindfulTherapist/image-001.jpg";
-import img2 from "../Assets/mindfulTherapist/image-002.jpg";
-import img3 from "../Assets/mindfulTherapist/image-003.jpg";
+import img2 from "../Assets/mindfulTherapist/image-003.jpg";
 import img4 from "../Assets/mindfulTherapist/image-004.jpg";
 import img5 from "../Assets/mindfulTherapist/image-005.jpg";
 
