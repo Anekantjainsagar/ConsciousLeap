@@ -155,7 +155,7 @@ const Navbar = () => {
     <div>
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
         {/* TopBar */}
-        <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
+        {/* <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
           {isLogin ? (
             <>
               <div
@@ -197,7 +197,7 @@ const Navbar = () => {
               </div>
             </>
           )}
-        </div>
+        </div> */}
         {/* Navbar Desktop*/}
         <div className="py-2 px-3 hidden md:flex justify-between items-center">
           <Image
@@ -250,10 +250,16 @@ const Navbar = () => {
           </div>
           <div className="ml-4 flex items-center">
             <AiOutlineUser
+              onClick={(e) => {
+                history.push("/user/login");
+              }}
               className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}
             />
             <AiOutlineSearch
+              onClick={(e) => {
+                history.push("/therapy");
+              }}
               className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}
             />
