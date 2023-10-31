@@ -10,7 +10,7 @@ import Context from "@/Context/Context";
 
 const UserLogin = () => {
   const captchaRef = useRef(null);
-  let { isLogin } = useContext(Context);
+  let { isLogin, login } = useContext(Context);
   const history = useRouter();
   const router = useRouter();
   const [user, setUser] = useState({
@@ -19,10 +19,10 @@ const UserLogin = () => {
   });
 
   useEffect(() => {
-    if (isLogin) {
+    if (login?._id) {
       history.push("/user/dashboard");
     }
-  }, []);
+  }, [login]);
 
   const onLogin = () => {
     if (!(!user?.email || !user?.password)) {

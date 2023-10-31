@@ -38,16 +38,6 @@ export default function BootstrapCarousel() {
       id="homeofoneness"
     >
       <SwiperSlide className="relative">
-        <h1 className="absolute font-bold text-[10px] md:text-2xl top-[8%] md:top-[27%] left-[23%] md:left-[25.5%]">
-          Our Vision
-        </h1>
-        <p className="absolute top-[35%] md:top-[38%] left-[21%] text-[6px] md:text-lg w-[20%] z-20">
-          To bring about a collective healing transformation through a profound
-          culture of <span className="font-bold">oneness</span>.
-        </p>
-        <Image src={frame1} alt="Frame 1" />
-      </SwiperSlide>
-      <SwiperSlide className="relative">
         <h1 className="absolute font-bold text-[10px] md:text-2xl top-[15%] md:top-[34%] left-[13%] md:left-[20%]">
           &ldquo;Home of oneness&ldquo;
         </h1>
@@ -58,6 +48,17 @@ export default function BootstrapCarousel() {
           mindful healing and positive well-being.
         </p>
         <Image src={frame2} alt="Frame 1" />
+      </SwiperSlide>
+      <SwiperSlide className="relative">
+        <h1 className="absolute font-bold text-[10px] md:text-2xl top-[7%] md:top-[26%] left-[18%] md:left-[21%]">
+          Our Motto
+        </h1>
+        <p className="absolute top-[34%] md:top-[36%] left-[13%] md:left-[17%] text-[6px] md:text-lg w-[28%] md:w-[20%] z-20">
+          At <span className="font-bold">consciousleap</span>, we perceive and
+          act subjectively, not objectively, without judgement. We believe all
+          beings are divine, with varying degrees of conscious awareness.
+        </p>
+        <Image src={frame5} alt="Frame 1" />
       </SwiperSlide>
       <SwiperSlide className="relative">
         <h1 className="absolute font-bold text-[10px] md:text-2xl top-[9%] md:top-[29%] left-[25%] md:left-[28.5%]">
@@ -80,16 +81,16 @@ export default function BootstrapCarousel() {
         </p>
         <Image src={frame4} alt="Frame 1" />
       </SwiperSlide>
+
       <SwiperSlide className="relative">
-        <h1 className="absolute font-bold text-[10px] md:text-2xl top-[7%] md:top-[26%] left-[18%] md:left-[21%]">
-          Our Motto
+        <h1 className="absolute font-bold text-[10px] md:text-2xl top-[8%] md:top-[27%] left-[23%] md:left-[25.5%]">
+          Our Vision
         </h1>
-        <p className="absolute top-[34%] md:top-[36%] left-[13%] md:left-[17%] text-[6px] md:text-lg w-[28%] md:w-[20%] z-20">
-          At <span className="font-bold">consciousleap</span>, we perceive and
-          act subjectively, not objectively, without judgement. We believe all
-          beings are divine, with varying degrees of conscious awareness.
+        <p className="absolute top-[35%] md:top-[38%] left-[21%] text-[6px] md:text-lg w-[20%] z-20">
+          To bring about a collective healing transformation through a profound
+          culture of <span className="font-bold">oneness</span>.
         </p>
-        <Image src={frame5} alt="Frame 1" />
+        <Image src={frame1} alt="Frame 1" />
       </SwiperSlide>
     </Swiper>
   );

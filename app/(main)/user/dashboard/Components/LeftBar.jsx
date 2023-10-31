@@ -6,10 +6,11 @@ import books from "../../../Assets/book.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
+import { deleteCookie } from "cookies-next";
 
 const LeftBar = () => {
   const history = useRouter();
-  let { login } = useContext(Context);
+  let { login, setIsLogin } = useContext(Context);
 
   return (
     <div className="w-[95%] mx-auto md:w-3/12 rounded-md bg-white py-8 md:mb-0 mb-4 md:mt-0 mt-3 md:py-6">
@@ -25,6 +26,18 @@ const LeftBar = () => {
             className="h-full w-full py-1.5 rounded-full items-center justify-center bg-white flex flex-col"
           >
             Edit Profile
+          </div>
+        </div>
+        <div className="rounded-full w-[85%] mt-2 cursor-pointer mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+          <div
+            onClick={(e) => {
+              setIsLogin(false);
+              deleteCookie("token");
+              history.push("/");
+            }}
+            className="h-full w-full py-1.5 rounded-full items-center justify-center bg-white flex flex-col"
+          >
+            Logout
           </div>
         </div>
       </div>

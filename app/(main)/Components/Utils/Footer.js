@@ -21,49 +21,50 @@ import { usePathname, useRouter } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
   const history = useRouter();
+
   let nav = [
     {
       name: "consciousleap",
       items: [
         {
           name: "Home of oneness",
-          route: "",
+          route: "/",
         },
         {
           name: "Why consciousleap?",
-          route: "",
+          route: "/",
         },
         {
           name: "Communication Channels",
-          route: "",
+          route: "/",
         },
         {
           name: "How Does It Work?",
-          route: "",
+          route: "/",
         },
         {
           name: "Our Internationally Certified Therapists",
-          route: "",
+          route: "/",
         },
         {
           name: "Member Testimonials",
-          route: "",
+          route: "/",
         },
         {
           name: "Member Statistics",
-          route: "",
+          route: "/",
         },
         {
           name: "Collaborations and Initiatives",
-          route: "",
+          route: "/",
         },
         {
           name: "consciousleap Blog",
-          route: "",
+          route: "/",
         },
         {
           name: "Join consciousleap",
-          route: "",
+          route: "/",
         },
       ],
     },
@@ -213,7 +214,7 @@ const Footer = () => {
                 className="w-[10vw] md:w-[1.75vw] ml-2"
               />
             </p>
-            <p className="text-[13.5px] mb-1 text-center font-light cursor-pointer hover:text-websiteBlue">
+            <p className="text-[13.5px] mb-1 text-start font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
               Järvevana Tee 9, Tallinn, 11314, Estonia A3 Sai Shraddha, Deonar,
@@ -298,8 +299,20 @@ const Footer = () => {
           <div className="grid grid-cols-4 w-full md:w-[50%] py-2 md:py-0 items-center text-darkGrey font-light text-sm">
             <p className="text-center cursor-pointer">Terms of Use</p>
             <p className="text-center cursor-pointer">Cookies Policy</p>
-            <p className="text-center cursor-pointer">Privacy Policy</p>
-            <p className="text-center cursor-pointer">
+            <p
+              className="text-center cursor-pointer"
+              onClick={(e) => {
+                history.push("/privacy/policies");
+              }}
+            >
+              Privacy Policy
+            </p>
+            <p
+              className="text-center cursor-pointer"
+              onClick={(e) => {
+                history.push("/privacy/refund");
+              }}
+            >
               Refund, Rescheduling and Cancellation Policy
             </p>
           </div>

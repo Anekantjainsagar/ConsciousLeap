@@ -107,7 +107,7 @@ export function BootstrapCarousel() {
         className="w-[98vw]"
       >
         {bootstrap?.map((item, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} className="pb-5">
             <Image
               src={memberFront}
               alt="Members front image"

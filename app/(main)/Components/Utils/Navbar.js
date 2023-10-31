@@ -149,7 +149,7 @@ let nav = [
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   let history = useRouter();
-  const { isLogin, setIsLogin } = useContext(Context);
+  const { login } = useContext(Context);
 
   return (
     <div>
@@ -213,16 +213,26 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             <AiOutlineUser
-              className="text-websiteBlue border-websiteBlue p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={40}
+              onClick={(e) => {
+                if (login?._id) {
+                  history.push("/user/login");
+                } else {
+                  history.push("/user/dashboard");
+                }
+              }}
+              className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+              size={35}
             />
             <AiOutlineSearch
-              className="text-pinkishRed border-pinkishRed p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={40}
+              onClick={(e) => {
+                history.push("/therapy");
+              }}
+              className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+              size={35}
             />
             <AiOutlineShoppingCart
-              className="text-oceanGreen border-oceanGreen p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={40}
+              className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+              size={35}
             />
           </div>
         </div>
@@ -271,7 +281,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`md:my-[8vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
+        className={`md:my-[6vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
       ></div>
     </div>
   );
@@ -337,8 +347,6 @@ const NavItems = ({ e, showNav, setShowNav }) => {
               className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50"
               key={i}
               onClick={(e) => {
-                setHover(!hover);
-                setShowNav(!showNav);
                 const element = document.getElementById(
                   data?.name?.replaceAll(" ", "")?.toLowerCase()
                 );
