@@ -9,7 +9,7 @@ const Refund = () => {
 
       <ol className="list-decimal pl-4">
         <li className="mb-6">
-          A minimum of 24 hours' notice is required for rescheduling or
+          A minimum of 24 hours&apos; notice is required for rescheduling or
           cancellation of an appointment. Without such notification, fees will
           be charged to the clients as follows:
           <ul className="list-disc pl-4">

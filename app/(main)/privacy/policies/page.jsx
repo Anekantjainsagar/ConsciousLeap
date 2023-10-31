@@ -11,8 +11,8 @@ const Policies = () => {
       </p>
       <p className="mt-0">
         We use your personal data to provide and improve the service. By using
-        the service, you agree to this Privacy Policy's collection and use of
-        information.
+        the service, you agree to this Privacy Policy&apos;s collection and use
+        of information.
       </p>
       <h1 className="underline font-bold">Interpretation and Definitions</h1>
       <div>
@@ -32,12 +32,13 @@ const Policies = () => {
           created for your access or parts of our service.
           <br /> <b className="font-bold">Affiliate</b> means an entity that
           controls is controlled by or is under common control with a party,
-          where "control" means ownership of 50% or more of the shares, equity
-          interest, or other securities entitled to vote for the election of
-          directors or other managing authority.
+          where &quot;control&quot;means ownership of 50% or more of the shares,
+          equity interest, or other securities entitled to vote for the election
+          of directors or other managing authority.
           <br /> <b className="font-bold">Company</b> (referred to as either
-          "the Company,” “We," “Us," or "Our" in this Agreement) refers to
-          Private Limited Company, Järvevana Tee 9, Tallinn, 11314,Estonia.
+          &quot;the Company,&quot; &quot;We,&quot; &quot;Us,&quot;or
+          &quot;Our&quot;in this Agreement) refers to Private Limited Company,
+          Järvevana Tee 9, Tallinn, 11314,Estonia.
           <br /> <b className="font-bold">Cookies</b> are small files placed on
           your computer, mobile device, or any other device by a website,
           containing the details of your browsing history on that website among
@@ -54,9 +55,7 @@ const Policies = () => {
           to facilitate the service, to provide the service on behalf of the
           Company, to perform services related to the service, or to assist the
           Company in analyzing how the service is used.
-          <br /> <b className="font-bold">
-            Third-party Social Media Service
-          </b>{" "}
+          <br /> <b className="font-bold">Third-party Social Media Service</b>
           refers to any website or any social networkwebsite through which a
           user can log in or create an account to use the service.
           <br />
@@ -93,17 +92,17 @@ const Policies = () => {
         <h1 className="mt-5 font-bold">Usage Data:</h1>
         <p className="-mt-4">
           Usage Data is collected automatically when using the service.
-          <br /> Usage Data may include information such as your device's
+          <br /> Usage Data may include information such as your device&apos;s
           internet protocol address (e.g., IP address), browser type, browser
           version, the pages of our service that you visit, the time and date of
           your visit, the time spent on those pages, unique device identifiers
           and other diagnostic data.
           <br /> When you access the service by or through a mobile device, We
           may collect certain information automatically, including, but not
-          limited to, the type of mobile device you use, your mobile device's
-          unique ID, the IP address of your mobile device, your mobile operating
-          system, the type of mobile Internet browser you use, unique device
-          identifiers and other diagnostic data.
+          limited to, the type of mobile device you use, your mobile
+          device&apos;s unique ID, the IP address of your mobile device, your
+          mobile operating system, the type of mobile Internet browser you use,
+          unique device identifiers and other diagnostic data.
           <br /> We may also collect information your browser sends whenever you
           visit our service or access the service through a mobile device.
         </p>
@@ -123,12 +122,12 @@ const Policies = () => {
         <p className="my-5">
           Suppose you register through or otherwise grant us access to a
           third-party social media service. In that case, We may collect
-          personal data associated with your thirdparty social media service's
-          account, such as your name, email address, activities, or contact list
-          associated with that account.
+          personal data associated with your thirdparty social media
+          service&apos;s account, such as your name, email address, activities,
+          or contact list associated with that account.
           <br /> You may also share additional information with the Company
-          through your third-party social media service's account. Suppose you
-          provide such information and personal data during registration or
+          through your third-party social media service&apos;s account. Suppose
+          you provide such information and personal data during registration or
           otherwise. In that case, you are giving the Company permission to use,
           share, and store it in a manner consistent with this Privacy Policy.
         </p>
@@ -157,10 +156,10 @@ const Policies = () => {
           and server integrity).
         </p>
         <p className="mt-6">
-          Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies
-          remain on your personal computer or mobile device when you go offline,
-          while Session Cookies are deleted as soon as you close your web
-          browser.
+          Cookies can be &quot;Persistent&quot;or &quot;Session&quot;Cookies.
+          Persistent Cookies remain on your personal computer or mobile device
+          when you go offline, while Session Cookies are deleted as soon as you
+          close your web browser.
           <br /> We use both Session and Persistent Cookies for the purposes set
           out below:
         </p>

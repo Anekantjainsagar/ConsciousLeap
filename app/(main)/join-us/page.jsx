@@ -149,7 +149,7 @@ const JoinConsciousleap = () => {
             To ensure conscious compliance, we may request samples of each SKU
             before onboarding you. Please dispatch the demo samples in their
             original packaging, as you would provide them to your customers.
-            It's important to note that these samples may undergo rigorous
+            It&apos;s important to note that these samples may undergo rigorous
             testing and will not be returned to you, regardless of whether or
             not the product is accepted onto our platform. Additionally, you can
             include any certifications or product quality/ component
@@ -183,7 +183,7 @@ const JoinConsciousleap = () => {
       </div>
       <div className="w-1/2 mt-[5vw] mx-auto flex flex-col items-center">
         <h1 className="font-bold text-3xl mb-4 text-websiteBlue">
-          We'd love to hear from you
+          We&apos;d love to hear from you
         </h1>
         <input
           className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
