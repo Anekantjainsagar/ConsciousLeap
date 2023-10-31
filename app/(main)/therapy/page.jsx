@@ -18,11 +18,12 @@ const Therapists = () => {
   let sellerHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const [showGrid, setShowGrid] = useState(true);
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
   const [showLanguages, setShowLanguage] = useState(false);
   const [showExpertise, setShowExpertise] = useState(false);
 
-  const { therapistFilter } = useContext(Context);
+  const { therapistFilter, therapistSort, setTherapistSort } =
+    useContext(Context);
 
   useEffect(() => {
     let timeline = gsap.timeline();
@@ -310,6 +311,10 @@ const Therapists = () => {
               <select
                 name=""
                 id=""
+                value={therapistSort}
+                onChange={(e) => {
+                  setTherapistSort(e.target.value);
+                }}
                 className="w-full md:w-[15vw] rounded-sm text-darkGrey text-sm border px-2 py-2 outline-none"
               >
                 <option className="py-1" value="From New to Old">
@@ -411,7 +416,7 @@ const GridBlock = ({ data }) => {
               <h1 className="mt-2 text-center text-base text-websiteBlue">
                 Expertise
               </h1>
-              {data?.expertise?.map((e) => {
+              {data?.expertise?.slice(0, 2)?.map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}
@@ -448,7 +453,7 @@ const GridBlock = ({ data }) => {
             <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
             <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-            {data?.expertise?.map((e) => {
+            {data?.expertise?.slice(0, 2)?.map((e) => {
               return (
                 <li key={e} className="text-sm text-darkGrey">
                   {e}

@@ -28,6 +28,7 @@ const B2BState = (props) => {
     expertise: [],
     speaks: [],
   });
+  const [therapistSort, setTherapistSort] = useState();
   const [therapistsData, setTherapistsData] = useState([]);
   const [questionnaire, setQuestionnaire] = useState({
     age: "",
@@ -149,6 +150,8 @@ const B2BState = (props) => {
         setQuestionnaire,
         fourtyMinMeet,
         setFourtyMinMeet,
+        therapistSort,
+        setTherapistSort,
       }}
     >
       {props.children}
