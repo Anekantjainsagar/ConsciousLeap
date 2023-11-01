@@ -107,7 +107,7 @@ const UserRegister = () => {
             >
               {data?.map((e) => {
                 return (
-                  <option value={e?.code}>
+                  <option value={e?.code} key={e?.code}>
                     {e?.country}-{e?.code}
                   </option>
                 );
