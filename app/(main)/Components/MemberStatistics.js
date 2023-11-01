@@ -138,7 +138,7 @@ const MemberStatistics = () => {
         <Image
           src={bg}
           alt="Background image"
-          className="w-[65%] xl:w-[23vw] md:w-[70%] mt-[8vw] md:mt-[4vw] mx-auto"
+          className="w-[65%] md:w-[35vw] min-[2000px]:w-[23vw] mt-[8vw] md:mt-[4vw] mx-auto"
         />
         <div className="absolute -translate-y-1/2 top-1/2 pt-[7vw] md:pt-[3.5vw] flex flex-col items-center justify-center left-1/2 -translate-x-1/2">
           {visible1 ? (
