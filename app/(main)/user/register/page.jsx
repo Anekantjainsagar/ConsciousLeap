@@ -8,6 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Context from "@/Context/Context";
 import { getCookie } from "cookies-next";
 import emailjs from "@emailjs/browser";
+import { data } from "../../../codes";
 
 const UserRegister = () => {
   const { user, setUser } = useContext(Context);
@@ -98,15 +99,30 @@ const UserRegister = () => {
             className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <input
-            type="text"
-            value={user?.phone}
-            onChange={(e) => {
-              setUser({ ...user, phone: e.target.value });
-            }}
-            className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
-            placeholder="Phone with Country Code"
-          />
+          <div className="w-full flex items-center justify-between mb-4">
+            <select
+              name=""
+              id=""
+              className="w-2/12 py-1.5 outline-none border rounded-md"
+            >
+              {data?.map((e) => {
+                return (
+                  <option value={e?.code}>
+                    {e?.country}-{e?.code}
+                  </option>
+                );
+              })}
+            </select>
+            <input
+              type="text"
+              value={user?.phone}
+              onChange={(e) => {
+                setUser({ ...user, phone: e.target.value });
+              }}
+              className="w-10/12 border px-3 py-1.5 ml-3 outline-none rounded-md"
+              placeholder="Phone with Country Code"
+            />
+          </div>
           <input
             type="password"
             value={user?.password}
