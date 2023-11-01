@@ -65,17 +65,13 @@ const OneTherapist = ({ params }) => {
       </div>
       <div className="w-full md:w-9/12 flex flex-col">
         <div className="grid grid-cols-1 md:mt-0 mt-5 md:grid-cols-3 gap-5 w-full">
-          <div>
-            {<Table data={{ name: "Experience", items: [user?.experience] }} />}
-          </div>
-          <div>
-            {
-              <Table
-                data={{ name: "Qualifications", items: user?.qualifications }}
-              />
-            }
-          </div>
-          <div>{<Table data={{ name: "Speaks", items: user?.speaks }} />}</div>
+          {<Table data={{ name: "Experience", items: [user?.experience] }} />}
+          {
+            <Table
+              data={{ name: "Qualifications", items: user?.qualifications }}
+            />
+          }
+          {<Table data={{ name: "Speaks", items: user?.speaks }} />}
         </div>
         <div>
           <h1 className="text-websiteBlue text-2xl font-light mt-[5vh]">
@@ -111,7 +107,7 @@ const OneTherapist = ({ params }) => {
 
 const Table = ({ data }) => {
   return (
-    <div className="rounded-lg w-full h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+    <div className="rounded-lg w-full h-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
       <div className="h-full w-full rounded-lg items-center justify-center bg-white flex flex-col">
         <div className="w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen pb-[2px]">
           <div className="h-full w-full items-center justify-center bg-white flex flex-col rounded-tl-lg rounded-tr-lg">
@@ -120,10 +116,10 @@ const Table = ({ data }) => {
             </h1>
           </div>
         </div>
-        <div className="py-3">
+        <div className="py-3 h-full flex flex-col items-center justify-center px-4">
           {data?.items?.map((e) => {
             return (
-              <li className="font-light" key={e}>
+              <li className="font-light text-center" key={e}>
                 {e}
               </li>
             );

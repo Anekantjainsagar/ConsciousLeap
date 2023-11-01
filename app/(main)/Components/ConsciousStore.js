@@ -44,13 +44,13 @@ const ConsciousStore = () => {
         id="collaborationsandinitiatives"
         className="mb-2 text-3xl text-center font-light gradientHover cursor-pointer"
       >
-        conscious Store
+        Conscious Store
       </h1>
       <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
         We care at every step of our mindful journey at consciousleap.
         <br /> We have pledged to produce, source, and support only locally
         produced, organic, sustainable, environment-friendly goods through our
-        conscious Store.
+        Conscious Store.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-[6vw] mt-[3vw]">
         {[

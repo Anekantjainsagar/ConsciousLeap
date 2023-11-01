@@ -34,7 +34,7 @@ const GlobalPresence = () => {
     <div className="w-full flex items-center justify-center flex-col">
       <h1
         ref={globalHeading}
-        className="mb-2 md:mb-16 text-3xl font-light gradientHover cursor-pointer"
+        className="mb-2 md:mb-5 text-3xl font-light gradientHover cursor-pointer"
       >
         Our Global Presence
       </h1>

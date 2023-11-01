@@ -104,7 +104,7 @@ let nav = [
     ],
   },
   {
-    name: "conscious Store",
+    name: "Conscious Store",
     items: [
       {
         name: "consciousleap Vendibles",
@@ -199,7 +199,7 @@ const Navbar = () => {
           )}
         </div> */}
         {/* Navbar Desktop*/}
-        <div className="py-2 px-3 hidden md:flex justify-between items-center">
+        <div className="py-4 px-3 hidden md:flex justify-between items-center">
           <Image
             src={image}
             alt="Logo"
@@ -281,7 +281,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`md:my-[6vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
+        className={`md:my-[7vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
       ></div>
     </div>
   );

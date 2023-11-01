@@ -22,7 +22,7 @@ const Problem = () => {
             return <Block key={e} data={e} />;
           })}
         </div>
-        <Block data={"I am not sure what i am going through"} />
+        <Block data={"I am not sure what I am going through"} />
       </div>
     </div>
   );

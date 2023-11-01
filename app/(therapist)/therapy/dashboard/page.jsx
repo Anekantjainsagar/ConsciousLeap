@@ -186,7 +186,7 @@ const Dashboard = () => {
               />
               <div className="h-[2px] my-5 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen"></div>
               <h1 className="text-center text-sm text-lightGrey">
-                conscious Store
+                Conscious Store
               </h1>
               <Image
                 src={books}

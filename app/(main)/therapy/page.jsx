@@ -19,8 +19,8 @@ const Therapists = () => {
   gsap.registerPlugin(ScrollTrigger);
   const [showGrid, setShowGrid] = useState(true);
   const [showFilters, setShowFilters] = useState(false);
-  const [showLanguages, setShowLanguage] = useState(false);
-  const [showExpertise, setShowExpertise] = useState(false);
+  const [showLanguages, setShowLanguage] = useState(true);
+  const [showExpertise, setShowExpertise] = useState(true);
 
   const { therapistFilter, therapistSort, setTherapistSort } =
     useContext(Context);
@@ -317,6 +317,9 @@ const Therapists = () => {
                 }}
                 className="w-full md:w-[15vw] rounded-sm text-darkGrey text-sm border px-2 py-2 outline-none"
               >
+                <option className="py-1" value="Sort By">
+                  Sort By
+                </option>
                 <option className="py-1" value="From New to Old">
                   From New to Old
                 </option>
@@ -436,7 +439,7 @@ const GridBlock = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="md:block hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-[15vw]">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">

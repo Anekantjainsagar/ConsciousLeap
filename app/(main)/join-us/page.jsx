@@ -13,6 +13,8 @@ import img10 from "../Assets/registerTherapist/join10.png";
 import img11 from "../Assets/registerTherapist/join11.png";
 import img12 from "../Assets/registerTherapist/join12.png";
 
+import circle from "../Assets/select meeting.png";
+
 const JoinConsciousleap = () => {
   let registerData = [
     { image: img2, title: "Virtual", desc: "Work from anywhere." },
@@ -34,7 +36,8 @@ const JoinConsciousleap = () => {
       </h1>
       <p className="w-[50%] mx-auto text-center mt-3">
         We’re mindfully growing and would love to rope you in to help us improve
-        the world. Please email your resume to{" "}
+        the world. <br />
+        Please email your resume to{" "}
         <span className="text-websiteBlue">hr@consciousleap.co</span>
       </p>
       <Image src={joinUs} alt="Join us" className="w-full mt-[5vw]" />
@@ -57,7 +60,8 @@ const JoinConsciousleap = () => {
       </h1>
       <p className="w-[50%] mx-auto text-center mt-3">
         We truly value your interest in making a mindful impact by Volunteering
-        at consciousleap. Please email your resume to{" "}
+        at consciousleap. <br />
+        Please email your resume to{" "}
         <span className="text-websiteBlue">hr@consciousleap.co</span>
         <br />
         by stating Volunteer in the subject and a brief reason stating your
@@ -181,38 +185,45 @@ const JoinConsciousleap = () => {
           </p>
         </div>
       </div>
-      <div className="w-1/2 mt-[5vw] mx-auto flex flex-col items-center">
-        <h1 className="font-bold text-3xl mb-4 text-websiteBlue">
-          We&apos;d love to hear from you
-        </h1>
-        <input
-          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
-          type="text"
-          placeholder="Name"
+      <div className="w-2/3 h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
+        <Image
+          src={circle}
+          alt="Circle"
+          className="absolute top-1/2 -translate-y-1/2 w-[100vw] z-10"
         />
-        <input
-          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
-          type="text"
-          placeholder="Company Name"
-        />
-        <input
-          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
-          type="email"
-          placeholder="Work Email"
-        />
-        <input
-          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
-          type="text"
-          placeholder="Contact"
-        />
-        <input
-          className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
-          type="text"
-          placeholder="Message"
-        />
-        <button className="bg-websiteBlue text-white py-2 w-1/2 rounded-md font-semibold">
-          Submit
-        </button>
+        <div className="flex flex-col justify-center items-center w-full">
+          <h1 className="font-bold text-3xl mb-4 text-websiteBlue">
+            We&apos;d love to hear from you
+          </h1>
+          <input
+            className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+            type="text"
+            placeholder="Company Name"
+          />
+          <input
+            className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+            type="email"
+            placeholder="Work Email"
+          />
+          <input
+            className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+            type="text"
+            placeholder="Contact"
+          />
+          <input
+            className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
+            type="text"
+            placeholder="Message"
+          />
+          <button className="bg-websiteBlue text-white py-2 w-1/2 rounded-md font-semibold">
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );

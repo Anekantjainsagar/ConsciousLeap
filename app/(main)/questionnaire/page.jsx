@@ -21,16 +21,15 @@ const Questionnaire = () => {
     }
   }, [login]);
 
-    useEffect(() => {
-      if (!isLogin) {
-        history.push("/user/login");
-      }
-    }, [isLogin]);
-
+  useEffect(() => {
+    if (!isLogin) {
+      history.push("/user/login");
+    }
+  }, [isLogin]);
 
   return (
     <div className="overflow-x-hidden">
-      <h1 className="cursor-pointer underline mb-8 md:mb-16 text-2xl md:text-3xl pt-[8vw] md:pt-[4vw] text-center hover:text-websiteBlue transition-all">
+      <h1 className="cursor-pointer underline mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
         Initial Analysis
       </h1>
       {login?.questionnaire?.backendAnswers?.map((e, i) => {

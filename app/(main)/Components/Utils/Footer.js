@@ -18,7 +18,10 @@ import certified from "../../Assets/logoCertified.png";
 import Line1 from "../Lines/Line1";
 import { usePathname, useRouter } from "next/navigation";
 
+import qr from "../../Assets/qr.png";
+
 const Footer = () => {
+  const [showQr, setShowQr] = React.useState(false);
   const pathname = usePathname();
   const history = useRouter();
 
@@ -111,7 +114,7 @@ const Footer = () => {
       ],
     },
     {
-      name: "conscious Store",
+      name: "Conscious Store",
       items: [
         {
           name: "consciousleap Vendibles",
@@ -157,7 +160,7 @@ const Footer = () => {
     <>
       <Line1 />
       <div className="bg-white px-[8vw]">
-        <div className="grid grid-cols-1 md:gap-y-0 gap-y-5 md:grid-cols-5">
+        <div className="grid grid-cols-1 md:gap-y-0 gap-y-5 flex items-start md:grid-cols-5">
           {nav.map((e, i) => {
             return (
               <div
@@ -212,6 +215,25 @@ const Footer = () => {
                 src={whatsapp}
                 alt="Whatsapp"
                 className="w-[10vw] md:w-[1.75vw] ml-2"
+                onMouseEnter={(e) => {
+                  setShowQr(!showQr);
+                }}
+                onMouseOut={(e) => {
+                  setShowQr(!showQr);
+                }}
+                onMouseLeave={(e) => {
+                  setShowQr(!showQr);
+                }}
+                onClick={(e) => {
+                  setShowQr(!showQr);
+                }}
+              />
+              <Image
+                src={qr}
+                alt="QR"
+                className={`w-[20vw] md:w-[7vw] ${
+                  showQr ? "block" : "hidden"
+                } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
             </p>
             <p className="text-[13.5px] mb-1 text-start font-light cursor-pointer hover:text-websiteBlue">

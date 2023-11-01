@@ -8,10 +8,10 @@ const WhatToDo = () => {
     <div className="w-full h-[60vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
         <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
-          I am not sure what i am going through
+          I am not sure what I am going through
         </h1>
         <div>
-          {["Talk to the therapist", "I'm happy to take Questionnaire"].map(
+          {["Talk to the therapist", "I'm happy to take the Questionnaire"].map(
             (e) => {
               return <Block key={e} data={e} />;
             }
