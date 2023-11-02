@@ -201,9 +201,12 @@ const Footer = () => {
           })}
           <div className="flex flex-col md:items-start items-center justify-center">
             <h1 className="text-websiteBlue text-sm mb-1">Contact Us</h1>
-            <p onClick={(e)=>{
-              history.push('/faqs')
-            }} className="text-[13.5px] mb-1 font-light cursor-pointer hover:text-websiteBlue">
+            <p
+              onClick={(e) => {
+                history.push("/faqs");
+              }}
+              className="text-[13.5px] mb-1 font-light cursor-pointer hover:text-websiteBlue"
+            >
               FAQs
             </p>
             <p className="text-[13.5px] flex mb-1 font-light cursor-pointer hover:text-websiteBlue">
@@ -321,8 +324,22 @@ const Footer = () => {
         <div className="flex md:flex-row flex-col justify-between items-center mt-5">
           <Image src={logo} alt="Logo" className="w-[75vw] md:w-[18vw]" />
           <div className="grid grid-cols-4 w-full md:w-[50%] py-2 md:py-0 items-center text-darkGrey font-light text-sm">
-            <p className="text-center cursor-pointer">Terms of Use</p>
-            <p className="text-center cursor-pointer">Cookies Policy</p>
+            <p
+              className="text-center cursor-pointer"
+              onClick={(e) => {
+                history.push("/privacy/terms");
+              }}
+            >
+              Terms of Use
+            </p>
+            <p
+              className="text-center cursor-pointer"
+              onClick={(e) => {
+                history.push("/privacy/cookies-policy");
+              }}
+            >
+              Cookies Policy
+            </p>
             <p
               className="text-center cursor-pointer"
               onClick={(e) => {

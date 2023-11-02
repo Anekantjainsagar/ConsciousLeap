@@ -16,17 +16,19 @@ import MemberStatistics from "./Components/MemberStatistics";
 import ConsciousleapBlog from "./Components/ConsciousLeapBlog";
 import ConsciousStore from "./Components/ConsciousStore";
 import { useEffect } from "react";
+import ReactModal from "./modal";
 
 const Home = () => {
   useEffect(() => {
-    const element = document.getElementById("homeofoneness");
+    const element = document.getElementById("navbar");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
 
   return (
-    <div>
+    <div id="navbar">
+      <ReactModal />
       <BootstrapCarousel />
       <Line1 />
       <Whyconsciousleap />

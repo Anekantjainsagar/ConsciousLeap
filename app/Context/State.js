@@ -37,6 +37,7 @@ const B2BState = (props) => {
   });
   const [fourtyMinMeet, setFourtyMinMeet] = useState(true);
   const [joinUsShow, setJoinUsShow] = useState("JOIN");
+  const [showSubscribe, setShowSubscribe] = useState(true);
 
   const getTherapistsData = () => {
     axios
@@ -155,6 +156,8 @@ const B2BState = (props) => {
         setTherapistSort,
         joinUsShow,
         setJoinUsShow,
+        showSubscribe,
+        setShowSubscribe,
       }}
     >
       {props.children}

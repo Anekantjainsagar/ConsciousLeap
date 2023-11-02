@@ -90,7 +90,7 @@ const Drawer = () => {
       />
       <h1
         ref={drawerRef}
-        className="mb-12 md:mb-16 pt-10 text-3xl font-light gradientHover cursor-pointer text-center"
+        className="mb-12 w-fit mx-auto md:mb-16 mt-10 text-3xl font-light gradientHover cursor-pointer"
       >
         #WorldMentalHealth
       </h1>

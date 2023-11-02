@@ -39,7 +39,7 @@ const CommunicationChannels = () => {
       <h1
         ref={ref}
         id="communicationchannels"
-        className="mb-12 md:w-full w-8/12 text-center text-3xl font-light gradientHover cursor-pointer"
+        className="mb-12 md:w-fit mx-auto w-8/12 text-center text-3xl font-light gradientHover cursor-pointer"
       >
         Communication Channels
       </h1>

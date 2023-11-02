@@ -57,6 +57,47 @@ const UserLogin = () => {
     }
   };
 
+  const forgotPassword = () => {
+    if (user?.email) {
+      axios
+        .post(`${BASE_URL}/login/password-reset`, {
+          email: user?.email,
+        })
+        .then((res) => {
+          if (res.status == 200) {
+            emailjs
+              .send(
+                "service_m3apnyp",
+                "template_wsccs7q",
+                {
+                  email: user?.email,
+                  url: res.data?.url,
+                  to_name: res?.data?.user?.name,
+                  from_name: "Consciousleap",
+                },
+                "v7Az1Fd2eRsK6eP9z"
+              )
+              .then(
+                function (response) {
+                  console.log("SUCCESS!", response.status, response.text);
+                  toast.success(res.data.data);
+                },
+                function (error) {
+                  console.log("FAILED...", error);
+                }
+              );
+          } else {
+            toast.error(res.data.data);
+          }
+        })
+        .catch((err) => {
+          toast.error("Internal server error");
+        });
+    } else {
+      toast.error("Please enter an email address");
+    }
+  };
+
   return (
     <div className="py-10">
       <Toaster />
@@ -94,7 +135,9 @@ const UserLogin = () => {
                 Remember Me
               </label>
             </div>
-            <p>Forgot Password?</p>
+            <p className="cursor-pointer" onClick={forgotPassword}>
+              Forgot Password?
+            </p>
           </div>
           <Captcha captchaRef={captchaRef} />
           <button

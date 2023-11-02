@@ -6,7 +6,8 @@ const Refund = () => {
       <h1 className="text-3xl font-bold text-websiteBlue mb-4">
         Rescheduling, Refund & Cancellation Policy
       </h1>
-      <ol className="list-decimal pl-4">
+  
+      <ol className="list-decimal pl-10">
         <li className="mb-6">
           A minimum of 24 hours&apos; notice is required for rescheduling or
           cancellation of an appointment. Without such notification, fees will
