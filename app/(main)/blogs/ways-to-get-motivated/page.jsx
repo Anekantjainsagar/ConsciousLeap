@@ -14,8 +14,8 @@ const Blog2 = () => {
         <div className="text-[17px] px-2 py-2">
           Motivation is a powerful but elusive beast. It is sometimes very easy
           to become motivated, and you find yourself caught up in a whirlwind of
-          excitement. Sometimes it's nearly impossible to figure out how to
-          motivate yourself, and you're stuck in a death spiral of
+          excitement. Sometimes it&apos;s nearly impossible to figure out how to
+          motivate yourself, and you&apos;re stuck in a death spiral of
           procrastination.
           <br />
           <br />
@@ -51,7 +51,7 @@ const Blog2 = () => {
           <br />
           <br />
           Whatever you choose to refer to it as—motivation, willpower,
-          inspiration, or your "muse"—you must continually refresh and feed it.
+          inspiration, or your muse—you must continually refresh and feed it.
           <br />
           <br />
           <li>
@@ -59,7 +59,7 @@ const Blog2 = () => {
             <br />
             You may think that performing the same task repeatedly, day after
             day, seems not only very monotonous but also incredibly
-            constricting. But you'd be totally mistaken. The routine has a life
+            constricting. But you&apos;d be totally mistaken. The routine has a life
             of its own. It turns into a holy place and moment that is frequently
             just as significant as your intended activity.
           </li>

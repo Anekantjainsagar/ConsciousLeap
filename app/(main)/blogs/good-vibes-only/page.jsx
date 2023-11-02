@@ -8,17 +8,17 @@ const Blog2 = () => {
       <Image src={blog} alt="Blog" className="mx-auto" />
       <div className="px-[8vw]">
         <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
-          Moving away from the "good vibes only approach"
+          Moving away from the &quot;good vibes only approach&quot;
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
         <div className="text-[17px] px-2 py-2">
-          The "good vibes only" approach, also known as “toxic positivity”, is a
-          popular mantra or philosophy that encourages people to focus only on
-          positive thoughts, emotions, and experiences, and to avoid anything
-          that might bring them down or create negative energy. This approach
-          suggests that by focusing solely on positivity, individuals can
-          attract more positive experiences into their lives and improve their
-          overall well-being.
+          The &quot;good vibes only&quot; approach, also known as “toxic
+          positivity”, is a popular mantra or philosophy that encourages people
+          to focus only on positive thoughts, emotions, and experiences, and to
+          avoid anything that might bring them down or create negative energy.
+          This approach suggests that by focusing solely on positivity,
+          individuals can attract more positive experiences into their lives and
+          improve their overall well-being.
           <br /> You might have witnessed toxic positivity in various forms
           like-
           <br />
@@ -27,29 +27,29 @@ const Blog2 = () => {
             <br />
             3. Look at the bright side
             <br /> 4. Happiness is a choice. Just choose to be on the positive
-            side!{" "}
+            side!
           </p>
-          <br /> The idea behind the "good vibes only" approach is that positive
-          energy attracts positive energy, and that by maintaining a positive
-          mindset, individuals can manifest positive outcomes in their lives.
-          This approach can be seen in various forms, from social media posts
-          that promote positivity to self-help books and seminars that encourage
-          people to cultivate a positive attitude and mindset.
+          <br /> The idea behind the &quot;good vibes only&quot; approach is
+          that positive energy attracts positive energy, and that by maintaining
+          a positive mindset, individuals can manifest positive outcomes in
+          their lives. This approach can be seen in various forms, from social
+          media posts that promote positivity to self-help books and seminars
+          that encourage people to cultivate a positive attitude and mindset.
           <br />
           However, while focusing on positivity can be beneficial in many ways,
-          it's important to acknowledge and validate the full range of human
-          emotions and experiences. Emotions like sadness, frustration, and
-          anger are a natural part of the human experience, and suppressing or
-          ignoring them can be harmful in the long run. A more balanced approach
-          that acknowledges both positive and negative emotions and experiences
-          can promote emotional wellbeing and growth. <br /> The "good vibes
-          only" approach can be harmful in a lot of ways:
+          it&apos;s important to acknowledge and validate the full range of
+          human emotions and experiences. Emotions like sadness, frustration,
+          and anger are a natural part of the human experience, and suppressing
+          or ignoring them can be harmful in the long run. A more balanced
+          approach that acknowledges both positive and negative emotions and
+          experiences can promote emotional wellbeing and growth. <br /> The
+          &quot;good vibes only&quot; approach can be harmful in a lot of ways:
           <div className="ml-4 mt-0">
             <br /> It can invalidate negative emotions: Emotions like sadness,
             anger, frustration, and anxiety are a natural part of the human
-            experience. Telling someone to "just think positive" or to "get over
-            it" can make them feel like their emotions are not valid or that
-            they are doing something wrong by
+            experience. Telling someone to &quot;just think positive&quot; or to
+            &quot;get over it&quot; can make them feel like their emotions are
+            not valid or that they are doing something wrong by
             <br /> 1. feeling them.
             <br /> It can lead to suppression of emotions: By constantly pushing
             for positive emotions, people may feel pressure to suppress negative
@@ -68,7 +68,7 @@ const Blog2 = () => {
             ones, people may miss out on opportunities for growth and learning.
           </div>
           <br /> <br /> Overall, while positivity and optimism can be beneficial
-          in many ways, it's important to acknowledge and validate the full
+          in many ways, it&apos;s important to acknowledge and validate the full
           range of human emotions and experiences. A more balanced approach that
           acknowledges both positive and negative emotions and experiences can
           promote emotional wellbeing and growth.

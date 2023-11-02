@@ -44,7 +44,7 @@ const Blog2 = () => {
           appreciate you for who you are. Engage in activities that bring you
           joy and fulfillment, and seek out hobbies and interests that align
           with your passions. Avoid comparing yourself to others, as this can
-          undermine your self-esteem. Remember that everyone's journey is
+          undermine your self-esteem. Remember that everyone&apos;s journey is
           unique, and focusing on your own progress is key. <br />
           <br />
           <b>Self-Care and Personal Development </b>

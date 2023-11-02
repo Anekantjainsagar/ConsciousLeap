@@ -33,7 +33,7 @@ const Blog2 = () => {
           <br />
           <br />
           The capacity to accept and give thought to novel and divergent
-          viewpoints from one's own is referred to as being open-minded. They
+          viewpoints from one&apos;s own is referred to as being open-minded. They
           remain adaptable to all those concepts that help in critical thinking
           and creative decision-making.
           <br />
@@ -54,13 +54,13 @@ const Blog2 = () => {
             Open minded behaviour assists to weigh down tension. Your life is no
             longer weighed down by
             <li>pointless conflicts.</li>
-            <li>You'll always feel more contentment and peace.</li>
+            <li>You&apos;ll always feel more contentment and peace.</li>
             <li>
               There will be so much to learn and experience all around you.
             </li>
             <li>More buddies will be added in your social sphere.</li>
             <li>
-              You won't be affected by any limited biases or viewpoints anymore.
+              You won&apos;t be affected by any limited biases or viewpoints anymore.
             </li>
             <li>
               Open mindedness allows thoughtful thinking and stops you to jump
@@ -109,7 +109,7 @@ const Blog2 = () => {
           <br />
           <br />
           <p>
-            It enables you to face life's challenges with courage while keeping
+            It enables you to face life&apos;s challenges with courage while keeping
             you safe from manipulation. You lead a life on your terms.
           </p>
           <br />

@@ -30,7 +30,7 @@ const Collabrations = () => {
       </p>
       <Image src={collab} className="w-full py-8" alt="COllab" />
       <h1 className="text-center text-websiteBlue text-4xl font-bold py-4">
-        Let's Join Forces for a Conscious Change
+        Let&apos;s Join Forces for a Conscious Change
       </h1>
       <iframe
         class="airtable-embed"

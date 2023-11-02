@@ -40,14 +40,14 @@ const Blog2 = () => {
               <b>Send a thank-you note.</b>
               <br />
               Writing a thank-you letter or email expressing your enjoyment and
-              appreciation for that person's impact on your life can make you
+              appreciation for that person&apos;s impact on your life can make you
               happier and strengthen your relationship with that person.
             </li>
             <li className="mb-3">
               <b>Maintain a gratitude journal. </b>
               <br />
               Make it a habit to write down or share your thoughts about the
-              gifts you've received with a loved one every day.
+              gifts you&apos;ve received with a loved one every day.
             </li>
             <li className="mb-3">
               <b>Consider your blessings. </b>
@@ -75,11 +75,11 @@ const Blog2 = () => {
           <li>
             <b>The benefits of gratitude take time to manifest.</b>
             <br />
-            It's important to note that the advantages of gratitude writing for
+            It&apos;s important to note that the advantages of gratitude writing for
             mental health develops gradually over time rather than all at once.
             <br />
-            If you participate in a gratitude writing activity, don't be
-            surprised if you don't feel significantly better right away. Be
+            If you participate in a gratitude writing activity, don&apos;t be
+            surprised if you don&apos;t feel significantly better right away. Be
             patient, and keep in mind that the benefits of gratitude may take
             some time to manifest.
             <br />
