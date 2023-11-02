@@ -258,7 +258,7 @@ const Policies = () => {
         <p>
           To contact You: To contact you by email, telephone calls, SMS, or
           other equivalent forms of electronic communication, such as a mobile
-          application's push notifications regarding updates or informative
+          application&apos;s push notifications regarding updates or informative
           communications related to the functionalities, products, or contracted
           services, including the security updates, when necessary or reasonable
           for their implementation.
@@ -356,7 +356,7 @@ const Policies = () => {
 
         <p>
           Your information, including Personal Data, is processed at the
-          Company's operating offices and in any other places where the parties
+          Company&apos;s operating offices and in any other places where the parties
           involved in the processing are located. This information may be
           transferred to &mdash; and maintained on &mdash; computers outside
           your state, province, country, or other governmental jurisdiction
@@ -460,7 +460,7 @@ const Policies = () => {
         <br />
         <p></p>
 
-        <p className="underline font-bold">Children's Privacy</p>
+        <p className="underline font-bold">Children&apos;s Privacy</p>
 
         <p>
           Our service only addresses people under the age of 12. We do not
@@ -475,7 +475,7 @@ const Policies = () => {
         <p>
           If we rely on consent as a legal basis for processing your information
           and your country requires permission from a parent, We may need your
-          parent's consent before we collect and use that information.
+          parent&apos;s consent before we collect and use that information.
         </p>
 
         <br />
@@ -486,13 +486,13 @@ const Policies = () => {
         <p>
           Our Service may contain links to other websites that we do not
           operate. If you click on a third-party link, you will be directed to
-          that third-party's site. We strongly advise you to review every site's
+          that third-party&apos;s site. We strongly advise you to review every site&apos;s
           privacy policy.
         </p>
 
         <p>
           We have no control over and assume no responsibility for third-party
-          sites or services' content, privacy policies, or practices.
+          sites or services&apos; content, privacy policies, or practices.
         </p>
 
         <p></p>

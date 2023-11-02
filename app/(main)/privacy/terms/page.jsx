@@ -107,7 +107,7 @@ const Terms = () => {
         </p>
         <p>
           Your access to and use of the service is also conditioned on your
-          acceptance of and compliance with the Company's Privacy Policy. Our
+          acceptance of and compliance with the Company&apos;s Privacy Policy. Our
           Privacy Policy describes our policies and procedures on collecting,
           using, and disclosing your personal information when you use the
           application or the website and tells you about your privacy rights and
@@ -305,7 +305,7 @@ const Terms = () => {
         </p>
         <p>
           Our trademarks and trade dress may not be used with any product or
-          service without the Company's written consent.
+          service without the Company&apos;s written consent.
         </p>
         <p></p>
         <br />
@@ -327,7 +327,7 @@ const Terms = () => {
         </p>
         <p>
           The Company has no control over and assumes no responsibility for
-          third-party websites or services' content, privacy policies, or
+          third-party websites or services&apos; content, privacy policies, or
           practices. You further acknowledge and agree that the Company shall
           not be responsible or liable, directly or indirectly, for any damage
           or loss caused or alleged to be caused by or in connection with the
@@ -359,7 +359,7 @@ const Terms = () => {
           of the Company and any of its suppliers under any provision of this
           terms and your exclusive remedy for all of the preceding shall be
           limited to the amount paid by you through the service or 100 USD if
-          you haven't purchased anything through the service.
+          you haven&apos;t purchased anything through the service.
         </p>
         <p>
           To the maximum extent permitted by applicable law, in no event shall
@@ -377,7 +377,7 @@ const Terms = () => {
         <p>
           Some states do not allow the exclusion of implied warranties or
           limitation of liability for incidental or consequential damages, which
-          means that some of the above limitations may not apply. Each party's
+          means that some of the above limitations may not apply. Each party&apos;s
           liability will be limited to the greatest extent permitted by law in
           these states.
         </p>
@@ -405,7 +405,7 @@ const Terms = () => {
         </p>
         <p>
           Without limiting the preceding, neither the Company nor any of the
-          Company's providers make any representation or warranty of any kind,
+          Company&apos;s providers make any representation or warranty of any kind,
           express or implied: (i) as to the operation or availability of the
           service, or the information, content, and materials or products
           included thereon; (ii) that the Service will be uninterrupted or
@@ -473,7 +473,7 @@ const Terms = () => {
         <p>
           Except as provided herein, the failure to exercise a right or to
           require the performance of an obligation under these terms shall not
-          affect a party's ability to exercise such right or require such
+          affect a party&apos;s ability to exercise such right or require such
           performance at any time after that, nor shall the waiver of a breach
           constitute a waiver of any subsequent breach.
         </p>
@@ -491,7 +491,7 @@ const Terms = () => {
         <p>
           We reserve the right, at our sole discretion, to modify or replace
           these terms at any time. If a revision is material, we will make
-          reasonable efforts to provide at least 30 days' notice before any new
+          reasonable efforts to provide at least 30 days&apos; notice before any new
           terms take effect. What constitutes a material change will be
           determined at our sole discretion.
         </p>

@@ -124,7 +124,7 @@ const Cookies = () => {
           properly.
         </p>
         <p>
-          If you'd like to delete Cookies or instruct your web browser to delete
+          If you&apos;d like to delete Cookies or instruct your web browser to delete
           or refuse Cookies, please visit the help pages of your web browser.
         </p>
         <p>
@@ -147,7 +147,7 @@ const Cookies = () => {
           mac.
         </p>
         <p>
-          For any other web browser, please visit your web browser's official
+          For any other web browser, please visit your web browser&apos;s official
           web pages.
         </p>
         <p></p>
