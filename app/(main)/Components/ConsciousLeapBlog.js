@@ -10,9 +10,11 @@ import blog4 from "../Assets/Blogs/4.jpg";
 import blog5 from "../Assets/Blogs/5.jpg";
 import blog6 from "../Assets/Blogs/6.jpg";
 import Line2 from "./Lines/Line2";
+import { useRouter } from "next/navigation";
 
 const ConsciousleapBlog = () => {
   let blogsHeading = useRef();
+  const history = useRouter();
   let collabrationHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +63,9 @@ const ConsciousleapBlog = () => {
           ref={collabrationHeading}
           id="collaborationsandinitiatives"
           className="mb-2 text-3xl text-center font-light gradientHover cursor-pointer"
+          onClick={(e) => {
+            history.push("/collabrations");
+          }}
         >
           Collaborations and Initiatives
         </h1>
@@ -70,7 +75,15 @@ const ConsciousleapBlog = () => {
           restore our faith in humanity.
           <br /> If you are a Charitable Institute, Non-Profit Organization, or
           NGO that shares our beliefs and values, please register your details
-          with us to collaborate. Learn More
+          with us to collaborate.{" "}
+          <span
+            className="text-websiteBlue cursor-pointer"
+            onClick={(e) => {
+              history.push("/faqs");
+            }}
+          >
+            Learn More
+          </span>
         </p>
       </div>
       <Line2 />
@@ -87,21 +100,59 @@ const ConsciousleapBlog = () => {
           at consciousleap.
           <br /> Through our blogs, we aim to spread awareness of the importance
           of mental health and its impact on micro and macro levels.
+          <span
+            className="text-websiteBlue cursor-pointer"
+            onClick={(e) => {
+              history.push("/faqs");
+            }}
+          >
+            Learn More
+          </span>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 px-[4vw] mt-[4vw] md:px-[2vw]">
           <div>
-            <ImageBlock image={blog1} />
+            <ImageBlock
+              image={blog1}
+              onClick={(e) => {
+                history.push("/blogs/healing-through-art");
+              }}
+            />
             <div className="grid grid-cols-2 gap-x-[6vw] md:gap-x-[4vw] mt-[4vw] md:mt-[1.5vw]">
-              <ImageBlock image={blog3} />
-              <ImageBlock image={blog4} />
+              <ImageBlock
+                image={blog3}
+                onClick={(e) => {
+                  history.push("/blogs/ways-to-get-motivated");
+                }}
+              />
+              <ImageBlock
+                image={blog4}
+                onClick={(e) => {
+                  history.push("/blogs/gratitude-makes-you-happier");
+                }}
+              />
             </div>
           </div>
           <div className="md:mt-0 mt-[5vw]">
             <div className="grid grid-cols-2 gap-x-[6vw] md:gap-x-[4vw] mb-[4vw] md:mb-[1.5vw]">
-              <ImageBlock image={blog5} />
-              <ImageBlock image={blog6} />
+              <ImageBlock
+                image={blog5}
+                onClick={(e) => {
+                  history.push("/blogs/look-at-yourself");
+                }}
+              />
+              <ImageBlock
+                image={blog6}
+                onClick={(e) => {
+                  history.push("/blogs/good-vibes-only");
+                }}
+              />
             </div>
-            <ImageBlock image={blog2} />
+            <ImageBlock
+              image={blog2}
+              onClick={(e) => {
+                history.push("/blogs/open-mindness");
+              }}
+            />
           </div>
         </div>
       </div>
@@ -109,9 +160,12 @@ const ConsciousleapBlog = () => {
   );
 };
 
-const ImageBlock = ({ image }) => {
+const ImageBlock = ({ image, onClick }) => {
   return (
-    <div className="rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+    <div
+      onClick={onClick}
+      className="rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+    >
       <div className="flex items-start p-[1vw] md:p-[5px] h-full w-full rounded-md justify-between bg-white">
         <Image
           src={image}

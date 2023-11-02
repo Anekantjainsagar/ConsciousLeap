@@ -201,7 +201,9 @@ const Footer = () => {
           })}
           <div className="flex flex-col md:items-start items-center justify-center">
             <h1 className="text-websiteBlue text-sm mb-1">Contact Us</h1>
-            <p className="text-[13.5px] mb-1 font-light cursor-pointer hover:text-websiteBlue">
+            <p onClick={(e)=>{
+              history.push('/faqs')
+            }} className="text-[13.5px] mb-1 font-light cursor-pointer hover:text-websiteBlue">
               FAQs
             </p>
             <p className="text-[13.5px] flex mb-1 font-light cursor-pointer hover:text-websiteBlue">

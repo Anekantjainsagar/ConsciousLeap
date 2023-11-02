@@ -1,11 +1,5 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
     "/(main)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -17,10 +11,56 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/layout.js"
     ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/(main)/faqs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/faqs/page.js"
+    ],
+    "/(main)/blogs/healing-through-art/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/healing-through-art/page.js"
+    ],
+    "/(main)/blogs/look-at-yourself/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/look-at-yourself/page.js"
+    ],
+    "/(main)/blogs/good-vibes-only/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/good-vibes-only/page.js"
+    ],
+    "/(main)/blogs/open-mindness/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/open-mindness/page.js"
+    ],
+    "/(main)/blogs/gratitude-makes-you-happier/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/gratitude-makes-you-happier/page.js"
+    ],
+    "/(main)/blogs/ways-to-get-motivated/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/blogs/ways-to-get-motivated/page.js"
+    ],
     "/(main)/join-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/join-us/page.js"
+    ],
+    "/(main)/collabrations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(main)/collabrations/page.js"
     ],
     "/(main)/therapy/page": [
       "static/chunks/webpack.js",
@@ -31,46 +71,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/therapy/[name]/page.js"
-    ],
-    "/(main)/privacy/refund/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/privacy/refund/page.js"
-    ],
-    "/(main)/expertise-area/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/expertise-area/page.js"
-    ],
-    "/(main)/therapy/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/therapy/register/page.js"
-    ],
-    "/(main)/questionnaire/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/page.js"
-    ],
-    "/(main)/questionnaire/questions/ask-age/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/ask-age/page.js"
-    ],
-    "/(main)/questionnaire/questions/problem/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/problem/page.js"
-    ],
-    "/(main)/questionnaire/questions/what-to-do/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/what-to-do/page.js"
-    ],
-    "/(main)/questionnaire/questions/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/questionnaire/questions/[id]/page.js"
     ]
   }
 }

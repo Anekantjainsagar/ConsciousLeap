@@ -1,7 +1,7 @@
 {
   "/(main)/page": "app/(main)/page.js",
-  "/(main)/questionnaire/questions/what-to-do/page": "app/(main)/questionnaire/questions/what-to-do/page.js",
-  "/(main)/questionnaire/questions/[id]/page": "app/(main)/questionnaire/questions/[id]/page.js",
-  "/(main)/questionnaire/questions/ask-age/page": "app/(main)/questionnaire/questions/ask-age/page.js",
-  "/(main)/questionnaire/questions/problem/page": "app/(main)/questionnaire/questions/problem/page.js"
+  "/(main)/faqs/page": "app/(main)/faqs/page.js",
+  "/(main)/join-us/page": "app/(main)/join-us/page.js",
+  "/(main)/collabrations/page": "app/(main)/collabrations/page.js",
+  "/(main)/therapy/page": "app/(main)/therapy/page.js"
 }

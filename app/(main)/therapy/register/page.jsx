@@ -133,7 +133,7 @@ const RegisterTherapist = () => {
       <p className="w-9/12 md:w-7/12 mx-auto text-center font-light tracking-wide">
         By joining our mindful team of Therapists, you are not just profoundly
         improving the quality of life but are truly saving lives by sharing your
-        knowledge and expertise with those who need it most. Learn More
+        knowledge and expertise with those who need it most. 
       </p>
       <Image
         src={image}

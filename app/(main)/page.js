@@ -1,3 +1,4 @@
+"use client";
 import BootstrapCarousel from "./Components/BootstrapCarousel";
 import Line1 from "./Components/Lines/Line1";
 import Whyconsciousleap from "./Components/WhyConsciousLeap";
@@ -14,8 +15,16 @@ import ClientTestimonials from "./Components/ClientTestimonials";
 import MemberStatistics from "./Components/MemberStatistics";
 import ConsciousleapBlog from "./Components/ConsciousLeapBlog";
 import ConsciousStore from "./Components/ConsciousStore";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    const element = document.getElementById("homeofoneness");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
   return (
     <div>
       <BootstrapCarousel />

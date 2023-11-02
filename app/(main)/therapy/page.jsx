@@ -482,51 +482,12 @@ const GridBlock = ({ data }) => {
 const ListBlock = ({ data }) => {
   const history = useRouter();
   return (
-    <div>
-      <div className="md:hidden block rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex flex-col justify-center items-start py-[4vw] px-[1vw] h-full w-full rounded-xl bg-white">
-          <div className="rounded-full mx-auto w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image
-                src={data?.photo}
-                width={1000}
-                height={1000}
-                alt="Photo of girl"
-                className="w-full h-[10vw] object-cover object-center rounded-full"
-              />
-            </div>
-          </div>
-          <div className="w-full flex flex-col justify-between items-center">
-            <div>
-              <h1 className="text-xl text-websiteBlue text-center">
-                {data?.name}
-              </h1>
-              <p className="text-darkGrey text-sm mt-2 text-center">
-                {data?.desc}
-              </p>
-            </div>
-            <div>
-              <h1 className="mt-5 text-base text-websiteBlue">Expertise</h1>
-              {data?.expertise?.map((e) => {
-                return (
-                  <li key={e} className="text-sm text-darkGrey">
-                    {e}
-                  </li>
-                );
-              })}
-            </div>
-            <button
-              onClick={() => {
-                history.push(`/therapy/${data?._id}`);
-              }}
-              className="bg-websiteBlue px-12 py-1.5 mt-5 rounded-lg text-white font-semibold"
-            >
-              Detailed Profile
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="md:block hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+    <div
+      onClick={(e) => {
+        history.push(`/therapy/${data?._id}`);
+      }}
+    >
+      <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
@@ -539,12 +500,12 @@ const ListBlock = ({ data }) => {
               />
             </div>
           </div>
-          <div className="w-9/12 flex justify-between items-center">
-            <div>
+          <div className="w-[81%] flex justify-between items-center h-[22vh]">
+            <div className="w-3/12 h-fit">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             </div>
-            <div>
+            <div className="w-5/12 h-fit">
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
               {data?.expertise?.map((e) => {
                 return (
@@ -556,11 +517,11 @@ const ListBlock = ({ data }) => {
             </div>
             <button
               onClick={() => {
-                history.push(`/therapy/${data?._id}`);
+                history.push(`/therapy/${data?._id}/schedule`);
               }}
-              className="bg-websiteBlue px-12 py-1.5 rounded-lg text-white font-semibold"
+              className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold"
             >
-              Detailed Profile
+              Schedule Session
             </button>
           </div>
         </div>

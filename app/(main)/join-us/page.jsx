@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
@@ -14,8 +15,10 @@ import img11 from "../Assets/registerTherapist/join11.png";
 import img12 from "../Assets/registerTherapist/join12.png";
 
 import circle from "../Assets/select meeting.png";
+import Context from "@/Context/Context";
 
 const JoinConsciousleap = () => {
+  const { joinUsShow } = React.useContext(Context);
   let registerData = [
     { image: img2, title: "Virtual", desc: "Work from anywhere." },
     {
@@ -29,9 +32,17 @@ const JoinConsciousleap = () => {
     { image: img12, title: "International", desc: "Heal the world." },
   ];
 
+  React.useEffect(() => {
+    const element = document.getElementById(joinUsShow);
+    element.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, []);
+
   return (
     <div className="pt-[3vw]">
-      <h1 className="text-websiteBlue font-extrabold text-5xl text-center">
+      <h1
+        id="JOIN"
+        className="text-websiteBlue font-extrabold text-5xl text-center"
+      >
         Join consciousleap
       </h1>
       <p className="w-[50%] mx-auto text-center mt-3">
@@ -55,7 +66,10 @@ const JoinConsciousleap = () => {
         })}
       </div>
       <Line2 />
-      <h1 className="text-websiteBlue font-extrabold text-5xl text-center">
+      <h1
+        id="VOLUNTEER"
+        className="text-websiteBlue font-extrabold text-5xl text-center"
+      >
         Become a Volunteer
       </h1>
       <p className="w-[50%] mx-auto text-center mt-3">
@@ -69,14 +83,16 @@ const JoinConsciousleap = () => {
       </p>
       <Image src={volunteer} alt="Join us" className="w-full mt-[3vw]" />
       <Line2 />
-      <h1 className="text-websiteBlue font-extrabold text-5xl text-center">
+      <h1
+        id="PARTNER"
+        className="text-websiteBlue font-extrabold text-5xl text-center"
+      >
         Partner with consciousleap
       </h1>
       <p className="w-[50%] mx-auto text-center mt-3">
         At consciousleap, we believe in mindful coexistence, where we care about
         our individual and collective impact on the environment. If you share
         the same values, please get in touch with us.{" "}
-        <span className="text-websiteBlue">Learn More</span>
       </p>
       <Image src={partners} alt="Join us" className="w-full mt-[3vw]" />
       <div className="px-[4vw] py-[2vw]">
