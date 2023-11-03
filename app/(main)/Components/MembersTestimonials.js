@@ -30,26 +30,26 @@ const MembersTestimonials = () => {
   let testimonialsHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    let timeline = gsap.timeline();
-    timeline.fromTo(
-      testimonialsHeading.current,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: testimonialsHeading.current,
-          start: "top 70%",
-          end: "top 40%",
-        },
-        ease: Power2.easeInOut,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   let timeline = gsap.timeline();
+  //   timeline.fromTo(
+  //     testimonialsHeading.current,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: testimonialsHeading.current,
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //       },
+  //       ease: Power2.easeInOut,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">

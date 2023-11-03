@@ -60,26 +60,26 @@ const Drawer = () => {
   ];
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    let timeline = gsap.timeline();
-    timeline.fromTo(
-      drawerRef.current,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: drawerRef.current,
-          start: "top 70%",
-          end: "top 40%",
-        },
-        ease: Power2.easeInOut,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   let timeline = gsap.timeline();
+  //   timeline.fromTo(
+  //     drawerRef.current,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: drawerRef.current,
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //       },
+  //       ease: Power2.easeInOut,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="px-[4vw] relative">

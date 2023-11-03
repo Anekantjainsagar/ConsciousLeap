@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { BASE_URL } from "@/Utils/urls";
 import { setCookie } from "cookies-next";
 import Context from "@/Context/Context";
+import emailjs from "@emailjs/browser";
 
 const UserLogin = () => {
   const captchaRef = useRef(null);
@@ -19,7 +20,7 @@ const UserLogin = () => {
   });
 
   useEffect(() => {
-    if (login?._id) {
+    if (isLogin) {
       history.push("/user/dashboard");
     }
   }, [login]);
@@ -59,6 +60,7 @@ const UserLogin = () => {
 
   const forgotPassword = () => {
     if (user?.email) {
+      console.log(user?.email);
       axios
         .post(`${BASE_URL}/login/password-reset`, {
           email: user?.email,
@@ -91,6 +93,7 @@ const UserLogin = () => {
           }
         })
         .catch((err) => {
+          console.log(err);
           toast.error("Internal server error");
         });
     } else {

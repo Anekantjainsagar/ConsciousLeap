@@ -26,26 +26,26 @@ const MemberStatistics = () => {
   const [visible4, setVisible4] = useState(false);
   const [visible5, setVisible5] = useState(false);
 
-  useEffect(() => {
-    let timeline = gsap.timeline();
-    timeline.fromTo(
-      memberStatiticsHeading.current,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: memberStatiticsHeading.current,
-          start: "top 70%",
-          end: "top 40%",
-        },
-        ease: Power2.easeInOut,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   let timeline = gsap.timeline();
+  //   timeline.fromTo(
+  //     memberStatiticsHeading.current,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: memberStatiticsHeading.current,
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //       },
+  //       ease: Power2.easeInOut,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
@@ -61,7 +61,7 @@ const MemberStatistics = () => {
           <Image
             src={!visible3 ? img3 : img31}
             alt="Image 1"
-            className="cursor-pointer w-full min-[2000px]:w-[8vw]"
+            className="cursor-pointer w-full min-[2000px]:w-[10vw]"
             onMouseEnter={(e) => {
               setVisible3(!visible3);
             }}

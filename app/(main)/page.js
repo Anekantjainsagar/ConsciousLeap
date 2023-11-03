@@ -20,10 +20,7 @@ import ReactModal from "./modal";
 
 const Home = () => {
   useEffect(() => {
-    const element = document.getElementById("navbar");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollTo(0, 0);
   }, []);
 
   return (

@@ -89,6 +89,8 @@ export function BootstrapCarousel() {
           <SwiperSlide key={i}>
             <Image
               src={item}
+              width={1000}
+              height={1000}
               alt="Slide"
               className="w-[50vw] md:w-[14vw] mx-auto"
             />

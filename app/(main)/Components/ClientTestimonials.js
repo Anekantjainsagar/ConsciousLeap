@@ -27,26 +27,26 @@ const ClientTestimonials = () => {
   let clientHeadings = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    let timeline = gsap.timeline();
-    timeline.fromTo(
-      clientHeadings.current,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: clientHeadings.current,
-          start: "top 70%",
-          end: "top 40%",
-        },
-        ease: Power2.easeInOut,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   let timeline = gsap.timeline();
+  //   timeline.fromTo(
+  //     clientHeadings.current,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: clientHeadings.current,
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //       },
+  //       ease: Power2.easeInOut,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
