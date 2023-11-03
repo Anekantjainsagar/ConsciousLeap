@@ -92,7 +92,7 @@ export function BootstrapCarousel() {
               alt="Slide"
               className="w-[50vw] md:w-[14vw] mx-auto"
               priority
-              as="image"
+              as="img"
             />
           </SwiperSlide>
         ))}
