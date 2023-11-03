@@ -86,7 +86,7 @@ export function BootstrapCarousel() {
         className="w-[98vw] flex items-center"
       >
         {data?.map((item, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} as={"image"}>
             <Image
               src={item}
               alt="Slide"
