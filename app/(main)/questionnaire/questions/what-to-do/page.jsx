@@ -7,7 +7,7 @@ const WhatToDo = () => {
   return (
     <div className="w-full h-[60vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
+        <h1 className="text-base md:text-[27px] font-extrabold text-newBlue mb-8">
           I am not sure what I am going through
         </h1>
         <div>
@@ -34,7 +34,7 @@ const Block = ({ data }) => {
           history.push("/therapy");
         }
       }}
-      className="rounded-xl mb-4 md:mb-5 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer  transitionAnimate hover:scale-105"
+      className="rounded-xl mb-4 md:mb-5 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105"
     >
       <div className="h-full w-full rounded-xl text-lg text-center bg-white px-2 md:px-10 py-1.5 cursor-pointer">
         {data}

@@ -41,26 +41,26 @@ const JoinConsciousleap = () => {
     <div className="pt-[3vw]">
       <h1
         id="JOIN"
-        className="text-websiteBlue font-extrabold text-5xl text-center"
+        className="text-websiteBlue font-extrabold text-3xl md:text-5xl text-center"
       >
         Join consciousleap
       </h1>
-      <p className="w-[50%] mx-auto text-center mt-3">
+      <p className="w-9/12 md:w-[50%] mx-auto text-center mt-3">
         We’re mindfully growing and would love to rope you in to help us improve
         the world. <br />
         Please email your resume to{" "}
         <span className="text-websiteBlue">hr@consciousleap.co</span>
       </p>
       <Image src={joinUs} alt="Join us" className="w-full mt-[5vw]" />
-      <h1 className="text-websiteBlue mt-[6vw] font-extrabold text-5xl text-center">
+      <h1 className="text-websiteBlue mt-[6vw] font-extrabold text-3xl md:text-5xl text-center">
         Mindful Advantages
       </h1>
-      <p className="w-[50%] mx-auto text-center mt-3">
+      <p className="w-9/12 md:w-[50%] mx-auto text-center mt-3">
         We at consciousleap believe in empowering our core team with a multitude
         of advantages to foster a collaborative and innovative environment where
         growth, creativity, and success thrive.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-6 mt-7 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
+      <div className="grid grid-cols-2 md:grid-cols-6 mt-7 px-[5vw] md:px-[2vw] gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-9">
         {registerData.map((e, i) => {
           return <FlipCard data={e} key={i} />;
         })}
@@ -68,11 +68,11 @@ const JoinConsciousleap = () => {
       <Line2 />
       <h1
         id="VOLUNTEER"
-        className="text-websiteBlue font-extrabold text-5xl text-center"
+        className="text-websiteBlue font-extrabold text-3xl md:text-5xl text-center"
       >
         Become a Volunteer
       </h1>
-      <p className="w-[50%] mx-auto text-center mt-3">
+      <p className="w-9/12 md:w-[50%] mx-auto text-center mt-3">
         We truly value your interest in making a mindful impact by Volunteering
         at consciousleap. <br />
         Please email your resume to{" "}
@@ -85,11 +85,11 @@ const JoinConsciousleap = () => {
       <Line2 />
       <h1
         id="PARTNER"
-        className="text-websiteBlue font-extrabold text-5xl text-center"
+        className="text-websiteBlue font-extrabold text-3xl md:text-5xl text-center"
       >
         Partner with consciousleap
       </h1>
-      <p className="w-[50%] mx-auto text-center mt-3">
+      <p className="w-9/12 md:w-[50%] mx-auto text-center mt-3">
         At consciousleap, we believe in mindful coexistence, where we care about
         our individual and collective impact on the environment. If you share
         the same values, please get in touch with us.{" "}
@@ -201,14 +201,14 @@ const JoinConsciousleap = () => {
           </p>
         </div>
       </div>
-      <div className="w-2/3 h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
+      <div className="w-full md:w-2/3 h-fit md:h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
         <Image
           src={circle}
           alt="Circle"
           className="absolute top-1/2 -translate-y-1/2 w-[100vw] z-10"
         />
         <div className="flex flex-col justify-center items-center w-full">
-          <h1 className="font-bold text-3xl mb-4 text-websiteBlue">
+          <h1 className="font-bold text-xl md:text-3xl mb-4 text-websiteBlue">
             We&apos;d love to hear from you
           </h1>
           <input

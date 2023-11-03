@@ -39,15 +39,15 @@ const ReactModal = () => {
           onClick={closeModal}
           className="absolute rounded-full right-5 top-5 bg-white px-2 cursor-pointer border z-20"
         />
-        <Image src={image} alt={"Image"} className="w-[35vw]" />
-        <div className="flex items-center flex-col justify-center h-full w-full absolute top-0 left-0">
+        <Image src={image} alt={"Image"} className="w-[100vw] md:w-[35vw]" />
+        <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
           <p className="text-center">
             Subscribe to our curated offers
             <br />
             and mindful blogs delivered to your inbox
           </p>
           <p className="text-websiteBlue">#NoSpamPledge</p>
-          <div className="flex items-center justify-center mt-4 w-8/12">
+          <div className="flex items-center justify-center mt-2 md:mt-4 w-8/12">
             <input
               type="text"
               className="border outline-none px-3 py-[7px] rounded-tl-md rounded-bl-md focus:border-websiteBlue"

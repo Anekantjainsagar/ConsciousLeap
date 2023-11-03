@@ -244,16 +244,16 @@ const ExpertiseArea = () => {
 
   return (
     <div>
-      <Image src={image} alt="Area expertise" className="w-8/12 mx-auto" />
+      <Image src={image} alt="Area expertise" className="md:w-8/12 mx-auto" />
       <div>
-        <div className="grid grid-cols-6 gap-y-4 py-[6vw]">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-y-4 py-[6vw]">
           {expertiseData.map((e, i) => {
             return <RoundBlock key={i} data={e} setData={setData} />;
           })}
         </div>
         <div
           id="BlockId"
-          className="rounded-lg w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+          className="rounded-lg md:mx-0 mx-5 md:w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
         >
           <div className="bg-white rounded-lg w-full h-full px-6 py-5">
             <p className="text-center text-websiteBlue text-2xl font-extrabold">
@@ -270,7 +270,7 @@ const ExpertiseArea = () => {
                     </div>
                   );
                 })}
-                <div className="grid grid-cols-2 gap-y-4 mt-6">
+                <div className="grid md:grid-cols-2 gap-y-4 mt-6">
                   {data?.tiles?.map((e, i) => {
                     return (
                       <div
@@ -324,7 +324,7 @@ const RoundBlock = ({ data, setData }) => {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 300);
       }}
-      className="rounded-full w-[92%] cursor-pointer h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+      className="rounded-full md:w-[92%] cursor-pointer h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
     >
       <div
         className="bg-white rounded-full w-full h-full p-2 grid items-center"

@@ -243,10 +243,10 @@ const Footer = () => {
                 } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
             </p>
-            <div className="text-[13.5px] mb-1 text-start font-light cursor-pointer hover:text-websiteBlue">
+            <div className="text-[13.5px] mb-1 text-center md:text-start font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
-              <div className="flex items-center">
+              <div className="flex items-center md:justify-start justify-center">
                 <span
                   onMouseEnter={(e) => {
                     setShowEstoniaAdd(true);

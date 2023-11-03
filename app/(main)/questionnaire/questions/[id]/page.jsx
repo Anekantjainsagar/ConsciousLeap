@@ -465,15 +465,15 @@ const EachQuestion = ({ params }) => {
   let tempData = data[val - 1];
 
   return (
-    <div className="w-full h-[66vh] flex flex-col items-center justify-center">
+    <div className="w-full md:h-[66vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-extrabold underline text-[#2e4fc9] mb-1">
+        <h1 className="text-xl md:text-3xl font-extrabold underline text-[#2e4fc9] mb-1">
           Life Assessment Questionnaire
         </h1>
-        <h1 className="text-[27px] font-extrabold text-newBlue mb-8">
+        <h1 className="text-lg text-center px-5 md:text-[27px] font-extrabold text-newBlue mb-8">
           {tempData?.question}
         </h1>
-        <div className="grid grid-cols-3 gap-x-10">
+        <div className="grid md:grid-cols-3 gap-x-10">
           <div>
             {tempData?.options?.slice(0, 3).map((e, i) => {
               return <Block key={i} data={e} page={val} />;
@@ -526,9 +526,9 @@ const Block = ({ data, page }) => {
         }
         history.push(`/questionnaire/questions/${page + 1}`);
       }}
-      className="rounded-2xl mb-4 md:mb-5 mx-auto w-[24vw] h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
+      className="rounded-2xl mb-4 md:mb-5 mx-auto md:w-[24vw] h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
     >
-      <div className="h-full w-full rounded-2xl text-lg transitionAnimate text-center bg-white px-2 md:px-10 py-1.5 cursor-pointer">
+      <div className="h-full w-full rounded-2xl text-lg transitionAnimate text-center bg-white px-4 md:px-10 py-1.5 cursor-pointer">
         {data?.name}
       </div>
     </div>
