@@ -39,7 +39,7 @@ const Block = ({ data }) => {
         setQuestionnaire({ ...questionnaire, age: data });
         history.push("/questionnaire/questions/problem");
       }}
-      className="rounded-xl mb-4 md:mb-5 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[4px] cursor-pointer transition-all"
+      className="rounded-xl mb-4 md:mb-5 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105"
     >
       <div className="h-full w-full rounded-xl text-lg text-center bg-white px-2 md:px-10 py-1.5 cursor-pointer">
         {data}

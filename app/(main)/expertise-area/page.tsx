@@ -97,12 +97,12 @@ const ExpertiseArea = () => {
       name: "Obsessive Compulsive and Related Disorders",
       para: "Obsessive-Compulsive and Related Disorders, are a group of mental health conditions characterized by repetitive thoughts, urges, or behaviors that cause significant distress and interfere with daily functioning. Some common symptoms associated with Obsessive- Compulsive and Related Disorders:",
       paraTiles: [
-        "Obsessions:",
-        "Compulsions:",
-        "Preoccupation with Appearance:",
-        "Difficulty Discarding:",
-        "Hair-Pulling or Skin-Picking:",
-        "se symptoms can significantly impact a person's daily life and cause distress.",
+        "Obsessions",
+        "Compulsions",
+        "Preoccupation with Appearance",
+        "Difficulty Discarding",
+        "Hair-Pulling or Skin-Picking",
+        "These symptoms can significantly impact a person's daily life and cause distress.",
       ],
       tiles: [
         "Obsessive Compulsive Disorder",
@@ -225,8 +225,7 @@ const ExpertiseArea = () => {
         "Parent-Child Relational Problem",
         "Sibling Relational Problem",
         "Child Affected by Parental Relationship Distress",
-        "Relationship Distress With Spouse or Intimate",
-        "Partner",
+        "Relationship Distress With Spouse or Intimate Partner",
         "Disruption of Family by Separation or Divorce",
         "Child Maltreatment and Neglect Problems",
       ],
@@ -278,7 +277,7 @@ const ExpertiseArea = () => {
                         className="rounded-full w-11/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px]"
                         key={i}
                       >
-                        <div className="bg-white rounded-full w-full h-full flex justify-center items-center py-2">
+                        <div className="bg-white rounded-full w-full h-full flex justify-center items-center py-2 px-6 text-center">
                           {e}
                         </div>
                       </div>
@@ -301,6 +300,12 @@ const RoundBlock = ({ data, setData }) => {
 
   let imageId = name + "image";
   let paraId = name + "para";
+
+  useEffect(() => {
+    return () => {
+      setClicked(false);
+    };
+  }, []);
 
   return (
     <div

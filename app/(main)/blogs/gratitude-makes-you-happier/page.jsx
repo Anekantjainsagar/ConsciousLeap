@@ -7,7 +7,7 @@ const Blog2 = () => {
     <div className="mx-auto w-[70vw] py-[1vw]">
       <Image src={blog} alt="Blog" className="mx-auto" />
       <div className="px-[8vw]">
-        <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
+        <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           How Gratitude Makes You Happier !
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
@@ -40,8 +40,8 @@ const Blog2 = () => {
               <b>Send a thank-you note.</b>
               <br />
               Writing a thank-you letter or email expressing your enjoyment and
-              appreciation for that person&apos;s impact on your life can make you
-              happier and strengthen your relationship with that person.
+              appreciation for that person&apos;s impact on your life can make
+              you happier and strengthen your relationship with that person.
             </li>
             <li className="mb-3">
               <b>Maintain a gratitude journal. </b>
@@ -75,8 +75,9 @@ const Blog2 = () => {
           <li>
             <b>The benefits of gratitude take time to manifest.</b>
             <br />
-            It&apos;s important to note that the advantages of gratitude writing for
-            mental health develops gradually over time rather than all at once.
+            It&apos;s important to note that the advantages of gratitude writing
+            for mental health develops gradually over time rather than all at
+            once.
             <br />
             If you participate in a gratitude writing activity, don&apos;t be
             surprised if you don&apos;t feel significantly better right away. Be

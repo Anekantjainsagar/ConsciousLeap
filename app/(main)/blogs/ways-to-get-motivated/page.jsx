@@ -7,7 +7,7 @@ const Blog2 = () => {
     <div className="mx-auto w-[70vw] py-[1vw]">
       <Image src={blog} alt="Blog" className="mx-auto" />
       <div className="px-[8vw]">
-        <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
+        <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           Surprising Ways to Get Motivated!
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
@@ -59,9 +59,9 @@ const Blog2 = () => {
             <br />
             You may think that performing the same task repeatedly, day after
             day, seems not only very monotonous but also incredibly
-            constricting. But you&apos;d be totally mistaken. The routine has a life
-            of its own. It turns into a holy place and moment that is frequently
-            just as significant as your intended activity.
+            constricting. But you&apos;d be totally mistaken. The routine has a
+            life of its own. It turns into a holy place and moment that is
+            frequently just as significant as your intended activity.
           </li>
           <br />
           <br />

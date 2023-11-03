@@ -7,7 +7,7 @@ const Blog2 = () => {
     <div className="mx-auto w-[70vw] py-[1vw]">
       <Image src={blog} alt="Blog" className="mx-auto" />
       <div className="px-[8vw]">
-        <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
+        <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           Open-mindedness - and why it matters!
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
@@ -33,9 +33,9 @@ const Blog2 = () => {
           <br />
           <br />
           The capacity to accept and give thought to novel and divergent
-          viewpoints from one&apos;s own is referred to as being open-minded. They
-          remain adaptable to all those concepts that help in critical thinking
-          and creative decision-making.
+          viewpoints from one&apos;s own is referred to as being open-minded.
+          They remain adaptable to all those concepts that help in critical
+          thinking and creative decision-making.
           <br />
           <br />
           Research shows that your personality traits (patterns of thinking,
@@ -60,7 +60,8 @@ const Blog2 = () => {
             </li>
             <li>More buddies will be added in your social sphere.</li>
             <li>
-              You won&apos;t be affected by any limited biases or viewpoints anymore.
+              You won&apos;t be affected by any limited biases or viewpoints
+              anymore.
             </li>
             <li>
               Open mindedness allows thoughtful thinking and stops you to jump
@@ -109,8 +110,8 @@ const Blog2 = () => {
           <br />
           <br />
           <p>
-            It enables you to face life&apos;s challenges with courage while keeping
-            you safe from manipulation. You lead a life on your terms.
+            It enables you to face life&apos;s challenges with courage while
+            keeping you safe from manipulation. You lead a life on your terms.
           </p>
           <br />
           <br />

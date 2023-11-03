@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import image from "../Assets/globe.png";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
@@ -8,27 +8,9 @@ import logoPng from "../Assets/logoPng.png";
 const GlobalPresence = () => {
   let globalHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
-
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     globalHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: globalHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
+  const [showIndia, setShowIndia] = useState(false);
+  const [setshowEstonia, setSetshowEstonia] = useState(false);
+  const [setshowDubai, setSetshowDubai] = useState(false);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
@@ -45,39 +27,82 @@ const GlobalPresence = () => {
       <div className="relative">
         <Image src={image} alt={image.src} className="mt-3 w-[100vw]" />
         {/* India */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] hover:scale-75 transition-all">
-          <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
+        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] transition-all">
+          <p
+            className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
+              showIndia ? "block" : "hidden"
+            }`}
+          >
             INDIA
           </p>
           <Image
             src={logoPng}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-4/12 mt-0 md:mt-2"
+            onMouseEnter={(e) => {
+              setShowIndia(true);
+            }}
+            onMouseOut={(e) => {
+              setShowIndia(true);
+            }}
+            onMouseLeave={(e) => {
+              setShowIndia(false);
+            }}
+            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
           />
         </div>
         {/* Dubai */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%] hover:scale-75 transition-all">
-          <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
+        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%]">
+          <p
+            className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
+              setshowDubai ? "block" : "hidden"
+            }`}
+          >
             DUBAI
           </p>
           <Image
             src={logoPng}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-4/12 md:my-1"
+            onMouseEnter={(e) => {
+              setSetshowDubai(true);
+            }}
+            onMouseOut={(e) => {
+              setSetshowDubai(true);
+            }}
+            onMouseLeave={(e) => {
+              setSetshowDubai(false);
+            }}
+            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
           />
-          <p className="text-semibold text-xs text-center text-websiteBlue">
+          <p
+            className={`text-semibold text-xs mt-2 text-center text-websiteBlue ${
+              setshowDubai ? "block" : "hidden"
+            }`}
+          >
             #COMINGSOON
           </p>
         </div>
         {/* ESTONIA */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] hover:scale-75 transition-all">
-          <p className="text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5">
+        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] ">
+          <p
+            className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
+              setshowEstonia ? "block" : "hidden"
+            }`}
+          >
             ESTONIA
           </p>
           <Image
             src={logoPng}
+            onMouseEnter={(e) => {
+              setSetshowEstonia(true);
+            }}
+            onMouseOut={(e) => {
+              setSetshowEstonia(true);
+            }}
+            onMouseLeave={(e) => {
+              setSetshowEstonia(false);
+            }}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-4/12 mt-0 md:mt-2"
+            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
           />
         </div>
       </div>

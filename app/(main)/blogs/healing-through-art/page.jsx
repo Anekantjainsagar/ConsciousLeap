@@ -7,7 +7,7 @@ const Blog1 = () => {
     <div className="mx-auto w-[70vw] py-[1vw]">
       <Image src={blog} alt="Blog" />
       <div className="px-[8vw]">
-        <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
+        <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           Healing Through Art
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
@@ -17,12 +17,12 @@ const Blog1 = () => {
           modern-day art therapy, art has been a tool for individuals to work
           through their emotions and experiences, leading to improved mental,
           emotional, and physical well-being. <br /> <br />
-          The act of creating art can be a powerful way to connect with one&apos;s
-          inner self and explore complex feelings and thoughts that are often
-          difficult to put into words. By engaging in creative activities such
-          as painting, drawing, writing, or sculpting, individuals can tap into
-          their subconscious and express themselves in ways that might not be
-          possible through other forms of communication.
+          The act of creating art can be a powerful way to connect with
+          one&apos;s inner self and explore complex feelings and thoughts that
+          are often difficult to put into words. By engaging in creative
+          activities such as painting, drawing, writing, or sculpting,
+          individuals can tap into their subconscious and express themselves in
+          ways that might not be possible through other forms of communication.
           <br />
           <br /> One of the most significant benefits of healing through art is
           the ability to reduce stress and anxiety. Studies have shown that
@@ -49,14 +49,14 @@ const Blog1 = () => {
           <br /> Art can also be a tool for personal growth and self-discovery.
           By engaging in creative activities, individuals can learn more about
           themselves and their strengths and weaknesses. Art can provide a safe
-          space to explore one&apos;s identity and experiment with different ways of
-          expressing oneself. <br />
+          space to explore one&apos;s identity and experiment with different
+          ways of expressing oneself. <br />
           <br /> In conclusion, art is a powerful tool for healing and
           self-expression. By engaging in creative activities, individuals can
           reduce stress and anxiety, improve mental health, and connect with
           others on a deeper level. Whether it is through art therapy or simply
-          engaging in creative activities, incorporating art into one&apos;s life can
-          lead to significant improvements in overall well-being.
+          engaging in creative activities, incorporating art into one&apos;s
+          life can lead to significant improvements in overall well-being.
         </p>
       </div>
     </div>

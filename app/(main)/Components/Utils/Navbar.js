@@ -14,6 +14,7 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
 import { deleteCookie, setCookie } from "cookies-next";
+import user from "../../Assets/userLogo.png";
 
 let nav = [
   {
@@ -150,6 +151,12 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   let history = useRouter();
   const { login } = useContext(Context);
+  const [showHover, setShowHover] = useState({
+    login: false,
+    user: false,
+    cart: false,
+    search: false,
+  });
 
   return (
     <div>
@@ -212,28 +219,95 @@ const Navbar = () => {
             <Navi showNav={showNav} setShowNav={setShowNav} />
           </div>
           <div className="flex items-center">
-            <AiOutlineUser
-              onClick={(e) => {
-                if (login?._id) {
-                  history.push("/user/login");
-                } else {
-                  history.push("/user/dashboard");
-                }
-              }}
-              className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={35}
-            />
-            <AiOutlineSearch
-              onClick={(e) => {
-                history.push("/therapy");
-              }}
-              className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={35}
-            />
-            <AiOutlineShoppingCart
-              className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={35}
-            />
+            <div className="relative">
+              {showHover?.login || showHover?.user ? (
+                <p className="absolute -bottom-7 left-1/2 -translate-x-1/2">
+                  <span className="mr-2">
+                    {showHover?.user ? "Dashboard" : ""}
+                  </span>
+                  {showHover?.login ? "Login/Register" : ""}
+                </p>
+              ) : null}
+              {login?._id ? (
+                <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue">
+                  <Image
+                    src={user}
+                    onMouseEnter={(e) => {
+                      setShowHover({ ...showHover, user: true });
+                    }}
+                    onMouseOut={(e) => {
+                      setShowHover({ ...showHover, user: true });
+                    }}
+                    onMouseLeave={(e) => {
+                      setShowHover({ ...showHover, user: false });
+                    }}
+                    alt="User"
+                    className="w-[2vw] cursor-pointer"
+                    onClick={(e) => {
+                      history.push("/user/dashboard");
+                    }}
+                  />
+                </div>
+              ) : (
+                <AiOutlineUser
+                  onMouseEnter={(e) => {
+                    setShowHover({ ...showHover, login: true });
+                  }}
+                  onMouseOut={(e) => {
+                    setShowHover({ ...showHover, login: true });
+                  }}
+                  onMouseLeave={(e) => {
+                    setShowHover({ ...showHover, login: false });
+                  }}
+                  onClick={(e) => {
+                    history.push("/user/login");
+                  }}
+                  className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+                  size={35}
+                />
+              )}
+            </div>
+            <div className="relative">
+              {showHover?.search ? (
+                <p className="absolute -bottom-7 pr-3 left-1/2 -translate-x-1/2">
+                  Search
+                </p>
+              ) : null}
+              <AiOutlineSearch
+                onMouseEnter={(e) => {
+                  setShowHover({ ...showHover, search: true });
+                }}
+                onMouseOut={(e) => {
+                  setShowHover({ ...showHover, search: true });
+                }}
+                onMouseLeave={(e) => {
+                  setShowHover({ ...showHover, search: false });
+                }}
+                onClick={(e) => {
+                  history.push("/therapy");
+                }}
+                className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+                size={35}
+              />
+            </div>
+            <div className="relative">
+              {showHover?.cart ? (
+                <p className="absolute -bottom-7 right-3">Cart</p>
+              ) : null}
+              <AiOutlineShoppingCart
+                onMouseEnter={(e) => {
+                  setShowHover({ ...showHover, cart: true });
+                }}
+                onMouseOut={(e) => {
+                  setShowHover({ ...showHover, cart: true });
+                }}
+                onMouseLeave={(e) => {
+                  setShowHover({ ...showHover, cart: false });
+                }}
+                className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+                size={35}
+              />
+            </div>
           </div>
         </div>
         {/* Navbar Mobile */}

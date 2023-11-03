@@ -29,7 +29,7 @@ const Questionnaire = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <h1 className="cursor-pointer underline mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
+      <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
         Initial Analysis
       </h1>
       {login?.questionnaire?.backendAnswers?.map((e, i) => {
@@ -107,7 +107,7 @@ const Block = ({ data, index }) => {
           <span className="text-lg md:text-2xl md:ml-0.5">%</span>
         </div>
         <div className="w-8/12 md:w-7/12 py-4 md:pr-4">
-          <h1 className="text-center text-sm md:text-2xl font-medium cursor-pointer hover:text-websiteBlue transition-all mb-1">
+          <h1 className="text-center text-sm md:text-2xl font-medium cursor-pointer text-websiteBlue transition-all mb-1">
             {questionnaire[index]?.title}
           </h1>
           <p className="text-center md:text-base text-[9px] font-light">

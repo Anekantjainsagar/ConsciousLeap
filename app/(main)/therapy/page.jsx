@@ -50,7 +50,7 @@ const Therapists = () => {
         Our Mindful Therapists
       </h1>
       <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-0 md:mt-3 mb-12 md:mb-10">
-        `Our Mindful Therapists` are the founding pillars of consciousleap.
+        &quot;Our Mindful Therapists" are the founding pillars of consciousleap.
       </p>
       <div className="mt-[3vw] px-[4vw] md:px-[6vw] w-full flex">
         <div
@@ -419,13 +419,15 @@ const GridBlock = ({ data }) => {
               <h1 className="mt-2 text-center text-base text-websiteBlue">
                 Expertise
               </h1>
-              {data?.expertise?.slice(0, 2)?.map((e) => {
-                return (
-                  <li key={e} className="text-sm text-darkGrey">
-                    {e}
-                  </li>
-                );
-              })}
+              <div>
+                {data?.expertise?.slice(0, 2)?.map((e) => {
+                  return (
+                    <li key={e} className="text-sm text-darkGrey">
+                      {e}
+                    </li>
+                  );
+                })}
+              </div>
             </div>
             <button
               onClick={(e) => {
@@ -456,13 +458,15 @@ const GridBlock = ({ data }) => {
             <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
             <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-            {data?.expertise?.slice(0, 2)?.map((e) => {
-              return (
-                <li key={e} className="text-sm text-darkGrey">
-                  {e}
-                </li>
-              );
-            })}
+            <div className="h-[8vh]">
+              {data?.expertise?.slice(0, 2)?.map((e) => {
+                return (
+                  <li key={e} className="text-sm text-darkGrey">
+                    {e}
+                  </li>
+                );
+              })}
+            </div>
             <button
               onClick={(e) => {
                 e.stopPropagation();

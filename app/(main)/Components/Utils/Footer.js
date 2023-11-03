@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import youtube from "../../Assets/icons/youtube.png";
 import facebook from "../../Assets/icons/facebook.png";
 import instagram from "../../Assets/icons/instagram.png";
@@ -24,6 +24,8 @@ const Footer = () => {
   const [showQr, setShowQr] = React.useState(false);
   const pathname = usePathname();
   const history = useRouter();
+  const [showIndiaAdd, setShowIndiaAdd] = useState(false);
+  const [showEstoniaAdd, setShowEstoniaAdd] = useState(false);
 
   let nav = [
     {
@@ -241,12 +243,47 @@ const Footer = () => {
                 } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
             </p>
-            <p className="text-[13.5px] mb-1 text-start font-light cursor-pointer hover:text-websiteBlue">
+            <div className="text-[13.5px] mb-1 text-start font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
-              Järvevana Tee 9, Tallinn, 11314, Estonia A3 Sai Shraddha, Deonar,
-              Mumbai 400088, India.
-            </p>
+              <div className="flex items-center">
+                <span
+                  className="text-websiteBlue"
+                  onMouseEnter={(e) => {
+                    setShowEstoniaAdd(true);
+                  }}
+                  onMouseOut={(e) => {
+                    setShowEstoniaAdd(true);
+                  }}
+                  onMouseLeave={(e) => {
+                    setShowEstoniaAdd(false);
+                  }}
+                >
+                  Estonia
+                </span>
+                <div className="mx-2">|</div>
+                <span
+                  className="text-websiteBlue"
+                  onMouseEnter={(e) => {
+                    setShowIndiaAdd(true);
+                  }}
+                  onMouseOut={(e) => {
+                    setShowIndiaAdd(true);
+                  }}
+                  onMouseLeave={(e) => {
+                    setShowIndiaAdd(false);
+                  }}
+                >
+                  India
+                </span>
+              </div>
+              <span className={`${!showEstoniaAdd ? "hidden" : "block"}`}>
+                Järvevana Tee 9, Tallinn, 11314, Estonia
+              </span>
+              <span className={`${!showIndiaAdd ? "hidden" : "block"}`}>
+                A3 Sai Shraddha, Deonar, Mumbai 400088, India.
+              </span>{" "}
+            </div>
             <div className="flex items-center mt-1">
               {[
                 {
@@ -265,10 +302,6 @@ const Footer = () => {
                 {
                   image: linkedin,
                   link: "https://www.linkedin.com/company/consciousleap-co/",
-                },
-                {
-                  image: pinterest,
-                  link: "https://in.pinterest.com/consciousleapco/",
                 },
               ].map((e) => {
                 return (

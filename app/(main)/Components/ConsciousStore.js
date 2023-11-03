@@ -73,7 +73,7 @@ const ConsciousStore = () => {
 const Block = ({ data }) => {
   return (
     <div className="rounded-md w-full h-[24vh] md:h-[35vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-      <div className="flex items-center justify-center h-full w-full rounded-md bg-white">
+      <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
         <Image
           src={data?.image}
           alt="User profile"

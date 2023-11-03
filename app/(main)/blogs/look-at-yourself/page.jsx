@@ -7,7 +7,7 @@ const Blog2 = () => {
     <div className="mx-auto w-[70vw] py-[1vw]">
       <Image src={blog} alt="Blog" className="mx-auto" />
       <div className="px-[8vw]">
-        <h1 className="text-2xl mt-4 font-bold hover:text-websiteBlue cursor-pointer">
+        <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           How do you look at yourself? Ways to improve your self esteem
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>

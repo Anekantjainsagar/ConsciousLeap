@@ -161,3 +161,8 @@
   color: white;
   transform: rotateY(180deg);
 }
+
+.transitionAnimate{
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.25s;
+}
