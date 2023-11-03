@@ -64,7 +64,7 @@ const MindfulTherapist = () => {
 };
 
 export function BootstrapCarousel() {
-  let bootstrap = [img1, img2, img4, img5, img1, img2, img4, img5];
+  let data = [img1, img2, img4, img5, img1, img2, img4, img5];
 
   return (
     <div className="custom-carousel-container relative">
@@ -85,12 +85,14 @@ export function BootstrapCarousel() {
         }}
         className="w-[98vw] flex items-center"
       >
-        {bootstrap?.map((item, i) => (
+        {data?.map((item, i) => (
           <SwiperSlide key={i}>
-            <img
+            <Image
               src={item}
               alt="Slide"
               className="w-[50vw] md:w-[14vw] mx-auto"
+              priority
+              as="image"
             />
           </SwiperSlide>
         ))}
