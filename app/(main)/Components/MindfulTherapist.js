@@ -87,13 +87,12 @@ export function BootstrapCarousel() {
       >
         {bootstrap?.map((item, i) => (
           <SwiperSlide key={i}>
-            <Image
+            <img
               src={item}
-              width={1000}
-              height={1000}
+              quality={100}
               alt="Slide"
-              priority={true}
               className="w-[50vw] md:w-[14vw] mx-auto"
+              priority
             />
           </SwiperSlide>
         ))}
