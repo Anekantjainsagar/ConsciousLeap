@@ -116,10 +116,10 @@ const Table = ({ data }) => {
             </h1>
           </div>
         </div>
-        <div className="py-3 h-full flex flex-col items-center justify-center px-4">
+        <div className="py-3 h-full flex flex-col items-start justify-center px-4">
           {data?.items?.map((e) => {
             return (
-              <li className="font-light text-center" key={e}>
+              <li className="font-light" key={e}>
                 {e}
               </li>
             );

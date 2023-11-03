@@ -57,11 +57,11 @@ const Questionnaire = () => {
       <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">
         <span className="font-semibold">Disclaimer:</span> This questionnaire is
         intended to provide a general assessment of mental health and should not
-        be considered a substitute for professional evaluation or advice. The
-        results of this questionnaire are based solely on the provided responses
-        and should be interpreted with caution. It is important to consult with
-        a qualified mental health professional for assessment and personalized
-        guidance.
+        be considered a substitute for professional evaluation or advice.
+        <br /> The results of this questionnaire are based solely on the
+        provided responses and should be interpreted with caution.
+        <br /> It is important to consult with a qualified mental health
+        professional for assessment and personalized guidance.
       </p>
     </div>
   );

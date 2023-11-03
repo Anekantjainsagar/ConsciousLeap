@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useState, useEffect } from "react";
 import Context from "@/Context/Context";
-import circle from "../../../Assets/select meeting.png";
+import circle from "../../../Assets/bg-member.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -21,11 +21,11 @@ const Schedule = ({ params }) => {
 
   return (
     <div className="py-[5vw] relative">
-      <Image src={circle} alt="Consciousleap bg" className="w-6/12 mx-auto" />
+      <Image src={circle} alt="Consciousleap bg" className="w-5/12 mx-auto" />
       <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1 className="text-2xl text-websiteBlue mb-4">Choose a Service:</h1>
         <div
-          className="bg-gray-100 mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[30vw] px-4 py-2 text-lg"
+          className="bg-gray-100 mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[26vw] px-4 py-2 text-lg"
           onClick={(e) => {
             setFourtyMinMeet(false);
             history.push(`/therapy/${id}/schedule/appoint`);
@@ -35,7 +35,7 @@ const Schedule = ({ params }) => {
           <p className="mt-0">INR {user?.meeting_url?.price}</p>
         </div>
         <div
-          className="bg-gray-100 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[30vw] px-4 py-2 text-lg"
+          className="bg-gray-100 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[26vw] px-4 py-2 text-lg"
           onClick={(e) => {
             setFourtyMinMeet(true);
             history.push(`/therapy/${id}/schedule/appoint`);

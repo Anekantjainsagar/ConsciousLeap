@@ -248,7 +248,6 @@ const Footer = () => {
               <br />
               <div className="flex items-center">
                 <span
-                  className="text-websiteBlue"
                   onMouseEnter={(e) => {
                     setShowEstoniaAdd(true);
                   }}
@@ -263,7 +262,6 @@ const Footer = () => {
                 </span>
                 <div className="mx-2">|</div>
                 <span
-                  className="text-websiteBlue"
                   onMouseEnter={(e) => {
                     setShowIndiaAdd(true);
                   }}
@@ -277,10 +275,18 @@ const Footer = () => {
                   India
                 </span>
               </div>
-              <span className={`${!showEstoniaAdd ? "hidden" : "block"}`}>
+              <span
+                className={`${
+                  !showEstoniaAdd ? "hidden" : "block text-darkGrey"
+                }`}
+              >
                 Järvevana Tee 9, Tallinn, 11314, Estonia
               </span>
-              <span className={`${!showIndiaAdd ? "hidden" : "block"}`}>
+              <span
+                className={`${
+                  !showIndiaAdd ? "hidden" : "block text-darkGrey"
+                }`}
+              >
                 A3 Sai Shraddha, Deonar, Mumbai 400088, India.
               </span>{" "}
             </div>
@@ -356,9 +362,9 @@ const Footer = () => {
         </div>
         <div className="flex md:flex-row flex-col justify-between items-center mt-5">
           <Image src={logo} alt="Logo" className="w-[75vw] md:w-[18vw]" />
-          <div className="grid grid-cols-4 w-full md:w-[50%] py-2 md:py-0 items-center text-darkGrey font-light text-sm">
+          <div className="grid grid-cols-4 w-full md:w-[50%] py-2 md:py-0 items-start text-darkGrey font-light text-sm">
             <p
-              className="text-center cursor-pointer"
+              className="text-start cursor-pointer mt-1.5 hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/terms");
               }}
@@ -366,7 +372,7 @@ const Footer = () => {
               Terms of Use
             </p>
             <p
-              className="text-center cursor-pointer"
+              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/cookies-policy");
               }}
@@ -374,7 +380,7 @@ const Footer = () => {
               Cookies Policy
             </p>
             <p
-              className="text-center cursor-pointer"
+              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/policies");
               }}
@@ -382,7 +388,7 @@ const Footer = () => {
               Privacy Policy
             </p>
             <p
-              className="text-center cursor-pointer"
+              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/refund");
               }}

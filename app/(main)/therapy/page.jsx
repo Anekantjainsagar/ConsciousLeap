@@ -441,7 +441,7 @@ const GridBlock = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-[15vw]">
+      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-[15vw] hover:scale-105 transition-all">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
@@ -472,7 +472,7 @@ const GridBlock = ({ data }) => {
                 e.stopPropagation();
                 history.push(`/therapy/${data?._id}/schedule`);
               }}
-              className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white font-semibold"
+              className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white hover:scale-105 transition-all font-semibold"
             >
               Schedule Session
             </button>
@@ -490,6 +490,7 @@ const ListBlock = ({ data }) => {
       onClick={(e) => {
         history.push(`/therapy/${data?._id}`);
       }}
+      className="hover:scale-105 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
@@ -523,7 +524,7 @@ const ListBlock = ({ data }) => {
               onClick={() => {
                 history.push(`/therapy/${data?._id}/schedule`);
               }}
-              className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold"
+              className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"
             >
               Schedule Session
             </button>
