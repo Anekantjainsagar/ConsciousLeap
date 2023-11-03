@@ -242,7 +242,7 @@ const Navbar = () => {
                       setShowHover({ ...showHover, user: false });
                     }}
                     alt="User"
-                    className="w-[2vw] cursor-pointer"
+                    className="w-[2vw] cursor-pointer hover:scale-110 transition-all"
                     onClick={(e) => {
                       history.push("/user/dashboard");
                     }}
