@@ -115,6 +115,9 @@ const Dashboard = () => {
               <Image
                 src={img3}
                 alt="Image 1"
+                onClick={(e) => {
+                  router.push("/therapy/notes");
+                }}
                 className="hover:scale-105 transition-all cursor-pointer"
               />
               <Image

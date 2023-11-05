@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
-import image from "../../Assets/sagrika.jpeg";
 
 import { BsCameraVideo } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
