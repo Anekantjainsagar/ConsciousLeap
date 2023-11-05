@@ -107,9 +107,9 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, setFilledConsent }) => {
                   value:
                     "I agree to provide my location at the beginning of each session and designate an emergency contact person for life-threatening emergencies.",
                 },
-              ].map((e) => {
+              ].map((e, i) => {
                 return (
-                  <div className="mt-2">
+                  <div key={i} className="mt-2">
                     <h6 className="text-websiteBlue font-medium">{e?.point}</h6>
                     <p>{e?.value}</p>
                   </div>
@@ -184,9 +184,9 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, setFilledConsent }) => {
                   value:
                     "I understand my rights and responsibilities as a client.",
                 },
-              ].map((e) => {
+              ].map((e, i) => {
                 return (
-                  <div className="mt-2">
+                  <div key={i} className="mt-2">
                     <h6 className="text-websiteBlue font-medium">{e?.point}</h6>
                     <p>{e?.value}</p>
                   </div>
