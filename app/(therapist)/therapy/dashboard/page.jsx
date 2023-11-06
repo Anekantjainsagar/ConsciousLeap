@@ -167,7 +167,7 @@ const Dashboard = () => {
               <div className="rounded-lg w-full h-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
                 <div className="h-full w-full rounded-lg p-[1vw] items-center justify-center bg-white flex flex-col">
                   <h1 className="text-websiteBlue text-xl font-semibold">
-                    Calender
+                    Calendar
                   </h1>
                   <Calendar
                     value={dateState}
@@ -180,7 +180,7 @@ const Dashboard = () => {
             </div>
             <div className="shadow-lg py-2 px-3 border bg-white rounded-lg shadow-lightGrey mt-[1vw] mx-auto">
               <h1 className="text-center text-sm text-lightGrey">
-                Recommanded Reads
+                Recommended Reads
               </h1>
               <Image
                 src={ideas}

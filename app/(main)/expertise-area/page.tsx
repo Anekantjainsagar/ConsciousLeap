@@ -253,7 +253,7 @@ const ExpertiseArea = () => {
         </div>
         <div
           id="BlockId"
-          className="rounded-lg md:mx-0 mx-5 md:w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+          className="rounded-lg md:mx-auto md:w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
         >
           <div className="bg-white rounded-lg w-full h-full px-6 py-5">
             <p className="text-center text-websiteBlue text-2xl font-extrabold">

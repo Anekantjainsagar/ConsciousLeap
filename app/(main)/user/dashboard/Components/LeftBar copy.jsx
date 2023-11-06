@@ -19,7 +19,7 @@ const RightBar = () => {
     <div className="md:w-3/12 w-[95%] mx-auto md:mt-0 mt-5">
       <div className="rounded-lg w-full h-fit bg-gradient-to-r mb-4 from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full w-full rounded-lg p-[1vw] items-center justify-center bg-white flex flex-col">
-          <h1 className="text-websiteBlue text-xl mb-2">Calender</h1>
+          <h1 className="text-websiteBlue text-xl mb-2">Calendar</h1>
           <Calendar
             value={dateState}
             onChange={(e) => {

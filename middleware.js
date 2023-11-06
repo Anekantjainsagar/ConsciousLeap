@@ -9,6 +9,7 @@ export async function middleware(request) {
     request.nextUrl.pathname != "/therapy" &&
     request.nextUrl.pathname != "/therapy/dashboard" &&
     request.nextUrl.pathname != "/therapy/register" &&
+    request.nextUrl.pathname != "/therapy/notes" &&
     request.nextUrl.pathname != "/therapy/edit-profile"
   ) {
     return NextResponse.redirect(new URL("/user/login", request.url));

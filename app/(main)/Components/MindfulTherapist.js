@@ -64,7 +64,16 @@ const MindfulTherapist = () => {
 };
 
 export function BootstrapCarousel() {
-  let data = [img1, img2, img4, img5, img1, img2, img4, img5];
+  let data = [
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298395/c5otpqefsaqx1bf8qclu.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298499/qwmptx5gb0qvhjxx6mpr.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298517/sdnwd7sbtaeapx4s9coz.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298538/dettte2e0rncdcyrzkdg.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298395/c5otpqefsaqx1bf8qclu.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298499/qwmptx5gb0qvhjxx6mpr.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298517/sdnwd7sbtaeapx4s9coz.jpg",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298538/dettte2e0rncdcyrzkdg.jpg",
+  ];
 
   return (
     <div className="custom-carousel-container relative">
@@ -91,9 +100,8 @@ export function BootstrapCarousel() {
               src={item}
               alt="Slide"
               className="w-[50vw] md:w-[14vw] mx-auto"
-              priority
-              as="image"
-              placeholder="blur"
+              width={1000}
+              height={1000}
             />
           </SwiperSlide>
         ))}

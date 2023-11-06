@@ -470,7 +470,7 @@ const EachQuestion = ({ params }) => {
         <h1 className="text-xl md:text-3xl font-extrabold underline text-[#2e4fc9] mb-1">
           Life Assessment Questionnaire
         </h1>
-        <h1 className="text-lg text-center px-5 md:text-[27px] font-extrabold text-newBlue mb-8">
+        <h1 className="text-lg mt-4 text-center px-5 md:text-[27px] font-extrabold text-newBlue mb-12">
           {tempData?.question}
         </h1>
         <div className="grid md:grid-cols-3 gap-x-10">

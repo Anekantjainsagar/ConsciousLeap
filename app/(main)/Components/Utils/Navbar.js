@@ -225,7 +225,7 @@ const Navbar = () => {
                   <span className="mr-2">
                     {showHover?.user ? "Dashboard" : ""}
                   </span>
-                  {showHover?.login ? "Login/Register" : ""}
+                  <span className="mr-2">{showHover?.login ? "Login/Register" : ""}</span>
                 </p>
               ) : null}
               {login?._id ? (

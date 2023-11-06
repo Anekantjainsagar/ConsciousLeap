@@ -14,7 +14,7 @@ import img10 from "../Assets/registerTherapist/join10.png";
 import img11 from "../Assets/registerTherapist/join11.png";
 import img12 from "../Assets/registerTherapist/join12.png";
 
-import circle from "../Assets/select meeting.png";
+import circle from "../Assets/bg-member.png";
 import Context from "@/Context/Context";
 
 const JoinConsciousleap = () => {

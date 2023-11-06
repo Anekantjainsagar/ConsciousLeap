@@ -69,15 +69,15 @@ const UserLogin = () => {
           if (res.status == 200) {
             emailjs
               .send(
-                "service_m3apnyp",
-                "template_wsccs7q",
+                "service_n23sv5c",
+                "template_xl03pav",
                 {
                   email: user?.email,
                   url: res.data?.url,
                   to_name: res?.data?.user?.name,
                   from_name: "Consciousleap",
                 },
-                "v7Az1Fd2eRsK6eP9z"
+                "l0zGxBngDOZlLankM"
               )
               .then(
                 function (response) {

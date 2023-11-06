@@ -1,9 +1,11 @@
-"use client";
-import { BASE_URL } from "@/Utils/urls";
-import axios from "axios";
-import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import React, { useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
+import image from "../../../Assets/subscribe.png";
+import logo from "../../../Assets/logoPng.png";
+import Image from "next/image";
+import Context from "@/Context/Context";
+import { AiOutlineClose } from "react-icons/ai";
+import { usePathname, useRouter } from "next/navigation";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -14,254 +16,86 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "white",
+    backgroundColor: "transparent",
+    border: "none",
   },
 };
 
-const MemberConsent = ({ modalIsOpen, setIsOpen, setFilledConsent }) => {
-  const [checked, setChecked] = React.useState(false);
-  const [form, setForm] = React.useState({
-    name: "",
-    address: "",
-    emergency: {
-      name: "",
-      address: "",
-      phone: "",
-    },
-  });
+const MemberConsent = ({ modalIsOpen, setIsOpen }) => {
+  let id = "";
+  let pathname = usePathname();
+  console.log(pathname);
+  const history = useRouter();
+  const [filledConsent, setFilledConsent] = useState(false);
+  const [user, setUser] = useState();
+  const { therapistFilter, fourtyMinMeet, setFourtyMinMeet } =
+    useContext(Context);
+
+  useEffect(() => {
+    const therapist = therapistFilter?.therapistsData?.find(
+      (e) => e?._id == id
+    );
+    setUser(therapist);
+  }, [therapistFilter?.therapistsData]);
 
   const closeModal = () => {
     setIsOpen(!modalIsOpen);
   };
 
   return (
-    <div>
-      <Toaster />
+    <div className="z-50 relative">
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="w-[35vw] flex flex-col items-center h-[60vh]">
-          <h1 className="text-2xl text-websiteBlue">Member Consent Form</h1>
-          <div className="h-[1.5px] w-8/12 my-3 bg-websiteBlue"></div>
-          <div className="w-full">
-            <h3 className="text-websiteBlue text-lg">Introduction:</h3>
-            <div className="mt-1">
-              I,{" "}
-              <input
-                type="text"
-                value={form?.name}
-                onChange={(e) => {
-                  setForm({ ...form, name: e.target.value });
-                }}
-                className="border px-2 rounded-md outline-none mx-1"
-                placeholder="Your Name"
-              />
-              hereby grant my informed consent to participate in telemental
-              health services provided by Coleco Well-being Pvt. Ltd. This form
-              outlines important information regarding the nature of telemental
-              health services and my rights and responsibilities as a client.
-            </div>
-            <h3 className="text-websiteBlue text-lg mt-4">
-              Understanding Telemental Health:
-            </h3>
-            <div className="mt-1">
-              Telemental health involves the delivery of clinical healthcare
-              services through technology-assisted means, connecting a
-              practitioner and a client situated in different locations.
-            </div>
-            <h3 className="text-websiteBlue text-lg mt-4">
-              Key Points to Acknowledge:
-            </h3>
-            <div>
-              {[
-                {
-                  point: "1. Right to Withdraw Consent:",
-                  value:
-                    "I understand that I have the right to withdraw consent at any time without affecting my entitlement to future care, services, or program benefits.",
-                },
-                {
-                  point: "2. Risks and Benefits:",
-                  value:
-                    "I acknowledge that there are risks, benefits, and consequences associated with telemental health, including technology failures, interruptions, breaches of confidentiality, and limited ability to respond to emergencies.",
-                },
-                {
-                  point: "3. Confidentiality:",
-                  value:
-                    "All information disclosed within sessions and written records about those sessions are confidential and may not be disclosed without written authorization, except where permitted and/or required by law.",
-                },
-                {
-                  point: "4. Emergency Situations:",
-                  value:
-                    "I agree to provide accurate emergency contact information and understand that in case of immediate concern for my safety, the therapist may need to contact emergency services or a designated emergency contact.",
-                },
-                {
-                  point: "5. Technical Difficulties:",
-                  value:
-                    "In the event of technical difficulties during a session, I shall end and restart the session.",
-                },
-                {
-                  point: "6. Emergency Contact Information:",
-                  value:
-                    "I agree to provide my location at the beginning of each session and designate an emergency contact person for life-threatening emergencies.",
-                },
-              ].map((e, i) => {
-                return (
-                  <div key={i} className="mt-2">
-                    <h6 className="text-websiteBlue font-medium">{e?.point}</h6>
-                    <p>{e?.value}</p>
-                  </div>
-                );
-              })}
-              <p className="mt-3">In case of an emergency, my location is:</p>
-              <div>
-                <input
-                  type="text"
-                  value={form?.address}
-                  onChange={(e) => {
-                    setForm({ ...form, address: e.target.value });
-                  }}
-                  placeholder="Address"
-                  className="w-full outline-none border py-0.5 px-3 rounded-md mt-2"
-                />
-                <p className="my-1">
-                  and my emergency contact person’s name, address, and phone:
-                </p>
-                <div className="flex items-center justify-between">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    value={form?.emergency?.name}
-                    onChange={(e) => {
-                      setForm({
-                        ...form,
-                        emergency: { ...form.emergency, name: e.target.value },
-                      });
-                    }}
-                    className="px-2 py-0.5 outline-none border rounded-md w-[49%]"
-                  />
-                  <input
-                    type="text"
-                    value={form?.emergency?.phone}
-                    onChange={(e) => {
-                      setForm({
-                        ...form,
-                        emergency: { ...form.emergency, phone: e.target.value },
-                      });
-                    }}
-                    placeholder="Phone Number"
-                    className="px-2 py-0.5 outline-none border rounded-md w-[49%]"
-                  />
-                </div>
-                <input
-                  type="text"
-                  value={form?.emergency?.address}
-                  onChange={(e) => {
-                    setForm({
-                      ...form,
-                      emergency: { ...form.emergency, address: e.target.value },
-                    });
-                  }}
-                  placeholder="Address"
-                  className="w-full outline-none border py-0.5 px-3 rounded-md mt-2"
-                />
+        <AiOutlineClose
+          size={40}
+          onClick={closeModal}
+          className="absolute rounded-full right-5 top-5 bg-white px-2 cursor-pointer border z-20"
+        />
+        <Image src={image} alt={"Image"} className="w-[100vw] md:w-[35vw]" />
+        <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
+          <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <h1 className="text-lg md:text-2xl text-websiteBlue">
+              Please Choose Service:
+            </h1>
+            <div className="h-[1px] w-6/12 bg-gray-500 mb-2 md:mb-4 mt-2"></div>
+            <div
+              className="bg-white hover:shadow-xl shadow-gray-100 transition-all mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
+              onClick={(e) => {
+                if (filledConsent) {
+                  setFourtyMinMeet(false);
+                  history.push(`/therapy/${id}/MemberConsent/appoint`);
+                } else {
+                  toast.error("Please fill the member consent form first");
+                }
+              }}
+            >
+              <div className="flex items-center">
+                <Image src={logo} alt="Logo" className="w-[2.35vw] mr-1.5" />
+                <p>Online Therapy (40 Mins)</p>
               </div>
-              {[
-                {
-                  point: "7. Records and Documentation:",
-                  value:
-                    "I understand that the therapist may keep records related to my treatment. These records will be securely maintained and not shared without my written consent.",
-                },
-                {
-                  point: "8. Termination of Therapy:",
-                  value:
-                    "I have the right to terminate therapy at any time and for any reason. The therapist may also recommend termination if they believe it is in my best interest.",
-                },
-                {
-                  point: "9. Client Rights and Responsibilities:",
-                  value:
-                    "I understand my rights and responsibilities as a client.",
-                },
-              ].map((e, i) => {
-                return (
-                  <div key={i} className="mt-2">
-                    <h6 className="text-websiteBlue font-medium">{e?.point}</h6>
-                    <p>{e?.value}</p>
-                  </div>
-                );
-              })}
+              <p className="mt-0">₹ {user?.meeting_url?.price}</p>
             </div>
-            <div className="flex mt-2 items-start cursor-pointer">
-              <input
-                type="checkbox"
-                onChange={(e) => {
-                  setChecked(!checked);
-                }}
-                value={checked}
-                id="check"
-                name="check"
-                className="mt-1.5 mr-1"
-              />
-              <label htmlFor="check">
-                By providing my consent, I affirm that I have read and
-                understood the above information.
-              </label>
-            </div>
-            <div>
-              <h1 className="text-websiteBlue font-medium">
-                Client Signature:
-              </h1>
-              <div className="flex items-center justify-between">
-                <input
-                  type="text"
-                  value={form?.name}
-                  onChange={(e) => {
-                    setForm({ ...form, name: e.target.value });
-                  }}
-                  placeholder="Your Name"
-                  className="border w-[49%] outline-none px-2 py-0.5 rounded-md"
-                />
-                <input
-                  type="date"
-                  className="outline-none border w-[49%] px-3 rounded-md"
-                />
+            <div className="h-[1px] w-11/12 bg-gray-500 my-1 "></div>
+            <div
+              className="bg-white hover:shadow-xl shadow-gray-100 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
+              onClick={(e) => {
+                if (filledConsent) {
+                  setFourtyMinMeet(true);
+                  history.push(`/therapy/${id}/schedule/appoint`);
+                } else {
+                  toast.error("Please fill the member consent form first");
+                }
+              }}
+            >
+              <div className="flex items-center">
+                <Image src={logo} alt="Logo" className="w-[2.35vw] mr-1.5" />
+                <p>Online Therapy (60 Mins)</p>
               </div>
-              <button
-                onClick={(e) => {
-                  if (checked) {
-                    if (
-                      !form?.name ||
-                      !form?.address ||
-                      !form?.emergency?.name ||
-                      !form?.emergency?.phone ||
-                      !form?.emergency?.address
-                    ) {
-                      toast.error("Please fill all the details");
-                    } else {
-                      axios
-                        .post(`${BASE_URL}/consent`, { ...form })
-                        .then((res) => {
-                          toast.success("Submitted successfully");
-                          setIsOpen(false);
-                          console.log(res);
-                          setFilledConsent(true);
-                        })
-                        .catch((err) => {
-                          {
-                            console.log(err);
-                          }
-                        });
-                    }
-                  } else {
-                    toast.error("Please read the terms and conditions");
-                  }
-                }}
-                className="text-white bg-websiteBlue px-6 py-1 font-semibold mx-auto block mt-5 mb-5 rounded-md"
-              >
-                Submit{" "}
-              </button>
+              <p className="mt-0">₹ {user?.full_meeting_url?.price}</p>
             </div>
           </div>
         </div>
