@@ -13,7 +13,7 @@ import {
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { deleteCookie, setCookie } from "cookies-next";
+import { deleteCookie, getCookie, setCookie } from "cookies-next";
 import user from "../../Assets/userLogo.png";
 
 let nav = [
@@ -225,10 +225,12 @@ const Navbar = () => {
                   <span className="mr-2">
                     {showHover?.user ? "Dashboard" : ""}
                   </span>
-                  <span className="mr-2">{showHover?.login ? "Login/Register" : ""}</span>
+                  <span className="mr-2">
+                    {showHover?.login ? "Login/Register" : ""}
+                  </span>
                 </p>
               ) : null}
-              {login?._id ? (
+              {getCookie("token")?.length > 1 || login?._id ? (
                 <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue hover:scale-110 transition-all">
                   <Image
                     src={user}

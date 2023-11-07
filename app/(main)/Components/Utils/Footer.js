@@ -216,24 +216,26 @@ const Footer = () => {
               <br />
               oneness@conscousleap.co
             </p>
-            <p className="text-[13.5px] relative flex items-end mb-1 font-light cursor-pointer hover:text-websiteBlue">
+            <p
+              onMouseEnter={(e) => {
+                setShowQr(!showQr);
+              }}
+              onMouseOut={(e) => {
+                setShowQr(!showQr);
+              }}
+              onMouseLeave={(e) => {
+                setShowQr(!showQr);
+              }}
+              onClick={(e) => {
+                setShowQr(!showQr);
+              }}
+              className="text-[13.5px] relative flex items-end mb-1 font-light cursor-pointer hover:text-websiteBlue"
+            >
               WhatsApp for Business:
               <Image
                 src={whatsapp}
                 alt="Whatsapp"
                 className="w-[10vw] md:w-[1.75vw] ml-2"
-                onMouseEnter={(e) => {
-                  setShowQr(!showQr);
-                }}
-                onMouseOut={(e) => {
-                  setShowQr(!showQr);
-                }}
-                onMouseLeave={(e) => {
-                  setShowQr(!showQr);
-                }}
-                onClick={(e) => {
-                  setShowQr(!showQr);
-                }}
               />
               <Image
                 src={qr}

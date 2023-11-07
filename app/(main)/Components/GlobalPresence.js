@@ -27,7 +27,7 @@ const GlobalPresence = () => {
       <div className="relative">
         <Image src={image} alt={image.src} className="mt-3 w-[100vw]" />
         {/* India */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] transition-all">
+        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] transition-all mac:left-[69.5%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               showIndia ? "block" : "hidden"
@@ -47,11 +47,11 @@ const GlobalPresence = () => {
             onMouseLeave={(e) => {
               setShowIndia(false);
             }}
-            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
+            className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 mt-0 bubbleAnimate md:mt-2 hover:scale-125 transition-all"
           />
         </div>
         {/* Dubai */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%]">
+        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%] mac:left-[60%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               setshowDubai ? "block" : "hidden"
@@ -71,7 +71,7 @@ const GlobalPresence = () => {
             onMouseLeave={(e) => {
               setSetshowDubai(false);
             }}
-            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
+            className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 bubbleAnimate mt-0 md:mt-2 hover:scale-125 transition-all"
           />
           <p
             className={`text-semibold text-xs mt-2 text-center text-websiteBlue ${
@@ -82,7 +82,7 @@ const GlobalPresence = () => {
           </p>
         </div>
         {/* ESTONIA */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] ">
+        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] mac:left-[51%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               setshowEstonia ? "block" : "hidden"
@@ -102,7 +102,7 @@ const GlobalPresence = () => {
               setSetshowEstonia(false);
             }}
             alt="Logo png"
-            className="cursor-pointer w-5/12 md:w-3/12 mt-0 md:mt-2 hover:scale-125 transition-all"
+            className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 bubbleAnimate mt-0 md:mt-2 hover:scale-125 transition-all"
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
- /** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,6 +26,7 @@ module.exports = {
       },
       screens: {
         mobile: "540px",
+        mac: "2300px",
       },
       backgroundImage: {
         globe: "url('/app/Assets/globe.png')",

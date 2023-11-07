@@ -149,8 +149,25 @@ const UserRegister = () => {
                 htmlFor="check"
                 className="w-10/12 cursor-pointer text-darkGrey"
               >
-                By Signing-up to consciousleap, you agree to our Terms of
-                Service and Privacy Policy.
+                By Signing-up to consciousleap, you agree to our
+                <span
+                  className="text-websiteBlue cursor-pointer mx-1"
+                  onClick={(e) => {
+                    history.push("/privacy/terms");
+                  }}
+                >
+                  Terms of Service
+                </span>
+                and
+                <span
+                  className="text-websiteBlue cursor-pointer ml-1"
+                  onClick={(e) => {
+                    history.push("/privacy/policies");
+                  }}
+                >
+                  Privacy Policy
+                </span>
+                .
               </label>
             </div>
           </div>
@@ -158,7 +175,7 @@ const UserRegister = () => {
             onClick={onSignUp}
             className="bg-websiteBlue text-white px-7 font-semibold py-1.5 rounded-lg"
           >
-            Get Otp
+            Get OTP
           </button>
           <p
             onClick={(e) => {
@@ -166,7 +183,7 @@ const UserRegister = () => {
             }}
             className="text-websiteBlue mt-[5vw] md:mt-[2vw] text-sm cursor-pointer"
           >
-            Login to consciousleap
+            Login 
           </p>
         </div>
       </div>

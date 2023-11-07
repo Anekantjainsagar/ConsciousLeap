@@ -9,7 +9,7 @@ import {
   AiOutlineUnorderedList,
   AiOutlineUp,
 } from "react-icons/ai";
-import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { BsCheckLg, BsFillGrid3X3GapFill } from "react-icons/bs";
 import image from "../Assets/sagrika.jpeg";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
@@ -50,7 +50,8 @@ const Therapists = () => {
         Our Mindful Therapists
       </h1>
       <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-0 md:mt-3 mb-12 md:mb-10">
-        &quot;Our Mindful Therapists&quot; are the founding pillars of consciousleap.
+        &quot;Our Mindful Therapists&quot; are the founding pillars of
+        consciousleap.
       </p>
       <div className="mt-[3vw] px-[4vw] md:px-[6vw] w-full flex">
         <div
@@ -320,17 +321,17 @@ const Therapists = () => {
                 <option className="py-1" value="Sort By">
                   Sort By
                 </option>
-                <option className="py-1" value="From New to Old">
-                  From New to Old
+                <option className="py-1" value="New to Old">
+                  New to Old
                 </option>
-                <option className="py-1" value="From Old to New">
-                  From Old to New
+                <option className="py-1" value="Old to New">
+                  Old to New
                 </option>
-                <option className="py-1" value="Alphabatical Order Increasing">
-                  Alphabatical Order Increasing
+                <option className="py-1" value="Ascending">
+                  Ascending
                 </option>
-                <option className="py-1" value="Alphabatical Order Decreasing">
-                  Alphabatical Order Decreasing
+                <option className="py-1" value="Descending">
+                  Descending
                 </option>
                 <option className="py-1" value="Experience">
                   Experience
@@ -371,13 +372,28 @@ const Therapists = () => {
               showGrid ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1"
             } mt-5 gap-x-4 gap-y-6 md:px-0 px-[4vw]`}
           >
-            {therapistFilter?.therapistsData?.map((e, i) => {
-              return showGrid ? (
-                <GridBlock data={e} key={i} />
-              ) : (
-                <ListBlock data={e} key={i} />
-              );
-            })}
+            {therapistFilter?.therapistsData
+              ?.sort((a, b) => {
+                let fa = a.name.toLowerCase(),
+                  fb = b.name.toLowerCase();
+
+                console.log(fa, fb, fa > fb);
+
+                if (fa < fb) {
+                  return -1;
+                }
+                if (fa > fb) {
+                  return 1;
+                }
+                return 0;
+              })
+              ?.map((e, i) => {
+                return showGrid ? (
+                  <GridBlock data={e} key={i} />
+                ) : (
+                  <ListBlock data={e} key={i} />
+                );
+              })}
           </div>
         </div>
       </div>
@@ -490,7 +506,7 @@ const ListBlock = ({ data }) => {
       onClick={(e) => {
         history.push(`/therapy/${data?._id}`);
       }}
-      className="hover:scale-105 transition-all"
+      className="hover:scale-95 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">

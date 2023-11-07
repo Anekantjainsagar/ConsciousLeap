@@ -75,7 +75,7 @@ const Schedule = ({ params }) => {
               placeholder="Your Name"
             />
             hereby grant my informed consent to participate in telemental health
-            services provided by Coleco Well-being Pvt. Ltd. This form outlines
+            services provided by Coleco Well-being OPC Pvt. Ltd. This form outlines
             important information regarding the nature of telemental health
             services and my rights and responsibilities as a client.
           </div>
