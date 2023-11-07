@@ -105,7 +105,7 @@ export default function BootstrapCarousel() {
         <h1 className="absolute font-bold text-[10px] md:text-2xl top-[6%] mac:text-4xl md:top-[24%] left-[17%] md:left-[21.5%]">
           Our Mission
         </h1>
-        <p className="absolute top-[34%] md:top-[34%] left-[16%] md:left-[17%] mac:text-3xl text-[6px] md:text-lg w-[22%] md:w-[20%] z-10">
+        <p className="absolute top-[34%] md:top-[34%] left-[16%] md:left-[16%] mac:text-3xl text-[6px] md:text-lg w-[24%] md:w-[21%] z-10">
           To transcend all barriers within and without that separate us from us
           through expert introspection towards a common goal of{" "}
           <span className="font-bold">oneness</span>.

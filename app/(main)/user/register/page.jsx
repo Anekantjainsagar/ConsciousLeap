@@ -35,15 +35,15 @@ const UserRegister = () => {
               toast.success(response.data.data);
               emailjs
                 .send(
-                  "service_m3apnyp",
-                  "template_7ewn8wa",
+                  "service_n23sv5c",
+                  "template_xl03pav",
                   {
                     email: user?.email,
                     otp: response.data.otp,
                     name: "Anekant",
                     from_name: "Consciousleap",
                   },
-                  "v7Az1Fd2eRsK6eP9z"
+                  "l0zGxBngDOZlLankM"
                 )
                 .then(
                   function (response) {
@@ -183,7 +183,7 @@ const UserRegister = () => {
             }}
             className="text-websiteBlue mt-[5vw] md:mt-[2vw] text-sm cursor-pointer"
           >
-            Login 
+            Login
           </p>
         </div>
       </div>

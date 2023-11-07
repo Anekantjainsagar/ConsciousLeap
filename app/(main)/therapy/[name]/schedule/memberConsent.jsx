@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
 import image from "../../../Assets/subscribe.png";
-import logo from "../../../Assets/logoPng.png";
+import logo from "../../../Assets/notes-bg.png";
 import Image from "next/image";
 import Context from "@/Context/Context";
 import { AiOutlineClose } from "react-icons/ai";

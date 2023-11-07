@@ -149,6 +149,7 @@ const B2BState = (props) => {
         therapists,
         therapistFilter,
         questionnaire,
+        setLogin,
         setQuestionnaire,
         fourtyMinMeet,
         setFourtyMinMeet,

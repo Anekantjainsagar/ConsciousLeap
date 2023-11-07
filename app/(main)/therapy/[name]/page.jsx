@@ -16,8 +16,6 @@ const OneTherapist = ({ params }) => {
   const history = useRouter();
   let id = params.name;
   const [user, setUser] = useState();
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [isConsentFilled, setIsConsentFilled] = useState(false);
   const { therapistFilter } = useContext(Context);
 
   useEffect(() => {
@@ -27,6 +25,8 @@ const OneTherapist = ({ params }) => {
     setUser(therapist);
   }, [therapistFilter?.therapistsData]);
 
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isConsentFilled, setIsConsentFilled] = useState(false);
   React.useEffect(() => {
     axios
       .post(`${BASE_URL}/consent/check`, {
