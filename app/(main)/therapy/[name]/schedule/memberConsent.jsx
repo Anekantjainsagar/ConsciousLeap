@@ -21,12 +21,8 @@ const customStyles = {
   },
 };
 
-const MemberConsent = ({ modalIsOpen, setIsOpen }) => {
-  let id = "";
-  let pathname = usePathname();
-  console.log(pathname);
+const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
   const history = useRouter();
-  const [filledConsent, setFilledConsent] = useState(false);
   const [user, setUser] = useState();
   const { therapistFilter, fourtyMinMeet, setFourtyMinMeet } =
     useContext(Context);
@@ -65,12 +61,8 @@ const MemberConsent = ({ modalIsOpen, setIsOpen }) => {
             <div
               className="bg-white hover:shadow-xl shadow-gray-100 transition-all mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
-                if (filledConsent) {
-                  setFourtyMinMeet(false);
-                  history.push(`/therapy/${id}/MemberConsent/appoint`);
-                } else {
-                  toast.error("Please fill the member consent form first");
-                }
+                setFourtyMinMeet(false);
+                history.push(`/therapy/${id}/schedule/appoint`);
               }}
             >
               <div className="flex items-center">
@@ -83,12 +75,8 @@ const MemberConsent = ({ modalIsOpen, setIsOpen }) => {
             <div
               className="bg-white hover:shadow-xl shadow-gray-100 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
-                if (filledConsent) {
-                  setFourtyMinMeet(true);
-                  history.push(`/therapy/${id}/schedule/appoint`);
-                } else {
-                  toast.error("Please fill the member consent form first");
-                }
+                setFourtyMinMeet(true);
+                history.push(`/therapy/${id}/schedule/appoint`);
               }}
             >
               <div className="flex items-center">

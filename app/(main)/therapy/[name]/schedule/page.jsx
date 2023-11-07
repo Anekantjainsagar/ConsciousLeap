@@ -5,6 +5,7 @@ import axios from "axios";
 import React from "react";
 import MemberConsent from "./memberConsent";
 import toast, { Toaster } from "react-hot-toast";
+import { getCookie } from "cookies-next";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -19,29 +20,44 @@ const customStyles = {
   },
 };
 
-const Schedule = () => {
+const Schedule = ({ params }) => {
   const [checked, setChecked] = React.useState(false);
-  const [modalIsOpen, setIsOpen] = React.useState(true);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const { login } = React.useContext(Context);
   const [form, setForm] = React.useState({
     name: "",
     address: "",
     emergency: {
       name: "",
-      address: "",
       phone: "",
     },
   });
 
   React.useEffect(() => {
-    console.log(login);
     setForm({ ...form, name: login?.name });
   }, [login]);
+
+  React.useEffect(() => {
+    axios
+      .post(`${BASE_URL}/consent/check`, {
+        id: login?._id,
+      })
+      .then((res) => {
+        setIsOpen(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div>
       <Toaster />
-      <MemberConsent modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
+      <MemberConsent
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+        id={params.name}
+      />
       <div className="w-[40vw] flex flex-col items-center mx-auto border p-5 rounded-md border-websiteBlue">
         <h1 className="text-2xl text-websiteBlue">Member Consent Form</h1>
         <div className="h-[1px] w-8/12 my-3 bg-websiteBlue"></div>
@@ -215,12 +231,15 @@ const Schedule = () => {
                     toast.error("Please fill all the details");
                   } else {
                     axios
-                      .post(`${BASE_URL}/consent`, { ...form })
+                      .post(`${BASE_URL}/consent`, {
+                        ...form,
+                        token: getCookie("token"),
+                      })
                       .then((res) => {
-                        toast.success("Submitted successfully");
-                        setIsOpen(false);
-                        console.log(res);
-                        setFilledConsent(true);
+                        if (res.status == 200) {
+                          toast.success("Submitted successfully");
+                          setIsOpen(true);
+                        }
                       })
                       .catch((err) => {
                         {
