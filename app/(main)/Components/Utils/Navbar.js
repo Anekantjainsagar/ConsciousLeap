@@ -221,15 +221,18 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="relative">
               {showHover?.login || showHover?.user ? (
-                <p className="absolute -bottom-7 left-1/2 -translate-x-1/2">
-                  <span className="mr-2">
-                    {showHover?.user ? "Dashboard" : ""}
-                  </span>
-                  <span className="mr-2">
-                    {showHover?.login ? "Login/Register" : ""}
-                  </span>
-                </p>
-              ) : null}
+                <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
+                  {showHover?.user ? (
+                    <span className="mr-2">Dashboard</span>
+                  ) : null}
+                </div>
+              ) : (
+                <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
+                  {showHover?.user ? (
+                    <span className="mr-2">Login/Register</span>
+                  ) : null}
+                </div>
+              )}
               {getCookie("token")?.length > 1 || login?._id ? (
                 <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue hover:scale-110 transition-all">
                   <Image

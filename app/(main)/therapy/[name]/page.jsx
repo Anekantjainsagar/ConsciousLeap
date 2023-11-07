@@ -7,11 +7,17 @@ import { BsCameraVideo } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
 import { IoCallOutline } from "react-icons/io5";
 import Context from "@/Context/Context";
+import MemberConsent from "./schedule/memberConsent";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import { getCookie } from "cookies-next";
 
 const OneTherapist = ({ params }) => {
   const history = useRouter();
   let id = params.name;
   const [user, setUser] = useState();
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isConsentFilled, setIsConsentFilled] = useState(false);
   const { therapistFilter } = useContext(Context);
 
   useEffect(() => {
@@ -21,8 +27,22 @@ const OneTherapist = ({ params }) => {
     setUser(therapist);
   }, [therapistFilter?.therapistsData]);
 
+  React.useEffect(() => {
+    axios
+      .post(`${BASE_URL}/consent/check`, {
+        token: getCookie("token"),
+      })
+      .then((res) => {
+        setIsConsentFilled(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="flex md:flex-row flex-col py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
+      <MemberConsent modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} id={id} />
       <div className="flex flex-col w-full md:w-3/12 mr-[2vw]">
         <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue md:h-fit h-[45vh] via-pinkishRed to-oceanGreen p-[1px]">
           <div className="flex items-start py-[1vw] px-[1vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
@@ -55,7 +75,11 @@ const OneTherapist = ({ params }) => {
         </div>
         <button
           onClick={(e) => {
-            history.push(`/therapy/${id}/schedule`);
+            if (isConsentFilled) {
+              setIsOpen(true);
+            } else {
+              history.push(`/therapy/${id}/schedule`);
+            }
           }}
           className="bg-websiteBlue px-9 text-sm mt-2 md:mt-7 py-2 rounded-lg text-white mx-auto block"
         >

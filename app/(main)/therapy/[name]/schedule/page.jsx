@@ -40,7 +40,7 @@ const Schedule = ({ params }) => {
   React.useEffect(() => {
     axios
       .post(`${BASE_URL}/consent/check`, {
-        id: login?._id,
+        token: getCookie("token"),
       })
       .then((res) => {
         setIsOpen(res.data);
@@ -75,9 +75,9 @@ const Schedule = ({ params }) => {
               placeholder="Your Name"
             />
             hereby grant my informed consent to participate in telemental health
-            services provided by Coleco Well-being OPC Pvt. Ltd. This form outlines
-            important information regarding the nature of telemental health
-            services and my rights and responsibilities as a client.
+            services provided by Coleco Well-being OPC Pvt. Ltd. This form
+            outlines important information regarding the nature of telemental
+            health services and my rights and responsibilities as a client.
           </div>
           <h3 className="text-websiteBlue text-lg mt-4">
             Understanding Telemental Health:

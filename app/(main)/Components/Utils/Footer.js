@@ -216,7 +216,7 @@ const Footer = () => {
               <br />
               oneness@conscousleap.co
             </p>
-            <p
+            <div
               onMouseEnter={(e) => {
                 setShowQr(!showQr);
               }}
@@ -244,7 +244,7 @@ const Footer = () => {
                   showQr ? "block" : "hidden"
                 } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
-            </p>
+            </div>
             <div className="text-[13.5px] mb-1 text-center md:text-start font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
