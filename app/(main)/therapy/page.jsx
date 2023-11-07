@@ -13,6 +13,10 @@ import { BsCheckLg, BsFillGrid3X3GapFill } from "react-icons/bs";
 import image from "../Assets/sagrika.jpeg";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
+import MemberConsent from "./[name]/schedule/memberConsent";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import { getCookie } from "cookies-next";
 
 const Therapists = () => {
   let sellerHeading = useRef();
@@ -22,8 +26,23 @@ const Therapists = () => {
   const [showLanguages, setShowLanguage] = useState(true);
   const [showExpertise, setShowExpertise] = useState(true);
 
-  const { therapistFilter, therapistSort, setTherapistSort } =
+  const { therapistFilter, therapistSort, setTherapistSort, showPopUpId } =
     useContext(Context);
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isConsentFilled, setIsConsentFilled] = useState(false);
+  React.useEffect(() => {
+    axios
+      .post(`${BASE_URL}/consent/check`, {
+        token: getCookie("token"),
+      })
+      .then((res) => {
+        setIsConsentFilled(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     let timeline = gsap.timeline();
@@ -43,6 +62,7 @@ const Therapists = () => {
 
   return (
     <div className="w-full flex pt-6 items-center justify-center flex-col">
+      <MemberConsent modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} id={""} />
       <h1
         ref={sellerHeading}
         className="text-[27px] text-center font-light gradientHover cursor-pointer"
@@ -389,9 +409,23 @@ const Therapists = () => {
               })
               ?.map((e, i) => {
                 return showGrid ? (
-                  <GridBlock data={e} key={i} />
+                  <GridBlock
+                    data={e}
+                    key={i}
+                    modalIsOpen={modalIsOpen}
+                    setIsOpen={setIsOpen}
+                    isConsentFilled={isConsentFilled}
+                    setIsConsentFilled={setIsConsentFilled}
+                  />
                 ) : (
-                  <ListBlock data={e} key={i} />
+                  <ListBlock
+                    data={e}
+                    key={i}
+                    modalIsOpen={modalIsOpen}
+                    setIsOpen={setIsOpen}
+                    isConsentFilled={isConsentFilled}
+                    setIsConsentFilled={setIsConsentFilled}
+                  />
                 );
               })}
           </div>
@@ -401,8 +435,15 @@ const Therapists = () => {
   );
 };
 
-const GridBlock = ({ data }) => {
+const GridBlock = ({
+  data,
+  modalIsOpen,
+  setIsOpen,
+  isConsentFilled,
+  setIsConsentFilled,
+}) => {
   const history = useRouter();
+  const { setShowPopUpId, showPopUpId } = useContext(Context);
 
   return (
     <div
@@ -448,7 +489,12 @@ const GridBlock = ({ data }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                history.push(`/therapy/${data?._id}/schedule`);
+                setShowPopUpId(data);
+                if (isConsentFilled) {
+                  setIsOpen(!modalIsOpen);
+                } else {
+                  history.push(`/therapy/${data?._id}/schedule`);
+                }
               }}
               className="bg-websiteBlue px-5 py-1.5 mt-5 rounded-lg text-white font-semibold text-sm"
             >
@@ -486,7 +532,12 @@ const GridBlock = ({ data }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                history.push(`/therapy/${data?._id}/schedule`);
+                setShowPopUpId(data);
+                if (isConsentFilled) {
+                  setIsOpen(!modalIsOpen);
+                } else {
+                  history.push(`/therapy/${data?._id}/schedule`);
+                }
               }}
               className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white hover:scale-105 transition-all font-semibold"
             >
@@ -499,14 +550,22 @@ const GridBlock = ({ data }) => {
   );
 };
 
-const ListBlock = ({ data }) => {
+const ListBlock = ({
+  data,
+  modalIsOpen,
+  setIsOpen,
+  isConsentFilled,
+  setIsConsentFilled,
+}) => {
+  const { setShowPopUpId, showPopUpId } = useContext(Context);
   const history = useRouter();
+
   return (
     <div
       onClick={(e) => {
         history.push(`/therapy/${data?._id}`);
       }}
-      className="hover:scale-95 transition-all"
+      className="scale-95 hover:scale-100 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
@@ -537,8 +596,14 @@ const ListBlock = ({ data }) => {
               })}
             </div>
             <button
-              onClick={() => {
-                history.push(`/therapy/${data?._id}/schedule`);
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowPopUpId(data);
+                if (isConsentFilled) {
+                  setIsOpen(!modalIsOpen);
+                } else {
+                  history.push(`/therapy/${data?._id}/schedule`);
+                }
               }}
               className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"
             >

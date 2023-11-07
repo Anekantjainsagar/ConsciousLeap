@@ -36,7 +36,7 @@ export default function BootstrapCarousel() {
         interval: 3000,
         disableOnInteraction: true,
       }}
-      // cssMode={true}
+      cssMode={true}
       id="homeofoneness"
     >
       <SwiperSlide
@@ -52,8 +52,8 @@ export default function BootstrapCarousel() {
           <span className="font-bold">consciousleap</span> was founded keeping
           in mind our soul purpose of holistically improving the quality of life
           by elevating and expanding our collective conscious awareness through
-          mindful healing and positive well-being.{" "}
-          <span className="ml-1 text-websiteBlue cursor-pointer">
+          mindful healing and positive well-being. <br />
+          <span className="text-websiteBlue cursor-pointer">
             Learn More
           </span>
         </p>
@@ -72,7 +72,8 @@ export default function BootstrapCarousel() {
           At <span className="font-bold">consciousleap</span>, we perceive and
           act subjectively, not objectively, without judgement. We believe all
           beings are divine, with varying degrees of conscious awareness.
-          <span className="ml-1 text-websiteBlue cursor-pointer">
+          <br />
+          <span className="text-websiteBlue cursor-pointer">
             Learn More
           </span>
         </p>
@@ -90,7 +91,8 @@ export default function BootstrapCarousel() {
         <p className="absolute top-[38%] left-[24%] md:text-start text-center mac:text-3xl text-[6px] md:text-lg w-[20%] z-10">
           To bring about a holistic well-being culture with an inclusive outlook
           and mindful approach to mental well-being.
-          <span className="ml-1 text-websiteBlue cursor-pointer">
+          <br />
+          <span className="text-websiteBlue cursor-pointer">
             Learn More
           </span>
         </p>
@@ -108,8 +110,8 @@ export default function BootstrapCarousel() {
         <p className="absolute top-[34%] md:top-[34%] left-[16%] md:left-[16%] mac:text-3xl text-[6px] md:text-lg w-[24%] md:w-[21%] z-10">
           To transcend all barriers within and without that separate us from us
           through expert introspection towards a common goal of{" "}
-          <span className="font-bold">oneness</span>.
-          <span className="ml-1 text-websiteBlue cursor-pointer">
+          <span className="font-bold">oneness</span>.<br />
+          <span className="text-websiteBlue cursor-pointer">
             Learn More
           </span>
         </p>
@@ -127,8 +129,8 @@ export default function BootstrapCarousel() {
         </h1>
         <p className="absolute top-[35%] md:top-[36%] left-[21%] text-[6px] md:text-lg w-[20%] text-3xl z-10">
           To bring about a collective healing transformation through a profound
-          culture of <span className="font-bold">oneness</span>.
-          <span className="ml-1 text-websiteBlue cursor-pointer">
+          culture of <span className="font-bold">oneness</span>.<br />
+          <span className="text-websiteBlue cursor-pointer">
             Learn More
           </span>
         </p>

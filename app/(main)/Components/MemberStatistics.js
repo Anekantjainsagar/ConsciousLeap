@@ -150,7 +150,7 @@ const MemberStatistics = () => {
                 Of our members
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
-                  Recommanded
+                  Recommended
                 </span>{" "}
                 us
               </p>

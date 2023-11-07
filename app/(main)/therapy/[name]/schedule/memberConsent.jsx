@@ -24,7 +24,7 @@ const customStyles = {
 const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
   const history = useRouter();
   const [user, setUser] = useState();
-  const { therapistFilter, fourtyMinMeet, setFourtyMinMeet } =
+  const { therapistFilter, showPopUpId, setFourtyMinMeet } =
     useContext(Context);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             </h1>
             <div className="h-[1px] w-6/12 bg-gray-500 mb-2 md:mb-4 mt-2"></div>
             <div
-              className="bg-white hover:shadow-xl shadow-gray-100 transition-all mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
+              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(false);
                 history.push(`/therapy/${id}/schedule/appoint`);
@@ -69,11 +69,16 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                 <Image src={logo} alt="Logo" className="w-[2.35vw] mr-1.5" />
                 <p>Online Therapy (40 Mins)</p>
               </div>
-              <p className="mt-0">₹ {user?.meeting_url?.price}</p>
+              <p className="mt-0">
+                ₹{" "}
+                {user?.meeting_url?.price
+                  ? user?.meeting_url?.price
+                  : showPopUpId?.meeting_url?.price}
+              </p>
             </div>
             <div className="h-[1px] w-11/12 bg-gray-500 my-1 "></div>
             <div
-              className="bg-white hover:shadow-xl shadow-gray-100 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
+              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(true);
                 history.push(`/therapy/${id}/schedule/appoint`);
@@ -83,7 +88,11 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                 <Image src={logo} alt="Logo" className="w-[2.35vw] mr-1.5" />
                 <p>Online Therapy (60 Mins)</p>
               </div>
-              <p className="mt-0">₹ {user?.full_meeting_url?.price}</p>
+              <p className="mt-0">
+                {user?.full_meeting_url?.price
+                  ? user?.full_meeting_url?.price
+                  : showPopUpId?.full_meeting_url?.price}
+              </p>
             </div>
           </div>
         </div>
