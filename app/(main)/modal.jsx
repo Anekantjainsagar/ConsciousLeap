@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Modal from "react-modal";
 import image from "./Assets/subscribe.png";
@@ -24,7 +25,7 @@ const customStyles = {
 
 const ReactModal = () => {
   const { showSubscribe, setShowSubscribe } = React.useContext(Context);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = React.useState("");
 
   function closeModal() {
     setShowSubscribe(false);
