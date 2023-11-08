@@ -20,7 +20,7 @@ module.exports = {
         websiteBlue: "#4e66ad",
         pinkishRed: "#f58e88",
         oceanGreen: "#7dcfcd",
-        lightRed: "#fde4e9",
+        lightRed: "#ffccd6",
         newBlue: "#3c5cd5",
         newPurple: "#50487f",
       },

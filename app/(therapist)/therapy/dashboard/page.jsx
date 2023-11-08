@@ -131,7 +131,7 @@ const Dashboard = () => {
                 className="hover:scale-105 transition-all cursor-pointer"
               />
             </div>
-            <div className="flex items-center justify-between px-[0.7vw]">
+            <div className="flex items-start justify-between px-[0.7vw]">
               <div className="w-[48.5%] bg-white rounded-3xl p-[1vw]">
                 <h1 className="text-center text-websiteBlue text-[19px] font-medium">
                   My Reviews

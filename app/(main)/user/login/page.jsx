@@ -31,7 +31,7 @@ const UserLogin = () => {
         .post(`${BASE_URL}/login/signin`, user)
         .then((response) => {
           if (response.status == 200) {
-            toast.success("Login successfully");
+            toast.success("Login successful");
             let token = response.data.jwtToken;
             if (response.data.user == "Therapist") {
               router.push("/therapy/dashboard");

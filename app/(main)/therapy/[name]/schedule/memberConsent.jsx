@@ -62,7 +62,11 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
               className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(false);
-                history.push(`/therapy/${id}/schedule/appoint`);
+                history.push(
+                  `/therapy/${
+                    id ? id : showPopUpId?.meeting_url?._id
+                  }/schedule/appoint`
+                );
               }}
             >
               <div className="flex items-center">
@@ -81,7 +85,11 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
               className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] md:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(true);
-                history.push(`/therapy/${id}/schedule/appoint`);
+                history.push(
+                  `/therapy/${
+                    id ? id : showPopUpId?.meeting_url?._id
+                  }/schedule/appoint`
+                );
               }}
             >
               <div className="flex items-center">

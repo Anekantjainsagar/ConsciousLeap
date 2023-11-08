@@ -69,7 +69,7 @@ const Therapists = () => {
       >
         Our Mindful Therapists
       </h1>
-      <p className="text-darkGrey text-center md:px-0 px-[5vw] mt-0 md:mt-3 mb-12 md:mb-10">
+      <p className="text-darkGrey text-center text-lg md:px-0 px-[5vw] mb-12 md:mb-10">
         &quot;Our Mindful Therapists&quot; are the founding pillars of
         consciousleap.
       </p>

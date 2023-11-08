@@ -56,7 +56,7 @@ const ThingsMyself = () => {
           Self Love
         </p>
         <p className="text-2xl md:text-4xl border-t pt-1 border-black font-semibold text-black">
-          Journel
+          Journal
         </p>
       </div>
       <div className="md:w-9/12 bg-gradient-to-r md:h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">

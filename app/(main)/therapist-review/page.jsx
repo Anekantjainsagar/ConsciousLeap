@@ -10,7 +10,7 @@ const TherapistReview = () => {
 
   return (
     <div className="py-[4vw]">
-      <h1 className="text-3xl text-center font-light gradientHover cursor-pointer">
+      <h1 className="text-3xl text-center w-fit mx-auto font-light gradientHover cursor-pointer">
         Review Therapists
       </h1>
       <div className="grid grid-cols-3 gap-y-10 pt-[3vw] px-[8vw]">

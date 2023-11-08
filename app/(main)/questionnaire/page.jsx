@@ -35,25 +35,35 @@ const Questionnaire = () => {
       {login?.questionnaire?.backendAnswers?.map((e, i) => {
         return <Block data={e} key={i} index={i} />;
       })}
-      <button
-        onClick={(e) => {
-          axios
-            .post(`${BASE_URL}/login/delete-questionnaire`, {
-              token: getCookie("token"),
-            })
-            .then((res) => {
-              console.log(res);
-              getUser();
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-          history.push("/questionnaire/questions/ask-age");
-        }}
-        className="px-16 py-2 rounded-md mx-auto block font-medium bg-websiteBlue text-white"
-      >
-        Reset
-      </button>
+      <div className="flex items-center justify-center">
+        <button
+          onClick={(e) => {
+            axios
+              .post(`${BASE_URL}/login/delete-questionnaire`, {
+                token: getCookie("token"),
+              })
+              .then((res) => {
+                console.log(res);
+                getUser();
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+            history.push("/questionnaire/questions/ask-age");
+          }}
+          className="px-16 py-2 rounded-md font-medium bg-lightRed text-white"
+        >
+          Reset
+        </button>
+        <button
+          onClick={(e) => {
+            history.push("/therapy");
+          }}
+          className="ml-4 bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
+        >
+          Connect to Therapist
+        </button>
+      </div>
       <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">
         <span className="font-semibold">Disclaimer:</span> This questionnaire is
         intended to provide a general assessment of mental health and should not
