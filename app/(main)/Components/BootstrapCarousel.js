@@ -46,7 +46,7 @@ export default function BootstrapCarousel() {
         }}
       >
         <h1 className="absolute font-bold mac:text-4xl text-[10px] md:text-2xl top-[15%] md:top-[33.5%] left-[13%] md:left-[19.5%]">
-          &rdquo;Home of oneness&ldquo;
+          &ldquo;Home of oneness&rdquo;
         </h1>
         <p className="absolute top-[43%] left-[13%] md:left-[17%] text-[6px] mac:text-3xl md:text-lg w-[26%] md:w-[20%] z-50">
           <span className="font-bold">consciousleap</span> was founded keeping
