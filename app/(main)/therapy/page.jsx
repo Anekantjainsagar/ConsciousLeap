@@ -415,7 +415,7 @@ const Therapists = () => {
                     fb = new Date(b.date);
 
                   return fb - fa;
-                } else if (therapistSort == "Ascending") {
+                } else if (therapistSort == "Descending") {
                   let fa = a.name.toLowerCase(),
                     fb = b.name.toLowerCase();
 
@@ -426,7 +426,7 @@ const Therapists = () => {
                     return -1;
                   }
                   return 0;
-                } else if (therapistSort == "Descending") {
+                } else if (therapistSort == "Ascending") {
                   let fa = a.name.toLowerCase(),
                     fb = b.name.toLowerCase();
 
