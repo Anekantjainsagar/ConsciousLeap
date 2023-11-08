@@ -86,7 +86,7 @@ const ThingsMyself = () => {
                   : "0"
               }
               rows="6"
-              placeholder="Write here.,."
+              placeholder="Write here..."
             ></textarea>
           </div>
           <div className="flex w-[100%] md:flex-row flex-col justify-between mt-[4vw] items-center">
@@ -110,7 +110,7 @@ const ThingsMyself = () => {
                     : "0"
                 }
                 rows="6"
-                placeholder="Write here.,."
+                placeholder="Write here..."
               ></textarea>
             </div>
             <div className="md:w-[50%] w-[98%] md:pr-[3.5vw]">
@@ -133,7 +133,7 @@ const ThingsMyself = () => {
                     : "0"
                 }
                 rows="6"
-                placeholder="Write here.,."
+                placeholder="Write here..."
               ></textarea>
             </div>
           </div>

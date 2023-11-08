@@ -394,16 +394,49 @@ const Therapists = () => {
           >
             {therapistFilter?.therapistsData
               ?.sort((a, b) => {
-                let fa = a.name.toLowerCase(),
-                  fb = b.name.toLowerCase();
+                if (therapistSort == "Experience") {
+                  let fa = a.experience.toLowerCase(),
+                    fb = b.experience.toLowerCase();
 
-                console.log(fa, fb, fa > fb);
+                  if (fa < fb) {
+                    return 1;
+                  }
+                  if (fa > fb) {
+                    return -1;
+                  }
+                  return 0;
+                } else if (therapistSort == "New to Old") {
+                  let fa = new Date(a.date),
+                    fb = new Date(b.date);
 
-                if (fa < fb) {
-                  return -1;
-                }
-                if (fa > fb) {
-                  return 1;
+                  return fa - fb;
+                } else if (therapistSort == "Old to New") {
+                  let fa = new Date(a.date),
+                    fb = new Date(b.date);
+
+                  return fb - fa;
+                } else if (therapistSort == "Ascending") {
+                  let fa = a.name.toLowerCase(),
+                    fb = b.name.toLowerCase();
+
+                  if (fa < fb) {
+                    return 1;
+                  }
+                  if (fa > fb) {
+                    return -1;
+                  }
+                  return 0;
+                } else if (therapistSort == "Descending") {
+                  let fa = a.name.toLowerCase(),
+                    fb = b.name.toLowerCase();
+
+                  if (fa < fb) {
+                    return -1;
+                  }
+                  if (fa > fb) {
+                    return 1;
+                  }
+                  return 0;
                 }
                 return 0;
               })
@@ -587,7 +620,7 @@ const ListBlock = ({
             </div>
             <div className="w-5/12 h-fit">
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-              {data?.expertise?.map((e) => {
+              {data?.expertise?.slice(0, 5).map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}

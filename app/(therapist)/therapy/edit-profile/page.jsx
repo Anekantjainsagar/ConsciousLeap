@@ -106,23 +106,14 @@ const EditProfile = () => {
           className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
-          <p className="text-sm text-gray-700 break-words w-[13vw] text-center">
+          <p className="mt-1 text-xl text-websiteBlue font-bold">
+            {therapists?.therapist?.name}
+          </p>
+          <p className="text-sm text-websiteBlue break-words w-[13vw] text-center">
             {therapists?.therapist?.email}
           </p>
         </div>
         <div>
-          <div
-            onClick={(e) => {
-              router.push("/therapy/dashboard");
-            }}
-            className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
-          >
-            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-lg px-[2vw] py-2">
-              <AiOutlineHome size={25} className="mr-3" />
-              Dashboard
-            </div>
-          </div>
           <div
             onClick={(e) => {
               router.push("/therapy/edit-profile");
@@ -512,7 +503,7 @@ const EditProfile = () => {
                 onChange={(e) => {
                   setTherapist({
                     ...therapist,
-                    meeting_url: {  
+                    meeting_url: {
                       ...therapist?.meeting_url,
                       price: e.target.value,
                     },

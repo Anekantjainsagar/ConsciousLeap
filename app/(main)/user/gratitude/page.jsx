@@ -80,7 +80,7 @@ const Gratitude = () => {
               id=""
               cols="30"
               rows="4"
-              placeholder="Write here.,."
+              placeholder="Write here..."
             ></textarea>
           </div>
           <div className="flex md:flex-row flex-col w-[100%] justify-between mt-[4vw] items-center">
@@ -104,7 +104,7 @@ const Gratitude = () => {
                     : "0"
                 }
                 rows="6"
-                placeholder="Write here.,."
+                placeholder="Write here..."
               ></textarea>
             </div>
             <div className="w-[96%] mx-auto md:w-[50%] md:pr-[3.5vw]">
@@ -121,7 +121,7 @@ const Gratitude = () => {
                 id=""
                 cols="30"
                 rows="6"
-                placeholder="Write here.,."
+                placeholder="Write here..."
               ></textarea>
             </div>
           </div>

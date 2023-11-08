@@ -9,9 +9,11 @@ import Context from "@/Context/Context";
 import { getCookie } from "cookies-next";
 import emailjs from "@emailjs/browser";
 import { data } from "../../../codes";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const UserRegister = () => {
   const { user, setUser } = useContext(Context);
+  const [showPassword, setShowPassword] = useState(false);
   const [termsPolicies, setTermsPolicies] = useState(false);
   const captchaRef = useRef(null);
   const history = useRouter();
@@ -123,15 +125,29 @@ const UserRegister = () => {
               placeholder="Phone with Country Code"
             />
           </div>
-          <input
-            type="password"
-            value={user?.password}
-            onChange={(e) => {
-              setUser({ ...user, password: e.target.value });
-            }}
-            className="w-full border px-3 mb-1 py-1.5 outline-none rounded-md"
-            placeholder="Password"
-          />
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={user?.password}
+              onChange={(e) => {
+                setUser({ ...user, password: e.target.value });
+              }}
+              className="w-full border px-3 py-1.5 outline-none rounded-md"
+              placeholder="Password"
+            />
+            <div
+              className="absolute top-1/2 -translate-y-1/2 right-2"
+              onClick={(e) => {
+                setShowPassword(!showPassword);
+              }}
+            >
+              {showPassword ? (
+                <AiOutlineEye size={25} />
+              ) : (
+                <AiOutlineEyeInvisible size={25} />
+              )}
+            </div>
+          </div>
           <Captcha captchaRef={captchaRef} />
           <div className="flex justify-between w-full items-center pb-4 px-2 text-websiteBlue text-sm">
             <div className="flex items-start">
@@ -145,10 +161,7 @@ const UserRegister = () => {
                   setTermsPolicies(!termsPolicies);
                 }}
               />
-              <label
-                htmlFor="check"
-                className="cursor-pointer text-darkGrey"
-              >
+              <label htmlFor="check" className="cursor-pointer text-darkGrey">
                 By Signing-up to consciousleap, you agree to our
                 <span
                   className="text-websiteBlue cursor-pointer mx-1 underline font-semibold"

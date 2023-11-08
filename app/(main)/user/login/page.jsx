@@ -8,12 +8,14 @@ import { BASE_URL } from "@/Utils/urls";
 import { setCookie } from "cookies-next";
 import Context from "@/Context/Context";
 import emailjs from "@emailjs/browser";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const UserLogin = () => {
   const captchaRef = useRef(null);
   let { isLogin, login } = useContext(Context);
   const history = useRouter();
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -118,15 +120,29 @@ const UserLogin = () => {
             className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <input
-            type="password"
-            value={user?.password}
-            onChange={(e) => {
-              setUser({ ...user, password: e.target.value });
-            }}
-            className="w-full border px-3 py-1.5 outline-none rounded-md"
-            placeholder="Password"
-          />
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={user?.password}
+              onChange={(e) => {
+                setUser({ ...user, password: e.target.value });
+              }}
+              className="w-full border px-3 py-1.5 outline-none rounded-md"
+              placeholder="Password"
+            />
+            <div
+              className="absolute top-1/2 -translate-y-1/2 right-2"
+              onClick={(e) => {
+                setShowPassword(!showPassword);
+              }}
+            >
+              {showPassword ? (
+                <AiOutlineEye size={25} />
+              ) : (
+                <AiOutlineEyeInvisible size={25} />
+              )}
+            </div>
+          </div>
           <div className="flex justify-between w-full items-center p-2 text-websiteBlue text-sm">
             <div className="flex items-center">
               <input

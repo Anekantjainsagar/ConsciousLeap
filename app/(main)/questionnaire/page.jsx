@@ -43,7 +43,6 @@ const Questionnaire = () => {
                 token: getCookie("token"),
               })
               .then((res) => {
-                console.log(res);
                 getUser();
               })
               .catch((err) => {
@@ -51,7 +50,7 @@ const Questionnaire = () => {
               });
             history.push("/questionnaire/questions/ask-age");
           }}
-          className="px-16 py-2 rounded-md font-medium bg-lightRed text-white"
+          className="px-16 py-2 rounded-md font-medium bg-[#F2685D] text-white"
         >
           Reset
         </button>

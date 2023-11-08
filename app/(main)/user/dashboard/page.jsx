@@ -52,7 +52,7 @@ const Dashboard = () => {
             ].map((e, i) => {
               return (
                 <div
-                  className="cursor-pointer bg-white w-full md:w-[32%] p-[3vw] md:p-[2.5vw] h-fit md:mb-0 mb-4 md:h-[8vw] flex justify-center items-center rounded-3xl"
+                  className="cursor-pointer bg-white w-full md:w-[32%] p-[3vw] md:p-[2.5vw] h-fit md:mb-0 mb-4 md:h-[8vw] flex justify-center items-center rounded-3xl hover:scale-95 transition-all"
                   key={i}
                 >
                   <Image

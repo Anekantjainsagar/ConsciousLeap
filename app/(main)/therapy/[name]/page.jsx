@@ -81,7 +81,7 @@ const OneTherapist = ({ params }) => {
               history.push(`/therapy/${id}/schedule`);
             }
           }}
-          className="bg-websiteBlue px-9 text-sm mt-2 md:mt-7 py-2 rounded-lg text-white mx-auto block"
+          className="bg-websiteBlue px-9 text-sm mt-2 hover:scale-105 transition-all md:mt-7 py-2 rounded-lg text-white mx-auto block"
         >
           Schedule Session
         </button>

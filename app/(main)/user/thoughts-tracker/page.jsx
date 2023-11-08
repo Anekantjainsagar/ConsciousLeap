@@ -71,7 +71,7 @@ const ThoughtTracker = () => {
                   : "27"
                 : "0"
             }
-            placeholder="Write here.,."
+            placeholder="Write here..."
           ></textarea>
           <button
             onClick={onSubmit}
