@@ -64,8 +64,8 @@ const Dashboard = () => {
           className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-lg">{therapists?.therapist?.name}</p>
-          <p className="text-sm text-gray-700 break-words w-[13vw] text-center">
+          <p className="mt-1 text-xl text-websiteBlue font-bold">{therapists?.therapist?.name}</p>
+          <p className="text-sm text-websiteBlue break-words w-[13vw] text-center">
             {therapists?.therapist?.email}
           </p>
         </div>
@@ -165,8 +165,8 @@ const Dashboard = () => {
           <div className="w-3/12">
             <div className="bg-white p-5 rounded-lg">
               <div className="rounded-lg w-full h-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-                <div className="h-full w-full rounded-lg p-[1vw] items-center justify-center bg-white flex flex-col">
-                  <h1 className="text-websiteBlue text-xl font-semibold">
+                <div className="h-full w-full rounded-lg py-[1vw] items-center justify-center bg-white flex flex-col">
+                  <h1 className="text-websiteBlue text-xl mb-2 font-semibold">
                     Calendar
                   </h1>
                   <Calendar
@@ -179,16 +179,19 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="shadow-lg py-2 px-3 border bg-white rounded-lg shadow-lightGrey mt-[1vw] mx-auto">
-              <h1 className="text-center text-sm text-lightGrey">
+              <h1 className="text-center text-sm text-websiteBlue">
                 Recommended Reads
               </h1>
               <Image
                 src={ideas}
                 alt="Idea image"
-                className="w-8/12 mx-auto my-4"
+                className="w-8/12 mx-auto my-4 cursor-pointer"
+                onClick={(e) => {
+                  router.push("/blogs/open-mindness");
+                }}
               />
               <div className="h-[2px] my-5 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen"></div>
-              <h1 className="text-center text-sm text-lightGrey">
+              <h1 className="text-center text-sm text-websiteBlue">
                 Conscious Store
               </h1>
               <Image

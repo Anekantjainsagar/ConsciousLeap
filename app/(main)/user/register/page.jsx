@@ -133,7 +133,7 @@ const UserRegister = () => {
             placeholder="Password"
           />
           <Captcha captchaRef={captchaRef} />
-          <div className="flex justify-between w-full items-center pb-4 px-2 text-websiteBlue text-sm opacity-50">
+          <div className="flex justify-between w-full items-center pb-4 px-2 text-websiteBlue text-sm">
             <div className="flex items-start">
               <input
                 type="checkbox"
@@ -147,11 +147,11 @@ const UserRegister = () => {
               />
               <label
                 htmlFor="check"
-                className="w-10/12 cursor-pointer text-darkGrey"
+                className="cursor-pointer text-darkGrey"
               >
                 By Signing-up to consciousleap, you agree to our
                 <span
-                  className="text-websiteBlue cursor-pointer mx-1"
+                  className="text-websiteBlue cursor-pointer mx-1 underline font-semibold"
                   onClick={(e) => {
                     history.push("/privacy/terms");
                   }}
@@ -160,7 +160,7 @@ const UserRegister = () => {
                 </span>
                 and
                 <span
-                  className="text-websiteBlue cursor-pointer ml-1"
+                  className="text-websiteBlue cursor-pointer ml-1 underline font-semibold"
                   onClick={(e) => {
                     history.push("/privacy/policies");
                   }}

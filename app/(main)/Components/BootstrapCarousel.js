@@ -45,17 +45,15 @@ export default function BootstrapCarousel() {
           history.push("/faqs");
         }}
       >
-        <h1 className="absolute font-bold mac:text-4xl text-[10px] md:text-2xl top-[15%] md:top-[34%] left-[13%] md:left-[20%]">
-          &ldquo;Home of oneness&ldquo;
+        <h1 className="absolute font-bold mac:text-4xl text-[10px] md:text-2xl top-[15%] md:top-[33.5%] left-[13%] md:left-[19.5%]">
+          &rdquo;Home of oneness&ldquo;
         </h1>
         <p className="absolute top-[43%] left-[13%] md:left-[17%] text-[6px] mac:text-3xl md:text-lg w-[26%] md:w-[20%] z-50">
           <span className="font-bold">consciousleap</span> was founded keeping
           in mind our soul purpose of holistically improving the quality of life
           by elevating and expanding our collective conscious awareness through
           mindful healing and positive well-being. <br />
-          <span className="text-websiteBlue cursor-pointer">
-            Learn More
-          </span>
+          <span className="text-websiteBlue cursor-pointer">Learn More</span>
         </p>
         <Image src={frame2} alt="Frame 1" />
       </SwiperSlide>
@@ -68,14 +66,12 @@ export default function BootstrapCarousel() {
         <h1 className="absolute font-bold text-[10px] mac:text-4xl md:text-2xl top-[7%] md:top-[25%] left-[18%] md:left-[22%]">
           Our Motto
         </h1>
-        <p className="absolute top-[34%] md:top-[35%] left-[13%] md:left-[17%] text-[6px] mac:text-3xl md:text-lg w-[28%] md:w-[20%] z-50">
+        <p className="absolute top-[34%] md:top-[34%] left-[13%] md:left-[17%] text-[6px] mac:text-3xl md:text-lg w-[28%] md:w-[20%] z-50">
           At <span className="font-bold">consciousleap</span>, we perceive and
           act subjectively, not objectively, without judgement. We believe all
           beings are divine, with varying degrees of conscious awareness.
           <br />
-          <span className="text-websiteBlue cursor-pointer">
-            Learn More
-          </span>
+          <span className="text-websiteBlue cursor-pointer">Learn More</span>
         </p>
         <Image src={frame5} alt="Frame 1" />
       </SwiperSlide>
@@ -92,9 +88,7 @@ export default function BootstrapCarousel() {
           To bring about a holistic well-being culture with an inclusive outlook
           and mindful approach to mental well-being.
           <br />
-          <span className="text-websiteBlue cursor-pointer">
-            Learn More
-          </span>
+          <span className="text-websiteBlue cursor-pointer">Learn More</span>
         </p>
         <Image src={frame3} alt="Frame 1" />
       </SwiperSlide>
@@ -111,9 +105,7 @@ export default function BootstrapCarousel() {
           To transcend all barriers within and without that separate us from us
           through expert introspection towards a common goal of{" "}
           <span className="font-bold">oneness</span>.<br />
-          <span className="text-websiteBlue cursor-pointer">
-            Learn More
-          </span>
+          <span className="text-websiteBlue cursor-pointer">Learn More</span>
         </p>
         <Image src={frame4} alt="Frame 1" />
       </SwiperSlide>
@@ -130,9 +122,7 @@ export default function BootstrapCarousel() {
         <p className="absolute top-[35%] md:top-[36%] left-[21%] text-[6px] md:text-lg w-[20%] text-3xl z-10">
           To bring about a collective healing transformation through a profound
           culture of <span className="font-bold">oneness</span>.<br />
-          <span className="text-websiteBlue cursor-pointer">
-            Learn More
-          </span>
+          <span className="text-websiteBlue cursor-pointer">Learn More</span>
         </p>
         <Image src={frame1} alt="Frame 1" />
       </SwiperSlide>

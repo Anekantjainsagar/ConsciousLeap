@@ -72,8 +72,9 @@ const ReactModal = () => {
                   })
                   .then((res) => {
                     if (res.status === 200) {
-                      toast.success("Subscription added successfully");
+                      toast.success("Your subscription is mindfully added!");
                       setEmail("");
+                      closeModal();
                     }
                   })
                   .catch((err) => {

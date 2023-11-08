@@ -21,7 +21,7 @@ import { usePathname, useRouter } from "next/navigation";
 import qr from "../../Assets/qr.png";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
-import toast,{ Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const Footer = () => {
   const [showQr, setShowQr] = React.useState(false);
@@ -373,7 +373,7 @@ const Footer = () => {
                   .post(`${BASE_URL}/user/subscribe`, { email: subscribe })
                   .then((res) => {
                     if (res.status === 200) {
-                      toast.success("Subscription added successfully");
+                      toast.success("Your subscription is mindfully added!");
                       setSubscribe("");
                     }
                   })

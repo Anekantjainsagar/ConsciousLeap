@@ -47,7 +47,7 @@ const Dashboard = () => {
           <div className="flex md:flex-row flex-col justify-between items-center">
             {[
               { image: therapistReview, route: "/therapist-review" },
-              { image: scheduleAppointment, route: "" },
+              { image: scheduleAppointment, route: "/therapy" },
               { image: findNewTherapist, route: "/therapy" },
             ].map((e, i) => {
               return (

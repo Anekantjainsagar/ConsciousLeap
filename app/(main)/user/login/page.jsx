@@ -127,18 +127,24 @@ const UserLogin = () => {
             className="w-full border px-3 py-1.5 outline-none rounded-md"
             placeholder="Password"
           />
-          <div className="flex justify-between w-full items-center p-2 text-websiteBlue text-sm opacity-50">
+          <div className="flex justify-between w-full items-center p-2 text-websiteBlue text-sm">
             <div className="flex items-center">
               <input
                 type="checkbox"
                 className="mr-1 cursor-pointer"
                 id="remember"
               />
-              <label htmlFor="remember" className="cursor-pointer">
+              <label
+                htmlFor="remember"
+                className="cursor-pointer text-websiteBlue"
+              >
                 Remember Me
               </label>
             </div>
-            <p className="cursor-pointer" onClick={forgotPassword}>
+            <p
+              className="cursor-pointer text-websiteBlue"
+              onClick={forgotPassword}
+            >
               Forgot Password?
             </p>
           </div>
