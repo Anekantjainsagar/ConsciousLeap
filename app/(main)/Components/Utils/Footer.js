@@ -6,7 +6,6 @@ import instagram from "../../Assets/icons/instagram.png";
 import linkedin from "../../Assets/icons/linkedin.png";
 import whatsapp from "../../Assets/icons/whatsapp.png";
 import twitter from "../../Assets/icons/twitter.png";
-import pinterest from "../../Assets/icons/pinterest.png";
 import Image from "next/image";
 import Link from "next/link";
 
