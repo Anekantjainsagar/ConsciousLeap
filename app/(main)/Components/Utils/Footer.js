@@ -19,6 +19,9 @@ import Line1 from "../Lines/Line1";
 import { usePathname, useRouter } from "next/navigation";
 
 import qr from "../../Assets/qr.png";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import toast,{ Toaster } from "react-hot-toast";
 
 const Footer = () => {
   const [showQr, setShowQr] = React.useState(false);
@@ -26,6 +29,7 @@ const Footer = () => {
   const history = useRouter();
   const [showIndiaAdd, setShowIndiaAdd] = useState(false);
   const [showEstoniaAdd, setShowEstoniaAdd] = useState(false);
+  const [subscribe, setSubscribe] = useState("");
 
   let nav = [
     {
@@ -161,6 +165,7 @@ const Footer = () => {
   return (
     <>
       <Line1 />
+      <Toaster />
       <div className="bg-white px-[8vw]">
         <div className="grid grid-cols-1 md:gap-y-0 gap-y-5 flex items-start md:grid-cols-5">
           {nav.map((e, i) => {
@@ -354,10 +359,30 @@ const Footer = () => {
           <div className="flex items-center justify-center">
             <input
               type="text"
+              value={subscribe}
+              onChange={(e) => {
+                setSubscribe(e.target.value);
+              }}
               className="border outline-none px-3 py-[7px] rounded-tl-md rounded-bl-md focus:border-websiteBlue"
               placeholder="Your Email Address"
             />
-            <button className="bg-[#4961ac] px-4 py-2 text-white rounded-tr-md rounded-br-md">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                axios
+                  .post(`${BASE_URL}/user/subscribe`, { email: subscribe })
+                  .then((res) => {
+                    if (res.status === 200) {
+                      toast.success("Subscription added successfully");
+                      setSubscribe("");
+                    }
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              }}
+              className="bg-[#4961ac] px-4 py-2 text-white rounded-tr-md rounded-br-md"
+            >
               Subscribe
             </button>
           </div>

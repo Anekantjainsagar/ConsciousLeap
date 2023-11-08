@@ -4,6 +4,9 @@ import image from "./Assets/subscribe.png";
 import Image from "next/image";
 import Context from "@/Context/Context";
 import { AiOutlineClose } from "react-icons/ai";
+import { BASE_URL } from "@/Utils/urls";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -21,6 +24,7 @@ const customStyles = {
 
 const ReactModal = () => {
   const { showSubscribe, setShowSubscribe } = React.useContext(Context);
+  const [email, setEmail] = useState("");
 
   function closeModal() {
     setShowSubscribe(false);
@@ -28,6 +32,7 @@ const ReactModal = () => {
 
   return (
     <div className="z-50 relative">
+      <Toaster />
       <Modal
         isOpen={showSubscribe}
         onRequestClose={closeModal}
@@ -50,10 +55,32 @@ const ReactModal = () => {
           <div className="flex items-center justify-center mt-2 md:mt-4 w-8/12">
             <input
               type="text"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               className="border outline-none px-3 py-[7px] rounded-tl-md rounded-bl-md focus:border-websiteBlue"
               placeholder="Your Email Address"
             />
-            <button className="bg-websiteBlue px-4 py-2 text-white rounded-tr-md rounded-br-md">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                axios
+                  .post(`${BASE_URL}/user/subscribe`, {
+                    email,
+                  })
+                  .then((res) => {
+                    if (res.status === 200) {
+                      toast.success("Subscription added successfully");
+                      setEmail("");
+                    }
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              }}
+              className="bg-websiteBlue px-4 py-2 text-white rounded-tr-md rounded-br-md"
+            >
               Subscribe
             </button>
           </div>
