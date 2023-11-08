@@ -10,7 +10,7 @@ import { deleteCookie } from "cookies-next";
 
 const LeftBar = () => {
   const history = useRouter();
-  let { login, setIsLogin } = useContext(Context);
+  let { login, setIsLogin, getUser } = useContext(Context);
 
   return (
     <div className="w-[95%] mx-auto md:w-3/12 rounded-md bg-white py-8 md:mb-0 mb-4 md:mt-0 mt-3 md:py-6">
@@ -34,6 +34,7 @@ const LeftBar = () => {
               setIsLogin(false);
               deleteCookie("token");
               history.push("/");
+              getUser();
             }}
             className="h-full w-full py-1.5 rounded-full items-center justify-center bg-white flex flex-col"
           >

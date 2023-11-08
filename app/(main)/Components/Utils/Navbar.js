@@ -150,6 +150,7 @@ let nav = [
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   let history = useRouter();
+  let token = getCookie("token");
   const { login } = useContext(Context);
   const [showHover, setShowHover] = useState({
     login: false,
@@ -231,26 +232,28 @@ const Navbar = () => {
                 </p>
               </div>
               <div>
-                {/* {getCookie("token") ? (
-                  <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue hover:scale-110 transition-all">
-                    <Image
-                      src={user}
-                      onMouseEnter={(e) => {
-                        setShowHover({ ...showHover, user: true });
-                      }}
-                      onMouseOut={(e) => {
-                        setShowHover({ ...showHover, user: true });
-                      }}
-                      onMouseLeave={(e) => {
-                        setShowHover({ ...showHover, user: false });
-                      }}
-                      alt="User"
-                      className="w-[2vw] cursor-pointer"
-                      onClick={(e) => {
-                        history.push("/user/dashboard");
-                      }}
-                    />
-                  </div>
+                {login?._id ? (
+                  <>
+                    <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue hover:scale-110 transition-all">
+                      <Image
+                        src={user}
+                        onMouseEnter={(e) => {
+                          setShowHover({ ...showHover, user: true });
+                        }}
+                        onMouseOut={(e) => {
+                          setShowHover({ ...showHover, user: true });
+                        }}
+                        onMouseLeave={(e) => {
+                          setShowHover({ ...showHover, user: false });
+                        }}
+                        alt="User"
+                        className="w-[2vw] cursor-pointer"
+                        onClick={(e) => {
+                          history.push("/user/dashboard");
+                        }}
+                      />
+                    </div>
+                  </>
                 ) : (
                   <AiOutlineUser
                     onMouseEnter={(e) => {
@@ -268,7 +271,7 @@ const Navbar = () => {
                     className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
                     size={35}
                   />
-                )} */}
+                )}
               </div>
             </div>
             <div className="relative">
