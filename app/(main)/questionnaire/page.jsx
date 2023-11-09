@@ -60,7 +60,7 @@ const Questionnaire = () => {
           }}
           className="ml-4 bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
         >
-          Connect to Therapist
+          Proceed to Therapist
         </button>
       </div>
       <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">
