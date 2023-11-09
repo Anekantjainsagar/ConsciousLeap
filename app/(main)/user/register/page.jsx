@@ -71,7 +71,7 @@ const UserRegister = () => {
         toast.error("Please fill all the details");
       }
     } else {
-      toast.error("Please accept the terms and policies");
+      toast.error("Please accept our Terms of Service and Privacy Policy");
     }
   };
 
@@ -162,7 +162,7 @@ const UserRegister = () => {
                 }}
               />
               <label htmlFor="check" className="cursor-pointer text-darkGrey">
-                By Signing-up to consciousleap, you agree to our
+                By signing-up to consciousleap, you agree to our
                 <span
                   className="text-websiteBlue cursor-pointer mx-1 underline font-semibold"
                   onClick={(e) => {

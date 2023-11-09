@@ -51,7 +51,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
           onClick={closeModal}
           className="absolute rounded-full right-5 top-5 bg-white px-2 cursor-pointer border z-20"
         />
-        <Image src={image} alt={"Image"} className="w-[100vw] md:w-[35vw]" />
+        <Image src={image} alt={"Image"} className="w-[100vw] md:w-[40vw]" />
         <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
           <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <h1 className="text-lg md:text-2xl text-websiteBlue">

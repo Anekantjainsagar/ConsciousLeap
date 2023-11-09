@@ -72,7 +72,7 @@ const UserLogin = () => {
             emailjs
               .send(
                 "service_n23sv5c",
-                "template_xl03pav",
+                "template_crf7eig",
                 {
                   email: user?.email,
                   url: res.data?.url,
