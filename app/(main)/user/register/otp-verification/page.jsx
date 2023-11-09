@@ -66,7 +66,7 @@ const UserRegister = () => {
             }}
             type="text"
             className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
-            placeholder="Otp"
+            placeholder="OTP"
           />
           <button
             onClick={onSignUp}

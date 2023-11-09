@@ -173,8 +173,6 @@ const EditProfile = () => {
                   formData.append("upload_preset", "upload_photo");
                   formData.append("cloud_name", "dfk09gblw");
 
-                  console.log(formData);
-
                   fetch(
                     "https://api.Cloudinary.com/v1_1/dfk09gblw/image/upload",
                     {
