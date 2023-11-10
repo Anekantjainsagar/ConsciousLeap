@@ -467,7 +467,7 @@ const EachQuestion = ({ params }) => {
   return (
     <div className="w-full md:h-[66vh] flex flex-col items-center justify-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-2xl md:text-3xl font-semibold md:font-extrabold underline text-[#2e4fc9] mb-1">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold md:font-extrabold underline text-[#2e4fc9] mb-1">
           Life Assessment Questionnaire
         </h1>
         <h1 className="text-2xl mt-4 text-center px-5 md:text-[27px] md:font-extrabold text-newBlue mb-12">

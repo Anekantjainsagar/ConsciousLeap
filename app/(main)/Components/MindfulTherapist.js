@@ -18,10 +18,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import img1 from "../Assets/mindfulTherapist/image-001.jpg";
-import img2 from "../Assets/mindfulTherapist/image-003.jpg";
-import img4 from "../Assets/mindfulTherapist/image-004.jpg";
-import img5 from "../Assets/mindfulTherapist/image-005.jpg";
 
 import mobile from "../Assets/mindfulTherapist/mobile.png";
 
@@ -54,7 +50,7 @@ const MindfulTherapist = () => {
     <div className="w-full flex items-center justify-center flex-col mt-[20vw] md:mt-[10vw]">
       <h1
         ref={testimonialsHeading}
-        className="mb-6 md:mb-8 text-3xl font-light gradientHover cursor-pointer"
+        className="mb-6 md:mb-8 text-center text-3xl font-light gradientHover cursor-pointer"
       >
         Our Mindful Therapists
       </h1>

@@ -86,7 +86,7 @@ const Therapists = () => {
           className={`${
             showFilters
               ? "hidden"
-              : "md:hidden block fixed top-[14vw] w-[60vw] right-0 bg-white h-full"
+              : "md:hidden block fixed top-[14vw] overflow-scroll pb-[25vw] w-[60vw] right-0 bg-white h-full"
           }`}
         >
           <div className="w-full flex justify-end mb-3 md:mb-0 mt-[2vw] pr-[2vw]">
@@ -558,7 +558,7 @@ const GridBlock = ({
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <div className="h-[20vh] max-[1280px]:h-[28vh] max-[950px]:h-[32vh]">
+            <div className="h-[20vh] max-[1400px]:h-[24vh] max-[1280px]:h-[28vh] max-[1100px]:h-[31vh] max-[1000px]:h-[32vh]">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
