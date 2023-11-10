@@ -565,7 +565,7 @@ const GridBlock = ({
               <div className="h-[8vh]">
                 {data?.expertise?.slice(0, 2)?.map((e) => {
                   return (
-                    <li key={e} className="text-[11px] text-darkGrey">
+                    <li key={e} className="text-[12px] text-darkGrey">
                       {e}
                     </li>
                   );
