@@ -75,11 +75,14 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                 />
                 <p>Online Therapy (40 Mins)</p>
               </div>
-              <p className="mt-0">
+              <p className="mt-0 relative">
                 ₹{" "}
                 {user?.meeting_url?.price
                   ? user?.meeting_url?.price
                   : showPopUpId?.meeting_url?.price}
+                <span className="text-[9px] text-black right-0 absolute -bottom-4">
+                  + GST
+                </span>
               </p>
             </div>
             {/* <div className="h-[1px] w-11/12 bg-gray-500 my-1 "></div> */}
@@ -100,11 +103,14 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                 />
                 <p>Online Therapy (60 Mins)</p>
               </div>
-              <p className="mt-0">
+              <p className="mt-0 relative">
                 ₹{" "}
                 {user?.full_meeting_url?.price
                   ? user?.full_meeting_url?.price
                   : showPopUpId?.full_meeting_url?.price}
+                <span className="text-[9px] text-black right-0 absolute -bottom-4">
+                  + GST
+                </span>
               </p>
             </div>
           </div>
