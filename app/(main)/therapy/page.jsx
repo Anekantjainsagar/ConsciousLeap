@@ -558,14 +558,14 @@ const GridBlock = ({
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <div className="h-[20vh] max-[1400px]:h-[24vh] max-[1280px]:h-[28vh] max-[1100px]:h-[31vh] max-[1000px]:h-[32vh]">
+            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[31vh] max-[1000px]:h-[32vh]">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
               <div className="h-[8vh]">
                 {data?.expertise?.slice(0, 2)?.map((e) => {
                   return (
-                    <li key={e} className="text-sm text-darkGrey">
+                    <li key={e} className="text-[16px] text-darkGrey">
                       {e}
                     </li>
                   );
