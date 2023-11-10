@@ -143,7 +143,7 @@ const JoinConsciousleap = () => {
           <p className="mt-6 font-medium">
             {" "}
             1. <span className="text-websiteBlue">Conscious Partnering</span> -
-            To begin your conscious journey with us, kindly complete our
+            To begin your Conscious journey with us, kindly complete our
             Conscious Application Form as the first step towards a Conscious
             Community. It’s a brief form to gather essential information about
             you, your product, your brand, or your idea.semibold
@@ -166,7 +166,7 @@ const JoinConsciousleap = () => {
           <p className="mt-6 font-medium">
             {" "}
             4. <span className="text-websiteBlue">Conscious Compliance</span> -
-            To ensure conscious compliance, we may request samples of each SKU
+            To ensure Conscious compliance, we may request samples of each SKU
             before onboarding you. Please dispatch the demo samples in their
             original packaging, as you would provide them to your customers.
             It&apos;s important to note that these samples may undergo rigorous
@@ -175,7 +175,7 @@ const JoinConsciousleap = () => {
             include any certifications or product quality/ component
             certifications that you possess to substantiate the authenticity of
             your claims. This information will greatly assist us in making a
-            conscious decision.
+            Conscious decision.
           </p>
           <p className="mt-6 font-medium">
             {" "}
@@ -192,7 +192,7 @@ const JoinConsciousleap = () => {
             6. <span className="text-websiteBlue">Conscious Onboarding </span> -
             Upon approving your product, we will request some essential business
             information from you to verify your KYC (Know Your Customer) details
-            and complete your registration as a conscious seller with us.
+            and complete your registration as a Conscious seller with us.
           </p>
           <p className="mt-6 font-medium">
             If you’re curious and want to know more about our product selection

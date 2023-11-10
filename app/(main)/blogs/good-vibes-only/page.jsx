@@ -4,9 +4,9 @@ import blog from "../../Assets/Blogs/6.jpg";
 
 const Blog2 = () => {
   return (
-    <div className="mx-auto w-[70vw] py-[1vw]">
-      <Image src={blog} alt="Blog" className="mx-auto" />
-      <div className="px-[8vw]">
+    <div className="mx-auto w-[90vw] md:w-[70vw] py-[1vw]">
+      <Image src={blog} alt="Blog" className="mx-auto rounded-md" />
+      <div className="px-[3vw] md:px-[8vw]">
         <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           Moving away from the &quot;good vibes only approach&quot;
         </h1>

@@ -45,6 +45,14 @@ const Therapists = () => {
   }, []);
 
   useEffect(() => {
+    if (typeof window != "undefined") {
+      if (window.innerWidth < 550) {
+        setShowFilters(true);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     let timeline = gsap.timeline();
     timeline.fromTo(
       sellerHeading.current,
@@ -65,7 +73,7 @@ const Therapists = () => {
       <MemberConsent modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} id={""} />
       <h1
         ref={sellerHeading}
-        className="text-[27px] text-center font-light gradientHover cursor-pointer"
+        className="text-[27px] text-center mt-5 md:mt-0 font-light gradientHover cursor-pointer"
       >
         Our Mindful Therapists
       </h1>
@@ -78,10 +86,10 @@ const Therapists = () => {
           className={`${
             showFilters
               ? "hidden"
-              : "md:hidden block fixed top-[21vw] w-[60vw] right-0 bg-white h-full"
+              : "md:hidden block fixed top-[14vw] w-[60vw] right-0 bg-white h-full"
           }`}
         >
-          <div className="w-full flex justify-end mt-[2vw] pr-[2vw]">
+          <div className="w-full flex justify-end mb-3 md:mb-0 mt-[2vw] pr-[2vw]">
             <AiOutlineClose
               size={22}
               className="block"
@@ -536,7 +544,7 @@ const GridBlock = ({
           </div>
         </div>
       </div>
-      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-[15vw] hover:scale-105 transition-all">
+      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
@@ -550,17 +558,19 @@ const GridBlock = ({
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
-            <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
-            <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-            <div className="h-[8vh]">
-              {data?.expertise?.slice(0, 2)?.map((e) => {
-                return (
-                  <li key={e} className="text-sm text-darkGrey">
-                    {e}
-                  </li>
-                );
-              })}
+            <div className="h-[20vh] max-[1280px]:h-[28vh] max-[950px]:h-[32vh]">
+              <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
+              <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
+              <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
+              <div className="h-[8vh]">
+                {data?.expertise?.slice(0, 2)?.map((e) => {
+                  return (
+                    <li key={e} className="text-sm text-darkGrey">
+                      {e}
+                    </li>
+                  );
+                })}
+              </div>
             </div>
             <button
               onClick={(e) => {

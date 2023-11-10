@@ -35,7 +35,7 @@ const Questionnaire = () => {
       {login?.questionnaire?.backendAnswers?.map((e, i) => {
         return <Block data={e} key={i} index={i} />;
       })}
-      <div className="flex items-center justify-center">
+      <div className="flex md:flex-row flex-col items-center justify-center">
         <button
           onClick={(e) => {
             axios
@@ -50,7 +50,7 @@ const Questionnaire = () => {
               });
             history.push("/questionnaire/questions/ask-age");
           }}
-          className="px-16 py-2 rounded-md font-medium bg-[#F2685D] text-white"
+          className="px-16 md:w-fit w-[60vw] py-2 rounded-md font-medium bg-[#F2685D] text-white"
         >
           Reset
         </button>
@@ -58,9 +58,9 @@ const Questionnaire = () => {
           onClick={(e) => {
             history.push("/therapy");
           }}
-          className="ml-4 bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
+          className="md:ml-4 md:mt-0 mt-3 md:w-fit w-[60vw] bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
         >
-          Proceed to Therapist
+          Proceed to Therapy
         </button>
       </div>
       <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">

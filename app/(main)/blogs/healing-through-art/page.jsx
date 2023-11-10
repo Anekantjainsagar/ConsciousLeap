@@ -4,9 +4,9 @@ import blog from "../../Assets/Blogs/1.jpg";
 
 const Blog1 = () => {
   return (
-    <div className="mx-auto w-[70vw] py-[1vw]">
-      <Image src={blog} alt="Blog" />
-      <div className="px-[8vw]">
+    <div className="mx-auto w-[90vw] md:w-[70vw] py-[1vw]">
+      <Image src={blog} alt="Blog" className="rounded-md" />
+      <div className="px-[3vw] md:px-[8vw]">
         <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           Healing Through Art
         </h1>
@@ -21,7 +21,7 @@ const Blog1 = () => {
           one&apos;s inner self and explore complex feelings and thoughts that
           are often difficult to put into words. By engaging in creative
           activities such as painting, drawing, writing, or sculpting,
-          individuals can tap into their subconscious and express themselves in
+          individuals can tap into their subConscious and express themselves in
           ways that might not be possible through other forms of communication.
           <br />
           <br /> One of the most significant benefits of healing through art is

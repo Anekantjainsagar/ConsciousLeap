@@ -84,11 +84,13 @@ export function BootstrapCarousel() {
         <Image
           src={mobile}
           alt="Mobile image"
-          className="h-full md:h-[99.9%] min-[2000px]:w-full mx-auto"
+          className="h-full md:h-full min-[2000px]:w-full mx-auto"
         />
       </div>
       <Swiper
-        slidesPerView={5}
+        slidesPerView={
+          typeof window != "undefined" ? (window.innerWidth < 550 ? 1 : 5) : 0
+        }
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         loop={true}
         autoplay={{

@@ -53,7 +53,7 @@ let nav = [
         route: "/",
       },
       {
-        name: "consciousleap Blog",
+        name: "Conscious Blog",
         route: "/",
       },
       {
@@ -116,31 +116,31 @@ let nav = [
         route: "",
       },
       {
-        name: "conscious Being",
+        name: "Conscious Being",
         route: "",
       },
       {
-        name: "conscious Edibles",
+        name: "Conscious Edibles",
         route: "",
       },
       {
-        name: "conscious Healing",
+        name: "Conscious Healing",
         route: "",
       },
       {
-        name: "conscious Kids",
+        name: "Conscious Kids",
         route: "",
       },
       {
-        name: "conscious Living",
+        name: "Conscious Living",
         route: "",
       },
       {
-        name: "conscious Teens",
+        name: "Conscious Teens",
         route: "",
       },
       {
-        name: "conscious Travel",
+        name: "Conscious Travel",
         route: "",
       },
     ],
@@ -162,51 +162,6 @@ const Navbar = () => {
   return (
     <div>
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
-        {/* TopBar */}
-        {/* <div className="flex justify-end items-center border-b py-1 pr-0 md:pr-4 font-light text-sm text-lightGrey">
-          {isLogin ? (
-            <>
-              <div
-                onClick={(e) => {
-                  history.push("/user/dashboard");
-                }}
-                className="px-3 cursor-pointer border-r gradientHover"
-              >
-                Member Dashboard
-              </div>
-              <div
-                onClick={(e) => {
-                  setIsLogin(false);
-                  deleteCookie("token");
-                  history.push("/");
-                }}
-                className="px-3 cursor-pointer gradientHover"
-              >
-                Logout
-              </div>
-            </>
-          ) : (
-            <>
-              <div
-                onClick={(e) => {
-                  history.push("/user/login");
-                }}
-                className="px-3 cursor-pointer border-r gradientHover"
-              >
-                Login
-              </div>
-              <div
-                onClick={(e) => {
-                  history.push("/user/register");
-                }}
-                className="px-3 cursor-pointer gradientHover"
-              >
-                Registration
-              </div>
-            </>
-          )}
-        </div> */}
-        {/* Navbar Desktop*/}
         <div className="py-4 px-3 hidden md:flex justify-between items-center">
           <Image
             src={image}
@@ -340,13 +295,46 @@ const Navbar = () => {
             <Navi showNav={showNav} setShowNav={setShowNav} />
           </div>
           <div className="ml-4 flex items-center">
-            <AiOutlineUser
-              onClick={(e) => {
-                history.push("/user/login");
-              }}
-              className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
-              size={35}
-            />
+            {login?._id ? (
+              <>
+                <div className="border-2 p-0.5 rounded-full mr-3 border-websiteBlue hover:scale-110 transition-all">
+                  <Image
+                    src={user}
+                    onMouseEnter={(e) => {
+                      setShowHover({ ...showHover, user: true });
+                    }}
+                    onMouseOut={(e) => {
+                      setShowHover({ ...showHover, user: true });
+                    }}
+                    onMouseLeave={(e) => {
+                      setShowHover({ ...showHover, user: false });
+                    }}
+                    alt="User"
+                    className="w-[8vw] cursor-pointer"
+                    onClick={(e) => {
+                      history.push("/user/dashboard");
+                    }}
+                  />
+                </div>
+              </>
+            ) : (
+              <AiOutlineUser
+                onMouseEnter={(e) => {
+                  setShowHover({ ...showHover, login: true });
+                }}
+                onMouseOut={(e) => {
+                  setShowHover({ ...showHover, login: true });
+                }}
+                onMouseLeave={(e) => {
+                  setShowHover({ ...showHover, login: false });
+                }}
+                onClick={(e) => {
+                  history.push("/user/login");
+                }}
+                className="text-websiteBlue border-websiteBlue p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
+                size={35}
+              />
+            )}
             <AiOutlineSearch
               onClick={(e) => {
                 history.push("/therapy");
@@ -362,7 +350,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`md:my-[7vw] ${!showNav ? "my-[24vw]" : "my-[73vw]"}`}
+        className={`md:my-[7vw] ${!showNav ? "my-[18vw]" : "my-[73vw]"}`}
       ></div>
     </div>
   );
@@ -399,7 +387,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
       }}
     >
       <div
-        className="blueHover cursor-pointer flex z-40 items-center md:mb-0 mb-1.5"
+        className="blueHover cursor-pointer min-[1400px]:text-lg min-[1200px]:text-base text-sm flex z-40 items-center md:mb-0 mb-1.5"
         onMouseEnter={handleMouseEnter}
         onMouseOut={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

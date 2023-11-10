@@ -93,7 +93,7 @@ const ConsciousleapBlog = () => {
           ref={blogsHeading}
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >
-          consciousleap Blogs
+          Conscious Blogs
         </h1>
         <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
           We practice what we preach, and our blogs reflect our mindful journey

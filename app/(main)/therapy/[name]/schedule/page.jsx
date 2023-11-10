@@ -58,7 +58,7 @@ const Schedule = ({ params }) => {
         setIsOpen={setIsOpen}
         id={params.name}
       />
-      <div className="w-[40vw] flex flex-col items-center mx-auto border p-5 rounded-md border-websiteBlue">
+      <div className="w-[90vw] md:mt-0 mt-20 md:w-[40vw] flex flex-col items-center mx-auto border p-5 rounded-md border-websiteBlue">
         <h1 className="text-2xl text-websiteBlue">Member Consent Form</h1>
         <div className="h-[1px] w-8/12 my-3 bg-websiteBlue"></div>
         <div className="w-full">

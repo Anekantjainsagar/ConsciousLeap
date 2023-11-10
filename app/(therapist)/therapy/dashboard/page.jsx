@@ -64,7 +64,9 @@ const Dashboard = () => {
           className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-xl text-websiteBlue font-bold">{therapists?.therapist?.name}</p>
+          <p className="mt-1 text-xl text-websiteBlue font-bold">
+            {therapists?.therapist?.name}
+          </p>
           <p className="text-sm text-websiteBlue break-words w-[13vw] text-center">
             {therapists?.therapist?.email}
           </p>

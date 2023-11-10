@@ -38,7 +38,7 @@ const CertifiedTherapist = () => {
       <h1
         id="ourinternationallycertifiedtherapists"
         ref={therapistHeading}
-        className="mb-12 text-3xl text-center font-light gradientHover cursor-pointer"
+        className="mb-12 text-3xl px-5 text-center font-light gradientHover cursor-pointer"
       >
         Our Internationally Certified Therapists
       </h1>

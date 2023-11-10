@@ -67,7 +67,7 @@ const Footer = () => {
           route: "/",
         },
         {
-          name: "consciousleap Blog",
+          name: "Conscious Blog",
           route: "/",
         },
         {
@@ -130,31 +130,31 @@ const Footer = () => {
           route: "",
         },
         {
-          name: "conscious Being",
+          name: "Conscious Being",
           route: "",
         },
         {
-          name: "conscious Edibles",
+          name: "Conscious Edibles",
           route: "",
         },
         {
-          name: "conscious Healing",
+          name: "Conscious Healing",
           route: "",
         },
         {
-          name: "conscious Kids",
+          name: "Conscious Kids",
           route: "",
         },
         {
-          name: "conscious Living",
+          name: "Conscious Living",
           route: "",
         },
         {
-          name: "conscious Teens",
+          name: "Conscious Teens",
           route: "",
         },
         {
-          name: "conscious Travel",
+          name: "Conscious Travel",
           route: "",
         },
       ],

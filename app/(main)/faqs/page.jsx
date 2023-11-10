@@ -141,7 +141,7 @@ const FAQS = () => {
     {
       question: "What is a Conscious Store?",
       answer:
-        "Our conscious store solely caters to locally sourced goods and provides locally produced, organic, environmentally friendly, and sustainable goods.",
+        "Our Conscious store solely caters to locally sourced goods and provides locally produced, organic, environmentally friendly, and sustainable goods.",
     },
     {
       question: "What is your Conscious Store return policy?",
@@ -170,7 +170,7 @@ const FAQS = () => {
   ];
 
   return (
-    <div className="w-7/12 mx-auto py-5">
+    <div className="w-10/12 md:w-7/12 mx-auto py-5">
       {faqData?.map((e, i) => {
         return <Block key={i} data={e} index={i} />;
       })}

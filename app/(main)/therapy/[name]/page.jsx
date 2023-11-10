@@ -41,24 +41,24 @@ const OneTherapist = ({ params }) => {
   }, []);
 
   return (
-    <div className="flex md:flex-row flex-col py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[8vw] justify-between">
+    <div className="flex md:flex-row flex-col py-[3vw] px-[10vw] md:py-[0.75vw] md:px-[9vw] justify-between">
       <MemberConsent modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} id={id} />
       <div className="flex flex-col w-full md:w-3/12 mr-[2vw]">
-        <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue md:h-fit h-[45vh] via-pinkishRed to-oceanGreen p-[1px]">
+        <div className="rounded-full w-[80vw] md:w-full bg-gradient-to-r from-websiteBlue md:h-fit h-[82vw] md:mt-0 mt-10 via-pinkishRed to-oceanGreen p-[1px]">
           <div className="flex items-start py-[1vw] px-[1vw] md:p-[5px] h-full w-full rounded-full justify-between bg-white">
             <Image
               src={user?.photo}
               alt="User profile"
               width={1000}
               height={1000}
-              className="w-full md:h-[19vw] object-cover object-center rounded-full"
+              className="w-[80vw] h-[80vw] md:h-[19vw] object-cover object-center rounded-full"
             />
           </div>
         </div>
-        <h1 className="text-websiteBlue text-xl text-center mt-2 md:mt-4">
+        <h1 className="text-websiteBlue text-3xl md:text-xl text-center mt-2 md:mt-4">
           {user?.name}
         </h1>
-        <p className="text-center text-sm text-darkGrey">{user?.desc}</p>
+        <p className="text-center md:text-sm text-darkGrey">{user?.desc}</p>
         <div className="flex justify-center items-center mt-2 md:mt-5">
           <BsCameraVideo
             className="text-websiteBlue border-websiteBlue p-1.5 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
@@ -81,7 +81,7 @@ const OneTherapist = ({ params }) => {
               history.push(`/therapy/${id}/schedule`);
             }
           }}
-          className="bg-websiteBlue px-9 text-sm mt-2 hover:scale-105 transition-all md:mt-7 py-2 rounded-lg text-white mx-auto block"
+          className="bg-websiteBlue px-9 text-base md:my-0 my-1 md:font-normal font-semibold md:text-sm mt-2 hover:scale-105 transition-all md:mt-7 py-2 rounded-lg text-white mx-auto block"
         >
           Schedule Session
         </button>

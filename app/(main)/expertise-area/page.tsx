@@ -253,7 +253,7 @@ const ExpertiseArea = () => {
         </div>
         <div
           id="BlockId"
-          className="rounded-lg md:mx-auto md:w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+          className="rounded-lg md:mx-auto w-11/12 md:w-6/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
         >
           <div className="bg-white rounded-lg w-full h-full px-6 py-5">
             <p className="text-center text-websiteBlue text-2xl font-extrabold">
@@ -313,21 +313,31 @@ const RoundBlock = ({ data, setData }) => {
         let element = document.getElementById("BlockId");
         setClicked(!clicked);
         setData(data);
-        if (!clicked) {
-          gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
-          gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+        if (typeof window != "undefined" && window.innerWidth < 550) {
+          if (!clicked) {
+            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 270 });
+            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+          } else {
+            gsap.fromTo(`#${imageId}`, { x: 270 }, { x: 0 });
+            gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+          }
         } else {
-          gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
-          gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+          if (!clicked) {
+            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
+            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+          } else {
+            gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
+            gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+          }
         }
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 300);
       }}
-      className="rounded-full md:w-[92%] cursor-pointer h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+      className="rounded-full w-[90%] md:w-[92%] cursor-pointer h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
     >
       <div
-        className="bg-white rounded-full w-full h-full p-2 grid items-center"
+        className="bg-white rounded-full w-full h-full p-2 md:p-2 grid items-center"
         style={{ gridTemplateColumns: "20% 80%" }}
       >
         <Image
@@ -336,7 +346,7 @@ const RoundBlock = ({ data, setData }) => {
           alt="Image"
           className={`${
             !clicked ? "bg-newBlue" : "bg-gray-500"
-          } p-2 w-full h-fit rounded-full`}
+          } p-2 w-4/6 md:w-full h-fit rounded-full`}
         />
         <p className="text-sm text-darkGrey text-center" id={paraId}>
           {data?.name}
