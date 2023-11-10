@@ -63,9 +63,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
               onClick={(e) => {
                 setFourtyMinMeet(false);
                 history.push(
-                  `/therapy/${
-                    id ? id : showPopUpId?.meeting_url?._id
-                  }/schedule/appoint`
+                  `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
                 );
               }}
             >
@@ -90,9 +88,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
               onClick={(e) => {
                 setFourtyMinMeet(true);
                 history.push(
-                  `/therapy/${
-                    id ? id : showPopUpId?.meeting_url?._id
-                  }/schedule/appoint`
+                  `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
                 );
               }}
             >
