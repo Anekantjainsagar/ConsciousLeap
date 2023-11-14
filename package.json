@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "axios": "^1.5.1",
     "cookies-next": "^4.0.0",
     "dayjs": "^1.11.10",
