@@ -88,19 +88,19 @@ let nav = [
     items: [
       {
         name: "Why consciousleap for Business?",
-        route: "",
+        route: "/bussiness",
       },
       {
         name: "Our Global Clients",
-        route: "",
+        route: "/bussiness",
       },
       {
         name: "Client Testimonials",
-        route: "",
+        route: "/bussiness",
       },
       {
         name: "Schedule a Call",
-        route: "",
+        route: "/bussiness",
       },
     ],
   },
