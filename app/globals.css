@@ -52,6 +52,11 @@
   animation-iteration-count: infinite;
 }
 
+.bgGlobe {
+  background-image: url("./\(main\)/Assets/bg-globe.png");
+  background-repeat: no-repeat;
+}
+
 .custom-carousel-container .carousel-control-prev,
 .custom-carousel-container .carousel-control-next {
   display: none;

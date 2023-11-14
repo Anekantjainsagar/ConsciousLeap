@@ -9,26 +9,6 @@ const Whyconsciousleap = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    // let timeline = gsap.timeline();
-    // if (window.innerWidth > 550 && typeof window !== "undefined") {
-    //   timeline.fromTo(
-    //     ref.current,
-    //     {
-    //       opacity: 0,
-    //       y: 100,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       y: 0,
-    //       scrollTrigger: {
-    //         trigger: ref.current,
-    //         start: "top 70%",
-    //         end: "top 40%",
-    //       },
-    //       ease: Power2.easeInOut,
-    //     }
-    //   );
-    // }
     const video = document.createElement("video");
     video.autoplay = true;
     video.muted = true;
