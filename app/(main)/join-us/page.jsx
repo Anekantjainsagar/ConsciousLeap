@@ -16,8 +16,18 @@ import img12 from "../Assets/registerTherapist/join12.png";
 
 import circle from "../Assets/bg-member.png";
 import Context from "@/Context/Context";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import toast, { Toaster } from "react-hot-toast";
 
 const JoinConsciousleap = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
+  });
   const { joinUsShow } = React.useContext(Context);
   let registerData = [
     { image: img2, title: "Virtual", desc: "Work from anywhere." },
@@ -39,6 +49,7 @@ const JoinConsciousleap = () => {
 
   return (
     <div className="pt-[3vw]">
+      <Toaster />
       <h1
         id="JOIN"
         className="text-websiteBlue font-extrabold text-3xl md:text-5xl text-center"
@@ -214,29 +225,71 @@ const JoinConsciousleap = () => {
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="text"
+            value={user?.name}
+            onChange={(e) => {
+              setUser({ ...user, name: e.target.value });
+            }}
             placeholder="Name"
           />
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="text"
+            value={user?.company}
+            onChange={(e) => {
+              setUser({ ...user, company: e.target.value });
+            }}
             placeholder="Company Name"
           />
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="email"
             placeholder="Work Email"
+            value={user?.email}
+            onChange={(e) => {
+              setUser({ ...user, email: e.target.value });
+            }}
           />
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="text"
             placeholder="Contact"
+            value={user?.phone}
+            onChange={(e) => {
+              setUser({ ...user, phone: e.target.value });
+            }}
           />
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="text"
             placeholder="Message"
+            value={user?.message}
+            onChange={(e) => {
+              setUser({ ...user, message: e.target.value });
+            }}
           />
-          <button className="bg-websiteBlue text-white py-2 w-1/2 rounded-md font-semibold">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              axios
+                .post(`${BASE_URL}/user/partners`, { ...user })
+                .then((res) => {
+                  if (res.status == 200) {
+                    toast.success("Submitted successfully");
+                    setUser({
+                      name: "",
+                      email: "",
+                      company: "",
+                      phone: "",
+                      message: "",
+                    });
+                  }
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }}
+            className="bg-websiteBlue text-white py-2 w-1/2 rounded-md font-semibold"
+          >
             Submit
           </button>
         </div>

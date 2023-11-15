@@ -37,6 +37,9 @@ const B2BState = (props) => {
   });
   const [fourtyMinMeet, setFourtyMinMeet] = useState(true);
   const [joinUsShow, setJoinUsShow] = useState("JOIN");
+  const [bussinessShow, setBussinessShow] = useState(
+    "whyconsciousleapforbusiness?"
+  );
   const [showSubscribe, setShowSubscribe] = useState(true);
   const [showPopUpId, setShowPopUpId] = useState("");
 
@@ -162,6 +165,8 @@ const B2BState = (props) => {
         setShowSubscribe,
         showPopUpId,
         setShowPopUpId,
+        bussinessShow,
+        setBussinessShow,
       }}
     >
       {props.children}

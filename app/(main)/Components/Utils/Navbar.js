@@ -368,6 +368,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
   const [hover, setHover] = useState(false);
   const history = useRouter();
   const pathname = usePathname();
+  const context = useContext(Context);
   const handleMouseEnter = () => {
     setHover(true);
   };
@@ -417,6 +418,9 @@ const NavItems = ({ e, showNav, setShowNav }) => {
               key={i}
               onClick={(e) => {
                 const element = document.getElementById(
+                  data?.name?.replaceAll(" ", "")?.toLowerCase()
+                );
+                context.setBussinessShow(
                   data?.name?.replaceAll(" ", "")?.toLowerCase()
                 );
                 if (data?.route) {
