@@ -57,7 +57,7 @@ const ClientTestimonials = () => {
       >
         Client Testimonials
       </h1>
-      <p className="mb-12 mt-2 text-center font-light">
+      <p className="mb-12 mt-2 md:px-0 px-10 text-center font-light">
         Here’s what our clients say about their experiences with consciousleap
         for Business.
       </p>
