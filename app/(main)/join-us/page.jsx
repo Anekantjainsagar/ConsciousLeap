@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 import joinUs from "../Assets/joinus/Mask group.png";
 import volunteer from "../Assets/joinus/volunteer.png";
