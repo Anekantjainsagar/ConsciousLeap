@@ -81,8 +81,12 @@ const BussinessConsciousleap = () => {
       <ClientTestimonials />
       <Line2 />
       <div className="relative flex">
-        <Image src={logoCircle} alt="Logo" className="w-[65vw]" />
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 pb-5 -translate-x-1/2">
+        <Image
+          src={logoCircle}
+          alt="Logo"
+          className="md:block hidden w-[65vw]"
+        />
+        <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1
             className="text-3xl text-center gradientHover cursor-pointer"
             id="scheduleacall"
