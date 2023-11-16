@@ -8,6 +8,12 @@ import image1 from "@/(main)/Assets/slide-icons/1.png";
 import gsap from "gsap/all";
 
 const ExpertiseArea = () => {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleToggle = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   let expertiseData = [
     {
       name: "Neurodevelopmental Disorders",
@@ -248,7 +254,17 @@ const ExpertiseArea = () => {
       <div>
         <div className="grid grid-cols-1 md:grid-cols-6 gap-y-4 py-[6vw]">
           {expertiseData.map((e, i) => {
-            return <RoundBlock key={i} data={e} setData={setData} />;
+            return (
+              <RoundBlock
+                key={i}
+                data={e}
+                setData={setData}
+                i={i}
+                clicked={i === openIndex}
+                openIndex={openIndex}
+                onToggle={handleToggle}
+              />
+            );
           })}
         </div>
         <div
@@ -293,25 +309,30 @@ const ExpertiseArea = () => {
   );
 };
 
-const RoundBlock = ({ data, setData }) => {
-  const [clicked, setClicked] = useState(false);
-
+const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
   let name = data?.name?.toLowerCase().replaceAll(" ", "");
 
   let imageId = name + "image";
   let paraId = name + "para";
 
   useEffect(() => {
-    return () => {
-      setClicked(false);
-    };
-  }, []);
+    if (typeof window != "undefined" && window.innerWidth < 550) {
+    } else {
+      if (openIndex != i) {
+        gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
+        gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+      } else {
+        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
+        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+      }
+    }
+  }, [openIndex]);
 
   return (
     <div
       onClick={(e) => {
         let element = document.getElementById("BlockId");
-        setClicked(!clicked);
+        onToggle(i);
         setData(data);
         if (typeof window != "undefined" && window.innerWidth < 550) {
           if (!clicked) {

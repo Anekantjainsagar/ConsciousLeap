@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useContext } from "react";
-import Captcha from "../../../Components/Authorized/Captcha";
+import OtpInput from "react-otp-input";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
@@ -11,7 +11,6 @@ import { setCookie } from "cookies-next";
 
 const UserRegister = () => {
   let { user, setUser, setLogin } = useContext(Context);
-  const captchaRef = useRef(null);
   const history = useRouter();
   const router = useRouter();
 
@@ -59,18 +58,37 @@ const UserRegister = () => {
           <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
             OTP Verification
           </h1>
-          <input
+          <OtpInput
             value={user?.otp}
-            onChange={(e) => {
-              setUser({ ...user, otp: e.target.value });
+            onChange={(val) => {
+              setUser({ ...user, otp: val });
             }}
-            type="text"
-            className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
-            placeholder="OTP"
+            className="w-full border-3 px-3 text-2xl py-1.5 outline-none rounded-md mb-4"
+            numInputs={4}
+            renderSeparator={<span></span>}
+            renderInput={(props) => <input {...props} />}
+            separator={<span style={{ width: "8px" }}></span>}
+            isInputNum={true}
+            shouldAutoFocus={true}
+            inputType="number"
+            inputStyle={{
+              border: "1px solid transparent",
+              borderRadius: "8px",
+              width: "54px",
+              height: "54px",
+              fontSize: "20px",
+              color: "#000",
+              fontWeight: "400",
+              caretColor: "blue",
+            }}
+            focusStyle={{
+              border: "1px solid #CFD3DB",
+              outline: "none",
+            }}
           />
           <button
             onClick={onSignUp}
-            className="bg-websiteBlue text-white px-7 font-semibold py-1.5 rounded-lg"
+            className="bg-websiteBlue mt-3 text-white px-7 font-semibold py-1.5 rounded-lg"
           >
             Register
           </button>

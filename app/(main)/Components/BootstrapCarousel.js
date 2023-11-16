@@ -1,9 +1,4 @@
 "use client";
-import img1 from "../Assets/carousel/Homeofoneness.jpg";
-import img2 from "../Assets/carousel/OurMission.jpg";
-import img3 from "../Assets/carousel/OurMotto.jpg";
-import img4 from "../Assets/carousel/OurValues.jpg";
-import img5 from "../Assets/carousel/OurVision.jpg";
 import Image from "next/image";
 import {
   Navigation,
@@ -23,10 +18,27 @@ import { useRouter } from "next/navigation";
 
 export default function BootstrapCarousel() {
   const history = useRouter();
-  let data = [img1, img2, img3, img4, img5];
+
+  let swiperInstance;
+
+  const handleMouseEnter = () => {
+    if (swiperInstance && swiperInstance.autoplay) {
+      swiperInstance.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (swiperInstance && swiperInstance.autoplay) {
+      swiperInstance.autoplay.start();
+    }
+  };
 
   return (
-    <div className="overflow-hidden">
+    <div
+      className="overflow-hidden"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Swiper
         slidesPerView={1}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -39,6 +51,7 @@ export default function BootstrapCarousel() {
         }}
         cssMode={true}
         id="homeofoneness"
+        onSwiper={(swiper) => (swiperInstance = swiper)}
       >
         <SwiperSlide
           className="relative"

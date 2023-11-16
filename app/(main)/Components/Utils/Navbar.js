@@ -408,7 +408,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
         }}
         className={`absolute ${
           !hover ? "hidden" : "block"
-        } bg-white text-xs w-[55vw] md:w-[13vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
+        } bg-white text-xs w-[55vw] md:w-[14vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
       >
         <div className="mt-2 bg-transparent"></div>
         {e?.items.map((data, i) => {
