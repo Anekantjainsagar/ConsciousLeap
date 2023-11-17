@@ -22,7 +22,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const RegisterTherapist = () => {
-  const [getOtp, setGetOtp] = useState(false);
+  const [getOtp, setGetOtp] = useState(true);
   let router = useRouter();
   const [user, setUser] = useState({
     name: "",
@@ -133,7 +133,7 @@ const RegisterTherapist = () => {
       <p className="w-9/12 md:w-7/12 mx-auto text-center font-light tracking-wide">
         By joining our mindful team of Therapists, you are not just profoundly
         improving the quality of life but are truly saving lives by sharing your
-        knowledge and expertise with those who need it most. 
+        knowledge and expertise with those who need it most.
       </p>
       <Image
         src={image}
