@@ -26,12 +26,17 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
               setShowLeftBar(!showLeftBar);
             }}
           />
-          <Link href={"/"} target="_blank">
-            <BiWorld
-              size={35}
-              className="ml-5 p-2 rounded-full cursor-pointer bg-gray-200"
-            />
-          </Link>
+          {/* <Link href={"/"} target="_blank"> */}
+          <BiWorld
+            size={35}
+            onClick={(e) => {
+              router.push("/");
+              therapists.setIsTherapistLogin(false);
+              deleteCookie("therapist_token");
+            }}
+            className="ml-5 p-2 rounded-full cursor-pointer bg-gray-200"
+          />
+          {/* </Link> */}
         </div>
         <div
           className="flex items-center cursor-pointer"

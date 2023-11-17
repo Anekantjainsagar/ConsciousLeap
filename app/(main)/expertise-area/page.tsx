@@ -310,17 +310,36 @@ const ExpertiseArea = () => {
 };
 
 const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
-  let name = data?.name?.toLowerCase().replaceAll(" ", "");
+  let name = data?.name?.toLowerCase().replaceAll(" ", "").replaceAll("-", "");
 
   let imageId = name + "image";
   let paraId = name + "para";
 
   useEffect(() => {
     if (typeof window != "undefined" && window.innerWidth < 550) {
+      if (openIndex != i) {
+        let val = parseInt(
+          document.getElementById(imageId).style.transform.slice(10, 11)
+        );
+
+        if (val != 0) {
+          gsap.fromTo(`#${imageId}`, { x: 300 }, { x: 0 });
+          gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+        }
+      } else {
+        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 300 });
+        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+      }
     } else {
       if (openIndex != i) {
-        gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
-        gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+        let val = parseInt(
+          document.getElementById(imageId).style.transform.slice(10, 11)
+        );
+
+        if (val != 0) {
+          gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
+          gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+        }
       } else {
         gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
         gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
@@ -336,10 +355,10 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
         setData(data);
         if (typeof window != "undefined" && window.innerWidth < 550) {
           if (!clicked) {
-            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 270 });
+            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 300 });
             gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
           } else {
-            gsap.fromTo(`#${imageId}`, { x: 270 }, { x: 0 });
+            gsap.fromTo(`#${imageId}`, { x: 300 }, { x: 0 });
             gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
           }
         } else {

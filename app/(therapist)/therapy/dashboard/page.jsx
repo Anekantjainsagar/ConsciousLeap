@@ -43,7 +43,12 @@ const Dashboard = () => {
   const { therapists } = useContext(Context);
 
   useEffect(() => {
-    if (getCookie("therapist_token")?.length <= 1) {
+    console.log(getCookie("therapist_token"));
+    if (
+      getCookie("therapist_token")?.length <= 0 ||
+      !getCookie("therapist_token") ||
+      getCookie("therapist_token") === undefined
+    ) {
       router.push("/user/login");
     }
   }, []);
