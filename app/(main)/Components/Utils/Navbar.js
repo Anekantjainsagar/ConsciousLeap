@@ -13,7 +13,7 @@ import {
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { deleteCookie, getCookie, setCookie } from "cookies-next";
+import { getCookie, } from "cookies-next";
 import user from "../../Assets/userLogo.png";
 
 let nav = [
@@ -53,7 +53,7 @@ let nav = [
         route: "/",
       },
       {
-        name: "Conscious Blog",
+        name: "Conscious Blogs",
         route: "/",
       },
       {

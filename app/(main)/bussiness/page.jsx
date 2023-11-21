@@ -25,7 +25,7 @@ const BussinessConsciousleap = () => {
 
   React.useEffect(() => {
     const element = document.getElementById(bussinessShow);
-    element.scrollIntoView({ behavior: "smooth", block: "center" });
+    element?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, []);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const BussinessConsciousleap = () => {
   return (
     <div className="flex flex-col items-center pt-[5vw]">
       <Toaster />
-      <h1 className="text-2xl gradientHover cursor-pointer">
+      <h1 className="text-3xl gradientHover cursor-pointer">
         consciousleap for Business
       </h1>
       <p className="mt-3 text-center px-4">
@@ -54,7 +54,7 @@ const BussinessConsciousleap = () => {
       </p>
       <Line2 />
       <h1
-        className="text-2xl gradientHover md:px-0 px-5 text-center cursor-pointer"
+        className="text-3xl gradientHover md:px-0 px-5 text-center cursor-pointer"
         id="whyconsciousleapforbusiness?"
       >
         Why consciousleap for Business?
@@ -66,7 +66,7 @@ const BussinessConsciousleap = () => {
       <Line2 />
       <div className="flex flex-col items-center h-[50vh] md:w-[42%]">
         <h1
-          className="text-2xl gradientHover cursor-pointer"
+          className="text-3xl gradientHover cursor-pointer"
           id="ourglobalclients"
         >
           Our Global Clients
