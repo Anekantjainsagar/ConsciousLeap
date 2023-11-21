@@ -45,7 +45,7 @@ const BussinessConsciousleap = () => {
   return (
     <div className="flex flex-col items-center pt-[5vw]">
       <Toaster />
-      <h1 className="text-3xl gradientHover cursor-pointer">
+      <h1 className="text-3xl font-light gradientHover cursor-pointer">
         consciousleap for Business
       </h1>
       <p className="mt-3 text-center px-4">
@@ -54,7 +54,7 @@ const BussinessConsciousleap = () => {
       </p>
       <Line2 />
       <h1
-        className="text-3xl gradientHover md:px-0 px-5 text-center cursor-pointer"
+        className="text-3xl font-light gradientHover md:px-0 px-5 text-center cursor-pointer"
         id="whyconsciousleapforbusiness?"
       >
         Why consciousleap for Business?
@@ -66,7 +66,7 @@ const BussinessConsciousleap = () => {
       <Line2 />
       <div className="flex flex-col items-center h-[50vh] md:w-[42%]">
         <h1
-          className="text-3xl gradientHover cursor-pointer"
+          className="text-3xl font-light gradientHover cursor-pointer"
           id="ourglobalclients"
         >
           Our Global Clients
@@ -88,7 +88,7 @@ const BussinessConsciousleap = () => {
         />
         <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1
-            className="text-3xl text-center gradientHover cursor-pointer"
+            className="text-3xl font-light text-center gradientHover cursor-pointer"
             id="scheduleacall"
           >
             Schedule a Call
