@@ -59,7 +59,7 @@ const UserRegister = () => {
             OTP Verification
           </h1>
           <p className="mb-3 mt-2 text-center mx-auto w-9/12">
-            We've sent a one-time passcode to your registered email address
+            We&apos;ve sent a one-time passcode to your registered email address
           </p>
           <OtpInput
             value={user?.otp}
