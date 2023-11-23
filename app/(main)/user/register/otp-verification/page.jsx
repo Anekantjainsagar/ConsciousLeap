@@ -55,9 +55,12 @@ const UserRegister = () => {
       <Toaster />
       <div className="rounded-xl w-[90vw] md:w-[30vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="flex flex-col py-[3vw] px-[4vw] md:px-[1.5vw] md:py-[1.5vw] h-full w-full rounded-xl items-center justify-center bg-white">
-          <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
+          <h1 className="text-websiteBlue text-3xl font-semibold">
             OTP Verification
           </h1>
+          <p className="mb-3 mt-2 text-center mx-auto w-9/12">
+            We've sent a one-time passcode to your registered email address
+          </p>
           <OtpInput
             value={user?.otp}
             onChange={(val) => {
@@ -80,15 +83,17 @@ const UserRegister = () => {
               color: "#000",
               fontWeight: "400",
               caretColor: "blue",
+              background: "#ebebeb",
+              marginRight: "5px",
             }}
             focusStyle={{
-              border: "1px solid #CFD3DB",
+              border: "1px solid #aeafb0",
               outline: "none",
             }}
           />
           <button
             onClick={onSignUp}
-            className="bg-websiteBlue mt-3 text-white px-7 font-semibold py-1.5 rounded-lg"
+            className="bg-websiteBlue mt-5 text-white px-7 font-semibold py-1.5 rounded-lg"
           >
             Register
           </button>

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
 import { deleteCookie } from "cookies-next";
+import { CiLogout, CiSettings } from "react-icons/ci";
 
 const LeftBar = () => {
   const history = useRouter();
@@ -23,8 +24,9 @@ const LeftBar = () => {
             onClick={(e) => {
               history.push("/user/dashboard/edit");
             }}
-            className="h-full w-full text-websiteBlue py-1.5 rounded-full items-center justify-center bg-white flex flex-col"
+            className="h-full w-full text-websiteBlue py-1.5 rounded-full items-center justify-center bg-white flex"
           >
+            <CiSettings size={25} className="mr-3" />
             Edit Profile
           </div>
         </div>
@@ -36,8 +38,9 @@ const LeftBar = () => {
               history.push("/");
               getUser();
             }}
-            className="h-full w-full py-1.5 rounded-full items-center justify-center bg-white flex flex-col"
+            className="h-full w-full py-1.5 rounded-full items-center justify-center bg-white flex "
           >
+            <CiLogout size={25} className="mr-3" />
             Logout
           </div>
         </div>

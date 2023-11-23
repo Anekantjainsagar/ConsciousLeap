@@ -105,7 +105,7 @@ const BussinessConsciousleap = () => {
             />
             <input
               type="text"
-              placeholder={"Phone number"}
+              placeholder={"Phone Number"}
               value={user?.phone}
               onChange={(e) => {
                 setUser({ ...user, phone: e.target.value });

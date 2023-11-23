@@ -10,6 +10,7 @@ import thoughtTrack from "../../../Assets/modes/thought-tracker.png";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/navigation";
+import { inter } from "@/font";
 
 const RightBar = () => {
   const [dateState, setDate] = useState(new Date());
@@ -22,6 +23,7 @@ const RightBar = () => {
           <h1 className="text-websiteBlue text-xl mb-2">Calendar</h1>
           <Calendar
             value={dateState}
+            className={`${inter.className}`}
             onChange={(e) => {
               setDate(e);
             }}
