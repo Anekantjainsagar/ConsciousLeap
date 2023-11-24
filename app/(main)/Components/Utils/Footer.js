@@ -30,136 +30,136 @@ const Footer = () => {
   const [showEstoniaAdd, setShowEstoniaAdd] = useState(false);
   const [subscribe, setSubscribe] = useState("");
 
- let nav = [
-   {
-     name: "consciousleap",
-     items: [
-       {
-         name: "Home of oneness",
-         route: "/",
-       },
-       {
-         name: "Why consciousleap?",
-         route: "/",
-       },
-       {
-         name: "Communication Channels",
-         route: "/",
-       },
-       {
-         name: "How Does It Work?",
-         route: "/",
-       },
-       {
-         name: "Our Internationally Certified Therapists",
-         route: "/",
-       },
-       {
-         name: "Member Testimonials",
-         route: "/",
-       },
-       {
-         name: "Member Statistics",
-         route: "/",
-       },
-       {
-         name: "Collaborations and Initiatives",
-         route: "/",
-       },
-       {
-         name: "Conscious Blogs",
-         route: "/",
-       },
-       {
-         name: "Join consciousleap",
-         route: "/",
-       },
-     ],
-   },
-   {
-     name: "Therapy",
-     items: [
-       {
-         name: "Our Mindful Therapists",
-         route: "/therapy",
-       },
-       {
-         name: "Areas of Expertise",
-         route: "/expertise-area",
-       },
-       {
-         name: "Questionnaire",
-         route: "/questionnaire",
-       },
-       {
-         name: "Register as a Therapist",
-         route: "/therapy/register",
-       },
-     ],
-   },
-   {
-     name: "consciousleap for Business",
-     items: [
-       {
-         name: "Why consciousleap for Business?",
-         route: "/bussiness",
-       },
-       {
-         name: "Our Global Clients",
-         route: "/bussiness",
-       },
-       {
-         name: "Client Testimonials",
-         route: "/bussiness",
-       },
-       {
-         name: "Schedule a Call",
-         route: "/bussiness",
-       },
-     ],
-   },
-   {
-     name: "Conscious Store",
-     items: [
-       {
-         name: "consciousleap Vendibles",
-         route: "",
-       },
-       {
-         name: "Oneness Vendibles",
-         route: "",
-       },
-       {
-         name: "Conscious Being",
-         route: "",
-       },
-       {
-         name: "Conscious Edibles",
-         route: "",
-       },
-       {
-         name: "Conscious Healing",
-         route: "",
-       },
-       {
-         name: "Conscious Kids",
-         route: "",
-       },
-       {
-         name: "Conscious Living",
-         route: "",
-       },
-       {
-         name: "Conscious Teens",
-         route: "",
-       },
-       {
-         name: "Conscious Travel",
-         route: "",
-       },
-     ],
-   },
- ];
+  let nav = [
+    {
+      name: "consciousleap",
+      items: [
+        {
+          name: "Home of oneness",
+          route: "/",
+        },
+        {
+          name: "Why consciousleap?",
+          route: "/",
+        },
+        {
+          name: "Communication Channels",
+          route: "/",
+        },
+        {
+          name: "How Does It Work?",
+          route: "/",
+        },
+        {
+          name: "Our Internationally Certified Therapists",
+          route: "/",
+        },
+        {
+          name: "Member Testimonials",
+          route: "/",
+        },
+        {
+          name: "Member Statistics",
+          route: "/",
+        },
+        {
+          name: "Collaborations and Initiatives",
+          route: "/",
+        },
+        {
+          name: "Conscious Blogs",
+          route: "/",
+        },
+        {
+          name: "Join consciousleap",
+          route: "/",
+        },
+      ],
+    },
+    {
+      name: "Therapy",
+      items: [
+        {
+          name: "Our Mindful Therapists",
+          route: "/therapy",
+        },
+        {
+          name: "Areas of Expertise",
+          route: "/expertise-area",
+        },
+        {
+          name: "Questionnaire",
+          route: "/questionnaire",
+        },
+        {
+          name: "Register as a Therapist",
+          route: "/therapy/register",
+        },
+      ],
+    },
+    {
+      name: "consciousleap for Business",
+      items: [
+        {
+          name: "Why consciousleap for Business?",
+          route: "/bussiness",
+        },
+        {
+          name: "Our Global Clients",
+          route: "/bussiness",
+        },
+        {
+          name: "Client Testimonials",
+          route: "/bussiness",
+        },
+        {
+          name: "Schedule a Call",
+          route: "/bussiness",
+        },
+      ],
+    },
+    {
+      name: "Conscious Store",
+      items: [
+        {
+          name: "consciousleap Vendibles",
+          route: "/conscious-store",
+        },
+        {
+          name: "Oneness Vendibles",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Being",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Edibles",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Healing",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Kids",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Living",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Teens",
+          route: "/conscious-store",
+        },
+        {
+          name: "Conscious Travel",
+          route: "/conscious-store",
+        },
+      ],
+    },
+  ];
 
   return (
     <>

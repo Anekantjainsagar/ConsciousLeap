@@ -88,34 +88,34 @@ const RegisterTherapist = () => {
   const onRegister = () => {
     if (user?.otp) {
       if (user?.otp == user?.original) {
-        axios
-          .post(`${BASE_URL}/therapist/signup`, user)
-          .then((response) => {
-            console.log(response);
-            if (response.status == 200) {
-              toast.success("Registered successfully");
-              setTimeout(() => {
-                router.push("/therapy/dashboard");
-                let token = response.data.token;
-                setCookie("therapist_token", token);
-                setLogin(response.data);
-                setUser({
-                  name: "",
-                  phone: "",
-                  email: "",
-                  password: "",
-                  displayName: "",
-                  desc: "",
-                  original: "",
-                  otp: "",
-                });
-                setGetOtp(false);
-              }, 500);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+      axios
+        .post(`${BASE_URL}/therapist/signup`, user)
+        .then((response) => {
+          console.log(response);
+          if (response.status == 200) {
+            toast.success("Registered successfully");
+            setTimeout(() => {
+              router.push("/therapy/dashboard");
+              let token = response.data.token;
+              setCookie("therapist_token", token);
+              setLogin(response.data);
+              setUser({
+                name: "",
+                phone: "",
+                email: "",
+                password: "",
+                displayName: "",
+                desc: "",
+                original: "",
+                otp: "",
+              });
+              setGetOtp(false);
+            }, 500);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       } else {
         toast.error("OTP is incorrect");
       }

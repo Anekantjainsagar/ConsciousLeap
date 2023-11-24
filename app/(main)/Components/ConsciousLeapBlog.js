@@ -89,7 +89,7 @@ const ConsciousleapBlog = () => {
       <Line2 />
       <div className="w-full flex items-center justify-center flex-col">
         <h1
-          id="consciousleapblogs"
+          id="consciousblogs"
           ref={blogsHeading}
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >

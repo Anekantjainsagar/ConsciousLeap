@@ -10,9 +10,14 @@ import { getCookie } from "cookies-next";
 import emailjs from "@emailjs/browser";
 import { data } from "../../../codes";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import Image from "next/image";
+import IntlTelInput from "react-intl-tel-input";
+import "react-intl-tel-input/dist/main.css";
+import ReactFlagsSelect from "react-flags-select";
 
 const UserRegister = () => {
   const { user, setUser } = useContext(Context);
+  const [code, setCode] = useState("IN");
   const [showPassword, setShowPassword] = useState(false);
   const [termsPolicies, setTermsPolicies] = useState(false);
   const captchaRef = useRef(null);
@@ -78,7 +83,7 @@ const UserRegister = () => {
   return (
     <div className="py-10">
       <Toaster />
-      <div className="rounded-xl w-[90vw] md:w-[30vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-xl w-[80vw] md:w-[28vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="flex flex-col py-[3vw] px-[4vw] md:px-[1.5vw] md:py-[1.5vw] h-full w-full rounded-xl items-center justify-center bg-white">
           <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
             Register
@@ -89,7 +94,7 @@ const UserRegister = () => {
               setUser({ ...user, name: e.target.value });
             }}
             type="text"
-            className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Name"
           />
           <input
@@ -98,11 +103,22 @@ const UserRegister = () => {
             onChange={(e) => {
               setUser({ ...user, email: e.target.value });
             }}
-            className="w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <div className="w-full flex items-center justify-between mb-4">
-            <select
+          <div className="w-[80%] md:w-full flex items-center justify-center mb-4">
+            <p className="mr-0 md:text-sm text-xs md:block hidden md:mr-6">
+              Phone Number :{" "}
+            </p>
+            <IntlTelInput
+              style={{
+                border: "1px solid #efefef",
+                outline: "0px solid black",
+                padding: "4px 0",
+                borderRadius: "4px",
+              }}
+            />
+            {/* <select
               name=""
               id=""
               className="w-2/12 py-1.5 outline-none border rounded-md"
@@ -114,8 +130,8 @@ const UserRegister = () => {
                   </option>
                 );
               })}
-            </select>
-            <input
+            </select> */}
+            {/* <input
               type="text"
               value={user?.phone}
               onChange={(e) => {
@@ -123,20 +139,20 @@ const UserRegister = () => {
               }}
               className="w-10/12 border px-3 py-1.5 ml-3 outline-none rounded-md"
               placeholder="Phone with Country Code"
-            />
+            /> */}
           </div>
-          <div className="relative w-full">
+          <div className="relative flex items-center justify-center w-full">
             <input
               type={showPassword ? "text" : "password"}
               value={user?.password}
               onChange={(e) => {
                 setUser({ ...user, password: e.target.value });
               }}
-              className="w-full border px-3 py-1.5 outline-none rounded-md"
+              className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md"
               placeholder="Password"
             />
             <div
-              className="absolute top-1/2 -translate-y-1/2 right-2"
+              className="absolute top-1/2 -translate-y-1/2 right-10 md:right-2"
               onClick={(e) => {
                 setShowPassword(!showPassword);
               }}
@@ -149,7 +165,7 @@ const UserRegister = () => {
             </div>
           </div>
           <Captcha captchaRef={captchaRef} />
-          <div className="flex justify-between w-full items-center pb-4 px-2 text-websiteBlue text-sm">
+          <div className="flex justify-between w-[80%] md:w-full items-center pb-4 px-2 text-websiteBlue text-sm">
             <div className="flex items-start">
               <input
                 type="checkbox"
@@ -161,7 +177,7 @@ const UserRegister = () => {
                   setTermsPolicies(!termsPolicies);
                 }}
               />
-              <label htmlFor="check" className="cursor-pointer text-darkGrey">
+              <label htmlFor="check" className="cursor-pointer md:text-sm text-xs text-darkGrey">
                 By signing-up to consciousleap, you agree to our
                 <span
                   className="text-websiteBlue cursor-pointer mx-1 underline font-semibold"

@@ -109,39 +109,39 @@ let nav = [
     items: [
       {
         name: "consciousleap Vendibles",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Oneness Vendibles",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Being",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Edibles",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Healing",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Kids",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Living",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Teens",
-        route: "",
+        route: "/conscious-store",
       },
       {
         name: "Conscious Travel",
-        route: "",
+        route: "/conscious-store",
       },
     ],
   },
