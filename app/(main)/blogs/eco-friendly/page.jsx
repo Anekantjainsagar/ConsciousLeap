@@ -21,7 +21,7 @@ const Blog = () => {
           <br />
           <br /> <p className="font-bold">1. Reduce, Reuse, and Recycle</p> One
           of the easiest ways to become eco-friendly is to practice the three
-          R's: reduce, reuse, and recycle. Reduce your consumption by buying
+          R&apos;s: reduce, reuse, and recycle. Reduce your consumption by buying
           only what you need and opting for products with minimal packaging.
           Reuse items whenever possible, such as shopping bags, water bottles,
           and containers. Lastly, recycle paper, plastic, glass, and metal to
@@ -58,7 +58,7 @@ const Blog = () => {
           <br />
           <br />
           <p className="font-bold">Conclusion</p>
-          Becoming eco-friendly doesn't require drastic changes. By implementing
+          Becoming eco-friendly doesn&apos;t require drastic changes. By implementing
           these simple steps in your daily life, you can make a significant
           positive impact on the environment. Remember, every small action
           counts, and collectively, we can create a more sustainable and

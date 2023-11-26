@@ -12,7 +12,7 @@ const Blog = () => {
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
         <div className="text-[17px] px-2 py-2">
-          <p className="font-bold">Introduction</p> In today's rapidly changing
+          <p className="font-bold">Introduction</p> In today&apos;s rapidly changing
           world, the concept of sustainability has become increasingly
           important. But what exactly does it mean, and why is it crucial for
           our future? Sustainability refers to the responsible and balanced use
@@ -43,7 +43,7 @@ const Blog = () => {
           and ethical practices are crucial. <br />
           <br />
           <p className="font-bold">Conclusion</p>
-          Sustainability is not an option but a necessity for our planet's
+          Sustainability is not an option but a necessity for our planet&apos;s
           survival. By embracing sustainable practices, we can create a world
           where future generations can thrive and flourish. Let us embark on
           this transformative journey together.

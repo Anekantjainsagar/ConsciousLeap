@@ -17,7 +17,7 @@ const Blog = () => {
           market mechanism incentivizes individuals, organizations, and
           industries for their environment-friendly actions through the issuance
           and trading of Green Credits. The programme aims to create a mass
-          movement called 'LiFE' (Lifestyle for Environment) based on
+          movement called &apos;LiFE&apos; (Lifestyle for Environment) based on
           conservation and traditional values. <br />
           <br />
           The Green Credit Programme has two goals. Firstly, it establishes a
@@ -33,9 +33,9 @@ const Blog = () => {
           issuing Green Credits. Accredited verifiers will independently verify
           actions and issue credits.
           <br />
-          <br /> A Steering Committee will oversee the programme's governance,
+          <br /> A Steering Committee will oversee the programme&apos;s governance,
           and the Indian Council of Forestry Research and Education will act as
-          the Administrator. All stakeholders' participation is crucial, and
+          the Administrator. All stakeholders&apos; participation is crucial, and
           voluntary demand for Green Credits will be encouraged nationwide.
           Entities registered for Accredited Compensatory Afforestation can also
           register under the programme.
@@ -45,7 +45,7 @@ const Blog = () => {
           With phased implementation, diverse activities, and transparency, it
           holds great promise in the fight against climate change. <br />
           <br />
-          Aligned with India's domestic and global vision for LiFE, the
+          Aligned with India&apos;s domestic and global vision for LiFE, the
           programme promotes environmentally sustainable practices by
           incentivizing actions and mobilizing additional resources.
           <br />
