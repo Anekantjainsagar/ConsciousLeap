@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Toaster } from "react-hot-toast";
 import storeHero from "../Assets/store/storehero.jpg";
@@ -18,6 +19,7 @@ import icon1 from "../Assets/store/icons/credit-card.png";
 import icon2 from "../Assets/store/icons/eco-friendly.png";
 import icon3 from "../Assets/store/icons/no-plastic-bottles.png";
 import icon4 from "../Assets/store/icons/nontoxic.png";
+import { useRouter } from "next/navigation";
 
 const Store = () => {
   return (
@@ -35,37 +37,40 @@ const Store = () => {
       <Image
         src={storeHero}
         alt={"Store hero"}
-        className="my-5 mx-auto w-11/12"
+        className="my-5 mx-auto md:w-11/12"
       />
       <Line2 />
       <div className="w-full px-[5vw]">
         <h1 className="text-3xl font-light w-fit gradientHover cursor-pointer">
           Take Action Today
         </h1>
-        <div className="grid grid-cols-3 gap-x-8 px-3 mt-3">
+        <div className="grid md:grid-cols-3 md:gap-y-0 gap-y-5 md:gap-x-8 px-3 mt-3">
           {[
             {
               image: blog1,
               title:
                 "Sustainability: An Essential Pathway to a Brighter Future",
+              route: "/blogs/sustainability",
             },
             {
               image: blog2,
               title:
                 "Becoming Eco-Friendly: Simple Steps for Living a More Eco-Friendly Lifestyle",
+              route: "/blogs/eco-friendly",
             },
             {
               image: blog3,
               title: "Green Credit Programme: A step towards a better future",
+              route: "/blogs/green-credit-programme",
             },
           ].map((e, i) => {
             return <BlogBlock key={i} data={e} />;
           })}
         </div>
-        <h1 className="text-3xl font-light mt-[3vw] w-fit gradientHover cursor-pointer">
+        <h1 className="text-3xl font-light mt-[8vw] md:mt-[3vw] w-fit gradientHover cursor-pointer">
           Our Impact
         </h1>
-        <div className="grid grid-cols-5 px-[14vw] mt-3 gap-x-24">
+        <div className="grid md:grid-cols-5 px-[14vw] mt-3 md:gap-y-0 gap-y-10 md:gap-x-24">
           {[
             {
               image: impact1,
@@ -84,32 +89,55 @@ const Store = () => {
           ].map((e, i) => {
             return (
               <div key={i}>
-                <Image src={e?.image} alt={"Image"} />
+                <Image
+                  src={e?.image}
+                  alt={"Image"}
+                  className="w-1/2 md:w-full mx-auto"
+                />
                 <p className="text-center mt-2">{e?.title}</p>
               </div>
             );
           })}
         </div>
-        <div className="grid grid-cols-4 px-[1vw] mt-3 gap-x-24">
+        <div className="grid md:grid-cols-4 px-[1vw] mt-[8vw] md:mt-16 md:gap-y-0 gap-y-6 md:gap-x-24">
           {[
             {
-              image: icon1,
-              title: "Kgs of Plastic Saved",
-            },
-            { image: icon2, title: "Kgs of CO² Offset / Year" },
-            {
               image: icon3,
-              title: "Trees Planted in India",
+              title: "Plastic-Free Shopping",
+              value:
+                "Pledge for Climate Action & Switch to Plastic-Free Living",
+            },
+            {
+              image: icon1,
+              title: "100% Secure Payment",
+              value:
+                "Shop from a wide range of products made by Indian Artisans",
             },
             {
               image: icon4,
-              title: "Jobs Created in Rural India",
+              title: "Cruelty-Free + Chemical-Free",
+              value: "Ethically Made in India by Earth-Loving Entrepreneurs",
+            },
+            {
+              image: icon2,
+              title: "100% Earth-Friendly Products",
+              value: "Least Carbon Impact, Good for the Earth, Good for You",
             },
           ].map((e, i) => {
             return (
-              <div key={i}>
-                <Image src={e?.image} alt={"Image"} />
-                <p className="text-center mt-2">{e?.title}</p>
+              <div
+                key={i}
+                className="flex items-center md:w-full mx-auto w-4/6 justify-between"
+              >
+                <Image
+                  src={e?.image}
+                  alt={"Image"}
+                  className="w-[20vw] md:w-[4vw]"
+                />
+                <div className="ml-3">
+                  <p className="font-bold">{e?.title}</p>
+                  <p className="mt-0 text-xs">{e?.value}</p>
+                </div>
               </div>
             );
           })}
@@ -120,10 +148,18 @@ const Store = () => {
 };
 
 const BlogBlock = ({ data }) => {
+  const history = useRouter();
+
   return (
-    <div className="cursor-pointer">
+    <div
+      className="cursor-pointer"
+      onClick={(e) => {
+        e.preventDefault();
+        history.push(data?.route);
+      }}
+    >
       <Image src={data?.image} alt="Image" className="w-full" />
-      <p className="mt-2 text-xl px-1 text-newBlue">{data?.title}</p>
+      <p className="mt-2 text-lg md:text-xl px-1 text-newBlue">{data?.title}</p>
     </div>
   );
 };
