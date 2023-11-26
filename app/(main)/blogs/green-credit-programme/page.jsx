@@ -22,7 +22,7 @@ const Blog = () => {
           <br />
           The Green Credit Programme has two goals. Firstly, it establishes a
           market-based mechanism that provides incentives for positive
-          environmental actions, contributing to the vision of "Mission Life."
+          environmental actions, contributing to the vision of &quot;Mission Life.&quot;
           Secondly, it aims to foster a sustainable and environmentally
           conscious society. <br />
           <br />
