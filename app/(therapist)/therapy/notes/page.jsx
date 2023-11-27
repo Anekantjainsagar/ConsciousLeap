@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import { AiOutlineHome, AiOutlinePlus } from "react-icons/ai";
-import { CiSettings } from "react-icons/ci";
+import { CiLogout, CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
-import { getCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 import Context from "@/Context/Context";
 import Image from "next/image";
 
@@ -49,24 +49,26 @@ const Notes = () => {
         <div>
           <div
             onClick={(e) => {
-              router.push("/therapy/dashboard");
+              router.push("/therapy/edit-profile");
             }}
-            className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
+            className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
-            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-lg px-[2vw] py-2">
-              <AiOutlineHome size={25} className="mr-3" />
-              Dashboard
+            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-full px-[2vw] py-2">
+              <CiSettings size={25} className="mr-3" />
+              Edit Profile
             </div>
           </div>
           <div
             onClick={(e) => {
-              router.push("/therapy/edit-profile");
+              router.push("/");
+              therapists.setIsTherapistLogin(false);
+              deleteCookie("therapist_token");
             }}
-            className="rounded-lg w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
+            className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
-            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-lg px-[2vw] py-2">
-              <CiSettings size={25} className="mr-3" />
-              Edit Profile
+            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-center items-center rounded-full px-[2vw] py-2">
+              <CiLogout size={25} className="mr-3" />
+              Logout
             </div>
           </div>
         </div>

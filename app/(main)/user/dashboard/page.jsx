@@ -18,6 +18,9 @@ import { useRouter } from "next/navigation";
 import LeftBar from "./Components/LeftBar";
 import RightBar from "./Components/LeftBar copy";
 import Context from "@/Context/Context";
+import cloud from "../../Assets/icons/cloud.png";
+import cloud1 from "../../Assets/icons/cloud 1.png";
+import gsap, { Power2 } from "gsap";
 
 const makeItRain = () => {
   document.querySelector(".rain.front-row").innerHTML = "";
@@ -58,7 +61,38 @@ const Dashboard = () => {
   const [showRain, setShowRain] = useState(false);
   const [showLight, setShowLight] = useState(false);
   const [showSunshine, setShowSunshine] = useState(false);
+  const [showCloud, setShowCloud] = useState(false);
   let { login, isLogin } = useContext(Context);
+
+  const animateLeftRight = (e) => {
+    let timeline = gsap.timeline({ repeat: Infinity });
+
+    timeline.fromTo(
+      e,
+      { x: 1440 },
+      { x: -1000, duration: 10, ease: Power2.easeInOut }
+    );
+  };
+
+  const animateRightLeft = (e) => {
+    let timeline = gsap.timeline({ repeat: Infinity });
+
+    timeline.fromTo(
+      e,
+      { x: -1000 },
+      { x: 1440, duration: 10, ease: Power2.easeInOut }
+    );
+  };
+
+  useEffect(() => {
+    if (showCloud) {
+      animateLeftRight("#rightCloud");
+      animateRightLeft("#right1Cloud");
+      setTimeout(() => {
+        setShowCloud(false);
+      },10000);
+    }
+  }, [showCloud]);
 
   useEffect(() => {
     if (!isLogin) {
@@ -131,12 +165,48 @@ const Dashboard = () => {
         </div>
       </div>
       <div
-        className={`rain-animation overflow-hidden back-row-toggle splat-toggle ${
+        className={`${
           showRain ? "block" : "hidden"
-        }`}
+        } rain-animation overflow-hidden back-row-toggle splat-toggle`}
       >
         <div className="rain front-row"></div>
         <div className="rain back-row"></div>
+      </div>
+      <div
+        className={`${
+          showCloud ? "block" : "hidden"
+        } absolute z-50 overflow-hidden w-full h-full`}
+      >
+        <Image
+          src={cloud1}
+          id="rightCloud"
+          alt="Cloud"
+          className="absolute w-[50vw]"
+        />
+        <Image
+          src={cloud1}
+          id="right1Cloud"
+          className="w-[50vw] left-[10vw] top-[-10vw] absolute"
+          alt="Cloud"
+        />
+        <Image
+          src={cloud1}
+          id="right1Cloud"
+          className="w-[50vw] left-[10vw] top-[20vw] absolute"
+          alt="Cloud"
+        />
+        <Image
+          src={cloud1}
+          id="right1Cloud"
+          className="top-[6vw] w-[50vw] absolute"
+          alt="Cloud"
+        />
+        <Image
+          src={cloud1}
+          alt="Cloud"
+          id="rightCloud"
+          className="absolute left-[10vw] top-[20vw] w-[50vw]"
+        />
       </div>
       <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[2vw]">
         <LeftBar />
@@ -206,14 +276,14 @@ const Dashboard = () => {
                 },
                 {
                   image: cloudy,
-                  value: showRain,
+                  value: showCloud,
                   onchange: (e) => {
                     scrollTo({
                       top: 0,
                       left: 0,
                       behavior: "smooth",
                     });
-                    setShowRain(!showRain);
+                    setShowCloud(!showCloud);
                   },
                 },
                 {
