@@ -106,7 +106,7 @@ const NotesAppPage = () => {
               Therapy Session Notes
             </h1>
             <div className="w-full mt-3">
-              <p className="text-xl mb-3">Client's Info:</p>
+              <p className="text-xl mb-3">Client&apos;s Info:</p>
               <div className="flex items-center mb-2 justify-between">
                 <div className="w-1/2 mr-5 flex items-center justify-between text-lg">
                   <p>Name:</p>
@@ -248,7 +248,7 @@ const NotesAppPage = () => {
                   },
                 ].map((e, i) => {
                   return (
-                    <div className="flex mb-2 items-end">
+                    <div key={i} className="flex mb-2 items-end">
                       <p className="mr-2 mb-1">{i + 1}.</p>
                       <input
                         value={e?.value}
