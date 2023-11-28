@@ -403,26 +403,20 @@ const Therapists = () => {
             {therapistFilter?.therapistsData
               ?.sort((a, b) => {
                 if (therapistSort == "Experience") {
-                  let fa = a.experience.toLowerCase(),
-                    fb = b.experience.toLowerCase();
+                  let fa = a.experience?.toLowerCase(),
+                    fb = b.experience?.toLowerCase();
 
-                  if (fa < fb) {
-                    return 1;
-                  }
-                  if (fa > fb) {
-                    return -1;
-                  }
-                  return 0;
+                  return fb - fa;
                 } else if (therapistSort == "New to Old") {
                   let fa = new Date(a.date),
                     fb = new Date(b.date);
 
-                  return fa - fb;
+                  return fb - fa;
                 } else if (therapistSort == "Old to New") {
                   let fa = new Date(a.date),
                     fb = new Date(b.date);
 
-                  return fb - fa;
+                  return fa - fb;
                 } else if (therapistSort == "Descending") {
                   let fa = a.name.toLowerCase(),
                     fb = b.name.toLowerCase();
