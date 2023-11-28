@@ -406,7 +406,13 @@ const Therapists = () => {
                   let fa = a.experience?.toLowerCase(),
                     fb = b.experience?.toLowerCase();
 
-                  return fb - fa;
+                  if (fa < fb) {
+                    return 1;
+                  }
+                  if (fa > fb) {
+                    return -1;
+                  }
+                  return 0;
                 } else if (therapistSort == "New to Old") {
                   let fa = new Date(a.date),
                     fb = new Date(b.date);

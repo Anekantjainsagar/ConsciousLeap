@@ -111,9 +111,8 @@ const UserRegister = () => {
               Phone Number :{" "}
             </p>
             <IntlTelInput
-              value={user?.phone}
               onChange={(e) => {
-                setUser({ ...user, phone: e.target.value });
+                console.log(e);
               }}
               style={{
                 border: "1px solid #efefef",

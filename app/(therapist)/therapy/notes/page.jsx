@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
-import { AiOutlineHome, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 import { CiLogout, CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import { deleteCookie, getCookie } from "cookies-next";
@@ -10,14 +10,14 @@ import Image from "next/image";
 import Navbar from "../../Components/Utils/Navbar";
 import Footer from "../../Components/Utils/Footer";
 
-
 import circle from "../../../(main)/Assets/notes-bg.png";
 import logo from "@/(main)/Assets/logo.png";
 
 const Notes = () => {
   const [showLeftBar, setShowLeftBar] = useState(true);
-  const router = useRouter();
+  const [search, setSearch] = useState("");
   const { therapists } = useContext(Context);
+  const router = useRouter();
 
   useEffect(() => {
     if (getCookie("therapist_token")?.length <= 1) {
@@ -26,7 +26,7 @@ const Notes = () => {
   }, []);
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 hidden"
@@ -80,27 +80,33 @@ const Notes = () => {
             <h1 className="text-websiteBlue text-2xl font-medium">
               Therapist Notes
             </h1>
-            <AiOutlinePlus
-              size={40}
-              className="bg-websiteBlue rounded-full p-1 text-white"
-            />
+            <div className="flex items-center justify-between">
+              <input
+                className="w-[15vw] border border-black mr-4 px-3 outline-none py-0.5 rounded-md"
+                type="search"
+                placeholder="Search Here"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+              />
+              <AiOutlinePlus
+                size={40}
+                onClick={(e) => {
+                  router.push("/therapy/notes/add");
+                }}
+                className="bg-websiteBlue cursor-pointer rounded-full p-1 text-white"
+              />
+            </div>
           </div>
-          <div className="h-[70vh] overflow-y-scroll">
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
-            <Block />
+          <div className="h-[71vh] overflow-y-auto">
+            {therapists?.therapist?.notes
+              ?.filter((e) => {
+                return e?.name?.toLowerCase().includes(search?.toLowerCase());
+              })
+              ?.map((e, i) => {
+                return <Block data={e} key={i} />;
+              })}
           </div>
         </div>
         <Footer />
@@ -109,18 +115,25 @@ const Notes = () => {
   );
 };
 
-const Block = () => {
+const Block = ({ data }) => {
+  const history = useRouter();
+
   return (
-    <div className="flex items-center justify-between mx-5 border-b border-black mb-3 pb-2">
+    <div
+      onClick={(e) => {
+        history.push(`/therapy/notes/${data?._id}`);
+      }}
+      className="flex items-center justify-between mx-5 border-b cursor-pointer border-black mb-3 pb-2"
+    >
       <div className="flex items-center w-fit">
         <Image src={circle} alt="Circle" className="w-[4vw]" />
         <div className="ml-2">
-          <h1 className="text-websiteBlue text-lg">Anekant Jain</h1>
-          <p>Date: 05-11-2023</p>
+          <h1 className="text-websiteBlue text-lg">{data?.name}</h1>
+          <p>Date: {new Date(data?.date).toString().slice(4, 16)}</p>
         </div>
       </div>
       <p className="text-websiteBlue text-lg">
-        Session No : <span className="text-black">02</span>
+        Session No : <span className="text-black">{data?.session}</span>
       </p>
     </div>
   );
