@@ -34,7 +34,7 @@ const UserRegister = () => {
   const onSignUp = (e) => {
     e.preventDefault();
     if (termsPolicies) {
-      if (!(!user?.name || !user?.email || !user?.password || !user?.phone)) {
+      if (!(!user?.name || !user?.email || !user?.password)) {
         axios
           .post(`${BASE_URL}/login/otp-verification`, user)
           .then((response) => {
@@ -111,6 +111,10 @@ const UserRegister = () => {
               Phone Number :{" "}
             </p>
             <IntlTelInput
+              value={user?.phone}
+              onChange={(e) => {
+                setUser({ ...user, phone: e.target.value });
+              }}
               style={{
                 border: "1px solid #efefef",
                 outline: "0px solid black",
@@ -177,7 +181,10 @@ const UserRegister = () => {
                   setTermsPolicies(!termsPolicies);
                 }}
               />
-              <label htmlFor="check" className="cursor-pointer md:text-sm text-xs text-darkGrey">
+              <label
+                htmlFor="check"
+                className="cursor-pointer md:text-sm text-xs text-darkGrey"
+              >
                 By signing-up to consciousleap, you agree to our
                 <span
                   className="text-websiteBlue cursor-pointer mx-1 underline font-semibold"
