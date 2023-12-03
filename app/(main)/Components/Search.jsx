@@ -179,9 +179,10 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                 .filter((e) => {
                   return e?.name?.toLowerCase().includes(search?.toLowerCase());
                 })
-                .map((data) => {
+                .map((data, i) => {
                   return (
                     <div
+                      key={i}
                       className="py-0.5 cursor-pointer mb-1"
                       onClick={(e) => {
                         setIsOpen(false);
