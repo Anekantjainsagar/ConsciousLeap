@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import BootstrapCarousel from "./Components/BootstrapCarousel";
 import Line1 from "./Components/Lines/Line1";
 import Whyconsciousleap from "./Components/WhyConsciousLeap";
@@ -18,10 +19,13 @@ import ConsciousStore from "./Components/ConsciousStore";
 import { useEffect } from "react";
 import ReactModal from "./modal";
 import Head from "next/head";
+import Context from "@/Context/Context";
 
 const Home = () => {
+  const { bussinessShow } = React.useContext(Context);
   useEffect(() => {
-    scrollTo(0, 0);
+    const element = document.getElementById(bussinessShow);
+    element?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, []);
 
   return (

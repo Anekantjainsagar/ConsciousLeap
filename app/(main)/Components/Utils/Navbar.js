@@ -9,11 +9,11 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUser,
 } from "react-icons/ai";
-
+import Search from "../Search";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { getCookie, } from "cookies-next";
+import { getCookie } from "cookies-next";
 import user from "../../Assets/userLogo.png";
 
 let nav = [
@@ -150,7 +150,7 @@ let nav = [
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   let history = useRouter();
-  let token = getCookie("token");
+  const [modalIsOpen, setIsOpen] = useState(false);
   const { login } = useContext(Context);
   const [showHover, setShowHover] = useState({
     login: false,
@@ -161,6 +161,7 @@ const Navbar = () => {
 
   return (
     <div>
+      <Search modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
         <div className="py-4 px-3 hidden md:flex justify-between items-center">
           <Image
@@ -246,7 +247,7 @@ const Navbar = () => {
                   setShowHover({ ...showHover, search: false });
                 }}
                 onClick={(e) => {
-                  history.push("/therapy");
+                  setIsOpen(!modalIsOpen);
                 }}
                 className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
                 size={35}
