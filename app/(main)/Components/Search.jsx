@@ -34,10 +34,12 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
     {
       name: "Subscribe",
       route: "/",
+      desc: "Subscribe to our curated offers and mindful blogs delivered to your inbox",
     },
     {
       name: "Member Registration",
       route: "/user/register",
+      desc: "Embark on a transformative journey by registering as a new member with consciousleap and join our mindful community",
     },
     // {
     //   name: "User Dashboard",
@@ -100,129 +102,152 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
     {
       name: "Our Mindful Therapists",
       route: "/therapy",
+      desc: `Meet the cornerstone of consciousleap- our "Mindful Therapists"`,
     },
     {
       name: "Book a session",
       route: "/therapy",
+      desc: `Meet the cornerstone of consciousleap- our "Mindful Therapists"`,
     },
     {
       name: "Vandita Sharma",
       route: "/therapy/6539f748f7996e4f13c2e6fd",
-      desc: "I am a clinical psychologist and a mindfulness therapist. I practice psychotherapy and mindfulness-based interventions, which does wonders to lead a meaningful life.",
+      desc: "Clinical Psychologist, RCI Registered ",
     },
     {
       name: "Sagrikaa Rastogi",
       route: "/therapy/6539f479f7996e4f13c2e64d",
-      desc: "A Counseling Psychologist with experience in facilitating adolescents and young adults for self growth, anxiety, personality disorders, relationship concerns in addition to other mental health related concerns.",
+      desc: "Counselling Psychologist",
     },
     {
       name: "Parnika Sharma",
       route: "/therapy/6539f59bf7996e4f13c2e68b",
-      desc: "My aim is to provide people with a space to express themselves in a non-judgmental environment, gain insights regarding their behaviour and equip them with tools to help cope with various stressors in life.",
+      desc: "Clinical Psychologist, RCI Registered ",
     },
     {
       name: "Merlin Joseph",
       route: "/therapy/6539f82af7996e4f13c2e724",
-      desc: "In my practice, I believe that the effectiveness of therapy relies on the individual's willingness to makes changes in their lives. Embracing an eclectic approach, I aim to create a supportive environment that nurtures personal growth and development for my clients.",
+      desc: "Counselling Psychologist",
     },
     {
       name: "Bhumikka Rao",
       route: "/therapy/6539f61ef7996e4f13c2e6d9",
-      desc: "Just like my name, Bhumikka, which means role, I play the role of a friendly guide and an efficient confidant to help many young minds of our society to grow and nurture in their journey of life. ",
+      desc: "Psychologist, PhD Psychology ",
     },
     {
       name: "Ashwini K",
       route: "/therapy/6560ae14e37b4250c368c9ff",
-      desc: "A well trained, trauma informed, culturally sensitive qualified psychologist, specializing in Clinical Psychology. An empath who aims to create safe therapeutic space for her clients.",
+      desc: "Wellbeing Counselor ",
     },
     {
       name: "Akanksha Sharma",
       route: "/therapy/6560ada4e37b4250c368c9df",
-      desc: "Hi! I am Akanksha, I am a Psychotherapist and a Clinical Psychologist. I believe that all of us deserve a space where we can be free to express our most painful thoughts and feelings.",
+      desc: "Clinical Psychologist, RCI Registered ",
     },
     {
       name: "Areas of Expertise",
       route: "/expertise-area",
+      desc: "Various aspects of mental health that consciousleap provides comprehensive assistance for ",
     },
     {
       name: "Questionnaire",
       route: "/questionnaire",
+      desc: "Assess your mental resilience with our mindful questionnaire.",
     },
     {
       name: "Register as a Therapist",
       route: "/therapy/register",
+      desc: "Become a part of our team to Mindful Therapists to enhance the quality of life & to save the lives through impactful sharing of knowledge and expertise. ",
     },
     {
       name: "Why consciousleap for Business?",
       route: "/bussiness",
+      desc: "consciousleap aims to supports employees in managing their holistic health and wellbeing concerns in a more mindful and individually tailored manner",
     },
     {
       name: "Our Global Clients",
       route: "/bussiness",
+      desc: "consciousleap is the preferred choice of many valued clients for workplace well-being and enhanced organizational performance.",
     },
     {
       name: "Client Testimonials",
       route: "/bussiness",
+      desc: "Discover firsthand experiences with consciousleap for Business through the words of our satisfied clients",
     },
     {
       name: "Schedule a Call",
       route: "/bussiness",
+      desc: "Reach out to us for an in-depth demonstration of our capabilities and discover how consciousleap can create a holistic impact.",
     },
     {
       name: "consciousleap Vendibles",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Oneness Vendibles",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Being",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Edibles",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Healing",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Kids",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Living",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Teens",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Travel",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Conscious Travel",
       route: "/conscious-store",
+      desc: "At consciousleap, we don't just believe; we act. With Coscious Store we aim to create a positive impact, striving not only to sustain but to mindfully thrive for the well-being of future generations.",
     },
     {
       name: "Terms of Use",
       route: "/privacy/terms",
+      desc: "Before utilizing our service, kindly review these terms of service attentively.",
     },
     {
       name: "Cookies Policy",
       route: "/privacy/cookies-policy",
+      desc: "consciousleap uses essential cookies for site functionalit & to analyze and personalize your visit",
     },
     {
       name: "Privacy Policy",
       route: "/privacy/policies",
+      desc: "Our Privacy Policy outlines our approach to gathering & utilizing your information while using the service, elucidating your privacy rights and legal protections",
     },
     {
       name: "Refund, Rescheduling and Cancellation Policy",
       route: "/privacy/refund",
+      desc: "Our Rescheduling, Refund, and Cancellation Policy is crafted with your convenience in mind, offering transparency and flexibility",
     },
   ];
 
@@ -234,7 +259,7 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="rounded-3xl w-[90vw] md:w-[40vw] h-[80vw] md:h-[25vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+        <div className="rounded-3xl w-[90vw] min-[1020px]:w-[50vw] min-[1040px]:w-[40vw] h-[80vw] min-[1020px]:h-[40vw] min-[1040px]:h-[25vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
           <div className="p-[3vw] md:p-[1vw] h-full w-full rounded-3xl bg-white flex flex-col items-center justify-between">
             <div className="rounded-full w-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
               <div className="flex flex-col h-full w-full rounded-full items-center justify-center bg-white">

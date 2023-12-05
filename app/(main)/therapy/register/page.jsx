@@ -88,34 +88,34 @@ const RegisterTherapist = () => {
   const onRegister = () => {
     if (user?.otp) {
       if (user?.otp == user?.original) {
-      axios
-        .post(`${BASE_URL}/therapist/signup`, user)
-        .then((response) => {
-          console.log(response);
-          if (response.status == 200) {
-            toast.success("Registered successfully");
-            setTimeout(() => {
-              router.push("/therapy/dashboard");
-              let token = response.data.token;
-              setCookie("therapist_token", token);
-              setLogin(response.data);
-              setUser({
-                name: "",
-                phone: "",
-                email: "",
-                password: "",
-                displayName: "",
-                desc: "",
-                original: "",
-                otp: "",
-              });
-              setGetOtp(false);
-            }, 500);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+        axios
+          .post(`${BASE_URL}/therapist/signup`, user)
+          .then((response) => {
+            console.log(response);
+            if (response.status == 200) {
+              toast.success("Registered successfully");
+              setTimeout(() => {
+                router.push("/therapy/dashboard");
+                let token = response.data.token;
+                setCookie("therapist_token", token);
+                setLogin(response.data);
+                setUser({
+                  name: "",
+                  phone: "",
+                  email: "",
+                  password: "",
+                  displayName: "",
+                  desc: "",
+                  original: "",
+                  otp: "",
+                });
+                setGetOtp(false);
+              }, 500);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else {
         toast.error("OTP is incorrect");
       }
@@ -147,7 +147,7 @@ const RegisterTherapist = () => {
         At consciousleap, our mindful therapists are the founding pillars of our
         organization, and we take pride in offering them exceptional advantages.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-6 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
+      <div className="grid grid-cols-1 min-[1020px]:grid-cols-3 min-[1040px]:grid-cols-6 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
         {registerData.map((e, i) => {
           return <FlipCard data={e} key={i} />;
         })}
@@ -159,7 +159,7 @@ const RegisterTherapist = () => {
         To take the first step towards joining us, fill out the form below,
         providing us with the necessary details to get to know you better
       </p>
-      <div className="rounded-lg w-[90vw] md:w-[30vw] text-sm mx-auto h-fit bg-gradient-to-tr mt-[2vw] from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-lg w-[90vw] min-[1020px]:w-[50vw] min-[1040px]:w-[30vw] text-sm mx-auto h-fit bg-gradient-to-tr mt-[2vw] from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full w-full py-2 md:py-4 px-[3vw] md:px-[1vw] rounded-lg justify-center bg-white flex flex-col">
           <h1 className="text-websiteBlue font-medium pb-2 border-b">
             Personal Information

@@ -397,7 +397,9 @@ const Therapists = () => {
           </div>
           <div
             className={`grid ${
-              showGrid ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1"
+              showGrid
+                ? "grid-cols-1 min-[1020px]:grid-cols-2 min-[1040px]:grid-cols-3"
+                : "grid-cols-1"
             } mt-5 gap-x-4 gap-y-6 md:px-0 px-[4vw]`}
           >
             {therapistFilter?.therapistsData
@@ -545,19 +547,19 @@ const GridBlock = ({
       </div>
       <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
-          <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+          <div className="rounded-full min-[1020px]:h-[10vw] min-[1040px]:w-full min-[1020px]:w-[10vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={data?.photo}
                 width={1000}
                 height={1000}
                 alt="Photo of girl"
-                className="w-full h-[8vw] object-cover object-center rounded-full"
+                className="min-[1020px]:h-[10vw] min-[1040px]:w-full min-[1020px]:w-[10vw] min-[1040px]:h-[8vw] object-cover object-center rounded-full"
               />
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[16vh] max-[1000px]:h-[32vh]">
+            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[10.5vh] max-[1000px]:h-[32vh]">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>

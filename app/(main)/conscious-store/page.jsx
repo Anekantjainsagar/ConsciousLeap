@@ -111,11 +111,11 @@ const Store = () => {
           </div>
           <div className="border-y py-3">
             <p className="font-bold">Price range</p>
-            <Slider
+            {/* <Slider
               value={value}
               onChange={rangeSelector}
               valueLabelDisplay="auto"
-            />
+            /> */}
           </div>
         </div>
         <div className="w-9/12 ml-[1vw] border"></div>
