@@ -354,7 +354,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center md:justify-end my-4">
+        <div className="flex justify-center md:justify-end my-4" id="subscribe">
           <div className="flex items-center justify-center">
             <input
               type="text"

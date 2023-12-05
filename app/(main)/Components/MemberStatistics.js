@@ -26,27 +26,6 @@ const MemberStatistics = () => {
   const [visible4, setVisible4] = useState(false);
   const [visible5, setVisible5] = useState(false);
 
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     memberStatiticsHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: memberStatiticsHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
-
   return (
     <div className="w-full flex items-center justify-center flex-col">
       <h1
@@ -61,7 +40,7 @@ const MemberStatistics = () => {
           <Image
             src={!visible3 ? img3 : img31}
             alt="Image 1"
-            className="cursor-pointer w-full min-[1000px]:w-[10vw] min-[2000px]:w-[10vw]"
+            className="cursor-pointer w-full min-[1040px]:w-[10vw] min-[2000px]:w-[10vw]"
             onMouseEnter={(e) => {
               setVisible3(!visible3);
             }}
@@ -143,10 +122,10 @@ const MemberStatistics = () => {
         <div className="absolute -translate-y-1/2 top-1/2 pt-[7vw] md:pt-[3.5vw] flex flex-col items-center justify-center left-1/2 -translate-x-1/2">
           {visible1 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl md:text-7xl font-normal md:mb-2 mb-0">
+              <h1 className="text-websiteBlue text-3xl min-[1020px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0">
                 87%
               </h1>
-              <p className="text-center text-sm md:text-2xl text-darkGrey">
+              <p className="text-center text-sm min-[1020px]:text-base min-[1040px]:text-2xl text-darkGrey">
                 Of our members
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
@@ -158,10 +137,10 @@ const MemberStatistics = () => {
           ) : null}
           {visible2 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl md:text-7xl font-normal md:mb-2 mb-0">
+              <h1 className="text-websiteBlue text-3xl min-[1020px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 82%
               </h1>
-              <p className="text-center text-sm md:text-2xl text-darkGrey">
+              <p className="text-center text-sm min-[1020px]:text-base min-[1040px]:text-2xl max-md:text-base text-darkGrey">
                 Of our members
                 <span className="text-websiteBlue font-medium ml-2">
                   Like
@@ -172,10 +151,10 @@ const MemberStatistics = () => {
           ) : null}
           {visible3 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl md:text-7xl font-normal md:mb-2 mb-0">
+              <h1 className="text-websiteBlue text-3xl min-[1020px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 76%
               </h1>
-              <p className="text-center text-sm md:text-2xl text-darkGrey">
+              <p className="text-center text-sm min-[1020px]:text-base min-[1040px]:text-2xl max-md:text-base text-darkGrey">
                 Of our members live
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
@@ -187,10 +166,10 @@ const MemberStatistics = () => {
           ) : null}
           {visible4 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl md:text-7xl font-normal md:mb-2 mb-0">
+              <h1 className="text-websiteBlue text-3xl min-[1020px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 90%
               </h1>
-              <p className="text-center text-sm md:text-2xl text-darkGrey">
+              <p className="text-center text-sm min-[1020px]:text-base min-[1040px]:text-2xl max-md:text-base text-darkGrey">
                 of our members have rated us
                 <span className="text-websiteBlue ml-2 font-medium">
                   Five-Stars
@@ -200,10 +179,10 @@ const MemberStatistics = () => {
           ) : null}
           {visible5 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl md:text-7xl font-normal md:mb-2 mb-0">
+              <h1 className="text-websiteBlue text-3xl min-[1020px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 95%
               </h1>
-              <p className="text-center text-sm md:text-2xl text-darkGrey">
+              <p className="text-center text-sm min-[1020px]:text-base min-[1040px]:text-2xl max-md:text-base text-darkGrey">
                 of our members
                 <span className="text-websiteBlue ml-2 font-medium">
                   Love

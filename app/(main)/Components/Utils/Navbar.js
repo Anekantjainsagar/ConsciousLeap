@@ -13,7 +13,6 @@ import Search from "../Search";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { getCookie } from "cookies-next";
 import user from "../../Assets/userLogo.png";
 
 let nav = [
@@ -338,7 +337,7 @@ const Navbar = () => {
             )}
             <AiOutlineSearch
               onClick={(e) => {
-                history.push("/therapy");
+                setIsOpen(!modalIsOpen);
               }}
               className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}
@@ -389,7 +388,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
       }}
     >
       <div
-        className="blueHover cursor-pointer min-[1400px]:text-lg min-[1200px]:text-base text-sm flex z-40 items-center md:mb-0 mb-1.5"
+        className="blueHover cursor-pointer min-[1400px]:text-lg min-[1200px]:text-base max-[1050px]:text-[11px] text-sm flex z-40 items-center md:mb-0 mb-1.5"
         onMouseEnter={handleMouseEnter}
         onMouseOut={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -415,7 +414,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
         {e?.items.map((data, i) => {
           return (
             <p
-              className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50"
+              className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50 max-[1050px]:text-[11px]"
               key={i}
               onClick={(e) => {
                 const element = document.getElementById(

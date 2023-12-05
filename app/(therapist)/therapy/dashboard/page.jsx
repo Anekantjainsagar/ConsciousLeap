@@ -39,8 +39,8 @@ const Dashboard = () => {
   const router = useRouter();
   const { therapists } = useContext(Context);
 
+  console.log(therapists);
   useEffect(() => {
-    console.log(getCookie("therapist_token"));
     if (
       getCookie("therapist_token")?.length <= 0 ||
       !getCookie("therapist_token") ||

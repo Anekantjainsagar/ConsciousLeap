@@ -111,7 +111,7 @@ const Block = ({ data, index }) => {
           alt="Image"
           className="w-[15%] md:w-[6%] py-4"
         />
-        <div className="border-2 border-websiteBlue text-3xl md:text-6xl md:ml-[5vw] w-[17vw] md:w-[9.1vw] rounded-full flex justify-center items-center text-websiteBlue h-[17vw] md:h-[9.1vw]">
+        <div className="border-2 border-websiteBlue text-3xl md:text-6xl md:ml-[5vw] w-[17vw] min-[1020px]:w-[15vw] min-[1040px]:w-[9.1vw] rounded-full flex justify-center items-center text-websiteBlue h-[17vw] min-[1020px]:h-[15vw] min-[1040px]:h-[9.1vw]">
           {data?.value}
           <span className="text-lg md:text-2xl md:ml-0.5">%</span>
         </div>

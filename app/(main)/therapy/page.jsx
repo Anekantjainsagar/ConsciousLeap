@@ -403,9 +403,8 @@ const Therapists = () => {
             {therapistFilter?.therapistsData
               ?.sort((a, b) => {
                 if (therapistSort == "Experience") {
-                  let fa = a.experience?.toLowerCase(),
-                    fb = b.experience?.toLowerCase();
-
+                  let fa = parseInt(a.experience?.slice(0, 2)),
+                    fb = parseInt(b.experience?.slice(0, 2));
                   if (fa < fb) {
                     return 1;
                   }
@@ -558,7 +557,7 @@ const GridBlock = ({
             </div>
           </div>
           <div className="w-7/12 ml-[1vw]">
-            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[31vh] max-[1000px]:h-[32vh]">
+            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[16vh] max-[1000px]:h-[32vh]">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
@@ -611,7 +610,7 @@ const ListBlock = ({
       className="scale-95 hover:scale-100 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex items-start py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
+        <div className="flex items-center min-[1020px]:py-[1vw] min-[1040px]:py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
@@ -623,7 +622,7 @@ const ListBlock = ({
               />
             </div>
           </div>
-          <div className="w-[81%] flex justify-between items-center h-[22vh]">
+          <div className="w-[81%] flex justify-between items-center min-[1020px]:h-[13vh] min-[1040px]:h-[22vh]">
             <div className="w-3/12 h-fit">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>

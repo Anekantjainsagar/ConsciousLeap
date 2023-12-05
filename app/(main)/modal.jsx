@@ -45,7 +45,11 @@ const ReactModal = () => {
           onClick={closeModal}
           className="absolute rounded-full right-5 top-5 bg-white px-2 cursor-pointer border z-20"
         />
-        <Image src={image} alt={"Image"} className="w-[100vw] md:w-[35vw]" />
+        <Image
+          src={image}
+          alt={"Image"}
+          className="w-[100vw] min-[1020px]:w-[50vw] min-[1040px]:w-[35vw]"
+        />
         <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
           <p className="text-center">
             Subscribe to our curated offers

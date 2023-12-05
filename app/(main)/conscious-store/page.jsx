@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import storeHero from "../Assets/store/storehero.jpg";
 import Image from "next/image";
@@ -20,8 +20,57 @@ import icon2 from "../Assets/store/icons/eco-friendly.png";
 import icon3 from "../Assets/store/icons/no-plastic-bottles.png";
 import icon4 from "../Assets/store/icons/nontoxic.png";
 import { useRouter } from "next/navigation";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+
+let items = [
+  {
+    name: "consciousleap Vendibles",
+    route: "/conscious-store",
+  },
+  {
+    name: "Oneness Vendibles",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Being",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Edibles",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Healing",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Kids",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Living",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Teens",
+    route: "/conscious-store",
+  },
+  {
+    name: "Conscious Travel",
+    route: "/conscious-store",
+  },
+];
 
 const Store = () => {
+  const [showCategory, setShowCategory] = useState(false);
+   const [value, setValue] = useState([2, 10]);
+
+   // Changing State when volume increases/decreases
+   const rangeSelector = (event, newValue) => {
+     setValue(newValue);
+   }; 
+  
+
   return (
     <div className="flex flex-col items-center pt-[3vw]">
       <Toaster />
@@ -39,6 +88,38 @@ const Store = () => {
         alt={"Store hero"}
         className="my-5 mx-auto md:w-11/12"
       />
+      <div className="flex w-full px-[5vw] py-[4vw] items-start justify-between">
+        <div className="w-3/12 mr-[1vw] ">
+          <div
+            className="flex items-center cursor-pointer border-b pb-2"
+            onClick={(e) => {
+              setShowCategory(!showCategory);
+            }}
+          >
+            <p className="font-bold mr-4">Categories</p>
+            {!showCategory ? (
+              <AiOutlineDown size={20} />
+            ) : (
+              <AiOutlineUp size={20} />
+            )}
+          </div>
+          <div className="my-3">
+            {showCategory &&
+              items?.map((e, i) => {
+                return <p key={i}>{e?.name}</p>;
+              })}
+          </div>
+          <div className="border-y py-3">
+            <p className="font-bold">Price range</p>
+            <Slider
+              value={value}
+              onChange={rangeSelector}
+              valueLabelDisplay="auto"
+            />
+          </div>
+        </div>
+        <div className="w-9/12 ml-[1vw] border"></div>
+      </div>
       <Line2 />
       <div className="w-full px-[5vw]">
         <h1 className="text-3xl font-light w-fit gradientHover cursor-pointer">

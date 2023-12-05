@@ -16,27 +16,6 @@ const ConsciousStore = () => {
   let storeHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     storeHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: storeHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
-
   return (
     <div className="flex flex-col justify-center items-center pt-[2vw] pb-[12vw] md:pb-[6vw]">
       <h1
@@ -72,7 +51,7 @@ const ConsciousStore = () => {
 
 const Block = ({ data }) => {
   return (
-    <div className="rounded-md w-full h-[24vh] md:h-[35vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+    <div className="rounded-md w-full h-[16vh] min-[1040px]:h-[35vh] min-[1020px]:h-[12vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
       <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
         <Image
           src={data?.image}

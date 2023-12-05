@@ -69,7 +69,7 @@ const ConsciousleapBlog = () => {
         >
           Collaborations and Initiatives
         </h1>
-        <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
+        <p className="font-light md:w-full w-[85%] min-[1000px]:px-[5vw] text-center text-darkGrey">
           At consciousleap, we pledge 10% of our net proceeds to support and
           contribute towards a more significant cause, a higher purpose to
           restore our faith in humanity.

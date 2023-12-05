@@ -25,27 +25,6 @@ const MindfulTherapist = () => {
   let testimonialsHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     testimonialsHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: testimonialsHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
-
   return (
     <div className="w-full flex items-center justify-center flex-col mt-[20vw] md:mt-[10vw]">
       <h1
@@ -66,7 +45,6 @@ export function BootstrapCarousel() {
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298499/qwmptx5gb0qvhjxx6mpr.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298517/sdnwd7sbtaeapx4s9coz.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298538/dettte2e0rncdcyrzkdg.jpg",
-
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699344226/pfcv68l0afjni97pvjig.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298395/c5otpqefsaqx1bf8qclu.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298499/qwmptx5gb0qvhjxx6mpr.jpg",
@@ -80,7 +58,7 @@ export function BootstrapCarousel() {
         <Image
           src={mobile}
           alt="Mobile image"
-          className="h-full md:h-full min-[2000px]:w-full mx-auto"
+          className="h-full md:h-full min-[1040px]:w-full min-[1020px]:w-[140px] min-[2000px]:w-full w-fit mx-auto"
         />
       </div>
       <Swiper
