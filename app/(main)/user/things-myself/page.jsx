@@ -59,7 +59,7 @@ const ThingsMyself = () => {
           Journal
         </p>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r md:h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+      <div className="md:w-9/12 bg-gradient-to-r h-[110vh] md:h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
         <div className="bg-white md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] pt-[3vw]">
           <Image
             src={pen}

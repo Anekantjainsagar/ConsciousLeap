@@ -59,8 +59,8 @@ const Gratitude = () => {
           Journel
         </p>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r md:h-[115vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white w-[95%] mx-auto md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] md:mx-[5vh] pt-[3vw]">
+      <div className="md:w-9/12 bg-gradient-to-r h-[120vh] md:h-[115vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white w-[95%] mx-auto md:w-[92%] rounded-[45px] h-full relative my-[3vw] md:mx-[5vh] pt-[3vw]">
           <Image
             src={pen}
             alt={"Alt"}

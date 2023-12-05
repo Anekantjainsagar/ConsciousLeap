@@ -53,7 +53,7 @@ const ThoughtTracker = () => {
           <Image
             src={pen}
             alt={"Alt"}
-            className="w-[50vw] md:w-[30vw] absolute top-0 right-0"
+            className="w-[50vw] md:block hidden md:w-[30vw] absolute top-0 right-0"
           />
           <textarea
             name=""
@@ -61,7 +61,7 @@ const ThoughtTracker = () => {
             onChange={(e) => {
               setThoughts(e.target.value);
             }}
-            className="border rounded-md w-[92%] outline-none border-gray-800 block mx-auto p-3 text-xl"
+            className="border rounded-md w-[92%] h-[85%] outline-none border-gray-800 block mx-auto p-3 text-xl"
             id=""
             cols="30"
             rows={
