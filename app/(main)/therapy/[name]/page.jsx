@@ -88,13 +88,11 @@ const OneTherapist = ({ params }) => {
       </div>
       <div className="w-full md:w-9/12 flex flex-col">
         <div className="grid grid-cols-1 md:mt-0 mt-5 md:grid-cols-3 gap-5 w-full">
-          {<Table data={{ name: "Experience", items: [user?.experience] }} />}
-          {
-            <Table
-              data={{ name: "Qualifications", items: user?.qualifications }}
-            />
-          }
-          {<Table data={{ name: "Speaks", items: user?.speaks }} />}
+          <Table data={{ name: "Experience", items: [user?.experience] }} />
+          <Table
+            data={{ name: "Qualifications", items: user?.qualifications }}
+          />
+          <Table data={{ name: "Speaks", items: user?.speaks }} />
         </div>
         <div>
           <h1 className="text-websiteBlue text-2xl font-light mt-[5vh]">

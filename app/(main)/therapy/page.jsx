@@ -547,14 +547,14 @@ const GridBlock = ({
       </div>
       <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
-          <div className="rounded-full min-[1020px]:h-[10vw] min-[1040px]:w-full min-[1020px]:w-[10vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+          <div className="rounded-full min-[1020px]:h-[12vw] min-[1040px]:w-[8vw] min-[1020px]:w-[12vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={data?.photo}
                 width={1000}
                 height={1000}
                 alt="Photo of girl"
-                className="min-[1020px]:h-[10vw] min-[1040px]:w-full min-[1020px]:w-[10vw] min-[1040px]:h-[8vw] object-cover object-center rounded-full"
+                className="w-full h-full object-cover object-center rounded-full"
               />
             </div>
           </div>
