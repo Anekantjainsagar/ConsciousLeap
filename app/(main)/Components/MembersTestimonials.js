@@ -56,7 +56,7 @@ const MembersTestimonials = () => {
       <h1
         id="membertestimonials"
         ref={testimonialsHeading}
-        className="mb-2 text-3xl font-light gradientHover cursor-pointer"
+        className="mb-2 text-3xl font-light text-center gradientHover cursor-pointer"
       >
         Member Testimonials
       </h1>

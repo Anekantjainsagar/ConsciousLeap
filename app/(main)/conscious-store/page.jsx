@@ -20,7 +20,16 @@ import icon2 from "../Assets/store/icons/eco-friendly.png";
 import icon3 from "../Assets/store/icons/no-plastic-bottles.png";
 import icon4 from "../Assets/store/icons/nontoxic.png";
 import { useRouter } from "next/navigation";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import {
+  AiOutlineDown,
+  AiOutlineFilter,
+  AiOutlineUnorderedList,
+  AiOutlineUp,
+} from "react-icons/ai";
+import RangeSlider from "rsuite/RangeSlider";
+import "rsuite/dist/rsuite.css";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import tshirt from '../Assets/store/1 (2).jpg'
 
 let items = [
   {
@@ -63,13 +72,14 @@ let items = [
 
 const Store = () => {
   const [showCategory, setShowCategory] = useState(false);
-   const [value, setValue] = useState([2, 10]);
-
-   // Changing State when volume increases/decreases
-   const rangeSelector = (event, newValue) => {
-     setValue(newValue);
-   }; 
-  
+  const [firstValue, setFirstValue] = useState(2);
+  const [secondValue, setSecondValue] = useState(10);
+  const [sortStore, setSortStore] = useState("Sort By");
+  const [showGrid, setShowGrid] = useState(false);
+  function handleRanges(value) {
+    setFirstValue(value[0]);
+    setSecondValue(value[1]);
+  }
 
   return (
     <div className="flex flex-col items-center pt-[3vw]">
@@ -110,15 +120,84 @@ const Store = () => {
               })}
           </div>
           <div className="border-y py-3">
-            <p className="font-bold">Price range</p>
-            {/* <Slider
-              value={value}
-              onChange={rangeSelector}
-              valueLabelDisplay="auto"
-            /> */}
+            <p className="font-bold mb-3">Price range</p>
+            <RangeSlider defaultValue={[2, 10]} onChange={handleRanges} />
+            <p className="mt-2 px-1 w-full flex items-center justify-between text-lg">
+              <span>{firstValue}</span>
+              <span>{secondValue}</span>
+            </p>
           </div>
         </div>
-        <div className="w-9/12 ml-[1vw] border"></div>
+        <div className="w-9/12 ml-[1vw]">
+          <h1 className="text-xl hover:text-newBlue transition-all cursor-pointer">
+            Conscious Vendibles
+          </h1>
+          <div className="flex md:flex-row flex-col px-2 items-center">
+            <div className="flex items-center md:mb-0 mb-4 w-full mt-3">
+              <select
+                name=""
+                id=""
+                // value={sortStore}
+                // onChange={(e) => {
+                //   setSortStore(e.target.value);
+                // }}
+                className="w-full md:w-[13vw] mr-4 rounded-sm text-darkGrey text-sm border px-2 py-2 outline-none"
+              >
+                {["All Brands"].map((e, i) => {
+                  return (
+                    <option className="py-1" value={e}>
+                      {e}
+                    </option>
+                  );
+                })}
+              </select>
+              <select
+                name=""
+                id=""
+                value={sortStore}
+                onChange={(e) => {
+                  setSortStore(e.target.value);
+                }}
+                className="w-full md:w-[13vw] rounded-sm text-darkGrey text-sm border px-2 py-2 outline-none"
+              >
+                <option className="py-1" value="Sort By">
+                  Sort By
+                </option>
+                <option className="py-1" value="Newest">
+                  Newest
+                </option>
+                <option className="py-1" value="Oldest">
+                  Oldest
+                </option>
+                <option className="py-1" value="Price Low to High">
+                  Price Low to High
+                </option>
+                <option className="py-1" value="Price High to Low">
+                  Price High to Low
+                </option>
+              </select>
+            </div>
+            <div className="hidden md:flex items-center ml-5">
+              <BsFillGrid3X3GapFill
+                className="text-websiteBlue border p-2 cursor-pointer"
+                size={35}
+                onClick={() => {
+                  setShowGrid(true);
+                }}
+              />
+              <AiOutlineUnorderedList
+                className="text-websiteBlue border p-2 cursor-pointer"
+                size={35}
+                onClick={() => {
+                  setShowGrid(false);
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <StoreBlock />
+          </div>
+        </div>
       </div>
       <Line2 />
       <div className="w-full px-[5vw]">
@@ -224,6 +303,14 @@ const Store = () => {
           })}
         </div>
       </div>
+    </div>
+  );
+};
+
+const StoreBlock = () => {
+  return (
+    <div>
+      <Image src={tshirt} alt="Tshirt" />
     </div>
   );
 };
