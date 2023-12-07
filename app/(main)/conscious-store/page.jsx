@@ -145,7 +145,7 @@ const Store = () => {
               >
                 {["All Brands"].map((e, i) => {
                   return (
-                    <option className="py-1" value={e}>
+                    <option className="py-1" value={e} key={i}>
                       {e}
                     </option>
                   );
