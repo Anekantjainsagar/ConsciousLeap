@@ -5,6 +5,7 @@ import image from "../Assets/logoPng.png";
 import Image from "next/image";
 import Context from "@/Context/Context";
 import { usePathname, useRouter } from "next/navigation";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -306,17 +307,21 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                         }
                       }}
                     >
-                      <Image
+                      {/* <Image
                         src={image}
                         alt="Image"
                         className="w-[14vw] md:w-[4vw]"
+                      /> */}
+                      <AiOutlineSearch
+                        className="text-newBlue border border-newBlue rounded-full p-1"
+                        size={40}
                       />
                       <div className="ml-4">
-                        <p className="text-base md:text-lg font-medium text-newBlue">
+                        <p className="text-base font-medium text-newBlue">
                           {data?.name}
                         </p>
                         {data?.desc && (
-                          <p className="-mt-1 md:text-base text-xs">
+                          <p className="-mt-1 md:text-sm text-xs">
                             {data?.desc?.slice(0, 40) +
                               (data?.desc?.length > 40 ? "..." : "")}
                           </p>

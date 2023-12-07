@@ -8,6 +8,10 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 import frame1 from "../Assets/carousel/Frame 1.jpg";
 import frame2 from "../Assets/carousel/Frame 2.jpg";
@@ -123,7 +127,6 @@ export default function BootstrapCarousel() {
           </p>
           <Image src={frame4} alt="Frame 1" className="cursor-pointer" />
         </SwiperSlide>
-
         <SwiperSlide
           className="relative"
           onClick={(e) => {
