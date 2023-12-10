@@ -314,10 +314,10 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                       /> */}
                       <AiOutlineSearch
                         className="text-newBlue border border-newBlue rounded-full p-1"
-                        size={40}
+                        size={36}
                       />
                       <div className="ml-4">
-                        <p className="text-base font-medium text-newBlue">
+                        <p className="text-[15px] font-medium text-newBlue">
                           {data?.name}
                         </p>
                         {data?.desc && (
