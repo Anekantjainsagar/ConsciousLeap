@@ -42,6 +42,8 @@ const B2BState = (props) => {
   );
   const [showSubscribe, setShowSubscribe] = useState(true);
   const [showPopUpId, setShowPopUpId] = useState("");
+  const [productData, setProductData] = useState([]);
+  const [productSearch, setProductSearch] = useState("");
 
   const getTherapistsData = () => {
     axios
@@ -141,6 +143,28 @@ const B2BState = (props) => {
     therapistsData,
   };
 
+  const getProducts = () => {
+    axios
+      .post(`${BASE_URL}/product/get-all/${productSearch}`)
+      .then((res) => {
+        setProductData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, [productSearch]);
+
+  const productM = {
+    getProducts,
+    productData,
+    productSearch,
+    setProductSearch,
+  };
+
   return (
     <Context.Provider
       value={{
@@ -167,6 +191,7 @@ const B2BState = (props) => {
         setShowPopUpId,
         bussinessShow,
         setBussinessShow,
+        productM,
       }}
     >
       {props.children}

@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Modal from "react-modal";
-import iphone from "../../Assets/store/tshirt.jpg";
 import { AiOutlineClose } from "react-icons/ai";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -21,7 +20,7 @@ const customStyles = {
   },
 };
 
-const Product = ({ modalIsOpen, setIsOpen }) => {
+const Product = ({ modalIsOpen, setIsOpen, data }) => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("S");
   const [fabric, setFabric] = useState("Cotton");
@@ -41,8 +40,10 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
           <div className="flex flex-row md:flex-col items-start md:items-center justify-between w-full md:justify-start md:w-[10%]">
             <div className="border-2 border-websiteBlue h-[7vh] cursor-pointer mb-3 rounded-sm w-[7vh] md:w-full">
               <Image
-                src={iphone}
-                alt="Iphone"
+                src={data?.images[0]}
+                alt="data?.images[0]"
+                width={100}
+                height={100}
                 className="w-full h-full object-cover rounded-sm object-center"
               />
             </div>
@@ -55,12 +56,18 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
             />
           </div>
           <div className="md:w-[40%] px-4">
-            <Image src={iphone} alt="IPhone" className="rounded-sm" />
+            <Image
+              src={data?.images[0]}
+              alt="IPhone"
+              width={100}
+              height={100}
+              className="rounded-sm w-full"
+            />
           </div>
           <div className="w-full md:w-[50%] md:ml-3">
             <h1 className="text-lg cursor-pointer flex justify-between items-center hover:text-websiteBlue transition-all">
               <span className="md:w-11/12 md:text-base text-2xl">
-                Tshirt - Black
+                {data?.name}
               </span>
               <AiOutlineClose
                 className="md:block hidden"
@@ -73,7 +80,9 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
             <div className="flex items-center mt-1">
               <p className="w-[25%] text-gray-400 font-light">Price:</p>
               <p className="mt-0 ml-3 text-lg">
-                <span className="line-through font-semibold">AED100.00</span>{" "}
+                <span className="line-through font-semibold">
+                  AED{data?.discountPrice}
+                </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
             </div>
@@ -82,7 +91,9 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
                 Discount Price:
               </p>
               <p className="mt-0 ml-3 text-lg">
-                <span className="text-websiteBlue font-semibold">AED95.00</span>{" "}
+                <span className="text-websiteBlue font-semibold">
+                  AED{data?.price}
+                </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
             </div>
@@ -90,7 +101,7 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
             <div className="flex items-center mt-1">
               <p className="w-[25%] text-gray-400 font-light">Size:</p>
               <p className="mt-0 ml-3 flex items-center">
-                {["S", "M", "L", "XL"].map((e, i) => {
+                {data?.size.map((e, i) => {
                   return (
                     <p
                       key={i}
@@ -110,7 +121,7 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
             <div className="flex items-center mt-3">
               <p className="w-[25%] text-gray-400 font-light">Fabric:</p>
               <p className="mt-0 ml-3 flex items-center">
-                {["Chiffon", "Cotton"].map((e, i) => {
+                {data?.febric.map((e, i) => {
                   return (
                     <p
                       key={i}
@@ -158,7 +169,7 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
                 >
                   +
                 </span>
-                <p className="ml-3">(100 available)</p>
+                <p className="ml-3">({data?.available} available)</p>
               </div>
             </div>
             <hr />
@@ -166,7 +177,7 @@ const Product = ({ modalIsOpen, setIsOpen }) => {
               <p className="w-[25%] text-gray-400 font-light">Total Price:</p>
               <p className="mt-0 ml-3 text-xl">
                 <span className="text-websiteBlue font-semibold">
-                  AED{95 * quantity}.00
+                  AED{data?.price * quantity}
                 </span>{" "}
               </p>
             </div>

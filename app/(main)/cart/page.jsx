@@ -114,9 +114,9 @@ const CartPage = () => {
                     name: "Phone",
                     value: "7692045606",
                   },
-                ].map((e) => {
+                ].map((e, i) => {
                   return (
-                    <p className="mt-0">
+                    <p className="mt-0" key={i}>
                       {e?.name} : <span className="font-bold">{e?.value}</span>
                     </p>
                   );
@@ -134,7 +134,7 @@ const CartPage = () => {
               </p>
               <hr />
               <div className="h-[10vw] overflow-y-auto">
-                {["A", "B"].map((e) => {
+                {["A", "B"].map((e, i) => {
                   return (
                     <div className="h-[6vw] flex items-center border-b" key={e}>
                       <Image
