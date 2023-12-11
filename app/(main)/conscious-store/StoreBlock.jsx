@@ -45,10 +45,10 @@ const StoreBlock = ({ data }) => {
           </p>
           <div className="w-full flex items-center pt-0.5 pl-1">
             {[...Array(data?.rating)]?.map((e, i) => {
-              return <AiFillStar className="text-websiteBlue" />;
+              return <AiFillStar className="text-websiteBlue" key={i} />;
             })}
             {[...Array(5 - data?.rating)]?.map((e, i) => {
-              return <AiFillStar color="#b3b3b3" />;
+              return <AiFillStar color="#b3b3b3" key={i} />;
             })}
           </div>
           <button
