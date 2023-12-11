@@ -145,7 +145,7 @@ const B2BState = (props) => {
 
   const getProducts = () => {
     axios
-      .post(`${BASE_URL}/product/get-all/${productSearch}`)
+      .post(`${BASE_URL}/product/get-all?search=${productSearch}`)
       .then((res) => {
         setProductData(res.data);
       })

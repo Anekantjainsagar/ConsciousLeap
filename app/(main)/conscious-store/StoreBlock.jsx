@@ -39,9 +39,9 @@ const StoreBlock = ({ data }) => {
           <h1 className="text-lg w-full font-normal pt-2 pl-3">{data?.name}</h1>
           <p className="text-websiteBlue w-full pl-1 font-bold py-1">
             <span className="text-gray-400 line-through">
-              AED{data?.discountPrice}
+              INR{data?.discountPrice}
             </span>{" "}
-            AED{data?.price}
+            INR{data?.price}
           </p>
           <div className="w-full flex items-center pt-0.5 pl-1">
             {[...Array(data?.rating)]?.map((e, i) => {

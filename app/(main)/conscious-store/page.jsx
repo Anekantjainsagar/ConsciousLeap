@@ -117,7 +117,7 @@ const Store = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-9/12 ml-[1vw]">
+        <div className="md:w-9/12 w-full ml-[1vw]">
           <h1 className="text-xl hover:text-newBlue transition-all cursor-pointer">
             Conscious Vendibles
           </h1>

@@ -81,7 +81,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               <p className="w-[25%] text-gray-400 font-light">Price:</p>
               <p className="mt-0 ml-3 text-lg">
                 <span className="line-through font-semibold">
-                  AED{data?.discountPrice}
+                  INR{data?.discountPrice}
                 </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
@@ -92,7 +92,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               </p>
               <p className="mt-0 ml-3 text-lg">
                 <span className="text-websiteBlue font-semibold">
-                  AED{data?.price}
+                  INR{data?.price}
                 </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
@@ -177,7 +177,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               <p className="w-[25%] text-gray-400 font-light">Total Price:</p>
               <p className="mt-0 ml-3 text-xl">
                 <span className="text-websiteBlue font-semibold">
-                  AED{data?.price * quantity}
+                  INR{data?.price * quantity}
                 </span>{" "}
               </p>
             </div>

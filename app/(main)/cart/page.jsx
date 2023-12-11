@@ -86,7 +86,7 @@ const CartPage = () => {
               </div>
               <div className="flex items-center justify-between mt-4 border-t">
                 <p>SubTotal</p>
-                <p className="text-lg text-black font-bold">AED95.000</p>
+                <p className="text-lg text-black font-bold">INR95.000</p>
               </div>
             </div>
           ) : showPage === 2 ? (
@@ -288,25 +288,25 @@ const CartPage = () => {
                           <IoIosClose color="#000" className="mx-1" />
                           <span className="text-black">2</span>
                         </p>
-                        <p className="mt-0">AED100,000.00</p>
+                        <p className="mt-0">INR100,000.00</p>
                       </div>
                     );
                   })}
                   <div className="font-bold flex text-black items-center border-y py-1 mt-3 justify-between">
                     <p className="mt-0">Subtotal</p>
-                    <p className="mt-0">AED100,000.00</p>
+                    <p className="mt-0">INR100,000.00</p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Tax</p>
-                    <p className="mt-0 font-light">AED100,000.00</p>
+                    <p className="mt-0 font-light">INR100,000.00</p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Total Shipping </p>
-                    <p className="mt-0 font-light">AED100,000.00</p>
+                    <p className="mt-0 font-light">INR100,000.00</p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Total </p>
-                    <p className="mt-0">AED100,000.00</p>
+                    <p className="mt-0">INR100,000.00</p>
                   </div>
                   <div className="flex items-center justify-between mt-3">
                     <input
@@ -368,8 +368,8 @@ const Block = () => {
         />
         <p className="mt-2 font-semibold">Tshirt - Black</p>
       </div>
-      <p className="text-center font-extrabold text-[17px]">AED10,000.00</p>
-      <p className="text-center font-extrabold text-[17px]">AED500.00</p>
+      <p className="text-center font-extrabold text-[17px]">INR10,000.00</p>
+      <p className="text-center font-extrabold text-[17px]">INR500.00</p>
       <div className="mt-0 ml-3 flex justify-center items-center">
         <span
           onClick={(e) => {
@@ -392,7 +392,7 @@ const Block = () => {
         </span>
       </div>
       <p className="text-center font-extrabold text-[17px] text-websiteBlue">
-        AED105,000.00
+        INR105,000.00
       </p>
       <div className="flex items-center justify-center">
         <CiTrash

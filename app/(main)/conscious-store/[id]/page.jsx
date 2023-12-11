@@ -92,7 +92,7 @@ const ProductPage = ({ params }) => {
               <p className="w-[25%] text-gray-400 font-light">Price:</p>
               <p className="mt-0 ml-3 text-3xl">
                 <span className="text-websiteBlue font-bold">
-                  AED{product?.price}
+                  INR{product?.price}
                 </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
@@ -174,7 +174,7 @@ const ProductPage = ({ params }) => {
               <p className="w-[25%] text-gray-400 font-light">Total Price:</p>
               <div className="mt-0 ml-3 text-3xl">
                 <span className="text-websiteBlue font-semibold">
-                  AED{product?.price * quantity}
+                  INR{product?.price * quantity}
                 </span>{" "}
               </div>
             </div>
@@ -288,7 +288,7 @@ const Block = ({ data }) => {
             return <AiFillStar color="#b3b3b3" />;
           })}
         </div>
-        <p className="text-websiteBlue mt-1 font-semibold">AED{data?.price}</p>
+        <p className="text-websiteBlue mt-1 font-semibold">INR{data?.price}</p>
       </div>
     </div>
   );

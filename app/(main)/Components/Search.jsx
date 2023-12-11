@@ -314,16 +314,16 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                       /> */}
                       <AiOutlineSearch
                         className="text-newBlue border border-newBlue rounded-full p-1"
-                        size={36}
+                        size={33}
                       />
                       <div className="ml-4">
                         <p className="text-[15px] font-medium text-newBlue">
                           {data?.name}
                         </p>
                         {data?.desc && (
-                          <p className="-mt-1 md:text-sm text-xs">
-                            {data?.desc?.slice(0, 40) +
-                              (data?.desc?.length > 40 ? "..." : "")}
+                          <p className="-mt-1 md:text-[12px] text-[6px]">
+                            {data?.desc?.slice(0, 60) +
+                              (data?.desc?.length > 60 ? "..." : "")}
                           </p>
                         )}
                       </div>
