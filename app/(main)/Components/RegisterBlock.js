@@ -3,7 +3,7 @@ import gsap, { Power2, ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useContext } from "react";
 import Line2 from "./Lines/Line2";
 import { useRouter } from "next/navigation";
-import Context from "@/Context/Context";
+import Context from "../../Context/Context";
 
 const RegisterBlock = () => {
   let registerTherapy = useRef();
@@ -64,7 +64,7 @@ const RegisterBlock = () => {
         <h1
           ref={registerTherapy}
           onClick={(e) => {
-            setJoinUsShow("VOLUNTEER")
+            setJoinUsShow("VOLUNTEER");
             history.push("/join-us");
           }}
           className="mb-3 mt-16 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
@@ -89,7 +89,7 @@ const RegisterBlock = () => {
         <h1
           ref={registerTherapy}
           onClick={(e) => {
-            setJoinUsShow("PARTNER")
+            setJoinUsShow("PARTNER");
             history.push("/join-us");
           }}
           className="mb-3 mt-16 text-3xl font-light mx-auto text-center w-fit gradientHover cursor-pointer"

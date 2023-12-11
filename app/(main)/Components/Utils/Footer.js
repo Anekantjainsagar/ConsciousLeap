@@ -19,7 +19,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import qr from "../../Assets/qr.png";
 import axios from "axios";
-import { BASE_URL } from "@/Utils/urls";
+import { BASE_URL } from "../../../Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
 
 const Footer = () => {

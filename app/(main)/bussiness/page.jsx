@@ -5,7 +5,7 @@ import ClientTestimonials from "../Components/ClientTestimonials";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
-import Context from "@/Context/Context";
+import Context from "../../Context/Context";
 import bgGlobe from "../Assets/bg-globe.png";
 import Image from "next/image";
 import logoCircle from "../Assets/bg-member.png";

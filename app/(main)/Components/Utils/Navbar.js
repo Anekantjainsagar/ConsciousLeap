@@ -12,7 +12,7 @@ import {
 import Search from "../Search";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
-import Context from "@/Context/Context";
+import Context from "../../../Context/Context";
 import user from "../../Assets/userLogo.png";
 
 let nav = [

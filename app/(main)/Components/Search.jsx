@@ -3,7 +3,7 @@ import React from "react";
 import Modal from "react-modal";
 import image from "../Assets/logoPng.png";
 import Image from "next/image";
-import Context from "@/Context/Context";
+import Context from "../../Context/Context";
 import { usePathname, useRouter } from "next/navigation";
 import { AiOutlineSearch } from "react-icons/ai";
 
