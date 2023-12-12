@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { CiDeliveryTruck, CiMap, CiTrash } from "react-icons/ci";
+import React, { useContext, useState, useEffect } from "react";
+import { CiDeliveryTruck, CiLight, CiMap, CiTrash } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlinePayment } from "react-icons/md";
 import { GiConfirmed } from "react-icons/gi";
@@ -9,11 +9,14 @@ import Image from "next/image";
 import { AiOutlinePlus } from "react-icons/ai";
 import { IoIosClose } from "react-icons/io";
 import cod from "../Assets/cod.png";
+import Context from "@/Context/Context";
 
 const CartPage = () => {
   const [showPage, setShowPage] = useState(1);
   const [deliveryType, setDeliveryType] = useState("Home Delivery");
   const [termsAndConditions, setTermsAndConditions] = useState(false);
+
+  const { cart } = useContext(Context);
 
   return (
     <div className="py-[4vw] px-[5vw]">
@@ -80,9 +83,9 @@ const CartPage = () => {
                 <p className="mt-0 text-center">Remove</p>
               </div>
               <div className="h-[30vh] overflow-y-auto">
-                <Block />
-                <Block />
-                <Block />
+                {cart?.cartData?.map((e, i) => {
+                  return <Block key={i} data={e} />;
+                })}
               </div>
               <div className="flex items-center justify-between mt-4 border-t">
                 <p>SubTotal</p>
@@ -352,8 +355,13 @@ const CartPage = () => {
   );
 };
 
-const Block = () => {
+const Block = ({ data }) => {
+  let { cart } = useContext(Context);
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    setQuantity(data?.quantity);
+  }, [data]);
 
   return (
     <div
@@ -366,15 +374,24 @@ const Block = () => {
           alt="Tshirt"
           className="w-[5vw] h-[5vw] object-cover object-center"
         />
-        <p className="mt-2 font-semibold">Tshirt - Black</p>
+        <p className="mt-2 font-semibold">{data?.name}</p>
       </div>
-      <p className="text-center font-extrabold text-[17px]">INR10,000.00</p>
-      <p className="text-center font-extrabold text-[17px]">INR500.00</p>
+      <p className="text-center font-extrabold text-[17px]">
+        INR{data?.price * quantity}
+      </p>
+      <p className="text-center font-extrabold text-[17px]">
+        INR{data?.price * quantity * (18 / 100)}
+      </p>
       <div className="mt-0 ml-3 flex justify-center items-center">
         <span
           onClick={(e) => {
             if (quantity > 1) {
               setQuantity(quantity - 1);
+              let item = cart?.cartData.find((obj) => obj._id === data?._id);
+              let index = cart?.cartData?.indexOf(item);
+              // if (index !== -1) {
+              //   cart?.cartData[index] = { ...cart?.cartData[index], quantity };
+              // }
             }
           }}
           className="px-3 cursor-pointer rounded-full bg-gray-100 text-2xl"
@@ -385,6 +402,13 @@ const Block = () => {
         <span
           onClick={(e) => {
             setQuantity(quantity + 1);
+            // const index = cart?.cartData?.findIndex(
+            //   (obj) => obj._id === data?._id
+            // );
+
+            // if (index !== -1) {
+            //   cart?.cartData[index] = { ...cart?.cartData[index], quantity };
+            // }
           }}
           className="px-3 cursor-pointer rounded-full bg-gray-100 text-2xl"
         >
@@ -392,7 +416,7 @@ const Block = () => {
         </span>
       </div>
       <p className="text-center font-extrabold text-[17px] text-websiteBlue">
-        INR105,000.00
+        INR{data?.price * quantity * (18 / 100) + data?.price * quantity}
       </p>
       <div className="flex items-center justify-center">
         <CiTrash

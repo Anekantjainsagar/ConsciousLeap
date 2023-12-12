@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import { IoCartOutline } from "react-icons/io5";
+import Context from "@/Context/Context";
+import { useRouter } from "next/navigation";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -21,9 +23,11 @@ const customStyles = {
 };
 
 const Product = ({ modalIsOpen, setIsOpen, data }) => {
+  const history = useRouter();
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("S");
   const [fabric, setFabric] = useState("Cotton");
+  const { cart } = useContext(Context);
 
   return (
     <div className="z-50 relative">
@@ -182,7 +186,22 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               </p>
             </div>
             <button
-              onClick={(e) => {}}
+              onClick={(e) => {
+                e.preventDefault();
+                console.log(data);
+                cart?.setCartData([
+                  ...cart?.cartData,
+                  {
+                    name: data?.name,
+                    _id: data?._id,
+                    price: data?.price,
+                    quantity: quantity,
+                    size,
+                    fabric,
+                  },
+                ]);
+                history.push("/cart");
+              }}
               className="bg-websiteBlue text-white w-full flex items-center justify-center mt-2 font-medium py-2 rounded-md hover:scale-105 transition-all"
             >
               <IoCartOutline size={26} className="mr-3" />

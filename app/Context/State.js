@@ -44,6 +44,7 @@ const B2BState = (props) => {
   const [showPopUpId, setShowPopUpId] = useState("");
   const [productData, setProductData] = useState([]);
   const [productSearch, setProductSearch] = useState("");
+  const [cartData, setCartData] = useState([]);
 
   const getTherapistsData = () => {
     axios
@@ -165,6 +166,8 @@ const B2BState = (props) => {
     setProductSearch,
   };
 
+  const cart = { cartData, setCartData };
+
   return (
     <Context.Provider
       value={{
@@ -192,6 +195,7 @@ const B2BState = (props) => {
         bussinessShow,
         setBussinessShow,
         productM,
+        cart
       }}
     >
       {props.children}
