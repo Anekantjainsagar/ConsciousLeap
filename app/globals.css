@@ -17,6 +17,12 @@
   opacity: 0;
 }
 
+.backgroundImage {
+  background-image: url("../app/\(main\)/Assets/top-background2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .swiper-button-prev {
   padding-left: 50px;
 }
@@ -216,9 +222,7 @@ input[type="number"] {
 .rain {
   position: absolute;
   left: 0;
-  width: 98%;
-  /* overflow-x: hidden; */
-  /* border: 1px solid black; */
+  width: 90vw;
   z-index: 2;
 }
 

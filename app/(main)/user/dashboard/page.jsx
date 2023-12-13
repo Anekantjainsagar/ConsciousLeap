@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useContext, } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import therapistReview from "../../Assets/therapist-review.png";
 import scheduleAppointment from "../../Assets/schedule-a-session.png";
@@ -9,8 +9,6 @@ import rain from "../../Assets/modes/rain.png";
 import sunshine from "../../Assets/modes/sunshine.png";
 import lighteing from "../../Assets/modes/lighteing.png";
 import cloudy from "../../Assets/modes/cloudy.png";
-
-import bg from "../../Assets/top-background2.png";
 import logoPng from "../../Assets/logoPng.png";
 
 import "react-calendar/dist/Calendar.css";
@@ -36,17 +34,58 @@ const Dashboard = () => {
   const [showCloud, setShowCloud] = useState(false);
   let { login, isLogin } = useContext(Context);
 
+  useEffect(() => {
+    if (showLight) {
+      setTimeout(() => {
+        setShowLight(false);
+      }, 5000);
+    }
+  }, [showLight]);
+
+  useEffect(() => {
+    if (showSunshine) {
+      setTimeout(() => {
+        setShowSunshine(false);
+      }, 3000);
+    }
+  }, [showSunshine]);
+
   return (
     <div>
       <Rain showRain={showRain} setShowRain={setShowRain} />
       <Cloud showCloud={showCloud} setShowCloud={setShowCloud} />
+      <div
+        className={`${
+          showLight ? "block" : "hidden"
+        } absolute top-0 left-0 w-[95vw] h-[100vh] overflow-hidden`}
+      >
+        <Image
+          src={"/lightening.gif"}
+          width={100}
+          height={100}
+          alt="Light"
+          className="w-full h-full object-cover object-center z-50"
+        />
+      </div>
+      {showSunshine && (
+        <div
+          className={`absolute top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
+        >
+          <Image
+            src={"/sunshine.gif"}
+            width={100}
+            height={100}
+            alt="Light"
+            className="w-full h-full object-cover object-center z-50"
+          />
+        </div>
+      )}
       <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[2vw]">
         <LeftBar />
         <div className="md:w-6/12 px-[2vw]">
           {" "}
-          <div className="relative mb-4 md:mb-6">
-            <Image src={bg} alt="Background" />
-            <div className="flex px-[3vw] md:px-[2vw] justify-between items-center h-full absolute top-0 left-0">
+          <div className="mb-4 md:mb-6">
+            <div className="flex px-[3vw] w-full h-[15vh] md:h-[20vh] backgroundImage md:px-[2vw] justify-between items-center rounded-3xl top-0 left-0">
               <h1 className="text-base md:text-2xl text-white font-light">
                 Hi {login?.name}, Welcome to #oneness
               </h1>

@@ -13,6 +13,11 @@ import Context from "@/Context/Context";
 import { useRouter } from "next/navigation";
 import AddAddress from "./AddAddress";
 
+import stripe from "../Assets/stripe.png";
+import { loadStripe } from "@stripe/stripe-js";
+import { getCookie } from "cookies-next";
+import { BASE_URL } from "@/Utils/urls";
+
 const CartPage = () => {
   const history = useRouter();
   const [showPage, setShowPage] = useState(1);
@@ -20,6 +25,7 @@ const CartPage = () => {
   const [termsAndConditions, setTermsAndConditions] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const { cart, login } = useContext(Context);
+  const [paymentMode, setPaymentMode] = useState("Cash on Delivery");
 
   const [order, setOrder] = useState({
     address: "",
@@ -32,6 +38,39 @@ const CartPage = () => {
       address: login?.addresses[0],
     });
   }, [login]);
+
+  const makePayment = async () => {
+    const stripe = await loadStripe(
+      "pk_test_51NItdrSDHBoNQbmeRJEy5RqeID7wc1A3ZUjo8gbdzNQ5Z2nWmFAsWHflDwXOqMo7b5GV7ltetDfpeANKfkUMSDci00NU7wbkBU"
+    );
+
+    const body = {
+      cart: cart?.cartData,
+      order,
+      token: getCookie("token"),
+      mode: paymentMode,
+    };
+
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    const response = await fetch(`${BASE_URL}/user/order`, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+
+    const session = await response.json();
+
+    const result = stripe.redirectToCheckout({ sessionId: session.id });
+
+    if (result.error) {
+      console.log(result.error);
+    } else {
+      setShowPage(5);
+    }
+  };
 
   return (
     <div className="py-[4vw] px-[5vw]">
@@ -122,14 +161,14 @@ const CartPage = () => {
               {login?.addresses?.map((e, i) => {
                 return (
                   <div
-                    className={`flex flex-col items-center h-[20vh] py-8 md:mb-0 mb-3 justify-center border cursor-pointer rounded-md ${
+                    className={`flex flex-col items-center h-fit md:h-[20vh] py-3 md:py-8 md:mb-0 mb-3 justify-center border cursor-pointer rounded-md ${
                       order?.address?.address === e?.address
                         ? "border-websiteBlue"
                         : ""
                     }`}
                     key={i}
-                    onClick={(e) => {
-                      setOrder({ address: e });
+                    onClick={(event) => {
+                      setOrder({ ...order, address: e });
                     }}
                   >
                     {[
@@ -156,7 +195,7 @@ const CartPage = () => {
                       },
                     ].map((e, i) => {
                       return (
-                        <p className="mt-0" key={i}>
+                        <p className="mt-0 text-center" key={i}>
                           {e?.name} :{" "}
                           <span className="font-bold">{e?.value}</span>
                         </p>
@@ -238,7 +277,7 @@ const CartPage = () => {
                 </div>
               ) : null}
             </div>
-          ) : (
+          ) : showPage === 4 ? (
             <div className="flex md:flex-row flex-col-reverse px-[1vw] md:px-[5vw] mb-5 items-start justify-between">
               <div className="md:w-[65.5%]">
                 <p className="text-lg font-semibold cursor-pointer hover:text-websiteBlue transition-all">
@@ -256,30 +295,27 @@ const CartPage = () => {
                   Select a payment option
                 </p>
                 <div className="px-[4vw] py-5 grid gap-5 grid-cols-2 md:grid-cols-3">
-                  <div className="border p-3 w-fit">
-                    <Image src={cod} alt="Cod" />
-                    <p className="mt-1.5 font-bold text-center">
-                      Cash on Delivery
-                    </p>
-                  </div>
-                  <div className="border p-3 w-fit">
-                    <Image src={cod} alt="Cod" />
-                    <p className="mt-1.5 font-bold text-center">
-                      Cash on Delivery
-                    </p>
-                  </div>
-                  <div className="border p-3 w-fit">
-                    <Image src={cod} alt="Cod" />
-                    <p className="mt-1.5 font-bold text-center">
-                      Cash on Delivery
-                    </p>
-                  </div>
-                  <div className="border p-3 w-fit">
-                    <Image src={cod} alt="Cod" />
-                    <p className="mt-1.5 font-bold text-center">
-                      Cash on Delivery
-                    </p>
-                  </div>
+                  {[
+                    { image: cod, name: "Cash on Delivery" },
+                    { image: stripe, name: "Stripe" },
+                  ].map((e, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className={`border p-3 w-fit cursor-pointer ${
+                          paymentMode == e?.name ? "border-websiteBlue" : ""
+                        }`}
+                        onClick={(event) => {
+                          setPaymentMode(e?.name);
+                        }}
+                      >
+                        <Image src={e?.image} alt="Cod" />
+                        <p className="mt-1.5 font-bold text-center">
+                          {e?.name}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
                 <hr className="my-2" />
                 <div>
@@ -402,8 +438,10 @@ const CartPage = () => {
                 </div>
               </div>
             </div>
+          ) : (
+            <div></div>
           )}
-          <div className="flex md:flex-row flex-col items-center justify-between">
+          <div className="flex md:flex-row flex-col-reverse items-center justify-between">
             <button
               onClick={(e) => {
                 history.push("/conscious-store");
@@ -415,6 +453,9 @@ const CartPage = () => {
             <button
               onClick={(e) => {
                 setShowPage(showPage + 1);
+                if (showPage == 4 && paymentMode == "Stripe") {
+                  makePayment();
+                }
               }}
               className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
             >
