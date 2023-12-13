@@ -225,7 +225,6 @@ const CartPage = ({ params }) => {
               <hr />
               <div className="h-[50vw] md:h-[10vw] overflow-y-auto">
                 {cart?.cartData.map((e, i) => {
-                  console.log(e);
                   return (
                     <div
                       className="md:h-[6vw] flex items-center border-b"
@@ -495,9 +494,9 @@ const CartPage = ({ params }) => {
                       name: "Payment method",
                       value: orderStatus?.mode,
                     },
-                  ].map((e) => {
+                  ].map((e,i) => {
                     return (
-                      <div className="w-11/12 break-words mt-1 mx-auto px-2 py-1 border-b flex items-center justify-between">
+                      <div key={i} className="w-11/12 break-words mt-1 mx-auto px-2 py-1 border-b flex items-center justify-between">
                         <p className="font-extrabold mt-0 w-6/12">{e?.name}:</p>
                         <p className="mt-0 w-6/12">{e?.value}</p>
                       </div>
