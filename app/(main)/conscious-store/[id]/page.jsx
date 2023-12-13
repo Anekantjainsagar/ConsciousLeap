@@ -34,10 +34,10 @@ const ProductPage = ({ params }) => {
 
   return (
     product?._id && (
-      <div className="px-[6vw]">
-        <div className="flex items-start mb-[2vw] justify-between">
-          <div className="w-[49.5%] border flex items-start justify-between">
-            <div className="w-[15%] px-4">
+      <div className="px-[4vw] md:px-[6vw]">
+        <div className="flex md:flex-row flex-col items-start mb-[2vw] justify-between">
+          <div className="w-full md:mb-0 mb-5 md:w-[49.5%] border flex md:flex-row flex-col-reverse items-start justify-between">
+            <div className="md:w-[15%] py-3 md:py-0 px-3 md:px-4">
               <div className="w-full h-[10vh] cursor-pointer border border-websiteBlue">
                 <Image
                   src={product?.images[0]}
@@ -48,7 +48,7 @@ const ProductPage = ({ params }) => {
                 />
               </div>
             </div>
-            <div className="w-[85%]">
+            <div className="w-full md:w-[85%]">
               <Image
                 src={product?.images[0]}
                 alt="Tshirt"
@@ -58,11 +58,11 @@ const ProductPage = ({ params }) => {
               />
             </div>
           </div>
-          <div className="w-[49.5%] border px-5 py-3">
+          <div className="md:w-[49.5%] border px-5 py-3">
             <h1 className="text-xl font-bold hover:text-websiteBlue transition-all cursor-pointer">
               {product?.name}
             </h1>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center md:mt-0 mt-3 justify-between">
               <p className="w-[25%] text-gray-400 font-light">Share:</p>
               <div className="flex items-center">
                 <AiOutlineMail
@@ -178,43 +178,55 @@ const ProductPage = ({ params }) => {
                 </span>{" "}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+            <div className="grid grid-cols-2 gap-x-3 md:gap-x-6 gap-y-2 md:gap-y-3">
               <button
                 onClick={(e) => {
+                  context?.cart?.setCartData([
+                    ...context?.cart?.cartData,
+                    {
+                      name: product?.name,
+                      _id: product?._id,
+                      price: product?.price,
+                      quantity: quantity,
+                      images: product?.images,
+                      size,
+                      fabric,
+                    },
+                  ]);
                   history.push("/cart");
                 }}
-                className="w-full text-center py-2 rounded-sm bg-websiteBlue text-white font-semibold "
+                className="w-full text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
               >
                 Add to Cart
               </button>
-              <button className="w-full text-center py-2 rounded-sm bg-websiteBlue text-white font-semibold ">
+              <button className="w-full text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold ">
                 Buy it Now
               </button>
-              <button className="w-full flex items-center justify-center text-center py-2 rounded-sm bg-websiteBlue text-white font-semibold ">
+              <button className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold ">
                 <AiFillHeart className="mr-2" size={20} /> Add to Wishlist
               </button>
             </div>
           </div>
         </div>
         <hr className="my-10" />
-        <div className="flex items-start justify-between">
-          <div className="w-[24%]">
+        <div className="flex md:flex-row flex-col-reverse items-start justify-between">
+          <div className="w-full md:w-[24%] md:mt-0 mt-8">
             <h1 className="text-lg mb-1 font-semibold">Top Selling Products</h1>
             <hr className="my-0" />
-            <div className="h-[55vh] overflow-y-auto">
+            <div className="md:h-[55vh] overflow-y-auto">
               {context?.productM?.productData?.map((e, i) => {
                 return <Block data={e} key={i} />;
               })}
             </div>
           </div>
-          <div className="w-[74%]">
+          <div className="md:w-[74%]">
             <div className="w-full mb-[2vw]">
               <div className="flex text-lg font-semibold items-center">
                 <p
                   onClick={(e) => {
                     setShowDesc(!showDesc);
                   }}
-                  className={`w-fit px-3 mr-3 cursor-pointer text-center ${
+                  className={`mt-0 w-fit px-3 mr-3 text-center cursor-pointer ${
                     !showDesc ? "border-b-2 border-websiteBlue" : ""
                   }`}
                 >
@@ -232,19 +244,19 @@ const ProductPage = ({ params }) => {
                 </p>
               </div>
               {showDesc ? (
-                <div className="mt-2 text-xl text-center h-[5vh] pt-2">
+                <div className="mt-2 md:text-xl text-center md:h-[5vh] pt-2">
                   There have been no reviews for this product yet.
                 </div>
               ) : (
-                <div className="mt-2 text-xl text-center h-[5vh] pt-2">
-                  {/* There have been no reviews for this product yet. */}
+                <div className="mt-2 md:text-xl text-center md:h-[5vh] w-full pt-2">
+                  There have been no description for this product yet.
                 </div>
               )}
             </div>
             <div className="w-full">
               <h1 className="text-lg font-semibold">Related products</h1>
               <hr className="my-3" />
-              <div className="grid grid-cols-3 gap-x-5">
+              <div className="grid md:px-0 md:mt-0 mt-7 px-[5vw] md:grid-cols-3 gap-x-5">
                 {context?.productM?.productData?.slice(0, 3)?.map((e, i) => {
                   return <StoreBlock data={e} key={i} />;
                 })}

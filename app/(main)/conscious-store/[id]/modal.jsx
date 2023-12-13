@@ -40,7 +40,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="bg-white w-[90vw] md:h-fit h-[60vh] overflow-y-auto md:w-[50vw] p-5 rounded-lg shadow-md shadow-gray-500 flex md:flex-row flex-col items-start justify-between">
+        <div className="bg-white w-[90vw] md:h-fit h-[80vh] overflow-y-auto md:w-[50vw] p-5 rounded-lg shadow-md shadow-gray-500 flex md:flex-row flex-col items-start justify-between">
           <div className="flex flex-row md:flex-col items-start md:items-center justify-between w-full md:justify-start md:w-[10%]">
             <div className="border-2 border-websiteBlue h-[7vh] cursor-pointer mb-3 rounded-sm w-[7vh] md:w-full">
               <Image
@@ -59,7 +59,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               }}
             />
           </div>
-          <div className="md:w-[40%] px-4">
+          <div className="w-full md:w-[40%] px-4">
             <Image
               src={data?.images[0]}
               alt="IPhone"
@@ -188,7 +188,6 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                console.log(data);
                 cart?.setCartData([
                   ...cart?.cartData,
                   {
@@ -196,6 +195,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
                     _id: data?._id,
                     price: data?.price,
                     quantity: quantity,
+                    images: data?.images,
                     size,
                     fabric,
                   },
