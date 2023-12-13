@@ -10,7 +10,7 @@ import axios from "axios";
 
 const CartPage = ({ params }) => {
   let showPage = parseInt(params.id);
-  let orderId = parseInt(params.order_id);
+  let orderId = params.order_id;
   const [orderStatus, setOrderStatus] = useState();
   const { login } = useContext(Context);
 
