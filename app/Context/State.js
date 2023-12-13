@@ -46,6 +46,18 @@ const B2BState = (props) => {
   const [productSearch, setProductSearch] = useState("");
   const [cartData, setCartData] = useState([]);
 
+  const [deliveryType, setDeliveryType] = useState("Home Delivery");
+  const [termsAndConditions, setTermsAndConditions] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [paymentMode, setPaymentMode] = useState("Cash on Delivery");
+  const [orderStatus, setOrderStatus] = useState();
+
+  const [order, setOrder] = useState({
+    address: "",
+    localPickup: "",
+    additional: "",
+  });
+
   const getTherapistsData = () => {
     axios
       .get(
@@ -166,7 +178,22 @@ const B2BState = (props) => {
     setProductSearch,
   };
 
-  const cart = { cartData, setCartData };
+  const cart = {
+    cartData,
+    setCartData,
+    deliveryType,
+    setDeliveryType,
+    termsAndConditions,
+    setTermsAndConditions,
+    modalIsOpen,
+    setIsOpen,
+    paymentMode,
+    setPaymentMode,
+    order,
+    setOrder,
+    orderStatus,
+    setOrderStatus,
+  };
 
   return (
     <Context.Provider
@@ -195,7 +222,7 @@ const B2BState = (props) => {
         bussinessShow,
         setBussinessShow,
         productM,
-        cart
+        cart,
       }}
     >
       {props.children}

@@ -43,6 +43,14 @@ const Dashboard = () => {
   }, [showLight]);
 
   useEffect(() => {
+    if (showCloud) {
+      setTimeout(() => {
+        setShowCloud(false);
+      }, 5000);
+    }
+  }, [showCloud]);
+
+  useEffect(() => {
     if (showSunshine) {
       setTimeout(() => {
         setShowSunshine(false);
@@ -53,7 +61,6 @@ const Dashboard = () => {
   return (
     <div>
       <Rain showRain={showRain} setShowRain={setShowRain} />
-      <Cloud showCloud={showCloud} setShowCloud={setShowCloud} />
       <div
         className={`${
           showLight ? "block" : "hidden"
@@ -73,6 +80,19 @@ const Dashboard = () => {
         >
           <Image
             src={"/sunshine.gif"}
+            width={100}
+            height={100}
+            alt="Light"
+            className="w-full h-full object-cover object-center z-50"
+          />
+        </div>
+      )}
+      {showCloud && (
+        <div
+          className={`absolute top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
+        >
+          <Image
+            src={"/cloud.gif"}
             width={100}
             height={100}
             alt="Light"

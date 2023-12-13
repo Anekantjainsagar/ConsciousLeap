@@ -193,7 +193,7 @@ const ProductPage = ({ params }) => {
                       fabric,
                     },
                   ]);
-                  history.push("/cart");
+                  history.push("/cart/1");
                 }}
                 className="w-full text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
               >

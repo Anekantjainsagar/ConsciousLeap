@@ -267,7 +267,7 @@ const Navbar = () => {
                   setShowHover({ ...showHover, cart: false });
                 }}
                 onClick={(e) => {
-                  history.push("/cart");
+                  history.push("/cart/1");
                 }}
                 className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
                 size={35}
@@ -347,7 +347,7 @@ const Navbar = () => {
             />
             <AiOutlineShoppingCart
               onClick={(e) => {
-                history.push("/cart");
+                history.push("/cart/1");
               }}
               className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}

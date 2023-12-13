@@ -200,7 +200,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
                     fabric,
                   },
                 ]);
-                history.push("/cart");
+                history.push("/cart/1");
               }}
               className="bg-websiteBlue text-white w-full flex items-center justify-center mt-2 font-medium py-2 rounded-md hover:scale-105 transition-all"
             >
