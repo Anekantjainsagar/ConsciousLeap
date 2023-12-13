@@ -18,7 +18,7 @@ const CartPage = ({ params }) => {
     axios
       .post(`${BASE_URL}/user/get_order`, { id: orderId })
       .then((response) => {
-        setOrderStatus(res.data);
+        setOrderStatus(response.data);
       });
   }, []);
 
@@ -87,7 +87,7 @@ const CartPage = ({ params }) => {
                 {[
                   {
                     name: "Order date",
-                    value: new Date(orderStatus?.date).toString(),
+                    value: new Date(orderStatus?.date).toString()?.slice(4, 24),
                   },
                   { name: "Order status", value: "Pending" },
                   { name: "Name", value: login?.name },
@@ -140,7 +140,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
             <h1 className="text-2xl pt-20 pb-5 font-extrabold hover:text-websiteBlue transition-all cursor-pointer">
-              Order Code: {orderStatus?._id}
+              Order Code: {orderStatus?._id?.toUpperCase()}
             </h1>
             <div className="w-8/12">
               <h1 className="text-lg font-bold mb-2">Order Details</h1>
