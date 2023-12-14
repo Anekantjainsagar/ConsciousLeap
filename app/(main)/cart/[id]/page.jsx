@@ -479,7 +479,7 @@ const CartPage = ({ params }) => {
               }}
               className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
             >
-              Return to Shop
+              Return to Conscious Store
             </button>
             <button
               onClick={(e) => {
@@ -503,7 +503,7 @@ const CartPage = ({ params }) => {
                 ? "Continue to Delivery Info"
                 : showPage === 3
                 ? "Continue to Payment"
-                : "Complete Order"}
+                : "Place Order"}
             </button>
           </div>
         </div>

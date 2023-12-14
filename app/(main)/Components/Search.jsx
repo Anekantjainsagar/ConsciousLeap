@@ -252,6 +252,8 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
     },
   ];
 
+  console.log(context?.productM?.productData);
+
   return (
     <div className="z-50 relative">
       <Modal
@@ -277,7 +279,7 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
               </div>
             </div>
             <div className="w-full h-[40vh] overflow-y-scroll">
-              {nav
+              {[...nav, ...context?.productM?.productData]
                 .filter((e) => {
                   return e?.name?.toLowerCase().includes(search?.toLowerCase());
                 })
@@ -288,30 +290,29 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                       className="py-1 cursor-pointer mb-2 flex items-center"
                       onClick={(e) => {
                         setIsOpen(false);
-                        const element = document.getElementById(
-                          data?.name?.replaceAll(" ", "")?.toLowerCase()
-                        );
-                        context.setBussinessShow(
-                          data?.name?.replaceAll(" ", "")?.toLowerCase()
-                        );
-                        if (data?.route) {
-                          if (pathname != data?.route) {
-                            history.push(data.route);
+                        if (data?.price) {
+                          history.push(`/conscious-store/${data?._id}`);
+                        } else {
+                          const element = document.getElementById(
+                            data?.name?.replaceAll(" ", "")?.toLowerCase()
+                          );
+                          context.setBussinessShow(
+                            data?.name?.replaceAll(" ", "")?.toLowerCase()
+                          );
+                          if (data?.route) {
+                            if (pathname != data?.route) {
+                              history.push(data.route);
+                            }
                           }
-                        }
-                        if (element) {
-                          element.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center",
-                          });
+                          if (element) {
+                            element.scrollIntoView({
+                              behavior: "smooth",
+                              block: "center",
+                            });
+                          }
                         }
                       }}
                     >
-                      {/* <Image
-                        src={image}
-                        alt="Image"
-                        className="w-[14vw] md:w-[4vw]"
-                      /> */}
                       <AiOutlineSearch
                         className="text-newBlue border border-newBlue rounded-full p-1"
                         size={33}
@@ -324,6 +325,11 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
                           <p className="-mt-1 md:text-[12px] text-[6px]">
                             {data?.desc?.slice(0, 60) +
                               (data?.desc?.length > 60 ? "..." : "")}
+                          </p>
+                        )}
+                        {data?.price && (
+                          <p className="-mt-0.5 md:text-[12px] text-[6px]">
+                            INR {data?.price}
                           </p>
                         )}
                       </div>
