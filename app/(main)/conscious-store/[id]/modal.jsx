@@ -68,7 +68,7 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               className="rounded-sm w-full"
             />
           </div>
-          <div className="w-full md:w-[50%] md:ml-3">
+          <div className="w-full md:w-[50%] md:mt-3 md:ml-3">
             <h1 className="text-lg cursor-pointer flex justify-between items-center hover:text-websiteBlue transition-all">
               <span className="md:w-11/12 md:text-base text-2xl">
                 {data?.name}
@@ -102,54 +102,60 @@ const Product = ({ modalIsOpen, setIsOpen, data }) => {
               </p>
             </div>
             <hr />
-            <div className="flex items-center mt-1">
-              <p className="w-[25%] text-gray-400 font-light">Size:</p>
-              <p className="mt-0 ml-3 flex items-center">
-                {data?.size.map((e, i) => {
-                  return (
-                    <p
-                      key={i}
-                      className={`mt-0 border ${
-                        size == e ? "border-websiteBlue" : ""
-                      } px-3 py-1 mr-2 cursor-pointer`}
-                      onClick={(event) => {
-                        setSize(e);
-                      }}
-                    >
-                      {e}
-                    </p>
-                  );
-                })}
-              </p>
-            </div>
-            <div className="flex items-center mt-3">
-              <p className="w-[25%] text-gray-400 font-light">Fabric:</p>
-              <p className="mt-0 ml-3 flex items-center">
-                {data?.febric.map((e, i) => {
-                  return (
-                    <p
-                      key={i}
-                      className={`mt-0 border px-3 py-1 mr-2 cursor-pointer ${
-                        e == fabric ? "border-websiteBlue" : ""
-                      }`}
-                      onClick={(event) => {
-                        setFabric(e);
-                      }}
-                    >
-                      {e}
-                    </p>
-                  );
-                })}
-              </p>
-            </div>
-            <div className="flex items-center mt-3">
-              <p className="w-[25%] text-gray-400 font-light">Color:</p>
-              <div className="mt-0 ml-3 flex items-center">
-                <div className="border border-black p-[4px] rounded-md">
-                  <div className="bg-black p-4 rounded-md"></div>
+            {data?.size?.length > 0 && (
+              <div className="flex items-center mt-1">
+                <p className="w-[25%] text-gray-400 font-light">Size:</p>
+                <p className="mt-0 ml-3 flex items-center">
+                  {data?.size.map((e, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={`mt-0 border ${
+                          size == e ? "border-websiteBlue" : ""
+                        } px-3 py-1 mr-2 cursor-pointer`}
+                        onClick={(event) => {
+                          setSize(e);
+                        }}
+                      >
+                        {e}
+                      </p>
+                    );
+                  })}
+                </p>
+              </div>
+            )}
+            {data?.size?.length > 0 && (
+              <div className="flex items-center mt-3">
+                <p className="w-[25%] text-gray-400 font-light">Fabric:</p>
+                <p className="mt-0 ml-3 flex items-center">
+                  {data?.febric.map((e, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={`mt-0 border px-3 py-1 mr-2 cursor-pointer ${
+                          e == fabric ? "border-websiteBlue" : ""
+                        }`}
+                        onClick={(event) => {
+                          setFabric(e);
+                        }}
+                      >
+                        {e}
+                      </p>
+                    );
+                  })}
+                </p>
+              </div>
+            )}
+            {data?.colors?.length > 0 && (
+              <div className="flex items-center mt-3">
+                <p className="w-[25%] text-gray-400 font-light">Color:</p>
+                <div className="mt-0 ml-3 flex items-center">
+                  <div className="border border-black p-[4px] rounded-md">
+                    <div className="bg-black p-4 rounded-md"></div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <hr />
             <div className="flex items-center mt-3">
               <p className="w-[25%] text-gray-400 font-light">Quantity:</p>

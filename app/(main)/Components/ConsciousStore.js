@@ -11,8 +11,10 @@ import img5 from "../Assets/store/5 (3).png";
 import img6 from "../Assets/store/8 (3).png";
 import img8 from "../Assets/store/8.jpg";
 import img7 from "../Assets/store/9.jpg";
+import { useRouter } from "next/navigation";
 
 const ConsciousStore = () => {
+  const history = useRouter()
   let storeHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +23,9 @@ const ConsciousStore = () => {
       <h1
         ref={storeHeading}
         id="collaborationsandinitiatives"
+        onClick={() => {
+          history.push("/conscious-store");
+        }}
         className="mb-2 text-3xl text-center font-light gradientHover cursor-pointer"
       >
         Conscious Store
@@ -50,8 +55,15 @@ const ConsciousStore = () => {
 };
 
 const Block = ({ data }) => {
+  const history = useRouter();
+
   return (
-    <div className="rounded-md w-full h-[16vh] min-[1040px]:h-[35vh] min-[1020px]:h-[12vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+    <div
+      onClick={() => {
+        history.push("/conscious-store");
+      }}
+      className="rounded-md w-full h-[16vh] min-[1040px]:h-[35vh] min-[1020px]:h-[12vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+    >
       <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
         <Image
           src={data?.image}

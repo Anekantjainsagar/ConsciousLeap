@@ -97,54 +97,60 @@ const ProductPage = ({ params }) => {
                 <span className="text-base">/Pc</span>
               </p>
             </div>
-            <div className="flex items-center mb-5 justify-start">
-              <p className="w-[25%] text-gray-400 font-light">Size:</p>
-              <div className="mt-0 ml-3 flex items-center">
-                {product?.size.map((e, i) => {
-                  return (
-                    <p
-                      key={i}
-                      className={`mt-0 border ${
-                        size == e ? "border-websiteBlue" : ""
-                      } px-3 py-1 mr-2 cursor-pointer`}
-                      onClick={(event) => {
-                        setSize(e);
-                      }}
-                    >
-                      {e}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex items-center mb-5 justify-start">
-              <p className="w-[25%] text-gray-400 font-light">Fabric:</p>
-              <div className="mt-0 ml-3 flex items-center">
-                {product?.febric.map((e, i) => {
-                  return (
-                    <p
-                      key={i}
-                      className={`mt-0 border px-3 py-1 mr-2 cursor-pointer ${
-                        e == fabric ? "border-websiteBlue" : ""
-                      }`}
-                      onClick={(event) => {
-                        setFabric(e);
-                      }}
-                    >
-                      {e}
-                    </p>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="flex items-center mb-5 justify-start">
-              <p className="w-[25%] text-gray-400 font-light">Color:</p>
-              <div className="mt-0 ml-3 flex items-center">
-                <div className="border border-black p-[4px] rounded-md">
-                  <div className="bg-black p-4 rounded-md"></div>
+            {product?.size?.length > 0 && (
+              <div className="flex items-center mb-5 justify-start">
+                <p className="w-[25%] text-gray-400 font-light">Size:</p>
+                <div className="mt-0 ml-3 flex items-center">
+                  {product?.size.map((e, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={`mt-0 border ${
+                          size == e ? "border-websiteBlue" : ""
+                        } px-3 py-1 mr-2 cursor-pointer`}
+                        onClick={(event) => {
+                          setSize(e);
+                        }}
+                      >
+                        {e}
+                      </p>
+                    );
+                  })}
                 </div>
               </div>
-            </div>
+            )}
+            {product?.febric?.length > 0 && (
+              <div className="flex items-center mb-5 justify-start">
+                <p className="w-[25%] text-gray-400 font-light">Fabric:</p>
+                <div className="mt-0 ml-3 flex items-center">
+                  {product?.febric.map((e, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={`mt-0 border px-3 py-1 mr-2 cursor-pointer ${
+                          e == fabric ? "border-websiteBlue" : ""
+                        }`}
+                        onClick={(event) => {
+                          setFabric(e);
+                        }}
+                      >
+                        {e}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            {product?.colors?.length > 0 && (
+              <div className="flex items-center mb-5 justify-start">
+                <p className="w-[25%] text-gray-400 font-light">Color:</p>
+                <div className="mt-0 ml-3 flex items-center">
+                  <div className="border border-black p-[4px] rounded-md">
+                    <div className="bg-black p-4 rounded-md"></div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="flex items-center mb-5 justify-start">
               <p className="w-[25%] text-gray-400 font-light">Quantity:</p>
               <div className="mt-0 ml-3 flex items-center">
@@ -280,16 +286,16 @@ const Block = ({ data }) => {
       onClick={(e) => {
         history.push(`/conscious-store/${data?._id}`);
       }}
-      className="flex items-center my-3 justify-start cursor-pointer transition-all hover:shadow-md shadow-gray-500"
+      className="flex items-center my-3 justify-start cursor-pointer rounded-md transition-all hover:shadow-md shadow-gray-500"
     >
       <Image
         src={data?.images[0]}
         width={100}
         height={100}
         alt="Tshirt"
-        className="w-4/12"
+        className="w-4/12 rounded-md"
       />
-      <div>
+      <div className="ml-2">
         <p className="font-bold">{data?.name}</p>
         <div className="w-full flex items-center pt-0.5 pl-1">
           {" "}

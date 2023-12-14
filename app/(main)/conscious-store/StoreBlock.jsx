@@ -66,7 +66,7 @@ const StoreBlock = ({ data }) => {
                   e.stopPropagation();
                   setIsOpen(!modalIsOpen);
                 }}
-                className="bg-websiteBlue text-white w-full flex items-center justify-center mt-2 font-medium py-2 rounded-md hover:scale-105 transition-all"
+                className="bg-websiteBlue text-white w-full flex items-center justify-center mt-2 font-medium py-2 rounded-md"
               >
                 <IoCartOutline size={26} className="mr-3" />
                 Add to Cart

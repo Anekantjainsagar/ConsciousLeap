@@ -54,7 +54,7 @@ const Dashboard = () => {
     if (showSunshine) {
       setTimeout(() => {
         setShowSunshine(false);
-      }, 3000);
+      }, 5000);
     }
   }, [showSunshine]);
 

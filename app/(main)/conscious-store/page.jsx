@@ -164,6 +164,12 @@ const Store = () => {
                 <option className="py-1" value="Price High to Low">
                   Price High to Low
                 </option>
+                <option className="py-1" value="Ascending">
+                  Ascending
+                </option>
+                <option className="py-1" value="Descending">
+                  Descending
+                </option>
               </select>
             </div>
             <div className="hidden md:flex items-center ml-5">
@@ -193,9 +199,68 @@ const Store = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-3">
-            {context?.productM?.productData?.map((e, i) => {
-              return <StoreBlock key={i} data={e} />;
-            })}
+            {context?.productM?.productData
+              ?.sort((a, b) => {
+                if (sortStore === "Price High to Low") {
+                  let fa = a.price,
+                    fb = b.price;
+
+                  if (fa < fb) {
+                    return 1;
+                  }
+                  if (fa > fb) {
+                    return -1;
+                  }
+                  return 0;
+                } else if (sortStore == "Price Low to High") {
+                  let fa = a.price,
+                    fb = b.price;
+
+                  if (fa < fb) {
+                    return -1;
+                  }
+                  if (fa > fb) {
+                    return 1;
+                  }
+                  return 0;
+                } else if (sortStore === "Descending") {
+                  let fa = a.name.toLowerCase(),
+                    fb = b.name.toLowerCase();
+
+                  if (fa < fb) {
+                    return 1;
+                  }
+                  if (fa > fb) {
+                    return -1;
+                  }
+                  return 0;
+                } else if (sortStore == "Ascending") {
+                  let fa = a.name.toLowerCase(),
+                    fb = b.name.toLowerCase();
+
+                  if (fa < fb) {
+                    return -1;
+                  }
+                  if (fa > fb) {
+                    return 1;
+                  }
+                  return 0;
+                } else if (sortStore === "Oldest") {
+                  let fa = new Date(a.date),
+                    fb = new Date(b.date);
+
+                  return fb - fa;
+                } else if (sortStore === "Newest") {
+                  let fa = new Date(a.date),
+                    fb = new Date(b.date);
+
+                  return fa - fb;
+                }
+                return 0;
+              })
+              ?.map((e, i) => {
+                return <StoreBlock key={i} data={e} />;
+              })}
           </div>
         </div>
       </div>

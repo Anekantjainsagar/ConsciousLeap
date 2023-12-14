@@ -75,6 +75,28 @@ const CartPage = ({ params }) => {
     }
   };
 
+  const makeCodPayment = async () => {
+    const body = {
+      cart: cart?.cartData,
+      order,
+      token: getCookie("token"),
+      mode: paymentMode,
+    };
+
+    const headers = {
+      "Content-Type": "application/json",
+    };
+
+    const response = await fetch(`${BASE_URL}/user/order`, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+
+    const session = await response.json();
+    history.push(`/cart/5/${session?.orderItem?._id}`);
+  };
+
   return (
     <div className="py-[4vw] px-[5vw]">
       <AddAddress setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
@@ -146,16 +168,18 @@ const CartPage = ({ params }) => {
                 })}
               </div>
               <div className="flex items-center justify-between mt-4 border-t">
-                <p>SubTotal</p>
+                <p>Order total</p>
                 <p className="text-lg text-black font-bold">
-                  INR
-                  {cart?.cartData?.reduce(
-                    (acc, item) =>
-                      acc +
-                      (item?.price * item?.quantity +
-                        item?.price * item?.quantity * (18 / 100)),
-                    0
-                  )}
+                  INR{" "}
+                  {cart?.cartData
+                    ?.reduce(
+                      (acc, item) =>
+                        acc +
+                        (item?.price * item?.quantity +
+                          item?.price * item?.quantity * (18 / 100)),
+                      0
+                    )
+                    .toFixed(2)}
                 </p>
               </div>
             </div>
@@ -283,7 +307,7 @@ const CartPage = ({ params }) => {
             <div className="flex md:flex-row flex-col-reverse px-[1vw] md:px-[5vw] mb-5 items-start justify-between">
               <div className="md:w-[65.5%]">
                 <p className="text-lg font-semibold cursor-pointer hover:text-websiteBlue transition-all">
-                  Any additional info?
+                  Any additional information?
                 </p>
                 <hr className="my-2" />
                 <textarea
@@ -296,7 +320,7 @@ const CartPage = ({ params }) => {
                 <p className="text-lg font-semibold cursor-pointer hover:text-websiteBlue transition-all">
                   Select a payment option
                 </p>
-                <div className="px-[4vw] py-5 grid gap-5 grid-cols-2 md:grid-cols-3">
+                <div className="px-2 py-5 grid gap-5 grid-cols-2 md:grid-cols-3">
                   {[
                     { image: cod, name: "Cash on Delivery" },
                     { image: stripe, name: "Stripe" },
@@ -391,40 +415,46 @@ const CartPage = ({ params }) => {
                   <div className="font-bold flex text-black items-center border-y py-1 mt-3 justify-between">
                     <p className="mt-0">Subtotal</p>
                     <p className="mt-0">
-                      INR
-                      {cart?.cartData?.reduce(
-                        (acc, item) => acc + item?.price * item?.quantity,
-                        0
-                      )}
+                      INR{" "}
+                      {cart?.cartData
+                        ?.reduce(
+                          (acc, item) => acc + item?.price * item?.quantity,
+                          0
+                        )
+                        .toFixed(2)}
                     </p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Tax</p>
                     <p className="mt-0 font-light">
-                      INR
-                      {cart?.cartData?.reduce(
-                        (acc, item) => acc + item?.price * item?.quantity,
-                        0
-                      ) * 0.18}
+                      INR{" "}
+                      {(
+                        cart?.cartData?.reduce(
+                          (acc, item) => acc + item?.price * item?.quantity,
+                          0
+                        ) * 0.18
+                      ).toFixed(2)}
                     </p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Total Shipping </p>
-                    <p className="mt-0 font-light">INR0</p>
+                    <p className="mt-0 font-light">INR 0</p>
                   </div>
                   <div className="font-bold flex text-black items-center border-b py-1 mt-1 justify-between">
                     <p className="mt-0">Total </p>
                     <p className="mt-0">
                       INR{" "}
-                      {cart?.cartData?.reduce(
-                        (acc, item) => acc + item?.price * item?.quantity,
-                        0
-                      ) *
-                        0.18 +
+                      {(
                         cart?.cartData?.reduce(
                           (acc, item) => acc + item?.price * item?.quantity,
                           0
-                        )}
+                        ) *
+                          0.18 +
+                        cart?.cartData?.reduce(
+                          (acc, item) => acc + item?.price * item?.quantity,
+                          0
+                        )
+                      ).toFixed(2)}
                     </p>
                   </div>
                   <div className="flex items-center justify-between mt-3">
@@ -441,37 +471,41 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : null}
-          {
-            <div className="flex md:flex-row flex-col-reverse items-center justify-between">
-              <button
-                onClick={(e) => {
-                  history.push("/conscious-store");
-                }}
-                className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
-              >
-                Return to Shop
-              </button>
-              <button
-                onClick={(e) => {
-                  if (showPage == 4 && paymentMode == "Stripe") {
-                    makePayment();
-                    history.push(`/cart/${showPage + 1}/${orderStatus?._id}`);
-                  } else {
-                    history.push(`/cart/${showPage + 1}`);
-                  }
-                }}
-                className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
-              >
-                {showPage === 1
-                  ? "Continue to Shopping"
-                  : showPage == 2
-                  ? "Continue to Delivery Info"
-                  : showPage === 3
-                  ? "Continue to Payment"
-                  : "Complete Order"}
-              </button>
-            </div>
-          }
+
+          <div className="flex md:flex-row flex-col-reverse items-center justify-between">
+            <button
+              onClick={(e) => {
+                history.push("/conscious-store");
+              }}
+              className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
+            >
+              Return to Shop
+            </button>
+            <button
+              onClick={(e) => {
+                if (showPage == 4 && paymentMode == "Stripe") {
+                  makePayment();
+                  history.push(`/cart/${showPage + 1}/${orderStatus?._id}`);
+                } else if (
+                  showPage === 4 &&
+                  paymentMode == "Cash on Delivery"
+                ) {
+                  makeCodPayment();
+                } else {
+                  history.push(`/cart/${showPage + 1}`);
+                }
+              }}
+              className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"
+            >
+              {showPage === 1
+                ? "Continue Shopping"
+                : showPage == 2
+                ? "Continue to Delivery Info"
+                : showPage === 3
+                ? "Continue to Payment"
+                : "Complete Order"}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -514,11 +548,11 @@ const Block = ({ data }) => {
         </div>
         <p className="text-center px-[4vw] font-extrabold flex items-center justify-between text-[17px]">
           <span className="text-sm">Price:</span>
-          <span>INR{data?.price * quantity}</span>
+          <span>INR {(data?.price * quantity).toFixed(2)}</span>
         </p>
         <p className="text-center px-[4vw] font-extrabold flex items-center justify-between text-[17px]">
           <span className="text-sm">Tax:</span>
-          <span>INR{data?.price * quantity * (18 / 100)}</span>
+          <span>INR {(data?.price * quantity * (18 / 100)).toFixed(2)}</span>
         </p>
         <div className="flex items-center justify-between px-[4vw] mt-2">
           <span className="text-sm font-extrabold">Quantity:</span>
@@ -549,7 +583,7 @@ const Block = ({ data }) => {
         <p className="text-center flex items-center justify-between px-[4vw] mt-2 font-extrabold text-[17px] text-websiteBlue">
           <span className="text-sm">Total price:</span>
           <span>
-            INR{data?.price * quantity * (18 / 100) + data?.price * quantity}
+            INR {data?.price * quantity * (18 / 100) + data?.price * quantity}
           </span>
         </p>
         <div className="flex items-center justify-between pb-[3vw] px-[4vw] mt-3">
@@ -566,17 +600,19 @@ const Block = ({ data }) => {
       >
         <div className="flex items-center justify-center">
           <Image
-            src={tshirt}
+            src={data?.images[0]}
+            width={100}
+            height={100}
             alt="Tshirt"
-            className="w-[5vw] h-[5vw] object-cover object-center"
+            className="w-[5vw] h-[5vw] rounded-sm object-cover object-center"
           />
-          <p className="mt-2 font-semibold">{data?.name}</p>
+          <p className="mt-2 ml-2 font-semibold">{data?.name}</p>
         </div>
         <p className="text-center font-extrabold text-[17px]">
-          INR{data?.price * quantity}
+          INR {data?.price * quantity}
         </p>
         <p className="text-center font-extrabold text-[17px]">
-          INR{data?.price * quantity * (18 / 100)}
+          INR {data?.price * quantity * (18 / 100)}
         </p>
         <div className="mt-0 ml-3 flex justify-center items-center">
           <span
@@ -602,7 +638,11 @@ const Block = ({ data }) => {
           </span>
         </div>
         <p className="text-center font-extrabold text-[17px] text-websiteBlue">
-          INR{data?.price * quantity * (18 / 100) + data?.price * quantity}
+          INR{" "}
+          {(
+            data?.price * quantity * (18 / 100) +
+            data?.price * quantity
+          ).toFixed(2)}
         </p>
         <div className="flex items-center justify-center">
           <CiTrash
