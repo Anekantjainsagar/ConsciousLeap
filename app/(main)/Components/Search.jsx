@@ -262,7 +262,7 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="rounded-3xl w-[90vw] min-[1020px]:w-[50vw] min-[1040px]:w-[40vw] h-[80vw] min-[1020px]:h-[40vw] min-[1040px]:h-[25vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+        <div className="rounded-3xl w-[90vw] min-[900px]:w-[50vw] min-[1040px]:w-[40vw] h-[80vw] min-[900px]:h-[40vw] min-[1040px]:h-[25vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
           <div className="p-[3vw] md:p-[1vw] h-full w-full rounded-3xl bg-white flex flex-col items-center justify-between">
             <div className="rounded-full w-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
               <div className="flex flex-col h-full w-full rounded-full items-center justify-center bg-white">

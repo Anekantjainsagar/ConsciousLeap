@@ -252,7 +252,7 @@ const ExpertiseArea = () => {
     <div>
       <Image src={image} alt="Area expertise" className="md:w-8/12 mx-auto" />
       <div>
-        <div className="grid grid-cols-1 min-[1020px]:grid-cols-4 min-[1040px]:grid-cols-6 gap-y-4 py-[6vw]">
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-4 min-[1040px]:grid-cols-6 gap-y-4 py-[6vw]">
           {expertiseData.map((e, i) => {
             return (
               <RoundBlock

@@ -106,7 +106,7 @@ const UserLogin = () => {
   return (
     <div className="py-10">
       <Toaster />
-      <div className="rounded-xl min-[1020px]:w-[40vw] w-[90vw] min-[1040px]:w-[30vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-xl min-[900px]:w-[40vw] w-[90vw] min-[1040px]:w-[30vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="flex flex-col py-[3vw] px-[4vw] md:px-[1.5vw] md:py-[1.5vw] h-full w-full rounded-xl items-center justify-center bg-white">
           <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
             Login

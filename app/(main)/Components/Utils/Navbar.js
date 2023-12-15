@@ -202,7 +202,7 @@ const Navbar = () => {
                           setShowHover({ ...showHover, user: false });
                         }}
                         alt="User"
-                        className="min-[1020px]:w-[2.8vw] min-[1040px]:w-[2vw] cursor-pointer"
+                        className="min-[900px]:w-[2.8vw] min-[1040px]:w-[2vw] cursor-pointer"
                         onClick={(e) => {
                           history.push("/user/dashboard");
                         }}
@@ -394,7 +394,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
       }}
     >
       <div
-        className="blueHover cursor-pointer min-[1400px]:text-lg min-[1200px]:text-base max-[1050px]:text-[11px] text-sm flex z-40 items-center md:mb-0 mb-1.5"
+        className="blueHover cursor-pointer min-[1400px]:text-lg min-[1200px]:text-base max-[1050px]:text-[9px] text-sm flex z-40 items-center md:mb-0 mb-1.5"
         onMouseEnter={handleMouseEnter}
         onMouseOut={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

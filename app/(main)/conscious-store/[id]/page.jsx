@@ -38,7 +38,7 @@ const ProductPage = ({ params }) => {
         <div className="flex md:flex-row flex-col items-start md:pt-2 mb-[2vw] justify-between">
           <div className="w-full md:mb-0 mb-5 md:w-[49.5%] border flex md:flex-row flex-col-reverse items-start justify-between">
             <div className="md:w-[15%] py-3 md:py-0 px-3 md:px-4">
-              <div className="w-full min-[1020px]:h-[3vh] min-[1040px]:h-[10vh] cursor-pointer border border-websiteBlue">
+              <div className="w-full min-[900px]:h-[3vh] min-[1040px]:h-[10vh] cursor-pointer border border-websiteBlue">
                 <Image
                   src={product?.images[0]}
                   alt="Tshirt"

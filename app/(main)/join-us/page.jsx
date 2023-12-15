@@ -71,7 +71,7 @@ const JoinConsciousleap = () => {
         of advantages to foster a collaborative and innovative environment where
         growth, creativity, and success thrive.
       </p>
-      <div className="grid grid-cols-1 min-[1020px]:grid-cols-3 min-[1040px]:grid-cols-6 mt-7 px-[5vw] md:px-[2vw] gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-9">
+      <div className="grid grid-cols-1 min-[900px]:grid-cols-3 min-[1040px]:grid-cols-6 mt-7 px-[5vw] md:px-[2vw] gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-9">
         {registerData.map((e, i) => {
           return <FlipCard data={e} key={i} />;
         })}
@@ -212,7 +212,7 @@ const JoinConsciousleap = () => {
           </p>
         </div>
       </div>
-      <div className="w-full min-[1020px]:11/12 min-[1040px]:w-2/3 h-fit md:h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
+      <div className="w-full min-[900px]:11/12 min-[1040px]:w-2/3 h-fit md:h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
         <Image
           src={circle}
           alt="Circle"

@@ -398,7 +398,7 @@ const Therapists = () => {
           <div
             className={`grid ${
               showGrid
-                ? "grid-cols-1 min-[1020px]:grid-cols-2 min-[1040px]:grid-cols-3"
+                ? "grid-cols-1 min-[900px]:grid-cols-2 min-[1040px]:grid-cols-3"
                 : "grid-cols-1"
             } mt-5 gap-x-4 gap-y-6 md:px-0 px-[4vw]`}
           >
@@ -547,7 +547,7 @@ const GridBlock = ({
       </div>
       <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
         <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
-          <div className="rounded-full min-[1020px]:h-[12vw] min-[1040px]:w-[8vw] min-[1020px]:w-[12vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+          <div className="rounded-full min-[900px]:h-[12vw] min-[1040px]:w-[8vw] min-[900px]:w-[12vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={data?.photo}
@@ -612,7 +612,7 @@ const ListBlock = ({
       className="scale-95 hover:scale-100 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex items-center min-[1020px]:py-[1vw] min-[1040px]:py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
+        <div className="flex items-center min-[900px]:py-[1vw] min-[1040px]:py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
@@ -624,7 +624,7 @@ const ListBlock = ({
               />
             </div>
           </div>
-          <div className="w-[81%] flex justify-between items-center min-[1020px]:h-[13vh] min-[1040px]:h-[22vh]">
+          <div className="w-[81%] flex justify-between items-center min-[900px]:h-[13vh] min-[1040px]:h-[22vh]">
             <div className="w-3/12 h-fit">
               <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>

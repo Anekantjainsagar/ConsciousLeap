@@ -54,7 +54,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
         <Image
           src={image}
           alt={"Image"}
-          className="w-[100vw] min-[1020px]:w-[55vw] min-[1040px]:w-[38vw]"
+          className="w-[100vw] min-[900px]:w-[55vw] min-[1040px]:w-[38vw]"
         />
         <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
           <div className="absolute flex flex-col items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -63,7 +63,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             </h1>
             {/* <div className="h-[1px] w-6/12 bg-gray-500 mb-2 md:mb-4 mt-2"></div> */}
             <div
-              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-1 md:mt-5 mt-3 md:mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] min-[1020px]:w-[35vw] min-[1040px]:w-[26vw] px-4 py-2 md:text-lg"
+              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-1 md:mt-5 mt-3 md:mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] min-[900px]:w-[35vw] min-[1040px]:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(false);
                 history.push(
@@ -91,7 +91,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             </div>
             {/* <div className="h-[1px] w-11/12 bg-gray-500 my-1 "></div> */}
             <div
-              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] min-[1020px]:w-[35vw] min-[1040px]:w-[26vw] px-4 py-2 md:text-lg"
+              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue w-[70vw] min-[900px]:w-[35vw] min-[1040px]:w-[26vw] px-4 py-2 md:text-lg"
               onClick={(e) => {
                 setFourtyMinMeet(true);
                 history.push(

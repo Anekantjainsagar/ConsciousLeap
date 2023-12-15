@@ -44,7 +44,7 @@ const CartPage = ({ params }) => {
           <div
             className={`${
               showPage >= 2 ? "text-websiteBlue" : "text-[#cccccc]"
-            } flex flex-col font-semibold items-center md:mt-0 mt-3 cursor-pointer justify-center`}
+            } flex flex-col font-semibold items-center cursor-pointer justify-center`}
           >
             <CiMap size={35} />
             <p className="mt-1 md:block hidden">2. Shipping info</p>

@@ -55,7 +55,7 @@ export function BootstrapCarousel() {
         <Image
           src={mobile}
           alt="Mobile image"
-          className="h-full md:h-full min-[1040px]:w-full min-[1020px]:w-[140px] min-[2000px]:w-full w-fit mx-auto"
+          className="h-full md:h-full min-[1040px]:w-full min-[900px]:w-[140px] min-[2000px]:w-full w-fit mx-auto"
         />
       </div>
       <Swiper

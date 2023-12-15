@@ -48,7 +48,7 @@ const ReactModal = () => {
         <Image
           src={image}
           alt={"Image"}
-          className="w-[100vw] min-[1020px]:w-[50vw] min-[1040px]:w-[35vw]"
+          className="w-[100vw] min-[900px]:w-[50vw] min-[1040px]:w-[35vw]"
         />
         <div className="flex items-center md:text-base text-xs flex-col justify-center h-full w-full absolute top-0 left-0">
           <p className="text-center">

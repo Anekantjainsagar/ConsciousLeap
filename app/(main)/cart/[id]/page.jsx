@@ -184,7 +184,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : showPage === 2 ? (
-            <div className="grid md:grid-cols-2 px-[3vw] min-[1020px]:px-[5vw] min-[1040px]:px-[14vw] gap-x-10">
+            <div className="grid md:grid-cols-2 px-[3vw] min-[900px]:px-[5vw] min-[1040px]:px-[14vw] gap-x-10">
               {login?.addresses?.map((e, i) => {
                 return (
                   <div
@@ -242,7 +242,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : showPage == 3 ? (
-            <div className="px-[1vw] min-[1020px]:px-[4vw] min-[1040px]:px-[10vw]">
+            <div className="px-[1vw] min-[900px]:px-[4vw] min-[1040px]:px-[10vw]">
               <p className="text-lg font-bold md:mb-2 cursor-pointer hover:text-websiteBlue transition-all">
                 consciousleap Products
               </p>
@@ -304,7 +304,7 @@ const CartPage = ({ params }) => {
               ) : null}
             </div>
           ) : showPage === 4 ? (
-            <div className="flex md:flex-row flex-col-reverse px-[1vw] min-[1020px]:px-0 min-[1040px]:px-[5vw] mb-5 items-start justify-between">
+            <div className="flex md:flex-row flex-col-reverse px-[1vw] min-[900px]:px-0 min-[1040px]:px-[5vw] mb-5 items-start justify-between">
               <div className="md:w-[65.5%]">
                 <p className="text-lg font-semibold cursor-pointer hover:text-websiteBlue transition-all">
                   Any additional information?
