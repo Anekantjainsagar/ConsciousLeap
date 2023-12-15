@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request) {
-  let therapist_token = await request.cookies.get("therapist_token");
-
   if (
     request.cookies.get("token")?.value == undefined &&
     request.nextUrl.pathname != "/therapy" &&
@@ -23,5 +21,6 @@ export const config = {
     "/questionnaire/:path*",
     "/user/dashboard",
     "/therapist-review/:path*",
+    "/cart/:path*",
   ],
 };

@@ -106,7 +106,7 @@ const CartPage = ({ params }) => {
         </button>
       </div>
       <div>
-        <div className="grid grid-cols-5 my-[2vw]">
+        <div className="grid grid-cols-5 flex items-center my-[5vw] md:my-[2vw]">
           <div
             className={`${
               showPage >= 1 ? "text-websiteBlue" : "text-[#cccccc]"
@@ -118,7 +118,7 @@ const CartPage = ({ params }) => {
           <div
             className={`${
               showPage >= 2 ? "text-websiteBlue" : "text-[#cccccc]"
-            } flex flex-col font-semibold items-center md:mt-0 mt-3 cursor-pointer justify-center`}
+            } flex flex-col font-semibold items-center cursor-pointer justify-center`}
           >
             <CiMap size={35} />
             <p className="mt-1 md:block hidden">2. Shipping info</p>
@@ -184,7 +184,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : showPage === 2 ? (
-            <div className="grid md:grid-cols-2 px-[3vw] md:px-[14vw] gap-x-10">
+            <div className="grid md:grid-cols-2 px-[3vw] min-[1020px]:px-[5vw] min-[1040px]:px-[14vw] gap-x-10">
               {login?.addresses?.map((e, i) => {
                 return (
                   <div
@@ -242,7 +242,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : showPage == 3 ? (
-            <div className="px-[1vw] md:px-[10vw]">
+            <div className="px-[1vw] min-[1020px]:px-[4vw] min-[1040px]:px-[10vw]">
               <p className="text-lg font-bold md:mb-2 cursor-pointer hover:text-websiteBlue transition-all">
                 consciousleap Products
               </p>
@@ -304,7 +304,7 @@ const CartPage = ({ params }) => {
               ) : null}
             </div>
           ) : showPage === 4 ? (
-            <div className="flex md:flex-row flex-col-reverse px-[1vw] md:px-[5vw] mb-5 items-start justify-between">
+            <div className="flex md:flex-row flex-col-reverse px-[1vw] min-[1020px]:px-0 min-[1040px]:px-[5vw] mb-5 items-start justify-between">
               <div className="md:w-[65.5%]">
                 <p className="text-lg font-semibold cursor-pointer hover:text-websiteBlue transition-all">
                   Any additional information?
@@ -408,7 +408,7 @@ const CartPage = ({ params }) => {
                           <IoIosClose color="#000" className="mx-1" />
                           <span className="text-black">{e?.quantity}</span>
                         </p>
-                        <p className="mt-0">INR{e?.price * e?.quantity}</p>
+                        <p className="mt-0">INR {e?.price * e?.quantity}</p>
                       </div>
                     );
                   })}
@@ -544,7 +544,7 @@ const Block = ({ data }) => {
             alt="Tshirt"
             className="w-[23vw] md:w-[5vw] h-[23vw] md:h-[5vw] object-cover object-center"
           />
-          <p className="mt-2 font-semibold">{data?.name}</p>
+          <p className="mt-2 ml-2 font-semibold">{data?.name}</p>
         </div>
         <p className="text-center px-[4vw] font-extrabold flex items-center justify-between text-[17px]">
           <span className="text-sm">Price:</span>
@@ -583,12 +583,20 @@ const Block = ({ data }) => {
         <p className="text-center flex items-center justify-between px-[4vw] mt-2 font-extrabold text-[17px] text-websiteBlue">
           <span className="text-sm">Total price:</span>
           <span>
-            INR {data?.price * quantity * (18 / 100) + data?.price * quantity}
+            INR{" "}
+            {(
+              data?.price * quantity * (18 / 100) +
+              data?.price * quantity
+            ).toFixed(2)}
           </span>
         </p>
         <div className="flex items-center justify-between pb-[3vw] px-[4vw] mt-3">
           <span className="text-sm">Remove:</span>
           <CiTrash
+            onClick={(e) => {
+              let temp = cart?.cartData?.filter((e) => e?._id != data?._id);
+              cart?.setCartData([...temp]);
+            }}
             className="p-2 bg-gray-300 rounded-full text-white cursor-pointer"
             size={35}
           />

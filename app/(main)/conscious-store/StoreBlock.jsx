@@ -21,7 +21,7 @@ const StoreBlock = ({ data }) => {
           />
         </div>
         <div
-          className="relative hover:scale-105 cursor-pointer transition-all"
+          className="relative hover:scale-105 cursor-pointer min-h-fit transition-all"
           onClick={(e) => {
             history.push(`/conscious-store/${data?._id}`);
           }}
@@ -49,9 +49,9 @@ const StoreBlock = ({ data }) => {
               </h1>
               <p className="text-websiteBlue w-full pl-1 font-bold py-1">
                 <span className="text-gray-400 line-through">
-                  INR{data?.discountPrice}
+                  INR {data?.discountPrice}
                 </span>{" "}
-                INR{data?.price}
+                INR {data?.price}
               </p>
               <div className="w-full flex items-center pt-0.5 pl-1">
                 {[...Array(data?.rating)]?.map((e, i) => {

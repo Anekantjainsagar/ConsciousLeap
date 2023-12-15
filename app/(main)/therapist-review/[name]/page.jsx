@@ -65,18 +65,18 @@ const TherapistReview = ({ params }) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <Toaster />
-      <div className="rounded-full w-1/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-        <div className="flex h-full p-1 w-full rounded-full items-center justify-center bg-white">
+      <div className="rounded-full w-[60vw] md:w-[10vw] h-[60vw] md:h-[10vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+        <div className="flex h-full w-full p-1 rounded-full bg-white">
           <Image
             src={user?.photo}
             width={1000}
             height={1000}
             alt="Photo of girl"
-            className="rounded-full"
+            className="rounded-full object-cover object-center"
           />
         </div>
       </div>
-      <h1 className="text-darkGrey text-2xl font-semibold mt-1 mb-4">
+      <h1 className="text-darkGrey text-2xl font-semibold mt-2 md:mt-1 mb-4">
         {user?.name}
       </h1>
       <div className="w-9/12 mt-2">

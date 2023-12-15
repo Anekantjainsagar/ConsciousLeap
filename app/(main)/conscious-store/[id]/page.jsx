@@ -35,10 +35,10 @@ const ProductPage = ({ params }) => {
   return (
     product?._id && (
       <div className="px-[4vw] md:px-[6vw]">
-        <div className="flex md:flex-row flex-col items-start mb-[2vw] justify-between">
+        <div className="flex md:flex-row flex-col items-start md:pt-2 mb-[2vw] justify-between">
           <div className="w-full md:mb-0 mb-5 md:w-[49.5%] border flex md:flex-row flex-col-reverse items-start justify-between">
             <div className="md:w-[15%] py-3 md:py-0 px-3 md:px-4">
-              <div className="w-full h-[10vh] cursor-pointer border border-websiteBlue">
+              <div className="w-full min-[1020px]:h-[3vh] min-[1040px]:h-[10vh] cursor-pointer border border-websiteBlue">
                 <Image
                   src={product?.images[0]}
                   alt="Tshirt"
@@ -92,7 +92,7 @@ const ProductPage = ({ params }) => {
               <p className="w-[25%] text-gray-400 font-light">Price:</p>
               <p className="mt-0 ml-3 text-3xl">
                 <span className="text-websiteBlue font-bold">
-                  INR{product?.price}
+                  INR {product?.price}
                 </span>{" "}
                 <span className="text-base">/Pc</span>
               </p>
@@ -180,7 +180,7 @@ const ProductPage = ({ params }) => {
               <p className="w-[25%] text-gray-400 font-light">Total Price:</p>
               <div className="mt-0 ml-3 text-3xl">
                 <span className="text-websiteBlue font-semibold">
-                  INR{product?.price * quantity}
+                  INR {product?.price * quantity}
                 </span>{" "}
               </div>
             </div>
@@ -306,7 +306,7 @@ const Block = ({ data }) => {
             return <AiFillStar color="#b3b3b3" key={i} />;
           })}
         </div>
-        <p className="text-websiteBlue mt-1 font-semibold">INR{data?.price}</p>
+        <p className="text-websiteBlue mt-1 font-semibold">INR {data?.price}</p>
       </div>
     </div>
   );

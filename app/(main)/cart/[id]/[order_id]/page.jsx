@@ -7,9 +7,11 @@ import { GiConfirmed } from "react-icons/gi";
 import Context from "@/Context/Context";
 import { BASE_URL } from "@/Utils/urls";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const CartPage = ({ params }) => {
   let showPage = parseInt(params.id);
+  const history = useRouter();
   let orderId = params.order_id;
   const [orderStatus, setOrderStatus] = useState();
   const { login } = useContext(Context);
@@ -72,7 +74,7 @@ const CartPage = ({ params }) => {
             <p className="mt-1 md:block hidden">5. Confirmation</p>
           </div>
         </div>
-        <div className="px-[3vw] mt-[3vw]">
+        <div className="min-[1040px]:px-[3vw] mt-[3vw]">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-2xl pt-3 text-center font-extrabold hover:text-websiteBlue transition-all cursor-pointer">
               Thank You for Your Order!
@@ -159,9 +161,10 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col-reverse items-center justify-center mt-5">
+          <div className="flex md:flex-row flex-col-reverse items-center justify-center border mt-5">
             <button
               onClick={(e) => {
+                e.preventDefault();
                 history.push("/conscious-store");
               }}
               className="bg-websiteBlue text-white px-8 py-2 rounded-md md:w-fit w-full mt-3"

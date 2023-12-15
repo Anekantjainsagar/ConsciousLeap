@@ -198,7 +198,7 @@ const Store = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 min-[1020px]:gap-4 min-[1040px]:gap-8 gap-8 p-3">
             {context?.productM?.productData
               ?.sort((a, b) => {
                 if (sortStore === "Price High to Low") {

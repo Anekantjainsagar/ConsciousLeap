@@ -10,10 +10,10 @@ const TherapistReview = () => {
 
   return (
     <div className="py-[4vw]">
-      <h1 className="text-3xl text-center w-fit mx-auto font-light gradientHover cursor-pointer">
+      <h1 className="text-3xl text-center w-fit mx-auto font-light gradientHover md:mb-0 mb-5 cursor-pointer">
         Review Therapists
       </h1>
-      <div className="grid grid-cols-3 gap-y-10 pt-[3vw] px-[8vw]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 pt-[3vw] px-[8vw]">
         {therapistFilter?.therapistsData?.map((e) => {
           return <Therapist key={e?._id} data={e} />;
         })}
@@ -31,14 +31,14 @@ const Therapist = ({ data }) => {
         history.push(`/therapist-review/${data?._id}`);
       }}
     >
-      <div className="rounded-full w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-        <div className="flex h-full p-1 w-full rounded-full items-center justify-center bg-white">
+      <div className="rounded-full w-[30vw] md:w-[10vw] h-[30vw] md:h-[10vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+        <div className="h-full p-1 w-full rounded-full bg-white">
           <Image
             src={data?.photo}
             alt="Photo of girl"
             width={1000}
             height={1000}
-            className="rounded-full"
+            className="rounded-full w-full h-full object-cover object-center"
           />
         </div>
       </div>
