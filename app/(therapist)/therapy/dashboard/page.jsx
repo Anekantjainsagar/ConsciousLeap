@@ -55,7 +55,7 @@ const Dashboard = () => {
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 hidden"
-        } border border-gray-300 h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
+        } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
       >
         <Image src={logo} alt="Logo" />
         <Image
@@ -100,18 +100,18 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className={`${showLeftBar ? "w-10/12 ml-[16.6%]" : "w-full"}`}>
+      <div className={`${showLeftBar ? "md:w-10/12 md:ml-[16.6%]" : "w-full"}`}>
         <Navbar showLeftBar={showLeftBar} setShowLeftBar={setShowLeftBar} />
-        <div className="bg-veryLightGrey px-[1.5vw] flex items-start justify-between py-[3vw]">
-          <div className="w-9/12 pr-[2vw]">
-            <div className="relative h-[25vh] w-full rounded-[3vw]">
+        <div className="bg-veryLightGrey px-[3vw] md:px-[1.5vw] flex md:flex-row flex-col items-start justify-between py-[3vw]">
+          <div className="md:w-9/12 md:pr-[2vw]">
+            <div className="relative h-[10vh] md:h-[25vh] w-full rounded-[3vw]">
               <Image
                 src={image}
                 alt="Image"
                 className="h-full w-full rounded-[3vw] object-cover object-center"
               />
               <div className="absolute top-0 left-0 w-full flex justify-between items-center h-full px-[4vw] text-white">
-                <p className="text-2xl font-light">
+                <p className="text-lg md:text-2xl font-light">
                   Hello {therapists?.therapist?.name}, Welcome to Wellbeing!
                 </p>
                 <Image src={logoPng} alt="Circle" />
@@ -137,8 +137,8 @@ const Dashboard = () => {
                 className="hover:scale-105 transition-all cursor-pointer"
               />
             </div>
-            <div className="flex items-start justify-between px-[0.7vw]">
-              <div className="w-[48.5%] bg-white rounded-3xl p-[1vw]">
+            <div className="flex md:flex-row flex-col items-start justify-between px-[0.7vw]">
+              <div className="w-full md:mb-0 mb-3 md:w-[48.5%] bg-white rounded-3xl p-[3vw] md:p-[1vw]">
                 <h1 className="text-center text-websiteBlue text-[19px] font-medium">
                   My Reviews
                 </h1>
@@ -152,7 +152,7 @@ const Dashboard = () => {
                   })}
                 </div>
               </div>
-              <div className="w-[48.5%] bg-white rounded-3xl p-[1vw]">
+              <div className="w-full md:mb-0 mb-3 md:w-[48.5%] bg-white rounded-3xl p-[3vw] md:p-[1vw]">
                 <h1 className="text-center text-websiteBlue text-[19px] font-medium">
                   Tasks for the day
                 </h1>
@@ -168,7 +168,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="w-3/12">
+          <div className="w-full md:w-3/12">
             <div className="bg-white p-5 rounded-lg">
               <div className="rounded-lg w-full h-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
                 <div className="h-full w-full rounded-lg py-[1vw] items-center justify-center bg-white flex flex-col">
@@ -185,7 +185,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="shadow-lg py-2 px-3 border bg-white rounded-lg shadow-lightGrey mt-[1vw] mx-auto">
+            <div className="shadow-lg md:my-0 mb-3 py-2 px-3 border bg-white rounded-lg shadow-lightGrey mt-[5vw] md:mt-[1vw] mx-auto">
               <h1 className="text-center text-sm text-websiteBlue">
                 Recommended Reads
               </h1>
@@ -217,16 +217,16 @@ const Dashboard = () => {
 
 const ReviewBlock = ({ data }) => {
   return (
-    <div className="bg-veryLightGrey flex justify-between items-center rounded-xl px-[2vw] py-2 mt-3">
+    <div className="bg-veryLightGrey flex justify-between items-center rounded-xl px-[4vw] md:px-[2vw] py-3 md:py-2 mt-3">
       <Image
         src={data?.image}
         alt="Sun rise"
         className={`${
           data?.image?.src?.includes("calm")
-            ? "w-[5vw]"
+            ? "w-[12vw] md:w-[5vw]"
             : data?.image?.src?.includes("know")
-            ? "w-[4vw]"
-            : "w-[6vw]"
+            ? "w-[11vw] md:w-[4vw]"
+            : "w-[14vw] md:w-[6vw]"
         }`}
       />
       <p className="text-websiteBlue text-lg">{data?.text}</p>
@@ -240,8 +240,8 @@ const ReviewBlock = ({ data }) => {
 const TaskBlock = ({ data }) => {
   return (
     <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3">
-      <div className="bg-veryLightGrey flex justify-between items-center rounded-full px-[2vw] py-[12.75px]">
-        <Image src={data?.image} alt="Sun rise" className="w-[3vw]" />
+      <div className="bg-veryLightGrey flex justify-between items-center rounded-full px-[5vw] md:px-[2vw] py-[12.75px]">
+        <Image src={data?.image} alt="Sun rise" className="w-[10vw] md:w-[3vw]" />
         <p className="text-websiteBlue text-lg">{data?.text}</p>
         <div className="text-oceanGreen">
           <input

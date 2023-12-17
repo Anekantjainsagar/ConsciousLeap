@@ -205,7 +205,24 @@ const ProductPage = ({ params }) => {
               >
                 Add to Cart
               </button>
-              <button className="w-full text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold ">
+              <button
+                onClick={(e) => {
+                  context?.cart?.setCartData([
+                    ...context?.cart?.cartData,
+                    {
+                      name: product?.name,
+                      _id: product?._id,
+                      price: product?.price,
+                      quantity: quantity,
+                      images: product?.images,
+                      size,
+                      fabric,
+                    },
+                  ]);
+                  history.push("/cart/1");
+                }}
+                className="w-full text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
+              >
                 Buy it Now
               </button>
               <button className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold ">

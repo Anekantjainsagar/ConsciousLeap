@@ -17,11 +17,11 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
 
   return (
     <di>
-      <div className="flex justify-between bg-white items-center px-7 py-3 w-full border sticky top-0 right-0 z-30">
+      <div className="flex w-[100vw] justify-between bg-white items-center px-3 md:px-7 py-3 border sticky top-0 right-0 z-30">
         <div className="flex items-center">
           <HiMenuAlt1
             size={25}
-            className="cursor-pointer"
+            className="cursor-pointer md:block hidden"
             onClick={(e) => {
               setShowLeftBar(!showLeftBar);
             }}
@@ -34,7 +34,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
               therapists.setIsTherapistLogin(false);
               deleteCookie("therapist_token");
             }}
-            className="ml-5 p-2 rounded-full cursor-pointer bg-gray-200"
+            className="md:ml-5 p-2 rounded-full cursor-pointer bg-gray-200"
           />
           {/* </Link> */}
         </div>
@@ -53,7 +53,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
             alt="Image"
             width={1000}
             height={1000}
-            className="w-[3vw] h-[3vw] object-cover object-center rounded-full mr-3"
+            className="w-[10vw] md:w-[3vw] h-[10vw] md:h-[3vw] object-cover object-center rounded-full mr-3"
           />
           <div>
             <p>{therapists?.therapist?.name}</p>
@@ -64,7 +64,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
       <div
         className={`${
           showNav ? "block" : "hidden"
-        } absolute top-20 right-10 z-50 bg-white w-[10vw] rounded-lg`}
+        } absolute top-16 md:top-20 right-1 md:right-10 z-50 bg-white w-[35vw] md:w-[10vw] rounded-lg`}
       >
         <div
           onClick={(e) => {
@@ -74,6 +74,15 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
         >
           <AiOutlineUser className="mr-1" />
           Profile
+        </div>
+        <div
+          onClick={(e) => {
+            router.push("/therapy/edit-profile");
+          }}
+          className="px-3 py-1 flex items-center cursor-pointer hover:bg-blue-gray-600 hover:text-white transition-all rounded-lg"
+        >
+          <AiOutlineUser className="mr-1" />
+          Edit Profile
         </div>
         <div
           onClick={(e) => {

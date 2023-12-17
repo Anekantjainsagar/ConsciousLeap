@@ -17,6 +17,7 @@ import stripe from "../../Assets/stripe.png";
 import { loadStripe } from "@stripe/stripe-js";
 import { getCookie } from "cookies-next";
 import { BASE_URL } from "@/Utils/urls";
+import toast, { Toaster } from "react-hot-toast";
 
 const CartPage = ({ params }) => {
   const history = useRouter();
@@ -100,6 +101,7 @@ const CartPage = ({ params }) => {
   return (
     <div className="py-[4vw] px-[5vw]">
       <AddAddress setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
+      <Toaster />
       <div className="flex items-end justify-end mb-2 w-full">
         <button className="bg-websiteBlue px-14 py-2 rounded-md font-semibold text-white">
           Wishlist
@@ -471,7 +473,6 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           ) : null}
-
           <div className="flex md:flex-row flex-col-reverse items-center justify-between">
             <button
               onClick={(e) => {
@@ -484,13 +485,21 @@ const CartPage = ({ params }) => {
             <button
               onClick={(e) => {
                 if (showPage == 4 && paymentMode == "Stripe") {
-                  makePayment();
-                  history.push(`/cart/${showPage + 1}/${orderStatus?._id}`);
+                  if (termsAndConditions) {
+                    makePayment();
+                    history.push(`/cart/${showPage + 1}/${orderStatus?._id}`);
+                  } else {
+                    toast.error("Please agree to the terms and conditions");
+                  }
                 } else if (
                   showPage === 4 &&
                   paymentMode == "Cash on Delivery"
                 ) {
-                  makeCodPayment();
+                  if (termsAndConditions) {
+                    makeCodPayment();
+                  } else {
+                    toast.error("Please agree to the terms and conditions");
+                  }
                 } else {
                   history.push(`/cart/${showPage + 1}`);
                 }

@@ -95,7 +95,7 @@ const EditProfile = () => {
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 hidden"
-        } border border-gray-300 h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
+        } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
       >
         <Image src={logo} alt="Logo" />
         <Image
@@ -140,9 +140,9 @@ const EditProfile = () => {
           </div>
         </div>
       </div>
-      <div className={`${showLeftBar ? "w-10/12 ml-[16.6%]" : "w-full"}`}>
+      <div className={`${showLeftBar ? "md:w-10/12 md:ml-[16.6%]" : "w-full"}`}>
         <Navbar showLeftBar={showLeftBar} setShowLeftBar={setShowLeftBar} />
-        <div className="px-[1.5vw] py-[3vw]">
+        <div className="px-[3vw] md:px-[1.5vw] py-[3vw]">
           <h1 className="text-lg">
             Therapists settings{" "}
             <Link
@@ -167,7 +167,7 @@ const EditProfile = () => {
                 onChange={(e) => {
                   setTherapist({ ...therapist, name: e.target.value });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md ml-9 md:ml-0 px-4 py-1"
               />
             </div>
             <div
@@ -178,7 +178,7 @@ const EditProfile = () => {
                 Therapist Profile Picture
               </p>
               <input
-                className="block w-full text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
+                className="block w-full text-sm ml-9 md:ml-0 text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
                 type="file"
                 onChange={(e) => {
                   const formData = new FormData();
@@ -213,7 +213,7 @@ const EditProfile = () => {
                 onChange={(e) => {
                   setTherapist({ ...therapist, phone: e.target.value });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -228,7 +228,7 @@ const EditProfile = () => {
                 onChange={(e) => {
                   setTherapist({ ...therapist, desc: e.target.value });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -243,7 +243,7 @@ const EditProfile = () => {
                 onChange={(e) => {
                   setTherapist({ ...therapist, experience: e.target.value });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -254,7 +254,7 @@ const EditProfile = () => {
               <div>
                 {therapist?.expertise?.map((e, i) => {
                   return (
-                    <div className="flex items-center w-full mb-4" key={i}>
+                    <div className="flex items-center w-full md:ml-0 ml-9 mb-4" key={i}>
                       <input
                         type="text"
                         value={e}
@@ -287,7 +287,7 @@ const EditProfile = () => {
                     </div>
                   );
                 })}
-                <div className="flex items-center w-full mb-4">
+                <div className="flex items-center md:ml-0 ml-9 w-full mb-4">
                   <select
                     name=""
                     id=""
@@ -342,7 +342,7 @@ const EditProfile = () => {
                         toast.error("Please select a value");
                       }
                     }}
-                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                    className="ml-4 w-[30vw] md:w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
                   >
                     Add New
                   </div>
@@ -357,7 +357,10 @@ const EditProfile = () => {
               <div>
                 {therapist?.qualifications?.map((e, i) => {
                   return (
-                    <div className="flex items-center w-full mb-4" key={i}>
+                    <div
+                      className="flex items-center ml-9 md:ml-0 w-full mb-4"
+                      key={i}
+                    >
                       <input
                         type="text"
                         value={e}
@@ -390,7 +393,7 @@ const EditProfile = () => {
                     </div>
                   );
                 })}
-                <div className="flex items-center w-full mb-4">
+                <div className="flex items-center w-full mb-4 ml-9 md:ml-0">
                   <input
                     type="text"
                     placeholder="Qualication"
@@ -411,7 +414,7 @@ const EditProfile = () => {
                       });
                       setQualifications("");
                     }}
-                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                    className="ml-4 w-[30vw] md:w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
                   >
                     Add New
                   </div>
@@ -426,7 +429,7 @@ const EditProfile = () => {
               <div>
                 {therapist?.speaks?.map((e, i) => {
                   return (
-                    <div className="flex items-center w-full mb-4" key={i}>
+                    <div className="flex items-center ml-9 md:ml-0 w-full mb-4" key={i}>
                       <input
                         type="text"
                         value={e}
@@ -459,7 +462,7 @@ const EditProfile = () => {
                     </div>
                   );
                 })}
-                <div className="flex items-center w-full mb-4">
+                <div className="flex items-center w-full ml-9 md:ml-0 mb-4">
                   <input
                     type="text"
                     value={speaks}
@@ -477,7 +480,7 @@ const EditProfile = () => {
                       });
                       setSpeaks("");
                     }}
-                    className="ml-4 w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
+                    className="ml-4 w-[30vw] md:w-[9vw] flex justify-center items-center py-1 bg-green-500 text-white rounded-lg cursor-pointer "
                   >
                     Add New
                   </div>
@@ -490,7 +493,7 @@ const EditProfile = () => {
             >
               <p className="font-light text-[14px]">About Therapist*</p>
               <textarea
-                className="border outline-none text-gray-600 rounded-md px-4 py-2"
+                className="border outline-none text-gray-600 rounded-md px-4 py-2 ml-9 md:ml-0"
                 rows={3}
                 cols={3}
                 value={therapist?.about}
@@ -520,7 +523,7 @@ const EditProfile = () => {
                     },
                   });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -543,7 +546,7 @@ const EditProfile = () => {
                     },
                   });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -566,7 +569,7 @@ const EditProfile = () => {
                     },
                   });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
             <div
@@ -589,7 +592,7 @@ const EditProfile = () => {
                     },
                   });
                 }}
-                className="border outline-none text-gray-600 rounded-md px-4 py-1"
+                className="border outline-none text-gray-600 rounded-md px-4 py-1 ml-9 md:ml-0"
               />
             </div>
           </div>
