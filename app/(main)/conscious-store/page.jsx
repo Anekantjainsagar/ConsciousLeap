@@ -64,7 +64,7 @@ const Store = () => {
   const [firstValue, setFirstValue] = useState(2);
   const [secondValue, setSecondValue] = useState(10);
   const [sortStore, setSortStore] = useState("Sort By");
-  const [showGrid, setShowGrid] = useState(false);
+  const [showGrid, setShowGrid] = useState(true);
   function handleRanges(value) {
     setFirstValue(value[0]);
     setSecondValue(value[1]);
@@ -186,19 +186,23 @@ const Store = () => {
                 className="text-websiteBlue border p-2 cursor-pointer"
                 size={35}
                 onClick={() => {
-                  setShowGrid(true);
+                  setShowGrid(!showGrid);
                 }}
               />
               <AiOutlineUnorderedList
                 className="text-websiteBlue border p-2 cursor-pointer"
                 size={35}
                 onClick={() => {
-                  setShowGrid(false);
+                  setShowGrid(!showGrid);
                 }}
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 min-[900px]:gap-4 min-[1040px]:gap-8 gap-8 p-3">
+          <div
+            className={`grid grid-cols-1 ${
+              showGrid ? "md:grid-cols-3" : "md:grid-cols-1"
+            } min-[900px]:gap-4 min-[1040px]:gap-8 gap-8 p-3`}
+          >
             {context?.productM?.productData
               ?.sort((a, b) => {
                 if (sortStore === "Price High to Low") {
@@ -259,7 +263,7 @@ const Store = () => {
                 return 0;
               })
               ?.map((e, i) => {
-                return <StoreBlock key={i} data={e} />;
+                return <StoreBlock key={i} data={e} showGrid={showGrid} />;
               })}
           </div>
         </div>

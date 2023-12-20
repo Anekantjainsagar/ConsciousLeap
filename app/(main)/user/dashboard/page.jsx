@@ -18,11 +18,11 @@ import RightBar from "./Components/LeftBar copy";
 import Context from "@/Context/Context";
 
 import Rain from "./Rain";
-import Cloud from "./Cloud";
 
 const Dashboard = () => {
+  let { login } = useContext(Context);
   useEffect(() => {
-    if (!isLogin) {
+    if (!login?._id) {
       history.push("/user/login");
     }
   }, []);
@@ -32,7 +32,6 @@ const Dashboard = () => {
   const [showLight, setShowLight] = useState(false);
   const [showSunshine, setShowSunshine] = useState(false);
   const [showCloud, setShowCloud] = useState(false);
-  let { login, isLogin } = useContext(Context);
 
   useEffect(() => {
     if (showLight) {

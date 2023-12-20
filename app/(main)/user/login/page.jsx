@@ -12,7 +12,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const UserLogin = () => {
   const captchaRef = useRef(null);
-  let { isLogin, login } = useContext(Context);
+  let { login } = useContext(Context);
   const history = useRouter();
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +22,7 @@ const UserLogin = () => {
   });
 
   useEffect(() => {
-    if (isLogin) {
+    if (login?._id) {
       history.push("/user/dashboard");
     }
   }, [login]);

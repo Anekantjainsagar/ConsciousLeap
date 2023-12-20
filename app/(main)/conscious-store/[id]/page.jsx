@@ -15,6 +15,9 @@ import Line2 from "@/(main)/Components/Lines/Line2";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
 import StoreBlock from "../StoreBlock";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import { getCookie } from "cookies-next";
 
 const ProductPage = ({ params }) => {
   const history = useRouter();
@@ -225,7 +228,27 @@ const ProductPage = ({ params }) => {
               >
                 Buy it Now
               </button>
-              <button className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold ">
+              <button
+                onClick={(e) => {
+                  if (!context?.login?.wishlist?.includes(product?._id)) {
+                    axios
+                      .post(`${BASE_URL}/user/add-to-wishlist`, {
+                        token: getCookie("token"),
+                        item_id: product?._id,
+                      })
+                      .then((res) => {
+                        if (res.status === 200) {
+                          context?.getUser();
+                        }
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }
+                  history.push("/user/wishlist");
+                }}
+                className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
+              >
                 <AiFillHeart className="mr-2" size={20} /> Add to Wishlist
               </button>
             </div>
