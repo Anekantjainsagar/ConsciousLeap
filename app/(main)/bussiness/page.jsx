@@ -61,7 +61,7 @@ const BussinessConsciousleap = () => {
       </h1>
       <div
         id="container-bussiness"
-        className="px-4 py-4 rounded-md mt-5 w-11/12 md:w-8/12 md:px-5"
+        className="px-4 py-4 rounded-md mt-5 w-11/12 md:w-full md:px-5"
       ></div>
       <Line2 />
       <div className="flex flex-col items-center h-[50vh] md:w-[42%]">
