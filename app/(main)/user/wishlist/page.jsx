@@ -59,7 +59,7 @@ const Wishlist = () => {
           {login?.wishlist?.length > 0 ? (
             <div className="grid grid-cols-3 gap-5 mt-2">
               {login?.wishlist?.map((e) => {
-                return <Block id={e} />;
+                return <Block id={e} key={e} />;
               })}
             </div>
           ) : (
