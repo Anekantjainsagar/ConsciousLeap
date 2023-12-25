@@ -52,7 +52,11 @@ export function BootstrapCarousel() {
   return (
     <div className="custom-carousel-container relative">
       <div className="absolute left-1/2 -translate-x-1/2 z-10 h-full">
-        <Image src={mobile} alt="Mobile image" className="h-full mx-auto" />
+        <Image
+          src={mobile}
+          alt="Mobile image"
+          className="h-full w-full mx-auto"
+        />
       </div>
       <Swiper
         slidesPerView={

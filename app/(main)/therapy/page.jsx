@@ -640,7 +640,7 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
               <h1 className="mt-1 text-lg md:text-base text-websiteBlue">
                 Expertise
               </h1>
-              <div className="h-fit md:h-[6vh]">
+              <div className="h-fit min-[1100px]:h-[6vh]">
                 {data?.expertise?.slice(0, 2)?.map((e) => {
                   return (
                     <li
@@ -718,7 +718,7 @@ const ListBlock = ({
             </div>
             <div className="w-5/12 h-fit">
               <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-              {data?.expertise?.slice(0, 5).map((e) => {
+              {data?.expertise?.slice(0, 3).map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">
                     {e}
