@@ -71,7 +71,7 @@ const Store = () => {
   }
 
   return (
-    <div className="flex flex-col items-center pt-[3vw]">
+    <div className="flex flex-col items-center pt-[3vw] overflow-x-hidden">
       <Toaster />
       <h1 className="text-3xl font-light text-center gradientHover cursor-pointer">
         Conscious Store
