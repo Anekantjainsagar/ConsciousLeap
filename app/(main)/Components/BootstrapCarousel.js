@@ -58,7 +58,7 @@ export default function BootstrapCarousel() {
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
         <SwiperSlide
-          className="relative"
+          className="relative overflow-hidden"
           onClick={(e) => {
             history.push("/faqs");
           }}
@@ -76,7 +76,7 @@ export default function BootstrapCarousel() {
           <Image src={frame2} alt="Frame 1" className="cursor-pointer" />
         </SwiperSlide>
         <SwiperSlide
-          className="relative"
+          className="relative overflow-hidden"
           onClick={(e) => {
             history.push("/faqs");
           }}
@@ -94,7 +94,7 @@ export default function BootstrapCarousel() {
           <Image src={frame5} alt="Frame 1" className="cursor-pointer" />
         </SwiperSlide>
         <SwiperSlide
-          className="relative"
+          className="relative overflow-hidden"
           onClick={(e) => {
             history.push("/faqs");
           }}
@@ -111,7 +111,7 @@ export default function BootstrapCarousel() {
           <Image src={frame3} alt="Frame 1" className="cursor-pointer" />
         </SwiperSlide>
         <SwiperSlide
-          className="relative"
+          className="relative overflow-hidden"
           onClick={(e) => {
             history.push("/faqs");
           }}
@@ -128,7 +128,7 @@ export default function BootstrapCarousel() {
           <Image src={frame4} alt="Frame 1" className="cursor-pointer" />
         </SwiperSlide>
         <SwiperSlide
-          className="relative"
+          className="relative overflow-hidden"
           onClick={(e) => {
             history.push("/faqs");
           }}

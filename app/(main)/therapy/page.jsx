@@ -451,7 +451,7 @@ const Therapists = () => {
               })
               ?.map((e, i) => {
                 return showGrid ? (
-                  <GridBlock
+                  <Grid
                     data={e}
                     key={i}
                     modalIsOpen={modalIsOpen}
@@ -477,15 +477,9 @@ const Therapists = () => {
   );
 };
 
-const GridBlock = ({
-  data,
-  modalIsOpen,
-  setIsOpen,
-  isConsentFilled,
-  setIsConsentFilled,
-}) => {
+const GridBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
   const history = useRouter();
-  const { setShowPopUpId, showPopUpId } = useContext(Context);
+  const { setShowPopUpId } = useContext(Context);
 
   return (
     <div
@@ -568,6 +562,99 @@ const GridBlock = ({
                   return (
                     <li key={e} className="text-[11px] text-darkGrey">
                       {e}
+                    </li>
+                  );
+                })}
+              </div>
+            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowPopUpId(data);
+                if (isConsentFilled) {
+                  setIsOpen(!modalIsOpen);
+                } else {
+                  history.push(`/therapy/${data?._id}/schedule`);
+                }
+              }}
+              className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white hover:scale-105 transition-all font-semibold"
+            >
+              Schedule Session
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
+  const history = useRouter();
+  const { setShowPopUpId } = useContext(Context);
+
+  return (
+    <div
+      className="cursor-pointer"
+      onClick={(e) => {
+        history.push(`/therapy/${data?._id}`);
+      }}
+    >
+      <div className="flex items-center justify-center rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
+        <div className="flex md:flex-row flex-col items-center md:items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
+          {/* Image problem */}
+          <div className="rounded-full md:w-[8vw] h-[50vw] w-[50vw] md:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
+              <Image
+                src={data?.photo}
+                width={1000}
+                height={1000}
+                alt="Photo of girl"
+                className="w-full h-full object-cover object-center rounded-full"
+              />
+            </div>
+          </div>
+          <div className="md:w-7/12 md:mt-0 mt-3 flex flex-col items-center md:items-start md:ml-[1vw]">
+            <div className="flex flex-col items-center md:items-start">
+              <h1 className="text-2xl md:text-xl text-websiteBlue">
+                {typeof window != undefined && window.innerWidth < 550
+                  ? data?.name
+                  : data?.name?.slice(0, 13)}
+                {typeof window != undefined && window.innerWidth < 550
+                  ? ""
+                  : data?.name?.length > 13
+                  ? "..."
+                  : ""}
+              </h1>
+              <p className="text-darkGrey text-sm mt-1">
+                {typeof window != undefined && window.innerWidth < 550
+                  ? data?.desc?.slice(0, 50)
+                  : data?.desc?.slice(0, 20)}{" "}
+                {typeof window != undefined && window.innerWidth < 550
+                  ? data?.desc?.length > 50
+                    ? "..."
+                    : ""
+                  : data?.desc?.length > 20
+                  ? "..."
+                  : ""}
+              </p>
+              <h1 className="mt-1 text-lg md:text-base text-websiteBlue">
+                Expertise
+              </h1>
+              <div className="h-fit md:h-[6vh]">
+                {data?.expertise?.slice(0, 2)?.map((e) => {
+                  return (
+                    <li
+                      key={e}
+                      className="text-base md:text-[11px] text-darkGrey"
+                    >
+                      {typeof window != undefined && window.innerWidth > 550 ? (
+                        <>
+                          {e.slice(0, 22)}
+                          {e?.length > 22 ? "..." : ""}
+                        </>
+                      ) : (
+                        <>{e}</>
+                      )}
                     </li>
                   );
                 })}
