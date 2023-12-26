@@ -46,7 +46,7 @@ const Therapists = () => {
 
   useEffect(() => {
     if (typeof window != "undefined") {
-      if (window.innerWidth < 550) {
+      if (window.innerWidth < 800) {
         setShowFilters(true);
       }
     }
