@@ -83,7 +83,7 @@ const UserRegister = () => {
   return (
     <div className="py-10">
       <Toaster />
-      <div className="rounded-xl w-[80vw] min-[900px]:w-[40vw] min-[1040px]:w-[28vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-xl w-[90vw] min-[900px]:w-[40vw] min-[1040px]:w-[28vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="flex flex-col py-[3vw] px-[4vw] md:px-[1.5vw] md:py-[1.5vw] h-full w-full rounded-xl items-center justify-center bg-white">
           <h1 className="mb-7 text-websiteBlue text-3xl font-semibold">
             Register
@@ -94,7 +94,7 @@ const UserRegister = () => {
               setUser({ ...user, name: e.target.value });
             }}
             type="text"
-            className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Name"
           />
           <input
@@ -103,10 +103,10 @@ const UserRegister = () => {
             onChange={(e) => {
               setUser({ ...user, email: e.target.value });
             }}
-            className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <div className="w-[80%] md:w-full flex items-center justify-center mb-4">
+          <div className="w-[78%] md:w-full flex items-center justify-center mb-4">
             <p className="mr-0 md:text-sm text-xs md:block hidden md:mr-6">
               Phone Number :{" "}
             </p>
@@ -151,7 +151,7 @@ const UserRegister = () => {
               onChange={(e) => {
                 setUser({ ...user, password: e.target.value });
               }}
-              className="w-[80%] md:w-full border px-3 py-1.5 outline-none rounded-md"
+              className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md"
               placeholder="Password"
             />
             <div
@@ -168,7 +168,7 @@ const UserRegister = () => {
             </div>
           </div>
           <Captcha captchaRef={captchaRef} />
-          <div className="flex justify-between w-[80%] md:w-full items-center pb-4 px-2 text-websiteBlue text-sm">
+          <div className="flex justify-between w-[85%] md:w-full items-center pb-4 px-2 text-websiteBlue text-sm">
             <div className="flex items-start">
               <input
                 type="checkbox"

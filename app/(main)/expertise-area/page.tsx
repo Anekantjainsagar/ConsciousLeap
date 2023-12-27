@@ -323,11 +323,11 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
         );
 
         if (val != 0) {
-          gsap.fromTo(`#${imageId}`, { x: 300 }, { x: 0 });
+          gsap.fromTo(`#${imageId}`, { x: 275 }, { x: 0 });
           gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
         }
       } else {
-        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 300 });
+        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 275 });
         gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
       }
     } else {
