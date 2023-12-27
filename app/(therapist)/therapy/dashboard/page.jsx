@@ -111,10 +111,10 @@ const Dashboard = () => {
                 className="h-full w-full rounded-[3vw] object-cover object-center"
               />
               <div className="absolute top-0 left-0 w-full flex justify-between items-center h-full px-[4vw] text-white">
-                <p className="text-lg md:text-2xl font-light">
+                <p className="md:text-2xl font-light">
                   Hello {therapists?.therapist?.name}, Welcome to Wellbeing!
                 </p>
-                <Image src={logoPng} alt="Circle" />
+                <Image src={logoPng} alt="Circle" className="md:w-full w-[20vw]" />
               </div>
             </div>
             <div className="grid grid-cols-3 justify-between w-full py-[1vw]">

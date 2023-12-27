@@ -42,7 +42,7 @@ const HowItWorks = () => {
       >
         How Does It Work?
       </h1>
-      <p className="text-center md:w-full w-11/12">
+      <p className="text-center md:w-full w-8/12">
         Considering the importance and impact of mental health, we spared no
         thought to keep it simple, impactful, and flexible all at once.
       </p>
