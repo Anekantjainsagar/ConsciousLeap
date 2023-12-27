@@ -40,7 +40,7 @@ const MemberStatistics = () => {
           <Image
             src={!visible3 ? img3 : img31}
             alt="Image 1"
-            className="cursor-pointer w-[20vw] min-[600px]:w-[10vw]"
+            className="cursor-pointer w-[20vw] min-[600px]:w-[16vw] min-[768px]:w-[10vw]"
             onMouseEnter={(e) => {
               setVisible3(!visible3);
             }}
