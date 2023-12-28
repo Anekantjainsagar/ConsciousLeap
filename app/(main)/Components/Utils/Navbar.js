@@ -202,7 +202,7 @@ const Navbar = () => {
                           setShowHover({ ...showHover, user: false });
                         }}
                         alt="User"
-                        className="min-[900px]:w-[2.8vw] min-[1040px]:w-[2vw] cursor-pointer"
+                        className="min-[900px]:w-[3vw] w-[3.5vw] min-[1040px]:w-[3vw] min-[1150px]:w-[4vw] min-[1350px]:w-[3vw] cursor-pointer"
                         onClick={(e) => {
                           history.push("/user/dashboard");
                         }}
@@ -313,7 +313,7 @@ const Navbar = () => {
                       setShowHover({ ...showHover, user: false });
                     }}
                     alt="User"
-                    className="w-[7vw] min-[500px]:w-[4vw] cursor-pointer"
+                    className="w-[7vw] min-[500px]:w-[5vw] min-[600px]:w-[3vw] cursor-pointer"
                     onClick={(e) => {
                       history.push("/user/dashboard");
                     }}

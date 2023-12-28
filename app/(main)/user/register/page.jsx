@@ -94,7 +94,7 @@ const UserRegister = () => {
               setUser({ ...user, name: e.target.value });
             }}
             type="text"
-            className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[50%] min-[900px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Name"
           />
           <input
@@ -103,10 +103,10 @@ const UserRegister = () => {
             onChange={(e) => {
               setUser({ ...user, email: e.target.value });
             }}
-            className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[50%] min-[900px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <div className="w-[78%] md:w-full flex items-center justify-center mb-4">
+          <div className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[50%] min-[900px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] flex items-center justify-center mb-4">
             <p className="mr-0 md:text-sm text-xs md:block hidden md:mr-6">
               Phone Number :{" "}
             </p>
@@ -151,7 +151,7 @@ const UserRegister = () => {
               onChange={(e) => {
                 setUser({ ...user, password: e.target.value });
               }}
-              className="w-[78%] md:w-full border px-3 py-1.5 outline-none rounded-md"
+              className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[50%] min-[900px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md"
               placeholder="Password"
             />
             <div

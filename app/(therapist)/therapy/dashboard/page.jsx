@@ -54,7 +54,7 @@ const Dashboard = () => {
     <div className="flex ">
       <div
         className={`${
-          showLeftBar ? "w-2/12" : "w-0 hidden"
+          showLeftBar ? "w-2/12" : "w-0 opacity-0 hidden"
         } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
       >
         <Image src={logo} alt="Logo" />
@@ -114,7 +114,11 @@ const Dashboard = () => {
                 <p className="md:text-2xl font-light">
                   Hello {therapists?.therapist?.name}, Welcome to Wellbeing!
                 </p>
-                <Image src={logoPng} alt="Circle" className="md:w-full w-[20vw]" />
+                <Image
+                  src={logoPng}
+                  alt="Circle"
+                  className="md:w-[8vw] w-[20vw]"
+                />
               </div>
             </div>
             <div className="grid grid-cols-3 justify-between w-full py-[1vw]">
@@ -241,7 +245,11 @@ const TaskBlock = ({ data }) => {
   return (
     <div className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3">
       <div className="bg-veryLightGrey flex justify-between items-center rounded-full px-[5vw] md:px-[2vw] py-[12.75px]">
-        <Image src={data?.image} alt="Sun rise" className="w-[10vw] md:w-[3vw]" />
+        <Image
+          src={data?.image}
+          alt="Sun rise"
+          className="w-[10vw] md:w-[3vw]"
+        />
         <p className="text-websiteBlue text-lg">{data?.text}</p>
         <div className="text-oceanGreen">
           <input

@@ -473,7 +473,7 @@ const EachQuestion = ({ params }) => {
         <h1 className="text-2xl mt-4 text-center px-5 md:text-[25px] md:font-extrabold text-newBlue mb-12">
           {tempData?.question}
         </h1>
-        <div className="grid md:grid-cols-3 gap-x-10">
+        <div className="grid items-center md:grid-cols-3 gap-x-10">
           <div>
             {tempData?.options?.slice(0, 3).map((e, i) => {
               return <Block key={i} data={e} page={val} />;

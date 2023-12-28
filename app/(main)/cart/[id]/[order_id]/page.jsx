@@ -27,7 +27,12 @@ const CartPage = ({ params }) => {
   return (
     <div className="py-[4vw] px-[5vw]">
       <div className="flex items-end justify-end mb-2 w-full">
-        <button className="bg-websiteBlue px-14 py-2 rounded-md font-semibold text-white">
+        <button
+          onClick={(e) => {
+            history.push("/cart/1");
+          }}
+          className="bg-websiteBlue px-14 py-2 rounded-md font-semibold text-white"
+        >
           Wishlist
         </button>
       </div>

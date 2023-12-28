@@ -10,7 +10,7 @@ const Problem = () => {
         <h1 className="text-2xl text-center md:text-[27px] md:font-extrabold text-newBlue mb-8">
           What are the significant concerns you are facing?
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:mx-0 mx-5">
+        <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-x-10 md:mx-0 mx-5">
           {[
             "I am having difficulty sleeping",
             "I have been feeling anxious and overwhelmed",

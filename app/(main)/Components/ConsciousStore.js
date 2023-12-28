@@ -62,7 +62,7 @@ const Block = ({ data }) => {
       onClick={() => {
         history.push("/conscious-store");
       }}
-      className="rounded-md w-full h-[20vh] min-[1040px]:h-[35vh] min-[600px]:h-[12vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+      className="rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
     >
       <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
         <Image

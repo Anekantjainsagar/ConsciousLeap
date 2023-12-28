@@ -125,7 +125,7 @@ const MemberStatistics = () => {
               <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0">
                 87%
               </h1>
-              <p className="text-center text-xs min-[900px]:text-base min-[1040px]:text-2xl text-darkGrey">
+              <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 Of our members
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
@@ -140,7 +140,7 @@ const MemberStatistics = () => {
               <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 82%
               </h1>
-              <p className="text-center text-xs min-[900px]:text-base min-[1040px]:text-2xl text-darkGrey">
+              <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 Of our members
                 <span className="text-websiteBlue font-medium ml-2">
                   Like
@@ -154,7 +154,7 @@ const MemberStatistics = () => {
               <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 76%
               </h1>
-              <p className="text-center text-xs min-[900px]:text-base min-[1040px]:text-2xl text-darkGrey">
+              <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 Of our members live
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
@@ -169,7 +169,7 @@ const MemberStatistics = () => {
               <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 90%
               </h1>
-              <p className="text-center text-xs min-[900px]:text-base min-[1040px]:text-2xl text-darkGrey">
+              <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members have rated us
                 <span className="text-websiteBlue ml-2 font-medium">
                   Five-Stars
@@ -182,7 +182,7 @@ const MemberStatistics = () => {
               <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 95%
               </h1>
-              <p className="text-center text-xs min-[900px]:text-base min-[1040px]:text-2xl text-darkGrey">
+              <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members
                 <span className="text-websiteBlue ml-2 font-medium">
                   Love
