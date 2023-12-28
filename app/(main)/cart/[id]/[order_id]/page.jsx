@@ -166,7 +166,7 @@ const CartPage = ({ params }) => {
               </div>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col-reverse items-center justify-center border mt-5">
+          <div className="flex md:flex-row flex-col-reverse items-center justify-center mt-5">
             <button
               onClick={(e) => {
                 e.preventDefault();

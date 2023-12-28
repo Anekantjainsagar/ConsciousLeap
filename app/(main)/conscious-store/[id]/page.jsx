@@ -304,7 +304,7 @@ const ProductPage = ({ params }) => {
               <hr className="my-3" />
               <div className="grid md:px-0 md:mt-0 mt-7 px-[5vw] md:grid-cols-3 gap-x-5">
                 {context?.productM?.productData?.slice(0, 3)?.map((e, i) => {
-                  return <StoreBlock data={e} key={i} />;
+                  return <StoreBlock data={e} key={i} showGrid={true} />;
                 })}
               </div>
             </div>

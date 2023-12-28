@@ -202,7 +202,7 @@ const Navbar = () => {
                           setShowHover({ ...showHover, user: false });
                         }}
                         alt="User"
-                        className="min-[900px]:w-[3vw] w-[3.5vw] min-[1040px]:w-[3vw] min-[1150px]:w-[4vw] min-[1350px]:w-[3vw] cursor-pointer"
+                        className="min-[900px]:w-[3vw] w-[3.5vw] min-[1040px]:w-[3vw] min-[1130px]:w-[3vw] min-[1200px]:w-[3vw] min-[1350px]:w-[2.6vw] min-[1700px]:w-[2vw] cursor-pointer"
                         onClick={(e) => {
                           history.push("/user/dashboard");
                         }}
