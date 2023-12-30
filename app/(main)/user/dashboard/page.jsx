@@ -99,13 +99,13 @@ const Dashboard = () => {
           />
         </div>
       )}
-      <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[2vw]">
+      <div className="bg-[#eee] px-[5vw] flex md:flex-row flex-col justify-between items-start py-[4vw]">
         <LeftBar />
         <div className="md:w-6/12 px-[2vw]">
           {" "}
           <div className="mb-4 md:mb-6">
-            <div className="flex px-[3vw] w-full h-[15vh] md:h-[20vh] backgroundImage md:px-[2vw] justify-between items-center rounded-3xl top-0 left-0">
-              <h1 className="text-base md:text-2xl text-white font-light">
+            <div className="flex px-[3vw] w-full h-[15vh] min-[768px]:h-[10vh] min-[1000px]:h-[15vh] backgroundImage md:px-[2vw] justify-between items-center rounded-3xl top-0 left-0">
+              <h1 className="text-base md:text-xl text-white font-light">
                 Hi {login?.name}, Welcome to #oneness
               </h1>
               <Image src={logoPng} alt="Logo png" className="w-[20%]" />

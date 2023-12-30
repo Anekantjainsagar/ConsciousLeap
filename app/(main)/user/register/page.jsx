@@ -94,7 +94,7 @@ const UserRegister = () => {
               setUser({ ...user, name: e.target.value });
             }}
             type="text"
-            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[80%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[82%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Name"
           />
           <input
@@ -103,10 +103,10 @@ const UserRegister = () => {
             onChange={(e) => {
               setUser({ ...user, email: e.target.value });
             }}
-            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[80%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
+            className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[82%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md mb-4"
             placeholder="Email"
           />
-          <div className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[80%] min-[900px]:w-[100%] w-[1050px ]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] flex items-center justify-center mb-4">
+          <div className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[82%] min-[900px]:w-[100%] w-[1050px ]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] flex items-center justify-center mb-4">
             <p className="mr-0 md:text-sm text-xs md:block hidden md:mr-6">
               Phone Number :{" "}
             </p>
@@ -121,28 +121,6 @@ const UserRegister = () => {
                 borderRadius: "4px",
               }}
             />
-            {/* <select
-              name=""
-              id=""
-              className="w-2/12 py-1.5 outline-none border rounded-md"
-            >
-              {data?.map((e) => {
-                return (
-                  <option value={e?.code} key={e?.code}>
-                    {e?.country}-{e?.code}
-                  </option>
-                );
-              })}
-            </select> */}
-            {/* <input
-              type="text"
-              value={user?.phone}
-              onChange={(e) => {
-                setUser({ ...user, phone: e.target.value });
-              }}
-              className="w-10/12 border px-3 py-1.5 ml-3 outline-none rounded-md"
-              placeholder="Phone with Country Code"
-            /> */}
           </div>
           <div className="relative flex items-center justify-center w-full">
             <input
@@ -151,11 +129,11 @@ const UserRegister = () => {
               onChange={(e) => {
                 setUser({ ...user, password: e.target.value });
               }}
-              className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[80%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md"
+              className="w-[78%] min-[400px]:w-[65%] min-[495px]:w-[60%] min-[530px]:w-[55%] min-[580px]:w-[50%] min-[600px]:w-[45%] min-[650px]:w-[40%] min-[777px]:w-[82%] min-[900px]:w-[100%] w-[1050px]:w-[100%] min-[1522px]:w-[90%] min-[1700px]:w-[80%] min-[1900px]:w-[70%] border px-3 py-1.5 outline-none rounded-md"
               placeholder="Password"
             />
             <div
-              className="absolute top-1/2 -translate-y-1/2 right-10 md:right-2"
+              className="absolute top-1/2 -translate-y-1/2 right-10 md:right-8 min-[800px]:right-14 min-[1000px]:right-5"
               onClick={(e) => {
                 setShowPassword(!showPassword);
               }}

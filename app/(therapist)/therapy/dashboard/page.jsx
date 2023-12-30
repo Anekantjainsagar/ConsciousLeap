@@ -51,7 +51,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="flex ">
+    <div className="flex overflow-x-hidden">
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 opacity-0 hidden"

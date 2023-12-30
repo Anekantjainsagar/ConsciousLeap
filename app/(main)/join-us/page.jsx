@@ -212,7 +212,7 @@ const JoinConsciousleap = () => {
           </p>
         </div>
       </div>
-      <div className="w-full min-[900px]:11/12 min-[1040px]:w-full min-[1200px]:w-2/3 h-fit md:h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
+      <div className="w-full min-[900px]:3/12 min-[1040px]:w-10/12 min-[1200px]:w-2/3 h-fit md:h-[45vh] flex items-center justify-center mt-[10vw] mb-[10vw] mx-auto relative">
         <Image
           src={circle}
           alt="Circle"
