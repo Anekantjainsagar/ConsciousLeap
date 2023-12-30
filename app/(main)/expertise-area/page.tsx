@@ -139,7 +139,7 @@ const ExpertiseArea = () => {
       tiles: [
         "Dissociative Identity Disorder",
         "Dissociative Amnesia",
-        "Depersonalization/Derealization Disorder",
+        "Depersonalization / Derealization Disorder",
       ],
     },
     {
@@ -286,14 +286,14 @@ const ExpertiseArea = () => {
                     </div>
                   );
                 })}
-                <div className="grid md:grid-cols-2 gap-y-4 mt-6">
+                <div className="grid md:grid-cols-2 whitespace-break-spaces gap-y-4 mt-6">
                   {data?.tiles?.map((e, i) => {
                     return (
                       <div
-                        className="rounded-full w-11/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px]"
+                        className="rounded-full whitespace-break-spaces w-11/12 h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px]"
                         key={i}
                       >
-                        <div className="bg-white rounded-full w-full h-full flex justify-center items-center py-2 px-6 text-center">
+                        <div className="bg-white whitespace-break-spaces rounded-full w-full h-full flex justify-center items-center py-2 px-6 text-center">
                           {e}
                         </div>
                       </div>

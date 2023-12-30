@@ -41,10 +41,10 @@ const ThoughtTracker = () => {
     <div className="my-[9vw] mx-[5vw] border border-gray-200 md:rounded-none rounded-md md:border-gray-400 flex md:flex-row flex-col justify-between">
       <Toaster />
       <div className="md:w-3/12 md:py-0 py-5 flex flex-col items-center justify-center">
-        <p className="mb-1 md:mb-2 text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
+        <p className="mb-1 md:mb-2 text-4xl md:text-2xl min-[1000px]:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
           Thought
         </p>
-        <p className="text-2xl md:text-4xl border-t pt-1 border-black font-semibold text-black">
+        <p className="text-2xl md:text-xl min-[1000px]:text-2xl border-t pt-1 border-black font-semibold text-black">
           Tracker
         </p>
       </div>

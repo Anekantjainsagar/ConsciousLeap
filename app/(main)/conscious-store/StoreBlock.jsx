@@ -185,7 +185,7 @@ const StoreBlock = ({ data, showGrid }) => {
                   e.stopPropagation();
                   setIsOpen(!modalIsOpen);
                 }}
-                className="bg-websiteBlue text-white w-[20vw] flex items-center justify-center mt-2 font-medium py-2 rounded-md"
+                className="bg-websiteBlue text-white w-fit px-3 flex items-center justify-center mt-2 font-medium py-2 rounded-md"
               >
                 <IoCartOutline size={26} className="mr-3" />
                 Add to Cart

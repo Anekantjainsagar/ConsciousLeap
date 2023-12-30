@@ -52,10 +52,10 @@ const ThingsMyself = () => {
     <div className="my-[9vw] mx-[5vw] border border-gray-400 flex flex-col md:flex-row justify-between">
       <Toaster />
       <div className="md:w-3/12 md:py-0 py-3 flex flex-col items-center justify-center">
-        <p className="mb-1 md:mb-2 text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
+        <p className="mb-1 md:mb-2  text-4xl md:text-2xl min-[1000px]:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
           Self Love
         </p>
-        <p className="text-2xl md:text-4xl border-t pt-1 border-black font-semibold text-black">
+        <p className="text-2xl md:text-xl min-[1000px]:text-2xl border-t pt-1 border-black font-semibold text-black">
           Journal
         </p>
       </div>
