@@ -48,8 +48,8 @@ const ThoughtTracker = () => {
           Tracker
         </p>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r h-[100vh] md:h-[150vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] pt-[6vw]">
+      <div className="md:w-9/12 bg-gradient-to-r from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white rounded-[45px] relative my-[3vw] mx-[2vh] md:mx-[5vh] py-[10vh]">
           <Image
             src={pen}
             alt={"Alt"}
@@ -61,16 +61,10 @@ const ThoughtTracker = () => {
             onChange={(e) => {
               setThoughts(e.target.value);
             }}
-            className="border rounded-md w-[92%] h-[85%] outline-none border-gray-800 block mx-auto p-3 text-xl"
+            className="border rounded-md w-[92%] outline-none border-gray-800 block mx-auto p-3 text-xl"
             id=""
             cols="30"
-            rows={
-              typeof window != "undefined"
-                ? window.innerWidth < 500
-                  ? "16"
-                  : "27"
-                : "0"
-            }
+            rows={15}
             placeholder="Write here..."
           ></textarea>
           <button

@@ -59,8 +59,8 @@ const Gratitude = () => {
           Journel
         </p>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r h-[120vh] md:h-[115vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white w-[95%] mx-auto md:w-[92%] rounded-[45px] h-full relative my-[3vw] md:mx-[5vh] pt-[3vw]">
+      <div className="md:w-9/12 bg-gradient-to-r from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white mx-auto rounded-[45px] relative pt-[1vw] pb-[6vw] my-4 md:mx-[5vh]">
           <Image
             src={pen}
             alt={"Alt"}
@@ -78,7 +78,6 @@ const Gratitude = () => {
               }}
               className="border rounded-md outline-none border-gray-800 w-[90%] block p-3 text-xl"
               id=""
-              cols="30"
               rows="4"
               placeholder="Write here..."
             ></textarea>
@@ -94,20 +93,13 @@ const Gratitude = () => {
                 onChange={(e) => {
                   setThoughts({ ...thoughts, tomorrow: e.target.value });
                 }}
-                className="border rounded-md outline-none border-gray-800 block p-3 text-xl"
+                className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols={
-                  typeof window != "undefined"
-                    ? window.innerWidth < 500
-                      ? "23"
-                      : "30"
-                    : "0"
-                }
                 rows="6"
                 placeholder="Write here..."
               ></textarea>
             </div>
-            <div className="w-[96%] mx-auto md:w-[50%] md:pr-[3.5vw]">
+            <div className="w-[96%] mx-auto md:w-[50%] px-[3.5vw]">
               <h1 className="text-websiteBlue text-xl md:mt-0 mt-4 md:text-2xl mb-3">
                 Reasons for looking forward to tomorrow
               </h1>
@@ -119,7 +111,6 @@ const Gratitude = () => {
                 }}
                 className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols="30"
                 rows="6"
                 placeholder="Write here..."
               ></textarea>

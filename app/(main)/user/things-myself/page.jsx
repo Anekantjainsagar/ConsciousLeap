@@ -59,14 +59,14 @@ const ThingsMyself = () => {
           Journal
         </p>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r h-[110vh] md:h-[105vh] from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white md:w-[92%] rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] pt-[3vw]">
+      <div className="md:w-9/12 bg-gradient-to-r from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
+        <div className="bg-white rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] py-[6vw] max-[1000px]:py-[20vw]">
           <Image
             src={pen}
             alt={"Alt"}
-            className="w-[25vw] absolute top-5 right-5"
+            className="w-[25vw] min-[1000px]:block hidden absolute top-5 right-5"
           />
-          <div className="w-[50%] ml-[3vw]">
+          <div className="w-full min-[1000px]:w-[50%] px-[4vw] min-[1000px]:px-0 min-[1000px]:ml-[3vw]">
             <h1 className="text-websiteBlue text-2xl md:text-4xl mb-3">
               Self-care List
             </h1>
@@ -76,21 +76,14 @@ const ThingsMyself = () => {
               onChange={(e) => {
                 setThoughts({ ...thoughts, selfCare: e.target.value });
               }}
-              className="border rounded-md outline-none border-gray-800 block p-3 text-xl"
+              className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
               id=""
-              cols={
-                typeof window != "undefined"
-                  ? window.innerWidth < 500
-                    ? "23"
-                    : "30"
-                  : "0"
-              }
               rows="6"
               placeholder="Write here..."
             ></textarea>
           </div>
-          <div className="flex w-[100%] md:flex-row flex-col justify-between mt-[4vw] items-center">
-            <div className="md:w-[50%] w-[98%] px-[3.5vw]">
+          <div className="flex w-[100%] md:flex-row px-[4vw] flex-col justify-between mt-[4vw] items-center">
+            <div className="md:w-[50%] w-[98%] pr-[3vw]">
               <h1 className="text-websiteBlue text-xl md:text-2xl mb-3">
                 Things I like about myself
               </h1>
@@ -100,20 +93,13 @@ const ThingsMyself = () => {
                 onChange={(e) => {
                   setThoughts({ ...thoughts, thingsMyself: e.target.value });
                 }}
-                className="border rounded-md outline-none border-gray-800 block p-3 text-xl"
+                className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols={
-                  typeof window != "undefined"
-                    ? window.innerWidth < 500
-                      ? "22"
-                      : "30"
-                    : "0"
-                }
                 rows="6"
                 placeholder="Write here..."
               ></textarea>
             </div>
-            <div className="md:w-[50%] w-[98%] md:pr-[3.5vw]">
+            <div className="md:w-[50%] w-[98%]">
               <h1 className="text-websiteBlue text-xl md:mt-0 mt-3 md:text-2xl mb-3">
                 Things I want to tell my past self
               </h1>
@@ -125,13 +111,6 @@ const ThingsMyself = () => {
                 }}
                 className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
-                cols={
-                  typeof window != "undefined"
-                    ? window.innerWidth < 500
-                      ? "22"
-                      : "30"
-                    : "0"
-                }
                 rows="6"
                 placeholder="Write here..."
               ></textarea>
