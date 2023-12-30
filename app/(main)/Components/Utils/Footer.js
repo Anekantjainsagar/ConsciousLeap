@@ -171,7 +171,7 @@ const Footer = () => {
             return (
               <div
                 key={i}
-                className="flex flex-col md:items-start items-center md:justify-start justify-center"
+                className="flex flex-col mr-4 md:items-start items-center md:justify-start justify-center"
               >
                 <h1 className="text-websiteBlue text-lg md:text-sm mb-1">
                   {e?.name}
@@ -205,7 +205,7 @@ const Footer = () => {
               </div>
             );
           })}
-          <div className="flex flex-col md:items-start items-center justify-center">
+          <div className="flex flex-col md:items-start mr-4 items-center justify-center">
             <h1 className="text-websiteBlue text-sm mb-1">Contact Us</h1>
             <p
               onClick={(e) => {

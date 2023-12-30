@@ -147,7 +147,7 @@ const RegisterTherapist = () => {
         At consciousleap, our mindful therapists are the founding pillars of our
         organization, and we take pride in offering them exceptional advantages.
       </p>
-      <div className="grid grid-cols-1 min-[900px]:grid-cols-3 min-[1040px]:grid-cols-6 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
+      <div className="grid grid-cols-1 min-[768px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1040px]:grid-cols-6 px-[2vw] gap-x-8 gap-y-4 md:gap-y-9">
         {registerData.map((e, i) => {
           return <FlipCard data={e} key={i} />;
         })}

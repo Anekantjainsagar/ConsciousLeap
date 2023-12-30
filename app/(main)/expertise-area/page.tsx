@@ -309,6 +309,93 @@ const ExpertiseArea = () => {
   );
 };
 
+// const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
+//   let name = data?.name?.toLowerCase().replaceAll(" ", "").replaceAll("-", "");
+
+//   let imageId = name + "image";
+//   let paraId = name + "para";
+
+//   useEffect(() => {
+//     if (typeof window != "undefined" && window.innerWidth < 550) {
+//       if (openIndex != i) {
+//         let val = parseInt(
+//           document.getElementById(imageId).style.transform.slice(10, 11)
+//         );
+
+//         if (val != 0) {
+//           gsap.fromTo(`#${imageId}`, { x: 275 }, { x: 0 });
+//           gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+//         }
+//       } else {
+//         gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 275 });
+//         gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+//       }
+//     } else {
+//       if (openIndex != i) {
+//         let val = parseInt(
+//           document.getElementById(imageId).style.transform.slice(10, 11)
+//         );
+
+//         if (val != 0) {
+//           gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
+//           gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+//         }
+//       } else {
+//         gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
+//         gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+//       }
+//     }
+//   }, [openIndex]);
+
+//   return (
+//     <div
+//       onClick={(e) => {
+//         let element = document.getElementById("BlockId");
+//         onToggle(i);
+//         setData(data);
+//         if (typeof window != "undefined" && window.innerWidth < 550) {
+//           if (!clicked) {
+//             gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 300 });
+//             gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+//           } else {
+//             gsap.fromTo(`#${imageId}`, { x: 300 }, { x: 0 });
+//             gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+//           }
+//         } else {
+//           if (!clicked) {
+//             gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
+//             gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+//           } else {
+//             gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
+//             gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
+//           }
+//         }
+//         setTimeout(() => {
+//           element.scrollIntoView({ behavior: "smooth", block: "center" });
+//         }, 300);
+//       }}
+//       className="rounded-full w-[90%] md:w-[92%] cursor-pointer h-full mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+//     >
+//       <div
+//         className="bg-white rounded-full w-full h-full p-2 md:p-2 grid items-center"
+//         style={{ gridTemplateColumns: "20% 80%" }}
+//       >
+//         <Image
+//           src={image1}
+//           id={imageId}
+//           alt="Image"
+//           className={`${
+//             !clicked ? "bg-newBlue" : "bg-gray-500"
+//           } p-2 w-4/6 md:w-full h-fit rounded-full`}
+//         />
+//         <p className="text-sm text-darkGrey text-center" id={paraId}>
+//           {data?.name}
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
+
 const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
   let name = data?.name?.toLowerCase().replaceAll(" ", "").replaceAll("-", "");
 
@@ -316,34 +403,18 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
   let paraId = name + "para";
 
   useEffect(() => {
-    if (typeof window != "undefined" && window.innerWidth < 550) {
-      if (openIndex != i) {
-        let val = parseInt(
-          document.getElementById(imageId).style.transform.slice(10, 11)
-        );
+    if (openIndex != i) {
+      let val = parseInt(
+        document.getElementById(imageId).style.transform.slice(10, 11)
+      );
 
-        if (val != 0) {
-          gsap.fromTo(`#${imageId}`, { x: 275 }, { x: 0 });
-          gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
-        }
-      } else {
-        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 275 });
-        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
+      if (val != 0) {
+        gsap.fromTo(`#${imageId}`, { x: "400%" }, { x: 0 });
+        gsap.fromTo(`#${paraId}`, { x: -45 }, { x: 0 });
       }
     } else {
-      if (openIndex != i) {
-        let val = parseInt(
-          document.getElementById(imageId).style.transform.slice(10, 11)
-        );
-
-        if (val != 0) {
-          gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
-          gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
-        }
-      } else {
-        gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
-        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
-      }
+      gsap.fromTo(`#${imageId}`, { x: 0 }, { x: "400%" });
+      gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -45 });
     }
   }, [openIndex]);
 
@@ -353,22 +424,12 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
         let element = document.getElementById("BlockId");
         onToggle(i);
         setData(data);
-        if (typeof window != "undefined" && window.innerWidth < 550) {
-          if (!clicked) {
-            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 300 });
-            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
-          } else {
-            gsap.fromTo(`#${imageId}`, { x: 300 }, { x: 0 });
-            gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
-          }
+        if (!clicked) {
+          gsap.fromTo(`#${imageId}`, { x: 0 }, { x: "400%" });
+          gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -45 });
         } else {
-          if (!clicked) {
-            gsap.fromTo(`#${imageId}`, { x: 0 }, { x: 168 });
-            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -50 });
-          } else {
-            gsap.fromTo(`#${imageId}`, { x: 164 }, { x: 0 });
-            gsap.fromTo(`#${paraId}`, { x: -50 }, { x: 0 });
-          }
+          gsap.fromTo(`#${imageId}`, { x: "400%" }, { x: 0 });
+          gsap.fromTo(`#${paraId}`, { x: -45 }, { x: 0 });
         }
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -388,7 +449,10 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
             !clicked ? "bg-newBlue" : "bg-gray-500"
           } p-2 w-4/6 md:w-full h-fit rounded-full`}
         />
-        <p className="text-sm text-darkGrey text-center" id={paraId}>
+        <p
+          className="text-sm font-bold text-darkGrey text-center"
+          id={paraId}
+        >
           {data?.name}
         </p>
       </div>

@@ -55,18 +55,18 @@ const Dashboard = () => {
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 opacity-0 hidden"
-        } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
+        } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col justify-center items-center`}
       >
         <Image src={logo} alt="Logo" />
-        <Image
-          src={therapists?.therapist?.photo}
-          alt="Image"
-          width={1000}
-          height={1000}
-          className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
-        />
         <div className="flex flex-col items-center">
-          <p className="mt-1 text-xl text-websiteBlue font-bold">
+          <Image
+            src={therapists?.therapist?.photo}
+            alt="Image"
+            width={1000}
+            height={1000}
+            className="w-[11.5vw] border h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
+          />
+          <p className="mt-1 text-xl text-websiteBlue text-center font-bold">
             {therapists?.therapist?.name}
           </p>
           <p className="text-sm text-websiteBlue break-words w-[13vw] text-center">
@@ -80,7 +80,7 @@ const Dashboard = () => {
             }}
             className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
-            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-full px-[2vw] py-2">
+            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-center items-center rounded-full px-[2vw] py-2">
               <CiSettings size={25} className="mr-3" />
               Edit Profile
             </div>

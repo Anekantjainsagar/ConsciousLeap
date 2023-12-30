@@ -41,7 +41,7 @@ const StoreBlock = ({ data, showGrid }) => {
           <div className="rounded-md bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px]">
             <div
               onClick={(e) => {
-                e.stopPropagation()
+                e.stopPropagation();
                 if (!context?.login?.wishlist?.includes(data?._id)) {
                   axios
                     .post(`${BASE_URL}/user/add-to-wishlist`, {
@@ -71,8 +71,13 @@ const StoreBlock = ({ data, showGrid }) => {
                 alt="Tshirt"
                 className="rounded-md w-full"
               />
-              <h1 className="text-lg w-full font-normal pt-2 pl-3">
-                {data?.name}
+              <h1 className="text-lg w-full font-normal pt-2">
+                {typeof window != undefined &&
+                window.innerWidth < 1000 &&
+                window.innerWidth > 768
+                  ? data?.name.slice(0, 10) +
+                    (data?.name?.length > 10 ? "..." : "")
+                  : data?.name}
               </h1>
               <p className="text-websiteBlue w-full pl-1 font-bold py-1">
                 <span className="text-gray-400 line-through">

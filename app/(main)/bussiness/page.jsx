@@ -84,9 +84,9 @@ const BussinessConsciousleap = () => {
         <Image
           src={logoCircle}
           alt="Logo"
-          className="md:block hidden min-[900px]:w-[95vw] min-[1040px]:w-[65vw]"
+          className="md:block hidden w-[100vw] min-[1040px]:w-[85vw]"
         />
-        <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
+        <div className="md:absolute h-[24vh] w-[50vw] overflow-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1
             className="text-3xl font-light text-center gradientHover cursor-pointer"
             id="scheduleacall"

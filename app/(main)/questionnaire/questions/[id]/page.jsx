@@ -526,7 +526,7 @@ const Block = ({ data, page }) => {
         }
         history.push(`/questionnaire/questions/${page + 1}`);
       }}
-      className="rounded-2xl mb-4 md:mb-5 mx-auto w-full md:w-[24vw] min-[900px]:h-[5vh] min-[1040px]:h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
+      className="rounded-2xl mb-4 md:mb-5 mx-auto w-full md:w-[24vw] min-[768px]:h-[11vh] min-[950px]:h-[8vh] min-[1400px]:h-[5.7vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
     >
       <div className="h-full w-full flex items-center justify-center rounded-2xl text-lg transitionAnimate text-center bg-white px-4 md:px-10 py-1.5 cursor-pointer">
         {data?.name}

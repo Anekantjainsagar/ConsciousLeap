@@ -88,7 +88,7 @@ const Dashboard = () => {
       )}
       {showCloud && (
         <div
-          className={`absolute top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
+          className={`absolute z-50 top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
         >
           <Image
             src={"/cloud.gif"}
@@ -195,7 +195,7 @@ const Dashboard = () => {
                     src={e?.image}
                     alt={e?.image.src}
                     key={e?.image.src}
-                    className="hover:scale-90 transition-all cursor-pointer"
+                    className="hover:scale-90 transition-all cursor-pointer z-10"
                   />
                 );
               })}

@@ -477,117 +477,6 @@ const Therapists = () => {
   );
 };
 
-const GridBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
-  const history = useRouter();
-  const { setShowPopUpId } = useContext(Context);
-
-  return (
-    <div
-      className="cursor-pointer"
-      onClick={(e) => {
-        history.push(`/therapy/${data?._id}`);
-      }}
-    >
-      <div className="md:hidden block rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex flex-col justify-center items-start py-[4vw] px-[1vw] h-full w-full rounded-xl bg-white">
-          <div className="rounded-full mx-auto w-5/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image
-                src={data?.photo}
-                width={1000}
-                height={1000}
-                alt="Photo of girl"
-                className="w-full h-[35vw] object-cover object-center rounded-full"
-              />
-            </div>
-          </div>
-          <div className="w-full flex flex-col justify-between items-center">
-            <div>
-              <h1 className="text-xl text-websiteBlue text-center">
-                {data?.name}
-              </h1>
-              <p className="text-darkGrey text-sm text-center">{data?.desc}</p>
-            </div>
-            <div>
-              <h1 className="mt-2 text-center text-base text-websiteBlue">
-                Expertise
-              </h1>
-              <div>
-                {data?.expertise?.slice(0, 2)?.map((e) => {
-                  return (
-                    <li key={e} className="text-sm text-darkGrey">
-                      {e}
-                    </li>
-                  );
-                })}
-              </div>
-            </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowPopUpId(data);
-                if (isConsentFilled) {
-                  setIsOpen(!modalIsOpen);
-                } else {
-                  history.push(`/therapy/${data?._id}/schedule`);
-                }
-              }}
-              className="bg-websiteBlue px-5 py-1.5 mt-5 rounded-lg text-white font-semibold text-sm"
-            >
-              Schedule Session
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="md:flex items-center justify-center hidden rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
-        <div className="flex items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
-          <div className="rounded-full min-[900px]:h-[12vw] min-[1040px]:w-[8vw] min-[900px]:w-[12vw] min-[1040px]:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image
-                src={data?.photo}
-                width={1000}
-                height={1000}
-                alt="Photo of girl"
-                className="w-full h-full object-cover object-center rounded-full"
-              />
-            </div>
-          </div>
-          <div className="w-7/12 ml-[1vw]">
-            <div className="h-[20vh] max-[1400px]:h-[25vh] max-[1280px]:h-[28vh] max-[1100px]:h-[10.5vh] max-[1000px]:h-[32vh]">
-              <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
-              <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
-              <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
-              <div className="h-[8vh]">
-                {data?.expertise?.slice(0, 2)?.map((e) => {
-                  return (
-                    <li key={e} className="text-[11px] text-darkGrey">
-                      {e}
-                    </li>
-                  );
-                })}
-              </div>
-            </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowPopUpId(data);
-                if (isConsentFilled) {
-                  setIsOpen(!modalIsOpen);
-                } else {
-                  history.push(`/therapy/${data?._id}/schedule`);
-                }
-              }}
-              className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white hover:scale-105 transition-all font-semibold"
-            >
-              Schedule Session
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
   const history = useRouter();
   const { setShowPopUpId } = useContext(Context);
@@ -618,9 +507,15 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
               <h1 className="text-2xl md:text-xl text-websiteBlue">
                 {typeof window != undefined && window.innerWidth < 550
                   ? data?.name
+                  : typeof window != undefined && window.innerWidth < 1300
+                  ? data?.name?.slice(0, 8)
                   : data?.name?.slice(0, 13)}
                 {typeof window != undefined && window.innerWidth < 550
                   ? ""
+                  : typeof window != undefined && window.innerWidth < 1300
+                  ? data?.name?.length > 8
+                    ? "..."
+                    : ""
                   : data?.name?.length > 13
                   ? "..."
                   : ""}
@@ -628,6 +523,8 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
               <p className="text-darkGrey text-sm mt-1">
                 {typeof window != undefined && window.innerWidth < 550
                   ? data?.desc?.slice(0, 50)
+                  : typeof window != undefined && window.innerWidth < 1300
+                  ? data?.desc?.slice(0, 14)
                   : data?.desc?.slice(0, 20)}{" "}
                 {typeof window != undefined && window.innerWidth < 550
                   ? data?.desc?.length > 50
@@ -647,10 +544,18 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
                       key={e}
                       className="text-base md:text-[11px] text-darkGrey"
                     >
-                      {typeof window != undefined && window.innerWidth > 550 ? (
+                      {typeof window != undefined &&
+                      window.innerWidth > 550 &&
+                      window.innerWidth < 1050 ? (
                         <>
                           {e.slice(0, 22)}
                           {e?.length > 22 ? "..." : ""}
+                        </>
+                      ) : typeof window != undefined &&
+                        window.innerWidth < 1300 ? (
+                        <>
+                          {e?.slice(0, 16)}
+                          {e?.length > 16 ? "..." : ""}
                         </>
                       ) : (
                         <>{e}</>

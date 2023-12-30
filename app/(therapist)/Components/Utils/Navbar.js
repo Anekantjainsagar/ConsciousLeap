@@ -17,7 +17,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
 
   return (
     <di>
-      <div className="flex w-[100vw] justify-between bg-white items-center px-3 md:px-7 py-3 border sticky top-0 right-0 z-30">
+      <div className="flex w-full justify-between bg-white items-center px-3 md:px-7 py-3 border sticky top-0 right-0 z-30">
         <div className="flex items-center">
           <HiMenuAlt1
             size={25}

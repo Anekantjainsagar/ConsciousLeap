@@ -73,12 +73,12 @@ const Impact = () => {
           return (
             <div
               key={i}
-              className="flex items-center md:w-full mx-auto w-4/6 justify-between"
+              className="flex min-[850px]:flex-row flex-col items-center md:w-full mx-auto w-4/6 justify-between"
             >
               <Image
                 src={e?.image}
                 alt={"Image"}
-                className="w-[20vw] md:w-[4vw]"
+                className="w-[20vw] md:w-[5vw]"
               />
               <div className="ml-3">
                 <p className="font-bold">{e?.title}</p>

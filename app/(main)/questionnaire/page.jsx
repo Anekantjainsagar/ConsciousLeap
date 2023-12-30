@@ -109,7 +109,7 @@ const Block = ({ data, index }) => {
         <Image
           src={questionnaire[index]?.image}
           alt="Image"
-          className="w-[15%] md:w-[6%] py-4"
+          className="w-[15%] md:w-[9%] py-4"
         />
         <div className="border-2 border-websiteBlue text-3xl md:text-6xl md:ml-[5vw] w-[17vw] min-[900px]:w-[15vw] min-[1040px]:w-[9.1vw] rounded-full flex justify-center items-center text-websiteBlue h-[17vw] min-[900px]:h-[15vw] min-[1040px]:h-[9.1vw]">
           {data?.value}

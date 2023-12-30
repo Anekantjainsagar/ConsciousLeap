@@ -68,7 +68,7 @@ const HowItWorks = () => {
         </div>
         <div className="flex flex-col items-center justify-center">
           <h1 className="cursor-pointer gradientHover text-3xl">Step 2</h1>
-          <p className="md:text-base text-sm mb-2">
+          <p className="md:text-base text-sm mb-2 text-center">
             We will match you to a Therapist
           </p>
           <Image
