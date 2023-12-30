@@ -450,7 +450,7 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
           } p-2 w-4/6 md:w-full h-fit rounded-full`}
         />
         <p
-          className="text-sm font-bold text-darkGrey text-center"
+          className="text-[10px] font-bold text-darkGrey text-center"
           id={paraId}
         >
           {data?.name}
