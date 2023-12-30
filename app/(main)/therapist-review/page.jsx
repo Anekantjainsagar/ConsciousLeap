@@ -31,7 +31,7 @@ const Therapist = ({ data }) => {
         history.push(`/therapist-review/${data?._id}`);
       }}
     >
-      <div className="rounded-full w-[30vw] md:w-[10vw] h-[30vw] md:h-[10vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+      <div className="rounded-full w-[30vw] md:w-[6vw] min-[900px]:w-[10vw] h-[30vw] md:h-[6vw] min-[900px]:h-[10vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full p-1 w-full rounded-full bg-white">
           <Image
             src={data?.photo}

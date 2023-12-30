@@ -398,7 +398,7 @@ const Therapists = () => {
           <div
             className={`grid ${
               showGrid
-                ? "grid-cols-1 min-[900px]:grid-cols-2 min-[1040px]:grid-cols-3"
+                ? "grid-cols-1 min-[768px]:grid-cols-2 min-[1040px]:grid-cols-3"
                 : "grid-cols-1"
             } mt-5 gap-x-4 gap-y-6 md:px-0 px-[4vw]`}
           >
@@ -491,7 +491,7 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
       <div className="flex items-center justify-center rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
         <div className="flex md:flex-row flex-col items-center md:items-start py-[3vw] px-[4vw] md:p-[1vw] h-full w-full rounded-xl justify-between bg-white">
           {/* Image problem */}
-          <div className="rounded-full md:w-[8vw] h-[50vw] w-[50vw] md:h-[8vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+          <div className="rounded-full md:w-[9vw] h-[50vw] w-[50vw] md:h-[9vw] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={data?.photo}
