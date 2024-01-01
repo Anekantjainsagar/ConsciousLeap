@@ -27,7 +27,9 @@ const GlobalPresence = () => {
       <div className="relative">
         <Image src={image} alt={image.src} className="mt-3 w-[100vw]" />
         {/* India */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[53%] top-[52%] cursor-pointer md:left-[66.5%] left-[69%] transition-all mac:left-[69.5%]">
+        <div
+          className={`absolute flex flex-col items-center justify-center top-[53%] cursor-pointer left-[53%] md:left-[65%] min-[1300px]:left-[66%] min-[2000px]:left-[68%] transition-all`}
+        >
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               showIndia ? "block" : "hidden"
@@ -51,7 +53,7 @@ const GlobalPresence = () => {
           />
         </div>
         {/* Dubai */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[48%] cursor-pointer top-[49%] left-[50%] md:left-[57%] mac:left-[60%]">
+        <div className="absolute flex flex-col items-center justify-center cursor-pointer top-[46%] min-[2000px]:top-[48%] left-[45%] min-[2000px]:left-[58%] md:left-[57%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               setshowDubai ? "block" : "hidden"
@@ -82,7 +84,7 @@ const GlobalPresence = () => {
           </p>
         </div>
         {/* ESTONIA */}
-        <div className="absolute flex flex-col items-center justify-center md:top-[29%] cursor-pointer top-[29%] md:left-[48%] left-[50%] mac:left-[51%]">
+        <div className="absolute flex flex-col items-center justify-center cursor-pointer top-[29%] md:left-[46%] left-[36%] min-[1400px]:left-[49%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               setshowEstonia ? "block" : "hidden"
