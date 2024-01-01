@@ -84,16 +84,11 @@ export function BootstrapCarousel() {
       text: "consciousleap created a safe space where I could discuss my concerns and receive guidance",
     },
   ];
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
 
   return (
     <div className="relative">
-      <div className="absolute -z-10 w-[75vw] md:block hidden left-1/2 -translate-x-1/2">
-        <Image src={bg} alt="Background" />
+      <div className="absolute -z-10 w-full md:block hidden left-1/2 -translate-x-1/2">
+        <Image src={bg} alt="Background" className="w-full px-[10vw]" />
       </div>
       <Swiper
         slidesPerView={1}

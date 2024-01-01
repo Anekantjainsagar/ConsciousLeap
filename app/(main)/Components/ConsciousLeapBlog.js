@@ -170,7 +170,7 @@ const ImageBlock = ({ image, onClick }) => {
         <Image
           src={image}
           alt="User profile"
-          className="rounded-md hover:scale-95 cursor-pointer transition-all"
+          className="rounded-md w-full hover:scale-95 cursor-pointer transition-all"
         />
       </div>
     </div>

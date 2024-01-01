@@ -63,7 +63,7 @@ const Dashboard = () => {
       <div
         className={`${
           showLight ? "block" : "hidden"
-        } absolute top-0 left-0 w-[95vw] h-[100vh] overflow-hidden`}
+        } absolute top-0 left-0 w-[95vw] z-50 h-[100vh] overflow-hidden`}
       >
         <Image
           src={"/lightening.gif"}
@@ -75,7 +75,7 @@ const Dashboard = () => {
       </div>
       {showSunshine && (
         <div
-          className={`absolute top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
+          className={`absolute z-50 top-0 left-0 w-[99vw] h-[100vh] overflow-hidden`}
         >
           <Image
             src={"/sunshine.gif"}

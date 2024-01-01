@@ -59,10 +59,12 @@ const BussinessConsciousleap = () => {
       >
         Why consciousleap for Business?
       </h1>
-      <div
-        id="container-bussiness"
-        className="px-4 py-4 rounded-md mt-5 w-11/12 md:w-10/12 md:px-5"
-      ></div>
+      <div className="mt-5 w-11/12 md:w-10/12 flex items-center justify-center">
+        <div
+          id="container-bussiness"
+          className="px-4 py-4 rounded-md md:px-5"
+        ></div>
+      </div>
       <Line2 />
       <div className="flex flex-col items-center h-[50vh] md:w-[42%]">
         <h1
@@ -84,9 +86,9 @@ const BussinessConsciousleap = () => {
         <Image
           src={logoCircle}
           alt="Logo"
-          className="md:block hidden w-[100vw] min-[1040px]:w-[85vw]"
+          className="md:block hidden w-[100vw] min-[1040px]:w-[85vw] min-[2400px]:w-[35vw]"
         />
-        <div className="md:absolute h-[24vh] w-[50vw] overflow-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
+        <div className="md:absolute h-[24vh] w-[50vw] overflow-y-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1
             className="text-3xl font-light text-center gradientHover cursor-pointer"
             id="scheduleacall"

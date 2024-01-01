@@ -153,31 +153,35 @@ const StoreBlock = ({ data, showGrid }) => {
             >
               <AiOutlineHeart size={20} />
             </div>
-            <div className="flex p-3 md:p-2 h-full w-full rounded-md items-center justify-center bg-white">
-              <Image
-                src={data?.images[0]}
-                width={100}
-                height={100}
-                alt="Tshirt"
-                className="rounded-md w-[20vw]"
-              />
-              <div className="w-[50vw] ml-5">
-                <h1 className="text-lg w-full font-normal pt-2">
-                  {data?.name}
-                </h1>
-                <p className="text-websiteBlue w-full pl-1 font-bold py-1">
-                  <span className="text-gray-400 line-through">
-                    INR {data?.discountPrice}
-                  </span>{" "}
-                  INR {data?.price}
-                </p>
-                <div className="w-full flex items-center pt-0.5 pl-1">
-                  {[...Array(data?.rating)]?.map((e, i) => {
-                    return <AiFillStar className="text-websiteBlue" key={i} />;
-                  })}
-                  {[...Array(5 - data?.rating)]?.map((e, i) => {
-                    return <AiFillStar color="#b3b3b3" key={i} />;
-                  })}
+            <div className="flex p-3 md:p-2 h-full w-full rounded-md items-center justify-between bg-white">
+              <div className="flex items-center justify-start">
+                <Image
+                  src={data?.images[0]}
+                  width={100}
+                  height={100}
+                  alt="Tshirt"
+                  className="rounded-md min-[2500px]:w-[12vw] w-[20vw]"
+                />
+                <div className="w-[25vw] ml-5">
+                  <h1 className="text-lg w-full font-normal pt-2">
+                    {data?.name}
+                  </h1>
+                  <p className="text-websiteBlue w-full pl-1 font-bold py-1">
+                    <span className="text-gray-400 line-through">
+                      INR {data?.discountPrice}
+                    </span>{" "}
+                    INR {data?.price}
+                  </p>
+                  <div className="w-full flex items-center pt-0.5 pl-1">
+                    {[...Array(data?.rating)]?.map((e, i) => {
+                      return (
+                        <AiFillStar className="text-websiteBlue" key={i} />
+                      );
+                    })}
+                    {[...Array(5 - data?.rating)]?.map((e, i) => {
+                      return <AiFillStar color="#b3b3b3" key={i} />;
+                    })}
+                  </div>
                 </div>
               </div>
               <button
@@ -185,7 +189,7 @@ const StoreBlock = ({ data, showGrid }) => {
                   e.stopPropagation();
                   setIsOpen(!modalIsOpen);
                 }}
-                className="bg-websiteBlue text-white w-fit px-3 flex items-center justify-center mt-2 font-medium py-2 rounded-md"
+                className="bg-websiteBlue text-white w-fit px-8 flex items-center justify-center mt-2 font-medium py-2 rounded-md"
               >
                 <IoCartOutline size={26} className="mr-3" />
                 Add to Cart

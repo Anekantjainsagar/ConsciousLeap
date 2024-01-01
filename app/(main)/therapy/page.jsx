@@ -586,14 +586,8 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
   );
 };
 
-const ListBlock = ({
-  data,
-  modalIsOpen,
-  setIsOpen,
-  isConsentFilled,
-  setIsConsentFilled,
-}) => {
-  const { setShowPopUpId, showPopUpId } = useContext(Context);
+const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
+  const { setShowPopUpId } = useContext(Context);
   const history = useRouter();
 
   return (
@@ -604,7 +598,7 @@ const ListBlock = ({
       className="scale-95 hover:scale-100 transition-all"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex items-center min-[900px]:py-[1vw] min-[1040px]:py-[3vw] px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
+        <div className="flex items-center min-[900px]:py-[1vw] min-[1040px]:py-[3vw] min-[2500px]:py-10 px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
           <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image

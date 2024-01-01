@@ -52,7 +52,7 @@ const Rain = ({ showRain, setShowRain }) => {
     <div
       className={`${
         showRain ? "block" : "hidden"
-      } rain-animation overflow-hidden back-row-toggle splat-toggle`}
+      } rain-animation overflow-hidden back-row-toggle z-50 splat-toggle`}
     >
       <div className="rain front-row"></div>
       <div className="rain back-row"></div>
