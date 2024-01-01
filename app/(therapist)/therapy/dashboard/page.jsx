@@ -141,7 +141,7 @@ const Dashboard = () => {
                 className="hover:scale-105 transition-all cursor-pointer"
               />
             </div>
-            <div className="flex md:flex-row flex-col items-start justify-between px-[0.7vw]">
+            <div className="flex md:flex-row flex-col items-stretch justify-between px-[0.7vw]">
               <div className="w-full md:mb-0 mb-3 md:w-[48.5%] bg-white rounded-3xl p-[3vw] md:p-[1vw]">
                 <h1 className="text-center text-websiteBlue text-[19px] font-medium">
                   My Reviews
@@ -233,7 +233,9 @@ const ReviewBlock = ({ data }) => {
             : "w-[14vw] md:w-[6vw]"
         }`}
       />
-      <p className="text-websiteBlue text-lg">{data?.text}</p>
+      <p className="text-websiteBlue text-lg md:text-base min-[1300px]:text-lg ml-3">
+        {data?.text}
+      </p>
       <div className="text-websiteBlue bg-white border-4 flex justify-center items-center text-xs rounded-full font-semibold h-[3.75vw] w-[3.75vw] border-oceanGreen">
         {data?.value}%
       </div>
@@ -250,7 +252,9 @@ const TaskBlock = ({ data }) => {
           alt="Sun rise"
           className="w-[10vw] md:w-[3vw]"
         />
-        <p className="text-websiteBlue text-lg">{data?.text}</p>
+        <p className="text-websiteBlue ml-3 text-lg md:text-base min-[1300px]:text-lg">
+          {data?.text}
+        </p>
         <div className="text-oceanGreen">
           <input
             type="checkbox"
