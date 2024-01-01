@@ -66,7 +66,7 @@ const BussinessConsciousleap = () => {
         ></div>
       </div>
       <Line2 />
-      <div className="flex flex-col items-center h-[50vh] md:w-[42%]">
+      <div className="flex flex-col items-center md:w-[42%]">
         <h1
           className="text-3xl font-light gradientHover cursor-pointer"
           id="ourglobalclients"
