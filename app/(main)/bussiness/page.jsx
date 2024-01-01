@@ -86,7 +86,7 @@ const BussinessConsciousleap = () => {
         <Image
           src={logoCircle}
           alt="Logo"
-          className="md:block hidden w-[100vw] min-[1040px]:w-[85vw] min-[2400px]:w-[35vw]"
+          className="md:block hidden w-[100vw] min-[1040px]:w-[75vw] min-[1500px]:w-[50vw] min-[1900px]:w-[40vw] min-[2400px]:w-[35vw]"
         />
         <div className="md:absolute h-[24vh] w-[50vw] overflow-y-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1

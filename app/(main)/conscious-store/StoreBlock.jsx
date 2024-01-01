@@ -160,7 +160,7 @@ const StoreBlock = ({ data, showGrid }) => {
                   width={100}
                   height={100}
                   alt="Tshirt"
-                  className="rounded-md min-[2500px]:w-[12vw] w-[20vw]"
+                  className="rounded-md min-[2500px]:w-[8vw] w-[20vw]"
                 />
                 <div className="w-[25vw] ml-5">
                   <h1 className="text-lg w-full font-normal pt-2">

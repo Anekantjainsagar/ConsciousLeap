@@ -55,7 +55,7 @@ const Dashboard = () => {
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 opacity-0 hidden"
-        } border border-gray-300 md:block h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col justify-center items-center`}
+        } border max-[768px]:hidden border-gray-300 md:block h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col justify-center items-center`}
       >
         <Image src={logo} alt="Logo" />
         <div className="flex flex-col items-center">
