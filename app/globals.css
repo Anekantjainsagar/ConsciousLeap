@@ -20,7 +20,9 @@
 .backgroundImage {
   background-image: url("../app/\(main\)/Assets/top-background2.png");
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
+  background-clip: border-box;
 }
 
 .swiper-button-prev {

@@ -103,8 +103,8 @@ const Dashboard = () => {
         <LeftBar />
         <div className="md:w-6/12 px-[2vw]">
           {" "}
-          <div className="mb-4 md:mb-6">
-            <div className="flex px-[3vw] w-full h-[15vh] min-[768px]:h-[10vh] min-[1000px]:h-[15vh] backgroundImage md:px-[2vw] justify-between items-center rounded-3xl top-0 left-0">
+          <div className="mb-4 md:mb-6 border">
+            <div className="flex px-[3vw] w-full h-[15vh] min-[768px]:h-[10vh] min-[1000px]:h-[15vh] backgroundImage md:px-[2vw] justify-between items-center rounded-[25px] top-0 left-0">
               <h1 className="text-base md:text-xl text-white font-light">
                 Hi {login?.name}, Welcome to #oneness
               </h1>
