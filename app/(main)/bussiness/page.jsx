@@ -88,9 +88,9 @@ const BussinessConsciousleap = () => {
           alt="Logo"
           className="md:block hidden w-[100vw] min-[1040px]:w-[75vw] min-[1500px]:w-[50vw] min-[1900px]:w-[40vw] min-[2400px]:w-[45vw]"
         />
-        <div className="md:absolute md:h-[24vh] md:w-[50vw] overflow-y-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
+        <div className="md:absolute md:h-[24vh] md:w-[30vw] overflow-y-scroll md:top-1/2 md:-translate-y-1/2 md:left-1/2 pb-5 md:-translate-x-1/2">
           <h1
-            className="text-3xl font-light text-center gradientHover cursor-pointer"
+            className="text-3xl w-fit mx-auto font-light text-center gradientHover cursor-pointer"
             id="scheduleacall"
           >
             Schedule a Call

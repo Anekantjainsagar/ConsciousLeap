@@ -509,14 +509,14 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
                   ? data?.name
                   : typeof window != undefined && window.innerWidth < 1300
                   ? data?.name?.slice(0, 8)
-                  : data?.name?.slice(0, 13)}
+                  : data?.name?.slice(0, 10)}
                 {typeof window != undefined && window.innerWidth < 550
                   ? ""
                   : typeof window != undefined && window.innerWidth < 1300
                   ? data?.name?.length > 8
                     ? "..."
                     : ""
-                  : data?.name?.length > 13
+                  : data?.name?.length > 10
                   ? "..."
                   : ""}
               </h1>
@@ -525,12 +525,12 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
                   ? data?.desc?.slice(0, 50)
                   : typeof window != undefined && window.innerWidth < 1300
                   ? data?.desc?.slice(0, 14)
-                  : data?.desc?.slice(0, 20)}{" "}
+                  : data?.desc?.slice(0, 16)}{" "}
                 {typeof window != undefined && window.innerWidth < 550
                   ? data?.desc?.length > 50
                     ? "..."
                     : ""
-                  : data?.desc?.length > 20
+                  : data?.desc?.length > 16
                   ? "..."
                   : ""}
               </p>

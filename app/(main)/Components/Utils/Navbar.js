@@ -189,7 +189,7 @@ const Navbar = () => {
               <div>
                 {login?._id ? (
                   <>
-                    <div className="border-2 min-[768px]:w-[5vw] min-[768px]:h-[5vw] min-[900px]:w-[4vw] min-[900px]:h-[4vw] min-[1000px]:w-[4vw] min-[1000px]:h-[4vw] min-[1100px]:w-[3.5vw] min-[1100px]:h-[3.5vw] min-[1300px]:w-[3vw] min-[1300px]:h-[3vw] min-[1500px]:w-[2.8vw] min-[1500px]:h-[2.8vw] min-[1650px]:w-[2.3vw] min-[1650px]:h-[2.3vw] min-[2000px]:w-[2vw] min-[2000px]:h-[2vw] min-[2200px]:w-[1.7vw] min-[2200px]:h-[1.7vw] min-[2600px]:w-[1.5vw] min-[2600px]:h-[1.5vw] rounded-full mr-3 flex items-center justify-center border-websiteBlue hover:scale-110 transition-all">
+                    <div className="border-2 min-[768px]:w-[5vw] min-[768px]:h-[5vw] min-[900px]:w-[4vw] min-[900px]:h-[4vw] min-[1000px]:w-[4vw] min-[1000px]:h-[4vw] min-[1100px]:w-[3.5vw] min-[1100px]:h-[3.5vw] min-[1300px]:w-[3vw] min-[1300px]:h-[3vw] min-[1500px]:w-[2.5vw] min-[1500px]:h-[2.5vw] min-[1650px]:w-[2.3vw] min-[1650px]:h-[2.3vw] min-[2000px]:w-[2vw] min-[2000px]:h-[2vw] min-[2200px]:w-[1.7vw] min-[2200px]:h-[1.7vw] min-[2600px]:w-[1.5vw] min-[2600px]:h-[1.5vw] rounded-full mr-3 flex items-center justify-center border-websiteBlue hover:scale-110 transition-all">
                       <Image
                         src={user}
                         onMouseEnter={(e) => {
@@ -416,7 +416,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
           !hover ? "hidden" : "block"
         } bg-white text-xs w-[55vw] md:w-[14vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
       >
-        <div className="mt-2 bg-transparent"></div>
+        <div className="-mt-3 bg-transparent pt-6"></div>
         {e?.items.map((data, i) => {
           return (
             <p
