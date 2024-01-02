@@ -338,11 +338,11 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
 
         if (val != 0) {
           gsap.fromTo(`#${imageId}`, { x: "400%" }, { x: 0 });
-          gsap.fromTo(`#${paraId}`, { x: -45 }, { x: 0 });
+          gsap.fromTo(`#${paraId}`, { x: -25 }, { x: 0 });
         }
       } else {
         gsap.fromTo(`#${imageId}`, { x: 0 }, { x: "400%" });
-        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -45 });
+        gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -25 });
       }
     }
   }, [openIndex]);
@@ -364,10 +364,10 @@ const RoundBlock = ({ data, setData, i, clicked, onToggle, openIndex }) => {
         } else {
           if (!clicked) {
             gsap.fromTo(`#${imageId}`, { x: 0 }, { x: "400%" });
-            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -45 });
+            gsap.fromTo(`#${paraId}`, { x: 0 }, { x: -25 });
           } else {
             gsap.fromTo(`#${imageId}`, { x: "400%" }, { x: 0 });
-            gsap.fromTo(`#${paraId}`, { x: -45 }, { x: 0 });
+            gsap.fromTo(`#${paraId}`, { x: -25 }, { x: 0 });
           }
         }
         setTimeout(() => {
