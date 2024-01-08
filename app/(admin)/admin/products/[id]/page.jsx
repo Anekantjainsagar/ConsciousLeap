@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
@@ -7,7 +7,8 @@ import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { useRouter } from "next/navigation";
 
-const AddProduct = () => {
+const AddProduct = ({ params }) => {
+  const { id } = params;
   const history = useRouter();
   const [product, setProduct] = useState({
     name: "",
@@ -22,10 +23,26 @@ const AddProduct = () => {
   const [fabric, setFabric] = useState("");
   const [size, setSize] = useState("");
 
+  useEffect(() => {
+    axios.post(`${BASE_URL}/product/get/${id}`).then((response) => {
+      const product = response.data;
+      setProduct({
+        name: product?.name,
+        price: product?.price,
+        quantity: product?.available,
+        discountPrice: product?.discountPrice,
+        description: product?.description,
+        size: product?.size,
+        fabric: product?.febric,
+      });
+      setImage(product?.images[0]);
+    });
+  }, [id]);
+
   const saveProduct = () => {
     if (product?.name && product?.price && product?.discountPrice && image) {
       axios
-        .post(`${BASE_URL}/product/add`, {
+        .post(`${BASE_URL}/product/update/${id}`, {
           ...product,
           images: [image],
           available: product?.quantity,
@@ -48,7 +65,7 @@ const AddProduct = () => {
     <div className="h-[82vh] overflow-y-auto">
       <Toaster />
       <h1 className="text-xl font-bold mb-2 cursor-pointer gradientHover w-fit text-newBlue">
-        Add New Product
+        Update Product
       </h1>
       <div className="px-3">
         <input
@@ -130,6 +147,7 @@ const AddProduct = () => {
                 width={100}
                 height={100}
                 src={image}
+                alt="Image"
                 className="h-[50vh] object-cover w-full object-center rounded-md mb-3"
               />
             ) : (

@@ -4,22 +4,11 @@ import { getCookie } from "cookies-next";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
-
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
+import toast, { Toaster } from "react-hot-toast";
+import { BASE_URL } from "@/Utils/urls";
+import axios from "axios";
+import Link from "next/link";
 
 const Products = () => {
   const [sortStore, setSortStore] = useState("Sort By");
@@ -34,6 +23,7 @@ const Products = () => {
 
   return (
     <div className="bg-gray-100">
+      <Toaster />
       <div className="bg-white border rounded-md pt-4 overflow-y-auto h-[82vh] shadow-md shadow-gray-200">
         <div className="text-black flex items-center justify-between px-4 border-b pb-2">
           <p className="font-bold">
@@ -135,6 +125,9 @@ const Products = () => {
 };
 
 const Product = ({ data }) => {
+  const history = useRouter();
+  const { productM } = useContext(Context);
+
   return (
     <div className="rounded-md flex items-center justify-between mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
       <div className="flex items-center">
@@ -158,17 +151,35 @@ const Product = ({ data }) => {
         </div>
       </div>
       <div className="flex items-center">
-        <AiOutlineEye
-          className="text-oceanGreen bg-lightOceanGreen p-2 rounded-full hover:text-white hover:bg-oceanGreen transition-all mr-3"
-          size={35}
-        />
+        <Link
+          href={`https://consciousleap.co/conscious-store/${data?._id}`}
+          target="_blank"
+        >
+          <AiOutlineEye
+            className="text-oceanGreen bg-lightOceanGreen p-2 rounded-full hover:text-white hover:bg-oceanGreen transition-all mr-3"
+            size={35}
+          />
+        </Link>
         <AiOutlineEdit
           className="text-blue-500 bg-blue-50 p-2 rounded-full hover:text-white hover:bg-blue-500 transition-all mr-3"
           size={35}
+          onClick={(e) => {
+            history.push(`/admin/products/${data?._id}`);
+          }}
         />
         <AiOutlineDelete
           className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all mr-3"
           size={35}
+          onClick={(e) => {
+            axios
+              .post(`${BASE_URL}/product/delete/${data?._id}`)
+              .then((res) => {
+                if (res.status === 200 && res.data.deletedCount > 0) {
+                  productM?.getProducts();
+                  toast.success("Deleted successfully");
+                }
+              });
+          }}
         />
       </div>
     </div>

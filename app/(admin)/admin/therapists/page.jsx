@@ -1,9 +1,13 @@
 "use client";
 import Context from "@/Context/Context";
+import { BASE_URL } from "@/Utils/urls";
+import axios from "axios";
 import { getCookie } from "cookies-next";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 
 const Therapists = () => {
@@ -19,6 +23,7 @@ const Therapists = () => {
 
   return (
     <div className="bg-gray-100">
+      <Toaster />
       <div className="bg-white border rounded-md pt-4 overflow-y-auto h-[82vh] shadow-md shadow-gray-200">
         <div className="text-black flex items-center justify-between px-4 border-b pb-2">
           <p className="font-bold">
@@ -111,6 +116,7 @@ const Therapists = () => {
 };
 
 const Product = ({ data }) => {
+  const { getTherapist } = useContext(Context);
   return (
     <div className="rounded-md grid grid-cols-3 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
       <div className="flex items-center">
@@ -141,10 +147,15 @@ const Product = ({ data }) => {
         })}
       </div>
       <div className="flex justify-end items-center">
-        <AiOutlineEye
-          className="text-oceanGreen bg-lightOceanGreen p-2 rounded-full hover:text-white hover:bg-oceanGreen transition-all mr-3"
-          size={35}
-        />
+        <Link
+          href={`https://consciousleap.co/therapy/${data?._id}`}
+          target="_blank"
+        >
+          <AiOutlineEye
+            className="text-oceanGreen bg-lightOceanGreen p-2 rounded-full hover:text-white hover:bg-oceanGreen transition-all mr-3"
+            size={35}
+          />
+        </Link>
         <AiOutlineEdit
           className="text-blue-500 bg-blue-50 p-2 rounded-full hover:text-white hover:bg-blue-500 transition-all mr-3"
           size={35}
@@ -152,6 +163,16 @@ const Product = ({ data }) => {
         <AiOutlineDelete
           className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all mr-3"
           size={35}
+          onClick={(e) => {
+            axios
+              .post(`${BASE_URL}/therapist/delete-therapist/${data?._id}`)
+              .then((res) => {
+                if (res.status === 200 && res.data.deletedCount > 0) {
+                  getTherapist();
+                  toast.success("Deleted successfully");
+                }
+              });
+          }}
         />
       </div>
     </div>

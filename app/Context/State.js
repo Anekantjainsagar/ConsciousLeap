@@ -223,6 +223,7 @@ const B2BState = (props) => {
         setBussinessShow,
         productM,
         cart,
+        getTherapist,
       }}
     >
       {props.children}
