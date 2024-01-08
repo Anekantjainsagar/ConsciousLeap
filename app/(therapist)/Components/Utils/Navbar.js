@@ -4,7 +4,6 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { BiWorld } from "react-icons/bi";
 import Image from "next/image";
 import image from "@/(main)/Assets/sagrika.jpeg";
-import Link from "next/link";
 import { AiOutlineLogout, AiOutlineUser } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";

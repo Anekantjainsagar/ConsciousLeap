@@ -42,6 +42,9 @@ const UserLogin = () => {
             } else if (response.data.user == "User") {
               router.push("/");
               setCookie("token", token);
+            } else if (response.data.user === "Admin") {
+              router.push("/admin");
+              setCookie("admin_token", token);
             }
             setUser({
               email: "",

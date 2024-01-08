@@ -14,7 +14,6 @@ const PasswordReset = ({ params }) => {
     axios
       .get(`${BASE_URL}/login/password-reset/${id}/${token}`)
       .then((res) => {
-        console.log(res);
         if (res.status !== 200) {
           history("/user/login");
         }
@@ -34,7 +33,7 @@ const PasswordReset = ({ params }) => {
         }
       })
       .catch((err) => {
-        toast.error("Internal server error");
+        // toast.error("Internal server error");
       });
   };
 
