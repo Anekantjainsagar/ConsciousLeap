@@ -126,7 +126,7 @@ const MemberStatistics = () => {
                 87%
               </h1>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
-                Of our members
+                of our members
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
                   Recommended
@@ -141,7 +141,7 @@ const MemberStatistics = () => {
                 82%
               </h1>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
-                Of our members
+                of our members
                 <span className="text-websiteBlue font-medium ml-2">
                   Like
                 </span>{" "}
@@ -155,7 +155,7 @@ const MemberStatistics = () => {
                 76%
               </h1>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
-                Of our members live
+                of our members live
                 <br />{" "}
                 <span className="text-websiteBlue font-medium">
                   Mindfully

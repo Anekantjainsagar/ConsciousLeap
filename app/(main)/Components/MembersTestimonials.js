@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
-import img1 from "../Assets/client1.jpg";
-import img2 from "../Assets/client2.jpg";
-import img3 from "../Assets/client3.jpg";
+import img1 from "../Assets/client/1.jpg";
+import img2 from "../Assets/client/2.jpg";
+import img3 from "../Assets/client/4.jpg";
 
 import {
   Navigation,
