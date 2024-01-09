@@ -1,128 +1,72 @@
 "use client";
-import React, { useState, useContext, useEffect } from "react";
-import pen from "@/(main)/Assets/thingsMyself.png";
-import Image from "next/image";
+import React, { useContext } from "react";
+import { useRouter } from "next/navigation";
+import Context from "@/Context/Context";
+import { AiOutlineDelete } from "react-icons/ai";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
-import { getCookie } from "cookies-next";
-import Context from "@/Context/Context";
 
 const ThingsMyself = () => {
-  const [thoughts, setThoughts] = useState({
-    selfCare: "",
-    thingsMyself: "",
-    thingsPast: "",
-  });
-  const { login } = useContext(Context);
-
-  useEffect(() => {
-    console.log(login);
-    setThoughts({
-      selfCare: login?.thingsMyself?.selfCare,
-      thingsMyself: login?.thingsMyself?.thingsMyself,
-      thingsPast: login?.thingsMyself?.thingsPast,
-    });
-  }, [login]);
-
-  const onSubmit = () => {
-    if (thoughts?.selfCare && thoughts?.thingsMyself && thoughts?.thingsPast) {
-      axios
-        .post(`${BASE_URL}/user/thingsMyself`, {
-          selfCare: thoughts?.selfCare?.replace(/\n/g, "\\n"),
-          thingsMyself: thoughts?.thingsMyself?.replace(/\n/g, "\\n"),
-          thingsPast: thoughts?.thingsPast?.replace(/\n/g, "\\n"),
-          token: getCookie("token"),
-        })
-        .then((response) => {
-          console.log(response);
-          if (response.status == 200) {
-            toast.success("Saved successfully");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      toast.error("Please enter something");
-    }
-  };
+  const history = useRouter();
+  const { login, getUser } = useContext(Context);
 
   return (
-    <div className="my-[9vw] mx-[5vw] border border-gray-400 flex flex-col md:flex-row justify-between">
+    <div className="my-[9vw] mx-[5vw] px-5 py-3 border rounded-xl shadow-lg shadow-gray-300 bg-white h-[60vh] flex flex-col justify-between">
       <Toaster />
-      <div className="md:w-3/12 md:py-0 py-3 flex flex-col items-center justify-center">
-        <p className="mb-1 md:mb-2  text-4xl md:text-2xl min-[1000px]:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer">
-          Self Love
+      <div className="flex items-center justify-between">
+        <p className="text-2xl font-bold text-newBlue gradientHover cursor-pointer">
+          Self Love Journel
         </p>
-        <p className="text-2xl md:text-xl min-[1000px]:text-2xl border-t pt-1 border-black font-semibold text-black">
-          Journal
-        </p>
+        <button
+          onClick={(e) => {
+            history.push("/user/things-myself/add");
+          }}
+          className="bg-newBlue text-lg px-5 py-1 rounded-xl font-bold text-white"
+        >
+          Add
+        </button>
       </div>
-      <div className="md:w-9/12 bg-gradient-to-r from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white rounded-[45px] h-[88%] relative my-[3vw] mx-[2vh] md:mx-[5vh] py-[6vw] max-[1000px]:py-[20vw]">
-          <Image
-            src={pen}
-            alt={"Alt"}
-            className="w-[25vw] min-[1000px]:block hidden absolute top-5 right-5"
-          />
-          <div className="w-full min-[1000px]:w-[50%] px-[4vw] min-[1000px]:px-0 min-[1000px]:ml-[3vw]">
-            <h1 className="text-websiteBlue text-2xl md:text-4xl mb-3">
-              Self-care List
-            </h1>
-            <textarea
-              name=""
-              value={thoughts?.selfCare}
-              onChange={(e) => {
-                setThoughts({ ...thoughts, selfCare: e.target.value });
-              }}
-              className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
-              id=""
-              rows="6"
-              placeholder="Write here..."
-            ></textarea>
-          </div>
-          <div className="flex w-[100%] md:flex-row px-[4vw] flex-col justify-between mt-[4vw] items-center">
-            <div className="md:w-[50%] w-[98%] pr-[3vw]">
-              <h1 className="text-websiteBlue text-xl md:text-2xl mb-3">
-                Things I like about myself
-              </h1>
-              <textarea
-                name=""
-                value={thoughts?.thingsMyself}
-                onChange={(e) => {
-                  setThoughts({ ...thoughts, thingsMyself: e.target.value });
-                }}
-                className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
-                id=""
-                rows="6"
-                placeholder="Write here..."
-              ></textarea>
-            </div>
-            <div className="md:w-[50%] w-[98%]">
-              <h1 className="text-websiteBlue text-xl md:mt-0 mt-3 md:text-2xl mb-3">
-                Things I want to tell my past self
-              </h1>
-              <textarea
-                name=""
-                value={thoughts?.thingsPast}
-                onChange={(e) => {
-                  setThoughts({ ...thoughts, thingsPast: e.target.value });
-                }}
-                className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
-                id=""
-                rows="6"
-                placeholder="Write here..."
-              ></textarea>
-            </div>
-          </div>
-          <button
-            onClick={onSubmit}
-            className="float-right bg-blue-700 rounded-xl m-8 text-white px-6 py-1 text-lg"
-          >
-            Save
-          </button>
+      <div className="h-[50vh] overflow-y-auto">
+        <div className="grid grid-cols-4 text-lg py-1.5 text-newBlue font-semibold">
+          <p className="text-center my-0 py-0">Self-care List</p>
+          <p className="text-center my-0 py-0">Things I like about myself</p>
+          <p className="text-center my-0 py-0">
+            Things I want to tell my past self
+          </p>
+          <p className="text-center py-0 my-0">Actions</p>
         </div>
+        {login?.thingsMyself?.map((e, i) => {
+          return (
+            <div
+              key={i}
+              className="grid grid-cols-4 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 items-center text-[17px] font-semibold"
+            >
+              <p className="text-center py-0 my-0">{e?.selfCare}</p>
+              <p className="text-center py-0 my-0">{e?.thingsMyself}</p>
+              <p className="text-center py-0 my-0">{e?.thingsPast}</p>
+              <div className="text-center py-0 my-0 flex items-center justify-center">
+                <AiOutlineDelete
+                  className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all"
+                  size={35}
+                  onClick={(element) => {
+                    axios
+                      .post(`${BASE_URL}/user/delete-thingsMyself`, {
+                        userId: login?._id,
+                        noteId: e?._id,
+                      })
+                      .then((res) => {
+                        if (res.status === 200) {
+                          getUser();
+                          toast.success("Deleted successfully");
+                        }
+                      });
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
