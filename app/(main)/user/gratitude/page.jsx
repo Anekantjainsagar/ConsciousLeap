@@ -40,6 +40,9 @@ const ThingsMyself = () => {
           return (
             <div
               key={i}
+              onClick={(eve) => {
+                history.push(`/user/gratitude/${e?._id}`);
+              }}
               className="grid grid-cols-4 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 items-center text-[17px] font-semibold"
             >
               <p className="text-center py-0 my-0">{e?.proud}</p>

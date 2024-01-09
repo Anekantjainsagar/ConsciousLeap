@@ -6,7 +6,7 @@ import { RiDashboardLine } from "react-icons/ri";
 import { CiLogout, CiShoppingCart, CiUser } from "react-icons/ci";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import { usePathname, useRouter } from "next/navigation";
-import { FaCircleNotch, FaUser } from "react-icons/fa";
+import { FaBlogger, FaCircleNotch, FaUser } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { deleteCookie } from "cookies-next";
 import { MdOutlineEmail } from "react-icons/md";
@@ -30,12 +30,12 @@ const Sidebar = () => {
       icon: <CiShoppingCart size={20} className="mr-2 pb-0.5" />,
       sub: [
         {
-          name: "Add New Product",
-          route: "/admin/products/add",
-        },
-        {
           name: "All Products",
           route: "/admin/products",
+        },
+        {
+          name: "Add New Product",
+          route: "/admin/products/add",
         },
       ],
     },
@@ -51,6 +51,20 @@ const Sidebar = () => {
         {
           name: "Consent Forms",
           route: "/admin/consents",
+        },
+      ],
+    },
+    {
+      name: "Blogs",
+      icon: <FaBlogger size={20} className="mr-2 pb-0.5" />,
+      sub: [
+        {
+          name: "All Blogs",
+          route: "/admin/blogs",
+        },
+        {
+          name: "Add New Blog",
+          route: "/admin/blogs/add",
         },
       ],
     },

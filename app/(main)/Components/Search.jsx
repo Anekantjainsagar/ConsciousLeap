@@ -252,8 +252,6 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
     },
   ];
 
-  console.log(context?.productM?.productData);
-
   return (
     <div className="z-50 relative">
       <Modal
