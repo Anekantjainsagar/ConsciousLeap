@@ -18,44 +18,6 @@ const ConsciousleapBlog = () => {
   let collabrationHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     blogsHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: blogsHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  //   timeline.fromTo(
-  //     collabrationHeading.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: collabrationHeading.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
-
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -114,7 +76,7 @@ const ConsciousleapBlog = () => {
             <ImageBlock
               image={blog1}
               onClick={(e) => {
-                history.push("/blogs/healing-through-art");
+                history.push("/blogs/659d624ded6275574f68c552");
               }}
             />
             <div className="grid grid-cols-2 gap-x-[6vw] md:gap-x-[4vw] mt-[4vw] md:mt-[1.5vw]">
@@ -127,7 +89,7 @@ const ConsciousleapBlog = () => {
               <ImageBlock
                 image={blog4}
                 onClick={(e) => {
-                  history.push("/blogs/gratitude-makes-you-happier");
+                  history.push("/blogs/659d6c35ed6275574f68c980");
                 }}
               />
             </div>
@@ -137,20 +99,20 @@ const ConsciousleapBlog = () => {
               <ImageBlock
                 image={blog5}
                 onClick={(e) => {
-                  history.push("/blogs/look-at-yourself");
+                  history.push("/blogs/659d63b8ed6275574f68c62c");
                 }}
               />
               <ImageBlock
                 image={blog6}
                 onClick={(e) => {
-                  history.push("/blogs/good-vibes-only");
+                  history.push("/blogs/659d6bc4ed6275574f68c97d");
                 }}
               />
             </div>
             <ImageBlock
               image={blog2}
               onClick={(e) => {
-                history.push("/blogs/open-mindness");
+                history.push("/blogs/659d630eed6275574f68c555");
               }}
             />
           </div>

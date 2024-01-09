@@ -18,18 +18,18 @@ const TakeAction = () => {
           {
             image: blog1,
             title: "Sustainability: An Essential Pathway to a Brighter Future",
-            route: "/blogs/sustainability",
+            route: "/blogs/659d6d5bed6275574f68c988",
           },
           {
             image: blog2,
             title:
               "Becoming Eco-Friendly: Simple Steps for Living a More Eco-Friendly Lifestyle",
-            route: "/blogs/eco-friendly",
+            route: "/blogs/659d6d9ced6275574f68c9b5",
           },
           {
             image: blog3,
             title: "Green Credit Programme: A step towards a better future",
-            route: "/blogs/green-credit-programme",
+            route: "/blogs/659d6de0ed6275574f68c9b8",
           },
         ].map((e, i) => {
           return <BlogBlock key={i} data={e} />;

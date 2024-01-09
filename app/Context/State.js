@@ -45,6 +45,7 @@ const B2BState = (props) => {
   const [productData, setProductData] = useState([]);
   const [productSearch, setProductSearch] = useState("");
   const [cartData, setCartData] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   const [deliveryType, setDeliveryType] = useState("Home Delivery");
   const [termsAndConditions, setTermsAndConditions] = useState(false);
@@ -195,6 +196,21 @@ const B2BState = (props) => {
     setOrderStatus,
   };
 
+  const getBlogs = () => {
+    axios
+      .get(`${BASE_URL}/admin/get-blogs`)
+      .then((res) => {
+        setBlogs(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getBlogs();
+  }, []);
+
   return (
     <Context.Provider
       value={{
@@ -224,6 +240,8 @@ const B2BState = (props) => {
         productM,
         cart,
         getTherapist,
+        blogs,
+        getBlogs,
       }}
     >
       {props.children}

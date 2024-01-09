@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
@@ -9,11 +9,13 @@ import { useRouter } from "next/navigation";
 import { Editor } from "@tinymce/tinymce-react";
 import Context from "@/Context/Context";
 
-const AddBlog = () => {
+const AddBlog = ({ params }) => {
+  const { id } = params;
   const history = useRouter();
   const editorRef = useRef(null);
   const [product, setProduct] = useState({
     title: "",
+    description: "",
   });
   const [image, setImage] = useState("");
   const { getBlogs, blogs } = useContext(Context);
@@ -21,7 +23,7 @@ const AddBlog = () => {
   const saveBlog = () => {
     if (product?.title && image && editorRef.current.getContent()) {
       axios
-        .post(`${BASE_URL}/admin/add-blog`, {
+        .post(`${BASE_URL}/admin/update-blog/${id}`, {
           image,
           title: product?.title,
           description: editorRef.current.getContent(),
@@ -33,18 +35,24 @@ const AddBlog = () => {
           }
         })
         .catch((err) => {
-          toast.error(err.message);
+        //   toast.error(err.message);
         });
     } else {
       toast.error("Please fill the necessary details");
     }
   };
 
+  useEffect(() => {
+    const temp = blogs?.find((e) => e?._id === id);
+    setImage(temp?.image);
+    setProduct({ title: temp?.title, description: temp?.description });
+  }, [blogs, id]);
+
   return (
     <div className="h-[82vh] overflow-y-auto">
       <Toaster />
       <h1 className="text-xl font-bold mb-2 cursor-pointer gradientHover w-fit text-newBlue">
-        Add New Blog
+        Update Blog
       </h1>
       <div className="px-3">
         <input
@@ -58,6 +66,7 @@ const AddBlog = () => {
         />
         <Editor
           apiKey="b887tqysd247td71uhou47927s7mrfwtpciezsx7sndajlol"
+          initialValue={product?.description}
           onInit={(evt, editor) => (editorRef.current = editor)}
           init={{
             height: 500,
@@ -127,7 +136,7 @@ const AddBlog = () => {
           onClick={saveBlog}
           className="bg-newBlue text-white w-full py-1.5 rounded-md"
         >
-          Save Blog
+          Update Blog
         </button>
       </div>
     </div>
