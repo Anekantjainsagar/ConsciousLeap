@@ -31,7 +31,7 @@ const ThoughtTracker = ({ params }) => {
         </p>
       </div>
       <div className="md:w-9/12 bg-gradient-to-r from-[#c7ccdd] via-[#ddb7b5] to-[#c8dbd9]">
-        <div className="bg-white rounded-[45px] relative my-[3vw] mx-[2vh] md:mx-[5vh] py-[10vh]">
+        <div className="bg-white rounded-[45px] relative my-[3vw] mx-[2vh] md:mx-[5vh] py-[4vh] md:py-[10vh]">
           <Image
             src={pen}
             alt={"Alt"}

@@ -28,7 +28,7 @@ const ThingsMyself = () => {
         </button>
       </div>
       <div className="h-[50vh] overflow-y-auto">
-        <div className="grid grid-cols-4 text-lg py-1.5 text-newBlue font-semibold">
+        <div className="grid grid-cols-4 md:gap-x-0 gap-x-3 md:text-lg py-1.5 text-newBlue font-semibold">
           <p className="text-center my-0 py-0">Today, I am grateful for</p>
           <p className="text-center my-0 py-0">Something I am proud of</p>
           <p className="text-center my-0 py-0">
@@ -43,7 +43,7 @@ const ThingsMyself = () => {
               onClick={(eve) => {
                 history.push(`/user/gratitude/${e?._id}`);
               }}
-              className="grid grid-cols-4 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 items-center text-[17px] font-semibold"
+              className="grid grid-cols-4 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 items-center text-sm md:text-[17px] font-semibold"
             >
               <p className="text-center py-0 my-0">{e?.proud}</p>
               <p className="text-center py-0 my-0">{e?.tomorrow}</p>

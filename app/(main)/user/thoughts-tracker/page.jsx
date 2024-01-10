@@ -28,7 +28,7 @@ const ThingsMyself = () => {
         </button>
       </div>
       <div className="h-[50vh] overflow-y-auto">
-        <div className="grid grid-cols-2 text-lg py-1.5 text-newBlue font-semibold">
+        <div className="grid grid-cols-2 md:text-lg py-1.5 text-newBlue font-semibold">
           <p className="text-center my-0 py-0">Thoughts</p>
           <p className="text-center py-0 my-0">Actions</p>
         </div>
@@ -39,7 +39,7 @@ const ThingsMyself = () => {
               onClick={(e) => {
                 history.push(`/user/thoughts-tracker/${i + 1}`);
               }}
-              className="grid items-center grid-cols-2 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 text-[17px] font-semibold"
+              className="grid items-center grid-cols-2 mt-2 rounded-md cursor-pointer shadow-md shadow-gray-200 border py-2 text-sm md:text-[17px] font-semibold"
             >
               <p className="text-center py-0 my-0">{e}</p>
               <div className="text-center py-0 my-0 flex items-center justify-center">
