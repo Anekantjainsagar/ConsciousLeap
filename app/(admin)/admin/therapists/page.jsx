@@ -141,7 +141,7 @@ const Product = ({ data }) => {
         {data?.expertise?.slice(0, 2)?.map((e) => {
           return (
             <p className="mt-0" key={e}>
-              {e}
+              {e} 
             </p>
           );
         })}
@@ -156,10 +156,10 @@ const Product = ({ data }) => {
             size={35}
           />
         </Link>
-        <AiOutlineEdit
+        {/* <AiOutlineEdit
           className="text-blue-500 bg-blue-50 p-2 rounded-full hover:text-white hover:bg-blue-500 transition-all mr-3"
           size={35}
-        />
+        /> */}
         <AiOutlineDelete
           className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all mr-3"
           size={35}

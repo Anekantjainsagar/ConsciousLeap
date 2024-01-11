@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import img1 from "../Assets/carousel/Homeofoneness.jpg";
 import img2 from "../Assets/carousel/OurMission.jpg";
 import img3 from "../Assets/carousel/OurMotto.jpg";
@@ -22,7 +21,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
 
 export default function BootstrapCarousel() {
   let data = [img1, img2, img3, img4, img5];

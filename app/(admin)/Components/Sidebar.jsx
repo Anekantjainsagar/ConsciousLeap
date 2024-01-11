@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import logo from "@/(main)/Assets/logo.png";
 import Image from "next/image";
 import { RiDashboardLine } from "react-icons/ri";
-import { CiLogout, CiShoppingCart, CiUser } from "react-icons/ci";
+import { CiDeliveryTruck, CiLogout, CiShoppingCart, CiUser } from "react-icons/ci";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import { usePathname, useRouter } from "next/navigation";
 import { FaBlogger, FaCircleNotch, FaUser } from "react-icons/fa";
@@ -38,6 +38,11 @@ const Sidebar = () => {
           route: "/admin/products/add",
         },
       ],
+    },
+    {
+      name: "Orders",
+      icon: <CiDeliveryTruck size={20} className="mr-2 pb-0.5" />,
+      route: "/admin/orders",
     },
     {
       name: "Users",

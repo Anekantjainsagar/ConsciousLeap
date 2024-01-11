@@ -52,6 +52,7 @@ const B2BState = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [paymentMode, setPaymentMode] = useState("Cash on Delivery");
   const [orderStatus, setOrderStatus] = useState();
+  const [ordersData, setOrdersData] = useState([]);
 
   const [order, setOrder] = useState({
     address: "",
@@ -208,8 +209,20 @@ const B2BState = (props) => {
   };
 
   useEffect(() => {
+    getOrders();
     getBlogs();
   }, []);
+
+  const getOrders = () => {
+    axios
+      .get(`${BASE_URL}/admin/get-orders`)
+      .then((res) => {
+        setOrdersData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <Context.Provider
@@ -242,6 +255,8 @@ const B2BState = (props) => {
         getTherapist,
         blogs,
         getBlogs,
+        getOrders,
+        ordersData,
       }}
     >
       {props.children}
