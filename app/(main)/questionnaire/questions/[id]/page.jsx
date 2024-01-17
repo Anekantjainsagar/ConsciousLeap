@@ -508,7 +508,6 @@ const Block = ({ data, page }) => {
         let answersUpdated = questionnaire?.answers;
         answersUpdated[page - 1] = data?.value;
         setQuestionnaire({ ...questionnaire, answers: [...answersUpdated] });
-        console.log(data?.name, data?.value, answersUpdated);
         if (page == 13) {
           axios
             .post(`${BASE_URL}/login/update-questionnaire`, {

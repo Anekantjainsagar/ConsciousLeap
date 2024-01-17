@@ -3,13 +3,20 @@ import React, { useState } from "react";
 import logo from "@/(main)/Assets/logo.png";
 import Image from "next/image";
 import { RiDashboardLine } from "react-icons/ri";
-import { CiDeliveryTruck, CiLogout, CiShoppingCart, CiUser } from "react-icons/ci";
+import {
+  CiDeliveryTruck,
+  CiLogout,
+  CiShoppingCart,
+  CiUser,
+} from "react-icons/ci";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import { usePathname, useRouter } from "next/navigation";
-import { FaBlogger, FaCircleNotch, FaUser } from "react-icons/fa";
+import { FaBlogger, FaCircleNotch, FaQuestion } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { deleteCookie } from "cookies-next";
 import { MdOutlineEmail } from "react-icons/md";
+import { FaUserGroup } from "react-icons/fa6";
+import { IoMdCall } from "react-icons/io";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -72,6 +79,31 @@ const Sidebar = () => {
           route: "/admin/blogs/add",
         },
       ],
+    },
+    // {
+    //   name: "Questionnaire",
+    //   icon: <FaQuestion size={20} className="mr-2 pb-0.5" />,
+    //   // route: "/admin/questionnaire",
+    //   sub: [
+    //     {
+    //       name: "All Questions",
+    //       route: "/admin/questionnaire",
+    //     },
+    //     {
+    //       name: "Add New Question",
+    //       route: "/admin/questionnaire/add",
+    //     },
+    //   ],
+    // },
+    {
+      name: "Schedule a Call",
+      icon: <IoMdCall size={20} className="mr-2 pb-0.5" />,
+      route: "/admin/schedule-call",
+    },
+    {
+      name: "Partners",
+      icon: <FaUserGroup size={20} className="mr-2 pb-0.5" />,
+      route: "/admin/partners",
     },
     {
       name: "Subscriptions",

@@ -75,7 +75,7 @@ const Product = ({ data }) => {
   const { getOrders } = useContext(Context);
 
   return (
-    <div className="rounded-md grid grid-cols-4 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
+    <div className="rounded-md grid grid-cols-3 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
       <div className="flex items-center">
         <Image
           src={image}
@@ -109,22 +109,6 @@ const Product = ({ data }) => {
         <span className="text-newBlue mr-1 text-base">Address:</span>
         {data?.address?.address}, {data?.address?.city}, {data?.address?.state},{" "}
         {data?.address?.country} ({data?.address?.phone})
-      </div>
-      <div className="flex justify-end items-center">
-        <AiOutlineDelete
-          className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all mr-3"
-          size={35}
-          onClick={(e) => {
-            axios
-              .post(`${BASE_URL}/user/delete-user/${data?._id}`)
-              .then((res) => {
-                if (res.status === 200 && res.data.deletedCount > 0) {
-                  getUsers();
-                  toast.success("Deleted successfully");
-                }
-              });
-          }}
-        />
       </div>
     </div>
   );
