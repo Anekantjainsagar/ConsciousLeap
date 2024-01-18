@@ -95,7 +95,7 @@ const EditProfile = () => {
       <div
         className={`${
           showLeftBar ? "w-2/12" : "w-0 hidden"
-        } border border-gray-300 md:block hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex flex-col items-center`}
+        } border border-gray-300 md:flex hidden h-[100vh] fixed top-0 left-0 bg-veryLightGrey py-4 px-3 flex-col items-center`}
       >
         <Image src={logo} alt="Logo" />
         <Image
