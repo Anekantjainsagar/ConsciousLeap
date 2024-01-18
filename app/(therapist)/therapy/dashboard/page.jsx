@@ -19,18 +19,16 @@ import img3 from "@/(main)/Assets/Therapy/therapist_notes.png";
 import sunrise from "@/(main)/Assets/Therapy/positive_vibes.png";
 import calmness from "@/(main)/Assets/Therapy/calmness.png";
 import knowledge from "@/(main)/Assets/Therapy/knowledge.png";
-
 import logoPng from "@/(main)/Assets/logoPng.png";
 
 import finishing from "@/(main)/Assets/Therapy/finishing.png";
 import schedule from "@/(main)/Assets/Therapy/shedule.png";
 import takingBreak from "@/(main)/Assets/Therapy/taking_break.png";
-
 import logo from "@/(main)/Assets/logo.png";
 import { CiLogout, CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
-import { getCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 import { inter } from "../../../font";
 
 const Dashboard = () => {
@@ -39,7 +37,6 @@ const Dashboard = () => {
   const router = useRouter();
   const { therapists } = useContext(Context);
 
-  console.log(therapists);
   useEffect(() => {
     if (
       getCookie("therapist_token")?.length <= 0 ||
@@ -60,7 +57,11 @@ const Dashboard = () => {
         <Image src={logo} alt="Logo" />
         <div className="flex flex-col items-center">
           <Image
-            src={therapists?.therapist?.photo}
+            src={
+              therapists?.therapist?.photo
+                ? therapists?.therapist?.photo
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0QxSZCjz-8JefhrJrJwtL5i7utqDsRhv7Q&usqp=CAU"
+            }
             alt="Image"
             width={1000}
             height={1000}

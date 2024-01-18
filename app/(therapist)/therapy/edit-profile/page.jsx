@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Context from "@/Context/Context";
 import axios from "axios";
-import { getCookie } from "cookies-next";
+import { deleteCookie, getCookie } from "cookies-next";
 import toast, { Toaster } from "react-hot-toast";
 import { BASE_URL } from "@/Utils/urls";
 
@@ -99,11 +99,15 @@ const EditProfile = () => {
       >
         <Image src={logo} alt="Logo" />
         <Image
-          src={therapist?.photo}
+          src={
+            therapists?.therapist?.photo
+              ? therapists?.therapist?.photo
+              : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0QxSZCjz-8JefhrJrJwtL5i7utqDsRhv7Q&usqp=CAU"
+          }
           alt="Image"
           width={1000}
           height={1000}
-          className="w-[11.5vw] h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
+          className="w-[11.5vw] mx-auto h-[11.5vw] object-cover object-center rounded-full mt-[4vw]"
         />
         <div className="flex flex-col items-center">
           <p className="mt-1 text-xl text-websiteBlue font-bold">
@@ -120,7 +124,7 @@ const EditProfile = () => {
             }}
             className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >
-            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-between items-center rounded-full px-[2vw] py-2">
+            <div className="bg-veryLightGrey flex font-medium cursor-pointer justify-center items-center rounded-full px-[2vw] py-2">
               <CiSettings size={25} className="mr-3" />
               Edit Profile
             </div>
@@ -254,7 +258,10 @@ const EditProfile = () => {
               <div>
                 {therapist?.expertise?.map((e, i) => {
                   return (
-                    <div className="flex items-center w-full md:ml-0 ml-9 mb-4" key={i}>
+                    <div
+                      className="flex items-center w-full md:ml-0 ml-9 mb-4"
+                      key={i}
+                    >
                       <input
                         type="text"
                         value={e}
@@ -429,7 +436,10 @@ const EditProfile = () => {
               <div>
                 {therapist?.speaks?.map((e, i) => {
                   return (
-                    <div className="flex items-center ml-9 md:ml-0 w-full mb-4" key={i}>
+                    <div
+                      className="flex items-center ml-9 md:ml-0 w-full mb-4"
+                      key={i}
+                    >
                       <input
                         type="text"
                         value={e}

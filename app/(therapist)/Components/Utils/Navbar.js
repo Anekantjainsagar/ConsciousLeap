@@ -15,7 +15,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
   const { therapists } = useContext(Context);
 
   return (
-    <di>
+    <div>
       <div className="flex w-full justify-between bg-white items-center px-3 md:px-7 py-3 border sticky top-0 right-0 z-30">
         <div className="flex items-center">
           <HiMenuAlt1
@@ -25,7 +25,6 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
               setShowLeftBar(!showLeftBar);
             }}
           />
-          {/* <Link href={"/"} target="_blank"> */}
           <BiWorld
             size={35}
             onClick={(e) => {
@@ -45,9 +44,9 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
         >
           <Image
             src={
-              therapists?.therapist?.photo?.length > 1
+              therapists?.therapist?.photo
                 ? therapists?.therapist?.photo
-                : image
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0QxSZCjz-8JefhrJrJwtL5i7utqDsRhv7Q&usqp=CAU"
             }
             alt="Image"
             width={1000}
@@ -95,7 +94,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
           Logout
         </div>
       </div>
-    </di>
+    </div>
   );
 };
 
