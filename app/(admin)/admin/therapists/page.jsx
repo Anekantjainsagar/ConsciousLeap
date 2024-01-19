@@ -117,6 +117,8 @@ const Therapists = () => {
 
 const Product = ({ data }) => {
   const { getTherapist } = useContext(Context);
+  const history = useRouter();
+
   return (
     <div className="rounded-md grid grid-cols-3 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
       <div className="flex items-center">
@@ -141,7 +143,7 @@ const Product = ({ data }) => {
         {data?.expertise?.slice(0, 2)?.map((e) => {
           return (
             <p className="mt-0" key={e}>
-              {e} 
+              {e}
             </p>
           );
         })}
@@ -156,10 +158,13 @@ const Product = ({ data }) => {
             size={35}
           />
         </Link>
-        {/* <AiOutlineEdit
+        <AiOutlineEdit
           className="text-blue-500 bg-blue-50 p-2 rounded-full hover:text-white hover:bg-blue-500 transition-all mr-3"
           size={35}
-        /> */}
+          onClick={(e) => {
+            history.push(`/admin/therapists/${data?._id}`);
+          }}
+        />
         <AiOutlineDelete
           className="text-red-500 bg-red-50 p-2 rounded-full hover:text-white hover:bg-red-500 transition-all mr-3"
           size={35}

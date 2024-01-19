@@ -6,10 +6,7 @@ import Navbar from "../../Components/Utils/Navbar";
 import Footer from "../../Components/Utils/Footer";
 
 import logo from "@/(main)/Assets/logo.png";
-
-import sagrika from "@/(main)/Assets/sagrika.jpeg";
-
-import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { CiLogout, CiSettings } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -45,11 +42,13 @@ const EditProfile = () => {
       url: "",
       price: "",
     },
+    id: "",
   });
 
   useEffect(() => {
     const { therapist } = therapists;
     setTherapist({
+      id: therapist?._id,
       name: therapist?.name,
       phone: therapist?.phone,
       email: therapist?.email,
