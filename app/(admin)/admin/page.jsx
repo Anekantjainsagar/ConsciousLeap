@@ -19,6 +19,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Admin from "../Components/Graphs";
 
 const AdminPage = () => {
   const { productM } = useContext(Context);
@@ -31,7 +32,8 @@ const AdminPage = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 p-4">
+    <div className="bg-gray-100 p-4 h-[82vh] overflow-y-auto">
+      <Admin />
       <div className="bg-white border rounded-md pt-4 shadow-md shadow-gray-200">
         <p className="text-black font-bold px-4 border-b pb-2">
           All Products ({productM?.productData?.length})

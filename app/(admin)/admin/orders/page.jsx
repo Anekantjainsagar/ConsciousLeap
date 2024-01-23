@@ -83,7 +83,21 @@ const Product = ({ data }) => {
           className="w-[4vw] rounded-full object-cover object-center"
         />
         <div className="py-1 ml-3">
-          <p className="font-bold text-[16px]">{data?.user?.name}</p>
+          <p className="font-bold text-[16px]">
+            {data?.user?.name} (Rs.{" "}
+            {(
+              data?.products?.reduce(
+                (acc, item) => acc + item?.price * item?.quantity,
+                0
+              ) +
+              data?.products?.reduce(
+                (acc, item) => acc + item?.price * item?.quantity,
+                0
+              ) *
+                0.18
+            ).toFixed(2)}
+            )
+          </p>
           <div className="flex items-center">
             <p className="mt-0 text-newBlue text-xs font-bold">
               {new Date(data?.date).toString()?.slice(0, 21)}
