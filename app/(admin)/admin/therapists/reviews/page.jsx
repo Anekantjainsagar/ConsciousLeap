@@ -21,7 +21,7 @@ const TherapistsReviews = () => {
         <div className="text-black flex items-center justify-between px-4 border-b pb-2">
           <p className="font-bold">All Therapists Reviews</p>
         </div>
-        <div className="flex items-center justify-between shadow-md text-base font-bold rounded-lg px-4 mb-2 py-2 grid grid-cols-5">
+        <div className="items-center justify-between shadow-md text-base font-bold rounded-lg px-4 mb-2 py-2 grid grid-cols-5">
           <p className="mt-0 text-center flex items-center font-bold text-base">
             Therapist
           </p>
@@ -54,7 +54,7 @@ const Product = ({ data }) => {
 
 const Review = ({ data, therapist }) => {
   return (
-    <div className="flex items-center justify-between shadow-md rounded-lg px-4 mb-2 py-2 grid grid-cols-5">
+    <div className="items-center justify-between shadow-md rounded-lg px-4 mb-2 py-2 grid grid-cols-5">
       <p className="mt-0 text-center flex items-center font-bold text-base">
         <Image
           src={therapist?.photo}
