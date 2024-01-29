@@ -11,7 +11,7 @@ import {
 } from "react-icons/ci";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
 import { usePathname, useRouter } from "next/navigation";
-import { FaBlogger, FaCircleNotch, FaQuestion } from "react-icons/fa";
+import { FaBlogger, FaCircleNotch } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { deleteCookie } from "cookies-next";
 import { MdOutlineEmail } from "react-icons/md";
@@ -30,7 +30,17 @@ const Sidebar = () => {
     {
       name: "Therapists",
       icon: <FaUserDoctor size={20} className="mr-2 pb-0.5" />,
-      route: "/admin/therapists",
+
+      sub: [
+        {
+          name: "All Therapists",
+          route: "/admin/therapists",
+        },
+        {
+          name: "Therapist Reviews",
+          route: "/admin/therapists/reviews",
+        },
+      ],
     },
     {
       name: "Products",

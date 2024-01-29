@@ -8,6 +8,25 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import image from "@/(main)/Assets/dashboard-user-image.jpeg";
 import toast, { Toaster } from "react-hot-toast";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const Users = () => {
   const history = useRouter();
@@ -101,8 +120,54 @@ const Users = () => {
 };
 
 const Product = ({ data, getUsers }) => {
+  const chartData = {
+    labels: ["Rain", "Sunshine", "Cloud", "Lightening"],
+    datasets: [
+      {
+        label: "Feeling Check",
+        data: [data?.rain, data?.sunshine, data?.cloud, data?.light],
+        backgroundColor: "#413F3F",
+        borderRadius: 5,
+      },
+    ],
+  };
+
+  const getChartOptions = () => {
+    return {
+      scales: {
+        x: {
+          ticks: {
+            color: "#413F3F", // X-axis label color
+          },
+        },
+        y: {
+          ticks: {
+            color: "#413F3F", // Y-axis label color
+            callback: function (value) {
+              // Display only numeric and positive values on the Y-axis
+              if (Number.isInteger(value) && value >= 0) {
+                return value;
+              }
+            },
+          },
+        },
+      },
+      ticks: {
+        precision: 0,
+      },
+      plugins: {
+        legend: {
+          // display: false, // Set the dataset label display to false
+          labels: {
+            color: "#413F3F", // Set the label color here (if you have other labels, not dataset label)
+          },
+        },
+      },
+    };
+  };
+
   return (
-    <div className="rounded-md grid grid-cols-3 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
+    <div className="rounded-md grid grid-cols-4 items-center mb-3 cursor-pointer shadow-sm shadow-gray-200 p-2">
       <div className="flex items-center">
         <Image
           src={image}
@@ -118,6 +183,9 @@ const Product = ({ data, getUsers }) => {
       </div>
       <div className="flex items-center flex-col">
         <h1 className="py-0 font-semibold text-newBlue">{data?.phone}</h1>
+      </div>
+      <div className="mx-auto">
+        <Bar data={chartData} options={getChartOptions()} />
       </div>
       <div className="flex justify-end items-center">
         <AiOutlineDelete

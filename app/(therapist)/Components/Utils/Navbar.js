@@ -29,8 +29,6 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
             size={35}
             onClick={(e) => {
               router.push("/");
-              therapists.setIsTherapistLogin(false);
-              deleteCookie("therapist_token");
             }}
             className="md:ml-5 p-2 rounded-full cursor-pointer bg-gray-200"
           />

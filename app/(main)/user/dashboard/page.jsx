@@ -18,6 +18,9 @@ import RightBar from "./Components/LeftBar copy";
 import Context from "@/Context/Context";
 
 import Rain from "./Rain";
+import axios from "axios";
+import { BASE_URL } from "@/Utils/urls";
+import { getCookie } from "cookies-next";
 
 const Dashboard = () => {
   let { login } = useContext(Context);
@@ -148,11 +151,17 @@ const Dashboard = () => {
                       left: 0,
                       behavior: "smooth",
                     });
-
+                    axios
+                      .post(`${BASE_URL}/user/rain`, {
+                        token: getCookie("token"),
+                      })
+                      .then((res) => console.log(res));
                     setShowRain(!showRain);
                   },
+                  suburi: "/rain",
                 },
                 {
+                  suburi: "/sunshine",
                   image: sunshine,
                   value: showSunshine,
                   onchange: (e) => {
@@ -161,10 +170,16 @@ const Dashboard = () => {
                       left: 0,
                       behavior: "smooth",
                     });
+                    axios
+                      .post(`${BASE_URL}/user/sunshine`, {
+                        token: getCookie("token"),
+                      })
+                      .then((res) => console.log(res));
                     setShowSunshine(!showSunshine);
                   },
                 },
                 {
+                  suburi: "/cloud",
                   image: cloudy,
                   value: showCloud,
                   onchange: (e) => {
@@ -173,10 +188,16 @@ const Dashboard = () => {
                       left: 0,
                       behavior: "smooth",
                     });
+                    axios
+                      .post(`${BASE_URL}/user/cloud`, {
+                        token: getCookie("token"),
+                      })
+                      .then((res) => console.log(res));
                     setShowCloud(!showCloud);
                   },
                 },
                 {
+                  suburi: "/light",
                   image: lighteing,
                   value: showLight,
                   onchange: (e) => {
@@ -185,6 +206,11 @@ const Dashboard = () => {
                       left: 0,
                       behavior: "smooth",
                     });
+                    axios
+                      .post(`${BASE_URL}/user/light`, {
+                        token: getCookie("token"),
+                      })
+                      .then((res) => console.log(res));
                     setShowLight(!showLight);
                   },
                 },

@@ -32,12 +32,13 @@ const Collabrations = () => {
       <h1 className="text-center text-websiteBlue text-4xl font-bold py-4">
         Let&apos;s Join Forces for a Conscious Change
       </h1>
-      <iframe
-        class="airtable-embed"
-        src="https://airtable.com/embed/appQ1ka4OP4oOKLKS/shrC1puxuLWHPlpWV?backgroundColor=yellow"
+      <object
+        data="https://airtable.com/embed/appQ1ka4OP4oOKLKS/shrC1puxuLWHPlpWV?backgroundColor=yellow"
         width="100%"
-        height={"2500px"}
-      ></iframe>
+        height="2500"
+        type="text/html"
+      >
+      </object>
     </div>
   );
 };

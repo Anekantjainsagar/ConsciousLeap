@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
@@ -12,6 +12,7 @@ import img6 from "../Assets/store/8 (3).png";
 import img8 from "../Assets/store/8.jpg";
 import img7 from "../Assets/store/9.jpg";
 import { useRouter } from "next/navigation";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const ConsciousStore = () => {
   const history = useRouter();
@@ -56,13 +57,16 @@ const ConsciousStore = () => {
 
 const Block = ({ data }) => {
   const history = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
       onClick={() => {
         history.push("/conscious-store");
       }}
-      className="rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative cursor-pointer rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
     >
       <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
         <Image
@@ -71,6 +75,20 @@ const Block = ({ data }) => {
           className="rounded-md hover:scale-95 cursor-pointer transition-all"
         />
       </div>
+      {isHovered && (
+        <div className="absolute inset-0 flex transition-all items-center justify-center bg-black bg-opacity-25 rounded-md">
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent click from bubbling to the parent
+              // Handle add to cart logic here
+            }}
+            className="bg-gray-200 flex items-center text-black px-4 py-2 rounded-md hover:bg-white transition-all"
+          >
+            <AiOutlineShoppingCart className="mr-2 text-xl" />
+            Add to Cart
+          </button>
+        </div>
+      )}
     </div>
   );
 };

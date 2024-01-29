@@ -5,13 +5,10 @@ import Image from "next/image";
 import Navbar from "../../Components/Utils/Navbar";
 import Footer from "../../Components/Utils/Footer";
 import image from "../../../(main)/Assets/top-background2.png";
-import ideas from "../../../(main)/Assets/ideas.jpg";
-import books from "../../../(main)/Assets/book.png";
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-// import img1 from "../../../(main)/Assets/therapy/my_client.png";
 import img1 from "@/(main)/Assets/Therapy/my_client.png";
 import img2 from "@/(main)/Assets/Therapy/my_earning.png";
 import img3 from "@/(main)/Assets/Therapy/therapist_notes.png";
@@ -30,12 +27,28 @@ import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
 import { deleteCookie, getCookie } from "cookies-next";
 import { inter } from "../../../font";
+import Link from "next/link";
 
 const Dashboard = () => {
   const [dateState, setDate] = useState(new Date());
   const [showLeftBar, setShowLeftBar] = useState(true);
-  const router = useRouter();
+  const [blog, setBlog] = useState();
+  const [store, setStore] = useState();
+  const { blogs, productM } = useContext(Context);
   const { therapists } = useContext(Context);
+  const history = useRouter();
+  const router = useRouter();
+
+  useEffect(() => {
+    var randomNumber = Math.floor(Math.random() * blogs?.length);
+    setBlog(blogs[randomNumber]);
+  }, [blogs]);
+
+  useEffect(() => {
+    let data = productM?.productData;
+    var randomNumber = Math.floor(Math.random() * data?.length);
+    setStore(data[randomNumber]);
+  }, [productM]);
 
   useEffect(() => {
     if (
@@ -131,16 +144,26 @@ const Dashboard = () => {
                 }}
                 className="hover:scale-105 transition-all cursor-pointer"
               />
-              <Image
-                src={img1}
-                alt="Image 1"
-                className="hover:scale-105 transition-all cursor-pointer"
-              />
-              <Image
-                src={img2}
-                alt="Image 1"
-                className="hover:scale-105 transition-all cursor-pointer"
-              />
+              <Link
+                href="https://accounts.zoho.com/signin?servicename=ZohoBookings&signupurl=https://www.zoho.com/bookings/signup.html"
+                target="_blank"
+              >
+                <Image
+                  src={img1}
+                  alt="Image 1"
+                  className="hover:scale-105 transition-all cursor-pointer"
+                />
+              </Link>
+              <Link
+                href="https://accounts.zoho.com/signin?servicename=ZohoBookings&signupurl=https://www.zoho.com/bookings/signup.html"
+                target="_blank"
+              >
+                <Image
+                  src={img2}
+                  alt="Image 1"
+                  className="hover:scale-105 transition-all cursor-pointer"
+                />
+              </Link>
             </div>
             <div className="flex md:flex-row flex-col items-stretch justify-between px-[0.7vw]">
               <div className="w-full md:mb-0 mb-3 md:w-[48.5%] bg-white rounded-3xl p-[3vw] md:p-[1vw]">
@@ -149,9 +172,45 @@ const Dashboard = () => {
                 </h1>
                 <div>
                   {[
-                    { image: sunrise, text: "Positive Vibes", value: 100 },
-                    { image: calmness, text: "Calmness", value: 100 },
-                    { image: knowledge, text: "Knowledge", value: 100 },
+                    {
+                      image: sunrise,
+                      text: "Positive Vibes",
+                      value:
+                        therapists?.therapist?.reviews?.length > 0
+                          ? (therapists?.therapist?.reviews?.reduce(
+                              (sum, obj) => sum + parseInt(obj.positivenss),
+                              0
+                            ) /
+                              (therapists?.therapist?.reviews?.length * 5)) *
+                            100
+                          : 0,
+                    },
+                    {
+                      image: calmness,
+                      text: "Calmness",
+                      value:
+                        therapists?.therapist?.reviews?.length > 0
+                          ? (therapists?.therapist?.reviews?.reduce(
+                              (sum, obj) => sum + parseInt(obj.comfortability),
+                              0
+                            ) /
+                              (therapists?.therapist?.reviews?.length * 5)) *
+                            100
+                          : 0,
+                    },
+                    {
+                      image: knowledge,
+                      text: "Knowledge",
+                      value:
+                        therapists?.therapist?.reviews?.length > 0
+                          ? (therapists?.therapist?.reviews?.reduce(
+                              (sum, obj) => sum + parseInt(obj.knowledgable),
+                              0
+                            ) /
+                              (therapists?.therapist?.reviews?.length * 5)) *
+                            100
+                          : 0,
+                    },
                   ].map((e, i) => {
                     return <ReviewBlock key={i} data={e} />;
                   })}
@@ -190,27 +249,42 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="shadow-lg md:my-0 mb-3 py-2 px-3 border bg-white rounded-lg shadow-lightGrey mt-[5vw] md:mt-[1vw] mx-auto">
-              <h1 className="text-center text-sm text-websiteBlue">
-                Recommended Reads
-              </h1>
-              <Image
-                src={ideas}
-                alt="Idea image"
-                className="w-8/12 mx-auto my-4 cursor-pointer"
-                onClick={(e) => {
-                  router.push("/blogs/open-mindness");
-                }}
-              />
+            <div className="shadow-lg py-2 mt-5 px-3 border rounded-lg bg-white shadow-lightGrey mx-auto">
+              {blog?._id && (
+                <>
+                  <h1 className="text-center text-sm text-websiteBlue">
+                    Recommended Reads
+                  </h1>
+                  <Image
+                    src={blog?.image}
+                    width={10000}
+                    height={10000}
+                    alt="Idea image"
+                    className="w-8/12 h-[12vh] rounded-md object-cover object-center mx-auto my-4 cursor-pointer"
+                    onClick={(e) => {
+                      history.push(`/blogs/${blog?._id}`);
+                    }}
+                  />
+                </>
+              )}
               <div className="h-[2px] my-5 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen"></div>
-              <h1 className="text-center text-sm text-websiteBlue">
-                Conscious Store
-              </h1>
-              <Image
-                src={books}
-                alt="Idea image"
-                className="w-8/12 mx-auto my-4"
-              />
+              {store?._id && (
+                <>
+                  <h1 className="text-center text-sm text-websiteBlue">
+                    Conscious Store
+                  </h1>
+                  <Image
+                    src={store?.images[0]}
+                    width={1000}
+                    height={1000}
+                    alt="Conscious Store"
+                    onClick={(e) => {
+                      history.push(`/conscious-store/${store?._id}`);
+                    }}
+                    className="w-8/12 h-[12vh] object-center cursor-pointer object-cover rounded-md mx-auto my-4"
+                  />
+                </>
+              )}
             </div>
           </div>
         </div>

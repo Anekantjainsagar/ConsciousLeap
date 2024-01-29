@@ -29,7 +29,7 @@ const TherapistReview = ({ params }) => {
   }, [therapistFilter?.therapistsData]);
 
   const onSubmit = () => {
-    console.log(review)
+    console.log(review);
     if (
       review?.positivenss === "Select Rating" ||
       review?.knowledgable === "Select Rating" ||
@@ -42,10 +42,10 @@ const TherapistReview = ({ params }) => {
         .post(`${BASE_URL}/therapist/review`, {
           token: getCookie("token"),
           therapistId: user?._id,
+          date: new Date(),
           ...review,
         })
         .then((response) => {
-          console.log(response);
           if (response.status == 200) {
             setReview({
               positivenss: "Select Rating",

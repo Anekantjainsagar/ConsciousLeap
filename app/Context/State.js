@@ -211,6 +211,7 @@ const B2BState = (props) => {
   useEffect(() => {
     getOrders();
     getBlogs();
+    getTherapist();
   }, []);
 
   const getOrders = () => {

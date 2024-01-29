@@ -63,7 +63,7 @@ const ProductPage = ({ params }) => {
           <h1 className="text-xl font-bold hover:text-websiteBlue transition-all cursor-pointer">
             {product?.name}
           </h1>
-          <div className="flex items-center md:mt-0 mt-3 justify-between">
+          {/* <div className="flex items-center md:mt-0 mt-3 justify-between">
             <p className="w-[25%] text-gray-400 font-light">Share:</p>
             <div className="flex items-center">
               <AiOutlineMail
@@ -87,7 +87,7 @@ const ProductPage = ({ params }) => {
                 className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
               />
             </div>
-          </div>
+          </div> */}
           <hr className="my-5" />
           <div className="flex items-center mb-5 justify-start">
             <p className="w-[25%] text-gray-400 font-light">Price:</p>

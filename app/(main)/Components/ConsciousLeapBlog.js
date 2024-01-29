@@ -53,6 +53,9 @@ const ConsciousleapBlog = () => {
         <h1
           id="consciousblogs"
           ref={blogsHeading}
+          onClick={(e) => {
+            history.push("/blogs")
+          }}
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >
           Conscious Blogs
