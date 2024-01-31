@@ -10,10 +10,12 @@ import Context from "@/Context/Context";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
+import { usePDF } from "react-to-pdf";
 
 const Questionnaire = () => {
   let history = useRouter();
   const { isLogin, login, getUser } = useContext(Context);
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
 
   useEffect(() => {
     if (login?.questionnaire?.answers?.length == 0) {
@@ -29,12 +31,14 @@ const Questionnaire = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
-        Initial Analysis
-      </h1>
-      {login?.questionnaire?.backendAnswers?.map((e, i) => {
-        return <Block data={e} key={i} index={i} />;
-      })}
+      <div ref={targetRef}>
+        <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
+          Initial Analysis
+        </h1>
+        {login?.questionnaire?.backendAnswers?.map((e, i) => {
+          return <Block data={e} key={i} index={i} />;
+        })}
+      </div>
       <div className="flex md:flex-row flex-col items-center justify-center">
         <button
           onClick={(e) => {
@@ -61,6 +65,14 @@ const Questionnaire = () => {
           className="md:ml-4 md:mt-0 mt-3 md:w-fit w-[60vw] bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
         >
           Proceed to Therapy
+        </button>
+        <button
+          onClick={(e) => {
+            toPDF();
+          }}
+          className="md:ml-4 md:mt-0 mt-3 md:w-fit w-[60vw] bg-oceanGreen px-10 text-white rounded-md font-medium py-2"
+        >
+          Download Pdf
         </button>
       </div>
       <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">
@@ -103,6 +115,7 @@ const Block = ({ data, index }) => {
       value: "71",
     },
   ];
+
   return (
     <div className="rounded-full w-[97%] md:w-[85%] mb-4 md:mb-10 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
       <div className="h-full w-full rounded-full flex items-center justify-between bg-white px-2 md:px-6">
