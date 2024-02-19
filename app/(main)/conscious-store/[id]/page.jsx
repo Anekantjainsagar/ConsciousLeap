@@ -4,6 +4,7 @@ import TakeAction from "@/(main)/Components/Store/TakeAction";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import {
+  AiFillBell,
   AiFillHeart,
   AiFillStar,
   AiOutlineMail,
@@ -18,6 +19,7 @@ import StoreBlock from "../StoreBlock";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProductPage = ({ params }) => {
   const history = useRouter();
@@ -36,6 +38,7 @@ const ProductPage = ({ params }) => {
 
   return (
     <div className="px-[4vw] md:px-[6vw]">
+      <Toaster />
       <div className="flex md:flex-row flex-col items-start md:pt-2 mb-[2vw] justify-between">
         <div className="w-full md:mb-0 mb-5 md:w-[49.5%] border flex md:flex-row flex-col-reverse items-start justify-between">
           <div className="md:w-[15%] py-3 md:py-0 px-3 md:px-4">
@@ -248,6 +251,14 @@ const ProductPage = ({ params }) => {
               className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
             >
               <AiFillHeart className="mr-2" size={20} /> Add to Wishlist
+            </button>
+            <button
+              onClick={(e) => {
+                toast.success("You are subscribed to this notification.");
+              }}
+              className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
+            >
+              <AiFillBell className="mr-2" size={20} /> Notify me
             </button>
           </div>
         </div>

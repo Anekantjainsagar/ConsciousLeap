@@ -86,21 +86,23 @@ const Block = ({ id }) => {
   }, [id]);
 
   return (
-    <div
-      onClick={(e) => {
-        history.push(`/conscious-store/${id}`);
-      }}
-      className="flex flex-col items-center bg-white p-3 rounded-lg shadow-md cursor-pointer shadow-gray-400"
-    >
-      <Image
-        src={data?.images[0]}
-        alt="Image"
-        className="w-full"
-        width={100}
-        height={100}
-      />
-      <p className="mt-2">{data?.name}</p>
-    </div>
+    data?.images?.length > 0 && (
+      <div
+        onClick={(e) => {
+          history.push(`/conscious-store/${id}`);
+        }}
+        className="flex flex-col items-center bg-white p-3 rounded-lg shadow-md cursor-pointer shadow-gray-400"
+      >
+        <Image
+          src={data?.images[0]}
+          alt="Image"
+          className="w-full"
+          width={100}
+          height={100}
+        />
+        <p className="mt-2">{data?.name}</p>
+      </div>
+    )
   );
 };
 

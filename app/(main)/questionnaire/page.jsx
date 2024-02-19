@@ -11,11 +11,12 @@ import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
 import { usePDF } from "react-to-pdf";
+import logo from "@/(main)/Assets/logo.png";
 
 const Questionnaire = () => {
   let history = useRouter();
   const { isLogin, login, getUser } = useContext(Context);
-  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const { toPDF, targetRef } = usePDF({ filename: "Questionnaire.pdf" });
 
   useEffect(() => {
     if (login?.questionnaire?.answers?.length == 0) {
@@ -31,7 +32,32 @@ const Questionnaire = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <div ref={targetRef}>
+      <div
+        ref={targetRef}
+        className="z-50 top-[-200vh] flex flex-col items-center bg-white absolute"
+      >
+        <Image src={logo} alt="Logo" className="w-[35vw] mt-[4vw]" />
+        <p className="cursor-pointer text-websiteBlue text-2xl md:text-3xl mt-10 mx-auto w-fit text-center">
+          Thank you for choosing consciousleap
+        </p>
+        <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mt-2 mx-auto w-fit text-center">
+          Questionnaire Analysis Report
+        </h1>
+        {login?.questionnaire?.backendAnswers?.map((e, i) => {
+          return <ReturnBlock data={e} key={i} index={i} />;
+        })}
+        <p className="font-light text-center w-[85%] md:w-[90%] mx-auto my-8">
+          <span className="font-semibold">Disclaimer:</span> This questionnaire
+          is intended to provide a general assessment of mental health and
+          should not be considered a substitute for professional evaluation or
+          advice.
+          <br /> The results of this questionnaire are based solely on the
+          provided responses and should be interpreted with caution.
+          <br /> It is important to consult with a qualified mental health
+          professional for assessment and personalized guidance.
+        </p>
+      </div>
+      <div>
         <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mx-auto w-fit mt-[8vw] md:mt-[4vw] text-center gradientHover">
           Initial Analysis
         </h1>
@@ -128,6 +154,60 @@ const Block = ({ data, index }) => {
           {data?.value}
           <span className="text-lg md:text-2xl md:ml-0.5">%</span>
         </div>
+        <div className="w-8/12 md:w-7/12 py-4 md:pr-4">
+          <h1 className="text-center text-sm md:text-2xl font-medium cursor-pointer text-websiteBlue transition-all mb-1">
+            {questionnaire[index]?.title}
+          </h1>
+          <p className="text-center md:text-base text-[9px] font-light">
+            {data?.text}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ReturnBlock = ({ data, index }) => {
+  let questionnaire = [
+    {
+      image: img1,
+      title: "Environmental Mastery",
+      desc: "You have a good sense of mastery & competence in managing the environment;and you control complex external activities; and you make effective use of your surrounding opportunities very well.",
+      value: "71",
+    },
+    {
+      image: img2,
+      title: "Purpose In Life",
+      desc: "You depict good sense of directedness;and you feel there is meaning to your present and past life;and you hold your beliefs that give life purpose; and you have aims and objectives for living.",
+      value: "71",
+    },
+    {
+      image: img3,
+      title: "Self Acceptance",
+      desc: "You possess a positive attitude toward yourself; and you acknowledge the facts and accept aspects of yourself including both good and bad qualities; and feel positive about your past life.",
+      value: "71",
+    },
+    {
+      image: img4,
+      title: "Relations with Others",
+      desc: "You have few close, trusting relationships with others; find it difficult to be warm, open, and you are concerned about others; and you are isolated and frustrated in interpersonal relationships.",
+      value: "71",
+    },
+  ];
+
+  return (
+    <div className="rounded-full w-[97%] md:w-[85%] mb-4 md:mb-10 mx-auto h-fit bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+      <div className="h-full w-full rounded-full flex items-center justify-between bg-white px-2 md:px-6">
+        <Image
+          src={questionnaire[index]?.image}
+          alt="Image"
+          className="w-[15%] md:w-[9%] py-4"
+        />
+        <p className="relative w-[8vw] h-full border-2 border-websiteBlue text-3xl md:text-5xl md:ml-[5vw] rounded-full  text-websiteBlue px-5 py-14 flex justify-center items-center">
+          <p className="absolute top-3 -translate-x-1/2 left-1/2">
+            {data?.value}%
+          </p>
+        </p>
         <div className="w-8/12 md:w-7/12 py-4 md:pr-4">
           <h1 className="text-center text-sm md:text-2xl font-medium cursor-pointer text-websiteBlue transition-all mb-1">
             {questionnaire[index]?.title}

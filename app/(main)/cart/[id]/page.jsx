@@ -18,6 +18,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { getCookie } from "cookies-next";
 import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
+import paypal from "@/(main)/Assets/paypal.png";
 
 const CartPage = ({ params }) => {
   const history = useRouter();
@@ -98,6 +99,10 @@ const CartPage = ({ params }) => {
     history.push(`/cart/5/${session?.orderItem?._id}`);
   };
 
+  const makePaypalPayment = async()=>{
+    
+  }
+
   return (
     <div className="py-[4vw] px-[5vw]">
       <AddAddress setIsOpen={setIsOpen} modalIsOpen={modalIsOpen} />
@@ -105,7 +110,7 @@ const CartPage = ({ params }) => {
       <div className="flex items-end justify-end mb-2 w-full">
         <button
           onClick={(e) => {
-            history.push("/cart/1");
+            history.push("/user/wishlist");
           }}
           className="bg-websiteBlue px-14 py-2 rounded-md font-semibold text-white"
         >
@@ -331,6 +336,7 @@ const CartPage = ({ params }) => {
                   {[
                     { image: cod, name: "Cash on Delivery" },
                     { image: stripe, name: "Stripe" },
+                    { image: paypal, name: "Paypal" },
                   ].map((e, i) => {
                     return (
                       <div
@@ -502,6 +508,12 @@ const CartPage = ({ params }) => {
                 ) {
                   if (termsAndConditions) {
                     makeCodPayment();
+                  } else {
+                    toast.error("Please agree to the terms and conditions");
+                  }
+                } else if (showPage === 4 && paymentMode == "Paypal") {
+                  if (termsAndConditions) {
+                    makePaypalPayment();
                   } else {
                     toast.error("Please agree to the terms and conditions");
                   }
