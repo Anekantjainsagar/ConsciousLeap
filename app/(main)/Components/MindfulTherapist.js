@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import gsap, { Power2, ScrollTrigger } from "gsap/all";
+import gsap, { ScrollTrigger } from "gsap/all";
 
 import {
   Navigation,

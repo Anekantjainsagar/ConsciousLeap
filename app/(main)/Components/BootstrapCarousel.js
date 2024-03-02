@@ -8,21 +8,13 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-
-import frame1 from "../Assets/carousel/Frame 1.jpg";
-import frame2 from "../Assets/carousel/Frame 2.jpg";
-import frame3 from "../Assets/carousel/Frame 3.jpg";
-import frame4 from "../Assets/carousel/Frame 4.jpg";
-import frame5 from "../Assets/carousel/Frame 5.jpg";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useRouter } from "next/navigation";
 
 export default function BootstrapCarousel() {
   const history = useRouter();
-
   let swiperInstance;
 
   const handleMouseEnter = () => {
@@ -73,7 +65,13 @@ export default function BootstrapCarousel() {
             through mindful healing and positive well-being. <br />
             <span className="text-websiteBlue cursor-pointer">Learn More</span>
           </p>
-          <Image src={frame2} alt="Frame 1" className="cursor-pointer" />
+          <Image
+            src={"/Assets/carousel/Frame 2.jpg"}
+            alt="Frame 1"
+            width={1000}
+            height={1000}
+            className="cursor-pointer w-full"
+          />
         </SwiperSlide>
         <SwiperSlide
           className="relative overflow-hidden"
@@ -91,7 +89,13 @@ export default function BootstrapCarousel() {
             <br />
             <span className="text-websiteBlue cursor-pointer">Learn More</span>
           </p>
-          <Image src={frame5} alt="Frame 1" className="cursor-pointer" />
+          <Image
+            src={"/Assets/carousel/Frame 5.jpg"}
+            alt="Frame 1"
+            width={1000}
+            height={1000}
+            className="cursor-pointer w-full"
+          />
         </SwiperSlide>
         <SwiperSlide
           className="relative overflow-hidden"
@@ -108,7 +112,13 @@ export default function BootstrapCarousel() {
             <br />
             <span className="text-websiteBlue cursor-pointer">Learn More</span>
           </p>
-          <Image src={frame3} alt="Frame 1" className="cursor-pointer" />
+          <Image
+            src={"/Assets/carousel/Frame 3.jpg"}
+            alt="Frame 1"
+            width={1000}
+            height={1000}
+            className="cursor-pointer w-full"
+          />
         </SwiperSlide>
         <SwiperSlide
           className="relative overflow-hidden"
@@ -125,7 +135,13 @@ export default function BootstrapCarousel() {
             <span className="font-bold">oneness</span>.<br />
             <span className="text-websiteBlue cursor-pointer">Learn More</span>
           </p>
-          <Image src={frame4} alt="Frame 1" className="cursor-pointer" />
+          <Image
+            src={"/Assets/carousel/Frame 4.jpg"}
+            width={1000}
+            height={1000}
+            alt="Frame 1"
+            className="cursor-pointer w-full"
+          />
         </SwiperSlide>
         <SwiperSlide
           className="relative overflow-hidden"
@@ -142,7 +158,13 @@ export default function BootstrapCarousel() {
             <br />
             <span className="text-websiteBlue cursor-pointer">Learn More</span>
           </p>
-          <Image src={frame1} alt="Frame 1" className="cursor-pointer" />
+          <Image
+            src={"/Assets/carousel/Frame 1.jpg"}
+            alt="Frame 1"
+            width={1000}
+            height={1000}
+            className="cursor-pointer w-full"
+          />
         </SwiperSlide>
       </Swiper>
     </div>

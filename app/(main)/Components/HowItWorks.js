@@ -2,9 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
-import img1 from "../Assets/HowItWorks/step1.jpg";
-import img2 from "../Assets/HowItWorks/step2.jpg";
-import img3 from "../Assets/HowItWorks/step3.jpg";
 import { useRouter } from "next/navigation";
 
 const HowItWorks = () => {
@@ -61,8 +58,10 @@ const HowItWorks = () => {
             </span>
           </p>
           <Image
-            src={img1}
-            alt={img1.src}
+            src={"/Assets/HowItWorks/step1.jpg"}
+            alt={"/Assets/HowItWorks/step1.jpg"}
+            height={1000}
+            width={1000}
             className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
           />
         </div>
@@ -72,8 +71,10 @@ const HowItWorks = () => {
             We will match you to a Therapist
           </p>
           <Image
-            src={img2}
-            alt={img2.src}
+            src={"/Assets/HowItWorks/step2.jpg"}
+            alt={"/Assets/HowItWorks/step2.jpg"}
+            height={1000}
+            width={1000}
             className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
           />
         </div>
@@ -91,8 +92,10 @@ const HowItWorks = () => {
             </span>
           </p>
           <Image
-            src={img3}
-            alt={img3.src}
+            src={"/Assets/HowItWorks/step3.jpg"}
+            alt={"/Assets/HowItWorks/step3.jpg"}
+            height={1000}
+            width={1000}
             className="w-11/12 md:w-9/12 cursor-pointer hover:scale-95 transition-all"
           />
         </div>

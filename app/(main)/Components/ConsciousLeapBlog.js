@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
@@ -11,6 +11,23 @@ import blog5 from "../Assets/Blogs/5.jpg";
 import blog6 from "../Assets/Blogs/6.jpg";
 import Line2 from "./Lines/Line2";
 import { useRouter } from "next/navigation";
+
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import Context from "@/Context/Context";
 
 const ConsciousleapBlog = () => {
   let blogsHeading = useRef();
@@ -54,7 +71,7 @@ const ConsciousleapBlog = () => {
           id="consciousblogs"
           ref={blogsHeading}
           onClick={(e) => {
-            history.push("/blogs")
+            history.push("/blogs");
           }}
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >
@@ -74,7 +91,10 @@ const ConsciousleapBlog = () => {
             Learn More
           </span>
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 px-[4vw] mt-[4vw] md:px-[2vw]">
+        <div className="mt-[2vw] mx-auto w-full">
+          <BootstrapCarousel />
+        </div>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 px-[4vw] mt-[4vw] md:px-[2vw]">
           <div>
             <ImageBlock
               image={blog1}
@@ -119,24 +139,63 @@ const ConsciousleapBlog = () => {
               }}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
 };
 
-const ImageBlock = ({ image, onClick }) => {
+export function BootstrapCarousel() {
+  const { blogs } = useContext(Context);
+
   return (
-    <div
-      onClick={onClick}
-      className="rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
-    >
-      <div className="flex items-start p-[1vw] md:p-[5px] h-full w-full rounded-md justify-between bg-white">
+    <div className="custom-carousel-container w-full">
+      <div className="mx-[4vw]">
+        <Swiper
+          slidesPerView={
+            typeof window != "undefined" ? (window.innerWidth < 550 ? 1 : 3) : 0
+          }
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          loop={true}
+          autoplay={{
+            interval: 3000,
+            disableOnInteraction: false,
+          }}
+          className="flex items-center"
+        >
+          {blogs?.map((item, i) => (
+            <SwiperSlide key={i} as={"image"}>
+              <BlogBlock data={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
+}
+
+const BlogBlock = ({ data }) => {
+  const history = useRouter();
+
+  return (
+    <div className="bg-gradient-to-r from-newBlue via-pinkishRed rounded-md p-[1px] to-oceanGreen w-11/12 mx-auto">
+      <div
+        className="cursor-pointer border p-2 rounded-md bg-white"
+        onClick={(e) => {
+          e.preventDefault();
+          history.push(`/blogs/${data?._id}`);
+        }}
+      >
         <Image
-          src={image}
-          alt="User profile"
-          className="rounded-md w-full hover:scale-95 cursor-pointer transition-all"
+          src={data?.image}
+          alt="Image"
+          className="w-full h-[40vh] object-cover rounded-md object-center"
+          width={1000}
+          height={1000}
         />
+        <p className="mt-2 text-lg md:text-xl px-1 text-newBlue line-clamp-1">
+          {data?.title}
+        </p>
       </div>
     </div>
   );

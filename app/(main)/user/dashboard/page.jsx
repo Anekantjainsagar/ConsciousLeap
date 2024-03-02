@@ -9,7 +9,6 @@ import rain from "../../Assets/modes/rain.png";
 import sunshine from "../../Assets/modes/sunshine.png";
 import lighteing from "../../Assets/modes/lighteing.png";
 import cloudy from "../../Assets/modes/cloudy.png";
-import logoPng from "../../Assets/logoPng.png";
 
 import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/navigation";
@@ -111,7 +110,13 @@ const Dashboard = () => {
               <h1 className="text-base md:text-xl text-white font-light">
                 Hi {login?.name}, Welcome to #oneness
               </h1>
-              <Image src={logoPng} alt="Logo png" className="w-[20%]" />
+              <Image
+                src={"/Assets/logoPng.png"}
+                alt="Logo png"
+                width={1000}
+                height={1000}
+                className="w-[20%] border border-black"
+              />
             </div>
           </div>
           <div className="flex md:flex-row flex-col justify-between items-center">

@@ -1,38 +1,11 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-
-import image1 from "../Assets/Communication/zoom.png";
-import image2 from "../Assets/Communication/microsoftTeams.png";
-import image3 from "../Assets/Communication/googleMeet.png";
-import image4 from "../Assets/Communication/Meeting.png";
-
+import React, { useRef } from "react";
 import Image from "next/image";
-import gsap, { Power2, ScrollTrigger } from "gsap/all";
+import gsap, { ScrollTrigger } from "gsap/all";
 
 const CommunicationChannels = () => {
   let ref = useRef();
   gsap.registerPlugin(ScrollTrigger);
-
-  // useEffect(() => {
-  //   let timeline = gsap.timeline();
-  //   timeline.fromTo(
-  //     ref.current,
-  //     {
-  //       opacity: 0,
-  //       y: 100,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: ref.current,
-  //         start: "top 70%",
-  //         end: "top 40%",
-  //       },
-  //       ease: Power2.easeInOut,
-  //     }
-  //   );
-  // }, []);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
@@ -44,16 +17,23 @@ const CommunicationChannels = () => {
         Communication Channels
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-8 w-[98vw] items-center">
-        {[image1, image2, image3, image4].map((e, i) => {
+        {[
+          "/Assets/Communication/zoom.png",
+          "/Assets/Communication/microsoftTeams.png",
+          "/Assets/Communication/googleMeet.png",
+          "/Assets/Communication/Meeting.png",
+        ].map((e, i) => {
           return (
             <div key={i} className="flex justify-center items-center">
               <Image
                 src={e}
-                alt={e.src}
+                alt={'src'}
+                width={1000}
+                height={1000}
                 className={`${
-                  e.src.includes("microsoftTeams")
+                  e.includes("microsoftTeams")
                     ? "w-[65vw] md:w-[18vw]"
-                    : e?.src?.includes("google")
+                    : e?.includes("google")
                     ? "w-[45vw] md:w-[10vw]"
                     : "w-[35vw] md:w-[9vw]"
                 }`}

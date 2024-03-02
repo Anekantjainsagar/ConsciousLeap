@@ -1,12 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import gsap, { Power2, ScrollTrigger } from "gsap/all";
-
-import image1 from "../Assets/InternationalTherapist/image1.png";
-import image2 from "../Assets/InternationalTherapist/image2.png";
-import image3 from "../Assets/InternationalTherapist/image3.png";
-import image4 from "../Assets/InternationalTherapist/image4.png";
+import gsap, { ScrollTrigger } from "gsap/all";
 
 const CertifiedTherapist = () => {
   let therapistHeading = useRef();
@@ -43,10 +38,21 @@ const CertifiedTherapist = () => {
         Our Internationally Certified Therapists
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-16 w-[98vw] items-center">
-        {[image1, image2, image3, image4].map((e, i) => {
+        {[
+          "/Assets/InternationalTherapist/image1.png",
+          "/Assets/InternationalTherapist/image2.png",
+          "/Assets/InternationalTherapist/image3.png",
+          "/Assets/InternationalTherapist/image4.png",
+        ].map((e, i) => {
           return (
             <div key={i} className="flex justify-center items-center">
-              <Image src={e} alt={e.src} className={"w-[65vw] md:w-[16vw]"} />
+              <Image
+                src={e}
+                alt={e}
+                width={1000}
+                height={1000}
+                className={"w-[65vw] md:w-[16vw]"}
+              />
             </div>
           );
         })}

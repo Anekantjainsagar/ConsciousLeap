@@ -252,14 +252,7 @@ const ProductPage = ({ params }) => {
             >
               <AiFillHeart className="mr-2" size={20} /> Add to Wishlist
             </button>
-            <button
-              onClick={(e) => {
-                toast.success("You are subscribed to this notification.");
-              }}
-              className="w-full flex items-center justify-center text-center py-2 md:text-base text-xs rounded-md md:rounded-sm bg-websiteBlue text-white font-semibold "
-            >
-              <AiFillBell className="mr-2" size={20} /> Notify me
-            </button>
+
           </div>
         </div>
       </div>

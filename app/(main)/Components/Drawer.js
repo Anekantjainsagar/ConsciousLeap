@@ -1,61 +1,43 @@
 "use client";
-import color1Bw from "../Assets/Drawer/1ColorBw.jpg";
-import color1 from "../Assets/Drawer/1Color.jpg";
-import color2Bw from "../Assets/Drawer/2ColorBw.jpg";
-import color2 from "../Assets/Drawer/2Color.jpg";
-import color3Bw from "../Assets/Drawer/3ColorBw.jpg";
-import color3 from "../Assets/Drawer/3Color.jpg";
-import color4Bw from "../Assets/Drawer/4ColorBw.jpg";
-import color4 from "../Assets/Drawer/4Color.jpg";
-import color5Bw from "../Assets/Drawer/5ColorBw.jpg";
-import color5 from "../Assets/Drawer/5Color.jpg";
-import color6Bw from "../Assets/Drawer/6ColorBw.jpg";
-import color6 from "../Assets/Drawer/6Color.jpg";
-import color7Bw from "../Assets/Drawer/7ColorBw.jpg";
-import color7 from "../Assets/Drawer/7Color.jpg";
-import color8Bw from "../Assets/Drawer/8ColorBw.jpg";
-import color8 from "../Assets/Drawer/8Color.jpg";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import gsap, { Power2, ScrollTrigger } from "gsap/all";
-
+import { useRef } from "react";
+import gsap, { ScrollTrigger } from "gsap/all";
 import globe from "../Assets/globe round.png";
 
 const Drawer = () => {
   let drawerRef = useRef();
   let drawerBox = [
     {
-      img1: color1,
-      img2: color1Bw,
+      img1: "/Assets/Drawer/1Color.jpg",
+      img2: "/Assets/Drawer/1ColorBw.jpg",
     },
     {
-      img1: color2,
-      img2: color2Bw,
+      img1: "/Assets/Drawer/2Color.jpg",
+      img2: "/Assets/Drawer/2ColorBw.jpg",
     },
     {
-      img1: color3,
-      img2: color3Bw,
+      img1: "/Assets/Drawer/3Color.jpg",
+      img2: "/Assets/Drawer/3ColorBw.jpg",
     },
     {
-      img1: color4,
-      img2: color4Bw,
+      img1: "/Assets/Drawer/4Color.jpg",
+      img2: "/Assets/Drawer/4ColorBw.jpg",
     },
     {
-      img1: color5,
-      img2: color5Bw,
+      img1: "/Assets/Drawer/5Color.jpg",
+      img2: "/Assets/Drawer/5ColorBw.jpg",
     },
     {
-      img1: color6,
-      img2: color6Bw,
+      img1: "/Assets/Drawer/6Color.jpg",
+      img2: "/Assets/Drawer/6ColorBw.jpg",
     },
     {
-      img1: color7,
-      img2: color7Bw,
+      img1: "/Assets/Drawer/7Color.jpg",
+      img2: "/Assets/Drawer/7ColorBw.jpg",
     },
     {
-      img1: color8,
-      img2: color8Bw,
+      img1: "/Assets/Drawer/8Color.jpg",
+      img2: "/Assets/Drawer/8ColorBw.jpg",
     },
   ];
   gsap.registerPlugin(ScrollTrigger);
@@ -108,10 +90,22 @@ const ImageFlipper = ({ img1, img2 }) => {
     <div className="flip-card">
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <Image src={img2} alt={img2.src} />
+          <Image
+            src={img2}
+            alt={"alt"}
+            className="w-full"
+            width={1000}
+            height={1000}
+          />
         </div>
         <div className="flip-card-back">
-          <Image src={img1} alt={img1.src} />
+          <Image
+            src={img1}
+            alt={"alt"}
+            className="w-full"
+            width={1000}
+            height={1000}
+          />
         </div>
       </div>
     </div>
