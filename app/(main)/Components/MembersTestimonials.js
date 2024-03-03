@@ -49,7 +49,7 @@ export function BootstrapCarousel() {
       text: "As someone with a busy schedule, their online therapy sessions have been a lifesaver",
     },
     {
-      image: "/Assets/client/3.jpg",
+      image: "/Assets/client/4.jpg",
       text: "consciousleap created a safe space where I could discuss my concerns and receive guidance",
     },
   ];

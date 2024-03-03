@@ -1,21 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import gsap, { Power2, ScrollTrigger } from "gsap/all";
-
-import img1 from "../Assets/Statistics/img1.png";
-import img2 from "../Assets/Statistics/img2.png";
-import img3 from "../Assets/Statistics/img3.png";
-import img4 from "../Assets/Statistics/img4.png";
-import img5 from "../Assets/Statistics/img5.png";
-
-import img11 from "../Assets/Statistics/img1-1.png";
-import img21 from "../Assets/Statistics/img2-1.png";
-import img31 from "../Assets/Statistics/img3-1.png";
-import img41 from "../Assets/Statistics/img4-1.png";
-import img51 from "../Assets/Statistics/img5-1.png";
-
-import bg from "../Assets/bg-member.png";
+import gsap, {  ScrollTrigger } from "gsap/all";
 
 const MemberStatistics = () => {
   let memberStatiticsHeading = useRef();
@@ -38,7 +24,13 @@ const MemberStatistics = () => {
       <div className="w-full relative">
         <div className="absolute left-1/2 -translate-x-1/2">
           <Image
-            src={!visible3 ? img3 : img31}
+            src={
+              !visible3
+                ? "/Assets/Statistics/img3.png"
+                : "/Assets/Statistics/img3-1.png"
+            }
+            width={1000}
+            height={1000}
             alt="Image 1"
             className="cursor-pointer w-[20vw] min-[600px]:w-[16vw] min-[768px]:w-[10vw]"
             onMouseEnter={(e) => {
@@ -54,8 +46,14 @@ const MemberStatistics = () => {
         </div>
         <div className="absolute z-10 left-1/2 top-16 md:top-28 w-[75%] md:w-[60%] flex justify-between items-center -translate-x-1/2">
           <Image
-            src={!visible2 ? img2 : img21}
+            src={
+              !visible2
+                ? "/Assets/Statistics/img2.png"
+                : "/Assets/Statistics/img2-1.png"
+            }
             alt="Image 1"
+            width={1000}
+            height={1000}
             className="cursor-pointer w-[23%] md:w-[18%]"
             onMouseEnter={(e) => {
               setVisible2(!visible2);
@@ -68,8 +66,14 @@ const MemberStatistics = () => {
             }}
           />
           <Image
-            src={!visible4 ? img4 : img41}
+            src={
+              !visible4
+                ? "/Assets/Statistics/img4.png"
+                : "/Assets/Statistics/img4-1.png"
+            }
             alt="Image 1"
+            width={1000}
+            height={1000}
             className="cursor-pointer w-[23%] md:w-[18%]"
             onMouseEnter={(e) => {
               setVisible4(!visible4);
@@ -84,8 +88,14 @@ const MemberStatistics = () => {
         </div>
         <div className="z-10 absolute left-1/2 top-[45vw] md:top-[20vw] w-[97%] md:w-[90%] flex justify-between items-center -translate-x-1/2">
           <Image
-            src={!visible1 ? img1 : img11}
+            src={
+              !visible1
+                ? "/Assets/Statistics/img1.png"
+                : "/Assets/Statistics/img1-1.png"
+            }
             alt="Image 1"
+            width={1000}
+            height={1000}
             className="cursor-pointer w-2/12 md:w-[11%]"
             onMouseEnter={(e) => {
               setVisible1(!visible1);
@@ -98,8 +108,14 @@ const MemberStatistics = () => {
             }}
           />
           <Image
-            src={!visible5 ? img5 : img51}
+            src={
+              !visible5
+                ? "/Assets/Statistics/img5.png"
+                : "/Assets/Statistics/img5-1.png"
+            }
             alt="Image 1"
+            width={1000}
+            height={1000}
             className="cursor-pointer w-2/12 md:w-[11%]"
             onMouseEnter={(e) => {
               setVisible5(!visible5);
@@ -115,7 +131,9 @@ const MemberStatistics = () => {
       </div>
       <div className="relative mt-[20vw] md:mt-[8vw]">
         <Image
-          src={bg}
+          src={"/Assets/bg-member.png"}
+          width={1000}
+          height={1000}
           alt="Background image"
           className="w-[65%] md:w-[35vw] min-[2000px]:w-[23vw] mt-[8vw] md:mt-[4vw] mx-auto"
         />
