@@ -504,62 +504,23 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
           </div>
           <div className="md:w-7/12 md:mt-0 mt-3 flex flex-col items-center md:items-start md:ml-[1vw]">
             <div className="flex flex-col items-center md:items-start">
-              <h1 className="text-2xl md:text-xl text-websiteBlue">
-                {typeof window != undefined && window.innerWidth < 550
-                  ? data?.name
-                  : typeof window != undefined && window.innerWidth < 1300
-                  ? data?.name?.slice(0, 8)
-                  : data?.name?.slice(0, 10)}
-                {typeof window != undefined && window.innerWidth < 550
-                  ? ""
-                  : typeof window != undefined && window.innerWidth < 1300
-                  ? data?.name?.length > 8
-                    ? "..."
-                    : ""
-                  : data?.name?.length > 10
-                  ? "..."
-                  : ""}
+              <h1 className="text-2xl md:text-xl text-websiteBlue line-clamp-1">
+                {data?.name}
               </h1>
-              <p className="text-darkGrey text-sm mt-1">
-                {typeof window != undefined && window.innerWidth < 550
-                  ? data?.desc?.slice(0, 50)
-                  : typeof window != undefined && window.innerWidth < 1300
-                  ? data?.desc?.slice(0, 14)
-                  : data?.desc?.slice(0, 16)}{" "}
-                {typeof window != undefined && window.innerWidth < 550
-                  ? data?.desc?.length > 50
-                    ? "..."
-                    : ""
-                  : data?.desc?.length > 16
-                  ? "..."
-                  : ""}
+              <p className="text-darkGrey text-sm mt-1 line-clamp-1">
+                {data?.desc}
               </p>
               <h1 className="mt-1 text-lg md:text-base text-websiteBlue">
                 Expertise
               </h1>
-              <div className="h-fit min-[1100px]:h-[6vh]">
-                {data?.expertise?.slice(0, 2)?.map((e) => {
+              <div className="h-fit min-[1100px]:h-[6vh] ">
+                {data?.expertise?.slice(0, 2)?.map((e, i) => {
                   return (
                     <li
-                      key={e}
-                      className="text-base md:text-[11px] text-darkGrey"
+                      key={i}
+                      className="text-base md:text-[11px] text-darkGrey line-clamp-1"
                     >
-                      {typeof window != undefined &&
-                      window.innerWidth > 550 &&
-                      window.innerWidth < 1050 ? (
-                        <>
-                          {e.slice(0, 22)}
-                          {e?.length > 22 ? "..." : ""}
-                        </>
-                      ) : typeof window != undefined &&
-                        window.innerWidth < 1300 ? (
-                        <>
-                          {e?.slice(0, 16)}
-                          {e?.length > 16 ? "..." : ""}
-                        </>
-                      ) : (
-                        <>{e}</>
-                      )}
+                      {i + 1}. {e}
                     </li>
                   );
                 })}

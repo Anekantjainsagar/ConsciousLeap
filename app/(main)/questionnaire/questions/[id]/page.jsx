@@ -2,14 +2,14 @@
 import Context from "@/Context/Context";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 
 const EachQuestion = ({ params }) => {
   let val = params.id;
+  const { array } = useContext(Context);
   val = parseInt(val);
-
   let data = [
     {
       question: "The demands of everyday life often get me down.",
@@ -492,7 +492,7 @@ const EachQuestion = ({ params }) => {
               })}
           </div>
         </div>
-        <p className="text-lg mt-8">{val}/13</p>
+        <p className="text-lg mt-8">{13 - array.length + 1}/13</p>
       </div>
     </div>
   );
@@ -500,30 +500,39 @@ const EachQuestion = ({ params }) => {
 
 const Block = ({ data, page }) => {
   const history = useRouter();
-  const { setQuestionnaire, questionnaire, getUser } = useContext(Context);
+  const {
+    setQuestionnaire,
+    questionnaire,
+    getUser,
+    setArray,
+    array,
+    getRandomNumberArray,
+  } = useContext(Context);
 
   return (
     <div
       onClick={(e) => {
-        let answersUpdated = questionnaire?.answers;
-        answersUpdated[page - 1] = data?.value;
+        let answersUpdated = questionnaire?.answer;
+        answersUpdated[page - 1][`q${page}`] = data?.value;
         setQuestionnaire({ ...questionnaire, answers: [...answersUpdated] });
-        if (page == 13) {
+        if (array.length == 0) {
           axios
             .post(`${BASE_URL}/login/update-questionnaire`, {
               ...questionnaire,
+              answers: questionnaire?.answer.map(
+                (obj) => Object.values(obj)[0]
+              ),
               token: getCookie("token"),
             })
             .then((response) => {
-              console.log(response);
               getUser();
               history.push("/questionnaire");
-            })
-            .catch((err) => {
-              console.log(err);
             });
         }
-        history.push(`/questionnaire/questions/${page + 1}`);
+        let temp = getRandomNumberArray();
+        let num = temp[0];
+        setArray([...temp.slice(1, temp.length)]);
+        history.push(`/questionnaire/questions/${num}`);
       }}
       className="rounded-2xl mb-4 md:mb-5 mx-auto w-full md:w-[24vw] min-[768px]:h-[11vh] min-[950px]:h-[8vh] min-[1400px]:h-[5.7vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
     >

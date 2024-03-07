@@ -46,6 +46,9 @@ const UserLogin = () => {
               router.push("/admin");
               setCookie("admin_token", token);
             }
+            setTimeout(() => {
+              window.location.reload();
+            }, 200);
             setUser({
               email: "",
               password: "",

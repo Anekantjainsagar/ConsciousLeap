@@ -91,13 +91,8 @@ const StoreBlock = ({ data, showGrid }) => {
                     alt="Tshirt"
                     className="rounded-md w-full"
                   />
-                  <h1 className="text-lg w-full font-normal pt-2">
-                    {typeof window != undefined &&
-                    window.innerWidth < 1000 &&
-                    window.innerWidth > 768
-                      ? data?.name.slice(0, 10) +
-                        (data?.name?.length > 10 ? "..." : "")
-                      : data?.name}
+                  <h1 className="text-lg w-full font-normal pt-2 line-clamp-1">
+                    {data?.name}
                   </h1>
                   <p className="text-websiteBlue w-full pl-1 font-bold py-1">
                     <span className="text-gray-400 line-through">

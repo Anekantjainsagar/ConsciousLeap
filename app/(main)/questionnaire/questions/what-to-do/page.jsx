@@ -24,12 +24,16 @@ const WhatToDo = () => {
 
 const Block = ({ data }) => {
   const history = useRouter();
+  const { getRandomNumberArray, setArray } = useContext(Context);
 
   return (
     <div
       onClick={(e) => {
         if (data.includes("Questionnaire")) {
-          history.push("/questionnaire/questions/1");
+          let temp = getRandomNumberArray();
+          let num = temp[0];
+          setArray([...temp.slice(1, temp.length)]);
+          history.push(`/questionnaire/questions/${num}`);
         } else {
           history.push("/therapy");
         }

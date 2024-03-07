@@ -19,6 +19,9 @@ const B2BState = (props) => {
     original: "",
     otp: "",
   });
+  const [array, setArray] = useState([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+  ]);
   const [isTherapistLogin, setIsTherapistLogin] = useState(false);
   const [therapist, setTherapist] = useState();
   const [areaOfExpertise, setAreaOfExpertise] = useState();
@@ -34,6 +37,21 @@ const B2BState = (props) => {
     age: "",
     problem: "",
     answers: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    answer: [
+      { q1: 0 },
+      { q2: 0 },
+      { q3: 0 },
+      { q4: 0 },
+      { q5: 0 },
+      { q6: 0 },
+      { q7: 0 },
+      { q8: 0 },
+      { q9: 0 },
+      { q10: 0 },
+      { q11: 0 },
+      { q12: 0 },
+      { q13: 0 },
+    ],
   });
   const [fourtyMinMeet, setFourtyMinMeet] = useState(true);
   const [joinUsShow, setJoinUsShow] = useState("JOIN");
@@ -225,6 +243,15 @@ const B2BState = (props) => {
       });
   };
 
+  function getRandomNumberArray() {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
+
   return (
     <Context.Provider
       value={{
@@ -258,6 +285,9 @@ const B2BState = (props) => {
         getBlogs,
         getOrders,
         ordersData,
+        array,
+        setArray,
+        getRandomNumberArray,
       }}
     >
       {props.children}

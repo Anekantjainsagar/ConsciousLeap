@@ -5,12 +5,13 @@ import React, { useContext, useEffect } from "react";
 
 const AskAge = () => {
   const history = useRouter();
-  const { login } = useContext(Context);
+  const { login, setArray } = useContext(Context);
 
   useEffect(() => {
     if (login?.questionnaire?.answers?.length > 0) {
       history.push("/questionnaire");
     }
+    setArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
   }, [login]);
 
   return (
