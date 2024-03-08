@@ -11,6 +11,7 @@ const GlobalPresence = () => {
   const [showIndia, setShowIndia] = useState(false);
   const [setshowEstonia, setSetshowEstonia] = useState(false);
   const [setshowDubai, setSetshowDubai] = useState(false);
+  const [australia, setAustralia] = useState(false);
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
@@ -102,6 +103,30 @@ const GlobalPresence = () => {
             }}
             onMouseLeave={(e) => {
               setSetshowEstonia(false);
+            }}
+            alt="Logo png"
+            className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 bubbleAnimate mt-0 md:mt-2 hover:scale-125 transition-all"
+          />
+        </div>
+        {/* Melbourne */}
+        <div className="absolute md:scale-100 scale-50 flex flex-col items-center justify-center cursor-pointer top-[87%] md:left-[85%] left-[78%]">
+          <p
+            className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
+              australia ? "block" : "hidden"
+            }`}
+          >
+            Melbourne
+          </p>
+          <Image
+            src={logoPng}
+            onMouseEnter={(e) => {
+              setAustralia(true);
+            }}
+            onMouseOut={(e) => {
+              setAustralia(true);
+            }}
+            onMouseLeave={(e) => {
+              setAustralia(false);
             }}
             alt="Logo png"
             className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 bubbleAnimate mt-0 md:mt-2 hover:scale-125 transition-all"

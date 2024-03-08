@@ -189,11 +189,11 @@ const BlogBlock = ({ data }) => {
         <Image
           src={data?.image}
           alt="Image"
-          className="w-full h-[40vh] object-cover rounded-md object-center"
+          className="w-full h-[30vh] md:h-[40vh] object-cover rounded-md object-center"
           width={1000}
           height={1000}
         />
-        <p className="mt-2 text-lg md:text-xl px-1 text-newBlue line-clamp-1">
+        <p className="mt-2 text-lg md:text-xl px-1 text-newBlue line-clamp-2 md:line-clamp-1">
           {data?.title}
         </p>
       </div>

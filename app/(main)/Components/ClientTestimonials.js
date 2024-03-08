@@ -96,7 +96,7 @@ export function BootstrapCarousel() {
     >
       {data?.map((item, i) => (
         <SwiperSlide key={i} className="pb-4">
-          <div className="rounded-full w-[15vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+          <div className="rounded-full w-[50vw] md:w-[19vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={item.image}

@@ -492,7 +492,7 @@ const EachQuestion = ({ params }) => {
               })}
           </div>
         </div>
-        <p className="text-lg mt-8">{13 - array.length + 1}/13</p>
+        <p className="text-lg mt-8">{13 - array.length}/13</p>
       </div>
     </div>
   );
