@@ -109,7 +109,7 @@ const GlobalPresence = () => {
           />
         </div>
         {/* Melbourne */}
-        <div className="absolute md:scale-100 scale-50 flex flex-col items-center justify-center cursor-pointer top-[87%] md:left-[85%] left-[78%]">
+        <div className="absolute md:scale-100 scale-50 flex flex-col items-center justify-center cursor-pointer top-[87%] md:left-[85%] left-[76%]">
           <p
             className={`text-transparent md:text-base text-xs bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen absolute -top-5 ${
               australia ? "block" : "hidden"
