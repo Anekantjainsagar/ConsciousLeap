@@ -17,6 +17,7 @@ import { deleteCookie } from "cookies-next";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoMdCall } from "react-icons/io";
+import { FaRegHandshake } from "react-icons/fa";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -30,7 +31,6 @@ const Sidebar = () => {
     {
       name: "Therapists",
       icon: <FaUserDoctor size={20} className="mr-2 pb-0.5" />,
-
       sub: [
         {
           name: "All Therapists",
@@ -114,6 +114,11 @@ const Sidebar = () => {
       name: "Partners",
       icon: <FaUserGroup size={20} className="mr-2 pb-0.5" />,
       route: "/admin/partners",
+    },
+    {
+      name: "Collaboration",
+      icon: <FaRegHandshake size={20} className="mr-2 pb-0.5" />,
+      route: "/admin/collaboration",
     },
     {
       name: "Subscriptions",
