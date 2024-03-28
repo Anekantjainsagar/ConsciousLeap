@@ -275,63 +275,66 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
               </div>
             </div>
             <div className="w-full h-[78vw] min-[900px]:h-[38vw] min-[1040px]:h-[23vw] overflow-y-scroll">
-              {[...nav, ...context?.productM?.productData?.products]
-                .filter((e) => {
-                  return e?.name?.toLowerCase().includes(search?.toLowerCase());
-                })
-                .map((data, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className="py-1 cursor-pointer mb-2 flex items-center"
-                      onClick={(e) => {
-                        setIsOpen(false);
-                        if (data?.price) {
-                          history.push(`/conscious-store/${data?._id}`);
-                        } else {
-                          const element = document.getElementById(
-                            data?.name?.replaceAll(" ", "")?.toLowerCase()
-                          );
-                          context.setBussinessShow(
-                            data?.name?.replaceAll(" ", "")?.toLowerCase()
-                          );
-                          if (data?.route) {
-                            if (pathname != data?.route) {
-                              history.push(data.route);
+              {context?.productM?.productData?.products &&
+                [...nav, ...context?.productM?.productData?.products]
+                  .filter((e) => {
+                    return e?.name
+                      ?.toLowerCase()
+                      .includes(search?.toLowerCase());
+                  })
+                  .map((data, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="py-1 cursor-pointer mb-2 flex items-center"
+                        onClick={(e) => {
+                          setIsOpen(false);
+                          if (data?.price) {
+                            history.push(`/conscious-store/${data?._id}`);
+                          } else {
+                            const element = document.getElementById(
+                              data?.name?.replaceAll(" ", "")?.toLowerCase()
+                            );
+                            context.setBussinessShow(
+                              data?.name?.replaceAll(" ", "")?.toLowerCase()
+                            );
+                            if (data?.route) {
+                              if (pathname != data?.route) {
+                                history.push(data.route);
+                              }
+                            }
+                            if (element) {
+                              element.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center",
+                              });
                             }
                           }
-                          if (element) {
-                            element.scrollIntoView({
-                              behavior: "smooth",
-                              block: "center",
-                            });
-                          }
-                        }
-                      }}
-                    >
-                      <AiOutlineSearch
-                        className="text-newBlue border border-newBlue rounded-full p-1"
-                        size={33}
-                      />
-                      <div className="ml-4">
-                        <p className="text-[15px] font-medium text-newBlue">
-                          {data?.name}
-                        </p>
-                        {data?.desc && (
-                          <p className="-mt-1 md:text-[12px] text-[6px]">
-                            {data?.desc?.slice(0, 60) +
-                              (data?.desc?.length > 60 ? "..." : "")}
+                        }}
+                      >
+                        <AiOutlineSearch
+                          className="text-newBlue border border-newBlue rounded-full p-1"
+                          size={33}
+                        />
+                        <div className="ml-4">
+                          <p className="text-[15px] font-medium text-newBlue">
+                            {data?.name}
                           </p>
-                        )}
-                        {data?.price && (
-                          <p className="-mt-0.5 md:text-[12px] text-[6px]">
-                            INR {data?.price}
-                          </p>
-                        )}
+                          {data?.desc && (
+                            <p className="-mt-1 md:text-[12px] text-[6px]">
+                              {data?.desc?.slice(0, 60) +
+                                (data?.desc?.length > 60 ? "..." : "")}
+                            </p>
+                          )}
+                          {data?.price && (
+                            <p className="-mt-0.5 md:text-[12px] text-[6px]">
+                              INR {data?.price}
+                            </p>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
             </div>
           </div>
         </div>
