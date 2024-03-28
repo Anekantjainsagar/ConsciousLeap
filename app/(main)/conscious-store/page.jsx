@@ -203,7 +203,7 @@ const Store = () => {
               showGrid ? "md:grid-cols-3" : "md:grid-cols-1"
             } min-[900px]:gap-4 min-[1040px]:gap-8 gap-8 p-3`}
           >
-            {context?.productM?.productData
+            {context?.productM?.productData?.products
               ?.sort((a, b) => {
                 if (sortStore === "Price High to Low") {
                   let fa = a.price,
@@ -266,6 +266,17 @@ const Store = () => {
                 return <StoreBlock key={i} data={e} showGrid={showGrid} />;
               })}
           </div>
+          {context?.productPage * 20 <
+            context?.productM?.productData?.length && (
+            <button
+              onClick={(e) => {
+                context?.setProductPage(context?.productPage + 1);
+              }}
+              className="bg-newBlue text-white px-6 py-1 rounded-full my-4 mx-auto block"
+            >
+              Load More...
+            </button>
+          )}
         </div>
       </div>
       <Line2 />

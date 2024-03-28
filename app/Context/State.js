@@ -71,6 +71,7 @@ const B2BState = (props) => {
   const [paymentMode, setPaymentMode] = useState("Cash on Delivery");
   const [orderStatus, setOrderStatus] = useState();
   const [ordersData, setOrdersData] = useState([]);
+  const [productPage, setProductPage] = useState(1);
 
   const [order, setOrder] = useState({
     address: "",
@@ -178,7 +179,9 @@ const B2BState = (props) => {
 
   const getProducts = () => {
     axios
-      .post(`${BASE_URL}/product/get-all?search=${productSearch}`)
+      .post(
+        `${BASE_URL}/product/get-all?search=${productSearch}&page=${productPage}`
+      )
       .then((res) => {
         setProductData(res.data);
       })
@@ -189,7 +192,7 @@ const B2BState = (props) => {
 
   useEffect(() => {
     getProducts();
-  }, [productSearch]);
+  }, [productSearch, productPage]);
 
   const productM = {
     getProducts,
@@ -288,6 +291,8 @@ const B2BState = (props) => {
         array,
         setArray,
         getRandomNumberArray,
+        setProductPage,
+        productPage,
       }}
     >
       {props.children}

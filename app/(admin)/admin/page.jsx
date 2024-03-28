@@ -51,14 +51,7 @@ const AdminPage = () => {
             }}
             cssMode={true}
           >
-            {productM?.productData?.map((e, i) => {
-              return (
-                <SwiperSlide key={i}>
-                  <Product data={e} />
-                </SwiperSlide>
-              );
-            })}
-            {productM?.productData?.map((e, i) => {
+            {productM?.productData?.products?.slice(0, 10)?.map((e, i) => {
               return (
                 <SwiperSlide key={i}>
                   <Product data={e} />

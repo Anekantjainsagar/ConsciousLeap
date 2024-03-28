@@ -11,11 +11,11 @@ const AddProduct = () => {
   const history = useRouter();
   const [product, setProduct] = useState({
     name: "",
-    price: "",
-    discountPrice: "",
+    price: "99",
+    discountPrice: "199",
     size: [],
     fabric: [],
-    quantity: "",
+    quantity: "0",
     description: "",
   });
   const [image, setImage] = useState("");

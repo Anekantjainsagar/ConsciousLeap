@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const Products = () => {
   const [sortStore, setSortStore] = useState("Sort By");
-  const { productM } = useContext(Context);
+  const { productM, setProductPage, productPage } = useContext(Context);
   const history = useRouter();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Products = () => {
           </div>
         </div>
         <div className="px-2 pt-2">
-          {productM?.productData
+          {productM?.productData?.products
             ?.sort((a, b) => {
               if (sortStore === "Price High to Low") {
                 let fa = a.price,
@@ -118,6 +118,16 @@ const Products = () => {
             .map((e, i) => {
               return <Product data={e} key={i} />;
             })}
+          {productPage * 20 < productM?.productData?.length && (
+            <button
+              onClick={(e) => {
+                setProductPage(productPage + 1);
+              }}
+              className="bg-newBlue text-white px-6 py-1 rounded-full my-4 mx-auto block"
+            >
+              Load More...
+            </button>
+          )}
         </div>
       </div>
     </div>

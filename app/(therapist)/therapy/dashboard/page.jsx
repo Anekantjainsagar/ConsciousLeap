@@ -45,7 +45,7 @@ const Dashboard = () => {
   }, [blogs]);
 
   useEffect(() => {
-    let data = productM?.productData;
+    let data = productM?.productData?.products;
     var randomNumber = Math.floor(Math.random() * data?.length);
     setStore(data[randomNumber]);
   }, [productM]);

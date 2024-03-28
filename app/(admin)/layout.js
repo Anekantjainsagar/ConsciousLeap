@@ -11,19 +11,17 @@ const inter = Comfortaa({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <section>
       <State>
-        <body className={inter.className}>
-          <div className="w-full h-full flex items-start">
-            <Sidebar />
-            <div className="w-[85vw]">
-              <Navbar />
-              <div className="p-4">{children}</div>
-              <Footer />
-            </div>
+        <div className="w-full h-full flex items-start">
+          <Sidebar />
+          <div className="w-[85vw]">
+            <Navbar />
+            <div className="p-4">{children}</div>
+            <Footer />
           </div>
-        </body>
+        </div>
       </State>
-    </html>
+    </section>
   );
 }

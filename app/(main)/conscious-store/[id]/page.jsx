@@ -252,7 +252,6 @@ const ProductPage = ({ params }) => {
             >
               <AiFillHeart className="mr-2" size={20} /> Add to Wishlist
             </button>
-
           </div>
         </div>
       </div>
@@ -262,9 +261,11 @@ const ProductPage = ({ params }) => {
           <h1 className="text-lg mb-1 font-semibold">Top Selling Products</h1>
           <hr className="my-0" />
           <div className="md:h-[55vh] overflow-y-auto">
-            {context?.productM?.productData?.map((e, i) => {
-              return <Block data={e} key={i} />;
-            })}
+            {context?.productM?.productData?.products
+              ?.slice(0, 10)
+              ?.map((e, i) => {
+                return <Block data={e} key={i} />;
+              })}
           </div>
         </div>
         <div className="md:w-[74%]">
@@ -305,9 +306,11 @@ const ProductPage = ({ params }) => {
             <h1 className="text-lg font-semibold">Related products</h1>
             <hr className="my-3" />
             <div className="grid md:px-0 md:mt-0 mt-7 px-[5vw] md:grid-cols-3 gap-x-5">
-              {context?.productM?.productData?.slice(0, 3)?.map((e, i) => {
-                return <StoreBlock data={e} key={i} showGrid={true} />;
-              })}
+              {context?.productM?.productData?.products
+                ?.slice(6, 9)
+                ?.map((e, i) => {
+                  return <StoreBlock data={e} key={i} showGrid={true} />;
+                })}
             </div>
           </div>
         </div>

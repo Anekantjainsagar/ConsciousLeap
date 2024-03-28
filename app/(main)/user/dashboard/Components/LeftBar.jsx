@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
 import image from "../../../Assets/dashboard-user-image.jpeg";
-import ideas from "../../../Assets/ideas.jpg";
-import books from "../../../Assets/book.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
@@ -22,7 +20,7 @@ const LeftBar = () => {
   }, [blogs]);
 
   useEffect(() => {
-    let data = productM?.productData;
+    let data = productM?.productData?.products;
     var randomNumber = Math.floor(Math.random() * data?.length);
     setStore(data[randomNumber]);
   }, [productM]);

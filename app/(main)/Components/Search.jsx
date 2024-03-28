@@ -275,7 +275,7 @@ const Search = ({ modalIsOpen, setIsOpen }) => {
               </div>
             </div>
             <div className="w-full h-[78vw] min-[900px]:h-[38vw] min-[1040px]:h-[23vw] overflow-y-scroll">
-              {[...nav, ...context?.productM?.productData]
+              {[...nav, ...context?.productM?.productData?.products]
                 .filter((e) => {
                   return e?.name?.toLowerCase().includes(search?.toLowerCase());
                 })
