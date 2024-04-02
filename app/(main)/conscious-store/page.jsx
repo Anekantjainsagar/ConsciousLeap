@@ -272,7 +272,7 @@ const Store = () => {
               onClick={(e) => {
                 context?.setProductPage(context?.productPage + 1);
               }}
-              className="bg-newBlue text-white px-6 py-1 rounded-full my-4 mx-auto block"
+              className="bg-websiteBlue text-white px-6 py-1 rounded-full my-4 mx-auto block"
             >
               Load More...
             </button>
