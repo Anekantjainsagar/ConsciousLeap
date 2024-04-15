@@ -249,7 +249,7 @@ const Footer = () => {
                 } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
             </div>
-            <div className="text-[13.5px] mb-1 text-center md:text-start font-light cursor-pointer hover:text-websiteBlue">
+            <div className="text-[13.5px] mb-1 text-center md:text-start md:my-0 mt-2 font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
               <div className="flex items-center md:justify-start justify-center">
@@ -386,11 +386,11 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className="flex md:flex-row flex-col justify-between items-center mt-5">
-          <Image src={logo} alt="Logo" className="w-[75vw] md:w-[18vw]" />
-          <div className="grid grid-cols-4 w-full md:w-[50%] py-2 md:py-0 items-start text-darkGrey font-light text-sm">
+        <div className="flex md:flex-row flex-col justify-between items-center md:items-start mt-5">
+          <Image src={logo} alt="Logo" className="w-[75vw] md:w-[16vw]" />
+          <div className="grid md:grid-cols-5 w-full md:w-[65%] py-5 md:py-0 items-start text-darkGrey font-light text-sm">
             <p
-              className="text-start cursor-pointer mt-1.5 hover:text-websiteBlue transition-all"
+              className="text-center md:text-start md:my-0 mt-2 cursor-pointer mt-1.5 hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/terms");
               }}
@@ -398,7 +398,7 @@ const Footer = () => {
               Terms of Use
             </p>
             <p
-              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
+              className="text-center md:text-start md:my-0 mt-2 cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/cookies-policy");
               }}
@@ -406,7 +406,7 @@ const Footer = () => {
               Cookies Policy
             </p>
             <p
-              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
+              className="text-center md:text-start md:my-0 mt-2 cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/policies");
               }}
@@ -414,7 +414,15 @@ const Footer = () => {
               Privacy Policy
             </p>
             <p
-              className="text-start cursor-pointer hover:text-websiteBlue transition-all"
+              className="text-center md:text-start md:my-0 mt-2 cursor-pointer hover:text-websiteBlue transition-all"
+              onClick={(e) => {
+                history.push("/privacy/shipping");
+              }}
+            >
+              Shipping Policy
+            </p>
+            <p
+              className="text-center md:text-start md:my-0 mt-2 cursor-pointer hover:text-websiteBlue transition-all"
               onClick={(e) => {
                 history.push("/privacy/refund");
               }}
@@ -425,10 +433,10 @@ const Footer = () => {
           <Image
             src={certified}
             alt="Certified"
-            className="w-[30vw] md:w-[9vw]"
+            className="w-[30vw] md:w-[8vw]"
           />
         </div>
-        <p className="mt-3 mb-16 text-sm font-light">
+        <p className="mt-3 mb-16 text-center md:text-start text-sm font-light">
           Copyright © 2023 consciousleap, all rights reserved.
         </p>
       </div>

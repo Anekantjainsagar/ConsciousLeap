@@ -2,11 +2,11 @@ import React from "react";
 
 const Policies = () => {
   return (
-    <div className="px-[8vw] py-[2vw]">
-      <h1 className="text-3xl font-bold mb-4 text-websiteBlue">
+    <div className="px-5 md:px-[2vw] md:py-[1vw] py-[2vw] privacy">
+      <h2 className="text-3xl font-bold mb-4 text-websiteBlue">
         Privacy Policy Page
-      </h1>
-      <div className="px-4">
+      </h2>
+      <div className=" px-2 md:px-4">
         <p>
           This Privacy Policy describes our policies and procedures on
           collecting, using, anddisclosing your information when you use the
@@ -18,9 +18,11 @@ const Policies = () => {
           the service, you agree to this Privacy Policy&apos;s collection and
           use of information.
         </p>
-        <h1 className="underline font-bold">Interpretation and Definitions</h1>
+        <h1 className="underline font-bold text-lg">
+          Interpretation and Definitions
+        </h1>
         <div>
-          <h1 className="font-bold">Interpretation:</h1>
+          <h1 className="font-bold text-lg">Interpretation:</h1>
           <p>
             The words of which the initial letter is capitalized have meanings
             defined under the following conditions. The following definitions
@@ -29,7 +31,7 @@ const Policies = () => {
           </p>
         </div>
         <div>
-          <h1 className="font-bold">Definitions:</h1>
+          <h1 className="font-bold text-lg">Definitions:</h1>
           <p>For this Privacy Policy:</p>
           <p>
             <b className="font-bold">Account</b> means an individual account
@@ -93,8 +95,8 @@ const Policies = () => {
             <li>Province, ZIP/ Postal code, City </li>
             <li>Usage Data</li>
           </ol>
-          <h1 className="mt-5 font-bold">Usage Data:</h1>
-          <p className="-mt-4">
+          <h1 className="mt-5 font-bold text-lg">Usage Data:</h1>
+          <p className="">
             Usage Data is collected automatically when using the service.
             <br /> Usage Data may include information such as your device&apos;s
             internet protocol address (e.g., IP address), browser type, browser
@@ -113,7 +115,7 @@ const Policies = () => {
           <h1 className="font-bold">
             Information from Third-Party Social Media Services:
           </h1>
-          <p className="-mt-5">
+          <p className="">
             The Company allows you to create an account and log in to use the
             service through the following third-party social media services:
           </p>
@@ -139,7 +141,7 @@ const Policies = () => {
         </div>
         <div>
           <h1 className="font-bold">Tracking Technologies and Cookies:</h1>
-          <p className="-mt-5">
+          <p className="">
             Tracking technologies are beacons, tags, and scripts to collect and
             track information and improve and analyze our service. We use
             Cookies and similar tracking technologies to track the activity on
@@ -356,9 +358,9 @@ const Policies = () => {
 
         <p>
           Your information, including Personal Data, is processed at the
-          Company&apos;s operating offices and in any other places where the parties
-          involved in the processing are located. This information may be
-          transferred to &mdash; and maintained on &mdash; computers outside
+          Company&apos;s operating offices and in any other places where the
+          parties involved in the processing are located. This information may
+          be transferred to &mdash; and maintained on &mdash; computers outside
           your state, province, country, or other governmental jurisdiction
           where the data protection laws may differ from those from your
           jurisdiction.
@@ -486,8 +488,8 @@ const Policies = () => {
         <p>
           Our Service may contain links to other websites that we do not
           operate. If you click on a third-party link, you will be directed to
-          that third-party&apos;s site. We strongly advise you to review every site&apos;s
-          privacy policy.
+          that third-party&apos;s site. We strongly advise you to review every
+          site&apos;s privacy policy.
         </p>
 
         <p>

@@ -19,6 +19,10 @@
   opacity: 0;
 }
 
+.privacy h1 {
+  @apply text-lg;
+}
+
 .backgroundImage {
   background-image: url("/Assets/top-background2.png");
   background-repeat: no-repeat;

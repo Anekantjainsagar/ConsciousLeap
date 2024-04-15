@@ -2,11 +2,10 @@ import React from "react";
 
 const Refund = () => {
   return (
-    <div className="px-[8vw] py-[2vw]">
+    <div className="px-5 md:px-[2vw] md:py-[1vw] py-[2vw]">
       <h1 className="text-3xl font-bold text-websiteBlue mb-4">
         Rescheduling, Refund & Cancellation Policy
       </h1>
-  
       <ol className="list-decimal pl-10">
         <li className="mb-6">
           A minimum of 24 hours&apos; notice is required for rescheduling or

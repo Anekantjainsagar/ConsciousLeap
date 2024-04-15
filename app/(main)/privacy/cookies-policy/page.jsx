@@ -2,9 +2,9 @@ import React from "react";
 
 const Cookies = () => {
   return (
-    <div className="px-[6vw] pt-[2vw]">
+    <div className="px-5 md:px-[2vw] md:py-[1vw] py-[2vw]">
       <p className="font-bold text-websiteBlue text-3xl">Cookies Policy</p>
-      <div className="px-3 mt-5">
+      <div className="px-2 md:px-4 mt-5">
         <b className="underline">consciousleap Cookies Policy:</b>
         <br />
         <br />
@@ -124,8 +124,9 @@ const Cookies = () => {
           properly.
         </p>
         <p>
-          If you&apos;d like to delete Cookies or instruct your web browser to delete
-          or refuse Cookies, please visit the help pages of your web browser.
+          If you&apos;d like to delete Cookies or instruct your web browser to
+          delete or refuse Cookies, please visit the help pages of your web
+          browser.
         </p>
         <p>
           For the Chrome web browser, please visit this page from Google:
@@ -147,8 +148,8 @@ const Cookies = () => {
           mac.
         </p>
         <p>
-          For any other web browser, please visit your web browser&apos;s official
-          web pages.
+          For any other web browser, please visit your web browser&apos;s
+          official web pages.
         </p>
         <p></p>
         <br />

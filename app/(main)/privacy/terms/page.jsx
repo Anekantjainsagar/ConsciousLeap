@@ -2,11 +2,11 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <div className="px-[6vw] pt-[2vw]">
+    <div className="px-5 md:px-[2vw] md:py-[1vw] py-[2vw]">
       <p className="font-bold text-websiteBlue text-3xl">
         Terms and Conditions
       </p>
-      <div className="px-3 mt-5">
+      <div className="px-2 md:px-4 mt-5">
         <p className="font-bold">Terms and Conditions</p>
         <p>Last updated: May 17, 2023</p>
         <p>
@@ -107,12 +107,12 @@ const Terms = () => {
         </p>
         <p>
           Your access to and use of the service is also conditioned on your
-          acceptance of and compliance with the Company&apos;s Privacy Policy. Our
-          Privacy Policy describes our policies and procedures on collecting,
-          using, and disclosing your personal information when you use the
-          application or the website and tells you about your privacy rights and
-          how the law protects you. Please read our Privacy Policy carefully
-          before using our service.
+          acceptance of and compliance with the Company&apos;s Privacy Policy.
+          Our Privacy Policy describes our policies and procedures on
+          collecting, using, and disclosing your personal information when you
+          use the application or the website and tells you about your privacy
+          rights and how the law protects you. Please read our Privacy Policy
+          carefully before using our service.
         </p>
         <p></p>
         <br />
@@ -377,9 +377,9 @@ const Terms = () => {
         <p>
           Some states do not allow the exclusion of implied warranties or
           limitation of liability for incidental or consequential damages, which
-          means that some of the above limitations may not apply. Each party&apos;s
-          liability will be limited to the greatest extent permitted by law in
-          these states.
+          means that some of the above limitations may not apply. Each
+          party&apos;s liability will be limited to the greatest extent
+          permitted by law in these states.
         </p>
         <p></p>
         <br />
@@ -405,9 +405,9 @@ const Terms = () => {
         </p>
         <p>
           Without limiting the preceding, neither the Company nor any of the
-          Company&apos;s providers make any representation or warranty of any kind,
-          express or implied: (i) as to the operation or availability of the
-          service, or the information, content, and materials or products
+          Company&apos;s providers make any representation or warranty of any
+          kind, express or implied: (i) as to the operation or availability of
+          the service, or the information, content, and materials or products
           included thereon; (ii) that the Service will be uninterrupted or
           error-free; (iii) as to the accuracy, reliability, or currency of any
           information or content provided through the Service; or (iv) that the
@@ -491,8 +491,8 @@ const Terms = () => {
         <p>
           We reserve the right, at our sole discretion, to modify or replace
           these terms at any time. If a revision is material, we will make
-          reasonable efforts to provide at least 30 days&apos; notice before any new
-          terms take effect. What constitutes a material change will be
+          reasonable efforts to provide at least 30 days&apos; notice before any
+          new terms take effect. What constitutes a material change will be
           determined at our sole discretion.
         </p>
         <p>
@@ -509,7 +509,9 @@ const Terms = () => {
           contact us:
         </p>
         <p>By email: support@consciousleap.co</p>
-        <p>By visiting this Terms on our website: http://www.consciousleap.co</p>
+        <p>
+          By visiting this Terms on our website: http://www.consciousleap.co
+        </p>
       </div>
     </div>
   );
