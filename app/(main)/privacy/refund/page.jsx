@@ -60,9 +60,9 @@ const Refund = () => {
         <p className="font-bold underline text-lg mb-2 mt-4">Conscious Store</p>
         <div className="px-2">
           Our returns and exchange policy is subject to goods sold by
-          consciousleap’'s verified brands and designers directly to you, with
-          no exceptions for third-party sales. All policy changes will reflect
-          on this page.
+          consciousleap&apos;s verified brands and designers directly to you,
+          with no exceptions for third-party sales. All policy changes will
+          reflect on this page.
           <br />
           In brief, we will offer a full refund if the item(s) were paid for
           using a debit/credit card and offer store credit should the payment
@@ -254,9 +254,9 @@ const Refund = () => {
             <li>
               Returned goods should retain their original tags. Goods that are
               damaged/without tags will be returned to the customer. We hope it
-              doesn't come to this, but should the goods returned to us by you
-              fail to meet our returns standards, the cost of returning them to
-              you will have to be borne by you.
+              doesn&apos;t come to this, but should the goods returned to us by
+              you fail to meet our returns standards, the cost of returning them
+              to you will have to be borne by you.
             </li>
           </ul>
         </div>
