@@ -25,7 +25,7 @@ const Shipping = () => {
           </li>
           <li>
             We try our very best to ensure that there are no delays in
-            shipments, but sometimes it's beyond our control.
+            shipments, but sometimes it&apos;s beyond our control.
           </li>
         </ul>
         <p className="underline font-bold mt-2">SHIPPING TIME</p>
