@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 
@@ -13,6 +13,24 @@ import img8 from "../Assets/store/8.jpg";
 import img7 from "../Assets/store/9.jpg";
 import { useRouter } from "next/navigation";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import StoreBlock from "../conscious-store/StoreBlock";
+import Context from "@/Context/Context";
 
 const ConsciousStore = () => {
   const history = useRouter();
@@ -37,60 +55,42 @@ const ConsciousStore = () => {
         produced, organic, sustainable, environment-friendly goods through our
         Conscious Store.
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-[6vw] mt-[3vw]">
-        {[
-          { image: img1 },
-          { image: img2 },
-          { image: img3 },
-          { image: img4 },
-          { image: img5 },
-          { image: img6 },
-          { image: img7 },
-          { image: img8 },
-        ].map((e, i) => {
-          return <Block data={e} key={i} />;
-        })}
+      <div className="mx-auto px-[5vw] w-full">
+        <BootstrapCarousel />
       </div>
     </div>
   );
 };
 
-const Block = ({ data }) => {
-  const history = useRouter();
-  const [isHovered, setIsHovered] = useState(false);
+export function BootstrapCarousel() {
+  const { productM } = useContext(Context);
 
   return (
-    <div
-      onClick={() => {
-        history.push("/conscious-store");
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative cursor-pointer rounded-md w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]"
-    >
-      <div className="flex items-center justify-center h-full w-full rounded-md bg-white p-1">
-        <Image
-          src={data?.image}
-          alt="User profile"
-          className="rounded-md hover:scale-95 cursor-pointer transition-all"
-        />
+    <div className="custom-carousel-container w-full">
+      <div className="mx-[4vw]">
+        <Swiper
+          slidesPerView={
+            typeof window != "undefined" ? (window.innerWidth < 550 ? 1 : 3) : 0
+          }
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          loop={true}
+          autoplay={{
+            interval: 3000,
+            disableOnInteraction: false,
+          }}
+          className="flex items-center"
+        >
+          {productM?.productData?.products?.map((item, i) => (
+            <SwiperSlide key={i}>
+              <div className="w-11/12 mx-auto py-10">
+                <StoreBlock key={i} data={item} showGrid={true} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      {isHovered && (
-        <div className="absolute inset-0 flex transition-all items-center justify-center bg-black bg-opacity-25 rounded-md">
-          <button
-            onClick={(e) => {
-              e.stopPropagation(); // Prevent click from bubbling to the parent
-              // Handle add to cart logic here
-            }}
-            className="bg-gray-200 flex items-center text-black px-4 py-2 rounded-md hover:bg-white transition-all"
-          >
-            <AiOutlineShoppingCart className="mr-2 text-xl" />
-            Add to Cart
-          </button>
-        </div>
-      )}
     </div>
   );
-};
+}
 
 export default ConsciousStore;

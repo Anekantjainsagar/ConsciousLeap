@@ -222,7 +222,7 @@ const B2BState = (props) => {
     axios
       .get(`${BASE_URL}/admin/get-blogs`)
       .then((res) => {
-        setBlogs(res.data);
+        setBlogs(res.data.reverse());
       })
       .catch((err) => {
         console.log(err);
