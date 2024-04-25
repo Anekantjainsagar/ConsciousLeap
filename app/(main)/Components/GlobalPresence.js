@@ -22,8 +22,8 @@ const GlobalPresence = () => {
         Our Global Presence
       </h1>
       <p className="text-darkGrey md:w-full w-[90%] text-center">
-        consciousleap is based in Estonia, Europe, and Mumbai, India, and is
-        #ComingSoon in Dubai, UAE.
+        consciousleap is based in Estonia, Europe, and Mumbai, India, and is in
+        Dubai, UAE.
       </p>
       <div className="relative">
         <Image src={image} alt={image.src} className="mt-3 w-[100vw]" />
@@ -76,13 +76,13 @@ const GlobalPresence = () => {
             }}
             className="cursor-pointer mac:w-7/12 w-5/12 md:w-3/12 bubbleAnimate mt-0 md:mt-2 hover:scale-125 transition-all"
           />
-          <p
+          {/* <p
             className={`text-semibold text-xs mt-2 text-center text-websiteBlue ${
               setshowDubai ? "block" : "hidden"
             }`}
           >
             #COMINGSOON
-          </p>
+          </p> */}
         </div>
         {/* ESTONIA */}
         <div className="absolute md:scale-100 scale-50 flex flex-col items-center justify-center cursor-pointer top-[29%] md:left-[46%] left-[36%] min-[1400px]:left-[49%]">
