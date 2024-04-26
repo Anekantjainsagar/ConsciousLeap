@@ -434,10 +434,11 @@ const Footer = () => {
             src={certified}
             alt="Certified"
             className="w-[30vw] md:w-[8vw]"
-          />
+          /> 
         </div>
         <p className="mt-3 mb-16 text-center md:text-start text-sm font-light">
-          Copyright © 2023 consciousleap, all rights reserved.
+          Coleco Wellbeing OPC PVT LTD
+          <br /> Copyright © 2023 consciousleap, all rights reserved.
         </p>
       </div>
     </>
