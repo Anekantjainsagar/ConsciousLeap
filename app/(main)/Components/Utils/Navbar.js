@@ -105,44 +105,7 @@ let nav = [
   },
   {
     name: "Conscious Store",
-    items: [
-      {
-        name: "consciousleap Vendibles",
-        route: "/conscious-store",
-      },
-      {
-        name: "Oneness Vendibles",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Being",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Edibles",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Healing",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Kids",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Living",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Teens",
-        route: "/conscious-store",
-      },
-      {
-        name: "Conscious Travel",
-        route: "/conscious-store",
-      },
-    ],
+    route: "/conscious-store",
   },
 ];
 
@@ -173,7 +136,7 @@ const Navbar = () => {
           />
           <div className="flex items-center w-1/2 justify-between text-lg font-light">
             <Navi showNav={showNav} setShowNav={setShowNav} />
-          </div> 
+          </div>
           <div className="flex items-center">
             <div className="relative">
               <div>
@@ -446,56 +409,61 @@ const NavItems = ({ e, showNav, setShowNav }) => {
         onMouseEnter={handleMouseEnter}
         onMouseOut={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={(e) => {
+        onClick={() => {
+          if (!e?.items) {
+            history.push(e?.route);
+          }
           setHover(!hover);
         }}
       >
         {e?.name}
-        <AiOutlineDown className="ml-1 mt-1" size={15} />
+        {e?.items && <AiOutlineDown className="ml-1 mt-1" size={15} />}
       </div>
-      <div
-        onMouseEnter={handleMouseEnter}
-        onMouseOut={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={(e) => {
-          setHover(!hover);
-        }}
-        className={`absolute ${
-          !hover ? "hidden" : "block"
-        } bg-white text-xs w-[55vw] md:w-[14vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
-      >
-        <div className="-mt-3 bg-transparent pt-6"></div>
-        {e?.items.map((data, i) => {
-          return (
-            <p
-              className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50 max-[1050px]:text-[11px]"
-              key={i}
-              onClick={(e) => {
-                const element = document.getElementById(
-                  data?.name?.replaceAll(" ", "")?.toLowerCase()
-                );
-                context.setBussinessShow(
-                  data?.name?.replaceAll(" ", "")?.toLowerCase()
-                );
-                if (data?.route) {
-                  if (pathname != data?.route) {
-                    history.push(data.route);
+      {e?.items && (
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseOut={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={(e) => {
+            setHover(!hover);
+          }}
+          className={`absolute ${
+            !hover ? "hidden" : "block"
+          } bg-white text-xs w-[55vw] md:w-[14vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
+        >
+          <div className="-mt-3 bg-transparent pt-6"></div>
+          {e?.items.map((data, i) => {
+            return (
+              <p
+                className="mb-[13px] text-darkGrey blueHover cursor-pointer z-50 max-[1050px]:text-[11px]"
+                key={i}
+                onClick={(e) => {
+                  const element = document.getElementById(
+                    data?.name?.replaceAll(" ", "")?.toLowerCase()
+                  );
+                  context.setBussinessShow(
+                    data?.name?.replaceAll(" ", "")?.toLowerCase()
+                  );
+                  if (data?.route) {
+                    if (pathname != data?.route) {
+                      history.push(data.route);
+                    }
                   }
-                }
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
-                }
-              }}
-            >
-              {data?.name.slice(0, 25) +
-                (data?.name?.length > 25 ? "...." : "")}
-            </p>
-          );
-        })}
-      </div>
+                  if (element) {
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }
+                }}
+              >
+                {data?.name.slice(0, 25) +
+                  (data?.name?.length > 25 ? "...." : "")}
+              </p>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

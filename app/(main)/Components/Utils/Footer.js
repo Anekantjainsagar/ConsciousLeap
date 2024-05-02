@@ -118,47 +118,6 @@ const Footer = () => {
         },
       ],
     },
-    {
-      name: "Conscious Store",
-      items: [
-        {
-          name: "consciousleap Vendibles",
-          route: "/conscious-store",
-        },
-        {
-          name: "Oneness Vendibles",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Being",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Edibles",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Healing",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Kids",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Living",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Teens",
-          route: "/conscious-store",
-        },
-        {
-          name: "Conscious Travel",
-          route: "/conscious-store",
-        },
-      ],
-    },
   ];
 
   return (
@@ -166,7 +125,7 @@ const Footer = () => {
       <Line1 />
       <Toaster />
       <div className="bg-white px-[8vw]">
-        <div className="grid grid-cols-1 md:gap-y-0 gap-y-5 flex items-start md:grid-cols-5">
+        <div className="grid grid-cols-1 md:gap-y-0 gap-y-5 flex items-start md:grid-cols-4">
           {nav.map((e, i) => {
             return (
               <div
@@ -252,48 +211,8 @@ const Footer = () => {
             <div className="text-[13.5px] mb-1 text-center md:text-start md:my-0 mt-2 font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
-              <div className="flex items-center md:justify-start justify-center">
-                <span
-                  onMouseEnter={(e) => {
-                    setShowEstoniaAdd(true);
-                  }}
-                  onMouseOut={(e) => {
-                    setShowEstoniaAdd(true);
-                  }}
-                  onMouseLeave={(e) => {
-                    setShowEstoniaAdd(false);
-                  }}
-                >
-                  Estonia
-                </span>
-                <div className="mx-2">|</div>
-                <span
-                  onMouseEnter={(e) => {
-                    setShowIndiaAdd(true);
-                  }}
-                  onMouseOut={(e) => {
-                    setShowIndiaAdd(true);
-                  }}
-                  onMouseLeave={(e) => {
-                    setShowIndiaAdd(false);
-                  }}
-                >
-                  India
-                </span>
-              </div>
-              <span
-                className={`${
-                  !showEstoniaAdd ? "hidden" : "block text-darkGrey"
-                }`}
-              >
-                Järvevana Tee 9, Tallinn, 11314, Estonia
-              </span>
-              <span
-                className={`${
-                  !showIndiaAdd ? "hidden" : "block text-darkGrey"
-                }`}
-              >
-                A3 Sai Shraddha, Deonar, Mumbai 400088, India.
+              <span className="text-darkGrey">
+                A3 Sai Shraddha, Deonar, Mumbai 400088, India
               </span>{" "}
             </div>
             <div className="flex items-center mt-1">

@@ -87,8 +87,8 @@ const Store = () => {
         alt={"Store hero"}
         className="my-5 mx-auto md:w-11/12"
       />
-      <div className="flex w-full px-[5vw] py-[4vw] items-start justify-between">
-        <div className="md:block hidden w-3/12 mr-[1vw] ">
+      <div className="flex w-full px-[5vw] py-[3vw] items-start justify-between">
+        {/* <div className="md:block hidden w-3/12 mr-[1vw] ">
           <div
             className="flex items-center cursor-pointer border-b pb-2"
             onClick={(e) => {
@@ -116,10 +116,11 @@ const Store = () => {
               <span>{secondValue}</span>
             </p>
           </div>
-        </div>
-        <div className="md:w-9/12 w-full ml-[1vw]">
+        </div> */}
+        {/* <div className="md:w-9/12 w-full ml-[1vw]"> */}
+        <div className="w-full ml-[1vw]">
           <h1 className="text-xl hover:text-newBlue transition-all cursor-pointer">
-            Conscious Vendibles
+            Conscious Store
           </h1>
           <div className="flex md:flex-row flex-col px-2 items-center">
             <div className="flex items-center md:mb-0 mb-4 w-full mt-3">
@@ -200,7 +201,7 @@ const Store = () => {
           </div>
           <div
             className={`grid grid-cols-1 ${
-              showGrid ? "md:grid-cols-3" : "md:grid-cols-1"
+              showGrid ? "md:grid-cols-3 items-stretch" : "md:grid-cols-1"
             } min-[900px]:gap-4 min-[1040px]:gap-8 gap-8 p-3`}
           >
             {context?.productM?.productData?.products
