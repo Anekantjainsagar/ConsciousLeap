@@ -174,7 +174,7 @@ const Navbar = () => {
                   </>
                 ) : therapists?.therapist?._id ? (
                   <>
-                    <div className="border-2 min-[768px]:w-[5vw] min-[768px]:h-[5vw] min-[900px]:w-[4vw] min-[900px]:h-[4vw] min-[1000px]:w-[4vw] min-[1000px]:h-[4vw] min-[1100px]:w-[3.5vw] min-[1100px]:h-[3.5vw] min-[1300px]:w-[3vw] min-[1300px]:h-[3vw] min-[1500px]:w-[2.5vw] min-[1500px]:h-[2.5vw] min-[1650px]:w-[2.3vw] min-[1650px]:h-[2.3vw] min-[2000px]:w-[2vw] min-[2000px]:h-[2vw] min-[2200px]:w-[1.7vw] min-[2200px]:h-[1.7vw] min-[2600px]:w-[1.5vw] min-[2600px]:h-[1.5vw] rounded-full mr-3 flex items-center justify-center border-websiteBlue hover:scale-110 transition-all">
+                    <div className="border-2 min-[768px]:w-[5vw] min-[768px]:h-[5vw] min-[900px]:w-[4vw] min-[900px]:h-[4vw] min-[1000px]:w-[4vw] min-[1000px]:h-[4vw] min-[1100px]:w-[3.5vw] min-[1100px]:h-[3.5vw] min-[1300px]:w-[3vw] min-[1300px]:h-[3vw] min-[1500px]:w-[2.5vw] min-[1500px]:h-[2.5vw] min-[1650px]:w-[2.3vw] min-[1650px]:h-[2.3vw] min-[2000px]:w-[2vw] min-[2000px]:h-[2vw] min-[2200px]:w-[1.7vw] min-[2200px]:h-[1.7vw] min-[2600px]:w-[1.5vw] min-[2600px]:h-[1.5vw] rounded-full mr-3 flex items-center justify-center border-websiteBlue hover:scale-110 transition-all p-0.5">
                       <Image
                         src={therapists?.therapist?.photo}
                         width={1000}
@@ -189,7 +189,7 @@ const Navbar = () => {
                           setShowHover({ ...showHover, user: false });
                         }}
                         alt="User"
-                        className="p-1.5 object-contain cursor-pointer"
+                        className="object-cover object-center w-fit h-fit aspect-square rounded-full cursor-pointer"
                         onClick={(e) => {
                           history.push("/therapy/dashboard");
                         }}
@@ -309,7 +309,7 @@ const Navbar = () => {
               </>
             ) : therapists?.therapist?._id ? (
               <>
-                <div className="border-2 w-[10vw] min-[500px]:w-[8vw] min-[580px]:w-[6.3vw] h-[10vw] min-[500px]:h-[8vw] min-[580px]:h-[6.3vw] rounded-full mr-3 flex items-center justify-center border-websiteBlue hover:scale-110 transition-all">
+                <div className="border-2 w-[10vw] min-[500px]:w-[8vw] min-[580px]:w-[6.3vw] h-[10vw] min-[500px]:h-[8vw] min-[580px]:h-[6.3vw] rounded-full mr-3 flex p-1 items-center justify-center border-websiteBlue hover:scale-110 transition-all">
                   <Image
                     src={therapists?.therapist?.photo}
                     width={1000}
@@ -324,7 +324,7 @@ const Navbar = () => {
                       setShowHover({ ...showHover, user: false });
                     }}
                     alt="User"
-                    className="p-1.5 object-contain cursor-pointer"
+                    className="object-cover object-center w-fit h-fit aspect-square rounded-full cursor-pointer"
                     onClick={(e) => {
                       history.push("/therapy/dashboard");
                     }}
