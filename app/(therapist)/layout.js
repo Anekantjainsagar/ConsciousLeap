@@ -8,10 +8,8 @@ const inter = Comfortaa({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <State>
-        <body className={inter.className}>{children}</body>
-      </State>
-    </html>
+    <State>
+      <div className={inter.className}>{children}</div>
+    </State>
   );
 }

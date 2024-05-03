@@ -47,6 +47,7 @@ const EditProfile = () => {
 
   useEffect(() => {
     const { therapist } = therapists;
+
     setTherapist({
       id: therapist?._id,
       name: therapist?.name,
