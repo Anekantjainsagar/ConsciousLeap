@@ -20,9 +20,14 @@ const LeftBar = () => {
   }, [blogs]);
 
   useEffect(() => {
-    let data = productM?.productData?.products;
-    var randomNumber = Math.floor(Math.random() * data?.length);
-    setStore(data[randomNumber]);
+    if (productM?.productData) {
+      let data = productM?.productData?.products;
+      var randomNumber = Math.floor(Math.random() * data?.length);
+      console.log(productM?.productData);
+      if (randomNumber) {
+        setStore(data[randomNumber]);
+      }
+    }
   }, [productM]);
 
   return (

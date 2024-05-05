@@ -47,9 +47,9 @@ export function BootstrapCarousel() {
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1699298538/dettte2e0rncdcyrzkdg.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1701772497/ql2pt0ij71txw03fygds.jpg",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1701772507/h66e6l2ifsfpzerug27q.jpg",
-    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714054373/lz2wmxn3amacmgttibxg.png",
-    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714054641/hzv2wrdm4r8upnbsagec.jpg",
-    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714054648/ikdessby71nnmbekqzoe.png",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737684/apvygeprzckwmegrjbpl.png",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737721/tn1tb8surfiuba898pjm.png",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737745/o4yzt7jkeb4ujtl96pml.png",
   ];
 
   return (

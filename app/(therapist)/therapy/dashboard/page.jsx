@@ -109,6 +109,7 @@ const Dashboard = () => {
               router.push("/");
               therapists.setIsTherapistLogin(false);
               deleteCookie("therapist_token");
+              window.reload();
             }}
             className="rounded-full w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1.5px] mt-3"
           >

@@ -174,7 +174,7 @@ const Footer = () => {
             >
               FAQs
             </p>
-            <p className="text-[13.5px] flex mb-1 font-light cursor-pointer hover:text-websiteBlue">
+            <p className="text-[13.5px] text-center md:text-start flex mb-1 font-light cursor-pointer hover:text-websiteBlue">
               Email:
               <br />
               oneness@conscousleap.co

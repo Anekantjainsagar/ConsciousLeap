@@ -85,6 +85,7 @@ const Navbar = ({ showLeftBar, setShowLeftBar }) => {
             router.push("/");
             therapists.setIsTherapistLogin(false);
             deleteCookie("therapist_token");
+            window.reload();
           }}
           className="px-3 py-1 cursor-pointer flex items-center hover:bg-blue-gray-600 hover:text-white transition-all rounded-lg"
         >

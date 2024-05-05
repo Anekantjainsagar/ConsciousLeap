@@ -507,7 +507,7 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
               <h1 className="text-2xl md:text-xl text-websiteBlue line-clamp-1">
                 {data?.name}
               </h1>
-              <p className="text-darkGrey text-sm mt-1 line-clamp-1">
+              <p className="text-darkGrey text-sm mt-1 md:text-start text-center line-clamp-1">
                 {data?.desc}
               </p>
               <h1 className="mt-1 text-lg md:text-base text-websiteBlue">
@@ -518,7 +518,7 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
                   return (
                     <li
                       key={i}
-                      className="text-base md:text-[11px] text-darkGrey line-clamp-1"
+                      className="text-base md:text-start text-center md:text-[11px] text-darkGrey line-clamp-1"
                     >
                       {i + 1}. {e}
                     </li>
