@@ -31,6 +31,7 @@ const Therapists = () => {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [isConsentFilled, setIsConsentFilled] = useState(false);
+  
   React.useEffect(() => {
     axios
       .post(`${BASE_URL}/consent/check`, {

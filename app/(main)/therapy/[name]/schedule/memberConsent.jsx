@@ -63,7 +63,7 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             </h1>
             {/* <div className="h-[1px] w-6/12 bg-gray-500 mb-2 md:mb-4 mt-2"></div> */}
             <div
-              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-1 md:mt-5 mt-3 md:mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue px-4 py-2 md:text-lg w-[65vw] min-[550px]:w-[50vw] min-[900px]:w-[40vw] min-[1300px]:w-[25vw]"
+              className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-0 md:mt-5 mt-1 md:mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue px-4 py-2 md:text-lg w-[65vw] min-[550px]:w-[50vw] min-[900px]:w-[40vw] min-[1300px]:w-[25vw]"
               onClick={(e) => {
                 setFourtyMinMeet(false);
                 history.push(
@@ -77,14 +77,14 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                   alt="Logo"
                   className="w-[5vw] md:w-[2.35vw] mr-1.5"
                 />
-                <p>Online Therapy (40 Mins)</p>
+                <p className="md:text-base text-xs">Online Therapy (40 Mins)</p>
               </div>
-              <p className="mt-0 relative">
-                ₹{" "}
+              <p className="mt-0 relative md:text-base text-xs">
+                ₹
                 {user?.meeting_url?.price
                   ? user?.meeting_url?.price
                   : showPopUpId?.meeting_url?.price}
-                <span className="text-[9px] text-black right-0 absolute -bottom-4">
+                <span className="text-[5px] md:text-[9px] text-black right-0 absolute -bottom-4">
                   + GST
                 </span>
               </p>
@@ -105,14 +105,14 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
                   alt="Logo"
                   className="w-[5vw] md:w-[2.35vw] mr-1.5"
                 />
-                <p>Online Therapy (60 Mins)</p>
+                <p className="md:text-base text-xs">Online Therapy (60 Mins)</p>
               </div>
-              <p className="mt-0 relative">
-                ₹{" "}
+              <p className="mt-0 relative md:text-base text-xs">
+                ₹
                 {user?.full_meeting_url?.price
                   ? user?.full_meeting_url?.price
                   : showPopUpId?.full_meeting_url?.price}
-                <span className="text-[9px] text-black right-0 absolute -bottom-4">
+                <span className="text-[5px] md:text-[9px] text-black right-0 absolute -bottom-4">
                   + GST
                 </span>
               </p>

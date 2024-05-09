@@ -12,10 +12,12 @@ import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
 import { usePDF } from "react-to-pdf";
 import logo from "@/(main)/Assets/logo.png";
+import QuestionModal from "./model";
 
 const Questionnaire = () => {
   let history = useRouter();
-  const { isLogin, login, getUser } = useContext(Context);
+  const { isLogin, login, getUser, setShowRecommendation } =
+    useContext(Context);
   const { toPDF, targetRef } = usePDF({ filename: "Questionnaire.pdf" });
 
   useEffect(() => {
@@ -25,6 +27,12 @@ const Questionnaire = () => {
   }, [login]);
 
   useEffect(() => {
+    setTimeout(() => {
+      setShowRecommendation(true);
+    }, 4000);
+  }, []);
+
+  useEffect(() => {
     if (!isLogin) {
       history.push("/user/login");
     }
@@ -32,6 +40,7 @@ const Questionnaire = () => {
 
   return (
     <div className="overflow-x-hidden">
+      <QuestionModal />
       <div
         ref={targetRef}
         className="z-50 top-[-200vh] flex flex-col items-center bg-white absolute"

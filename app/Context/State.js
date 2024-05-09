@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Context from "./Context";
 import { usePathname } from "next/navigation";
 import axios from "axios";
-import { BASE_URL } from "@/Utils/urls";
+import { BASE_URL, ML_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
 
 const B2BState = (props) => {
@@ -72,6 +72,8 @@ const B2BState = (props) => {
   const [orderStatus, setOrderStatus] = useState();
   const [ordersData, setOrdersData] = useState([]);
   const [productPage, setProductPage] = useState(1);
+  const [showRecommendation, setShowRecommendation] = useState(false);
+  const [recommendations, setRecommendations] = useState([]);
 
   const [order, setOrder] = useState({
     address: "",
@@ -139,6 +141,21 @@ const B2BState = (props) => {
         console.log(err);
       });
   };
+
+  useEffect(() => {
+    if (login?.questionnaire?.backendAnswers) {
+      axios
+        .post(`${ML_URL}`, {
+          user_data: login?.questionnaire?.backendAnswers,
+        })
+        .then((res) => {
+          setRecommendations(res.data["top_ids"]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [login]);
 
   const getTherapist = () => {
     axios
@@ -293,6 +310,9 @@ const B2BState = (props) => {
         getRandomNumberArray,
         setProductPage,
         productPage,
+        showRecommendation,
+        setShowRecommendation,
+        recommendations,
       }}
     >
       {props.children}
