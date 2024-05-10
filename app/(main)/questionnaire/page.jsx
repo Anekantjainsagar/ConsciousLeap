@@ -16,7 +16,7 @@ import QuestionModal from "./model";
 
 const Questionnaire = () => {
   let history = useRouter();
-  const { isLogin, login, getUser, setShowRecommendation } =
+  const { isLogin, login, getUser, setShowRecommendation, recommendations } =
     useContext(Context);
   const { toPDF, targetRef } = usePDF({ filename: "Questionnaire.pdf" });
 
@@ -28,7 +28,9 @@ const Questionnaire = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setShowRecommendation(true);
+      if (recommendations?.length > 1) {
+        setShowRecommendation(true);
+      }
     }, 4000);
   }, []);
 
