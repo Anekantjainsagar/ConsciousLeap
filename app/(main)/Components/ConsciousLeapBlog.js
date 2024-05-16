@@ -28,6 +28,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Context from "@/Context/Context";
+import { TitleBlock } from "../blogs/page";
 
 const ConsciousleapBlog = () => {
   let blogsHeading = useRef();
@@ -193,9 +194,7 @@ const BlogBlock = ({ data }) => {
           width={1000}
           height={1000}
         />
-        <p className="mt-2 text-lg md:text-xl px-1 text-newBlue line-clamp-2 md:line-clamp-1">
-          {data?.title}
-        </p>
+        <TitleBlock title={data?.title} id={data?._id} likes={data?.likes} />
       </div>
     </div>
   );
