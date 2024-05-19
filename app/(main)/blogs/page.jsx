@@ -1,13 +1,9 @@
 "use client";
 import Context from "@/Context/Context";
-import { BASE_URL } from "@/Utils/urls";
-import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useContext, useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import { FaHeart, FaRegComment, FaRegHeart } from "react-icons/fa";
-import { IoMdShare } from "react-icons/io";
+import React, { useContext } from "react";
+import TitleBlock from "./TitleBlock";
 
 const Blogs = () => {
   const history = useRouter();
@@ -60,53 +56,6 @@ const BlogBlock = ({ data }) => {
         className="w-full h-[60vw] md:h-[16vw] object-cover rounded-lg object-center"
       />
       <TitleBlock title={data?.title} id={data?._id} likes={data?.likes} />
-    </div>
-  );
-};
-
-export const TitleBlock = ({ title, id, likes }) => {
-  const [isLiked, setIsLiked] = useState(false);
-  const { login } = useContext(Context);
-
-  useEffect(() => {
-    if (login?._id) {
-      let data = likes.find((e) => e == login?._id);
-      if (data) {
-        setIsLiked(true);
-      }
-    }
-  }, [id, login?._id]);
-
-  return (
-    <div className="flex items-center justify-between">
-      {/* <Toaster /> */}
-      <p className="mt-2 text-lg md:text-xl px-1 line-clamp-1 w-9/12 text-newBlue">
-        {title}
-      </p>
-      <div className="w-3/12 pt-1.5 ml-5 pr-2 flex text-newBlue items-center text-xl justify-between">
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            if (login?._id) {
-              axios
-                .post(`${BASE_URL}/admin/toggle-like/${id}`, {
-                  userId: login?._id,
-                })
-                .then((res) => {
-                  if (res.status == 200) {
-                    setIsLiked(!isLiked);
-                  }
-                });
-            } else {
-              toast.error("Please login first");
-            }
-          }}
-        >
-          {!isLiked ? <FaRegHeart /> : <FaHeart />}
-        </div>
-        <FaRegComment />
-        <IoMdShare />
-      </div>
     </div>
   );
 };

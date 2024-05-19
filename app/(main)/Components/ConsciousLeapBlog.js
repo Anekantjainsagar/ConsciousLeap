@@ -2,13 +2,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
-
-import blog1 from "../Assets/Blogs/1.jpg";
-import blog2 from "../Assets/Blogs/2.jpg";
-import blog3 from "../Assets/Blogs/3.jpg";
-import blog4 from "../Assets/Blogs/4.jpg";
-import blog5 from "../Assets/Blogs/5.jpg";
-import blog6 from "../Assets/Blogs/6.jpg";
 import Line2 from "./Lines/Line2";
 import { useRouter } from "next/navigation";
 
@@ -28,7 +21,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Context from "@/Context/Context";
-import { TitleBlock } from "../blogs/page";
+import TitleBlock from "../blogs/TitleBlock";
 
 const ConsciousleapBlog = () => {
   let blogsHeading = useRef();
