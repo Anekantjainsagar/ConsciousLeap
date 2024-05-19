@@ -138,8 +138,8 @@ const CommentBlock = ({ blog }) => {
       <div className="m-1">
         <InputBlock blog={blog} />
         <div>
-          {blog?.comments?.map((e) => {
-            return <BlockCode data={e} />;
+          {blog?.comments?.map((e,i) => {
+            return <BlockCode data={e} key={i} />;
           })}
         </div>
         {/* <button className="w-full bg-websiteBlue text-white py-2 font-semibold mt-3 rounded-md">
