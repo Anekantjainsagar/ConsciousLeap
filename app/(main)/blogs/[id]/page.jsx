@@ -12,11 +12,13 @@ import logo from "@/(main)/Assets/dashboard-user-image.jpeg";
 import { LuDot } from "react-icons/lu";
 import toast from "react-hot-toast";
 import { format } from "timeago.js";
+import ShareModel from "./model/Share";
 
 const Blog2 = ({ params }) => {
   const { id } = params;
   const [blog, setBlog] = useState();
   const { blogs, getBlogs } = useContext(Context);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     getBlogs();
@@ -35,6 +37,7 @@ const Blog2 = ({ params }) => {
 
   return (
     <div className="mx-auto w-[90vw] md:w-[70vw] py-[1vw]">
+      <ShareModel showSubscribe={showPopup} setShowSubscribe={setShowPopup} />
       <Image
         src={blog?.image}
         width={100}
@@ -43,7 +46,11 @@ const Blog2 = ({ params }) => {
         className="mx-auto rounded-md w-full"
       />
       <div className="px-[3vw] md:px-[8vw]">
-        <NewBlock blog={blog} />
+        <NewBlock
+          blog={blog}
+          setShowPopup={setShowPopup}
+          showPopup={showPopup}
+        />
         <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
           {blog?.title}
         </h1>
@@ -58,7 +65,7 @@ const Blog2 = ({ params }) => {
   );
 };
 
-const NewBlock = ({ blog }) => {
+const NewBlock = ({ blog, setShowPopup, showPopup }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const { login } = useContext(Context);
@@ -122,6 +129,10 @@ const NewBlock = ({ blog }) => {
           className="w-[2vw] mr-2 cursor-pointer"
           src={share}
           alt="Share"
+          onClick={(e) => {
+            e.preventDefault();
+            setShowPopup(!showPopup);
+          }}
         />
       </div>
       <p className="pl-2 mt-3">
@@ -134,11 +145,11 @@ const NewBlock = ({ blog }) => {
 const CommentBlock = ({ blog }) => {
   return (
     <div className="mt-5">
-      <h1 className="text-2xl font-semibold text-websiteBlue">Comments</h1>
+      <h1 id="#comment" className="text-2xl font-semibold text-websiteBlue">Comments</h1>
       <div className="m-1">
         <InputBlock blog={blog} />
         <div>
-          {blog?.comments?.map((e,i) => {
+          {blog?.comments?.map((e, i) => {
             return <BlockCode data={e} key={i} />;
           })}
         </div>

@@ -9,10 +9,12 @@ import likeFilled from "@/(main)/Assets/blog-icons/HeartLightFilled.png";
 import comment from "@/(main)/Assets/blog-icons/CommentLight.png";
 import share from "@/(main)/Assets/blog-icons/ShareLight.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const TitleBlock = ({ title, id, likes }) => {
   const [isLiked, setIsLiked] = useState(false);
   const { login } = useContext(Context);
+  const history = useRouter();
 
   useEffect(() => {
     if (login?._id) {
@@ -25,7 +27,6 @@ const TitleBlock = ({ title, id, likes }) => {
 
   return (
     <div className="flex items-center justify-between">
-      {/* <Toaster /> */}
       <p className="mt-2 text-lg md:text-xl px-1 line-clamp-1 w-9/12 text-newBlue">
         {title}
       </p>
@@ -55,23 +56,19 @@ const TitleBlock = ({ title, id, likes }) => {
               alt="Like"
             />
           ) : (
-            <Image
-              className="w-[2vw] cursor-pointer"
-              src={like}
-              alt="Like"
-            />
+            <Image className="w-[2vw] cursor-pointer" src={like} alt="Like" />
           )}
         </div>
         <Image
+          onClick={(e) => {
+            // e.stopPropagation();
+            history.push(`/blogs/${id}`);
+          }}
           className="w-[2vw] cursor-pointer"
           src={comment}
           alt="Comment"
         />
-        <Image
-          className="w-[2vw] cursor-pointer"
-          src={share}
-          alt="Share"
-        />
+        <Image className="w-[2vw] cursor-pointer" src={share} alt="Share" />
       </div>
     </div>
   );
