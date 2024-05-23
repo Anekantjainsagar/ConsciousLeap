@@ -108,25 +108,25 @@ const NewBlock = ({ blog, setShowPopup, showPopup }) => {
         >
           {isLiked ? (
             <Image
-              className="w-[2vw] mr-2 cursor-pointer"
+              className="w-[7vw] md:w-[2vw] mr-2 cursor-pointer"
               src={likeFilled}
               alt="Like"
             />
           ) : (
             <Image
-              className="w-[2vw] mr-2 cursor-pointer"
+              className="w-[7vw] md:w-[2vw] mr-2 cursor-pointer"
               src={like}
               alt="Like"
             />
           )}
         </div>
         <Image
-          className="w-[2vw] mr-2 cursor-pointer"
+          className="w-[7vw] md:w-[2vw] mr-2 cursor-pointer"
           src={comment}
           alt="Comment"
         />
         <Image
-          className="w-[2vw] mr-2 cursor-pointer"
+          className="w-[7vw] md:w-[2vw] mr-2 cursor-pointer"
           src={share}
           alt="Share"
           onClick={(e) => {
@@ -135,7 +135,7 @@ const NewBlock = ({ blog, setShowPopup, showPopup }) => {
           }}
         />
       </div>
-      <p className="pl-2 mt-3">
+      <p className="md:pl-2 pl-1 mt-3">
         {likeCount} Likes and {blog?.comments?.length} Comments
       </p>
     </div>
@@ -168,7 +168,11 @@ const InputBlock = ({ blog }) => {
   return (
     <div className="border-2 border-websiteBlue p-2 rounded-md">
       <div className="flex items-center">
-        <Image src={logo} alt="Logo" className="rounded-full w-[3vw]" />
+        <Image
+          src={logo}
+          alt="Logo"
+          className="rounded-full w-[6.5vw] md:w-[3vw]"
+        />
         <h1 className="text-websiteBlue font-normal text-lg ml-2">
           {login?.name}
         </h1>
@@ -214,7 +218,7 @@ const BlockCode = ({ data }) => {
   return (
     <div className="mt-3 mb-1 p-2 rounded-md">
       <div className="flex items-center">
-        <Image src={logo} alt="Logo" className="rounded-full w-[3vw]" />
+        <Image src={logo} alt="Logo" className="rounded-full w-[6.5vw] md:w-[3vw]" />
         <h1 className="text-websiteBlue font-normal text-lg ml-2">
           {data?.postedBy}
         </h1>

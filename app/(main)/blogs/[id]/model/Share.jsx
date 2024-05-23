@@ -39,7 +39,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <div className="w-[32vw] bg-white border rounded-md h-fit py-3 px-5">
+        <div className="w-[85vw] md:w-[32vw] bg-white border rounded-md h-fit py-3 px-5">
           <div className="flex items-center justify-between">
             <h1 className="text-websiteBlue text-lg font-normal">Share</h1>
             <AiOutlineClose
@@ -53,7 +53,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
             <Image
               src={whatsapp}
               alt="Images"
-              className="w-[4vw] h-[4vw] cursor-pointer"
+              className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(
@@ -67,15 +67,21 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
             <Image
               src={instagram}
               alt="Images"
-              className="w-[4vw] h-[4vw] p-1 cursor-pointer"
+              className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] p-1 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
+                window.open(
+                  `https://www.instagram.com/?url=${
+                    "https://consciousleap.co" + pathname
+                  }`,
+                  "_blank"
+                );
               }}
             />
             <Image
               src={linkedin}
               alt="Images"
-              className="w-[4vw] h-[4vw] p-1 cursor-pointer"
+              className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] p-1 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(
@@ -89,7 +95,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
             <Image
               src={facebook}
               alt="Images"
-              className="w-[4vw] h-[4vw] p-1 cursor-pointer"
+              className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] p-1 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(
@@ -103,7 +109,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
             <Image
               src={twitter}
               alt="Images"
-              className="w-[4vw] h-[4vw] p-1 cursor-pointer"
+              className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] p-1 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(

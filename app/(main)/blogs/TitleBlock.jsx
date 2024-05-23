@@ -51,12 +51,16 @@ const TitleBlock = ({ title, id, likes }) => {
         >
           {isLiked ? (
             <Image
-              className="w-[2vw] cursor-pointer"
+              className="w-[6vw] md:w-[2vw] cursor-pointer"
               src={likeFilled}
               alt="Like"
             />
           ) : (
-            <Image className="w-[2vw] cursor-pointer" src={like} alt="Like" />
+            <Image
+              className="w-[6vw] md:w-[2vw] cursor-pointer"
+              src={like}
+              alt="Like"
+            />
           )}
         </div>
         <Image
@@ -64,11 +68,15 @@ const TitleBlock = ({ title, id, likes }) => {
             // e.stopPropagation();
             history.push(`/blogs/${id}`);
           }}
-          className="w-[2vw] cursor-pointer"
+          className="w-[6vw] md:w-[2vw] cursor-pointer"
           src={comment}
           alt="Comment"
         />
-        <Image className="w-[2vw] cursor-pointer" src={share} alt="Share" />
+        <Image
+          className="w-[6vw] md:w-[2vw] cursor-pointer"
+          src={share}
+          alt="Share"
+        />
       </div>
     </div>
   );
