@@ -64,7 +64,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
                 );
               }}
             />
-            <Image
+            {/* <Image
               src={instagram}
               alt="Images"
               className="w-[9vw] md:w-[4vw] h-[9vw] md:h-[4vw] p-1 cursor-pointer"
@@ -77,7 +77,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
                   "_blank"
                 );
               }}
-            />
+            /> */}
             <Image
               src={linkedin}
               alt="Images"
