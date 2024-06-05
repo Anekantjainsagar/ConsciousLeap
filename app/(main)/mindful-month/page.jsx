@@ -47,7 +47,7 @@ const MindFulMonth = () => {
           What is Mindful Month?
         </h1>
         <p className="px-2 text-sm md:text-[17px] mt-1.5 text-newBlue">
-          We are excited to announce the launch of "Mindful Month," an
+          We are excited to announce the launch of &quot;Mindful Month,&quot; an
           initiative offering free therapy sessions throughout June. This
           program aims to provide accessible mental health support to all,
           fostering well-being and resilience in our community. By removing
