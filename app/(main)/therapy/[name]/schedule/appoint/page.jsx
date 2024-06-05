@@ -16,17 +16,6 @@ const Appoint = ({ params }) => {
 
   return (
     <div>
-      {/* <iframe
-        width="100%"
-        height="750px"
-        src={
-          fourtyMinMeet ? user?.full_meeting_url?.url : user?.meeting_url?.url
-        }
-        frameborder="0"
-        allowfullscreen=""
-      >
-        {" "}
-      </iframe> */}
       <object
         width="100%"
         height="750px"

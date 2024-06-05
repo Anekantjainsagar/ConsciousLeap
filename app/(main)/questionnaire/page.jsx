@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import img1 from "../Assets/questionnaire/ic1.png";
 import img2 from "../Assets/questionnaire/ic2.png";
 import img3 from "../Assets/questionnaire/ic3.png";
@@ -16,8 +16,15 @@ import QuestionModal from "./model";
 
 const Questionnaire = () => {
   let history = useRouter();
-  const { isLogin, login, getUser, setShowRecommendation, recommendations } =
-    useContext(Context);
+  const {
+    isLogin,
+    login,
+    getUser,
+    setShowRecommendation,
+    recommendations,
+    mindfulMonth,
+    setMindfulMonth,
+  } = useContext(Context);
   const { toPDF, targetRef } = usePDF({ filename: "Questionnaire.pdf" });
 
   useEffect(() => {
@@ -39,6 +46,20 @@ const Questionnaire = () => {
       history.push("/user/login");
     }
   }, [isLogin]);
+
+  const [isConsentFilled, setIsConsentFilled] = useState(false);
+  React.useEffect(() => {
+    axios
+      .post(`${BASE_URL}/consent/check`, {
+        token: getCookie("token"),
+      })
+      .then((res) => {
+        setIsConsentFilled(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="overflow-x-hidden">
@@ -97,11 +118,22 @@ const Questionnaire = () => {
         </button>
         <button
           onClick={(e) => {
-            history.push("/therapy");
+            if (mindfulMonth) {
+              if (isConsentFilled) {
+                history.push("/mindful-month/schedule");
+              } else {
+                history.push(`/therapy/${login?._id}/schedule`);
+              }
+              setMindfulMonth(false);
+            } else {
+              history.push("/therapy");
+            }
           }}
           className="md:ml-4 md:mt-0 mt-3 md:w-fit w-[60vw] bg-websiteBlue px-10 text-white rounded-md font-medium py-2"
         >
-          Proceed to Therapy
+          {!mindfulMonth
+            ? "Proceed to Therapy"
+            : "Proceed to Therapist Consultation"}
         </button>
         <button
           onClick={(e) => {

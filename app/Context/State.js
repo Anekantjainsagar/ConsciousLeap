@@ -74,7 +74,7 @@ const B2BState = (props) => {
   const [productPage, setProductPage] = useState(1);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [recommendations, setRecommendations] = useState([]);
-
+  const [mindfulMonth, setMindfulMonth] = useState(false);
   const [order, setOrder] = useState({
     address: "",
     localPickup: "",
@@ -313,6 +313,8 @@ const B2BState = (props) => {
         showRecommendation,
         setShowRecommendation,
         recommendations,
+        setMindfulMonth,
+        mindfulMonth,
       }}
     >
       {props.children}
