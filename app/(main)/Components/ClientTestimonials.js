@@ -83,34 +83,34 @@ export function BootstrapCarousel() {
   ];
 
   return (
-    <Swiper
-      slidesPerView={1}
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      pagination={{ clickable: true }}
-      className="w-full"
-      loop={true}
-      autoplay={{
-        interval: 3000,
-        disableOnInteraction: false,
-      }}
-    >
-      {data?.map((item, i) => (
-        <SwiperSlide key={i} className="pb-4">
-          <div className="rounded-full w-[50vw] md:w-[19vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
-            <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
-              <Image
-                src={item.image}
-                alt="Photo of girl"
-                className="rounded-full cursor-pointer hover:scale-[97%] transition-all"
-              />
+      <Swiper
+        slidesPerView={1}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+        pagination={{ clickable: true }}
+        className="w-full"
+        loop={true}
+        autoplay={{
+          interval: 3000,
+          disableOnInteraction: false,
+        }}
+      >
+        {data?.map((item, i) => (
+          <SwiperSlide key={i} className="pb-4">
+            <div className="rounded-full w-[50vw] md:w-[19vw] mx-auto bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
+              <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
+                <Image
+                  src={item.image}
+                  alt="Photo of girl"
+                  className="rounded-full cursor-pointer hover:scale-[97%] transition-all"
+                />
+              </div>
             </div>
-          </div>
-          <p className="w-8/12 font-light mx-auto text-center mb-4 text-lg tracking-wider text-darkGrey mt-3">
-            {item?.text}
-          </p>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+            <p className="w-8/12 font-light mx-auto text-center mb-4 text-lg tracking-wider text-darkGrey mt-3">
+              {item?.text}
+            </p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
   );
 }
 
