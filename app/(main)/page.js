@@ -71,7 +71,7 @@ const Home = () => {
       <BootstrapCarousel />
       <Line1 />
       <Whyconsciousleap />
-      <button
+      {/* <button
         className="bg-websiteBlue text-white px-5 py-2"
         onClick={(e) => {
           let email = prompt("Email?");
@@ -88,7 +88,7 @@ const Home = () => {
         }}
       >
         Button
-      </button>
+      </button> */}
       <Line2 />
       <Drawer />
       <Line2 />
