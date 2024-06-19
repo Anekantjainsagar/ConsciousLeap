@@ -40,26 +40,6 @@ const UserRegister = () => {
           .then((response) => {
             if (response.status == 200 && response.data.sended) {
               toast.success(response.data.data);
-              // emailjs
-              //   .send(
-              //     "service_n23sv5c",
-              //     "template_xl03pav",
-              //     {
-              //       email: user?.email,
-              //       otp: response.data.otp,
-              //       name: "Anekant",
-              //       from_name: "Consciousleap",
-              //     },
-              //     "l0zGxBngDOZlLankM"
-              //   )
-              //   .then(
-              //     function (response) {
-              //       console.log("SUCCESS!", response.status, response.text);
-              //     },
-              //     function (error) {
-              //       console.log("FAILED...", error);
-              //     }
-              //   );
               setUser({ ...user, original: response.data.otp });
               setTimeout(() => {
                 router.push("/user/register/otp-verification");

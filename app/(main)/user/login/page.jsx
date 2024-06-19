@@ -66,34 +66,13 @@ const UserLogin = () => {
 
   const forgotPassword = () => {
     if (user?.email) {
-      console.log(user?.email);
       axios
         .post(`${BASE_URL}/login/password-reset`, {
           email: user?.email,
         })
         .then((res) => {
-          if (res.status == 200) {
-            emailjs
-              .send(
-                "service_n23sv5c",
-                "template_crf7eig",
-                {
-                  email: user?.email,
-                  url: res.data?.url,
-                  to_name: res?.data?.user?.name,
-                  from_name: "Consciousleap",
-                },
-                "l0zGxBngDOZlLankM"
-              )
-              .then(
-                function (response) {
-                  console.log("SUCCESS!", response.status, response.text);
-                  toast.success(res.data.data);
-                },
-                function (error) {
-                  console.log("FAILED...", error);
-                }
-              );
+          if (res.status == 200 && res.data.sended) {
+            toast.success(res.data.data);
           } else {
             toast.error(res.data.data);
           }
