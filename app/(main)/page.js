@@ -20,8 +20,6 @@ import { useEffect } from "react";
 import ReactModal from "./modal";
 import Head from "next/head";
 import Context from "@/Context/Context";
-import axios from "axios";
-import { BASE_URL } from "@/Utils/urls";
 
 const Home = () => {
   const { bussinessShow } = React.useContext(Context);
@@ -71,24 +69,6 @@ const Home = () => {
       <BootstrapCarousel />
       <Line1 />
       <Whyconsciousleap />
-      {/* <button
-        className="bg-websiteBlue text-white px-5 py-2"
-        onClick={(e) => {
-          let email = prompt("Email?");
-          console.log(email);
-          if (email) {
-            axios
-              .post(`${BASE_URL}/login/send-test-mail`, {
-                email: email,
-              })
-              .then((res) => {
-                alert(res.data);
-              });
-          }
-        }}
-      >
-        Button
-      </button> */}
       <Line2 />
       <Drawer />
       <Line2 />

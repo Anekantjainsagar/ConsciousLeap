@@ -10,8 +10,8 @@ const inter = Comfortaa({
 });
 
 export const metadata = {
-  title: "consciousleap",
-  description: "consciousleap",
+  title: "consciousleap - Best Therapists for mental health",
+  description: "consciousleap was founded keeping in mind our soul purpose of holistically improving the quality of life by elevating and expanding our collective Conscious awareness through mindful healing and positive well-being.",
 };
 
 export default function RootLayout({ children }) {
