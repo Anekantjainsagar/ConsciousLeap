@@ -41,7 +41,7 @@ const ShareModel = ({ showSubscribe, setShowSubscribe }) => {
       >
         <div className="w-[85vw] md:w-[32vw] bg-white border rounded-md h-fit py-3 px-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-websiteBlue text-lg font-normal">Share</h1>
+            <h3 className="text-websiteBlue text-lg font-normal">Share</h3>
             <AiOutlineClose
               size={20}
               onClick={closeModal}

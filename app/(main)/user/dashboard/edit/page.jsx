@@ -56,9 +56,9 @@ const DashboardEdit = () => {
             Manage Profile
           </h1>
           <div className="bg-white w-full shadow-lg shadow-lightGrey mt-4 p-3">
-            <h1 className="text-darkGrey border-b pb-2 border-b-lightGrey tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
+            <h2 className="text-darkGrey border-b pb-2 border-b-lightGrey tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
               Personal Information
-            </h1>
+            </h2>
             <div className="mt-4">
               {[
                 {
@@ -131,13 +131,6 @@ const DashboardEdit = () => {
               Update Profile
             </button>
           </div>
-          {/* <div className="bg-white w-full shadow-lg shadow-lightGrey mt-4 p-3">
-            <h1 className="text-darkGrey border-b pb-2 border-b-lightGrey tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
-              Address
-            </h1>
-            <div className="mt-5">
-            </div>
-          </div> */}
         </div>
         <RightBar />
       </div>

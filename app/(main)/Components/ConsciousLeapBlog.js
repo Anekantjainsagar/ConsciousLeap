@@ -32,7 +32,7 @@ const ConsciousleapBlog = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <h1
+        <h3
           ref={collabrationHeading}
           id="collaborationsandinitiatives"
           className="mb-2 text-3xl text-center font-light gradientHover cursor-pointer"
@@ -41,7 +41,7 @@ const ConsciousleapBlog = () => {
           }}
         >
           Collaborations and Initiatives
-        </h1>
+        </h3>
         <p className="font-light md:w-full w-[85%] min-[1000px]:px-[5vw] text-center text-darkGrey">
           At consciousleap, we pledge 10% of our net proceeds to support and
           contribute towards a more significant cause, a higher purpose to
@@ -61,7 +61,7 @@ const ConsciousleapBlog = () => {
       </div>
       <Line2 />
       <div className="w-full flex items-center justify-center flex-col">
-        <h1
+        <h3
           id="consciousblogs"
           ref={blogsHeading}
           onClick={(e) => {
@@ -70,7 +70,7 @@ const ConsciousleapBlog = () => {
           className="mb-2 text-3xl font-light gradientHover cursor-pointer"
         >
           Conscious Blogs
-        </h1>
+        </h3>
         <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
           We practice what we preach, and our blogs reflect our mindful journey
           at consciousleap.

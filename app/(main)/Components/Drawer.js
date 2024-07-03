@@ -70,12 +70,12 @@ const Drawer = () => {
         alt="Globe"
         className="w-7/12 left-1/2 -translate-x-1/2 absolute top-0 -z-10"
       />
-      <h1
+      <h3
         ref={drawerRef}
         className="mb-12 w-fit mx-auto md:mb-16 mt-10 text-3xl font-light gradientHover cursor-pointer"
       >
         #WorldMentalHealth
-      </h1>
+      </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 md:px-0 px-[5vw] col gap-y-8 md:gap-y-16 gap-x-5 md:gap-x-8">
         {drawerBox.map((e, i) => {
           return <ImageFlipper key={i} img1={e.img1} img2={e.img2} />;

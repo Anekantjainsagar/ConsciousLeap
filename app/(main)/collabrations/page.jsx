@@ -45,13 +45,13 @@ const Collabrations = () => {
         </span>
       </p>
       <Image src={collab} className="w-full py-8" alt="COllab" />
-      <h1 className="text-center text-websiteBlue text-4xl font-bold py-4">
+      <h3 className="text-center text-websiteBlue text-4xl font-bold py-4">
         Let&apos;s Join Forces for a Conscious Change
-      </h1>
+      </h3>
       <div className="w-[38vw] text-base mx-auto mt-10">
-        <h1 className="text-black text-2xl font-semibold">
+        <h3 className="text-black text-2xl font-semibold">
           Conscious Initiatives Form
-        </h1>
+        </h3>
         <p className="mt-1 mb-5">
           Welcome to consciousleap&apos;s Collaborations and Initiatives
           Registration! At consciousleap, we are committed to making a positive
@@ -158,7 +158,11 @@ const Collabrations = () => {
             >
               {["Charitable institute", "Non-Profit Organization", "NGO"].map(
                 (e) => {
-                  return <option value={e} key={e}>{e}</option>;
+                  return (
+                    <option value={e} key={e}>
+                      {e}
+                    </option>
+                  );
                 }
               )}
             </select>
@@ -176,7 +180,11 @@ const Collabrations = () => {
               }}
             >
               {["Yes", "No"].map((e) => {
-                return <option value={e} key={e}>{e}</option>;
+                return (
+                  <option value={e} key={e}>
+                    {e}
+                  </option>
+                );
               })}
             </select>
           </div>

@@ -15,12 +15,12 @@ const GlobalPresence = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h3
         ref={globalHeading}
         className="mb-2 md:mb-5 text-3xl font-light gradientHover cursor-pointer"
       >
         Our Global Presence
-      </h1>
+      </h3>
       <p className="text-darkGrey md:w-full w-[90%] text-center">
         consciousleap is based in Estonia, Europe, and Mumbai, India, and is in
         Dubai, UAE.

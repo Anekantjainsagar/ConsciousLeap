@@ -145,7 +145,7 @@ const NewBlock = ({ blog, setShowPopup, showPopup }) => {
 const CommentBlock = ({ blog }) => {
   return (
     <div className="mt-5">
-      <h1 id="#comment" className="text-2xl font-semibold text-websiteBlue">Comments</h1>
+      <h3 id="#comment" className="text-2xl font-semibold text-websiteBlue">Comments</h3>
       <div className="m-1">
         <InputBlock blog={blog} />
         <div>
@@ -173,9 +173,9 @@ const InputBlock = ({ blog }) => {
           alt="Logo"
           className="rounded-full w-[6.5vw] md:w-[3vw]"
         />
-        <h1 className="text-websiteBlue font-normal text-lg ml-2">
+        <h3 className="text-websiteBlue font-normal text-lg ml-2">
           {login?.name}
-        </h1>
+        </h3>
       </div>
       <input
         type="text"
@@ -219,9 +219,9 @@ const BlockCode = ({ data }) => {
     <div className="mt-3 mb-1 p-2 rounded-md">
       <div className="flex items-center">
         <Image src={logo} alt="Logo" className="rounded-full w-[6.5vw] md:w-[3vw]" />
-        <h1 className="text-websiteBlue font-normal text-lg ml-2">
+        <h3 className="text-websiteBlue font-normal text-lg ml-2">
           {data?.postedBy}
-        </h1>
+        </h3>
         <p className="flex items-center text-gray-400">
           <LuDot className="mx-1" />
           {format(data?.date)}

@@ -107,17 +107,17 @@ const JoinConsciousleap = () => {
       </p>
       <Image src={partners} alt="Join us" className="w-full mt-[3vw]" />
       <div className="px-[4vw] py-[2vw]">
-        <h1 className="text-3xl text-websiteBlue font-bold">
+        <h3 className="text-3xl text-websiteBlue font-bold">
           What Sets Us Apart?
-        </h1>
+        </h3>
         <p className="text-lg mt-5 mb-7">
           At Conscious Store, we mindfully curate cultural diversity and
           inclusivity through Artists, Brands, Products, and Makers from all
           over India who prioritize people and the planet in their practices.
         </p>
-        <h1 className="text-3xl text-websiteBlue font-bold">
+        <h3 className="text-3xl text-websiteBlue font-bold">
           Calling all Conscious Heroes: Here’s what we’re looking for
-        </h1>
+        </h3>
         <div className="text-lg mt-3 mb-4">
           <li>
             Locally produced goods that are free from plastic, organic, or
@@ -145,10 +145,10 @@ const JoinConsciousleap = () => {
             workforce.
           </li>
         </div>
-        <h1 className="text-3xl text-websiteBlue font-bold">
+        <h3 className="text-3xl text-websiteBlue font-bold">
           Join our Conscious Community: Here’s how you can sell with
           consciousleap
-        </h1>
+        </h3>
         <p className="text-lg mt-5 mb-3">Our onboarding process is as below:</p>
         <div className="text-lg">
           <p className="mt-6 font-medium">
@@ -219,9 +219,9 @@ const JoinConsciousleap = () => {
           className="absolute top-1/2 md:block hidden -translate-y-1/2 min-[2500px]:w-[50vw] w-[100vw] z-10"
         />
         <div className="flex md:h-[22vh] min-[1000px]:h-fit min-[2500px]:h-fit overflow-y-auto z-50 flex-col items-center w-full">
-          <h1 className="font-bold text-xl md:text-3xl mb-4 text-websiteBlue">
+          <h3 className="font-bold text-xl md:text-3xl mb-4 text-websiteBlue">
             We&apos;d love to hear from you
-          </h1>
+          </h3>
           <input
             className="mb-4 border px-4 py-1 outline-none rounded-sm w-6/12"
             type="text"
@@ -308,9 +308,9 @@ const FlipCard = ({ data }) => {
               <Image src={data?.image} alt={img2.src} className="md:w-6/12" />
             </div>
             <div className="flip-card-back-special px-5 flex rounded-lg flex-col justify-center items-center">
-              <h1 className="text-websiteBlue text-2xl font-medium">
+              <h3 className="text-websiteBlue text-2xl font-medium">
                 {data?.title}
-              </h1>
+              </h3>
               <p className="text-darkGrey text-xl font-light">{data?.desc}</p>
             </div>
           </div>

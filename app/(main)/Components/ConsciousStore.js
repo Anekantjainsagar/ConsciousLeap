@@ -39,7 +39,7 @@ const ConsciousStore = () => {
 
   return (
     <div className="flex flex-col justify-center items-center pt-[2vw] pb-[12vw] md:pb-[6vw]">
-      <h1
+      <h3
         ref={storeHeading}
         id="collaborationsandinitiatives"
         onClick={() => {
@@ -48,7 +48,7 @@ const ConsciousStore = () => {
         className="mb-2 text-3xl text-center font-light gradientHover cursor-pointer"
       >
         Conscious Store
-      </h1>
+      </h3>
       <p className="font-light md:w-full w-[85%] text-center text-darkGrey">
         We care at every step of our mindful journey at consciousleap.
         <br /> We have pledged to produce, source, and support only locally

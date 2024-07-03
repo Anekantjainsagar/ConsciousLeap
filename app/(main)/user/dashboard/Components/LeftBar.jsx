@@ -66,9 +66,9 @@ const LeftBar = () => {
       <div className="shadow-lg py-2 px-3 border rounded-lg shadow-lightGrey w-[85%] mx-auto">
         {blog?._id && (
           <>
-            <h1 className="text-center text-sm text-websiteBlue">
+            <h2 className="text-center text-sm text-websiteBlue">
               Recommended Reads
-            </h1>
+            </h2>
             <Image
               src={blog?.image}
               width={10000}

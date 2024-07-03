@@ -91,9 +91,9 @@ const StoreBlock = ({ data, showGrid }) => {
                     alt="Tshirt"
                     className="rounded-md w-full"
                   />
-                  <h1 className="text-lg w-full font-normal pt-2 line-clamp-1">
+                  <h3 className="text-lg w-full font-normal pt-2 line-clamp-1">
                     {data?.name}
-                  </h1>
+                  </h3>
                   <p className="text-websiteBlue w-full pl-1 font-bold py-1">
                     <span className="text-gray-400 line-through">
                       INR {data?.discountPrice}
@@ -297,9 +297,9 @@ const StoreBlock = ({ data, showGrid }) => {
                       className="rounded-md min-[2500px]:w-[8vw] w-[20vw]"
                     />
                     <div className="w-[25vw] ml-5">
-                      <h1 className="text-lg w-full font-normal pt-2">
+                      <h3 className="text-lg w-full font-normal pt-2">
                         {data?.name}
-                      </h1>
+                      </h3>
                       <p className="text-websiteBlue w-full pl-1 font-bold py-1">
                         <span className="text-gray-400 line-through">
                           INR {data?.discountPrice}

@@ -9,13 +9,13 @@ const CommunicationChannels = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h3
         ref={ref}
         id="communicationchannels"
         className="mb-12 md:w-fit mx-auto w-8/12 text-center text-3xl font-light gradientHover cursor-pointer"
       >
         Communication Channels
-      </h1>
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-8 w-[98vw] items-center">
         {[
           "/Assets/Communication/zoom.png",

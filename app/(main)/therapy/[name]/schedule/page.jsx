@@ -188,7 +188,7 @@ const Schedule = ({ params }) => {
             </div>
           </div>
           <div>
-            <h1 className="text-websiteBlue font-medium">Client Signature:</h1>
+            <h2 className="text-websiteBlue font-medium">Client Signature:</h2>
             <div className="flex items-center justify-between">
               <input
                 type="text"

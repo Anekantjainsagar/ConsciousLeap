@@ -50,13 +50,13 @@ const ClientTestimonials = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h3
         ref={clientHeadings}
         id="clienttestimonials"
         className="mb-2 text-3xl font-light gradientHover cursor-pointer"
       >
         Client Testimonials
-      </h1>
+      </h3>
       <p className="mb-12 mt-2 md:px-0 px-10 text-center font-light">
         Here’s what our clients say about their experiences with consciousleap
         for Business.

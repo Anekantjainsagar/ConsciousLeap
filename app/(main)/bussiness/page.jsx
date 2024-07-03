@@ -53,12 +53,12 @@ const BussinessConsciousleap = () => {
         mental health-related support services for Businesses.
       </p>
       <Line2 />
-      <h1
+      <h3
         className="text-3xl font-light gradientHover md:px-0 px-5 text-center cursor-pointer"
         id="whyconsciousleapforbusiness?"
       >
         Why consciousleap for Business?
-      </h1>
+      </h3>
       <div className="mt-5 w-11/12 md:w-10/12 flex items-center justify-center">
         <div
           id="container-bussiness"

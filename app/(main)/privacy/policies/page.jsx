@@ -3,9 +3,9 @@ import React from "react";
 const Policies = () => {
   return (
     <div className="px-5 md:px-[2vw] md:py-[1vw] py-[2vw] privacy">
-      <h2 className="text-3xl font-bold mb-4 text-websiteBlue">
+      <h1 className="text-3xl font-bold mb-4 text-websiteBlue">
         Privacy Policy Page
-      </h2>
+      </h1>
       <div className=" px-2 md:px-4">
         <p>
           This Privacy Policy describes our policies and procedures on
@@ -22,7 +22,7 @@ const Policies = () => {
           Interpretation and Definitions
         </h1>
         <div>
-          <h1 className="font-bold text-lg">Interpretation:</h1>
+          <h3 className="font-bold text-lg">Interpretation:</h3>
           <p>
             The words of which the initial letter is capitalized have meanings
             defined under the following conditions. The following definitions
@@ -31,7 +31,7 @@ const Policies = () => {
           </p>
         </div>
         <div>
-          <h1 className="font-bold text-lg">Definitions:</h1>
+          <h3 className="font-bold text-lg">Definitions:</h3>
           <p>For this Privacy Policy:</p>
           <p>
             <b className="font-bold">Account</b> means an individual account
@@ -95,7 +95,7 @@ const Policies = () => {
             <li>Province, ZIP/ Postal code, City </li>
             <li>Usage Data</li>
           </ol>
-          <h1 className="mt-5 font-bold text-lg">Usage Data:</h1>
+          <h3 className="mt-5 font-bold text-lg">Usage Data:</h3>
           <p className="">
             Usage Data is collected automatically when using the service.
             <br /> Usage Data may include information such as your device&apos;s
@@ -112,9 +112,9 @@ const Policies = () => {
             <br /> We may also collect information your browser sends whenever
             you visit our service or access the service through a mobile device.
           </p>
-          <h1 className="font-bold">
+          <h3 className="font-bold">
             Information from Third-Party Social Media Services:
-          </h1>
+          </h3>
           <p className="">
             The Company allows you to create an account and log in to use the
             service through the following third-party social media services:
@@ -171,7 +171,7 @@ const Policies = () => {
             <br /> We use both Session and Persistent Cookies for the purposes
             set out below:
           </p>
-          <h1 className="underline font-bold">Necessary / Essential Cookies</h1>
+          <h3 className="underline font-bold">Necessary / Essential Cookies</h3>
         </div>
         <p>
           <b>Type</b>: Session Cookies

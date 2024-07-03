@@ -66,31 +66,7 @@ const ProductPage = ({ params }) => {
           <h1 className="text-xl font-bold hover:text-websiteBlue transition-all cursor-pointer">
             {product?.name}
           </h1>
-          {/* <div className="flex items-center md:mt-0 mt-3 justify-between">
-            <p className="w-[25%] text-gray-400 font-light">Share:</p>
-            <div className="flex items-center">
-              <AiOutlineMail
-                size={30}
-                className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
-              />
-              <AiOutlineTwitter
-                size={30}
-                className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
-              />
-              <FaFacebookF
-                size={30}
-                className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
-              />
-              <FaLinkedinIn
-                size={30}
-                className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
-              />
-              <AiOutlineWhatsApp
-                size={30}
-                className="bg-gray-400 p-1.5 cursor-pointer mr-2 text-white rounded-full"
-              />
-            </div>
-          </div> */}
+
           <hr className="my-5" />
           <div className="flex items-center mb-5 justify-start">
             <p className="w-[25%] text-gray-400 font-light">Price:</p>
@@ -258,7 +234,7 @@ const ProductPage = ({ params }) => {
       <hr className="my-10" />
       <div className="flex md:flex-row flex-col-reverse items-start justify-between">
         <div className="w-full md:w-[24%] md:mt-0 mt-8">
-          <h1 className="text-lg mb-1 font-semibold">Top Selling Products</h1>
+          <h3 className="text-lg mb-1 font-semibold">Top Selling Products</h3>
           <hr className="my-0" />
           <div className="md:h-[55vh] overflow-y-auto">
             {context?.productM?.productData?.products
@@ -303,7 +279,7 @@ const ProductPage = ({ params }) => {
             )}
           </div>
           <div className="w-full">
-            <h1 className="text-lg font-semibold">Related products</h1>
+            <h3 className="text-lg font-semibold">Related products</h3>
             <hr className="my-3" />
             <div className="grid md:px-0 md:mt-0 mt-7 px-[5vw] md:grid-cols-3 gap-x-5">
               {context?.productM?.productData?.products

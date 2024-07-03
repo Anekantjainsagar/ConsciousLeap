@@ -30,13 +30,13 @@ const CertifiedTherapist = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h3
         id="ourinternationallycertifiedtherapists"
         ref={therapistHeading}
         className="mb-12 text-3xl px-5 text-center font-light gradientHover cursor-pointer"
       >
         Our Internationally Certified Therapists
-      </h1>
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-4 md:gap-y-0 gap-y-16 w-[98vw] items-center">
         {[
           "/Assets/InternationalTherapist/image1.png",

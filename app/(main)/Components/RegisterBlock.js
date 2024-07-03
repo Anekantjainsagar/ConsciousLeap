@@ -36,7 +36,7 @@ const RegisterBlock = () => {
   return (
     <>
       <div>
-        <h1
+        <h3
           ref={registerTherapy}
           onClick={(e) => {
             setJoinUsShow("JOIN");
@@ -46,7 +46,7 @@ const RegisterBlock = () => {
           className="mb-3 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Join consciousleap
-        </h1>
+        </h3>
         <p className="text-center mx-auto w-8/12 font-light">
           We’re mindfully growing and would love to rope you in to help us
           improve the world.{" "}
@@ -61,7 +61,7 @@ const RegisterBlock = () => {
         </p>
       </div>
       <div>
-        <h1
+        <h3
           ref={registerTherapy}
           onClick={(e) => {
             setJoinUsShow("VOLUNTEER");
@@ -70,7 +70,7 @@ const RegisterBlock = () => {
           className="mb-3 mt-16 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Become a Volunteer
-        </h1>
+        </h3>
         <p className="text-center mx-auto w-8/12 font-light">
           There is no greater good than the good of mankind, by volunteering at
           consciousleap you are mindfully changing the world one being at a
@@ -86,7 +86,7 @@ const RegisterBlock = () => {
         </p>
       </div>
       <div>
-        <h1
+        <h3
           ref={registerTherapy}
           onClick={(e) => {
             setJoinUsShow("PARTNER");
@@ -95,7 +95,7 @@ const RegisterBlock = () => {
           className="mb-3 mt-16 text-3xl font-light mx-auto text-center w-fit gradientHover cursor-pointer"
         >
           Partner with consciousleap
-        </h1>
+        </h3>
         <p className="text-center mx-auto w-8/12 font-light">
           At consciousleap we believe in mindful coexistence, where we care
           about our individual and collective impact on the environment. If you
@@ -112,7 +112,7 @@ const RegisterBlock = () => {
       </div>
       <Line2 />
       <div>
-        <h1
+        <h3
           ref={registerTherapy}
           onClick={(e) => {
             history.push("/therapy/register");
@@ -120,7 +120,7 @@ const RegisterBlock = () => {
           className="mb-4 text-3xl font-light mx-auto w-fit gradientHover cursor-pointer"
         >
           Register as a Therapist
-        </h1>
+        </h3>
         <p className="text-center mx-auto w-8/12 font-light">
           By joining our mindful team of Therapists, you are not just profoundly
           improving the quality of life but are truly saving lives by sharing

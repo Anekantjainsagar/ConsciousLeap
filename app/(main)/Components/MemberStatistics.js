@@ -14,13 +14,13 @@ const MemberStatistics = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h3
         id="memberstatistics"
         ref={memberStatiticsHeading}
         className="mb-2 text-3xl font-light gradientHover cursor-pointer"
       >
         Member Statistics
-      </h1>
+      </h3>
       <div className="w-full relative">
         <div className="absolute left-1/2 -translate-x-1/2">
           <Image
@@ -140,9 +140,9 @@ const MemberStatistics = () => {
         <div className="absolute -translate-y-1/2 top-1/2 pt-[7vw] md:pt-[3.5vw] flex flex-col items-center justify-center left-1/2 -translate-x-1/2">
           {visible1 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0">
+              <h3 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0">
                 87%
-              </h1>
+              </h3>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members
                 <br />{" "}
@@ -155,9 +155,9 @@ const MemberStatistics = () => {
           ) : null}
           {visible2 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
+              <h3 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 82%
-              </h1>
+              </h3>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members
                 <span className="text-websiteBlue font-medium ml-2">
@@ -169,9 +169,9 @@ const MemberStatistics = () => {
           ) : null}
           {visible3 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
+              <h3 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 76%
-              </h1>
+              </h3>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members live
                 <br />{" "}
@@ -184,9 +184,9 @@ const MemberStatistics = () => {
           ) : null}
           {visible4 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
+              <h3 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 90%
-              </h1>
+              </h3>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members have rated us
                 <span className="text-websiteBlue ml-2 font-medium">
@@ -197,9 +197,9 @@ const MemberStatistics = () => {
           ) : null}
           {visible5 ? (
             <>
-              <h1 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
+              <h3 className="text-websiteBlue text-3xl min-[900px]:text-3xl min-[1040px]:text-7xl font-normal md:mb-2 mb-0 max-[1500px]:text-3xl">
                 95%
-              </h1>
+              </h3>
               <p className="text-center text-xs min-[900px]:text-sm min-[1440px]:text-2xl text-darkGrey">
                 of our members
                 <span className="text-websiteBlue ml-2 font-medium">

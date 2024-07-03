@@ -505,15 +505,15 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
           </div>
           <div className="md:w-7/12 md:mt-0 mt-3 flex flex-col items-center md:items-start md:ml-[1vw]">
             <div className="flex flex-col items-center md:items-start">
-              <h1 className="text-2xl md:text-xl text-websiteBlue line-clamp-1">
+              <h2 className="text-2xl md:text-xl text-websiteBlue line-clamp-1">
                 {data?.name}
-              </h1>
+              </h2>
               <p className="text-darkGrey text-sm mt-1 md:text-start text-center line-clamp-1">
                 {data?.desc}
               </p>
-              <h1 className="mt-1 text-lg md:text-base text-websiteBlue">
+              <h2 className="mt-1 text-lg md:text-base text-websiteBlue">
                 Expertise
-              </h1>
+              </h2>
               <div className="h-fit min-[1100px]:h-[6vh] ">
                 {data?.expertise?.slice(0, 2)?.map((e, i) => {
                   return (
@@ -574,11 +574,11 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
           </div>
           <div className="w-[81%] flex justify-between items-center min-[900px]:h-[13vh] min-[1040px]:h-[22vh]">
             <div className="w-3/12 h-fit">
-              <h1 className="text-xl text-websiteBlue">{data?.name}</h1>
+              <h2 className="text-xl text-websiteBlue">{data?.name}</h2>
               <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
             </div>
             <div className="w-5/12 h-fit">
-              <h1 className="mt-1 text-base text-websiteBlue">Expertise</h1>
+              <h2 className="mt-1 text-base text-websiteBlue">Expertise</h2>
               {data?.expertise?.slice(0, 3).map((e) => {
                 return (
                   <li key={e} className="text-sm text-darkGrey">

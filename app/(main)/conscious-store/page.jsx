@@ -119,9 +119,9 @@ const Store = () => {
         </div> */}
         {/* <div className="md:w-9/12 w-full ml-[1vw]"> */}
         <div className="w-full ml-[1vw]">
-          <h1 className="text-xl hover:text-newBlue transition-all cursor-pointer">
+          <h3 className="text-xl hover:text-newBlue transition-all cursor-pointer">
             Conscious Store
-          </h1>
+          </h3>
           <div className="flex md:flex-row flex-col px-2 items-center">
             <div className="flex items-center md:mb-0 mb-4 w-full mt-3">
               <select

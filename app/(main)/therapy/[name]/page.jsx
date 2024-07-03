@@ -95,9 +95,9 @@ const OneTherapist = ({ params }) => {
           <Table data={{ name: "Speaks", items: user?.speaks }} />
         </div>
         <div>
-          <h1 className="text-websiteBlue text-2xl font-light mt-[5vh]">
+          <h2 className="text-websiteBlue text-2xl font-light mt-[5vh]">
             Expertise
-          </h1>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
             {user?.expertise?.map((e, i) => {
               return (
@@ -114,9 +114,9 @@ const OneTherapist = ({ params }) => {
           </div>
         </div>
         <div className="">
-          <h1 className="text-websiteBlue text-2xl mt-[5vh] font-light">
+          <h2 className="text-websiteBlue text-2xl mt-[5vh] font-light">
             About the Therapist
-          </h1>
+          </h2>
           <p className="text-darkGrey text-sm tracking-wider break-words mt-1">
             {user?.about}
           </p>
@@ -132,9 +132,9 @@ const Table = ({ data }) => {
       <div className="h-full w-full rounded-lg items-center justify-center bg-white flex flex-col">
         <div className="w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen pb-[2px]">
           <div className="h-full w-full items-center justify-center bg-white flex flex-col rounded-tl-lg rounded-tr-lg">
-            <h1 className="text-websiteBlue text-xl font-light my-1.5">
+            <h2 className="text-websiteBlue text-xl font-light my-1.5">
               {data?.name}
-            </h1>
+            </h2>
           </div>
         </div>
         <div className="py-3 h-full flex flex-col items-start justify-center px-4">

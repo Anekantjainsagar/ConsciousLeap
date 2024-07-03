@@ -64,9 +64,9 @@ const Wishlist = () => {
             </div>
           ) : (
             <div className="bg-white w-full shadow-lg shadow-lightGrey mt-4 p-3">
-              <h1 className="text-darkGrey text-center tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
+              <h2 className="text-darkGrey text-center tracking-wide text-lg hover:text-websiteBlue transition-all cursor-pointer">
                 There isn&apos;t anything added yet
-              </h1>
+              </h2>
             </div>
           )}
         </div>

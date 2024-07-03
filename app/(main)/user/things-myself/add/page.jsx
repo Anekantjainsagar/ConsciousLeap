@@ -78,9 +78,9 @@ const AddThingsMyself = () => {
           </div>
           <div className="flex w-[100%] md:flex-row px-[4vw] flex-col justify-between mt-[4vw] items-center">
             <div className="md:w-[50%] w-[98%] pr-[3vw]">
-              <h1 className="text-websiteBlue text-xl md:text-2xl mb-3">
+              <h2 className="text-websiteBlue text-xl md:text-2xl mb-3">
                 Things I like about myself
-              </h1>
+              </h2>
               <textarea
                 name=""
                 value={thoughts?.thingsMyself}
@@ -94,9 +94,9 @@ const AddThingsMyself = () => {
               ></textarea>
             </div>
             <div className="md:w-[50%] w-[98%]">
-              <h1 className="text-websiteBlue text-xl md:mt-0 mt-3 md:text-2xl mb-3">
+              <h3 className="text-websiteBlue text-xl md:mt-0 mt-3 md:text-2xl mb-3">
                 Things I want to tell my past self
-              </h1>
+              </h3>
               <textarea
                 name=""
                 value={thoughts?.thingsPast}

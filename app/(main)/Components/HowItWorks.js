@@ -45,7 +45,7 @@ const HowItWorks = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-y-0 gap-y-8 w-full max-[1050px]:px-[4vw] px-[10vw] pt-[2.5vw]">
         <div className="flex flex-col items-center justify-center md:mt-0 mt-5">
-          <h1 className="cursor-pointer gradientHover text-3xl">Step 1</h1>
+          <h3 className="cursor-pointer gradientHover text-3xl">Step 1</h3>
           <p className="md:text-base text-sm mb-2 text-center">
             Take a short and simple
             <span
@@ -66,7 +66,7 @@ const HowItWorks = () => {
           />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="cursor-pointer gradientHover text-3xl">Step 2</h1>
+          <h3 className="cursor-pointer gradientHover text-3xl">Step 2</h3>
           <p className="md:text-base text-sm mb-2 text-center">
             We will match you to a Therapist
           </p>
@@ -79,7 +79,7 @@ const HowItWorks = () => {
           />
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="cursor-pointer gradientHover text-3xl">Step 3</h1>
+          <h3 className="cursor-pointer gradientHover text-3xl">Step 3</h3>
           <p className="md:text-base text-sm mb-2 text-center">
             Or choose from a range of{" "}
             <span

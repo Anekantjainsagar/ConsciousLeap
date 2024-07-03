@@ -154,9 +154,9 @@ const TherapistReview = ({ params }) => {
         </div>
       </div>
       <div className="w-9/12">
-        <h1 className="text-xl mt-4 font-light text-center">
+        <h2 className="text-xl mt-4 font-light text-center">
           Feel free to share anything about your session experience.
-        </h1>
+        </h2>
         <input
           type="text"
           value={review?.experience}

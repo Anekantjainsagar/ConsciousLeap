@@ -142,9 +142,9 @@ const Dashboard = () => {
             })}
           </div>
           <div className="bg-white rounded-3xl mt-1 md:mt-6 p-4">
-            <h1 className="text-websiteBlue font-light md:text-base text-lg text-center">
+            <h2 className="text-websiteBlue font-light md:text-base text-lg text-center">
               Feeling Check
-            </h1>
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
               {[
                 {

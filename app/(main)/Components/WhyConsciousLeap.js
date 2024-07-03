@@ -31,7 +31,10 @@ const Whyconsciousleap = () => {
       >
         Why consciousleap?
       </h1>
-      <div id="video-container" className="px-4 rounded-md md:px-5 min-[2500px]:px-0"></div>
+      <div
+        id="video-container"
+        className="px-4 rounded-md md:px-5 min-[2500px]:px-0"
+      ></div>
     </div>
   );
 };

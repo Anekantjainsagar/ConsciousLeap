@@ -64,9 +64,9 @@ const Gratitude = ({ params }) => {
           </div>
           <div className="flex md:flex-row flex-col w-[100%] justify-between mt-[4vw] items-center">
             <div className="w-[98%] md:w-[50%] px-[3.5vw]">
-              <h1 className="text-websiteBlue text-xl md:text-2xl mb-3">
+              <h2 className="text-websiteBlue text-xl md:text-2xl mb-3">
                 Something I am proud of
-              </h1>
+              </h2>
               <textarea
                 name=""
                 value={thoughts?.tomorrow}
@@ -80,9 +80,9 @@ const Gratitude = ({ params }) => {
               ></textarea>
             </div>
             <div className="w-[96%] mx-auto md:w-[50%] px-[3.5vw]">
-              <h1 className="text-websiteBlue text-xl md:mt-0 mt-4 md:text-2xl mb-3">
+              <h3 className="text-websiteBlue text-xl md:mt-0 mt-4 md:text-2xl mb-3">
                 Reasons for looking forward to tomorrow
-              </h1>
+              </h3>
               <textarea
                 name=""
                 value={thoughts?.gratefulFor}

@@ -72,9 +72,9 @@ const Questionnaire = () => {
         <p className="cursor-pointer text-websiteBlue text-2xl md:text-3xl mt-10 mx-auto w-fit text-center">
           Thank you for choosing consciousleap
         </p>
-        <h1 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mt-2 mx-auto w-fit text-center">
+        <h3 className="cursor-pointer text-websiteBlue mb-8 md:mb-16 text-2xl md:text-3xl mt-2 mx-auto w-fit text-center">
           Questionnaire Analysis Report
-        </h1>
+        </h3>
         {login?.questionnaire?.backendAnswers?.map((e, i) => {
           return <ReturnBlock data={e} key={i} index={i} />;
         })}
@@ -252,9 +252,9 @@ const ReturnBlock = ({ data, index }) => {
           </p>
         </p>
         <div className="w-8/12 md:w-7/12 py-4 md:pr-4">
-          <h1 className="text-center text-sm md:text-2xl font-medium cursor-pointer text-websiteBlue transition-all mb-1">
+          <h2 className="text-center text-sm md:text-2xl font-medium cursor-pointer text-websiteBlue transition-all mb-1">
             {questionnaire[index]?.title}
-          </h1>
+          </h2>
           <p className="text-center md:text-base text-[9px] font-light">
             {data?.text}
           </p>
