@@ -70,7 +70,7 @@ const AddThingsMyself = ({ params }) => {
                 name=""
                 value={thoughts?.thingsMyself}
                 onChange={(e) => {
-                  setThoughts({w ...thoughts, thingsMyself: e.target.value });
+                  setThoughts({...thoughts, thingsMyself: e.target.value });
                 }}
                 className="border rounded-md w-full outline-none border-gray-800 block p-3 text-xl"
                 id=""
