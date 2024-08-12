@@ -1,21 +1,27 @@
 "use client";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import BootstrapCarousel from "./Components/BootstrapCarousel";
 import Line1 from "./Components/Lines/Line1";
-import Whyconsciousleap from "./Components/WhyConsciousLeap";
 import Line2 from "./Components/Lines/Line2";
-import Drawer from "./Components/Drawer";
-import CommunicationChannels from "./Components/CommunicationChannels";
-import HowItWorks from "./Components/HowItWorks";
-import CertifiedTherapist from "./Components/CerifiedTherapist";
-import MembersTestimonials from "./Components/MembersTestimonials";
-import MindfulTherapist from "./Components/MindfulTherapist";
-import RegisterBlock from "./Components/RegisterBlock";
-import GlobalPresence from "./Components/GlobalPresence";
-import ClientTestimonials from "./Components/ClientTestimonials";
-import MemberStatistics from "./Components/MemberStatistics";
-import ConsciousleapBlog from "./Components/ConsciousLeapBlog";
-import ConsciousStore from "./Components/ConsciousStore";
+const Whyconsciousleap = lazy(() => import("./Components/WhyConsciousLeap"));
+const Drawer = lazy(() => import("./Components/Drawer"));
+const CommunicationChannels = lazy(() =>
+  import("./Components/CommunicationChannels")
+);
+const HowItWorks = lazy(() => import("./Components/HowItWorks"));
+const CertifiedTherapist = lazy(() => import("./Components/CerifiedTherapist"));
+const MembersTestimonials = lazy(() =>
+  import("./Components/MembersTestimonials")
+);
+const MindfulTherapist = lazy(() => import("./Components/MindfulTherapist"));
+const RegisterBlock = lazy(() => import("./Components/RegisterBlock"));
+const GlobalPresence = lazy(() => import("./Components/GlobalPresence"));
+const ClientTestimonials = lazy(() =>
+  import("./Components/ClientTestimonials")
+);
+const MemberStatistics = lazy(() => import("./Components/MemberStatistics"));
+const ConsciousleapBlog = lazy(() => import("./Components/ConsciousLeapBlog"));
+const ConsciousStore = lazy(() => import("./Components/ConsciousStore"));
 import { useEffect } from "react";
 import ReactModal from "./modal";
 import Head from "next/head";
@@ -68,29 +74,48 @@ const Home = () => {
       <ReactModal />
       <BootstrapCarousel />
       <Line1 />
-      <Whyconsciousleap />
+      <Suspense>
+        <Whyconsciousleap />
+      </Suspense>
       <Line2 />
-      <Drawer />
+      <Suspense>
+        <Drawer />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <CommunicationChannels />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <HowItWorks />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <CertifiedTherapist />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <MembersTestimonials />
+        <MindfulTherapist />
+      </Suspense>{" "}
       <Line2 />
-      <CommunicationChannels />
-      <Line2 />
-      <HowItWorks />
-      <Line2 />
-      <CertifiedTherapist />
-      <Line2 />
-      <MembersTestimonials />
-      <MindfulTherapist />
-      <Line2 />
-      <MemberStatistics />
-      <Line2 />
-      <GlobalPresence />
-      <Line2 />
-      <ClientTestimonials />
-      <Line2 />
-      <ConsciousStore />
-      <ConsciousleapBlog />
-      <Line2 />
-      <RegisterBlock />
+      <Suspense>
+        <MemberStatistics />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <GlobalPresence />
+        <Line2 />
+        <ClientTestimonials />
+        <Line2 />{" "}
+      </Suspense>
+      <Suspense>
+        <ConsciousStore /> <ConsciousleapBlog />
+      </Suspense>
+      <Line2 />{" "}
+      <Suspense>
+        <RegisterBlock />
+      </Suspense>
     </div>
   );
 };
