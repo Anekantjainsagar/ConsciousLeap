@@ -62,7 +62,7 @@ const Home = () => {
   useEffect(() => {
     // Create the script element for Google Analytics
     const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-Y7PG9EYC9L";
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-5SMJLE8MGE";
     script.async = true;
     document.head.appendChild(script);
 
@@ -72,7 +72,7 @@ const Home = () => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-Y7PG9EYC9L');
+      gtag('config', 'G-5SMJLE8MGE');
     `;
     document.head.appendChild(inlineScript);
 
