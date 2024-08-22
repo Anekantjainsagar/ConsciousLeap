@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import ReactGA from "react-ga";
 
 const GoogleAnalytics = () => {
-  f;
   ReactGA.initialize("G-5SMJLE8MGE");
 
   useEffect(() => {
