@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import ReactGA from "react-ga";
 
 const GoogleAnalytics = () => {
-  ReactGA.initialize("G-5SMJLE8MGE");
+  ReactGA.initialize("G-KM2XCR8FBW");
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
