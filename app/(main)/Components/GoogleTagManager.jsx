@@ -1,15 +1,28 @@
 "use client";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import ReactGA from "react-ga";
 
-const GoogleAnalytics = () => {
-  ReactGA.initialize("G-KM2XCR8FBW");
+const GoogleAnalytics = ({ children }) => {
+  const router = useRouter();
+  let TRACKING_ID = "G-KM2XCR8FBW";
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
-  return null; // This component does not render anything
+    const handleRouteChange = (url) => {
+      ReactGA.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
+  return <>{children}</>;
 };
 
 export default GoogleAnalytics;

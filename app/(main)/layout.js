@@ -6,8 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <section lang="en">
       <Navbar />
-      <GoogleAnalytics />
-      {children}
+      <GoogleAnalytics>{children}</GoogleAnalytics>
       <Footer />
     </section>
   );
