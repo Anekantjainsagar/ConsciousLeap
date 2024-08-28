@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       <Navbar />
-      <GoogleAnalytics />
+      {/* <GoogleAnalytics /> */}
       {children}
       <Footer />
     </>
