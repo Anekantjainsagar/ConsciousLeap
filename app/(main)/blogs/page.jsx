@@ -29,7 +29,7 @@ const Blogs = () => {
         </span>
       </p>
       <div className="grid md:grid-cols-3 md:gap-y-8 gap-y-5 md:gap-x-8 px-2 md:px-12 mt-5">
-        {blogs.map((e, i) => {
+        {blogs?.map((e, i) => {
           return <BlogBlock data={e} key={i} />;
         })}
       </div>
