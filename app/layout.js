@@ -2,7 +2,6 @@ import "./globals.css";
 import { Comfortaa } from "next/font/google";
 import State from "@/Context/State";
 import Loading from "./loading";
-import Head from "next/head";
 
 const inter = Comfortaa({
   subsets: ["latin"],
@@ -12,7 +11,7 @@ const inter = Comfortaa({
 export const metadata = {
   title: "consciousleap - Best Therapists for mental health",
   description:
-    "consciousleap was founded keeping in mind our soul purpose of holistically improving the quality of life by elevating and expanding our collective Conscious awareness through mindful healing and positive well-being.",
+    "consciousleap was founded keeping in mind our sole purpose of holistically improving the quality of life by elevating and expanding our collective Conscious awareness through mindful healing and positive well-being.",
   keywords: [
     "mental health",
     "therapy",
@@ -24,7 +23,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
+        {/* Meta and Link Tags */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager Script */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -59,22 +59,22 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        {/* End Google Tag Manager */}
-      </Head>
-      <State>
-        <body className={inter.className}>
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-TFGV5RM2"
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            ></iframe>
-          </noscript>
+      </head>
+      <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TFGV5RM2"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        <State>
           <Loading />
           {children}
-        </body>
-      </State>
+        </State>
+      </body>
     </html>
   );
 }
