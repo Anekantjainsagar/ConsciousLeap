@@ -1,8 +1,8 @@
 import "./globals.css";
 import { Comfortaa } from "next/font/google";
 import State from "@/Context/State";
-import Head from "next/head";
 import Loading from "./loading";
+import Head from "next/head";
 
 const inter = Comfortaa({
   subsets: ["latin"],
@@ -63,7 +63,6 @@ export default function RootLayout({ children }) {
       </Head>
       <State>
         <body className={inter.className}>
-          {/* Google Tag Manager (noscript) */}
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-TFGV5RM2"
@@ -72,8 +71,6 @@ export default function RootLayout({ children }) {
               style={{ display: "none", visibility: "hidden" }}
             ></iframe>
           </noscript>
-          {/* End Google Tag Manager (noscript) */}
-
           <Loading />
           {children}
         </body>
