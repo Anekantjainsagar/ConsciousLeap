@@ -50,6 +50,7 @@ export function BootstrapCarousel() {
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737684/apvygeprzckwmegrjbpl.png",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737721/tn1tb8surfiuba898pjm.png",
     "https://res.cloudinary.com/dpbsogbtr/image/upload/v1714737745/o4yzt7jkeb4ujtl96pml.png",
+    "https://res.cloudinary.com/dpbsogbtr/image/upload/v1726658659/cqnmg4li4mxxdgo4qbzv.png",
   ];
 
   return (
