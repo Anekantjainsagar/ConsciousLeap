@@ -181,6 +181,10 @@ const Blog2 = () => {
               className="mx-auto rounded-md w-full"
             />
           </div>
+          <div className="px-2.5 mt-3">
+            <h6 className="text-lg">Sagrikaa Rastogi</h6>
+            <p className="text-sm">Counselling Psychologist</p>
+          </div>
         </div>
       </div>
     </div>
