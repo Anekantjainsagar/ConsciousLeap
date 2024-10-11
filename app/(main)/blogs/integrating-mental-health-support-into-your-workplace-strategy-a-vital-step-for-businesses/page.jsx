@@ -19,15 +19,15 @@ const Blog2 = () => {
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
         <div className="text-[17px] p-2">
           <p>
-            In a today's fast evolving work setup, making the mental health
+            In a today&apos;s fast evolving work setup, making the mental health
             supportive feature is not an interest but critical part of the
-            overall strategy. It should be understood that employee’s mental
-            health is not only an individual related problem but also a problem
-            that is related to business. There are several work hazards that
-            manager, employee and others in similar positions have to deal with.
-            The workplace is no longer the just the place to get the work done;
-            it is rather an environment where workers spend almost all their
-            entire time working with pressures that can either build up or
+            overall strategy. It should be understood that employee&apos;s
+            mental health is not only an individual related problem but also a
+            problem that is related to business. There are several work hazards
+            that manager, employee and others in similar positions have to deal
+            with. The workplace is no longer the just the place to get the work
+            done; it is rather an environment where workers spend almost all
+            their entire time working with pressures that can either build up or
             destroy their mental health.
           </p>
           <div className="mt-5">
@@ -49,19 +49,19 @@ const Blog2 = () => {
               countries $1 trillion every year. To make matters more
               aggravating, the Indian Journal of Occupational and Environmental
               Medicine undertook a survey and established that approximately
-              42.5% of people working in India's corporate offices were under
-              stress or mental anxiety.
+              42.5% of people working in India&apos;s corporate offices were
+              under stress or mental anxiety.
             </p>
             <p className="px-2 mt-1">
               {" "}
               Businesses are beginning to realize that protecting the health of
-              their personnel's mind is not just an ethical issue but an issue
-              of business concern. As more attention is given to mental health
-              issues and the work environment is changing after the pandemic,
-              companies are seeking new ways to bring in mental health support
-              within their operations. Here’s how your business can put stress
-              on mental well-being without compromising on the healthier,
-              happier workforce.
+              their personnel&apos;s mind is not just an ethical issue but an
+              issue of business concern. As more attention is given to mental
+              health issues and the work environment is changing after the
+              pandemic, companies are seeking new ways to bring in mental health
+              support within their operations. Here&apos;s how your business can
+              put stress on mental well-being without compromising on the
+              healthier, happier workforce.
             </p>
           </div>
           <div>
