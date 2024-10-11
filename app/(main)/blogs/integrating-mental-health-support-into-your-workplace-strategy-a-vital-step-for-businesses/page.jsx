@@ -13,11 +13,16 @@ const Blog2 = () => {
       />
       <div className="px-[3vw] md:px-[8vw] mt-5">
         <h1 className="text-2xl mt-4 font-bold text-websiteBlue gradientHover cursor-pointer">
-          Integrating Mental Health Support into Your Workplace Strategy: A
-          Vital Step for Businesses
+          Integrating Mental Health Support into Your Workplace Strategy:
+          <br /> A Vital Step for Businesses
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
         <div className="text-[17px] p-2">
+          {" "}
+          <div className="mb-5">
+            <h6 className="text-lg ">By- Sagrikaa Rastogi</h6>
+            <p className="text-sm ">Counselling Psychologist</p>
+          </div>
           <p>
             In a today&apos;s fast evolving work setup, making the mental health
             supportive feature is not an interest but critical part of the
@@ -187,10 +192,10 @@ const Blog2 = () => {
               className="mx-auto rounded-md w-full"
             />
           </div>
-          <div className="px-2.5 mt-3">
+          {/* <div className="px-2.5 mt-3">
             <h6 className="text-lg">Sagrikaa Rastogi</h6>
             <p className="text-sm">Counselling Psychologist</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
