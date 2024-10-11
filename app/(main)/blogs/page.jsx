@@ -29,7 +29,16 @@ const Blogs = () => {
         </span>
       </p>
       <div className="grid md:grid-cols-3 md:gap-y-8 gap-y-5 md:gap-x-8 px-2 md:px-12 mt-5">
-        {blogs?.map((e, i) => {
+        {[
+          {
+            image: "/blog 1/Picture1.jpg",
+            title:
+              "Integrating Mental Health Support into Your Workplace Strategy: A Vital Step for Businesses",
+            showLikes: false,
+            newBlock: true,
+          },
+          ...blogs,
+        ]?.map((e, i) => {
           return <BlogBlock data={e} key={i} />;
         })}
       </div>
@@ -45,7 +54,15 @@ const BlogBlock = ({ data }) => {
       className="cursor-pointer border rounded-lg p-2 shadow-md transition-all hover:scale-105"
       onClick={(e) => {
         e.preventDefault();
-        history.push(`/blogs/${data?._id}`);
+        if (data?.newBlock) {
+          let name = data?.title
+            ?.toLowerCase()
+            ?.replaceAll(" ", "-")
+            .replaceAll(":", "");
+          history.push(`/blogs/${name}`);
+        } else {
+          history.push(`/blogs/${data?._id}`);
+        }
       }}
     >
       <Image
@@ -55,7 +72,12 @@ const BlogBlock = ({ data }) => {
         alt="Image"
         className="w-full h-[60vw] md:h-[16vw] object-cover rounded-lg object-center"
       />
-      <TitleBlock title={data?.title} id={data?._id} likes={data?.likes} />
+      <TitleBlock
+        title={data?.title}
+        id={data?._id}
+        likes={data?.likes}
+        showLikes={data?.showLikes}
+      />
     </div>
   );
 };

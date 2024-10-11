@@ -157,7 +157,16 @@ export function BootstrapCarousel() {
           }}
           className="flex items-center"
         >
-          {blogs?.map((item, i) => (
+          {[
+            {
+              image: "/blog 1/Picture1.jpg",
+              title:
+                "Integrating Mental Health Support into Your Workplace Strategy: A Vital Step for Businesses",
+              showLikes: false,
+              newBlock: true,
+            },
+            ...blogs,
+          ]?.map((item, i) => (
             <SwiperSlide key={i} as={"image"}>
               <BlogBlock data={item} />
             </SwiperSlide>
@@ -177,7 +186,15 @@ const BlogBlock = ({ data }) => {
         className="cursor-pointer border p-2 rounded-md bg-white"
         onClick={(e) => {
           e.preventDefault();
-          history.push(`/blogs/${data?._id}`);
+          if (data?.newBlock) {
+            let name = data?.title
+              ?.toLowerCase()
+              ?.replaceAll(" ", "-")
+              .replaceAll(":", "");
+            history.push(`/blogs/${name}`);
+          } else {
+            history.push(`/blogs/${data?._id}`);
+          }
         }}
       >
         <Image
@@ -187,7 +204,12 @@ const BlogBlock = ({ data }) => {
           width={1000}
           height={1000}
         />
-        <TitleBlock title={data?.title} id={data?._id} likes={data?.likes} />
+        <TitleBlock
+          title={data?.title}
+          id={data?._id}
+          likes={data?.likes}
+          showLikes={data?.showLikes}
+        />
       </div>
     </div>
   );
