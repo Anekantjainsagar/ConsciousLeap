@@ -140,7 +140,13 @@ const Blog2 = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              {part}
+                              {part.includes("www.mind.org.uk")
+                                ? "Mental Health at Work"
+                                : part.includes("www.umassglobal.edu")
+                                ? "University of Massachusetts Global"
+                                : part.includes("worklifebalance")
+                                ? "Work Life Balance"
+                                : "Mental Health America"}
                             </a>
                           ) : (
                             part
