@@ -9,9 +9,9 @@ const inter = Comfortaa({
 });
 
 export const metadata = {
-  title: "consciousleap - Best Therapists for mental health",
+  title: "consciousleap - Elevate Mental Health with Mindful Therapy",
   description:
-    "consciousleap was founded keeping in mind our sole purpose of holistically improving the quality of life by elevating and expanding our collective Conscious awareness through mindful healing and positive well-being.",
+    "consciousleap enhances mental health and overall well-being through personalized therapy, mindful healing, and conscious awareness practices. Our mission focuses on elevating life quality by promoting self-discovery and holistic mental wellness.",
   keywords: [
     "mental health",
     "therapy",

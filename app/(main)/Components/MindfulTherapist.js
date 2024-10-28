@@ -27,12 +27,12 @@ const MindfulTherapist = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col mt-[20vw] md:mt-[10vw]">
-      <h1
+      <h2
         ref={testimonialsHeading}
         className="mb-6 md:mb-8 text-center text-3xl font-light gradientHover cursor-pointer"
       >
         Our Mindful Therapists
-      </h1>
+      </h2>
       <BootstrapCarousel />
     </div>
   );

@@ -22,13 +22,13 @@ const MembersTestimonials = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h2
         id="membertestimonials"
         ref={testimonialsHeading}
         className="mb-2 text-3xl font-light text-center gradientHover cursor-pointer"
       >
         Member Testimonials
-      </h1>
+      </h2>
       <p className="mb-[16vw] md:mb-[4vw] text-center font-light tracking-wide">
         Here&apos;s what our members say about their experiences with Therapy at
         consciousleap.

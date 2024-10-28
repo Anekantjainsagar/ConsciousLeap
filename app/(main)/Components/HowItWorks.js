@@ -32,13 +32,13 @@ const HowItWorks = () => {
 
   return (
     <div className="w-full flex items-center justify-center flex-col">
-      <h1
+      <h2
         ref={howItWorksHead}
         id="howdoesitwork?"
         className="mb-2 text-3xl font-light gradientHover cursor-pointer"
       >
         How Does It Work?
-      </h1>
+      </h2>
       <p className="text-center md:w-full w-8/12">
         Considering the importance and impact of mental health, we spared no
         thought to keep it simple, impactful, and flexible all at once.
