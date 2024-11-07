@@ -56,7 +56,6 @@ const RegisterTherapist = () => {
   ];
 
   const onGetOtp = () => {
-    // console.log(user);
     if (
       !(
         !user?.name ||
@@ -74,6 +73,17 @@ const RegisterTherapist = () => {
             toast.success(
               "Thank you for your application our recruitment team will reach out to you"
             );
+            setUser({
+              name: "",
+              phone: "",
+              email: "",
+              password: "",
+              experience: "",
+              desc: "",
+              original: "",
+              otp: "",
+              resume: "",
+            });
           } else {
             toast.error(response.data.data);
           }
@@ -85,7 +95,6 @@ const RegisterTherapist = () => {
     } else {
       toast.error("Please fill all the details");
     }
-    // hr@consciousleap.co
   };
 
   const onRegister = () => {
