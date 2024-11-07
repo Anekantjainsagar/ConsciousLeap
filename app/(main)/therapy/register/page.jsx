@@ -57,38 +57,35 @@ const RegisterTherapist = () => {
 
   const onGetOtp = () => {
     // console.log(user);
-    // if (
-    //   !(
-    //     !user?.name ||
-    //     !user?.email ||
-    //     !user?.password ||
-    //     !user?.phone ||
-    //     !user?.experience ||
-    //     !user?.desc
-    //   )
-    // ) {
-    //   axios
-    //     .post(`${BASE_URL}/therapist/otp-verification`, user)
-    //     .then((response) => {
-    //       if (response.status == 200) {
-    //         toast.success(response.data.data);
-    //         setUser({ ...user, original: response.data.otp });
-    //         setGetOtp(true);
-    //       } else {
-    //         toast.error(response.data.data);
-    //       }
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       toast.error(err.message);
-    //     });
-    // } else {
-    //   toast.error("Please fill all the details");
-    // }
+    if (
+      !(
+        !user?.name ||
+        !user?.email ||
+        !user?.password ||
+        !user?.phone ||
+        !user?.experience ||
+        !user?.desc
+      )
+    ) {
+      axios
+        .post(`${BASE_URL}/therapist/otp-verification`, user)
+        .then((response) => {
+          if (response.status == 200) {
+            toast.success(
+              "Thank you for your application our recruitment team will reach out to you"
+            );
+          } else {
+            toast.error(response.data.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.message);
+        });
+    } else {
+      toast.error("Please fill all the details");
+    }
     // hr@consciousleap.co
-    toast.success(
-      "Thank you for your application our recruitment team will reach out to you"
-    );
   };
 
   const onRegister = () => {
