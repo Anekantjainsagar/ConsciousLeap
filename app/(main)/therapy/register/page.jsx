@@ -20,19 +20,21 @@ import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { setCookie } from "cookies-next";
 
 const RegisterTherapist = () => {
-  const [getOtp, setGetOtp] = useState(true);
+  const [getOtp, setGetOtp] = useState(false);
   let router = useRouter();
   const [user, setUser] = useState({
     name: "",
     phone: "",
     email: "",
     password: "",
-    displayName: "",
+    experience: "",
     desc: "",
     original: "",
     otp: "",
+    resume: "",
   });
   let registerData = [
     { image: img1, title: "Unbinding", desc: "Free to work elsewhere." },
@@ -54,35 +56,39 @@ const RegisterTherapist = () => {
   ];
 
   const onGetOtp = () => {
-    console.log(user);
-    if (
-      !(
-        !user?.name ||
-        !user?.email ||
-        !user?.password ||
-        !user?.phone ||
-        !user?.displayName ||
-        !user?.desc
-      )
-    ) {
-      axios
-        .post(`${BASE_URL}/therapist/otp-verification`, user)
-        .then((response) => {
-          if (response.status == 200) {
-            toast.success(response.data.data);
-            setUser({ ...user, original: response.data.otp });
-            setGetOtp(true);
-          } else {
-            toast.error(response.data.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          toast.error(err.message);
-        });
-    } else {
-      toast.error("Please fill all the details");
-    }
+    // console.log(user);
+    // if (
+    //   !(
+    //     !user?.name ||
+    //     !user?.email ||
+    //     !user?.password ||
+    //     !user?.phone ||
+    //     !user?.experience ||
+    //     !user?.desc
+    //   )
+    // ) {
+    //   axios
+    //     .post(`${BASE_URL}/therapist/otp-verification`, user)
+    //     .then((response) => {
+    //       if (response.status == 200) {
+    //         toast.success(response.data.data);
+    //         setUser({ ...user, original: response.data.otp });
+    //         setGetOtp(true);
+    //       } else {
+    //         toast.error(response.data.data);
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       toast.error(err.message);
+    //     });
+    // } else {
+    //   toast.error("Please fill all the details");
+    // }
+    // hr@consciousleap.co
+    toast.success(
+      "Thank you for your application our recruitment team will reach out to you"
+    );
   };
 
   const onRegister = () => {
@@ -104,7 +110,7 @@ const RegisterTherapist = () => {
               phone: "",
               email: "",
               password: "",
-              displayName: "",
+              experience: "",
               desc: "",
               original: "",
               otp: "",
@@ -161,7 +167,7 @@ const RegisterTherapist = () => {
       </p>
       <div className="rounded-lg w-[90vw] min-[900px]:w-[50vw] min-[1040px]:w-[30vw] text-sm mx-auto h-fit bg-gradient-to-tr mt-[2vw] from-websiteBlue via-pinkishRed to-oceanGreen p-[2px]">
         <div className="h-full w-full py-2 md:py-4 px-[3vw] md:px-[1vw] rounded-lg justify-center bg-white flex flex-col">
-          <h1 className="text-websiteBlue font-medium pb-2 border-b">
+          <h1 className="text-websiteBlue font-medium pb-2 border-b text-lg">
             Personal Information
           </h1>
           <p className="mt-4 text-websiteBlue font-light">Your Name *</p>
@@ -174,7 +180,7 @@ const RegisterTherapist = () => {
             placeholder="Name"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
-          <p className="mt-4 text-websiteBlue font-light">Your Email *</p>
+          <p className="mt-4 text-websiteBlue font-light">Email ID *</p>
           <input
             type="text"
             value={user?.email}
@@ -184,7 +190,7 @@ const RegisterTherapist = () => {
             placeholder="Email"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
-          <p className="mt-4 text-websiteBlue font-light">Your Phone *</p>
+          <p className="mt-4 text-websiteBlue font-light">Phone Number *</p>
           <input
             type="text"
             value={user?.phone}
@@ -194,7 +200,7 @@ const RegisterTherapist = () => {
             placeholder="Phone"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
-          <p className="mt-4 text-websiteBlue font-light">Your Password *</p>
+          {/* <p className="mt-4 text-websiteBlue font-light">Your Password *</p>
           <input
             type="password"
             value={user?.password}
@@ -203,24 +209,24 @@ const RegisterTherapist = () => {
             }}
             placeholder="Password"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
-          />
-          <h1 className="text-websiteBlue font-medium mt-8 pb-2 border-b">
-            Basic Information
+          /> */}
+          <h1 className="text-websiteBlue font-medium mt-8 pb-2 border-b text-lg">
+            Professional Information
           </h1>
           <p className="mt-4 text-websiteBlue font-light">
-            Therapist Display Name *
+            Years of Experience *
           </p>
           <input
             type="text"
-            value={user?.displayName}
+            value={user?.experience}
             onChange={(e) => {
-              setUser({ ...user, displayName: e.target.value });
+              setUser({ ...user, experience: e.target.value });
             }}
-            placeholder="Therapist Display Name"
+            placeholder="Years of Experience"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           <p className="mt-4 text-websiteBlue font-light">
-            Short Description of Profile *
+            Short Description of Experience *
           </p>
           <input
             type="text"
@@ -228,15 +234,23 @@ const RegisterTherapist = () => {
             onChange={(e) => {
               setUser({ ...user, desc: e.target.value });
             }}
-            placeholder="Short Description of Profile"
+            placeholder="Short Description of Experience"
             className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
-          <h1 className="text-websiteBlue font-medium mt-6 border-b">
-            Upload your resume
+          <h1 className="text-websiteBlue font-medium mt-6 border-b text-lg">
+            Upload Your Resume
           </h1>
+          <p className="mt-4 text-websiteBlue font-light">
+            Paste a Drive link of your Resume *
+          </p>
           <input
-            className="mt-2 relative m-0 block w-full text-sm min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal text-websiteBlue transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-websiteBlue file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-websiteBlue focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-websiteBlue dark:file:text-neutral-100 dark:focus:border-primary"
-            type="file"
+            type="text"
+            value={user?.resume}
+            onChange={(e) => {
+              setUser({ ...user, resume: e.target.value });
+            }}
+            placeholder="Paste a Drive link of your Resume"
+            className="border px-4 rounded-sm py-1.5 outline-none mt-2"
           />
           {getOtp ? (
             <>
@@ -256,7 +270,7 @@ const RegisterTherapist = () => {
             onClick={!getOtp ? onGetOtp : onRegister}
             className="bg-websiteBlue px-8 py-2 text-white mt-5 rounded-md w-fit mx-auto"
           >
-            {getOtp ? "Register" : "Get Otp"}
+            {getOtp ? "Register" : "Apply"}
           </button>
         </div>
       </div>

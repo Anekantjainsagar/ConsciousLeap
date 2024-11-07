@@ -18,7 +18,7 @@ const TitleBlock = ({ title, id, likes, showLikes = true }) => {
 
   useEffect(() => {
     if (login?._id) {
-      let data = likes.find((e) => e == login?._id);
+      let data = likes?.find((e) => e == login?._id);
       if (data) {
         setIsLiked(true);
       }
