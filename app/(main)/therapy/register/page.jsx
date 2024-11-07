@@ -61,10 +61,10 @@ const RegisterTherapist = () => {
       !(
         !user?.name ||
         !user?.email ||
-        !user?.password ||
         !user?.phone ||
         !user?.experience ||
-        !user?.desc
+        !user?.desc ||
+        !user?.resume
       )
     ) {
       axios
