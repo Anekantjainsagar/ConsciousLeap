@@ -165,6 +165,12 @@ export function BootstrapCarousel() {
               showLikes: false,
               newBlock: true,
             },
+            {
+              image: "/blog 2/1.jpg",
+              title: "Mental Health at Workplace",
+              showLikes: false,
+              newBlock: true,
+            },
             ...blogs,
           ]?.map((item, i) => (
             <SwiperSlide key={i} as={"image"}>

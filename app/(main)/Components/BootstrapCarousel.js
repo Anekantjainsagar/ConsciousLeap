@@ -35,10 +35,12 @@ export default function BootstrapCarousel() {
         <marquee behavior="scroll" direction="right">
           <div className="flex items-center justify-between w-full py-2 w md:text-[17px] text-white font-semibold">
             <p className="py-0 my-0 md:pr-0 pr-8">
-              Free Discovery Session on Suicide Prevention Awareness Month
+              Start your journey of wellbeing! Book a free discovery session
+              now!
             </p>
             <p className="py-0 my-0">
-              Free Discovery Session on Suicide Prevention Awareness Month
+              Start your journey of wellbeing! Book a free discovery session
+              now!
             </p>
           </div>
         </marquee>
@@ -69,7 +71,7 @@ export default function BootstrapCarousel() {
             }}
           >
             <Image
-              src={"/Assets/carousel/Banner 3.png"}
+              src={"/Assets/carousel/Banner 4.png"}
               alt="Displaying mindful monday"
               width={1000}
               height={10000}

@@ -37,6 +37,12 @@ const Blogs = () => {
             showLikes: false,
             newBlock: true,
           },
+          {
+            image: "/blog 2/1.jpg",
+            title: "Mental Health at Workplace",
+            showLikes: false,
+            newBlock: true,
+          },
           ...blogs,
         ]?.map((e, i) => {
           return <BlogBlock data={e} key={i} />;
