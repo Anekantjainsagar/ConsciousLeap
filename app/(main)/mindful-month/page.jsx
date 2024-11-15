@@ -47,14 +47,14 @@ const MindFulMonth = () => {
           Walk towards wellbeing!
         </h1>
         <p className="px-2 md:text-[20px] mt-1.5 text-newBlue">
-          We are excited to announce the launch of "Walk Towards Wellbeing," an
-          initiative offering free therapy sessions. This program aims to
-          provide accessible mental health support to all, fostering well-being
-          and resilience in our community. By removing financial barriers, we
-          hope to encourage individuals to take a proactive step towards their
-          mental health, ensuring they receive the care and guidance they need
-          duringthese challenging times. Join us to prioritize your mental
-          health with consciousleop.
+          We are excited to announce the launch of &quot;Walk Towards
+          Wellbeing,&quot; an initiative offering free therapy sessions. This
+          program aims to provide accessible mental health support to all,
+          fostering well-being and resilience in our community. By removing
+          financial barriers, we hope to encourage individuals to take a
+          proactive step towards their mental health, ensuring they receive the
+          care and guidance they need duringthese challenging times. Join us to
+          prioritize your mental health with consciousleop.
         </p>
         <h1 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen w-fit mt-8">
           What does this Discovery Session entail?
