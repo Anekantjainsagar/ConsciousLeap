@@ -246,8 +246,8 @@ const ReturnBlock = ({ data, index }) => {
           alt="Image"
           className="w-[15%] md:w-[9%] py-4"
         />
-        <p className="relative w-[8vw] h-full border-2 border-websiteBlue text-3xl md:text-5xl md:ml-[5vw] rounded-full  text-websiteBlue px-5 py-14 flex justify-center items-center">
-          <p className="absolute top-3 -translate-x-1/2 left-1/2">
+        <p className="relative w-[8vw] h-[8vw] border-2 border-websiteBlue text-3xl md:text-5xl md:ml-[5vw] rounded-full  text-websiteBlue px-5 py-14 flex justify-center items-center">
+          <p className="absolute top-3 flex items-center justify-center -translate-x-1/2 left-1/2">
             {data?.value}%
           </p>
         </p>
