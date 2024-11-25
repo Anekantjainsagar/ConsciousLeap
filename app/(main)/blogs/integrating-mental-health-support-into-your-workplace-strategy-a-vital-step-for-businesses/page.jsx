@@ -71,9 +71,9 @@ const Blog2 = () => {
             <ul className="list-disc">
               <li className="mb-4">
                 Learn to say no without guilt: Our brain is so ingrained with
-                the definition of success that we don't set our boundaries and
-                eventually our work becomes our life. The fear of being judged,
-                missing opportunities is so real that we forget to set
+                the definition of success that we don&apos;t set our boundaries
+                and eventually our work becomes our life. The fear of being
+                judged, missing opportunities is so real that we forget to set
                 boundaries. Setting boundaries is tough as we live in a world
                 where performance and productivity is only valued but setting
                 boundaries is important and it can be anything such as taking a
@@ -85,12 +85,13 @@ const Blog2 = () => {
               <li className="mb-4">
                 Practice Gratitude: We live in a world of competition and
                 practicing gratitude can seem sometimes a practice that is made
-                for privileged people but it's not. Practicing gratitude can
-                help you shift your perspective from scarcity to abundance. Some
-                of the simple gratitude practices that you can do is reflecting
-                on the little joys in life, focusing on what's present instead
-                of cribbing about what is not, taking a walk in nature, spending
-                time with your loved ones.(Learn more about gratitude:{" "}
+                for privileged people but it&apos;s not. Practicing gratitude
+                can help you shift your perspective from scarcity to abundance.
+                Some of the simple gratitude practices that you can do is
+                reflecting on the little joys in life, focusing on what&apos;s
+                present instead of cribbing about what is not, taking a walk in
+                nature, spending time with your loved ones.(Learn more about
+                gratitude:{" "}
                 <Link link="https://www.forbes.com/councils/forbescoachescouncil/2021/12/29/the-benefits-of-showing-gratitude-in-the-workplace/" />
                 )
               </li>{" "}
@@ -102,21 +103,21 @@ const Blog2 = () => {
                 className="mx-auto rounded-md w-full mb-10"
               />
               <li className="mb-4">
-                Maintain Work Life Balance: Your personal life shouldn't always
-                take a backseat instead you should find ways where you can excel
-                at work and in your personal life as well. Some of the ways can
-                be making your to-do list for the day and trying to do focused
-                work by blocking time, leveraging support, when necessary, which
-                will help in managing your workload and prioritizing tasks that
-                make a big difference. (Read more:{" "}
+                Maintain Work Life Balance: Your personal life shouldn&apos;t
+                always take a backseat instead you should find ways where you
+                can excel at work and in your personal life as well. Some of the
+                ways can be making your to-do list for the day and trying to do
+                focused work by blocking time, leveraging support, when
+                necessary, which will help in managing your workload and
+                prioritizing tasks that make a big difference. (Read more:{" "}
                 <Link link="https://www.helpguide.org/wellness/career/mental-health-in-the-workplace" />
                 )
               </li>{" "}
               <li className="mb-4">
                 Seek Help: There has been a lot of stigma around mental health
                 which makes us hesitant to ask for help but asking for help
-                doesn't define you but it helps you become a better version of
-                yourself, helps you understand yourself better and helps you
+                doesn&apos;t define you but it helps you become a better version
+                of yourself, helps you understand yourself better and helps you
                 manage your emotions. Research demonstrates that psychotherapy
                 is effective for a variety of mental and behavioural health
                 issues and across a spectrum of population groups. The average
