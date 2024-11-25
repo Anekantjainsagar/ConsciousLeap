@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Blog2 = () => {
+  const history = useRouter();
+
   return (
     <div className="mx-auto w-[90vw] md:w-[70vw] py-[1vw]">
       <Image
@@ -18,187 +21,217 @@ const Blog2 = () => {
         </h1>
         <div className="h-[1px] w-full bg-gray-200 my-2"></div>
         <div className="text-[17px] p-2">
-          {" "}
           <div className="mb-5">
             <h6 className="text-lg ">By- Sagrikaa Rastogi</h6>
             <p className="text-sm ">Counselling Psychologist</p>
           </div>
           <p>
-            In a today&apos;s fast evolving work setup, making the mental health
-            supportive feature is not an interest but critical part of the
-            overall strategy. It should be understood that employee&apos;s
-            mental health is not only an individual related problem but also a
-            problem that is related to business. There are several work hazards
-            that manager, employee and others in similar positions have to deal
-            with. The workplace is no longer the just the place to get the work
-            done; it is rather an environment where workers spend almost all
-            their entire time working with pressures that can either build up or
-            destroy their mental health.
+            I recently had an interaction with someone who said depression is
+            nothing, it&apos;s just being marketed and on asking what made him
+            believe this he said &quot;it&apos;s better to live in a world of
+            capitalism” When I asked him about the recent EY case (
+            <Link link="https://economictimes.indiatimes.com/news/company/corporate-trends/ey-india-employees-death-stirs-a-storm-around-high-stress-workplaces-and-mental-health/articleshow/113492646.cms?from=mdr" />
+            ) of whether is it in the air or is it true? To which he said the
+            case is true because a mother would never lie about her child and
+            after an intense discussion with him, the one thing that I came
+            across is he believes that mental health matters but to sound cool
+            he said what he said to me in first place. It&apos;s sad that we
+            live in a society where just too sound cool we deny our own health
+            and I guess this happens with most of us.
+            <br />
+            <br />
+            Ever since we were kids, the only thing that we were taught is that
+            the only pathway to success is hard work but nobody taught us the
+            definition of Hard work. Hard work is interpreted as working long
+            hours, ignoring our own health, putting your personal and social
+            life on hold and prioritizing work over everything but isn’t its
+            misinterpretation of hard work. Hard work should be interpreted as
+            giving your best and that shouldn’t require working long hours,
+            Having a work – life balance.{" "}
+            <Link link="https://www.mind.org.uk/information-support/tips-for-everyday-living/" />
+            <Image
+              src={"/blog 2/2.jpg"}
+              width={100}
+              height={100}
+              alt="Blog"
+              className="mx-auto rounded-md w-full"
+            />
           </p>
-          <div className="mt-5">
+          <div className="mt-8">
             <h4 className="text-2xl font-semibold">
-              Why Mental Health in the Workplace?
+              How to Achieve Work- Life Balance
             </h4>{" "}
             <Image
-              src={"/blog 1/Picture2.jpg"}
+              src={"/blog 2/3.jpg"}
               width={100}
               height={100}
               alt="Blog"
               className="mx-auto rounded-md w-full"
             />
-            <p className="px-2">
-              India has one of the most and fastest growing manpower in the
-              world, however, there is very little or no provisions made for
-              mental health assistance in organisations. The WHO has reported a
-              huge loss resulting from depression and anxiety, estimated to cost
-              countries $1 trillion every year. To make matters more
-              aggravating, the Indian Journal of Occupational and Environmental
-              Medicine undertook a survey and established that approximately
-              42.5% of people working in India&apos;s corporate offices were
-              under stress or mental anxiety.
-            </p>
-            <p className="px-2 mt-1">
-              {" "}
-              Businesses are beginning to realize that protecting the health of
-              their personnel&apos;s mind is not just an ethical issue but an
-              issue of business concern. As more attention is given to mental
-              health issues and the work environment is changing after the
-              pandemic, companies are seeking new ways to bring in mental health
-              support within their operations. Here&apos;s how your business can
-              put stress on mental well-being without compromising on the
-              healthier, happier workforce.
-            </p>
-          </div>
-          <div>
-            {[
-              {
-                title: "Formulate a Mental Health Policy",
-                para: "First and foremost, mental health should be at the core of the company’s sentiments toward its workers. It is very important to prepare a mental health policy that clearly brings out the mental health challenges that the employees are offered help with. This document should outline the organization’s policy on mental health, the resources it has in place, and how employees could access these resources without being stigmatized or reprimanded. <br/> A mental health policy serves to promote and encourage open discourse concerning the mental wellness of employees at work. Such policies help in dispelling the resource limitations as regard to help seeking behaviour of the employees, in that even the employees who are not in crisis know how to use resources and seek help early on.",
-                img: "/blog 1/Picture3.jpg",
-              },
-              {
-                title: "Offer Mental Health Training for Managers",
-                para: "In the majority of companies, managers are the first handlers of situations whenever an employee has a problem. It is extremely beneficial to have managers trained to notice mild but potentially serious issues. They could assist employees before the situation deteriorates and help the employees utilize professional help as needed.<br/>It should be such training as would help the learners to develop skills to build rapport with their workmates through appreciation and proper understanding of what listening entails. Managers will also be educated on how to utilize the organizations formatted mental health services to redirect employees.<br/>To explore various types of methods to improve staffs mental health, visit: https://www.mind.org.uk/workplace/mental-health-at-work/taking-care-of-your-staff/",
-              },
-              {
-                title: "Promote Work-Life Balance",
-                img: "/blog 1/Picture4.jpg",
-                para: "According to an InLine study in India about 46 % of the Indian employees are over enthusiastic about their work which leads to work stress and eventually burnout. To counter this, it’s critical to promote culture which encourages a work life balance. Support open working hours, support employees to take breaks and help understand that rest is a wing of performance.<br/>You might consider allowing remote working, something that has been embraced following the pandemic. This gives employees the freedom to fulfill their work obligations and at the same time be able to take care of other aspects of their lives. The ideal position where both the work time and the personal one has been optimized goes a long way in overall mental safety.<br/>For further reading on work-life balance strategies, check out https://www.worklifebalance.com.",
-              },
-              {
-                title:
-                  "Help in Treatment Mental Health Issues When and Where They Arise",
-                img: "/blog 1/Picture5.jpg",
-                para: "To bolster mental health in the workplace, one of the most effective measures would be to allow employees to engage with licenced therapists or psychologists. A lot of organizations have a program called the Employee Assistance program (EAP) to extend such counselling services to employees who have stress, anxiety or other personal problems. There is increasing interest toward online therapy due to a growing demand by employees who would like to stay at home but wanting to withdraw emotionally.<br/>In India, for example, where tendencies to promote such services boom and tamer, discretion is therefore the better part of valour. It might be a good public or corporate health strategy to work with professional or internet-based mental health counsellors who provide effective, easy and safe treatment. These resources help employees to overwhelm the problem of social discrimination of their organization that obviously exists.<br/>To understand how virtual mental health services are growing, you can refer to https://www.umassglobal.edu/news-and-events/blog/virtual-therapy-revolutionizing-mental-health-treatment",
-              },
-              {
-                title:
-                  "Make Mental Health a Part of Regular Life Otherwise It Is Just Neglected",
-                img: "/blog 1/Picture6.jpg",
-                para: "Stigmatism is one of the most common reasons as to why people avoid seeking mental health assistance especially in workplace settings.<br/>Encourage Mental Health PR throughout the company by creating regular sessions, such as workshops, webinars, or focusing on mental health days. Organizations can invite professionals to discuss awareness about mental health, self-care, and ways of coping with stress and other factors. These initiatives will aid in breaking the stigma related to mental health issues and therefore promote more help-seeking behavior by the employees.<br/>For further guidance on organizing mental health workshops, see https://www.mhanational.org/workplace.",
-              },
-              {
-                title: "Suggest Building Peer Support Networks",
-                img: "/blog 1/Picture7.jpg",
-                para: "Creating a peer support network helps employees to be able to provide support for one another during difficult periods. There are instances where employees may prefer discussing their mental health issues with coworkers rather than managers. Facilitating peer support helps build a community while also promoting a work environment that places mental illness as one of the key concerns.<br/>You can further choose to appoint some “peer level health managers” or “wellness champions” from among your employees. These people will provide informal assistance to those employees who wish to reach out about mental health issues further enhancing the wellbeing support structure in the workplace.",
-              },
-              {
-                title: "Evaluate and Manage Employee Well-being",
-                para: "Finally, there is no way the management will escape carrying out wellness checks on how employees are feeling. This can be through distributing sent questionnaires mean or through the voice call mean without revealing identity to conduct mental health check-ups or through physical interaction either with co-workers or with professionals specializing in HR or mental health. With such data acquired from the employees, employers will be able to know the pattern where most employees fall to in order to be in position to devise other new strategies that will help improve employee wellbeing.<br/>Keeping track of these patterns supports the evaluation of the outcomes of your mental wellness activities. For instance, when dissatisfied employees begin burning out, that is the time to intervene by moderating workloads, initiating time off procedures, or providing additional resources to counter stress.",
-              },
-              {
-                title:
-                  "The necessity of mental health and psychologists at the workplace",
-                para: "With the recent happenings and in the current scenario - it is very much essential to have mental health space and psychologists especially in the corporate setups - as mental health is related to both personal and professional lives too.<br/>Concerns related to work stress, productivity, work life balance, work motivation, conflict resolution, dealing with psychological, emotional, organizational related mental health issues in employees and helping them in psychological health aspects.<br/>A Foundational training will be provided to the employees and the new joiners. This training is an introduction about mental health importance and how psychologists can help in providing counselling. ",
-              },
-              {
-                title: "Encouraging mental health leave policies",
-                para: "The agenda is to eradicate the stigma around mental health. Mental health is as important as physical health. Both mental and physical health are interconnected. <br/>Companies must provide counselling to the employees in need. Mental health awareness to be introduced and encouraged in the corporate setups. A mental health leave policy can be a day or two (in a month) declared as an off day to the employees to take care of their well - being and mental health needs. This concept enriches the holistic well-being and wellness concept of the employees.<br/>In conclusion, a happy employee means a happy workplace.",
-              },
-            ].map((e, i) => {
-              return (
-                <div key={i} className="px-2.5 mt-6">
-                  <h6 className="text-xl font-semibold mb-1">
-                    {i + 1}. {e?.title}
-                  </h6>
-                  {e?.img && (
-                    <Image
-                      src={e?.img}
-                      width={100}
-                      height={100}
-                      alt="Blog"
-                      className="mx-auto rounded-md w-full"
-                    />
-                  )}
-                  {e?.para?.split("<br/>")?.map((el, i) => {
-                    const urlRegex = /(https?:\/\/[^\s]+)/g;
-                    const parts = el.split(urlRegex);
-
-                    return (
-                      <p className="px-2 mt-1" key={i}>
-                        {parts.map((part, index) =>
-                          urlRegex.test(part) ? (
-                            <a
-                              href={part}
-                              key={index}
-                              className="text-blue-600 underline"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {part.includes("www.mind.org.uk")
-                                ? "Mental Health at Work"
-                                : part.includes("www.umassglobal.edu")
-                                ? "University of Massachusetts Global"
-                                : part.includes("worklifebalance")
-                                ? "Work Life Balance"
-                                : "Mental Health America"}
-                            </a>
-                          ) : (
-                            part
-                          )
-                        )}
-                      </p>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
-          <div className="px-2.5">
-            <h6 className="text-xl font-semibold mb-1 mt-6">Conclusions</h6>
-            <p className="px-2 mt-1">
-              Achievement of goals with operational and commercial aspects of
-              filling the internal client responsibilities is now integrated
-              with the performance of a new mission – the mental health
-              assistance to the employees. Such employees are able to commit
-              themselves to the firm, perform optimally, and enhance the culture
-              of the firm positively. In India, where the mental health as an
-              issue has been finding traction, taking the ownership of the
-              problem will position your organisation as a leader and enable
-              building a more active and healthier workforce.
-            </p>
-            <p className="px-2 mt-1">
-              Such a situation should be dealt with without delay. May it be
-              your organization that will take the steps to end the stigma and
-              discrimination of mental health issues in the workplace thus
-              providing an appropriate environment for employees to develop
-              professionally and personally.
-            </p>{" "}
+            <ul className="list-disc">
+              <li className="mb-4">
+                Learn to say no without guilt: Our brain is so ingrained with
+                the definition of success that we don't set our boundaries and
+                eventually our work becomes our life. The fear of being judged,
+                missing opportunities is so real that we forget to set
+                boundaries. Setting boundaries is tough as we live in a world
+                where performance and productivity is only valued but setting
+                boundaries is important and it can be anything such as taking a
+                day off if your body resists doing work, cancelling on
+                last-minute meetings and projects. (More on setting boundaries:{" "}
+                <Link link="https://www.psychologytoday.com/intl/basics/boundaries" />
+                )
+              </li>
+              <li className="mb-4">
+                Practice Gratitude: We live in a world of competition and
+                practicing gratitude can seem sometimes a practice that is made
+                for privileged people but it's not. Practicing gratitude can
+                help you shift your perspective from scarcity to abundance. Some
+                of the simple gratitude practices that you can do is reflecting
+                on the little joys in life, focusing on what's present instead
+                of cribbing about what is not, taking a walk in nature, spending
+                time with your loved ones.(Learn more about gratitude:{" "}
+                <Link link="https://www.forbes.com/councils/forbescoachescouncil/2021/12/29/the-benefits-of-showing-gratitude-in-the-workplace/" />
+                )
+              </li>{" "}
+              <Image
+                src={"/blog 2/4.jpg"}
+                width={100}
+                height={100}
+                alt="Blog"
+                className="mx-auto rounded-md w-full mb-10"
+              />
+              <li className="mb-4">
+                Maintain Work Life Balance: Your personal life shouldn't always
+                take a backseat instead you should find ways where you can excel
+                at work and in your personal life as well. Some of the ways can
+                be making your to-do list for the day and trying to do focused
+                work by blocking time, leveraging support, when necessary, which
+                will help in managing your workload and prioritizing tasks that
+                make a big difference. (Read more:{" "}
+                <Link link="https://www.helpguide.org/wellness/career/mental-health-in-the-workplace" />
+                )
+              </li>{" "}
+              <li className="mb-4">
+                Seek Help: There has been a lot of stigma around mental health
+                which makes us hesitant to ask for help but asking for help
+                doesn't define you but it helps you become a better version of
+                yourself, helps you understand yourself better and helps you
+                manage your emotions. Research demonstrates that psychotherapy
+                is effective for a variety of mental and behavioural health
+                issues and across a spectrum of population groups. The average
+                effects of psychotherapy are larger than the effects produced by
+                many medical treatments.
+              </li>{" "}
+              <Image
+                src={"/blog 2/5.jpg"}
+                width={100}
+                height={100}
+                alt="Blog"
+                className="mx-auto rounded-md w-full mb-10"
+              />
+            </ul>{" "}
+            <h4 className="text-2xl font-semibold">What can Companies Do</h4>{" "}
             <Image
-              src={"/blog 1/Picture8.jpg"}
+              src={"/blog 2/6.jpg"}
               width={100}
               height={100}
               alt="Blog"
               className="mx-auto rounded-md w-full"
-            />
+            />{" "}
+            <ul className="list-disc">
+              <li className="mb-4">
+                Flexible schedule at work: allowing employees to work flexible
+                hours or giving them the option of remote work if part of their
+                can be done from home as it will increase the productivity and
+                will be cost effective as well. (More on benefits of flexible
+                work:{" "}
+                <Link link="https://www.forbes.com/sites/kalinabryant/2024/03/27/the-impact-of-flexible-work-and-the-importance-of-adapting-to-change/" />
+                )
+              </li>
+              <li className="mb-4">
+                Employee assistance programme: Every company should provide
+                support to the employees to overcome any problem they’re facing
+                or any kind of support they need. Attridge found that EAP use
+                was associated with increased productivity, engagement and life
+                satisfaction, and reduced absenteeism and workplace distress.
+                (Learn about EAP:{" "}
+                <Link link="https://www.betterup.com/blog/what-is-an-eap" />)
+              </li>{" "}
+              <li className="mb-4">
+                Opportunities for Enjoyment: companies can try and make the work
+                place a little comfortable for the employee by frequently
+                organising events, trips or ice- breakers where the employees
+                get to jell up with each other and add other workplace perks
+                such as acknowledging the extra hard work put up the employee,
+                encouraging the employee to take their health in consideration,
+                sending thankyou and appreciation card to everyone.
+              </li>{" "}
+              <li className="mb-4">
+                Range of Benefits: Companies can provide range of benefits to
+                the employees such as by providing them with employee affordable
+                health insurance plan and retirement plan as well. By making the
+                process of a new comer smooth instead of making them feel like
+                they have entered an unknown territory help them feel welcomed.
+              </li>{" "}
+              <li className="mb-4">
+                Regular Check in with Supervisors: Companies can instruct the
+                team leader of every department to have regular check ins with
+                the employees where the supervisors can gauge the discussion of
+                an employee is feeling, provide solutions to their problems and
+                help them make a career plan for themselves.
+              </li>{" "}
+            </ul>{" "}
           </div>
-          {/* <div className="px-2.5 mt-3">
-            <h6 className="text-lg">Sagrikaa Rastogi</h6>
-            <p className="text-sm">Counselling Psychologist</p>
-          </div> */}
+          <p className="mt-1">
+            The goal of a company should be to treat an employee at least as
+            human if they can’t treat them as a family. it should not matter how
+            many hours an employee is working as long as the tasks and
+            responsibilities are fulfilled.
+          </p>
+          <p className="mt-4">
+            There is lot of stigma around mental health and we’ve a long way to
+            be able to build a world where mental health matters but The Anna
+            Sebastion Perayi Tragedy (
+            <Link link="https://www.thehindu.com/news/national/maharashtra/ey-employees-death-anna-wanted-to-work-for-un-and-who-she-wanted-to-explore-the-world-says-her-mother/article68700257.ece" />
+            ) is waking call for us to understand that mental health matters as
+            much as physical health does. Whenever you find yourself in a whirl
+            of emotions, not able to regulate your emotions, have a hard time
+            understanding your own self and strive to become a better version of
+            yourself – don’t hesitate asking for help. Therapy does not make you
+            look weak instead it helps you work on yourself like you
+            consistently work on your physical health.
+            <br />
+            <br />
+            We, at Consciousleap provide therapy services to all age groups in
+            various areas such as anxiety, depression, self esteem issues.
+            Behavioural issues, emotional regulation, resilience. To know more
+            about us or book an appointment visit{" "}
+            <Link link="https://consciousleap.co/" />
+          </p>{" "}
+          <Image
+            src={"/blog 2/7.jpg"}
+            width={100}
+            height={100}
+            alt="Blog"
+            className="mx-auto rounded-md w-full mt-6"
+          />
         </div>
       </div>
     </div>
+  );
+};
+
+const Link = ({ link }) => {
+  return (
+    <span
+      className="text-blue-500 cursor-pointer underline"
+      onClick={() => {
+        history.push(link);
+      }}
+    >
+      {link}
+    </span>
   );
 };
 
