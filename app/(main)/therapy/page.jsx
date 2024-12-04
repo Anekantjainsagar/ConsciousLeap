@@ -9,8 +9,7 @@ import {
   AiOutlineUnorderedList,
   AiOutlineUp,
 } from "react-icons/ai";
-import { BsCheckLg, BsFillGrid3X3GapFill } from "react-icons/bs";
-import image from "../Assets/sagrika.jpeg";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import Context from "@/Context/Context";
 import MemberConsent from "./[name]/schedule/memberConsent";
@@ -31,7 +30,7 @@ const Therapists = () => {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [isConsentFilled, setIsConsentFilled] = useState(false);
-  
+
   React.useEffect(() => {
     axios
       .post(`${BASE_URL}/consent/check`, {
@@ -68,6 +67,10 @@ const Therapists = () => {
       }
     );
   }, []);
+
+  const uniqueArray = [
+    ...new Set(therapistFilter?.speaksFilter?.map((lang) => lang.trim())),
+  ];
 
   return (
     <div className="w-full flex pt-6 items-center justify-center flex-col">
@@ -163,7 +166,7 @@ const Therapists = () => {
             {showLanguages ? <AiOutlineDown /> : <AiOutlineUp />}
           </div>
           <div className={`${showLanguages ? "hidden" : "block"}`}>
-            {therapistFilter?.speaksFilter?.map((e, i) => {
+            {uniqueArray?.map((e, i) => {
               return (
                 <div
                   key={i}
@@ -283,7 +286,7 @@ const Therapists = () => {
               {showLanguages ? <AiOutlineDown /> : <AiOutlineUp />}
             </div>
             <div className={`${showLanguages ? "hidden" : "block"}`}>
-              {therapistFilter?.speaksFilter?.map((e, i) => {
+              {uniqueArray?.map((e, i) => {
                 return (
                   <div
                     key={i}
@@ -295,7 +298,7 @@ const Therapists = () => {
                       checked={therapistFilter?.therapistFilters?.speaks?.includes(
                         e
                       )}
-                      onChange={(event) => {
+                      onChange={() => {
                         if (
                           therapistFilter?.therapistFilters?.speaks?.includes(e)
                         ) {

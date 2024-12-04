@@ -110,7 +110,8 @@ const Home = () => {
         <Line2 />{" "}
       </Suspense>
       <Suspense>
-        <ConsciousStore /> <ConsciousleapBlog />
+        {/* <ConsciousStore /> */}
+        <ConsciousleapBlog />
       </Suspense>
       <Line2 />{" "}
       <Suspense>

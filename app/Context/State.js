@@ -86,9 +86,9 @@ const B2BState = (props) => {
       .get(
         `${BASE_URL}/therapist/get-all-therapists?search=${
           therapistFilters?.search
-        }&speaks=${JSON.stringify(
-          therapistFilters?.speaks
-        )}&expertise=${JSON.stringify(therapistFilters?.expertise)}`
+        }&speaks=${JSON.stringify([
+          ...new Set(therapistFilters?.speaks),
+        ])}&expertise=${JSON.stringify(therapistFilters?.expertise)}`
       )
       .then((response) => {
         setTherapistsData(response.data);

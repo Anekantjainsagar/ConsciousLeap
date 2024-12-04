@@ -103,10 +103,10 @@ let nav = [
       },
     ],
   },
-  {
-    name: "Conscious Store",
-    route: "/conscious-store",
-  },
+  // {
+  //   name: "Conscious Store",
+  //   route: "/conscious-store",
+  // },
 ];
 
 const Navbar = () => {
@@ -125,7 +125,7 @@ const Navbar = () => {
     <div>
       <Search modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
       <div className="fixed top-0 left-0 w-[100vw] bg-white z-50">
-        <div className="py-4 px-3 hidden md:flex justify-between items-center">
+        <div className="py-4 px-5 hidden md:flex justify-between items-center">
           <Image
             src={image}
             alt="Logo"
@@ -239,7 +239,7 @@ const Navbar = () => {
                 size={35}
               />
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               {showHover?.cart ? (
                 <p className="absolute -bottom-7 right-3">Cart</p>
               ) : null}
@@ -259,7 +259,7 @@ const Navbar = () => {
                 className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
                 size={35}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Navbar Mobile */}
@@ -356,13 +356,13 @@ const Navbar = () => {
               className="text-pinkishRed border-pinkishRed p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}
             />
-            <AiOutlineShoppingCart
+            {/* <AiOutlineShoppingCart
               onClick={(e) => {
                 history.push("/cart/1");
               }}
               className="text-oceanGreen border-oceanGreen p-1 border-2 mr-3 rounded-full hover:scale-110 cursor-pointer transition-all"
               size={35}
-            />
+            /> */}
           </div>
         </div>
       </div>
