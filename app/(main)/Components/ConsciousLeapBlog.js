@@ -4,7 +4,6 @@ import Image from "next/image";
 import gsap, { Power2, ScrollTrigger } from "gsap/all";
 import Line2 from "./Lines/Line2";
 import { useRouter } from "next/navigation";
-
 import {
   Navigation,
   Pagination,
@@ -14,8 +13,6 @@ import {
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -168,6 +165,12 @@ export function BootstrapCarousel() {
             {
               image: "/blog 2/1.jpg",
               title: "Mental Health at Workplace",
+              showLikes: false,
+              newBlock: true,
+            },
+            {
+              image: "/blog 3/1.jpg",
+              title: "The Rising Necessity for Digital Detox",
               showLikes: false,
               newBlock: true,
             },

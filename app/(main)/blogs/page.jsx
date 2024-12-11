@@ -43,6 +43,12 @@ const Blogs = () => {
             showLikes: false,
             newBlock: true,
           },
+          {
+            image: "/blog 3/1.jpg",
+            title: "The Rising Necessity for Digital Detox",
+            showLikes: false,
+            newBlock: true,
+          },
           ...blogs,
         ]?.map((e, i) => {
           return <BlogBlock data={e} key={i} />;
