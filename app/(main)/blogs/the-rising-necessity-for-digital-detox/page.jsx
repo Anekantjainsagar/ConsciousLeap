@@ -31,12 +31,13 @@ const Blog2 = () => {
             of the world we live in, which include the incessant dings and pings
             of notifications, the perpetual feed of news, and lastly, the
             never-ending scrolling on social media. Howbeit, technology has
-            improved people's lives in many ways, it has also to a large extent
-            increased the cases of anxiety, stress, and burnout. For this, the
-            idea of "digital cleansing" is emerging fast in many societies, a
-            term that is becoming extremely popular as an increasing number of
-            people as well as mental health practitioners appreciate the merits
-            of taking a break from the modern means of communications.
+            improved people&apos;s lives in many ways, it has also to a large
+            extent increased the cases of anxiety, stress, and burnout. For
+            this, the idea of &quot;digital cleansing&quot; is emerging fast in
+            many societies, a term that is becoming extremely popular as an
+            increasing number of people as well as mental health practitioners
+            appreciate the merits of taking a break from the modern means of
+            communications.
             <br /> To the surprise of many, the notion of digital detox does not
             focus on violence-prone or self-destructive ways of unsubscribing:
             simply it means limiting access to online communication devices and
@@ -93,9 +94,9 @@ const Blog2 = () => {
               className="mx-auto rounded-md w-full mb-3"
             />
             <p className="px-2">
-              And let's not shy away from the truth about this. We scroll down
-              Facebook or Instagram, feel that everyone except us is having a
-              happier life than we do, or we feel the constant need to be
+              And let&apos;s not shy away from the truth about this. We scroll
+              down Facebook or Instagram, feel that everyone except us is having
+              a happier life than we do, or we feel the constant need to be
               available and responding regardless if we actually want to. Such
               distraction can elicit feelings of inadequacy, isolation, and even
               worse – burnout. This is how it manifests in us:
