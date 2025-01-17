@@ -208,13 +208,13 @@ const Footer = () => {
                 } absolute right-[-20vw] md:right-[-8vw] bottom-0`}
               />
             </div>
-            <div className="text-[13.5px] mb-1 text-center md:text-start md:my-0 mt-2 font-light cursor-pointer hover:text-websiteBlue">
+            {/* <div className="text-[13.5px] mb-1 text-center md:text-start md:my-0 mt-2 font-light cursor-pointer hover:text-websiteBlue">
               Address:
               <br />
               <span className="text-darkGrey">
                 A3 Sai Shraddha, Deonar, Mumbai 400088, India
               </span>{" "}
-            </div>
+            </div> */}
             <div className="flex items-center mt-1">
               {[
                 {
