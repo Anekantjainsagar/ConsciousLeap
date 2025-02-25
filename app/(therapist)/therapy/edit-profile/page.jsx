@@ -69,7 +69,7 @@ const EditProfile = () => {
         price: therapist?.full_meeting_url?.price,
       },
     });
-  }, [therapists?.therapist]);
+  }, [therapists]);
 
   const onUpdate = () => {
     axios

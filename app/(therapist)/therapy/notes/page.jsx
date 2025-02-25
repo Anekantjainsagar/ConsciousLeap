@@ -23,7 +23,7 @@ const Notes = () => {
     if (getCookie("therapist_token")?.length <= 1) {
       router.push("/user/login");
     }
-  }, []);
+  }, [router]);
 
   return (
     <div className="flex">

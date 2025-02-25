@@ -48,7 +48,6 @@ const Dashboard = () => {
     if (productM?.productData) {
       let data = productM?.productData?.products;
       var randomNumber = Math.floor(Math.random() * data?.length);
-      console.log(productM?.productData);
       if (randomNumber) {
         setStore(data[randomNumber]);
       }
@@ -63,7 +62,7 @@ const Dashboard = () => {
     ) {
       router.push("/user/login");
     }
-  }, []);
+  }, [router]);
 
   return (
     <div className="flex overflow-x-hidden">

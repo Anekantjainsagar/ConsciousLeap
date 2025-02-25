@@ -61,7 +61,7 @@ const NotesApp = ({ params }) => {
         homework: user?.homework,
       });
     }
-  }, [therapists]);
+  }, [therapists, id, router]);
 
   return (
     <div className="flex">
