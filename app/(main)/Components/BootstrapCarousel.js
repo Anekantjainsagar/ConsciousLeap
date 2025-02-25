@@ -67,7 +67,7 @@ export default function BootstrapCarousel() {
           <SwiperSlide
             className="relative overflow-hidden cursor-pointer"
             onClick={(e) => {
-              history.push("/mindful-month");
+              history.push("/discovery-session");
             }}
           >
             <Image
