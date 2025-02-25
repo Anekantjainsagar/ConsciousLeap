@@ -131,6 +131,7 @@ const AddProduct = () => {
                 height={100}
                 src={image}
                 className="h-[50vh] object-cover w-full object-center rounded-md mb-3"
+                alt="Default Image"
               />
             ) : (
               <div className="h-[50vh] bg-gray-200 mb-3 rounded-md"></div>

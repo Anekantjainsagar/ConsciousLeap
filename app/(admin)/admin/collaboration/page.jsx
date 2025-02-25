@@ -19,7 +19,7 @@ const Collabrations = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   const getUsers = () => {
     axios
@@ -116,13 +116,9 @@ const Product = ({ data, getUsers }) => {
           className="w-[5vw] rounded-full object-cover object-center"
         />
         <div className="py-1 ml-3">
-          <p className="font-bold text-[16px]">
-            {data?.contactPerson}
-          </p>
+          <p className="font-bold text-[16px]">{data?.contactPerson}</p>
           <div className="flex flex-col items-start">
-            <p className="mt-0 text-newBlue text-xs font-bold">
-              {data?.email}
-            </p>
+            <p className="mt-0 text-newBlue text-xs font-bold">{data?.email}</p>
             <p className="mt-0.5 text-newBlue text-xs font-bold">
               {data?.contact}
             </p>

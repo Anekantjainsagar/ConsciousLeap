@@ -37,7 +37,7 @@ const Users = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   const getUsers = () => {
     axios

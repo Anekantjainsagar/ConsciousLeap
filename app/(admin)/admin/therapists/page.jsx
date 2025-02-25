@@ -19,7 +19,7 @@ const Therapists = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div className="bg-gray-100">

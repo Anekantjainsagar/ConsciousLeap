@@ -107,6 +107,7 @@ const AddBlog = ({ params }) => {
               height={100}
               src={image}
               className="object-cover w-full object-center rounded-md"
+              alt={product?.title+" Image"}
             />
           ) : (
             <div className="h-[50vh] bg-gray-200 rounded-md"></div>

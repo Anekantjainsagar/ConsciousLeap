@@ -66,7 +66,7 @@ const TherapistAdd = ({ params }) => {
         price: therapist?.full_meeting_url?.price,
       },
     });
-  }, [therapistFilter]);
+  }, [therapistFilter, id]);
 
   const onUpdate = () => {
     axios
@@ -95,6 +95,7 @@ const TherapistAdd = ({ params }) => {
             src={therapist?.photo}
             width={10000}
             height={10000}
+            alt={therapist?.name}
             className="rounded-full w-[5vw] h-[5vw] object-cover object-center"
           />
         </div>

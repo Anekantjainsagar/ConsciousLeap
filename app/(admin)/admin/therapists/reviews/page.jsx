@@ -13,7 +13,7 @@ const TherapistsReviews = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div className="bg-gray-100">

@@ -17,7 +17,7 @@ const Consents = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   const getConsents = () => {
     axios
