@@ -120,11 +120,11 @@ const Questionnaire = () => {
           onClick={(e) => {
             if (mindfulMonth) {
               if (isConsentFilled) {
-                history.push("/mindful-month/schedule");
+                history.push("/discovery-session/schedule");
+                setMindfulMonth(false);
               } else {
                 history.push(`/therapy/${login?._id}/schedule`);
               }
-              setMindfulMonth(false);
             } else {
               history.push("/therapy");
             }

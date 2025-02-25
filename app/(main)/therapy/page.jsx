@@ -16,6 +16,7 @@ import MemberConsent from "./[name]/schedule/memberConsent";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
+import toast from "react-hot-toast";
 
 const Therapists = () => {
   let sellerHeading = useRef();
@@ -483,13 +484,19 @@ const Therapists = () => {
 
 const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
   const history = useRouter();
-  const { setShowPopUpId } = useContext(Context);
+  const { setShowPopUpId, login } = useContext(Context);
 
   return (
     <div
       className="cursor-pointer"
       onClick={(e) => {
+        // if (login?._id) {
         history.push(`/therapy/${data?._id}`);
+        // } else {
+        //   toast.error("Please login first");
+        //   localStorage.setItem("login-history", "/therapy");
+        //   history.push("/user/login");
+        // }
       }}
     >
       <div className="flex items-center justify-center rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px] h-full hover:scale-105 transition-all">
@@ -533,11 +540,17 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setShowPopUpId(data);
-                if (isConsentFilled) {
-                  setIsOpen(!modalIsOpen);
+                if (login?._id) {
+                  setShowPopUpId(data);
+                  if (isConsentFilled) {
+                    setIsOpen(!modalIsOpen);
+                  } else {
+                    history.push(`/therapy/${data?._id}/schedule`);
+                  }
                 } else {
-                  history.push(`/therapy/${data?._id}/schedule`);
+                  toast.error("Please login first");
+                  localStorage.setItem("login-history", "/therapy");
+                  history.push("/user/login");
                 }
               }}
               className="bg-websiteBlue text-sm px-5 py-1 mt-2 rounded-md text-white hover:scale-105 transition-all font-semibold"
@@ -552,13 +565,19 @@ const Grid = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
 };
 
 const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
-  const { setShowPopUpId } = useContext(Context);
   const history = useRouter();
+  const { setShowPopUpId, login } = useContext(Context);
 
   return (
     <div
       onClick={(e) => {
+        // if (login?._id) {
         history.push(`/therapy/${data?._id}`);
+        // } else {
+        //   toast.error("Please login first");
+        //   localStorage.setItem("login-history", "/therapy");
+        //   history.push("/user/login");
+        // }
       }}
       className="scale-95 hover:scale-100 transition-all"
     >
@@ -593,11 +612,17 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setShowPopUpId(data);
-                if (isConsentFilled) {
-                  setIsOpen(!modalIsOpen);
+                if (login?._id) {
+                  setShowPopUpId(data);
+                  if (isConsentFilled) {
+                    setIsOpen(!modalIsOpen);
+                  } else {
+                    history.push(`/therapy/${data?._id}/schedule`);
+                  }
                 } else {
-                  history.push(`/therapy/${data?._id}/schedule`);
+                  toast.error("Please login first");
+                  localStorage.setItem("login-history", "/therapy");
+                  history.push("/user/login");
                 }
               }}
               className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"

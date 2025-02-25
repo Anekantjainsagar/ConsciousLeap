@@ -24,7 +24,7 @@ export async function middleware(request) {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    "/therapy/:path*",
+    // "/therapy/:path*",
     "/questionnaire/:path*",
     "/user/dashboard",
     "/therapist-review/:path*",

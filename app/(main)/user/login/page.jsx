@@ -7,7 +7,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { BASE_URL } from "@/Utils/urls";
 import { setCookie } from "cookies-next";
 import Context from "@/Context/Context";
-import emailjs from "@emailjs/browser";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const UserLogin = () => {
@@ -22,8 +21,9 @@ const UserLogin = () => {
   });
 
   useEffect(() => {
-    if (login?._id) {
-      history.push("/user/dashboard");
+    let url = localStorage.getItem("login-history");
+    if (login?._id && url) {
+      history.push(url);
     }
   }, [login]);
 

@@ -77,7 +77,7 @@ export default function BootstrapCarousel() {
               height={10000}
               className="w-full cursor-pointer"
               onClick={(e) => {
-                history.push("/mindful-month");
+                history.push("/discovery-session");
               }}
             />
           </SwiperSlide>

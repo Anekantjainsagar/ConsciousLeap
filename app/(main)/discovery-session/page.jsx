@@ -1,13 +1,13 @@
 "use client";
-import Context from "@/Context/Context";
-import { getCookie } from "cookies-next";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import Context from "@/Context/Context";
+import React, { useContext } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const MindFulMonth = () => {
   const { setMindfulMonth, login } = useContext(Context);
+  const pathname = usePathname();
   const history = useRouter();
 
   return (
@@ -26,22 +26,36 @@ const MindFulMonth = () => {
           </div>
         </marquee>
       </div>
-      <Image
-        src={"/Assets/carousel/Banner 4.png"}
-        alt="Displaying mindful monday"
-        width={1000}
-        height={10000}
-        className="w-full cursor-pointer"
-        onClick={(e) => {
-          if (login?._id) {
-            setMindfulMonth(true);
-            history.push("/questionnaire");
-          } else {
-            toast.error("Please login first");
-            history.push("/user/login");
-          }
-        }}
-      />
+      <div className="relative w-full">
+        <Image
+          src={"/Assets/carousel/Banner 4.png"}
+          alt="Displaying mindful monday"
+          width={1000}
+          height={10000}
+          className="w-full"
+        />
+
+        <div
+          className="absolute rounded-full cursor-pointer"
+          style={{
+            bottom: "18.5%", // Adjust the top position
+            left: "8.5%", // Adjust the left position
+            width: "35%", // Adjust the width of the clickable area
+            height: "10%", // Adjust the height of the clickable area
+          }}
+          onClick={(e) => {
+            if (login?._id) {
+              setMindfulMonth(true);
+              history.push("/questionnaire");
+            } else {
+              toast.error("Please login first");
+              localStorage.setItem("login-history", pathname);
+              history.push("/user/login");
+            }
+          }}
+        ></div>
+      </div>
+
       <div className="mx-4 md:mx-32">
         <h1 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen w-fit">
           Walk towards wellbeing!

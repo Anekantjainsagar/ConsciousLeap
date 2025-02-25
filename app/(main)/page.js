@@ -30,6 +30,7 @@ import Context from "@/Context/Context";
 const Home = () => {
   const { bussinessShow } = React.useContext(Context);
   useEffect(() => {
+    localStorage.setItem("login-history", "/user/dashboard");
     const element = document.getElementById(bussinessShow);
     element?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, []);
@@ -71,7 +72,7 @@ const Home = () => {
           }}
         ></script>
       </Head>
-      <ReactModal />
+      {/* <ReactModal /> */}
       <BootstrapCarousel />
       <Line1 />
       <Suspense>

@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
-
 import { BsCameraVideo } from "react-icons/bs";
 import { BiMessageDots } from "react-icons/bi";
 import { IoCallOutline } from "react-icons/io5";
@@ -11,12 +10,13 @@ import MemberConsent from "./schedule/memberConsent";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
 import { getCookie } from "cookies-next";
+import toast from "react-hot-toast";
 
 const OneTherapist = ({ params }) => {
   const history = useRouter();
   let id = params.name;
   const [user, setUser] = useState();
-  const { therapistFilter } = useContext(Context);
+  const { therapistFilter, login } = useContext(Context);
 
   useEffect(() => {
     const therapist = therapistFilter?.therapistsData?.find(
@@ -74,11 +74,25 @@ const OneTherapist = ({ params }) => {
           />
         </div>
         <button
+          // onClick={(e) => {
+          //   if (isConsentFilled) {
+          //     setIsOpen(true);
+          //   } else {
+          //     history.push(`/therapy/${id}/schedule`);
+          //   }
+          // }}
           onClick={(e) => {
-            if (isConsentFilled) {
-              setIsOpen(true);
+            e.stopPropagation();
+            if (login?._id) {
+              if (isConsentFilled) {
+                setIsOpen(!modalIsOpen);
+              } else {
+                history.push(`/therapy/${id}/schedule`);
+              }
             } else {
-              history.push(`/therapy/${id}/schedule`);
+              toast.error("Please login first");
+              localStorage.setItem("login-history", `/therapy/${id}`);
+              history.push("/user/login");
             }
           }}
           className="bg-websiteBlue px-9 text-base md:my-0 my-1 md:font-normal font-semibold md:text-sm mt-2 hover:scale-105 transition-all md:mt-7 py-2 rounded-lg text-white mx-auto block"

@@ -6,6 +6,7 @@ import React from "react";
 import MemberConsent from "./memberConsent";
 import toast, { Toaster } from "react-hot-toast";
 import { getCookie } from "cookies-next";
+import { useRouter } from "next/navigation";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -23,7 +24,8 @@ const customStyles = {
 const Schedule = ({ params }) => {
   const [checked, setChecked] = React.useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const { login } = React.useContext(Context);
+  const { login, mindfulMonth, setMindfulMonth } = React.useContext(Context);
+  const history = useRouter();
   const [form, setForm] = React.useState({
     name: "",
     address: "",
@@ -188,7 +190,9 @@ const Schedule = ({ params }) => {
             </div>
           </div>
           <div>
-            <h2 className="text-websiteBlue font-medium">Client Signature:</h2>
+            <h2 className="text-websiteBlue font-medium text-lg mt-4 mb-1">
+              Client Signature:
+            </h2>
             <div className="flex items-center justify-between">
               <input
                 type="text"
@@ -238,7 +242,12 @@ const Schedule = ({ params }) => {
                       .then((res) => {
                         if (res.status == 200) {
                           toast.success("Submitted successfully");
-                          setIsOpen(true);
+                          if (mindfulMonth) {
+                            history.push("/discovery-session/schedule");
+                            setMindfulMonth(false);
+                          } else {
+                            setIsOpen(true);
+                          }
                         }
                       })
                       .catch((err) => {
