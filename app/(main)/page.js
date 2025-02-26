@@ -72,7 +72,7 @@ const Home = () => {
           }}
         ></script>
       </Head>
-      {/* <ReactModal /> */}
+      <ReactModal />
       <BootstrapCarousel />
       <Line1 />
       <Suspense>

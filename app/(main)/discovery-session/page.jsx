@@ -3,11 +3,10 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 import Context from "@/Context/Context";
 import React, { useContext } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const MindFulMonth = () => {
   const { setMindfulMonth, login } = useContext(Context);
-  const pathname = usePathname();
   const history = useRouter();
 
   return (
@@ -49,7 +48,7 @@ const MindFulMonth = () => {
               history.push("/questionnaire");
             } else {
               toast.error("Please login first");
-              localStorage.setItem("login-history", pathname);
+              localStorage.setItem("login-history", "/discovery-session");
               history.push("/user/login");
             }
           }}
