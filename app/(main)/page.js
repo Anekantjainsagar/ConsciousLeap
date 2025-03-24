@@ -26,9 +26,13 @@ import { useEffect } from "react";
 import ReactModal from "./modal";
 import Head from "next/head";
 import Context from "@/Context/Context";
+import { useRouter } from "next/navigation";
+import { initGA, logPageView } from "../analytics";
 
 const Home = () => {
+  const router = useRouter();
   const { bussinessShow } = React.useContext(Context);
+
   useEffect(() => {
     localStorage.setItem("login-history", "/user/dashboard");
     const element = document.getElementById(bussinessShow);
@@ -59,6 +63,23 @@ const Home = () => {
       {}
     );
   }, []);
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      initGA("G-PS1GHQGHRV");
+      logPageView(router.asPath);
+    }
+
+    const handleRouteChange = (url) => {
+      logPageView(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
 
   return (
     <div id="navbar">
