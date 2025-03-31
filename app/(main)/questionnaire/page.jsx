@@ -48,17 +48,22 @@ const Questionnaire = () => {
   }, [isLogin]);
 
   const [isConsentFilled, setIsConsentFilled] = useState(false);
-  React.useEffect(() => {
+
+  let checkConsent = () => {
     axios
       .post(`${BASE_URL}/consent/check`, {
         token: getCookie("token"),
       })
       .then((res) => {
         setIsConsentFilled(res.data);
+        return res.data;
       })
       .catch((err) => {
         console.log(err);
       });
+  };
+  React.useEffect(() => {
+    checkConsent();
   }, []);
 
   return (
@@ -118,8 +123,9 @@ const Questionnaire = () => {
         </button>
         <button
           onClick={(e) => {
+            let finalConsent = checkConsent();
             if (mindfulMonth) {
-              if (isConsentFilled) {
+              if (finalConsent) {
                 history.push("/discovery-session/schedule");
                 setMindfulMonth(false);
               } else {
