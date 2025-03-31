@@ -55,8 +55,8 @@ const Questionnaire = () => {
         token: getCookie("token"),
       })
       .then((res) => {
-        setIsConsentFilled(res.data);
-        return res.data;
+        setIsConsentFilled(res);
+        return res;
       })
       .catch((err) => {
         console.log(err);
@@ -123,9 +123,8 @@ const Questionnaire = () => {
         </button>
         <button
           onClick={(e) => {
-            let finalConsent = checkConsent();
             if (mindfulMonth) {
-              if (finalConsent) {
+              if (isConsentFilled.data == true) {
                 history.push("/discovery-session/schedule");
                 setMindfulMonth(false);
               } else {
