@@ -2,17 +2,32 @@
 import Context from "@/Context/Context";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "@/Utils/urls";
+import Image from "next/image";
+import Slider from "../Slider";
+
+let images_data = [
+  "/questionnaire/4/1.png",
+  "/questionnaire/4/2.png",
+  "/questionnaire/4/3.png",
+  "/questionnaire/4/7.png",
+  "/questionnaire/4/4.png",
+  "/questionnaire/4/5.png",
+  "/questionnaire/4/6.png",
+];
 
 const EachQuestion = ({ params }) => {
   let val = params.id;
-  const { array } = useContext(Context);
+  const { array, questionnaire, getUser, setFilledQuestionnaire } =
+    useContext(Context);
+  const history = useRouter();
   val = parseInt(val);
+
   let data = [
     {
-      question: "The demands of everyday life often get me down.",
+      question: "The demands of everyday life often get me down?",
       category: "Environmental mastery",
       options: [
         {
@@ -47,7 +62,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "I do not fit very well with the people and the community around me.",
+        "I do not fit very well with the people and the community around me?",
       category: "Environmental mastery",
       options: [
         {
@@ -82,7 +97,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "I am quite good at managing the many responsibilities of my daily life.",
+        "I am quite good at managing the many responsibilities of my daily life?",
       category: "Environmental mastery",
       options: [
         {
@@ -116,7 +131,7 @@ const EachQuestion = ({ params }) => {
       ],
     },
     {
-      question: "I often feel overwhelmed by my responsibilities.",
+      question: "I often feel overwhelmed by my responsibilities?",
       category: "Environmental mastery",
       options: [
         {
@@ -150,7 +165,7 @@ const EachQuestion = ({ params }) => {
       ],
     },
     {
-      question: "I have a sense of direction and purpose in life.",
+      question: "I have a sense of direction and purpose in life?",
       category: "Purpose in life",
       options: [
         {
@@ -185,7 +200,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "I don’t have a good sense of what it is I’m trying to accomplish in life.",
+        "I don’t have a good sense of what it is I’m trying to accomplish in life?",
       category: "Purpose in life",
       options: [
         {
@@ -219,7 +234,7 @@ const EachQuestion = ({ params }) => {
       ],
     },
     {
-      question: "My daily activities often seem trivial and unimportant to me.",
+      question: "My daily activities often seem trivial and unimportant to me?",
       category: "Purpose in life",
       options: [
         {
@@ -253,7 +268,7 @@ const EachQuestion = ({ params }) => {
       ],
     },
     {
-      question: "In general, I feel confident and positive about myself.",
+      question: "In general, I feel confident and positive about myself?",
       category: "Self-Acceptance",
       options: [
         {
@@ -287,7 +302,7 @@ const EachQuestion = ({ params }) => {
       ],
     },
     {
-      question: "I like most parts of my personality.",
+      question: "I like most parts of my personality?",
       category: "Self-Acceptance",
       options: [
         {
@@ -322,7 +337,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "My attitude about myself is probably not as positive as most people feel about themselves.",
+        "My attitude about myself is probably not as positive as most people feel about themselves?",
       category: "Self-Acceptance",
       options: [
         {
@@ -357,7 +372,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "I have not experienced many warm and trusting relationships with others.",
+        "I have not experienced many warm and trusting relationships with others?",
       category: "Positive Relations with Others",
       options: [
         {
@@ -392,7 +407,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "Maintaining close relationships has been difficult and frustrating for me.",
+        "Maintaining close relationships has been difficult and frustrating for me?",
       category: "Positive Relations with Others",
       options: [
         {
@@ -427,7 +442,7 @@ const EachQuestion = ({ params }) => {
     },
     {
       question:
-        "I often feel lonely because I have few close friends with whom to share my concerns.",
+        "I often feel lonely because I have few close friends with whom to share my concerns?",
       category: "Positive Relations with Others",
       options: [
         {
@@ -462,43 +477,47 @@ const EachQuestion = ({ params }) => {
     },
   ];
 
+  useEffect(() => {
+    if (!params.id || array.length == 0) {
+      setFilledQuestionnaire(true);
+      history.push("/questionnaire");
+      axios
+        .post(`${BASE_URL}/login/update-questionnaire`, {
+          ...questionnaire,
+          answers: questionnaire?.answer.map((obj) => Object.values(obj)[0]),
+          token: getCookie("token"),
+        })
+        .then((response) => {
+          getUser();
+        });
+    }
+  }, [array, params.id]);
+
   let tempData = data[val - 1];
+  let question_num = 16 - array.length;
 
   return (
-    <div className="w-full md:h-[66vh] flex flex-col items-center justify-center">
-      <div className="flex flex-col items-center">
-        <h1 className="text-2xl md:text-3xl text-center font-semibold md:font-extrabold gradientHover cursor-pointer text-[#2e4fc9] mb-1">
-          Life Assessment Questionnaire
-        </h1>
-        <h1 className="text-2xl mt-4 text-center px-5 md:text-[25px] md:font-extrabold text-newBlue mb-12">
+    <div className="w-full md:h-[85vh] py-[1vh] flex flex-col items-center justify-between">
+      <Slider val={question_num} />{" "}
+      <div className="flex flex-col items-center w-11/12 md:mt-0 mt-10 md:w-8/12 mx-auto">
+        <p className="text-start w-full md:text-lg mb-0.5">
+          Question no. {question_num}
+        </p>
+        <h1 className="text-2xl md:text-[30px] font-bold w-full text-start text-websiteBlue mb-8">
           {tempData?.question}
         </h1>
-        <div className="grid items-center md:grid-cols-3 gap-x-10">
-          <div>
-            {tempData?.options?.slice(0, 3).map((e, i) => {
-              return <Block key={i} data={e} page={val} />;
-            })}
-          </div>
-          <div className="flex items-center justify-between">
-            {tempData?.options?.slice(3, 4).map((e, i) => {
-              return <Block key={i} data={e} page={val} />;
-            })}
-          </div>
-          <div>
-            {tempData?.options
-              ?.slice(4, tempData?.options?.length)
-              .map((e, i) => {
-                return <Block key={i} data={e} page={val} />;
-              })}
-          </div>
+        <div className="flex md:gap-10 gap-5 flex-row flex-wrap items-center justify-center w-full">
+          {tempData?.options.map((e, i) => {
+            return <Block key={i} data={e} page={val} idx={i} />;
+          })}
         </div>
-        <p className="text-lg mt-8">{13 - array.length}/13</p>
       </div>
+      <div></div>
     </div>
   );
 };
 
-const Block = ({ data, page }) => {
+const Block = ({ data, page, idx }) => {
   const history = useRouter();
   const {
     setQuestionnaire,
@@ -507,15 +526,23 @@ const Block = ({ data, page }) => {
     setArray,
     array,
     getRandomNumberArray,
+    setFilledQuestionnaire,
   } = useContext(Context);
 
   return (
-    <div
+    <Image
+      src={images_data[idx]}
+      width={1000}
+      height={1000}
+      alt={data?.name}
+      className="w-5/12 md:w-[12vw] cursor-pointer transitionAnimate hover:scale-105 border border-black"
       onClick={(e) => {
         let answersUpdated = questionnaire?.answer;
         answersUpdated[page - 1][`q${page}`] = data?.value;
         setQuestionnaire({ ...questionnaire, answers: [...answersUpdated] });
         if (array.length == 0) {
+          setFilledQuestionnaire(true);
+          history.push("/questionnaire");
           axios
             .post(`${BASE_URL}/login/update-questionnaire`, {
               ...questionnaire,
@@ -526,7 +553,6 @@ const Block = ({ data, page }) => {
             })
             .then((response) => {
               getUser();
-              history.push("/questionnaire");
             });
         }
         let temp = getRandomNumberArray();
@@ -534,12 +560,7 @@ const Block = ({ data, page }) => {
         setArray([...temp.slice(1, temp.length)]);
         history.push(`/questionnaire/questions/${num}`);
       }}
-      className="rounded-2xl mb-4 md:mb-5 mx-auto w-full md:w-[24vw] min-[768px]:h-[11vh] min-[950px]:h-[8vh] min-[1400px]:h-[5.7vh] bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[2px] hover:p-[2px] cursor-pointer transitionAnimate hover:scale-105 "
-    >
-      <div className="h-full w-full flex items-center justify-center rounded-2xl text-lg transitionAnimate text-center bg-white px-4 md:px-10 py-1.5 cursor-pointer">
-        {data?.name}
-      </div>
-    </div>
+    />
   );
 };
 

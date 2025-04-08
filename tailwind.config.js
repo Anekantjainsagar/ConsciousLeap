@@ -24,6 +24,7 @@ module.exports = {
         lightRed: "#ffccd6",
         newBlue: "#3c5cd5",
         newPurple: "#50487f",
+        newParrotGreen: "#04E900",
       },
       screens: {
         mobile: "540px",

@@ -80,6 +80,7 @@ const B2BState = (props) => {
     localPickup: "",
     additional: "",
   });
+  const [filledQuestionnaire, setFilledQuestionnaire] = useState(false);
 
   const getTherapistsData = () => {
     axios
@@ -315,6 +316,8 @@ const B2BState = (props) => {
         recommendations,
         setMindfulMonth,
         mindfulMonth,
+        setFilledQuestionnaire,
+        filledQuestionnaire,
       }}
     >
       {props.children}

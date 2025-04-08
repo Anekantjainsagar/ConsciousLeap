@@ -52,7 +52,9 @@ const QuestionModal = () => {
               className="text-2xl md:text-xl cursor-pointer"
             />
           </div>
-          <p className="text-center">Here are some therapists recommendations based on your results</p>
+          <p className="text-center">
+            Here are some therapists recommendations based on your results
+          </p>
           <div className="grid md:grid-cols-3 gap-5 mt-5">
             {recommendations?.map((e, i) => {
               return (

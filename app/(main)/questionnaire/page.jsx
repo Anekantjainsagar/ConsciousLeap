@@ -24,12 +24,18 @@ const Questionnaire = () => {
     recommendations,
     mindfulMonth,
     setMindfulMonth,
+    filledQuestionnaire,
+    setFilledQuestionnaire,
   } = useContext(Context);
   const { toPDF, targetRef } = usePDF({ filename: "Questionnaire.pdf" });
 
   useEffect(() => {
-    if (login?.questionnaire?.answers?.length == 0) {
-      history.push("/questionnaire/questions/ask-age");
+    if (!filledQuestionnaire) {
+      if (login?.questionnaire?.answers?.length == 0) {
+        history.push("/questionnaire/questions/ask-age");
+      }
+    } else {
+      setFilledQuestionnaire(false);
     }
   }, [login]);
 
@@ -62,6 +68,7 @@ const Questionnaire = () => {
         console.log(err);
       });
   };
+
   React.useEffect(() => {
     checkConsent();
   }, []);
