@@ -419,7 +419,7 @@ const NavItems = ({ e, showNav, setShowNav }) => {
         {e?.name}
         {e?.items && <AiOutlineDown className="ml-1 mt-1" size={15} />}
       </div>
-      {e?.items && (
+      {e?.items && e?.name != "consciousleap for Business" && (
         <div
           onMouseEnter={handleMouseEnter}
           onMouseOut={handleMouseEnter}
@@ -462,6 +462,24 @@ const NavItems = ({ e, showNav, setShowNav }) => {
               </p>
             );
           })}
+        </div>
+      )}
+      {e?.items && e?.name == "consciousleap for Business" && (
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseOut={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={(e) => {
+            setHover(!hover);
+          }}
+          className={`absolute ${
+            !hover ? "hidden" : "block"
+          } bg-white text-xs w-[55vw] md:w-[14vw] px-3 rounded-md z-50 top-8 md:top-7 shadow-lg shadow-darkGrey`}
+        >
+          <div className="-mt-3 bg-transparent pt-6"></div>
+          <p className="mb-[13px] text-transparent bg-clip-text bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen cursor-pointer z-50 text-base max-[1050px]:text-[15px]">
+            Coming Soon...
+          </p>
         </div>
       )}
     </div>
