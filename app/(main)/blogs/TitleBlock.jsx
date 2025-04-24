@@ -23,7 +23,7 @@ const TitleBlock = ({ title, id, likes, showLikes = true }) => {
         setIsLiked(true);
       }
     }
-  }, [id, login?._id]);
+  }, [id, login?._id, likes]);
 
   return (
     <div className="flex items-center justify-between">

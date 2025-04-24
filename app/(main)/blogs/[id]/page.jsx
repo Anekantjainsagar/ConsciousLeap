@@ -78,7 +78,7 @@ const NewBlock = ({ blog, setShowPopup, showPopup }) => {
       }
     }
     setLikeCount(blog?.likes?.length);
-  }, [blog?._id, login?._id]);
+  }, [blog?._id, login?._id, blog?.likes]);
 
   return (
     <div className="mt-3">

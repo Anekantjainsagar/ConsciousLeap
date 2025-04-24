@@ -26,7 +26,7 @@ const BussinessConsciousleap = () => {
   React.useEffect(() => {
     const element = document.getElementById(bussinessShow);
     element?.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, []);
+  }, [bussinessShow]);
 
   useEffect(() => {
     const video = document.createElement("video");
