@@ -152,7 +152,7 @@ const Table = ({ data }) => {
           </div>
         </div>
         <div className="py-3 h-full flex flex-col items-start justify-center px-4">
-          {data?.items?.map((e) => {
+          {data?.items?.map((e, i) => {
             return (
               <li className="font-light" key={i}>
                 {e}
