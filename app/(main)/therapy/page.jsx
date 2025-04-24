@@ -21,12 +21,12 @@ import toast from "react-hot-toast";
 const Therapists = () => {
   let sellerHeading = useRef();
   gsap.registerPlugin(ScrollTrigger);
-  const [showGrid, setShowGrid] = useState(true);
+  const [showGrid, setShowGrid] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [showLanguages, setShowLanguage] = useState(true);
   const [showExpertise, setShowExpertise] = useState(true);
 
-  const { therapistFilter, therapistSort, setTherapistSort, showPopUpId } =
+  const { therapistFilter, therapistSort, setTherapistSort } =
     useContext(Context);
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -349,7 +349,7 @@ const Therapists = () => {
                 onChange={(e) => {
                   setTherapistSort(e.target.value);
                 }}
-                className="w-full md:w-[15vw] rounded-sm text-darkGrey text-sm border px-2 py-2 outline-none"
+                className="w-full md:w-[15vw] rounded-md text-darkGrey text-sm border px-2 py-2 outline-none"
               >
                 <option className="py-1" value="Sort By">
                   Sort By
@@ -381,9 +381,9 @@ const Therapists = () => {
               }}
               type="text"
               placeholder="Search"
-              className="w-full md:w-[16vw] rounded-sm text-darkGrey text-sm border px-4 ml-0 md:ml-4 py-2 outline-none"
+              className="w-full md:w-[16vw] rounded-md text-darkGrey text-sm border px-4 ml-0 md:ml-4 py-2 outline-none"
             />
-            <div className="hidden md:flex items-center ml-5">
+            {/* <div className="hidden md:flex items-center ml-5">
               <BsFillGrid3X3GapFill
                 className="text-websiteBlue border p-2 cursor-pointer"
                 size={35}
@@ -398,7 +398,7 @@ const Therapists = () => {
                   setShowGrid(false);
                 }}
               />
-            </div>
+            </div> */}
           </div>
           <div
             className={`grid ${
@@ -579,7 +579,7 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
         //   history.push("/user/login");
         // }
       }}
-      className="scale-95 hover:scale-100 transition-all"
+      className="scale-95 hover:scale-100 transition-all cursor-pointer"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
         <div className="flex items-center min-[900px]:py-[1vw] min-[1040px]:py-[3vw] min-[2500px]:py-10 px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
@@ -601,9 +601,9 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
             </div>
             <div className="w-5/12 h-fit">
               <h2 className="mt-1 text-base text-websiteBlue">Expertise</h2>
-              {data?.expertise?.slice(0, 3).map((e) => {
+              {data?.expertise?.slice(0, 3).map((e, i) => {
                 return (
-                  <li key={e} className="text-sm text-darkGrey">
+                  <li key={i} className="text-sm text-darkGrey">
                     {e}
                   </li>
                 );
@@ -612,18 +612,18 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                if (login?._id) {
-                  setShowPopUpId(data);
-                  if (isConsentFilled) {
-                    setIsOpen(!modalIsOpen);
-                  } else {
-                    history.push(`/therapy/${data?._id}/schedule`);
-                  }
+                // if (login?._id) {
+                setShowPopUpId(data);
+                if (isConsentFilled) {
+                  setIsOpen(!modalIsOpen);
                 } else {
-                  toast.error("Please login first");
-                  localStorage.setItem("login-history", "/therapy");
-                  history.push("/user/login");
+                  history.push(`/therapy/${data?._id}/schedule`);
                 }
+                // } else {
+                //   toast.error("Please login first");
+                //   localStorage.setItem("login-history", "/therapy");
+                //   history.push("/user/login");
+                // }
               }}
               className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"
             >

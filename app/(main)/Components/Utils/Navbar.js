@@ -65,7 +65,7 @@ let nav = [
     name: "Therapy",
     items: [
       {
-        name: "Our Mindful Therapists",
+        name: "Talk to our Therapists",
         route: "/therapy",
       },
       {

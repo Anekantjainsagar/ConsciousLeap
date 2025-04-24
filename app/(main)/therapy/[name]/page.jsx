@@ -83,17 +83,17 @@ const OneTherapist = ({ params }) => {
           // }}
           onClick={(e) => {
             e.stopPropagation();
-            if (login?._id) {
-              if (isConsentFilled) {
-                setIsOpen(!modalIsOpen);
-              } else {
-                history.push(`/therapy/${id}/schedule`);
-              }
+            // if (login?._id) {
+            if (isConsentFilled) {
+              setIsOpen(!modalIsOpen);
             } else {
-              toast.error("Please login first");
-              localStorage.setItem("login-history", `/therapy/${id}`);
-              history.push("/user/login");
+              history.push(`/therapy/${id}/schedule`);
             }
+            // } else {
+            //   toast.error("Please login first");
+            //   localStorage.setItem("login-history", `/therapy/${id}`);
+            //   history.push("/user/login");
+            // }
           }}
           className="bg-websiteBlue px-9 text-base md:my-0 my-1 md:font-normal font-semibold md:text-sm mt-2 hover:scale-105 transition-all md:mt-7 py-2 rounded-lg text-white mx-auto block"
         >
@@ -154,7 +154,7 @@ const Table = ({ data }) => {
         <div className="py-3 h-full flex flex-col items-start justify-center px-4">
           {data?.items?.map((e) => {
             return (
-              <li className="font-light" key={e}>
+              <li className="font-light" key={i}>
                 {e}
               </li>
             );

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Context from "@/Context/Context";
 import { AiOutlineClose } from "react-icons/ai";
 import { usePathname, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const customStyles = {
   overlay: { zIndex: 50 },
@@ -24,7 +25,7 @@ const customStyles = {
 const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
   const history = useRouter();
   const [user, setUser] = useState();
-  const { therapistFilter, showPopUpId, setFourtyMinMeet } =
+  const { therapistFilter, showPopUpId, setFourtyMinMeet, login } =
     useContext(Context);
 
   useEffect(() => {
@@ -65,10 +66,16 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             <div
               className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all mb-0 md:mt-5 mt-1 md:mb-3 flex cursor-pointer items-center justify-between rounded-md text-websiteBlue px-4 py-2 md:text-lg w-[65vw] min-[550px]:w-[50vw] min-[900px]:w-[40vw] min-[1300px]:w-[25vw]"
               onClick={(e) => {
-                setFourtyMinMeet(false);
-                history.push(
-                  `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
-                );
+                if (login?._id) {
+                  setFourtyMinMeet(false);
+                  history.push(
+                    `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
+                  );
+                } else {
+                  toast.error("Please login first");
+                  localStorage.setItem("login-history", "/therapy");
+                  history.push("/user/login");
+                }
               }}
             >
               <div className="flex items-center">
@@ -93,10 +100,16 @@ const MemberConsent = ({ modalIsOpen, setIsOpen, id }) => {
             <div
               className="bg-white hover:shadow-md hover:scale-105 shadow-gray-50 transition-all flex cursor-pointer items-center justify-between rounded-md text-websiteBlue px-4 py-2 md:text-lg w-[65vw] min-[550px]:w-[50vw] min-[900px]:w-[40vw] min-[1300px]:w-[25vw]"
               onClick={(e) => {
-                setFourtyMinMeet(true);
-                history.push(
-                  `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
-                );
+                if (login?._id) {
+                  setFourtyMinMeet(true);
+                  history.push(
+                    `/therapy/${id ? id : showPopUpId?._id}/schedule/appoint`
+                  );
+                } else {
+                  toast.error("Please login first");
+                  localStorage.setItem("login-history", "/therapy");
+                  history.push("/user/login");
+                }
               }}
             >
               <div className="flex items-center">

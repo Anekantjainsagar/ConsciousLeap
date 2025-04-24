@@ -29,7 +29,7 @@ const AdminPage = () => {
     if (!getCookie("admin_token")) {
       history.push("/user/login");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div className="bg-gray-100 p-4 h-[82vh] overflow-y-auto">
