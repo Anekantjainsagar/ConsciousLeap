@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense, lazy } from "react";
-import BootstrapCarousel from "./Components/BootstrapCarousel";
+// import BootstrapCarousel from "./Components/BootstrapCarousel";
+import HeroSection from "./Components/HeroSection";
 import Line1 from "./Components/Lines/Line1";
 import Line2 from "./Components/Lines/Line2";
 const Whyconsciousleap = lazy(() => import("./Components/WhyConsciousLeap"));
@@ -80,8 +81,9 @@ const Home = () => {
           }}
         ></script>
       </Head>
-      <ReactModal />
-      <BootstrapCarousel />
+      {/* <ReactModal /> */}
+      {/* <BootstrapCarousel /> */}
+      <HeroSection />
       <Line1 />
       <Suspense>
         <Whyconsciousleap />

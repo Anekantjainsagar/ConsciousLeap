@@ -582,28 +582,37 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
       className="scale-95 hover:scale-100 transition-all cursor-pointer"
     >
       <div className="rounded-xl w-full bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
-        <div className="flex items-center min-[900px]:py-[1vw] min-[1040px]:py-[3vw] min-[2500px]:py-10 px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
-          <div className="rounded-full w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
+        <div className="flex md:flex-row flex-col items-center py-5 min-[900px]:py-[1vw] min-[1040px]:py-[3vw] min-[2500px]:py-10 px-[4vw] md:py-[0.75vw] md:px-[2vw] h-full w-full rounded-xl justify-between bg-white">
+          <div className="rounded-full md:w-2/12 bg-gradient-to-r from-websiteBlue via-pinkishRed to-oceanGreen p-[1px]">
             <div className="flex md:p-1 h-full w-full rounded-full items-center justify-center bg-white">
               <Image
                 src={data?.photo}
                 width={1000}
                 height={1000}
                 alt="Photo of girl"
-                className="w-full h-[10vw] object-cover object-center rounded-full"
+                className="w-full md:h-[10vw] object-cover object-center rounded-full"
               />
             </div>
           </div>
-          <div className="w-[81%] flex justify-between items-center min-[900px]:h-[13vh] min-[1040px]:h-[22vh]">
-            <div className="w-3/12 h-fit">
-              <h2 className="text-xl text-websiteBlue">{data?.name}</h2>
-              <p className="text-darkGrey text-sm mt-1">{data?.desc}</p>
+          <div className="md:w-[81%] md:mt-0 mt-4 flex md:flex-row flex-col justify-between items-center min-[900px]:h-[13vh] min-[1040px]:h-[22vh]">
+            <div className="md:w-3/12 h-fit">
+              <h2 className="text-xl text-websiteBlue md:text-start text-center">
+                {data?.name}
+              </h2>
+              <p className="text-darkGrey md:text-start text-center text-sm mt-1">
+                {data?.desc}
+              </p>
             </div>
-            <div className="w-5/12 h-fit">
-              <h2 className="mt-1 text-base text-websiteBlue">Expertise</h2>
+            <div className="md:w-5/12 h-fit">
+              <h2 className="mt-1 text-base md:text-start text-center text-websiteBlue">
+                Expertise
+              </h2>
               {data?.expertise?.slice(0, 3).map((e, i) => {
                 return (
-                  <li key={i} className="text-sm text-darkGrey">
+                  <li
+                    key={i}
+                    className="text-sm text-darkGrey md:text-start text-center"
+                  >
                     {e}
                   </li>
                 );
@@ -625,7 +634,7 @@ const ListBlock = ({ data, modalIsOpen, setIsOpen, isConsentFilled }) => {
                 //   history.push("/user/login");
                 // }
               }}
-              className="bg-websiteBlue w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"
+              className="bg-websiteBlue w-11/12 md:mt-0 mt-4 md:w-3/12 py-1.5 rounded-lg text-white font-semibold hover:scale-105 transition-all"
             >
               Schedule Session
             </button>
